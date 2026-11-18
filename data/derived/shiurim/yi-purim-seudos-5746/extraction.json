@@ -1,0 +1,482 @@
+{
+  "shiurId": "yi-purim-seudos-5746",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At the Purim seudah the Mashgiach explains how Purim, which came by lot and above understanding, repairs the sin of eating at Achashverosh's feast, draws sparks of holiness even out of Haman, and completes the 24th ornament of the kallah.",
+      "yi": "ביי דער סעודת פורים ערקלערט דער משגיח ווי אזוי פורים, וואס איז געקומען דורך א גורל העכער פון דעת, איז מתקן דעם חטא פון הנאה האבן פון אחשורוש'ס סעודה, ציעט ארויס ניצוצות קדושה אפילו פון המן, און מאכט פארטיג דעם פיר און צוואנציגסטן תכשיט פון דער כלה."
+    },
+    "abstract": {
+      "en": "The Mashgiach opens by explaining that Purim came through a lot, which is above understanding, and that Esther asked for an extra day in Shushan so the lot would be hers and not Haman's. He asks why the angels pleaded with tarshish, and answers that it is the stone of eating, tied to the Jews' enjoyment of Achashverosh's feast; the seudas Purim, the last of Purim's four mitzvos, corresponds to the last letter of Hashem's Name. He explains that Haman held a spark of holiness, since his descendants learned Torah in Bnei Brak, and that holiness reaches outward to retrieve such sparks, except on Pesach. He then asks how, according to Shmuel, the Megillah fits among the 24 holy books that parallel a kallah's 24 ornaments, and answers with the Bnei Yissaschar that on Purim it is a holy book. Finally he explains that Haman aimed his gallows at krias shema of the morning, and how the Tannaim in Bnei Brak repaired this.",
+      "yi": "דער משגיח עפנט מיט דעם אז פורים איז געקומען דורך א גורל, וואס איז העכער פון דעת, און אז אסתר האט געבעטן נאך א טאג אין שושן כדי דער גורל זאל זיין אירער און נישט המן'ס. ער פרעגט פארוואס די מלאכים האבן גע'טענה'ט מיט דעם תרשיש, און ענטפערט אז דאס איז דער אבן פון אכילה, וואס איז שייך צו דעם וואס אידן האבן הנאה געהאט פון אחשורוש'ס סעודה; די סעודת פורים, די לעצטע פון די פיר מצוות פון פורים, איז כנגד דעם לעצטן אות פונעם שם. ער ערקלערט אז המן האט געהאט א ניצוץ קדושה, ווייל זיינע אייניקלעך האבן געלערנט תורה אין בני ברק, און אז די קדושה גייט ארויס כדי צוריקצונעמען אזעלכע ניצוצות, חוץ פסח. דערנאך פרעגט ער ווי אזוי לויט שמואל איז די מגילה צווישן די כ\"ד כתבי הקודש, וואס זענען כנגד די כ\"ד תכשיטי כלה, און ענטפערט מיט דעם בני יששכר אז פורים איז זי יא א ספר הקודש. צום סוף ערקלערט ער אז המן האט געצילט מיט זיין עץ אויף קריאת שמע של שחרית, און ווי אזוי די תנאים אין בני ברק האבן דאס מתקן געווען."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "All of Purim came through a lot, which is above understanding, and Esther asked for another day in Shushan so that the lot would be hers and not Haman's.",
+          "yi": "גאנץ פורים איז געקומען דורך א גורל, וואס איז העכער פון דעת, און אסתר האט געבעטן נאך א טאג אין שושן כדי דער גורל זאל זיין אירער און נישט המן'ס."
+        },
+        "evidence": { "segs": [10, 12, 49, 61, 63], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The angels' claim of tarshish rests on the Jews' enjoyment of Achashverosh's feast, since tarshish is the stone of eating; the seudas Purim answers it.",
+          "yi": "די טענה פון די מלאכים מיט דעם תרשיש איז געבויט אויף דעם וואס אידן האבן הנאה געהאט פון אחשורוש'ס סעודה, ווייל תרשיש איז דער אבן פון אכילה; די סעודת פורים איז דער תיקון."
+        },
+        "evidence": { "segs": [112, 117, 123, 129], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "Haman held a spark of holiness, as his descendants learned Torah in Bnei Brak, and holiness reaches outward only to bring such sparks back in.",
+          "yi": "המן האט געהאט א ניצוץ קדושה, ווי זיינע אייניקלעך האבן געלערנט תורה אין בני ברק, און די קדושה גייט נאר ארויס כדי אריינצוברענגען אזעלכע ניצוצות."
+        },
+        "evidence": { "segs": [159, 166, 173, 196, 202], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "According to Shmuel the Megillah does not make the hands tamei, which raises the question of the 24 holy books that parallel a kallah's 24 ornaments; on Purim, the Mashgiach explains, the Megillah is a holy book and completes the 24th ornament.",
+          "yi": "לויט שמואל איז די מגילה נישט מטמא את הידים, און דאס ברענגט א קשיא אויף די כ\"ד כתבי הקודש וואס זענען כנגד די כ\"ד תכשיטי כלה; פורים, ערקלערט דער משגיח, איז די מגילה יא א ספר הקודש און מאכט פארטיג דעם כ\"ד'סטן תכשיט."
+        },
+        "evidence": { "segs": [355, 369, 386, 453, 459], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "Haman took wood from the Kodesh Hakodashim and wanted Mordechai hanged in the morning in order to stop his krias shema of shacharis.",
+          "yi": "המן האט גענומען האלץ פונעם קודש הקדשים און געוואלט אויפהענגען מרדכי אינדערפרי, כדי צו מבטל זיין זיין קריאת שמע של שחרית."
+        },
+        "evidence": { "segs": [584, 592, 609, 620], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "The Tannaim who gathered in Bnei Brak repaired Haman's descendants there, so that they could say krias shema of the morning.",
+          "yi": "די תנאים וואס זענען זיך צוזאמגעקומען אין בני ברק האבן דארט מתקן געווען המן'ס אייניקלעך, אז זיי זאלן קענען זאגן קריאת שמע של שחרית."
+        },
+        "evidence": { "segs": [650, 656, 664, 670], "confidence": 0.7 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 0, "endSeg": 1,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "Singing.", "yi": "מ'זינגט." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 2, "endSeg": 3,
+      "title": { "en": "Interlude", "yi": "הפסקה" },
+      "summary": { "en": "An interlude before the Mashgiach speaks.", "yi": "א הפסקה פאר דער משגיח רעדט." },
+      "kind": "noise", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 4, "endSeg": 73,
+      "title": { "en": "Purim by lot, and Esther's extra day", "yi": "פורים דורך א גורל, און אסתר'ס נאך א טאג" },
+      "summary": {
+        "en": "The Mashgiach opens with the words of tzaddikim that the main seudah is toward evening, when Purim begins in Yerushalayim. Since all of Purim came through a lot, which is above understanding, he explains that Esther asked for another day in Shushan so that the lot would be hers and not Haman's.",
+        "yi": "דער משגיח עפנט מיט די ווערטער פון צדיקים אז דער עיקר סעודה איז פארנאכט, ווען אין ירושלים הייבט זיך אן פורים. וויבאלד גאנץ פורים איז געקומען דורך א גורל, וואס איז העכער פון דעת, ערקלערט ער אז אסתר האט געבעטן נאך א טאג אין שושן כדי דער גורל זאל זיין אירער און נישט המן'ס."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 74, "endSeg": 150,
+      "title": { "en": "Tarshish, the stone of eating", "yi": "תרשיש, דער אבן פון אכילה" },
+      "summary": {
+        "en": "He brings the Gemara on the angels' claims before Hashem and asks what tarshish adds. Through Rabbeinu Bachya and the month of Shvat he shows it is the stone of eating, tied to the Jews' enjoyment of Achashverosh's feast, and explains that the seudas Purim, last of Purim's four mitzvos, corresponds to the last letter of Hashem's Name.",
+        "yi": "ער ברענגט די גמרא וועגן די טענות פון די מלאכים פארן אויבערשטן, און פרעגט וואס איז די טענה פון תרשיש. דורך רבינו בחיי און דעם חודש שבט ווייזט ער אז דאס איז דער אבן פון אכילה, וואס איז שייך צו דעם וואס אידן האבן הנאה געהאט פון אחשורוש'ס סעודה, און ער ערקלערט אז די סעודת פורים, די לעצטע פון די פיר מצוות פון פורים, איז כנגד דעם לעצטן אות פונעם שם."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 151, "endSeg": 152,
+      "title": { "en": "Interlude", "yi": "הפסקה" },
+      "summary": { "en": "An interlude at the seudah.", "yi": "א הפסקה ביי דער סעודה." },
+      "kind": "noise", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 153, "endSeg": 218,
+      "title": { "en": "Haman's spark of holiness and Bnei Brak", "yi": "המן'ס ניצוץ קדושה און בני ברק" },
+      "summary": {
+        "en": "The Mashgiach speaks of saying 'baruch Mordechai' and 'arur Haman', and explains that Haman held a spark of holiness, since his descendants learned Torah in Bnei Brak. From a sefer on Parshas Beshalach he explains that the foot of the last letter reaches outward, so every holy thing gives a little life outward in order to retrieve sparks, as the end of Shabbos reaches into the weekdays.",
+        "yi": "דער משגיח רעדט וועגן זאגן \"ברוך מרדכי\" און \"ארור המן\", און ערקלערט אז המן האט געהאט א ניצוץ קדושה, ווייל זיינע אייניקלעך האבן געלערנט תורה אין בני ברק. פון א ספר אויף פרשת בשלח ערקלערט ער אז דער פוס פונעם לעצטן אות גייט ארויס לחוץ, און אזוי גיט יעדע זאך פון קדושה א ביסל חיות ארויס כדי ארויסצונעמען די ניצוצות, אזוי ווי דער סוף פון שבת גייט אריין אין די ימי החול."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 219, "endSeg": 327,
+      "title": { "en": "Pesach, and the Megillah's beginning and end", "yi": "פסח, און דער אנהייב און סוף פון דער מגילה" },
+      "summary": {
+        "en": "He explains that Pesach is the exception, when holiness may not reach outward. He contrasts the Megillah's beginning of woe with its good ending, ties it to the Torah learned in Bnei Brak, and brings the Gemara that Esther asked the sages to write her for the generations. On Shushan Purim, he says, the holiness of Yerushalayim spreads over the land.",
+        "yi": "ער ערקלערט אז פסח איז דער אויסנאם, ווען די קדושה טאר נישט ארויסגיין לחוץ. ער שטעלט אוועק דעם אנהייב פון דער מגילה מיט א \"וי\" קעגן איר סוף מיט א \"טוב\", פארבינדט דאס מיט דער תורה וואס מ'האט געלערנט אין בני ברק, און ברענגט די גמרא אז אסתר האט געבעטן די חכמים זיי זאלן זי שרייבן לדורות. שושן פורים, זאגט ער, שפרייט זיך אויס די קדושה פון ירושלים איבער דער גאנצער ארץ."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 328, "endSeg": 340,
+      "title": { "en": "Interlude", "yi": "הפסקה" },
+      "summary": { "en": "An interlude at the seudah, with l'chaim.", "yi": "א הפסקה ביי דער סעודה, מיט לחיים." },
+      "kind": "noise", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 341, "endSeg": 388,
+      "title": { "en": "Is the Megillah among the 24 holy books?", "yi": "איז די מגילה צווישן די כ\"ד ספרים?" },
+      "summary": {
+        "en": "The Mashgiach brings the dispute whether Megillas Esther makes the hands tamei, with Shmuel holding that it does not, and mentions Tosafos' question. He asks a stronger question: the 24 holy books parallel the 24 ornaments of a kallah, so according to Shmuel one ornament would be missing.",
+        "yi": "דער משגיח ברענגט די מחלוקת צי מגילת אסתר איז מטמא את הידים, וואו שמואל האלט אז נישט, און דערמאנט די קשיא פון תוספות. ער פרעגט א שטארקערע קשיא: די כ\"ד כתבי הקודש זענען כנגד די כ\"ד תכשיטי כלה, ממילא וואלט לויט שמואל געפעלט איין תכשיט."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 389, "endSeg": 444,
+      "title": { "en": "The ornaments above; the Megillah as a mitzvah object", "yi": "די תכשיטים למעלה; די מגילה א חפץ של מצוה" },
+      "summary": {
+        "en": "He answers that the ornaments always exist in Heaven and came down through the nevi'im, and that their completion awaits the days of Moshiach. He then brings the Bnei Yissaschar, who answers Tosafos that the Megillah is a mitzvah object like a shofar or a lulav, holy on Purim and not the whole year.",
+        "yi": "ער ענטפערט אז די תכשיטים זענען אלעמאל דא אין הימל און זענען אראפגעקומען דורך די נביאים, און זייער שלימות ווארט אויף ימות המשיח. דערנאך ברענגט ער דעם בני יששכר וואס ענטפערט די קשיא פון תוספות, אז די מגילה איז א חפץ של מצוה אזוי ווי א שופר אדער א לולב, הייליג פורים און נישט א גאנץ יאר."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 445, "endSeg": 499,
+      "title": { "en": "On Purim the kallah is fully adorned", "yi": "פורים איז די כלה אינגאנצן אויסגעפוצט" },
+      "summary": {
+        "en": "He explains the Bnei Yissaschar: on Purim the light of Moshiach is revealed, so on Purim the Megillah is one of the 24 holy books and the 24th ornament is completed. He brings the Kehillas Yaakov that 'kedas' alludes to the 24 ornaments, and reads Esther's request 'la'asos kedas hayom' in this light.",
+        "yi": "ער ערקלערט דעם בני יששכר: פורים ווערט נתגלה די ליכט פון משיח, ממילא איז פורים די מגילה איינע פון די כ\"ד כתבי הקודש און דער כ\"ד'סטער תכשיט ווערט פארטיג. ער ברענגט דעם קהלת יעקב אז \"כדת\" איז א רמז אויף די כ\"ד תכשיטים, און לערנט אזוי אסתר'ס בקשה \"לעשות כדת היום\"."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 500, "endSeg": 559,
+      "title": { "en": "The Megillah's ornament, even in exile", "yi": "דער תכשיט פון דער מגילה, אפילו אין גלות" },
+      "summary": {
+        "en": "He counts which of the ornaments corresponds to Megillas Esther and connects it to Mordechai and Esther against Haman. He brings the Gemara that even in exile Hashem does not reject the Jews, and speaks of the poor whose eyes look to the reading of the Megillah and of raising one's hands to Ribono shel Olam.",
+        "yi": "ער ציילט אויס וועלכער פון די תכשיטים איז כנגד מגילת אסתר, און פארבינדט עס מיט מרדכי און אסתר קעגן המן. ער ברענגט די גמרא אז אפילו אין גלות איז דער אויבערשטער נישט מואס אין אידן, און רעדט וועגן די עניים וועמענס אויגן קוקן אויף מקרא מגילה, און וועגן אויפהייבן די הענט צום רבונו של עולם."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 560, "endSeg": 560,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "Singing.", "yi": "מ'זינגט." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 561, "endSeg": 635,
+      "title": { "en": "Haman's tree and krias shema of the morning", "yi": "המן'ס עץ און קריאת שמע של שחרית" },
+      "summary": {
+        "en": "The Mashgiach explains that Amalek brings doubt into emunah. He brings the Pirkei d'Rabbi Eliezer that Haman took his tree from the Kodesh Hakodashim, the place of the point of emunah, and the Yalkut Shimoni that Haman wanted Mordechai hanged in the morning, in order to stop his krias shema of shacharis.",
+        "yi": "דער משגיח ערקלערט אז עמלק ברענגט אריין ספיקות אין אמונה. ער ברענגט דעם פרקי דרבי אליעזר אז המן האט גענומען זיין עץ פונעם קודש הקדשים, דער ארט פון דער נקודה פון אמונה, און דעם ילקוט שמעוני אז המן האט געוואלט אויפהענגען מרדכי אינדערפרי, כדי צו מבטל זיין זיין קריאת שמע של שחרית."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 636, "endSeg": 683,
+      "title": { "en": "The Tannaim in Bnei Brak", "yi": "די תנאים אין בני ברק" },
+      "summary": {
+        "en": "He explains that Haman's descendants in Bnei Brak could keep every mitzvah but could not complete krias shema of the morning, because the klipah of Amalek was not fully destroyed. The Tannaim came, sat all night and repaired them, until it was time for krias shema of shacharis; Bnei Brak, he notes, has the letters of 'boker'.",
+        "yi": "ער ערקלערט אז המן'ס אייניקלעך אין בני ברק האבן געקענט מקיים זיין אלע מצוות, נאר נישט פארענדיגן קריאת שמע אינדערפרי, ווייל די קליפה פון עמלק איז נישט אינגאנצן בטל געווארן. די תנאים זענען געקומען, געזעסן די גאנצע נאכט און זיי מתקן געווען, ביז עס איז געקומען די צייט פון קריאת שמע של שחרית; בני ברק, מערקט ער אן, איז די אותיות פון \"בוקר\"."
+      },
+      "kind": "main", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5746-purim-seudah", "startSeg": 684, "endSeg": 717,
+      "title": { "en": "Niggun, then Haman's silver", "yi": "ניגון, און המן'ס כסף" },
+      "summary": {
+        "en": "After singing, the Mashgiach turns to 'parshas hakesef' in the Megillah and to Tosafos, who says Haman's ten thousand kikar of silver were countered by the Jews' half-shekel. He asks about the hundred kikar given in the midbar, and the recording ends.",
+        "yi": "נאכן זינגען גייט דער משגיח צו \"פרשת הכסף\" אין דער מגילה און צו תוספות, וואס זאגט אז המן'ס צען טויזנט ככר כסף זענען געווען קעגן דעם מחצית השקל פון אידן. ער פרעגט א קשיא פון די הונדערט ככר וואס מ'האט געגעבן אין מדבר, און די אויפנאמע ברעכט זיך איבער."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    {
+      "heardAs": "גורל לפני הומן", "work": "Esther", "ref": "Esther 3:7", "sefariaRef": "Esther 3:7",
+      "resolution": "resolved", "mention": "alluded", "evidence": { "segs": [16, 17], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "ינסע און גמר מרחל, להיעדן משה בששון, לעשות כדות היום", "work": "Esther", "ref": "Esther 9:13", "sefariaRef": "Esther 9:13",
+      "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [46, 47, 49], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "וואס דער חתם סופר זאגט", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [30], "confidence": 0.6 }
+    },
+    {
+      "heardAs": "ויקורא וועלב קארשאנא שתר ... תרש''ש, האבן די מלאכים גע'טענה'ט", "work": "Gemara Megillah", "ref": "Megillah 12b", "sefariaRef": "Megillah 12b",
+      "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [74, 76, 78, 115, 116], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רבינו בחיים ... פאר די עלת גלות פון די אבונים", "work": "Rabbeinu Bachya", "ref": "Rabbeinu Bachya on the stones of the choshen (Shemos 28)", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [88, 89, 91, 99], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "סופר יצירה ... חודש שבט", "work": "Sefer Yetzirah", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [101, 104, 105], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אדלה ידה; שיקר עד בלוט", "work": "Gemara Megillah", "ref": "Megillah 7b", "sefariaRef": "Megillah 7b",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [13, 153, 155], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "מבני בן נפשל האמען, און לאמיר דערציירה בבני ברק", "work": "Gemara Gittin", "ref": "Gittin 57b", "sefariaRef": "Gittin 57b",
+      "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [166, 169, 638, 639], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "רגלי עמדה במשה במקלים, א ורח השם", "work": "Tehillim", "ref": "Tehillim 26:12", "sefariaRef": "Psalms 26:12",
+      "resolution": "resolved", "mention": "quoted", "evidence": { "segs": [175, 245, 246], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "אבי נחל פרשת בשלח; אהל ונחל", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [176, 190, 191, 253], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אסתר האט געזאגט צו די חכמים, כתבנו לדורות ... אפיק רבי יוחנן ואוויה רבי יונתן", "work": "Gemara Megillah", "ref": "Megillah 7a", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [297, 300, 301, 302, 303], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שמואל ... אסתר איז נישט מטעמי'ת אידיים ... נאמרא'ל ליקראי", "work": "Gemara Megillah", "ref": "Megillah 7a", "sefariaRef": "Megillah 7a",
+      "resolution": "resolved", "mention": "paraphrased", "evidence": { "segs": [344, 347, 354, 355, 357], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "פרעגט עתות א ... קושא", "work": "Tosafos", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [358, 359, 427], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כף ד' קשתן וואס עס שטעט אין ישעיה", "work": "Yeshayahu", "ref": "Yeshayahu 3:18-24", "sefariaRef": "Isaiah 3:18-24",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [372, 381, 506], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "דער גמרא זאגט אז ... אזוי ווי א כלה דארף האבן כ' ד' כשאתין", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [369, 381], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "רשע זאגט אין ברשות ... ויווע; זאגט רשע אין פרשת בראשית ויבאביאת", "work": "Rashi", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [371, 505, 506], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "כאטש דער רמב״ם פסק'נט נישט אזוי", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [406], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "די בני יששכר ענטפערט תספות קשה", "work": "Bnei Yissaschar", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [427, 430, 444, 446], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין דעם קהילת יעקב שטעט אז כדות מאכט כף ד' תחשית'ן", "work": "Kehillas Yaakov", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [468], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "לא מעשתם לא גאולתם לחלותם ... דיישט אין די גמרא, לא מעשטים במהומן", "work": "Gemara Megillah", "ref": "Megillah 11a", "sefariaRef": "Megillah 11a",
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [523, 524, 525], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "אזוי זאגט די יארות דבש", "work": "Yaaros Devash", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [530, 532], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "עיניים של ענים צולים למקרא מגלה", "work": "Gemara Megillah", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [539, 540], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "חיים גמליה מתקן געוועזן די ברכה ... קעגן די מינים", "work": "Gemara Berachos", "ref": "Berachos 28b", "sefariaRef": "Berakhot 28b",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [568, 569, 570], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "שטעט אין ספרים הקדושים אז המלוק איז בגימטריא סופק", "work": null, "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [573, 575], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "היש השם בקובענו ... ויבאי יבאי המלוק", "work": "Shemos", "ref": "Shemos 17:7-8", "sefariaRef": "Exodus 17:7-8",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [575], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "אין פרקוד רבי יואליעזר", "work": "Pirkei d'Rabbi Eliezer", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [581, 582, 584, 589], "confidence": 0.8 }
+    },
+    {
+      "heardAs": "יום עקי פרום אזוי ווי שטעט פון תקנת זוהן", "work": "Tikkunei Zohar", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "alluded", "evidence": { "segs": [595, 596], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין ילכות שמעוני שטעט", "work": "Yalkut Shimoni", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [597, 598, 599, 600], "confidence": 0.75 }
+    },
+    {
+      "heardAs": "ובבוקר ... ומאל המלך ויסלע את המן עולה", "work": "Esther", "ref": "Esther 5:14", "sefariaRef": "Esther 5:14",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [613, 614, 615, 618], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די הייליגע תנאים ... ר״ אליעזע ... ר״ ישוע ... ר״י אלעזר ... בני ברק", "work": "Haggadah shel Pesach", "ref": "Haggadah shel Pesach, Maggid", "sefariaRef": null,
+      "resolution": "inferred", "mention": "paraphrased", "evidence": { "segs": [656, 657, 658, 670], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "בייחלש איז די מטרה בני ברק", "work": "Shemos", "ref": "Shemos 17:13", "sefariaRef": "Exodus 17:13",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [676, 677, 679, 680], "confidence": 0.65 }
+    },
+    {
+      "heardAs": "רשע'ן דער מגילה זאגט פרשת הכסף", "work": "Esther", "ref": "Esther 4:7", "sefariaRef": "Esther 4:7",
+      "resolution": "inferred", "mention": "quoted", "evidence": { "segs": [692, 694, 701, 702], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "די תוספות זאגט ... עשרת אלפים כיכל כסף ... מחצות השקל", "work": "Tosafos", "ref": null, "sefariaRef": null,
+      "resolution": "unresolved", "mention": "paraphrased", "evidence": { "segs": [708, 710, 712], "confidence": 0.7 }
+    },
+    {
+      "heardAs": "אין מדבר האבן אידן געגעבן א הונדערט כיכל, מאה כיכל", "work": "Shemos", "ref": "Shemos 38:27", "sefariaRef": "Exodus 38:27",
+      "resolution": "inferred", "mention": "alluded", "evidence": { "segs": [714, 715, 717], "confidence": 0.65 }
+    }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The angels' claim was made with tarshish, the stone of eating that belongs to Asher and the month of Shvat, because the decree came from the Jews' enjoyment of Achashverosh's feast; eating can bring about great things or the opposite.",
+        "yi": "די מלאכים האבן גע'טענה'ט מיט דעם תרשיש, דער אבן פון אכילה וואס געהערט צו אשר און צום חודש שבט, ווייל די גזירה איז געקומען דורך דעם וואס אידן האבן הנאה געהאט פון אחשורוש'ס סעודה; מיט עסן קען מען אויפטון גרויסע זאכן, אדער פארקערט."
+      },
+      "evidence": { "segs": [91, 105, 107, 110, 117, 123], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Purim's four mitzvos correspond to the four letters of Hashem's Name, and the seudah, which comes last after the Megillah, matanos la'evyonim and mishloach manos, is the final hei.",
+        "yi": "די פיר מצוות פון פורים זענען כנגד די פיר אותיות פונעם שם, און די סעודה, וואס קומט צולעצט נאך מגילה, מתנות לאביונים און משלוח מנות, איז די ה' אחרונה."
+      },
+      "evidence": { "segs": [133, 134, 136, 138, 146], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Like the foot of the last letter that reaches outward, holiness goes out into the sitra achra only for a moment, to retrieve sparks and bring them back in; Pesach is the exception, when the Jews had to hold fast to holiness.",
+        "yi": "אזוי ווי דער פוס פונעם לעצטן אות וואס גייט ארויס לחוץ, גייט די קדושה ארויס אין די סטרא אחרא נאר אויף א רגע, כדי ארויסצונעמען די ניצוצות און זיי צוריק אריינצוברענגען; פסח איז דער אויסנאם, ווען אידן האבן זיך געמוזט האלטן ביי דער קדושה."
+      },
+      "evidence": { "segs": [187, 188, 193, 201, 202, 234], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Esther's request 'la'asos kedas hayom' alludes to the kallah's 24 ornaments: on Purim the Megillah is counted among the 24 holy books and completes the last ornament, which answers how Shmuel can hold it does not make the hands tamei.",
+        "yi": "אסתר'ס בקשה \"לעשות כדת היום\" איז א רמז אויף די כ\"ד תכשיטי כלה: פורים ווערט די מגילה גערעכנט צווישן די כ\"ד כתבי הקודש און מאכט פארטיג דעם לעצטן תכשיט, און דערמיט איז מתורץ ווי אזוי שמואל קען האלטן אז זי איז נישט מטמא את הידים."
+      },
+      "evidence": { "segs": [453, 455, 459, 468, 497, 499], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Haman took his tree from the Kodesh Hakodashim, which is keser and the point of emunah in every Jew, and chose the morning for the hanging, because he knew that once Mordechai said krias shema of shacharis he could do him nothing.",
+        "yi": "המן האט גענומען זיין עץ פונעם קודש הקדשים, וואס איז בחינת כתר און די נקודה פון אמונה וואס יעדער איד האט, און האט אויסגעקליבן דעם בוקר, ווייל ער האט געוואוסט אז ווען מרדכי זאגט קריאת שמע של שחרית קען ער אים גארנישט טון."
+      },
+      "evidence": { "segs": [591, 592, 593, 609, 620], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "The name Bnei Brak carries the letters of 'boker', morning: the place of Haman's descendants, who could not say the morning Shema, was repaired by the Tannaim until the time of krias shema of shacharis came.",
+        "yi": "דער נאמען בני ברק האט די אותיות פון \"בוקר\": דער ארט פון המן'ס אייניקלעך, וואס האבן נישט געקענט זאגן קריאת שמע אינדערפרי, איז מתוקן געווארן דורך די תנאים ביז עס איז געקומען די צייט פון קריאת שמע של שחרית."
+      },
+      "evidence": { "segs": [660, 661, 663, 670], "confidence": 0.65 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Tannaim in Bnei Brak", "yi": "די תנאים אין בני ברק" },
+      "retelling": {
+        "en": "The Mashgiach relates that the Jews of Bnei Brak, descendants of Haman, could keep every mitzvah but could not complete krias shema of the morning. The holy Tannaim came to Bnei Brak and sat there all that night. They repaired the place and cleansed the souls of Haman's descendants of every remaining spark of him, and then the time of krias shema of shacharis arrived.",
+        "yi": "דער משגיח דערציילט אז די אידן אין בני ברק, אייניקלעך פון המן, האבן געקענט מקיים זיין אלע מצוות, נאר זיי האבן נישט געקענט פארענדיגן קריאת שמע אינדערפרי. די הייליגע תנאים זענען געקומען קיין בני ברק און דארט געזעסן די גאנצע נאכט. זיי האבן מתקן געווען דעם ארט און אויסגעוואשן די נשמות פון המן'ס אייניקלעך פון יעדן ניצוץ וואס איז נאך געבליבן פון אים, און דערנאך איז געקומען די צייט פון קריאת שמע של שחרית."
+      },
+      "people": ["Rabbi Eliezer", "Rabbi Yehoshua", "Rabbi Elazar ben Azaryah"],
+      "evidence": { "segs": [648, 650, 656, 663, 664, 670], "confidence": 0.7 }
+    },
+    {
+      "title": { "en": "Haman's tree from the Kodesh Hakodashim", "yi": "המן'ס עץ פונעם קודש הקדשים" },
+      "retelling": {
+        "en": "Following the Pirkei d'Rabbi Eliezer, the Mashgiach relates that Haman brought a tree fifty amos tall from the Kodesh Hakodashim of the destroyed Beis Hamikdash, and from it he made the gallows. He planned, by his own reckoning, to hang Mordechai on it in the morning.",
+        "yi": "לויט דעם פרקי דרבי אליעזר דערציילט דער משגיח אז המן האט געבראכט אן עץ גבוה חמשים אמה פונעם קודש הקדשים פונעם חרוב'ן בית המקדש, און דערפון האט ער געמאכט דעם עץ. ער האט געטראכט לויט זיין שכל אויפצוהענגען מרדכי דערויף אינדערפרי."
+      },
+      "people": ["Haman", "Mordechai"],
+      "evidence": { "segs": [582, 584, 585, 590, 634], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Why did Esther ask for another day in Shushan?", "yi": "פארוואס האט אסתר געבעטן נאך א טאג אין שושן?" },
+      "answer": { "en": "So that the lot of Purim would be determined by Esther and not by Haman.", "yi": "כדי דער גורל פון פורים זאל זיין דורך אסתר און נישט דורך המן." },
+      "questionSegs": [49, 50], "answerSegs": [61, 63], "confidence": 0.75
+    },
+    {
+      "question": { "en": "What claim did the angels have with tarshish, when the other stones of the choshen are so fine?", "yi": "וואס פאר א טענה האבן די מלאכים געהאט מיט דעם תרשיש, ווען די אנדערע אבנים פונעם חושן זענען אזוי שיין?" },
+      "answer": { "en": "Tarshish is the stone of eating, and the decree came from the Jews' enjoyment of Achashverosh's feast.", "yi": "תרשיש איז דער אבן פון אכילה, און די גזירה איז געקומען דורך דעם וואס אידן האבן הנאה געהאט פון אחשורוש'ס סעודה." },
+      "questionSegs": [81, 86, 87], "answerSegs": [117, 123, 126], "confidence": 0.75
+    },
+    {
+      "question": { "en": "According to Shmuel, who holds the Megillah does not make the hands tamei, how are there 24 holy books to match the kallah's 24 ornaments?", "yi": "לויט שמואל, וואס האלט אז די מגילה איז נישט מטמא את הידים, ווי אזוי זענען דא כ\"ד כתבי הקודש כנגד די כ\"ד תכשיטי כלה?" },
+      "answer": { "en": "The ornaments always exist in Heaven and their completion belongs to the days of Moshiach; and on Purim, when the light of Moshiach is revealed, the Megillah is indeed one of the 24.", "yi": "די תכשיטים זענען אלעמאל דא אין הימל און זייער שלימות געהערט צו ימות המשיח; און פורים, ווען די ליכט פון משיח ווערט נתגלה, איז די מגילה טאקע איינע פון די כ\"ד." },
+      "questionSegs": [384, 385, 386, 388], "answerSegs": [397, 403, 448, 453], "confidence": 0.7
+    },
+    {
+      "question": { "en": "Why did Haman take his tree specifically from the Kodesh Hakodashim?", "yi": "פארוואס האט המן גענומען זיין עץ דווקא פונעם קודש הקדשים?" },
+      "answer": { "en": "Because the Kodesh Hakodashim is keser, the point of emunah in every Jew, and he wanted to stand against Mordechai, who embodied that holiness.", "yi": "ווייל דער קודש הקדשים איז בחינת כתר, די נקודה פון אמונה וואס יעדער איד האט, און ער האט זיך געוואלט קעגנשטעלן קעגן מרדכי, וואס איז געווען די בחינה פון קודש הקדשים." },
+      "questionSegs": [591], "answerSegs": [592, 593, 594], "confidence": 0.75
+    },
+    {
+      "question": { "en": "Why could the Jews of Bnei Brak not say krias shema of the morning?", "yi": "פארוואס האבן די אידן אין בני ברק נישט געקענט זאגן קריאת שמע של שחרית?" },
+      "answer": { "en": "They were descendants of Haman, who set himself against krias shema of shacharis, and the klipah of Amalek had not been fully destroyed since Yehoshua's war.", "yi": "זיי זענען געווען אייניקלעך פון המן, וואס האט זיך געשטעלט קעגן קריאת שמע של שחרית, און די קליפה פון עמלק איז נישט אינגאנצן בטל געווארן זינט יהושע'ס מלחמה." },
+      "questionSegs": [671, 672, 673], "answerSegs": [655, 674, 676, 681], "confidence": 0.7
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Mashgiach says one must have a good heart toward Jews.", "yi": "דער משגיח זאגט אז מ'דארף האבן א גוט הארץ אויף אידן." },
+      "evidence": { "segs": [219], "confidence": 0.75 }
+    }
+  ],
+  "candidateTopics": [
+    "purim seudah",
+    "the lot of Purim",
+    "shushan purim and Yerushalayim",
+    "sparks of holiness in Haman",
+    "Bnei Brak",
+    "24 ornaments of the kallah",
+    "Megillas Esther and the 24 holy books",
+    "krias shema of shacharis",
+    "Amalek and doubt in emunah",
+    "eating as avodah"
+  ],
+  "concepts": [
+    { "he": "גורל", "heardAs": ["גורל", "אוראל"] },
+    { "he": "עד דלא ידע", "heardAs": ["אדלה ידה", "עד בלוט"] },
+    { "he": "תרשיש", "heardAs": ["תרש''ש", "תש'", "תשש", "התרשש"] },
+    { "he": "סעודת פורים", "heardAs": ["סעוד הספרים", "סעודת פורים"] },
+    { "he": "ה' אחרונה", "heardAs": ["ה' בשר'ע", "ה' בשר'א"] },
+    { "he": "ניצוץ קדושה", "heardAs": ["נציץ קודש", "נציץ קדש", "נציצת הקדושות"] },
+    { "he": "סטרא אחרא", "heardAs": ["סדכא אחרא", "סטחי אחרא", "ספרי אחרא"] },
+    { "he": "מטמא את הידים", "heardAs": ["מטעמי יסודיים", "מטעמי'ת אידיים", "מטעמי את הידים"] },
+    { "he": "כתבי הקודש", "heardAs": ["כתבי הקודש", "כספי הקדש"] },
+    { "he": "כ\"ד תכשיטי כלה", "heardAs": ["כף ד' קשתן", "כ' ד' תחשית'ן", "כף ד' תכשיטה", "כבוד תחשיטים"] },
+    { "he": "חפצא של מצוה", "heardAs": ["חפץ של מצוה"] },
+    { "he": "כדת היום", "heardAs": ["כדות היום", "כדות"] },
+    { "he": "קודש הקדשים", "heardAs": ["קידוש הגדשים", "קידוש הקדושים", "קדוש הקדושים"] },
+    { "he": "קריאת שמע של שחרית", "heardAs": ["קשימה של שחרית", "קרישמע של שחרית", "קרית משה שחרית"] },
+    { "he": "יום הכפורים", "heardAs": ["יום עקי פרום"] },
+    { "he": "עמלק", "heardAs": ["המלוק", "מלוק", "עמל"] },
+    { "he": "ספק", "heardAs": ["סופק", "ספקת"] },
+    { "he": "בני ברק", "heardAs": ["בני ברק", "בביני ברק"] },
+    { "he": "שושן פורים", "heardAs": ["שושם פורים"] }
+  ],
+  "people": [
+    { "name": "Esther", "heardAs": ["אסתר", "ר' אסתר"] },
+    { "name": "Mordechai", "heardAs": ["מאדכי", "מרדכי"] },
+    { "name": "Haman", "heardAs": ["הומן", "האמען", "הורמאן", "המן"] },
+    { "name": "Achashverosh", "heardAs": ["א חשבורש", "החשבור'ש", "עשוורו"] },
+    { "name": "Rabbeinu Bachya", "heardAs": ["רבינו בחיים", "רבי'נע בחי'"] },
+    { "name": "the Chasam Sofer", "heardAs": ["חתם סופר"] },
+    { "name": "Shmuel", "heardAs": ["שמואל"] },
+    { "name": "Rav", "heardAs": ["רב"] },
+    { "name": "Rabbi Chanina", "heardAs": ["רבי חנונה"] },
+    { "name": "Rabbi Yochanan", "heardAs": ["רבי יוחנן"] },
+    { "name": "Rabbi Yonasan", "heardAs": ["רבי יונתן"] },
+    { "name": "Rav Chaviva", "heardAs": ["רב חביבא"] },
+    { "name": "the Rambam", "heardAs": ["רמב״ם"] },
+    { "name": "Rashi", "heardAs": ["רשע", "רש\"י"] },
+    { "name": "David Hamelech", "heardAs": ["דוד המלך"] },
+    { "name": "Rabban Gamliel", "heardAs": ["חיים גמליה"] },
+    { "name": "Yehoshua", "heardAs": ["יהושע"] },
+    { "name": "Rabbi Eliezer", "heardAs": ["ר״ אליעזע"] },
+    { "name": "Rabbi Yehoshua", "heardAs": ["ר״ ישוע"] },
+    { "name": "Rabbi Elazar ben Azaryah", "heardAs": ["ר״י אלעזר"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout, with Hebrew quotations and gematrios heavily garbled. Segments 0-3 (0:00-12:29), 151-152 (25:59-34:01), 328-340 (45:15-56:05), 560 (73:10-78:58) and 684-690 (87:33-92:23) are singing, silence or table noise with little or no recoverable speech. The sefer on Parshas Beshalach (heard as 'אבי נחל'/'אהל ונחל'), the gematria discussions in segs 500-559, and the Chasam Sofer reference in seg 30 could not be recovered with confidence. The catalog title is a filename guess."
+}

@@ -298,7 +298,7 @@ interface Draft {
   years: number[];
   files: string[]; // audio paths in playback order (catalog-declared)
   fileless: boolean; // catalog lists no file at all
-  forcedOut: string | null; // out-of-scope reason fixed at draft time (purim, gramen)
+  forcedOut: string | null; // out-of-scope reason fixed at draft time (gramen)
   sortKey: (string | number)[]; // for ordering inside a series
   seriesHint: string | null; // folder-level series name (current/*)
   seriesPerek?: number | null; // numeric perek for Tanya ordering
@@ -722,7 +722,7 @@ function purimRows(sec: CatalogSection, secIdx: number, lang: Lang): void {
       years: uniqSorted(rowYears(r0, `uncatalogued purim-seudos ${y}`)),
       files: rows.map((r) => String(r.file)),
       fileless: false,
-      forcedOut: "Purim seudah (out of scope)",
+      forcedOut: null,
       sortKey: [secIdx, Number(y) || 0],
       seriesHint: null,
     });
@@ -864,7 +864,15 @@ async function main(): Promise<void> {
   // 1. bucket
   // transcripts/_manifest/ holds the re-transcription job's bookkeeping, not transcripts.
   const objects = (await listBucket(s3, bucket)).filter((o) => !o.key.startsWith("transcripts/_manifest/"));
-  const audioObjs = objects.filter((o) => !o.key.startsWith("transcripts/") && AUDIO_RE.test(o.key));
+  // Derived audio is not catalogued: `fixed/` holds processed copies (fixed/sidon/<key>, the AI-improved
+  // versions the sites play), and an .mp3 beside a .WMA is the sites' playback transcode of it
+  // (site-policy/audio-transcoded.json). The catalogued original stays the source of truth.
+  const rawAudio = objects.filter((o) => !o.key.startsWith("transcripts/") && AUDIO_RE.test(o.key));
+  const rawKeys = new Set(rawAudio.map((o) => o.key));
+  const isTranscode = (k: string) => /\.mp3$/i.test(k) && [".WMA", ".wma"].some((x) => rawKeys.has(k.replace(/\.mp3$/i, x)));
+  const derivedAudio = rawAudio.filter((o) => o.key.startsWith("fixed/") || isTranscode(o.key));
+  const audioObjs = rawAudio.filter((o) => !derivedAudio.includes(o));
+  if (derivedAudio.length) warn("derived-audio", `ignored ${derivedAudio.length} derived audio objects (fixed/ copies and .WMA playback transcodes)`);
   const otherObjs = objects.filter((o) => !o.key.startsWith("transcripts/") && !AUDIO_RE.test(o.key));
   if (otherObjs.length) warn("non-audio-object", `ignored ${otherObjs.length} non-audio objects in the bucket (${[...new Set(otherObjs.map((o) => o.key.replace(/^.*\./, ".")))].join(", ")} sidecar files)`);
   const sizeOf = new Map(audioObjs.map((o) => [o.key, o.size]));

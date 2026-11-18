@@ -1,0 +1,590 @@
+{
+  "shiurId": "yi-purim-seudos-5764",
+  "model": "opus",
+  "variant": "raw",
+  "promptVersion": "p4-v3",
+  "summary": {
+    "oneLiner": {
+      "en": "At the Purim seudah the Mashgiach teaches that Purim reaches down to the weakest Jews and the faded letters of the Torah, repairing souls, renewing emunah and the Oral Torah, and revealing the guarded wine and the circular light of Moshiach.",
+      "yi": "ביי דער פורים סעודה לערנט דער משגיח אז פורים גייט אראפ ביז די שוואכסטע אידן און ביז די פארווישטע אותיות פון דער תורה, עס איז מתקן נשמות, מחדש די אמונה און די תורה שבעל פה, און עס איז מגלה דעם יין המשומר און די עגולים'דיגע ליכטיגקייט פון משיח."
+    },
+    "abstract": {
+      "en": "The Mashgiach opens with Jerusalem and Shushan Purim as the root of the Oral Torah that the Jews accepted on Purim, and explains that Purim was made for the weakest, 'weekday' souls. He links the Tannaim gathered in Bnei Brak to Haman's descendants and their difficulty with Krias Shema, tells of the Megillah read on the Seder night, and traces Vashti's spark of Shabbos to the cow of Rabbi Chanina ben Torasa. He describes Purim as a second match with Hashem and a battle over emunah, the faded last letters of the Torah as the weak souls, and Adar as a circle in which the end touches the beginning. In the second part he explains Moshe's last word 'tidroch' as Haman's downfall, why the Jews went to Achashverosh's feast, namely to rescue the Beis HaMikdash's wine, and the guarded wine that equals Esther.",
+      "yi": "דער משגיח עפנט מיט ירושלים און שושן פורים, דער שורש פון דער תורה שבעל פה וואס אידן האבן מקבל געווען פורים, און ער ערקלערט אז פורים איז געמאכט געווארן פאר די שוואכסטע, וואכנדיגע נשמות. ער פארבינדט די תנאים וואס זענען געזעסן אין בני ברק מיט די קינדער פון המן וואס האבן געהאט א שוועריגקייט מיט קריאת שמע, ער דערציילט א מעשה פון א איד וואס האט געליינט די מגילה פסח ביינאכט, און ער ווייזט אז ושתי'ס ניצוץ פון שבת איז מתוקן געווארן דורך דער קו פון רבי חנינא בן תורתא. דערנאך רעדט ער פון פורים אלס א זיווג שני מיטן רבונו של עולם און א מלחמה אויף אמונה, פון די פארווישטע לעצטע אותיות פון דער תורה וואס זענען די שוואכע נשמות, און פון אדר וואס איז ווי א קרייז וואו דער סוף רירט אן דעם אנהייב. אינעם צווייטן חלק ערקלערט ער אז משה רבינו'ס לעצטע ווארט \"תדרוך\" איז געווען המן'ס מפלה, פארוואס אידן זענען געגאנגען צו אחשורוש'ס סעודה, כדי מציל צו זיין דעם וויין פונעם בית המקדש, און וועגן דעם יין המשומר וואס איז בגימטריא אסתר."
+    },
+    "keyPoints": [
+      {
+        "text": {
+          "en": "Purim was made for the weakest, 'weekday' souls; this is why it was not accepted as a yom tov on which work is forbidden and why the Megillah is read on weekdays.",
+          "yi": "פורים איז געמאכט געווארן פאר די שוואכסטע, וואכנדיגע נשמות; דערפאר האט מען עס נישט מקבל געווען אלס א יום טוב וואו מ'טאר נישט טון קיין מלאכה, און דערפאר ליינט מען די מגילה אין דער וואכן."
+        },
+        "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [109, 114, 116, 124, 129], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "On Purim the Jews accepted the Oral Torah anew, and Jerusalem, celebrated on Shushan Purim, is the root of the Oral Torah.",
+          "yi": "פורים האבן אידן ווידער מקבל געווען די תורה שבעל פה, און ירושלים, וואס פייערט שושן פורים, איז דער שורש פון דער תורה שבעל פה."
+        },
+        "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [12, 13, 22, 68, 70], "confidence": 0.7 }
+      },
+      {
+        "text": {
+          "en": "The war against Amalek is a war over emunah, and Purim calls for a cheshbon hanefesh about one's emunah.",
+          "yi": "די מלחמה קעגן עמלק איז א מלחמה אויף אמונה, און פורים דארף א איד מאכן א חשבון הנפש ווי ער האלט מיט זיין אמונה."
+        },
+        "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [655, 658, 663, 665, 673], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "Purim throws a rope to every Jew, even the one who no longer knows the difference between Haman and Mordechai.",
+          "yi": "פורים ווארפט א שטריק צו יעדן איד, אפילו צו דעם וואס ווייסט שוין נישט דעם חילוק צווישן המן און מרדכי."
+        },
+        "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [700, 701, 703, 720], "confidence": 0.85 }
+      },
+      {
+        "text": {
+          "en": "Adar is like a circle in which the end touches the beginning: Moshe died and was born in Adar, and Purim brings down the light of the days of Moshiach.",
+          "yi": "אדר איז ווי א קרייז וואו דער סוף רירט אן דעם אנהייב: משה רבינו איז נפטר געווארן און געבוירן געווארן אין אדר, און פורים ברענגט אראפ די ליכטיגקייט פון די ימות המשיח."
+        },
+        "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [877, 895, 897, 898], "confidence": 0.75 }
+      },
+      {
+        "text": {
+          "en": "A person's last word expresses his essence, and Moshe's last word in the Torah, 'tidroch', brought about Haman's downfall.",
+          "yi": "דאס לעצטע ווארט פון א מענטש דריקט אויס זיין גאנצן מהות, און משה רבינו'ס לעצטע ווארט אין דער תורה, \"תדרוך\", איז געווארן המן'ס מפלה."
+        },
+        "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [142, 145, 188, 212], "confidence": 0.8 }
+      },
+      {
+        "text": {
+          "en": "The Jews went to Achashverosh's feast to rescue the Beis HaMikdash's vessels and its wine for the nesachim and to drink their Seder cups from it, not to celebrate.",
+          "yi": "אידן זענען געגאנגען צו אחשורוש'ס סעודה כדי מציל צו זיין די כלים פונעם בית המקדש און דעם וויין וואס איז געווען צוגעגרייט פאר די נסכים, און צו טרינקען דערפון די כוסות פונעם סדר, נישט כדי זיך צו פרייען."
+        },
+        "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [447, 449, 453, 479, 482], "confidence": 0.75 }
+      }
+    ]
+  },
+  "sections": [
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 0, "endSeg": 75,
+      "title": { "en": "Shushan Purim, Jerusalem and the Oral Torah", "yi": "שושן פורים, ירושלים און די תורה שבעל פה" },
+      "summary": {
+        "en": "The Mashgiach explains that on Purim the Jews accepted the Oral Torah anew, and that Jerusalem, the walled city of Shushan Purim, is its root. He shows that the joy of Jerusalem, not stated outright in the Megillah, is derived through a gezeira shava and is tied to Yehoshua, who first fought Amalek.",
+        "yi": "דער משגיח ערקלערט אז פורים האבן אידן ווידער מקבל געווען די תורה שבעל פה, און אז ירושלים, די מוקפת חומה פון שושן פורים, איז איר שורש. ער ווייזט אן אז די שמחה פון ירושלים, וואס שטייט נישט בפירוש אין דער מגילה, ווערט ארויסגעלערנט פון א גזירה שוה, און איז פארבונדן מיט יהושע וואס האט דער ערשטער מלחמה געהאלטן מיט עמלק."
+      },
+      "kind": "intro", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 76, "endSeg": 77,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "Singing.", "yi": "מ'זינגט." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 78, "endSeg": 168,
+      "title": { "en": "Purim for the weekday souls", "yi": "פורים פאר די וואכנדיגע נשמות" },
+      "summary": {
+        "en": "The Mashgiach notes that the Jews did not accept Purim as a yom tov on which work is forbidden, and explains that there are Shabbos souls, Yom Tov souls and Chol HaMoed souls. Purim was made for the weakest Jews, the weekday souls: the Megillah is read on weekdays, the Jews are called Yehudim, and it parallels the twelve weekday blessings of Shemoneh Esrei that correspond to the Shevatim.",
+        "yi": "דער משגיח ברענגט אז אידן האבן נישט מקבל געווען פורים אלס א יום טוב וואו מ'טאר נישט טון קיין מלאכה, און ער ערקלערט אז עס זענען דא נשמות פון שבת, פון יום טוב און פון חול המועד. פורים איז געמאכט געווארן פאר די שוואכסטע אידן, די וואכנדיגע נשמות: די מגילה ליינט מען אין דער וואכן, אידן ווערן דארט אנגערופן יהודים, און עס איז ענליך צו די צוועלף וואכנדיגע ברכות פון שמונה עשרה וואס זענען כנגד די שבטים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 169, "endSeg": 252,
+      "title": { "en": "Haman's descendants in Bnei Brak and Krias Shema", "yi": "המן'ס קינדער אין בני ברק און קריאת שמע" },
+      "summary": {
+        "en": "Starting from the Haggadah's Tannaim in Bnei Brak who sat until the time of the morning Shema, the Mashgiach connects Jews who struggle with Krias Shema to the Gemara that Haman's descendants learned Torah in Bnei Brak. Zeresh, who wanted Mordechai hanged in the morning to stop Krias Shema, fled to Bnei Brak; her descendants who converted carried a blemish in Krias Shema, and the Tannaim came there to repair it.",
+        "yi": "פון די תנאים אין דער הגדה וואס זענען געזעסן אין בני ברק ביז זמן קריאת שמע של שחרית, פארבינדט דער משגיח אידן וואס האבן א שוועריגקייט מיט קריאת שמע מיט דער גמרא אז פון המן'ס אייניקלעך האבן געלערנט תורה אין בני ברק. זרש, וואס האט געוואלט מ'זאל הענגען מרדכי אינדערפרי כדי ער זאל נישט קענען זאגן קריאת שמע, איז אנטלאפן קיין בני ברק; אירע קינדער וואס האבן זיך מגייר געווען האבן געהאט א פגם אין קריאת שמע, און די תנאים זענען געקומען אהין עס מתקן צו זיין."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 253, "endSeg": 332,
+      "title": { "en": "The Megillah on the Seder night", "yi": "די מגילה פסח ביינאכט" },
+      "summary": {
+        "en": "The Mashgiach tells a story related by the Spinka Rebbe about a Jew who read the Megillah on the second Seder night so that a soul could receive its tikkun, and says he firmly believes souls come for a tikkun when Jews gather on Purim. He then suggests that the Tannaim in Bnei Brak learned the Megillah on the Seder night to repair the souls of Haman's descendants.",
+        "yi": "דער משגיח דערציילט א מעשה וואס דער ספינקער רבי האט דערציילט, פון א איד וואס האט געליינט די מגילה די צווייטע נאכט פסח כדי א נשמה זאל באקומען איר תיקון, און ער זאגט אז ער גלייבט באמונה שלמה אז ווען אידן קומען זיך צוזאם פורים קומען נשמות נאך א תיקון. דערנאך איז ער מחדש אז די תנאים אין בני ברק האבן פסח ביינאכט געלערנט די מגילה כדי מתקן צו זיין די נשמות פון המן'ס אייניקלעך."
+      },
+      "kind": "story", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 333, "endSeg": 391,
+      "title": { "en": "Fear, Krias Shema and Mordechai", "yi": "פחד, קריאת שמע און מרדכי" },
+      "summary": {
+        "en": "Bringing the Ba'al Shem Tov and a story of the Divrei Chaim, the Mashgiach teaches that where there is no fear, harsh judgments cannot take hold. Zeresh wanted to keep the Jews in fear and away from Krias Shema, the Gemara's remedy for fear, but Mordechai heard a child's verse 'do not fear sudden terror', and in the end the fear of Mordechai fell on the enemies. He concludes that a Jew should say the morning Shema with clarity and accept the yoke of Heaven.",
+        "yi": "מיט דעם בעל שם טוב און א מעשה פונעם דברי חיים לערנט דער משגיח אז וואו עס איז נישטא קיין פחד קענען קיין דינים נישט שורה זיין. זרש האט געוואלט האלטן אידן אין פחד און זיי אפהאלטן פון קריאת שמע, וואס די גמרא זאגט איז די עצה קעגן פחד, אבער מרדכי האט געהערט פון א קינד דעם פסוק \"אל תירא מפחד פתאם\", און צום סוף איז \"נפל פחד מרדכי עליהם\". ער ענדיגט אז א איד דארף זאגן קריאת שמע של שחרית מיט א בהירות און מקבל זיין עול מלכות שמים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 392, "endSeg": 462,
+      "title": { "en": "The cow that kept Shabbos", "yi": "די קו וואס האט געהיטן שבת" },
+      "summary": {
+        "en": "The Mashgiach brings the Midrash about a Jew's cow, sold to a gentile, that would not work on Shabbos until its former owner whispered in its ear; seeing the greatness of the Jews, the gentile converted and became the Tanna Rabbi Chanina ben Torasa. From Gilgulei Neshamos he adds that Achashverosh was reincarnated in that gentile and Vashti in the cow.",
+        "yi": "דער משגיח ברענגט דעם מדרש פון א איד'ס קו וואס איז פארקויפט געווארן צו א גוי און האט נישט געוואלט ארבעטן שבת, ביז דער פריערדיגער בעל הבית האט איר עפעס אריינגערוימט אין אויער; דער גוי האט געזען די גרויסקייט פון אידן, זיך מגייר געווען, און איז געווארן דער תנא רבי חנינא בן תורתא. פון ספר גלגולי נשמות לייגט ער צו אז אחשורוש איז מגולגל געווארן אין יענעם גוי, און ושתי אין דער קו."
+      },
+      "kind": "story", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 463, "endSeg": 555,
+      "title": { "en": "Vashti's spark of Shlomo and Shabbos", "yi": "ושתי'ס ניצוץ פון שלמה המלך און שבת" },
+      "summary": {
+        "en": "The Mashgiach explains that Vashti, a granddaughter of Nevuchadnetzar and through him a descendant of Shlomo HaMelech, the soul of Shabbos, carried a spark of Shabbos that she tried to tear out by making Jewish girls work on Shabbos. Her tikkun came through the cow that was forced to work on Shabbos and through the convert ben Torasa, which he finds in remazim on Mizmor Shir l'Yom HaShabbos and on Dovid HaMelech's chapter for Shlomo.",
+        "yi": "דער משגיח ערקלערט אז ושתי, א אייניקל פון נבוכדנצר און דורך אים א נאכקומלינג פון שלמה המלך, וואס איז די נשמה פון שבת, האט געהאט א ניצוץ פון שבת, און זי האט עס געוואלט ארויסרייסן פון זיך דורך דעם וואס זי האט געצוואונגען אידישע טעכטער צו ארבעטן שבת. איר תיקון איז געקומען דורך דער קו וואס מ'האט געצוואונגען צו ארבעטן שבת, און דורך דעם גר בן תורתא, און ער ברענגט דערויף רמזים פון \"מזמור שיר ליום השבת\" און פון דעם קאפיטל וואס דוד המלך האט געזאגט פאר שלמה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 556, "endSeg": 645,
+      "title": { "en": "Achashverosh's display and the second match", "yi": "אחשורוש'ס ווייזן ושתי, און דער זיווג שני" },
+      "summary": {
+        "en": "Following the Chasam Sofer, the Mashgiach explains that Achashverosh, whose kingdom was not established, wanted to show Vashti as proof that Heaven had given him a worthy wife, and she showed the opposite. On the deeper level the king is Hashem: Purim was a second match and a second Kabbalas HaTorah, like the Second Beis HaMikdash in which the Oral Torah flourished.",
+        "yi": "לויטן חתם סופר ערקלערט דער משגיח אז אחשורוש, וועמענס מלוכה איז נישט געווען פעסט, האט געוואלט ווייזן ושתי אלס א ראיה אז פון הימל האט מען אים געגעבן א חשוב'ע אשה, און זי האט געוויזן פונקט פארקערט. לויטן פנימיות איז \"המלך\" דער רבונו של עולם: פורים איז געווען א זיווג שני און א צווייטע קבלת התורה, ווי דער בית שני וואו די תורה שבעל פה האט זיך אנטוויקלט."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 646, "endSeg": 727,
+      "title": { "en": "Emunah against Amalek, and 'ad d'lo yada'", "yi": "אמונה קעגן עמלק, און עד דלא ידע" },
+      "summary": {
+        "en": "The Mashgiach teaches that the war against Amalek, whose name equals 'safek' (doubt), is a war over emunah, and that Purim calls for a cheshbon hanefesh about one's emunah. He warns of devices that uproot emunah and purity, and answers how the Gemara can require drinking until one cannot tell Haman from Mordechai: Purim throws a rope even to the lowest Jew, the one who no longer knows the difference.",
+        "yi": "דער משגיח לערנט אז די מלחמה קעגן עמלק, וואס איז בגימטריא ספק, איז א מלחמה אויף אמונה, און אז פורים דארף א איד מאכן א חשבון הנפש אויף זיין אמונה. ער ווארנט פון די מכשירים וואס רייסן ארויס די אמונה און די טהרה, און ער ענטפערט ווי אזוי די גמרא קען פארלאנגען אז מ'זאל טרינקען עד דלא ידע: פורים ווארפט א שטריק אפילו צום נידריגסטן איד, צו דעם וואס ווייסט שוין נישט דעם חילוק."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 728, "endSeg": 837,
+      "title": { "en": "The faded last letters of the Torah", "yi": "די פארווישטע לעצטע אותיות פון דער תורה" },
+      "summary": {
+        "en": "The Mashgiach tells of a gadol who recognized that a beautiful Sefer Torah was written by a heretic because its last letters were perfect, without the custom of leaving them for others to fill in. He traces the custom to the last eight verses that Moshe wrote in tears, and explains that every Jew is a letter in the Torah: the faded last letters are the weak souls who fell from the camp, and Adar and Megillas Esther belong to them.",
+        "yi": "דער משגיח דערציילט פון א גדול וואס האט דערקענט אז א שיינע ספר תורה איז געשריבן געווארן פון אן אפיקורס, ווייל די לעצטע אותיות זענען געווען שיין, אן דעם מנהג אז מ'לאזט זיי איבער פאר אנדערע צו פארשרייבן. ער פירט דעם מנהג צוריק צו די לעצטע אכט פסוקים וואס משה רבינו האט געשריבן בדמע, און ער ערקלערט אז יעדער איד איז אן אות אין דער תורה: די פארווישטע לעצטע אותיות זענען די שוואכע נשמות וואס זענען ארויסגעפאלן פון דער מחנה, און אדר און מגילת אסתר געהערן צו זיי."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 838, "endSeg": 878,
+      "title": { "en": "Circles and the straight line", "yi": "עגולים און יושר" },
+      "summary": {
+        "en": "Citing Rabbi Tzadok and the teaching of igulim and yosher, the Mashgiach explains that in this world Hashem leads with a straight line that has a beginning and an end, while in the days of Moshiach there will be a circle, like the round dance Hashem will make for the tzaddikim, in which all are equal. Purim draws down this circular light of Moshiach and will therefore never be nullified.",
+        "yi": "מיט רבי צדוק און דעם ענין פון עגולים ויושר ערקלערט דער משגיח אז אויף דער וועלט פירט דער אייבערשטער מיט יושר, א גלייכע ליניע וואס האט אן אנהייב און א סוף, אבער ביי משיח'ן וועט זיין עגולים, ווי דער מחול וואס דער אייבערשטער וועט מאכן פאר די צדיקים, וואו אלע זענען גלייך. פורים ברענגט אראפ די ליכטיגקייט פון עגולים פון ימות המשיח, און דערפאר וועט ער קיינמאל נישט בטל ווערן."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 879, "endSeg": 972,
+      "title": { "en": "Adar: the end touches the beginning", "yi": "אדר: דער סוף רירט אן דעם אנהייב" },
+      "summary": {
+        "en": "The Mashgiach explains that Haman rejoiced in Adar, the month of Moshe's death, thinking it was the end of the Jewish people, but did not know that Moshe was also born in Adar: in a circle the end touches the beginning. Esther asked for a 'tomorrow' of Moshiach's light, and Mordechai's appointment in the Beis HaMikdash over the bird-offerings of women after childbirth shows that he oversees the rebirth of Klal Yisrael as a newborn nation.",
+        "yi": "דער משגיח ערקלערט אז המן האט זיך געפרייט מיט אדר, דער חודש וואס משה רבינו איז נפטר געווארן, מיינענדיג אז דאס איז דער סוף פון כלל ישראל, אבער ער האט נישט געוואוסט אז אין אדר איז משה אויך געבוירן געווארן: ביי א קרייז רירט דער סוף אן דעם אנהייב. אסתר האט געבעטן א \"מחר\" פון ליכטיגקייט פון משיח, און דאס וואס מרדכי איז געווען ממונה אין בית המקדש אויף די קינים פון א יולדת ווייזט אז ער איז ממונה אויף דער נייער געבורט פון כלל ישראל, אן עם נולד."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-1-purim-seudah", "startSeg": 973, "endSeg": 1016,
+      "title": { "en": "Closing: a day to make peace with Hashem", "yi": "סיום: א טאג זיך איבערצובעטן מיטן רבונו של עולם" },
+      "summary": {
+        "en": "Between songs, the Mashgiach recalls that Purim is a day of cheshbon hanefesh on which even one who is 'cursed like Haman' can reconcile with Hashem and begin anew as a newborn nation; then all sing 'Lomir zich iberbeten'.",
+        "yi": "צווישן די ניגונים דערמאנט דער משגיח אז פורים איז א טאג פון חשבון הנפש, וואו אפילו דער וואס איז \"ארור המן\" קען זיך איבערבעטן מיטן רבונו של עולם און אנהייבן פון דאס נייע ווי אן עם נולד; דערנאך זינגט מען \"לאמיר זיך איבערבעטן\"."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 0, "endSeg": 68,
+      "title": { "en": "A place for every Jew", "yi": "א מקום פאר יעדן איד" },
+      "summary": {
+        "en": "The Mashgiach explains that the camp of Israel was like a Sefer Torah in which every Jew has his letter and place, and that Yisro found his place by adding a parsha to the Torah. Haman claimed the Jews are 'scattered' and have no place; with the wiping out of Amalek they received their place, the Beis HaMikdash in Jerusalem. He contrasts Eliyahu, the angel of the bris, with Haman, both connected to the mazal of Ma'adim.",
+        "yi": "דער משגיח ערקלערט אז די מחנה ישראל איז געווען ווי א ספר תורה וואו יעדער איד האט זיין אות און זיין מקום, און אז יתרו האט געפונען זיין מקום דורך דעם וואס ער האט צוגעגעבן א פרשה אין דער תורה. המן האט גע'טענה'ט אז אידן זענען \"מפוזר ומפורד\" און האבן נישט קיין מקום; מיט מחיית עמלק האבן אידן באקומען זייער מקום, דעם בית המקדש אין ירושלים. ער שטעלט אנטקעגן אליהו, דער מלאך הברית, מיט המן, וואס ביידע זענען פארבונדן מיט מזל מאדים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 69, "endSeg": 136,
+      "title": { "en": "Shushan Purim paves the roads to Jerusalem", "yi": "שושן פורים מאכט גרייט די וועגן קיין ירושלים" },
+      "summary": {
+        "en": "The Mashgiach explains that every sin is a kind of murder and that the sword belongs to the mazal of Ma'adim, while Eliyahu, remembered in Charvona 'zachur latov', turns it to good. The fall of Haman's house is the building of Jerusalem, and Shushan Purim prepares the roads to the city of refuge so that every Jew can reach his place in Jerusalem; he closes with a heartfelt plea to Hashem to build Jerusalem.",
+        "yi": "דער משגיח ערקלערט אז יעדע עבירה הייסט א רציחה, און אז די חרב געהערט צום מזל מאדים, אבער אליהו, וואס מ'דערמאנט ביי \"חרבונה זכור לטוב\", דרייט עס איבער צום גוטן. די מפלה פון המן'ס הויז איז דער בנין פון ירושלים, און שושן פורים מאכט גרייט די וועגן צו דער עיר מקלט אז יעדער איד זאל קענען אנקומען צו זיין מקום אין ירושלים; ער ענדיגט מיט א הייסע בקשה צום רבונו של עולם אז ער זאל בויען ירושלים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 137, "endSeg": 137,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "Singing.", "yi": "מ'זינגט." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 138, "endSeg": 225,
+      "title": { "en": "A person's last word, and Moshe's last word", "yi": "דאס לעצטע ווארט פון א מענטש, און משה רבינו'ס לעצטע ווארט" },
+      "summary": {
+        "en": "The Mashgiach explains that a person's last word expresses his whole essence, bringing Rabbi Shimon bar Yochai, Rabbi Akiva's 'echad' and Rabba bar Nachmani's 'tahor'. Moshe's last word in the Torah was 'tidroch'; Haman rejoiced over Moshe's death in Adar, but when Mordechai stepped on him to mount the horse and answered him with this verse, Moshe's last word became Haman's downfall.",
+        "yi": "דער משגיח ערקלערט אז דאס לעצטע ווארט פון א מענטש דריקט אויס זיין גאנצן מהות, און ער ברענגט רבי שמעון בר יוחאי, רבי עקיבא'ס \"אחד\" און רבה בר נחמני'ס \"טהור\". משה רבינו'ס לעצטע ווארט אין דער תורה איז געווען \"תדרוך\"; המן האט זיך געפרייט מיט משה'ס פטירה אין אדר, אבער ווען מרדכי איז ארויפגעשטיגן אויף אים צום פערד און האט אים געענטפערט מיט דעם פסוק, איז משה רבינו'ס לעצטע ווארט געווארן המן'ס מפלה."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 226, "endSeg": 299,
+      "title": { "en": "The wine at Achashverosh's feast", "yi": "דער וויין ביי אחשורוש'ס סעודה" },
+      "summary": {
+        "en": "In honor of the wine, the Mashgiach brings the Gemara that the seventh day, 'when the king's heart was merry with wine', was Shabbos, when the Jews drank wine and sang praises while Achashverosh and his gentiles engaged in frivolity, and then Vashti's fate was sealed. He asks why the long months of feasting did not arouse judgment earlier, and brings the Yalkut and Midrash on the golden cups and the food of Eretz Yisrael, asking what these details teach.",
+        "yi": "לכבוד דעם וויין ברענגט דער משגיח די גמרא אז \"ביום השביעי כטוב לב המלך ביין\" איז געווען שבת, ווען אידן האבן געטרונקען וויין און געזונגען שירות ותשבחות, און אחשורוש מיט זיינע גוים האבן זיך עוסק געווען אין נארישקייטן, און דעמאלט איז נגזר געווארן אויף ושתי. ער פרעגט פארוואס די לאנגע חדשים פון דער סעודה האבן נישט פריער מעורר געווען די מדת הדין, און ער ברענגט דעם ילקוט און דעם מדרש וועגן די גאלדענע כוסות און די מאכלים פון ארץ ישראל, און פרעגט וואס מ'לערנט ארויס פון די פרטים."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 300, "endSeg": 400,
+      "title": { "en": "Why did the Jews go to the feast?", "yi": "פארוואס זענען אידן געגאנגען צו דער סעודה?" },
+      "summary": {
+        "en": "The Mashgiach brings Rabbi Shimon bar Yochai's teaching that the Jews deserved destruction for enjoying Achashverosh's feast, a feast held to celebrate that the Beis HaMikdash would not be rebuilt. He sharpens the question: Mordechai always showed mesiras nefesh, yet according to the Gemara he was at the feast, and it is unthinkable that Jews went to celebrate the end of their hope; he notes too that old wine from Eretz Yisrael must have been served there.",
+        "yi": "דער משגיח ברענגט רבי שמעון בר יוחאי'ס מאמר אז אידן זענען נתחייב געווארן כליה ווייל זיי האבן הנאה געהאט פון אחשורוש'ס סעודה, א סעודה וואס איז געמאכט געווארן צו פייערן אז דער בית המקדש וועט נישט אויפגעבויט ווערן. ער מאכט שארפער די קשיא: מרדכי איז אלעמאל געווען מוסר נפש, און לויט דער גמרא איז ער פונדעסטוועגן געווען ביי דער סעודה, און מ'קען נישט זאגן אז אידן זענען געגאנגען פייערן דעם סוף פון זייער תקוה; ער ווייזט אויך אן אז מ'האט דארט מסתמא געגעבן אלטן וויין פון ארץ ישראל."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 401, "endSeg": 542,
+      "title": { "en": "Rescuing the Beis HaMikdash's wine", "yi": "מציל זיין דעם וויין פונעם בית המקדש" },
+      "summary": {
+        "en": "The Mashgiach answers that among the Temple vessels Achashverosh brought out were sealed vessels of wine prepared for the nesachim. Pained by the desecration, the Jews went to keep the vessels and the wine out of gentile hands and, since according to Rabbi Yonasan Eybeschutz that night was the Seder, to drink their four cups from the Beis HaMikdash's wine and sing Hallel over it. Hashem, the King, was pleased with this wine, and Vashti's punishment followed.",
+        "yi": "דער משגיח ענטפערט אז צווישן די כלי המקדש וואס אחשורוש האט ארויסגענומען זענען געווען פארזיגלטע כלים מיט וויין וואס איז געווען צוגעגרייט פאר די נסכים. אידן האט וויי געטון דאס הארץ אויפן חילול הקודש, און זיי זענען געגאנגען כדי די גוים זאלן נישט האבן די כלים און דעם וויין, און, ווייל לויט רבי יונתן אייבעשיץ איז יענע נאכט געווען ליל הסדר, כדי צו טרינקען די ארבע כוסות פונעם וויין פונעם בית המקדש און זאגן דערויף הלל. דער מלך, דער רבונו של עולם, האט הנאה געהאט פון דעם וויין, און דערנאך איז געקומען ושתי'ס שטראף."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 543, "endSeg": 614,
+      "title": { "en": "Spilled wine and guarded wine", "yi": "אויסגעגאסענער וויין און יין המשומר" },
+      "summary": {
+        "en": "The Mashgiach explains the four cups learned from the four expressions of redemption and from the four cups of Pharaoh: the wine spilled at the plagues is the 'cup of poison' for the nations, while what remains is pure. With the Chasam Sofer he explains why the plagues may be listed in order on the Seder night, and tells how the Sfas Emes accepted the Rebbe of Alexander after hearing him speak of 'yayin hameshumar', the last thing the Chiddushei HaRim had revealed to him.",
+        "yi": "דער משגיח ערקלערט די ארבע כוסות וואס מ'לערנט ארויס פון די ארבע לשונות של גאולה און פון די פיר מאל \"כוס פרעה\": דער וויין וואס מ'גיסט אויס ביי די מכות איז דער \"כוס התרעלה\" פאר די גוים, און וואס בלייבט איז ריין. מיטן חתם סופר ערקלערט ער פארוואס מ'קען פסח ביינאכט זאגן די מכות כסדר, און ער דערציילט ווי אזוי דער שפת אמת האט מקבל געווען דעם אלכסנדער רבי'ן אלס רבי נאכדעם וואס ער האט אים געהערט רעדן פון \"יין המשומר\", די לעצטע זאך וואס דער חידושי הרי\"ם האט אים מגלה געווען."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 615, "endSeg": 677,
+      "title": { "en": "Esther and the guarded wine", "yi": "אסתר און דער יין המשומר" },
+      "summary": {
+        "en": "From the Manos HaLevi's remez that 'vekeilim mikeilim shonim veyayin malchus rav' spells 'meshumar', the Mashgiach explains that the guarded wine of the World to Come is revealed on Purim; 'yayin hameshumar' equals Esther, and this is why Purim's mitzvah is with wine. The Jews' Seder-night wine poured the dregs onto Vashti while they kept the pure wine of binah, and he calls on all to drink and sing to Hashem.",
+        "yi": "פונעם מנות הלוי'ס רמז אז \"וכלים מכלים שונים ויין מלכות רב\" איז ראשי תיבות \"משמר\", ערקלערט דער משגיח אז דער יין המשומר פון עולם הבא ווערט נתגלה פורים; \"יין המשומר\" איז בגימטריא אסתר, און דערפאר איז די מצוה פון פורים דווקא מיט וויין. דער וויין וואס אידן האבן געטרונקען יענע פסח ביינאכט האט אויסגעגאסן די שמרים אויף ושתי, און ביי אידן איז געבליבן דער ריינער וויין פון בינה, און ער רופט אלע צו טרינקען און זינגען צום רבונו של עולם."
+      },
+      "kind": "main", "catalogTopicIdx": [0], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 678, "endSeg": 750,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "L'chaim and singing.", "yi": "לחיים און זינגען." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 751, "endSeg": 783,
+      "title": { "en": "Closing: midnight in Jerusalem", "yi": "סיום: חצות אין ירושלים" },
+      "summary": {
+        "en": "Between songs, the Mashgiach remarks that after all the stages of Chad Gadya Hashem remains with His kid, mentions the custom of Polish tzaddikim to say Nishmas on Purim night, and describes midnight on Shushan Purim in Jerusalem, which has an aspect of Shabbos, when the angels sing together with the Jews there.",
+        "yi": "צווישן די ניגונים זאגט דער משגיח אז נאך אלע מדריגות פון חד גדיא בלייבט דער רבונו של עולם מיט זיין חד גדיא, ער דערמאנט דעם מנהג פון פוילישע צדיקים צו זאגן נשמת פורים ביינאכט, און ער באשרייבט חצות שושן פורים אין ירושלים, וואס האט א בחינה פון שבת, ווען די מלאכים זינגען צוזאמען מיט די אידן דארט."
+      },
+      "kind": "closing", "catalogTopicIdx": [], "subsections": []
+    },
+    {
+      "recordingId": "purim-06-5764-2-purim-seudah", "startSeg": 784, "endSeg": 785,
+      "title": { "en": "Singing", "yi": "זינגען" },
+      "summary": { "en": "Singing.", "yi": "מ'זינגט." },
+      "kind": "singing", "catalogTopicIdx": [], "subsections": []
+    }
+  ],
+  "sources": [
+    { "heardAs": "כמציון תצה שורה", "work": "Yeshayahu", "ref": "Yeshayahu 2:3", "sefariaRef": "Isaiah 2:3", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [23, 57], "confidence": 0.8 } },
+    { "heardAs": "פחזי פחזי", "work": "Gemara Megillah", "ref": "Megillah 2b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [31, 65], "confidence": 0.65 } },
+    { "heardAs": "ותום ביוזנה הישעי", "work": "Shemos", "ref": "Shemos 17:14", "sefariaRef": "Exodus 17:14", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [53, 58, 60], "confidence": 0.75 } },
+    { "heardAs": "משתה ושמחה ויאמצעוו", "work": "Esther", "ref": "Esther 9:19", "sefariaRef": "Esther 9:19", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [80, 81], "confidence": 0.8 } },
+    { "heardAs": "יאמצעוו לכבולי עליה", "work": "Gemara Megillah", "ref": "Megillah 5b", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [82, 86, 87], "confidence": 0.7 } },
+    { "heardAs": "שמים סבים בביני ברק", "work": "Pesach Haggadah", "ref": "Haggadah, Maggid", "sefariaRef": null, "resolution": "inferred", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [171, 173, 179, 331], "confidence": 0.75 } },
+    { "heardAs": "בבני באנב של האמאן למדה תורה בבני ברק", "work": "Gemara Gittin", "ref": "Gittin 57b", "sefariaRef": "Gittin 57b", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [192, 193], "confidence": 0.85 } },
+    { "heardAs": "די קרישמע פון אריזאל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [212, 216, 217], "confidence": 0.65 } },
+    { "heardAs": "ובבוקר המועל המלך", "work": "Esther", "ref": "Esther 5:14", "sefariaRef": "Esther 5:14", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [230, 231], "confidence": 0.8 } },
+    { "heardAs": "שטעט איך אין תלגים", "work": "Targum on Esther", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [236, 237], "confidence": 0.7 } },
+    { "heardAs": "סתם סופר, אזוי שרייבט ער אין די דרשות", "work": "Drashos Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [285, 286], "confidence": 0.7 } },
+    { "heardAs": "זאגט ער געמורא ... יקרא קרשמע", "work": "Gemara Megillah", "ref": "Megillah 3a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [351, 352, 353], "confidence": 0.65 } },
+    { "heardAs": "עצירה מי פחד פתאים", "work": "Mishlei", "ref": "Mishlei 3:25", "sefariaRef": "Proverbs 3:25", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [363, 365, 366], "confidence": 0.8 } },
+    { "heardAs": "כנפל פחד מורכי אליהם", "work": "Esther", "ref": "Esther 9:3", "sefariaRef": "Esther 9:3", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [371, 372], "confidence": 0.8 } },
+    { "heardAs": "גגלי נשמות", "work": "Gilgulei Neshamos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [392, 439, 441, 442, 443], "confidence": 0.75 } },
+    { "heardAs": "א דבר נפלא שטעט דאך אין די מדרשים", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [394, 412, 423], "confidence": 0.8 } },
+    { "heardAs": "סדר הדורות", "work": "Seder HaDoros", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [427, 428, 429], "confidence": 0.75 } },
+    { "heardAs": "די מזמור שיעור ליום השבת", "work": "Tehillim", "ref": "Tehillim 92:1", "sefariaRef": "Psalms 92:1", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [485, 486], "confidence": 0.8 } },
+    { "heardAs": "עס שטעט דאך אין זוהי'", "work": "Zohar", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [519], "confidence": 0.6 } },
+    { "heardAs": "לשלמה אלקים משפטך למלך ... ויוטן לעום מזעהב שבא", "work": "Tehillim", "ref": "Tehillim 72:1, 72:15", "sefariaRef": "Psalms 72:15", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [539, 540, 544, 545], "confidence": 0.75 } },
+    { "heardAs": "סתם סופר לוי את וואשתי המלכה", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [557, 592], "confidence": 0.75 } },
+    { "heardAs": "ביות והון נחלת אבות ומי השם אישי מתקלת", "work": "Mishlei", "ref": "Mishlei 19:14", "sefariaRef": "Proverbs 19:14", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [572, 573, 574], "confidence": 0.85 } },
+    { "heardAs": "פרקי החלות", "work": "Pirkei Heichalos", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [611, 613, 615], "confidence": 0.65 } },
+    { "heardAs": "מהר''ל", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [622], "confidence": 0.65 } },
+    { "heardAs": "עשה ליעזור כנגדי", "work": "Bereishis", "ref": "Bereishis 2:18", "sefariaRef": "Genesis 2:18", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [632, 638], "confidence": 0.75 } },
+    { "heardAs": "וירסטך ליבע אמונה", "work": "Hoshea", "ref": "Hoshea 2:22", "sefariaRef": "Hosea 2:22", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [646, 647], "confidence": 0.75 } },
+    { "heardAs": "וילחם עם ישראל ברפידים", "work": "Shemos", "ref": "Shemos 17:8", "sefariaRef": "Exodus 17:8", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [659], "confidence": 0.8 } },
+    { "heardAs": "חי וואדים לפסומו בפרעה ... אדא לא ידע", "work": "Gemara Megillah", "ref": "Megillah 7b", "sefariaRef": "Megillah 7b", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [686, 687, 720], "confidence": 0.85 } },
+    { "heardAs": "שטחין יצא שלושים ימים לפני החג", "work": "Gemara Pesachim", "ref": "Pesachim 6a", "sefariaRef": "Pesachim 6a", "resolution": "resolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [722], "confidence": 0.65 } },
+    { "heardAs": "משה כותב בדמה", "work": "Gemara Bava Basra", "ref": "Bava Basra 15a", "sefariaRef": "Bava Batra 15a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [767, 768, 769], "confidence": 0.75 } },
+    { "heardAs": "ישראל ישי שם רבי אותיות לתורה", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [780, 781, 784], "confidence": 0.7 } },
+    { "heardAs": "לעיני כל ישראל זאגט רשע שבירת הלכות", "work": "Rashi", "ref": "Rashi, Devarim 34:12", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [815, 816], "confidence": 0.7 } },
+    { "heardAs": "זאגט דער גמרא אז עס הייסט איר גירות", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [826, 827], "confidence": 0.6 } },
+    { "heardAs": "רבי צדיק, דער מחשבת צדיק", "work": "Machshavos Charutz", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [839, 854, 876], "confidence": 0.65 } },
+    { "heardAs": "שער עגלים ויושר", "work": "Etz Chaim", "ref": "Etz Chaim, Shaar Igulim v'Yosher", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [843, 844, 846], "confidence": 0.7 } },
+    { "heardAs": "עשה דקדוש ברכה לעשה אתמאכה לצדיקים", "work": "Gemara Taanis", "ref": "Taanis 31a", "sefariaRef": "Taanit 31a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [849, 850], "confidence": 0.75 } },
+    { "heardAs": "וימא בימא האנא יאלקנא זע", "work": "Yeshayahu", "ref": "Yeshayahu 25:9", "sefariaRef": "Isaiah 25:9", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [862, 863], "confidence": 0.7 } },
+    { "heardAs": "יגידה צדקתו לים נולד כי יוסף", "work": "Tehillim", "ref": "Tehillim 22:32", "sefariaRef": "Psalms 22:32", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [906, 907, 910], "confidence": 0.75 } },
+    { "heardAs": "הוד והדה לבשה בתות חג ליומאכערון", "work": "Mishlei", "ref": "Mishlei 31:25", "sefariaRef": "Proverbs 31:25", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [914, 915, 932], "confidence": 0.65 } },
+    { "heardAs": "אומא למלך טוב ינסע און גמרחא ליהדים", "work": "Esther", "ref": "Esther 9:13", "sefariaRef": "Esther 9:13", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [920, 921, 926], "confidence": 0.8 } },
+    { "heardAs": "ירושלים הארים סובב לו", "work": "Tehillim", "ref": "Tehillim 125:2", "sefariaRef": "Psalms 125:2", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [929], "confidence": 0.7 } },
+    { "heardAs": "פתחי איז די מרדכי, מרדכי על הכינען", "work": "Mishnah Shekalim", "ref": "Shekalim 5:1", "sefariaRef": "Mishnah Shekalim 5:1", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [937, 938, 939], "confidence": 0.8 } },
+    { "heardAs": "במשנכנת אדל, מאבן בשמחה – זאגט רשע – ימי אדל וניסן", "work": "Rashi", "ref": "Rashi, Taanis 29a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [966, 970], "confidence": 0.75 } },
+    { "heardAs": "וגם כל העם הזה על מקומו יבאי בשעלים", "work": "Shemos", "ref": "Shemos 18:23", "sefariaRef": "Exodus 18:23", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [18, 19], "confidence": 0.75 } },
+    { "heardAs": "אים מפוזר ומפירות בן העמים", "work": "Esther", "ref": "Esther 3:8", "sefariaRef": "Esther 3:8", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [23, 36], "confidence": 0.8 } },
+    { "heardAs": "דער גמרא זאגט, הימאן דער במדים", "work": "Gemara Shabbos", "ref": "Shabbos 156a", "sefariaRef": "Shabbat 156a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [49, 50, 51, 53], "confidence": 0.8 } },
+    { "heardAs": "ישם ציוט בהשמת הברכה חיים עד העולם", "work": "Tehillim", "ref": "Tehillim 133:3", "sefariaRef": "Psalms 133:3", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [151], "confidence": 0.75 } },
+    { "heardAs": "רבי שמעון בן יוחאי אין זוהר קודש", "work": "Zohar", "ref": "Zohar III 296b (Idra Zuta)", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [149, 150, 151, 153], "confidence": 0.7 } },
+    { "heardAs": "אשריך רבי יקיבא שנפשך יצא באחד", "work": "Gemara Berachos", "ref": "Berachos 61b", "sefariaRef": "Berakhot 61b", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [159, 160, 162], "confidence": 0.9 } },
+    { "heardAs": "די גמרא זאגט דער בבא מציאה רבא בן נחמעוני", "work": "Gemara Bava Metzia", "ref": "Bava Metzia 86a", "sefariaRef": "Bava Metzia 86a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [164, 165, 167, 168], "confidence": 0.85 } },
+    { "heardAs": "אשריכה כלים שיצאת בטהרה", "work": "Mishnah Kelim", "ref": "Kelim 30:4", "sefariaRef": "Mishnah Kelim 30:4", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [172, 173, 174], "confidence": 0.75 } },
+    { "heardAs": "דער גמרא דערציילט אז ווען האמאן האט גענומען מרדכי", "work": "Gemara Megillah", "ref": "Megillah 16a", "sefariaRef": "Megillah 16a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [175, 176, 177, 180, 181], "confidence": 0.85 } },
+    { "heardAs": "בנפעל היבחר על צו התמח", "work": "Mishlei", "ref": "Mishlei 24:17", "sefariaRef": "Proverbs 24:17", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [182], "confidence": 0.75 } },
+    { "heardAs": "ויאתי על בעל מיתם סדרך", "work": "Devarim", "ref": "Devarim 33:29", "sefariaRef": "Deuteronomy 33:29", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [185, 188, 189], "confidence": 0.85 } },
+    { "heardAs": "ביי יום השבועי כצוף לב המלך", "work": "Esther", "ref": "Esther 1:10", "sefariaRef": "Esther 1:10", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [240, 267], "confidence": 0.85 } },
+    { "heardAs": "ביי ייון זאגט דער גמרא ... איז געווייזן שבת", "work": "Gemara Megillah", "ref": "Megillah 12b", "sefariaRef": "Megillah 12b", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [241, 250, 251, 254], "confidence": 0.8 } },
+    { "heardAs": "ילקט שמעוני ... וכולם מקולם שונים", "work": "Yalkut Shimoni", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [270, 271, 272, 273], "confidence": 0.7 } },
+    { "heardAs": "מ'האט געפרעגט רבי שמעון בן יוחאי", "work": "Gemara Megillah", "ref": "Megillah 12a", "sefariaRef": "Megillah 12a", "resolution": "resolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [319, 320, 321, 324], "confidence": 0.8 } },
+    { "heardAs": "ווי דער חתם סופר און אנדערע זארגן", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [330, 331, 332], "confidence": 0.7 } },
+    { "heardAs": "אין תרגום שטעט", "work": "Targum on Esther", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [354, 355, 357], "confidence": 0.75 } },
+    { "heardAs": "אין אמרים שורה אלא על היין", "work": "Gemara Berachos", "ref": "Berachos 35a", "sefariaRef": "Berakhot 35a", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [467, 498], "confidence": 0.8 } },
+    { "heardAs": "די ארבע לשונא של גאולה", "work": "Shemos", "ref": "Shemos 6:6-7", "sefariaRef": "Exodus 6:6-7", "resolution": "resolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [524, 525], "confidence": 0.75 } },
+    { "heardAs": "ביי דעם כוס פרעה, שטעט פיר מאל כוס פרעה", "work": "Bereishis", "ref": "Bereishis 40:11-13", "sefariaRef": null, "resolution": "inferred", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [526, 527], "confidence": 0.75 } },
+    { "heardAs": "ימצא ישטא קאל רשע ארץ", "work": "Tehillim", "ref": "Tehillim 75:9", "sefariaRef": "Psalms 75:9", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [548, 549], "confidence": 0.7 } },
+    { "heardAs": "דאך דער סאמסעפער פרעגט", "work": "Chasam Sofer", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [550, 557, 558], "confidence": 0.75 } },
+    { "heardAs": "אין די מונות הלוי שטעט א מורא'דיגע רמז", "work": "Manos HaLevi", "ref": "Manos HaLevi on Esther 1:7", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [615, 619, 620, 621], "confidence": 0.75 } },
+    { "heardAs": "מי כלים שונים ויין מלכות רב", "work": "Esther", "ref": "Esther 1:7", "sefariaRef": "Esther 1:7", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [618, 619, 621], "confidence": 0.8 } },
+    { "heardAs": "לא שומרים, הלא שם, ליציאו מירץ מצרים", "work": "Shemos", "ref": "Shemos 12:42", "sefariaRef": "Exodus 12:42", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [644, 645, 646], "confidence": 0.65 } },
+    { "heardAs": "אים הבנים שמחה הללקה", "work": "Tehillim", "ref": "Tehillim 113:9", "sefariaRef": "Psalms 113:9", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [670], "confidence": 0.7 } },
+    { "heardAs": "דער רבי יונתן הערשויץ מאכט א חשבון", "work": null, "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [455, 456], "confidence": 0.75 } },
+    { "heardAs": "פארוואס איז בעש''צ נעניש געווארן", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [408, 409, 415, 416], "confidence": 0.7 } },
+    { "heardAs": "גם חבנה זכר לטוב", "work": "Shoshanas Yaakov", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [82, 83], "confidence": 0.65 } },
+    { "heardAs": "די מדרש ... איז ער געוויזן סעודת ארץ ישראל", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [292, 293], "confidence": 0.6 } },
+    { "heardAs": "ויין מלכות רב ... יעדער איינער האט געגעבן ייין ומדינתו", "work": "Gemara Megillah", "ref": "Megillah 12a", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [301, 307, 308, 310], "confidence": 0.7 } },
+    { "heardAs": "מורא תפחה שהצפנת לרעכה", "work": "Tehillim", "ref": "Tehillim 31:20", "sefariaRef": "Psalms 31:20", "resolution": "resolved", "mention": "quoted", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [779], "confidence": 0.6 } },
+    { "heardAs": "עס שטעט אין מדרש אז יעדער צדיק, א נייער צדיק", "work": "Midrash", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [595, 596], "confidence": 0.75 } },
+    { "heardAs": "ביי רבי שמעון בן אלעזר ... דעם שטעקן פון רבי מאיר", "work": "Gemara", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [420, 421, 422], "confidence": 0.7 } },
+    { "heardAs": "די תניא רעדט וועגן דעם", "work": "Tanya", "ref": null, "sefariaRef": null, "resolution": "unresolved", "mention": "alluded", "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [839], "confidence": 0.6 } },
+    { "heardAs": "לא מנקרא שמו ישראל, שיטה על פרשת אחת בצורה", "work": "Rashi", "ref": "Rashi, Shemos 18:1", "sefariaRef": null, "resolution": "inferred", "mention": "paraphrased", "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [13, 14], "confidence": 0.65 } }
+  ],
+  "insights": [
+    {
+      "text": {
+        "en": "The Tannaim of the Haggadah gathered in Bnei Brak, where Haman's converted descendants lived, and learned the Megillah on the Seder night to repair those souls' blemish in Krias Shema.",
+        "yi": "די תנאים פון דער הגדה זענען זיך צוזאמגעקומען אין בני ברק, וואו המן'ס אייניקלעך וואס האבן זיך מגייר געווען האבן געוואוינט, און זיי האבן פסח ביינאכט געלערנט די מגילה כדי מתקן צו זיין דעם פגם פון יענע נשמות אין קריאת שמע."
+      },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [303, 306, 309, 311, 315], "confidence": 0.65 }
+    },
+    {
+      "text": {
+        "en": "Vashti's spark of Shabbos, inherited from Shlomo HaMelech, was repaired when she was reincarnated as the cow that refused to work on Shabbos, through which Rabbi Chanina ben Torasa converted.",
+        "yi": "ושתי'ס ניצוץ פון שבת, וואס זי האט געירשנט פון שלמה המלך, איז מתוקן געווארן ווען זי איז מגולגל געווארן אין דער קו וואס האט נישט געוואלט ארבעטן שבת, וואס דורך איר האט זיך רבי חנינא בן תורתא מגייר געווען."
+      },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [483, 493, 496, 509, 515], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Purim was a second match between Hashem and the Jewish people, like the Second Beis HaMikdash, which surpassed the First in the glory of Klal Yisrael and the Oral Torah.",
+        "yi": "פורים איז געווען א זיווג שני צווישן דעם רבונו של עולם און כלל ישראל, ווי דער בית שני, וואס איז געווען העכער ווי דער בית ראשון אין דער פראכט פון כלל ישראל און אין תורה שבעל פה."
+      },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [605, 607, 616, 625, 642], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "The faded final letters of the Torah, the last eight verses written in tears, are the weak souls who fell from the camp, and Megillas Esther stands for them.",
+        "yi": "די פארווישטע לעצטע אותיות פון דער תורה, די לעצטע אכט פסוקים וואס זענען געשריבן געווארן בדמע, זענען די שוואכע נשמות וואס זענען ארויסגעפאלן פון דער מחנה, און מגילת אסתר שטייט פאר זיי."
+      },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [789, 790, 800, 824, 825], "confidence": 0.7 }
+    },
+    {
+      "text": {
+        "en": "Mordechai was appointed over the bird-offerings brought after childbirth because he oversees the births of Klal Yisrael, which on Purim becomes a newborn nation.",
+        "yi": "מרדכי איז געווען ממונה אויף די קינים פון א יולדת, ווייל ער איז ממונה אויף די לידות פון כלל ישראל, וואס פורים ווערט אן עם נולד."
+      },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [954, 957, 962, 963], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "Moshe's last word, 'tidroch', marked the departure of his ruach, and it was this very word that Mordechai used against Haman as Haman bent down beneath him.",
+        "yi": "משה רבינו'ס לעצטע ווארט, \"תדרוך\", איז געווען ווען זיין רוח איז נסתלק געווארן, און פונקט דאס ווארט האט מרדכי גענוצט קעגן המן ווען המן האט זיך אונטער אים איינגעבויגן."
+      },
+      "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [185, 201, 212, 218], "confidence": 0.75 }
+    },
+    {
+      "text": {
+        "en": "'Yayin hameshumar', the guarded wine of the future, equals Esther; this is why the mitzvah of Purim is with wine.",
+        "yi": "\"יין המשומר\", דער באהאלטענער וויין פון לעתיד, איז בגימטריא אסתר; דערפאר איז די מצוה פון פורים דווקא מיט וויין."
+      },
+      "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [627, 630, 634, 668], "confidence": 0.7 }
+    }
+  ],
+  "stories": [
+    {
+      "title": { "en": "The Megillah read on the Seder night", "yi": "די מגילה וואס מ'האט געליינט פסח ביינאכט" },
+      "retelling": {
+        "en": "The Spinka Rebbe told of a Jew, whom everyone knew to be himself, who finished the Haggadah on the second Seder night and wished to continue praising Hashem. He took out the Megillah and read it. A soul then revealed that it had been waiting for a tikkun that comes only through reading the Megillah, and that in Heaven there was a debate whether a reading on Pesach counts. The ruling was that the reading counts.",
+        "yi": "דער ספינקער רבי האט דערציילט פון א איד, און יעדער האט געוואוסט אז ער מיינט זיך אליין, וואס האט פארענדיגט די הגדה די צווייטע נאכט פסח און האט געוואלט ווייטער זאגן שירות ותשבחות צום רבונו של עולם. ער האט גענומען ליינען די מגילה. דערנאך האט א נשמה מגלה געווען אז זי האט געווארט אויף א תיקון וואס קומט נאר דורך ליינען די מגילה, און אז אין הימל האט מען זיך געטענה'ט צי א ליינען פסח איז גילטיג. מ'האט גע'פסק'נט אז עס איז יא גילטיג."
+      },
+      "people": ["the Spinka Rebbe"],
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [257, 260, 262, 268, 293, 297], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The Divrei Chaim without fear", "yi": "דער דברי חיים אן פחד" },
+      "retelling": {
+        "en": "The Mashgiach tells that water was once poured on the head of a general, who came up with a sword against the Divrei Chaim. The general went away, and the Divrei Chaim said that his miracle was that he had no fear of him, for where there is no fear nothing can happen.",
+        "yi": "דער משגיח דערציילט אז מ'האט אמאל אויסגעגאסן וואסער אויפן קאפ פון א גענעראל, און ער איז ארויפגעקומען מיט א שווערד קעגן דעם דברי חיים. דער גענעראל איז אוועקגעגאנגען, און דער דברי חיים האט געזאגט אז זיין נס איז געווען וואס ער האט נישט געהאט קיין מורא פאר אים, ווייל ווען מ'האט נישט קיין פחד קען גארנישט געשען."
+      },
+      "people": ["the Divrei Chaim"],
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [339, 340, 341, 342], "confidence": 0.65 }
+    },
+    {
+      "title": { "en": "The cow that would not work on Shabbos", "yi": "די קו וואס האט נישט געוואלט ארבעטן שבת" },
+      "retelling": {
+        "en": "A Jew sold his cow to a gentile, but on Shabbos the cow would not work however much it was beaten. The gentile ran to the Jew, who whispered into the cow's ear, and the cow began to work. When the gentile accused him of witchcraft, the Jew explained that the cow was used to resting on Shabbos and he had told it that it now belonged to a gentile who may work on Shabbos. Seeing the greatness of the Jews, the gentile converted and became the Tanna Rabbi Chanina ben Torasa, the son of the cow.",
+        "yi": "א איד האט פארקויפט זיין קו צו א גוי, און שבת האט די קו נישט געוואלט ארבעטן, ווי מ'זאל זי נישט שלאגן. דער גוי איז געלאפן צום איד, און דער איד האט איר עפעס אריינגערוימט אין אויער, און די קו האט גענומען ארבעטן. ווען דער גוי האט אים באשולדיגט אין כישוף, האט דער איד ערקלערט אז די קו איז געווען געוואוינט נישט צו ארבעטן שבת, און ער האט איר געזאגט אז זי געהערט יעצט צו א גוי וואס מעג ארבעטן שבת. דער גוי האט געזען די גרויסקייט פון אידן, זיך מגייר געווען, און איז געווארן דער תנא רבי חנינא בן תורתא, דער זון פון דער קו."
+      },
+      "people": ["Rabbi Chanina ben Torasa"],
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [396, 403, 408, 416, 421, 423], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Sefer Torah with perfect final letters", "yi": "די ספר תורה מיט שיינע לעצטע אותיות" },
+      "retelling": {
+        "en": "Someone brought a beautiful Sefer Torah to one of the gedolei hador of several generations ago; he looked it over and said it was kosher. Afterwards it emerged that its sofer was a maskil and a heretic, and the gadol was asked how he knew. He explained that the Jewish custom is to leave the last letters hollow so that people can fill them in at the siyum, and such letters never look perfect; this Torah was beautiful to the very end, a sign that no siyum was made and the Jewish custom was not kept.",
+        "yi": "מ'האט געבראכט א שיינע ספר תורה צו איינעם פון די גדולי הדור פון עטליכע דורות צוריק, און ער האט זי באקוקט און געזאגט אז זי איז כשר. דערנאך האט זיך ארויסגעשטעלט אז דער סופר איז געווען א משכיל און אן אפיקורס, און מ'האט דעם גדול געפרעגט פון וואנען ער האט עס געוואוסט. ער האט ערקלערט אז ס'איז א מנהג ביי אידן אז די לעצטע אותיות לאזט מען הוילע, אז אידן זאלן זיי אריינשרייבן ביים סיום, און אזעלכע אותיות זענען קיינמאל נישט אזוי שיין; די ספר תורה איז געווען שיין ביזן סוף, א סימן אז מ'האט נישט געמאכט קיין סיום און נישט געהאלטן דעם אידישן מנהג."
+      },
+      "people": [],
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [731, 735, 740, 744, 746, 753], "confidence": 0.8 }
+    },
+    {
+      "title": { "en": "Mordechai mounts the horse", "yi": "מרדכי שטייגט ארויף אויפן פערד" },
+      "retelling": {
+        "en": "The Mashgiach retells the Gemara: when Haman came to lead Mordechai on the king's horse, Mordechai had no strength to climb up, so Haman bent down and Mordechai stepped on him to mount, giving him a kick. Haman protested that the Torah says 'when your enemy falls, do not rejoice', and Mordechai answered that this applies to Jews, but of the nations it says 'and you will tread on their high places'.",
+        "yi": "דער משגיח ברענגט די גמרא: ווען המן איז געקומען פירן מרדכי אויפן פערד פונעם קעניג, האט מרדכי נישט געהאט קיין כח ארויפצוגיין, האט המן זיך איינגעבויגן, און מרדכי איז אויף אים ארויפגעשטיגן אויפן פערד און אים געגעבן א בריק. המן האט געטענה'ט אז אין דער תורה שטייט \"בנפול אויבך אל תשמח\", און מרדכי האט געענטפערט אז דאס איז ביי אידן, אבער ביי די גוים שטייט \"ואתה על במותימו תדרוך\"."
+      },
+      "people": ["Mordechai", "Haman"],
+      "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [175, 176, 177, 180, 182, 185], "confidence": 0.85 }
+    },
+    {
+      "title": { "en": "The Sfas Emes accepts the Rebbe of Alexander", "yi": "דער שפת אמת נעמט אן דעם אלכסנדער רבי'ן" },
+      "retelling": {
+        "en": "When the Chiddushei HaRim passed away, Rabbi Chanoch Henoch of Alexander became Rebbe. The Sfas Emes, still a young man but already great, came to Alexander to decide whether to accept him. While the Alexander Rebbe spoke with ruach hakodesh to each person present, the Sfas Emes stood unimpressed, twirling his peyos, until the Rebbe turned to him and spoke of 'yayin hameshumar'. The Sfas Emes then accepted him, because the last thing the Chiddushei HaRim had revealed to him was yayin hameshumar, and a new tzaddik begins where his predecessor left off.",
+        "yi": "ווען דער חידושי הרי\"ם איז נפטר געווארן, איז רבי חנוך הענעך פון אלכסנדער געווארן רבי. דער שפת אמת, נאך א יונגערמאן אבער שוין גאר א גרויסער, איז געקומען קיין אלכסנדער צו זען צי ער זאל אים מקבל זיין אלס רבי. בשעת דער אלכסנדער רבי האט געזאגט מיט רוח הקודש צו יעדן איינעם, איז דער שפת אמת געשטאנען און זיך געדרייט די פיאות, ביז דער רבי האט זיך אויסגעדרייט צו אים און גערעדט פון \"יין המשומר\". דעמאלט האט ער אים מקבל געווען, ווייל די לעצטע זאך וואס דער חידושי הרי\"ם האט אים מגלה געווען איז געווען יין המשומר, און א נייער צדיק הייבט אן פון דארט וואו דער פריערדיגער האט געענדיגט."
+      },
+      "people": ["the Chiddushei HaRim", "Rabbi Chanoch Henoch of Alexander", "the Sfas Emes"],
+      "evidence": { "recordingId": "purim-06-5764-2-purim-seudah", "segs": [571, 577, 583, 587, 596, 600], "confidence": 0.75 }
+    }
+  ],
+  "questions": [
+    {
+      "question": { "en": "Where is the joy of Jerusalem on Shushan Purim found, if the Megillah does not state it outright?", "yi": "פון וואנען נעמט זיך די שמחה פון ירושלים שושן פורים, אז אין דער מגילה שטייט עס נישט בפירוש?" },
+      "answer": { "en": "It is learned through the gezeira shava 'prazi-prazi', and Jerusalem, root of the Oral Torah, is the essence of Purim's acceptance of the Oral Torah.", "yi": "מ'לערנט עס ארויס פון דער גזירה שוה \"פרזי פרזי\", און ירושלים, דער שורש פון דער תורה שבעל פה, איז דער עיקר פון דער קבלה פון תורה שבעל פה פורים." },
+      "questionSegs": [24, 25, 26], "answerSegs": [31, 63, 65, 68], "confidence": 0.65, "recordingId": "purim-06-5764-1-purim-seudah"
+    },
+    {
+      "question": { "en": "What were all the Tannaim doing in Bnei Brak?", "yi": "וואס האבן די אלע תנאים געטון אין בני ברק?" },
+      "answer": { "en": "They went to repair the souls of Haman's descendants there, by learning the Megillah with them on the Seder night.", "yi": "זיי זענען געגאנגען מתקן זיין די נשמות פון המן'ס אייניקלעך, דורך לערנען מיט זיי די מגילה פסח ביינאכט." },
+      "questionSegs": [304, 305], "answerSegs": [306, 307, 309, 327], "confidence": 0.7, "recordingId": "purim-06-5764-1-purim-seudah"
+    },
+    {
+      "question": { "en": "Why did Achashverosh want to show Vashti to the people?", "yi": "פארוואס האט אחשורוש געוואלט ווייזן ושתי פאר דעם עולם?" },
+      "answer": { "en": "His kingdom was not established, so he wanted to show that Heaven had given him a worthy wife, a gift that comes only from Hashem.", "yi": "זיין מלוכה איז נישט געווען פעסט, האט ער געוואלט ווייזן אז פון הימל האט מען אים געגעבן א חשוב'ע אשה, א מתנה וואס קומט נאר פונעם רבונו של עולם." },
+      "questionSegs": [557, 558, 559], "answerSegs": [563, 565, 574, 575], "confidence": 0.75, "recordingId": "purim-06-5764-1-purim-seudah"
+    },
+    {
+      "question": { "en": "How can the Torah require a Jew to reach a state where he does not know between 'cursed is Haman' and 'blessed is Mordechai'?", "yi": "ווי אזוי קען די תורה פארלאנגען פון א איד אז ער זאל קומען צו א מצב וואו ער ווייסט נישט בין ארור המן לברוך מרדכי?" },
+      "answer": { "en": "The Gemara means that even a person on that low level, who no longer knows the difference, is obligated and able to grab hold of Purim, which pulls out even the worst Jew.", "yi": "די גמרא מיינט אז אפילו א מענטש אויף אזא נידריגע מדריגה, וואס ווייסט שוין נישט דעם חילוק, איז מחויב און קען זיך אנכאפן אין פורים, וואס ציט ארויס אפילו דעם ערגסטן איד." },
+      "questionSegs": [689, 690, 692], "answerSegs": [700, 701, 717, 718, 720], "confidence": 0.8, "recordingId": "purim-06-5764-1-purim-seudah"
+    },
+    {
+      "question": { "en": "Why was Mordechai, the great tzaddik, given the post of overseeing the bird-offerings in the Beis HaMikdash?", "yi": "פארוואס האט מען מרדכי הצדיק געגעבן אין בית המקדש דעם תפקיד צו זיין ממונה אויף די קינים?" },
+      "answer": { "en": "Because he oversees the births of Klal Yisrael: the birds are brought by a woman after childbirth, and through Purim the Jews become a newborn nation.", "yi": "ווייל ער איז ממונה אויף די לידות פון כלל ישראל: די קינים ברענגט א יולדת, און דורך פורים ווערן אידן אן עם נולד." },
+      "questionSegs": [948, 950, 951], "answerSegs": [954, 955, 957, 962], "confidence": 0.75, "recordingId": "purim-06-5764-1-purim-seudah"
+    },
+    {
+      "question": { "en": "Why did the Jews, and Mordechai himself, go to Achashverosh's feast?", "yi": "פארוואס זענען אידן, און מרדכי אליין, געגאנגען צו אחשורוש'ס סעודה?" },
+      "answer": { "en": "To rescue the Beis HaMikdash's vessels and its nesachim wine from the gentiles, and to drink their Seder cups from that wine and sing Hallel over it, the opposite of celebrating.", "yi": "כדי מציל צו זיין די כלי המקדש און דעם וויין פון די נסכים פון די גוים, און צו טרינקען דערפון די כוסות פונעם סדר און זאגן דערויף הלל, פונקט פארקערט פון פייערן." },
+      "questionSegs": [350, 351, 352], "answerSegs": [447, 449, 453, 477, 479], "confidence": 0.75, "recordingId": "purim-06-5764-2-purim-seudah"
+    }
+  ],
+  "takeaways": [
+    {
+      "text": { "en": "The Mashgiach says a Jew should say the morning Krias Shema with clarity, accepting the yoke of Heaven, and so be saved from fear.", "yi": "דער משגיח זאגט אז א איד דארף זאגן קריאת שמע של שחרית מיט א בהירות, מקבל זיין עול מלכות שמים, און אזוי ניצול ווערן פון פחד." },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [388, 389], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He calls for a cheshbon hanefesh on Purim: where one stands in emunah, and why one does not feel Hashem, the sweetness of a blatt Gemara, or tears in davening.", "yi": "ער רופט צו א חשבון הנפש פורים: ווי מ'האלט מיט דער אמונה, און פארוואס מ'שפירט נישט דעם רבונו של עולם, נישט קיין געשמאק אין א בלאט גמרא און נישט קיין טרערן ביים דאווענען." },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [664, 665, 668, 670, 673], "confidence": 0.75 }
+    },
+    {
+      "text": { "en": "He says that on Purim a Jew should take upon himself not to engage with the devices that uproot emunah and purity, and remove this 'chametz' from his home.", "yi": "ער זאגט אז פורים דארף א איד מקבל זיין אויף זיך אז ער וועט זיך נישט עוסק זיין מיט די מכשירים וואס רייסן ארויס די אמונה און די טהרה, און מבער זיין דעם \"חמץ\" פון זיין שטוב." },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [678, 682, 683, 685], "confidence": 0.8 }
+    },
+    {
+      "text": { "en": "He urges every Jew, even the lowest, to grab hold of the rope that Purim throws and hold on.", "yi": "ער מוטיגט יעדן איד, אפילו דעם נידריגסטן, זיך אנצוכאפן אין דעם שטריק וואס פורים ווארפט און זיך אנצוהאלטן." },
+      "evidence": { "recordingId": "purim-06-5764-1-purim-seudah", "segs": [701, 703, 704, 720], "confidence": 0.85 }
+    }
+  ],
+  "candidateTopics": [
+    "Purim seudah",
+    "Shushan Purim and Jerusalem",
+    "Purim and the Oral Torah",
+    "Krias Shema and fear",
+    "Haman's descendants in Bnei Brak",
+    "Vashti and Shabbos",
+    "emunah and Amalek",
+    "ad d'lo yada",
+    "Achashverosh's feast and the Beis HaMikdash wine",
+    "yayin hameshumar"
+  ],
+  "concepts": [
+    { "he": "תורה שבעל פה", "heardAs": ["צרשי בעל פה", "תורשי ביורפה", "תסתרו שבו על פה"] },
+    { "he": "מוקף חומה", "heardAs": ["מקוב חומה", "מקום חומת"] },
+    { "he": "שושן פורים", "heardAs": ["ששון פרום", "שעה שען פרום"] },
+    { "he": "קריאת שמע של שחרית", "heardAs": ["קרישמע", "קשמה של שאחרת", "קרשמי של שחרות"] },
+    { "he": "פחד", "heardAs": ["פחד פתאים"] },
+    { "he": "גלגול", "heardAs": ["מגרגל געווארן", "מגורגע געווארן"] },
+    { "he": "זיווג שני", "heardAs": ["זיווג שני", "דעם זיווג שינו"] },
+    { "he": "עגולים ויושר", "heardAs": ["איגלים", "עגלים ויושר", "יוגלים"] },
+    { "he": "אותיות מטושטשות", "heardAs": ["אותיות מטרשתשעות", "אותיות מיט תשטשות"] },
+    { "he": "מזל מאדים", "heardAs": ["מזל מדים", "הימאן דער במדים"] },
+    { "he": "נסכים", "heardAs": ["נוסחים", "נסחרים"] },
+    { "he": "יין המשומר", "heardAs": ["ייין המשמר", "יין המשומל", "ייון המשמה"] },
+    { "he": "כוס התרעלה", "heardAs": ["ייון תרעלה", "ייון התארעלע"] },
+    { "he": "עם נולד", "heardAs": ["לים נולד", "עם נולד"] }
+  ],
+  "people": [
+    { "name": "Yehoshua", "heardAs": ["יהושע", "ישעה"] },
+    { "name": "Zeresh", "heardAs": ["זרעש", "זערש"] },
+    { "name": "Haman", "heardAs": ["האמאן", "האמען", "האמון"] },
+    { "name": "Mordechai", "heardAs": ["מרדכי", "מאטרע", "מרצה"] },
+    { "name": "Esther", "heardAs": ["אסתר", "נעסטער"] },
+    { "name": "Vashti", "heardAs": ["וואשתי", "וואשטו"] },
+    { "name": "Achashverosh", "heardAs": ["חשבור'ש", "א חשבורש", "יחש ורשו"] },
+    { "name": "Shmuel bar Shilas", "heardAs": ["שמואל באשולת", "שמואל בהשולעת"] },
+    { "name": "the Spinka Rebbe", "heardAs": ["דער ספינקערל"] },
+    { "name": "the Ba'al Shem Tov", "heardAs": ["בעש''ט"] },
+    { "name": "the Divrei Chaim", "heardAs": ["דברי חיים", "דער בחיים"] },
+    { "name": "Rabbi Menachem Azaria of Fano", "heardAs": ["ר' מאמי פנא"] },
+    { "name": "Rabbi Chanina ben Torasa", "heardAs": ["רבי חנונא בן תורתא", "חנונה בן תורתא"] },
+    { "name": "Shlomo HaMelech", "heardAs": ["שלמה המלך"] },
+    { "name": "Nevuchadnetzar", "heardAs": ["נבוכדנצל"] },
+    { "name": "the Chasam Sofer", "heardAs": ["סתם סופר", "סם סופר", "סאמסעפער"] },
+    { "name": "Rabbi Tzadok HaKohen", "heardAs": ["רבי צדיק"] },
+    { "name": "the Maharal", "heardAs": ["מהר''ל"] },
+    { "name": "Moshe Rabbeinu", "heardAs": ["משה רבינו"] },
+    { "name": "Yisro", "heardAs": ["ישראל"] },
+    { "name": "Eliyahu HaNavi", "heardAs": ["אליהו"] },
+    { "name": "Rabbi Shimon bar Yochai", "heardAs": ["רבי שמעון בן יוחאי"] },
+    { "name": "Rabbi Akiva", "heardAs": ["רבי יקיבא"] },
+    { "name": "Rabba bar Nachmani", "heardAs": ["רבא בן נחמעוני", "רבה בן עכמיני"] },
+    { "name": "Belshazzar", "heardAs": ["בעל שעתך", "באשאצא", "בעש''צ"] },
+    { "name": "Rabbi Meir", "heardAs": ["רבי מאיר"] },
+    { "name": "Rabbi Yonasan Eybeschutz", "heardAs": ["רבי יונתן הערשויץ"] },
+    { "name": "the Chiddushei HaRim", "heardAs": ["חידושי ארום", "חידוש ירומה"] },
+    { "name": "Rabbi Chanoch Henoch of Alexander", "heardAs": ["רבי חנוך אלכסנדר", "אלעקסנדער"] },
+    { "name": "the Sfas Emes", "heardAs": ["שפת תמוז", "ספסמת", "ספסמות"] }
+  ],
+  "asrNotes": "Yiddish ASR is poor throughout, with many Hebrew quotations and numerous gematriaos badly garbled; most gematria equations were left out, and only the recognizable pesukim and sources are recorded. Long stretches of singing and l'chaim (rec 1 segs 76-77, 986-1016; rec 2 seg 137, segs 678-750, 784-785, plus several shorter niggunim) carry little or hallucinated text. Rec 2 segs 7-17 (a newcomer to the camp and Yisro) and the Kozhnitz/Nishmas and midnight remarks at rec 2 segs 760-781 are only partly recoverable. The catalog title is a generic filename guess ('Purim Seudah'), so topic 0 is assigned to the content sections."
+}
