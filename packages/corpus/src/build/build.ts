@@ -11,7 +11,9 @@
  *
  * Audio (Amendment A1): every recording gets `audioUrl` = media origin + per-segment-encoded bucket
  * key, or `playable: false` when its object is not an mp3 (unless `site-policy/audio-transcoded.json`
- * lists the key: then the URL is that of the `.mp3` transcode next to it). The media origin comes from
+ * lists the key: then the URL is that of the `.mp3` transcode next to it). Every playable recording
+ * also gets `cleanedUrl`, the URL of its AI-improved copy at `fixed/sidon/<served key>`, unless
+ * `site-policy/audio-cleaned.json` rejects that key (then `cleanedUrl: null`). The media origin comes from
  * `BuildOptions.mediaOrigin`, else env `EMUNAS_MEDIA_ORIGIN`, else the dev placeholder
  * `https://media.example.invalid` (reported as a warning). The bucket key never reaches the output.
  *
@@ -29,6 +31,7 @@ import {
   MEDIA_ORIGIN_ENV,
   buildAudioTable,
   normalizeMediaOrigin,
+  servedKey,
   type AudioTable,
   type AudioTableIssue,
 } from "@emunas/audio";
@@ -47,7 +50,7 @@ import { catalogGaps } from "./gaps.ts";
 import { gate } from "./gate.ts";
 import { identitySlugKeyer, type Keyer } from "./keyer.ts";
 import { loadCatalogs, loadIngest, loadManifest, loadShiurFiles, type Catalogs, type ShiurFiles } from "./load.ts";
-import { loadAudioTranscoded, loadPublishPolicy, loadSuppressFile, type PublishPolicy } from "./policy.ts";
+import { loadAudioCleaned, loadAudioTranscoded, loadPublishPolicy, loadSuppressFile, type PublishPolicy } from "./policy.ts";
 import { PROJECTOR_VERSION, projectShiur, type ProjectContext } from "./project.ts";
 import { createDataReader, defaultDataDir, defaultPolicyDir, REPO_ROOT } from "./read.ts";
 import { emitEligibleTranscripts } from "../transcript-gate.ts";
@@ -317,9 +320,22 @@ export function projectCorpus(
   if (media.placeholder) {
     report.warnings.push(`audio: ${MEDIA_ORIGIN_ENV} not set; audio URLs use the placeholder ${DEFAULT_MEDIA_ORIGIN}`);
   }
+  const policyDir = opts.policyDir ?? defaultPolicyDir();
+  const mp3Siblings = loadAudioTranscoded(policyDir);
+  const rejected = loadAudioCleaned(policyDir).rejected.map((e) => e.key);
+  if (rejected.length > 0) {
+    const transcoded = new Set(mp3Siblings);
+    const served = new Set(ingest.recordings.map((r) => servedKey(r.audioKey, transcoded)));
+    rejected.forEach((key, i) => {
+      if (!served.has(key)) {
+        throw new Error(`site-policy/audio-cleaned.json: rejected[${i}].key is not the served key of any playable recording`);
+      }
+    });
+  }
   const audioTable: AudioTable = buildAudioTable(ingest.recordings, {
     origin: media.origin,
-    mp3Siblings: loadAudioTranscoded(opts.policyDir ?? defaultPolicyDir()),
+    mp3Siblings,
+    rejected,
     only: inScope.flatMap((s) => s.recordingIds),
     onIssue: (i) => report.warnings.push(audioIssueText(i)),
   });
