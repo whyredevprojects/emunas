@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-11-15T01:24:20.175Z",
+  "generatedAt": "2026-11-18T18:17:34.372Z",
   "stats": {
     "bucket.audio": 1129,
-    "bucket.objects": 4556,
+    "bucket.objects": 5745,
     "bucket.transcripts": 1129,
     "recordings": 1129,
     "recordings.duplicateOf": 2,
@@ -10,17 +10,18 @@
     "recordings.transcribed": 1129,
     "series": 17,
     "shiurim": 1048,
-    "shiurim.inScope": 997,
+    "shiurim.inScope": 1035,
     "shiurim.inScope.category.current": 79,
     "shiurim.inScope.category.misc": 23,
     "shiurim.inScope.category.parsha": 199,
+    "shiurim.inScope.category.purim": 38,
     "shiurim.inScope.category.set": 268,
     "shiurim.inScope.category.shonos": 49,
     "shiurim.inScope.category.simcha": 72,
     "shiurim.inScope.category.zman": 307,
-    "shiurim.inScope.hours": 772.41,
+    "shiurim.inScope.hours": 880.16,
     "shiurim.inScope.lang.en": 267,
-    "shiurim.inScope.lang.yi": 730,
+    "shiurim.inScope.lang.yi": 768,
     "shiurim.inScope.series.current-bachurim-5771": 9,
     "shiurim.inScope.series.current-bachurim-5773": 19,
     "shiurim.inScope.series.current-ey-bachurim-5769": 21,
@@ -38,22 +39,22 @@
     "shiurim.inScope.series.tefila-en": 17,
     "shiurim.inScope.series.tefila-yi": 41,
     "shiurim.inScope.source.pocket-guide-2012": 786,
-    "shiurim.inScope.source.uncatalogued-guide": 211,
-    "shiurim.outOfScope.category.purim": 40,
+    "shiurim.inScope.source.uncatalogued-guide": 249,
+    "shiurim.outOfScope.category.purim": 2,
     "shiurim.outOfScope.category.set": 9,
     "shiurim.outOfScope.category.zman": 2,
     "shiurim.outOfScope.lang.en": 10,
-    "shiurim.outOfScope.lang.yi": 41,
+    "shiurim.outOfScope.lang.yi": 3,
     "shiurim.outOfScope.reason.audio-not-in-r2-bucket": 8,
     "shiurim.outOfScope.reason.gramen-purim-song-lyrics-printed-in-the-guide-not-a-shiur": 2,
     "shiurim.outOfScope.reason.not-on-disk-listed-in-the-2012-guide-no-audio": 3,
-    "shiurim.outOfScope.reason.purim-seudah-out-of-scope": 38,
     "shiurim.outOfScope.series.shabbos-tefilah-en": 8,
     "shiurim.outOfScope.series.tanya-en": 1,
     "shiurim.outOfScope.source.pocket-guide-2012": 5,
-    "shiurim.outOfScope.source.uncatalogued-guide": 46,
+    "shiurim.outOfScope.source.uncatalogued-guide": 8,
     "transcripts.attachedInScope": 1127,
     "transcripts.redundant": 2,
+    "warnings.derived-audio": 1,
     "warnings.duplicate": 2,
     "warnings.grouped-tracks": 2,
     "warnings.junk-row": 3,
@@ -70,7 +71,6 @@
     "warnings.single-file-two-sides": 4,
     "warnings.split-year-by-order": 10,
     "warnings.split-year-unknown": 1,
-    "warnings.transcribed-out-of-scope": 124,
     "warnings.year-junk": 1
   },
   "shiurim": [
@@ -29700,8 +29700,8 @@
       "recordingIds": [
         "purim-06-5739-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29732,8 +29732,8 @@
         "purim-06-5740-1-purim-seudah-zeidins-cholem",
         "purim-06-5740-2-purim-seudah-zeidins-cholem"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29764,8 +29764,8 @@
         "purim-06-5743-1-purim-seudah",
         "purim-06-5743-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29796,8 +29796,8 @@
         "purim-06-5744-1-purim-seudah-jamale",
         "purim-06-5744-2-purim-seudah-jamale"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29828,8 +29828,8 @@
         "purim-06-5745-1-purim-seudah",
         "purim-06-5745-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29859,8 +29859,8 @@
       "recordingIds": [
         "purim-06-5746-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29891,8 +29891,8 @@
         "purim-06-5747-1-purim-seudah",
         "purim-06-5747-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29923,8 +29923,8 @@
         "purim-06-5748-1-purim-seudah",
         "purim-06-5748-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29955,8 +29955,8 @@
         "purim-06-5749-1-purim-seudah",
         "purim-06-5749-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -29987,8 +29987,8 @@
         "purim-06-5750-1-purim-seudah",
         "purim-06-5750-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30019,8 +30019,8 @@
         "purim-06-5751-1-purim-seudah",
         "purim-06-5751-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30051,8 +30051,8 @@
         "purim-06-5752-1-purim-seudah",
         "purim-06-5752-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30083,8 +30083,8 @@
         "purim-06-5753-1-purim-seudah",
         "purim-06-5753-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30115,8 +30115,8 @@
         "purim-06-5754-1-purim-hameshulash-seudah",
         "purim-06-5754-2-purim-hameshulash-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30147,8 +30147,8 @@
         "purim-06-5755-1-purim-seudah",
         "purim-06-5755-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30179,8 +30179,8 @@
         "purim-06-5756-1-purim-seudah",
         "purim-06-5756-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30211,8 +30211,8 @@
         "purim-06-5757-1-purim-seudah",
         "purim-06-5757-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30243,8 +30243,8 @@
         "purim-06-5758-1-purim-seudah",
         "purim-06-5758-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30276,8 +30276,8 @@
         "purim-06-5759-2-purim-seudah",
         "purim-06-5759-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30309,8 +30309,8 @@
         "purim-06-5760-2-purim-seudah",
         "purim-06-5760-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30340,8 +30340,8 @@
       "recordingIds": [
         "purim-06-5761-purim-hameshulesh-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30372,8 +30372,8 @@
         "purim-06-5762-1-purim-seudah",
         "purim-06-5762-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30404,8 +30404,8 @@
         "purim-06-5763-1-purim-seudah",
         "purim-06-5763-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30436,8 +30436,8 @@
         "purim-06-5764-1-purim-seudah",
         "purim-06-5764-2-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30469,8 +30469,8 @@
         "purim-06-5765-2-purim-hameshusash",
         "purim-06-5765-3-purim-hameshusash"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30501,8 +30501,8 @@
         "purim-06-5766-1-purim-seudah-a",
         "purim-06-5766-2-purim-seudah-a"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30534,8 +30534,8 @@
         "purim-06-5767-2-purim-seudah",
         "purim-06-5767-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30567,8 +30567,8 @@
         "purim-06-5768-2-purim-hameshulash-seudah",
         "purim-06-5768-3-purim-hameshulash-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30600,8 +30600,8 @@
         "purim-06-5769-2-purim-seudah",
         "purim-06-5769-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30633,8 +30633,8 @@
         "purim-06-5770-2-purim-seudah",
         "purim-06-5770-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30666,8 +30666,8 @@
         "purim-06-5771-2-purim-seudah",
         "purim-06-5771-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30699,8 +30699,8 @@
         "purim-06-5772-2-purim-seudah",
         "purim-06-5772-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30732,8 +30732,8 @@
         "purim-06-5773-2-purim-seudah",
         "purim-06-5773-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30764,8 +30764,8 @@
         "purim-06-5774-01-purim-seudah",
         "purim-06-5774-02-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30797,8 +30797,8 @@
         "purim-5775-2-purim-seudah",
         "purim-5775-3-purim-seudah"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30836,8 +30836,8 @@
         "purim-5776-purim-seudah-7",
         "purim-5776-purim-seudah-8"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30882,8 +30882,8 @@
         "purim-purim-5777-cd-2-track-07",
         "purim-purim-5777-cd-2-track-08"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -30933,8 +30933,8 @@
         "purim-purim-5778-cd-3-track-04",
         "purim-purim-5778-cd-3-track-05"
       ],
-      "inScope": false,
-      "outOfScopeReason": "Purim seudah (out of scope)",
+      "inScope": true,
+      "outOfScopeReason": null,
       "pathNotes": []
     },
     {
@@ -42872,7 +42872,8 @@
     }
   ],
   "warnings": [
-    "[non-audio-object] ignored 40 non-audio objects in the bucket (.mrk, .wav, .json sidecar files)",
+    "[derived-audio] ignored 1132 derived audio objects (fixed/ copies and .WMA playback transcodes)",
+    "[non-audio-object] ignored 97 non-audio objects in the bucket (.mrk, .pdf, .jpg, .wav, .json sidecar files)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד א: -> 5736 (year assigned by order of the shana field)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד ב: -> 5749 (year assigned by order of the shana field)",
     "[multi-file-split] pocket-guide parshas-hashavua p.5 n=3: 2 files with side-labelled segments -> split into 2 shiurim",
@@ -43111,130 +43112,6 @@
     "[perek-blank] en-tanya-en-30: perek blank in catalog (n=30)",
     "[perek-blank] en-tanya-en-37: perek blank in catalog (n=37)",
     "[perek-blank] en-tanya-en-38: perek blank in catalog (n=38)",
-    "[perek-blank] en-tanya-en-40: perek blank in catalog (n=40)",
-    "[transcribed-out-of-scope] purim-06-5739-purim-seudah is transcribed but its shiur yi-purim-seudos-5739 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5740-1-purim-seudah-zeidins-cholem is transcribed but its shiur yi-purim-seudos-5740 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5740-2-purim-seudah-zeidins-cholem is transcribed but its shiur yi-purim-seudos-5740 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5743-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5743 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5743-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5743 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5744-1-purim-seudah-jamale is transcribed but its shiur yi-purim-seudos-5744 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5744-2-purim-seudah-jamale is transcribed but its shiur yi-purim-seudos-5744 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5745-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5745 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5745-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5745 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5746-purim-seudah is transcribed but its shiur yi-purim-seudos-5746 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5747-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5747 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5747-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5747 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5748-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5748 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5748-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5748 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5749-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5749 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5749-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5749 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5750-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5750 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5750-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5750 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5751-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5751 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5751-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5751 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5752-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5752 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5752-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5752 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5753-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5753 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5753-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5753 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5754-1-purim-hameshulash-seudah is transcribed but its shiur yi-purim-seudos-5754 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5754-2-purim-hameshulash-seudah is transcribed but its shiur yi-purim-seudos-5754 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5755-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5755 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5755-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5755 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5756-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5756 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5756-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5756 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5757-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5757 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5757-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5757 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5758-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5758 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5758-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5758 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5759-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5759 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5759-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5759 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5759-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5759 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5760-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5760 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5760-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5760 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5760-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5760 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5761-purim-hameshulesh-seudah is transcribed but its shiur yi-purim-seudos-5761 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5762-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5762 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5762-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5762 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5763-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5763 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5763-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5763 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5764-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5764 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5764-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5764 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5765-1-purim-hameshusash is transcribed but its shiur yi-purim-seudos-5765 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5765-2-purim-hameshusash is transcribed but its shiur yi-purim-seudos-5765 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5765-3-purim-hameshusash is transcribed but its shiur yi-purim-seudos-5765 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5766-1-purim-seudah-a is transcribed but its shiur yi-purim-seudos-5766 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5766-2-purim-seudah-a is transcribed but its shiur yi-purim-seudos-5766 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5767-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5767 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5767-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5767 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5767-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5767 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5768-1-purim-hameshulash-seudah is transcribed but its shiur yi-purim-seudos-5768 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5768-2-purim-hameshulash-seudah is transcribed but its shiur yi-purim-seudos-5768 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5768-3-purim-hameshulash-seudah is transcribed but its shiur yi-purim-seudos-5768 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5769-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5769 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5769-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5769 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5769-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5769 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5770-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5770 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5770-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5770 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5770-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5770 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5771-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5771 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5771-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5771 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5771-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5771 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5772-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5772 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5772-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5772 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5772-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5772 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5773-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5773 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5773-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5773 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5773-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5773 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5774-01-purim-seudah is transcribed but its shiur yi-purim-seudos-5774 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-06-5774-02-purim-seudah is transcribed but its shiur yi-purim-seudos-5774 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5775-1-purim-seudah is transcribed but its shiur yi-purim-seudos-5775 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5775-2-purim-seudah is transcribed but its shiur yi-purim-seudos-5775 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5775-3-purim-seudah is transcribed but its shiur yi-purim-seudos-5775 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-0 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-1 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-2 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-3 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-4 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-5 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-6 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-7 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-5776-purim-seudah-8 is transcribed but its shiur yi-purim-seudos-5776 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-01 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-02 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-03 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-04 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-05 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-06 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-07 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-1-track-08 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-01 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-02 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-03 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-04 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-05 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-06 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-07 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5777-cd-2-track-08 is transcribed but its shiur yi-purim-seudos-5777 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-01 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-02 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-03 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-04 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-05 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-06 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-07 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-1-track-08 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-01 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-02 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-03 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-04 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-05 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-06 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-07 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-2-track-08 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-3-track-01 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-3-track-02 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-3-track-03 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-3-track-04 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))",
-    "[transcribed-out-of-scope] purim-purim-5778-cd-3-track-05 is transcribed but its shiur yi-purim-seudos-5778 stays out of scope (Purim seudah (out of scope))"
+    "[perek-blank] en-tanya-en-40: perek blank in catalog (n=40)"
   ]
 }

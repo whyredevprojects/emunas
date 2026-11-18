@@ -192,7 +192,9 @@ describe.each(["yi", "en"] as const)("%s edition", (ed) => {
     expect(await page.locator('[data-occasion="vayeitzei"] a[href*="/calendar/parsha/vayeitzei/"]').count()).toBeGreaterThan(0);
     expect(await page.locator('[data-occasion="chanukah"] li').count()).toBe(5);
     expect(await page.locator("[data-section]").count()).toBeGreaterThan(10);
-    expect(await page.locator(".standing").innerText()).toContain("997");
+    // The total follows the data (build.json), so it is read from the corpus this suite built.
+    const { counts } = JSON.parse(readFileSync(join(corpusDir, "build.json"), "utf8")) as { counts: { total: number } };
+    expect(await page.locator(".standing").innerText()).toContain(new Intl.NumberFormat("en-US").format(counts.total));
     expect(await page.locator("[data-coverage]").count()).toBe(0);
     expect(await page.locator("#indexes .count").count()).toBe(0);
     await page.context().close();
