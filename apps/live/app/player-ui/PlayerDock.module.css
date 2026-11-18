@@ -192,6 +192,11 @@
     min-block-size: 1.5rem;
   }
 
+  /* The notice row sits at the dock's bottom edge, which clips overflow: keep the ring inside it. */
+  .textButton:focus-visible {
+    outline-offset: -1px;
+  }
+
   .visuallyHidden {
     position: absolute;
     inline-size: 1px;

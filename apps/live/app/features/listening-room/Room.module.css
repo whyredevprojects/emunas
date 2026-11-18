@@ -105,6 +105,21 @@
     cursor: pointer;
   }
 
+  /*
+   * On a narrow screen the line wraps, and the " · " would hang at the end of the first line or
+   * start the second. Stack the sentence and the button there instead, without the separator.
+   */
+  @media (max-width: 40rem) {
+    .versionLine {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .versionSeparator {
+      display: none;
+    }
+  }
+
   .pending {
     padding: var(--space-s) var(--space-m);
     border-inline-start: var(--rule-thick) solid var(--color-rule-strong);

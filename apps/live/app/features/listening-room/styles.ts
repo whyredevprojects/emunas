@@ -71,6 +71,7 @@ export const ROOM_CLASSES = [
   "topicChips",
   "versionLine",
   "versionButton",
+  "versionSeparator",
 ] as const;
 
 export type RoomClass = (typeof ROOM_CLASSES)[number];

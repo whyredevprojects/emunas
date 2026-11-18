@@ -41,7 +41,7 @@ function RoomVersionLine({ room }: { room: RoomContext }): JSX.Element | null {
   if (version === null) return null;
   return (
     <p className={s.versionLine} data-room-version="">
-      <VersionLine version={version} ui={room.ui} buttonClassName={s.versionButton} />
+      <VersionLine version={version} ui={room.ui} buttonClassName={s.versionButton} separatorClassName={s.versionSeparator} />
     </p>
   );
 }
