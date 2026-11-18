@@ -14,7 +14,6 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - `apps/quiet` is branded **Library**. `apps/live` is branded **Analyze**, with the Hebrew name **עיון**. Analyze is the advanced app with more data.
 - The rename is branding only: UI copy, titles and meta. Folder names, package names, internal code names (`formatQuiet` and so on), docs file names, CI and Worker names stay `quiet`/`live`.
 - Analyze keeps the `listen.` subdomain for now. It may still be renamed.
-- Planned: the second edition switches from Yiddish to Hebrew. The owner will do this later, so don't start it unasked.
 
 ## Transcripts are never published
 
@@ -25,7 +24,7 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 ## Languages
 
-- Three languages: English (`en`), Yiddish (`yi`) and Hebrew (`he`). Both sites and all generated content support all three, and nothing hardcodes the set: code iterates `UI_LANGS` from `@emunas/i18n`, so adding a language means adding it there, its message tables, and its translation run.
+- Three languages: English (`en`), Yiddish (`yi`) and Hebrew (`he`). This is the owner's current decision: Yiddish stays alongside Hebrew. Whether Yiddish is ever dropped is the owner's call later; don't start it unasked. Both sites and all generated content support all three, and nothing hardcodes the set: code iterates `UI_LANGS` from `@emunas/i18n`, so adding a language means adding it there, its message tables, and its translation run.
 - The pipeline writes `en` and `yi` from the transcript. Every other language is a P4c translation overlay of that published text (`docs/translation-runbook.md`); text with no current translation falls back to Yiddish.
 - UI Yiddish: when a Yiddish UI word is hard to translate (no natural Chassidish Yiddish word, or only a Daytshmerish or English-sounding one), just use the Hebrew word.
 
