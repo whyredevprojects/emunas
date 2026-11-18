@@ -316,7 +316,11 @@ open pull requests.
   the sites; the URLs land in the job summary. Without Cloudflare secrets it logs a notice and passes.
 
 `node_modules` and Playwright browsers come from the Actions cache (`.github/actions/setup`,
-`.github/actions/playwright`), saved from `main` only.
+`.github/actions/playwright`), saved from `main` only. The browsers' system libraries are apt
+packages: `.github/actions/playwright` also caches the downloaded `.deb` files (any branch, keyed by
+Playwright version, browser set and a hash of the file list) and seeds apt's cache with them, so apt
+only downloads packages whose version changed. Without it a slow Ubuntu mirror once made the WebKit
+download (~126 MB) outlast the 30-minute job timeout.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
 `workers`, `site-policy`; manual dispatch with `target: production|staging`):
@@ -479,6 +483,15 @@ debugging from scratch.
   server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
   If the gate fails on brotli bytes, Today's data has really outgrown its budget.
 - *Fix:* that is a product or data-size question. Don't raise the budget silently.
+
+**Live data budgets: `writeup/<id>.<lang>.json` over its brotli target** (`real-data.test.ts`, `unit (live)`)
+- *Why it fails:* a write-up's length follows its shiur's length (800–1,000 words per hour,
+  `scripts/lib/budget.ts`), so the longest shiur sets the size of the largest write-up file. The
+  target was 8 KiB until the Purim seudos (up to 4.2 h) came into scope on 2026-11-18 and reached
+  11,162 B; it is now 13 KiB (`apps/live/data-build/budgets.ts`).
+- *Fix:* check the overrun is a long shiur, not a write-up past its own word budget
+  (`npm run -s writeup:budget -- <shiurId>`). If the shiur is long, raise the target to the new
+  largest file plus ~20% and update the comment. If not, fix the write-up in the pipeline.
 
 ## 9. Contracts for later packages
 

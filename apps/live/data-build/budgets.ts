@@ -33,7 +33,11 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   facets: 90 * KB,
   today: 30 * KB,
   shiur: 40 * KB,
-  writeup: 8 * KB,
+  // A write-up is sized from its shiur's length (scripts/lib/budget.ts: 800-1,000 words per hour), so
+  // its file grows with the longest shiur. 8 KiB held while the longest was 1.9 h; the Purim seudos
+  // (up to 4.2 h, in scope since 2026-11-18) reach 11,162 B br (yi-purim-seudos-5769.yi). The file is
+  // loaded on demand. 13 KiB leaves ~19% headroom.
+  writeup: 13 * KB,
   quickIndex: 600 * KB,
   build: 4 * KB,
   // Corpus layer (plan §4).

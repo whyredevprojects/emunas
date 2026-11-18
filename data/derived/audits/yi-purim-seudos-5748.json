@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-purim-seudos-5748",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-18T12:00:00Z",
+  "counts": {
+    "claimsChecked": 28, "unsupported": 2, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 2,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 14, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 2, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 1, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[0].paragraphs[0] / yi[0].paragraphs[0] say the Anshei Knesses HaGedolah saw Hashem's awesome deeds 'in the survival of the Jewish people': filled in from Yoma 69b, not clearly said at segs 16-21 (unsupported); stories[0].retelling lists 'wine, challah and fish' for the Lubliner weekday meal, but 'fish' is not heard at segs 76-78 (unsupported guess); sources missed: the Chiddushei HaRim(?) on Chanukah and Purim as weekday yomim tovim that strengthen Jews in galus (rec 1 seg 702), and the Gemara/halachah on a gentile cutting a Jew's hair (rec 1 segs 536-547); Yiddish: Daytshmerish 'געשעענישן' in writeup.yi[0].paragraphs[1] and summary.abstract.yi; translationese 'אין דעם וואס כלל ישראל בלייבט באשטיין' (writeup.yi[0].paragraphs[0]); padding: writeup.en[2].paragraphs[1] last sentence restates the first; no rule violations (transcript/ASR mentions only in asrNotes); good term recovery (מקיפים, בגדי שבת, אבן שתיה, Gorbachev/Reagan at segs 493-495)"
+}
