@@ -137,7 +137,7 @@ function FacetGroup({ facet, filters, counts, facets, ui, onChange, hidden: hide
             <li key={v} className={n === 0 && !checked ? s.dimmed : undefined} data-value={v} data-count={n}>
               <label className={s.value}>
                 <input type="checkbox" checked={checked} onChange={() => onChange(toggleValue(filters, facet, v))} />
-                {label.data ? <Text value={label.text} shiurLang={null} /> : <span>{label.text}</span>}
+                {label.lang ? <Text value={label.text} lang={label.lang} /> : label.data ? <Text value={label.text} shiurLang={null} /> : <span>{label.text}</span>}
                 <span className={s.count}>{formatNumber(n, ui)}</span>
               </label>
             </li>
@@ -203,7 +203,7 @@ function TopicFacet({ filters, counts, ui, onChange, topics = [] }: FacetPanelPr
             <div className={s.topicValue}>
               <label className={s.value}>
                 <input type="checkbox" checked={checked} onChange={() => onChange(toggleValue(filters, "topic", n.id))} />
-                <Text value={name} lang={ui} />
+                <Text value={n.label} lang={ui} />
                 <span className={s.count}>{formatNumber(count, ui)}</span>
               </label>
               {kids.length > 0 ? (

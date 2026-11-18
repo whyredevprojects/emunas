@@ -172,11 +172,11 @@ describe("catalogPlace", () => {
         sameOccasion: ["d", "missing"],
       },
       lookup,
-      () => "Tanya",
+      () => ({ text: "Tanya", lang: "en", dir: "ltr", fallback: false }),
     );
-    expect(place.section).toMatchObject({ href: "/en/section/tanya-1/", pos: 2, count: 3, label: "ספר התניא א'" });
+    expect(place.section).toMatchObject({ href: "/en/section/tanya-1/", pos: 2, count: 3, label: "ספר התניא א'", labelAttrs: null });
     expect(place.section?.prev).toMatchObject({ id: "a", href: "/en/shiur/a/", title: "Title a" });
-    expect(place.series).toMatchObject({ href: "/en/series/tanya-yi/", label: "Tanya", pos: 1, prev: null });
+    expect(place.series).toMatchObject({ href: "/en/series/tanya-yi/", label: "Tanya", labelAttrs: { lang: "en", dir: "ltr" }, pos: 1, prev: null });
     expect(place.series?.next?.id).toBe("c");
     expect(place.sameOccasion.map((r) => r.id)).toEqual(["d"]);
   });

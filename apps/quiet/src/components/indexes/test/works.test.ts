@@ -6,6 +6,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { loadEntryDataFrom, type EntryData } from "../entries.ts";
 import { sefariaIndexHref, workPage, workPageIds, worksIndex } from "../works.ts";
 import { buildMiniCorpus, type MiniCorpus } from "./mini.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 let mini: MiniCorpus;
 let d: EntryData;
@@ -19,7 +20,7 @@ afterAll(() => mini?.dispose());
 
 describe("works index", () => {
   it("lists every work once, in the layer's shelf order, generic labels in the last block", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const blocks = worksIndex(d, ed);
       const lines = blocks.flatMap((b) => b.works);
       expect(lines.map((l) => l.id).sort()).toEqual(d.layer.works.map((w) => w.id).sort());

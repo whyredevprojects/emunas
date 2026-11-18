@@ -7,6 +7,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { loadEntryDataFrom, type EntryData } from "../../indexes/entries.ts";
 import { buildMiniCorpus, type MiniCorpus } from "../../indexes/test/mini.ts";
 import { isListed, namesIndex, personPage, personPageIds, type PersonLine } from "../model.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
 
 let mini: MiniCorpus;
 let d: EntryData;
@@ -18,14 +19,14 @@ beforeAll(() => {
 
 afterAll(() => mini?.dispose());
 
-const personLines = (ed: "yi" | "en"): PersonLine[] =>
+const personLines = (ed: Ed): PersonLine[] =>
   namesIndex(d, ed).flatMap((g) => g.lines.filter((l): l is PersonLine => l.kind === "person"));
 
 describe("names index (שמות)", () => {
   it("lists exactly the people the layer lists on Quiet, once each", () => {
     const want = d.layer.people.filter(isListed).map((p) => p.id).sort();
     expect(want.length).toBeGreaterThan(50);
-    for (const ed of ["yi", "en"] as const) expect(personLines(ed).map((l) => l.id).sort()).toEqual(want);
+    for (const ed of EDS) expect(personLines(ed).map((l) => l.id).sort()).toEqual(want);
   });
 
   it("leaves out type-other people below 3 shiurim and excluded people (the Mashgiach's family)", () => {
@@ -39,7 +40,7 @@ describe("names index (שמות)", () => {
   });
 
   it("arranges the groups as a sefer does, alphabetical inside a group by the edition's name", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const groups = namesIndex(d, ed);
       const order = groups.map((g) => LAYER_PERSON_GROUPS.indexOf(g.group));
       expect(order).toEqual([...order].sort((a, b) => a - b));

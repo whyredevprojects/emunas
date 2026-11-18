@@ -96,7 +96,7 @@ export function Luach({ counts, facets, ui, selected, onChoose }: LuachProps): J
                   onClick={() => onChoose(o.key)}
                   data-stop={o.key}
                 >
-                  <Text value={labelText(o.label, ui)} shiurLang={null} /> <span className={s.count}>{formatNumber(o.count, ui)}</span>
+                  <Text value={o.label} lang={ui} /> <span className={s.count}>{formatNumber(o.count, ui)}</span>
                 </button>
               </li>
             ))}
@@ -118,7 +118,7 @@ export function Luach({ counts, facets, ui, selected, onChoose }: LuachProps): J
                 <tr key={x.key}>
                   <th scope="row">
                     <button type="button" className={s.textButton} aria-pressed={sel.has(x.key)} onClick={() => onChoose(x.key)}>
-                      <Text value={labelText(x.label, ui)} shiurLang={null} />
+                      <Text value={x.label} lang={ui} />
                     </button>
                   </th>
                   <td>{formatNumber(x.count, ui)}</td>

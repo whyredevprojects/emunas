@@ -269,7 +269,10 @@ describe("engine binding and deep links", () => {
   it("uses the series title as the Media Session album", async () => {
     await openAt("/en/s/yi-tanya-1-01");
     expect(media.metadata()?.album).toBe("Tanya (Yiddish)");
-    expect(screen.getByText(/Tanya \(Yiddish\), part 2 of 4/)).toBeTruthy();
+    // The series title is its own element (it carries the lang/dir of the text shown) inside the line.
+    const line = screen.getAllByText("Tanya (Yiddish)", { selector: "bdi" }).find((el) => /, part 2 of 4/.test(el.parentElement?.textContent ?? ""));
+    expect(line?.getAttribute("lang")).toBe("en");
+    expect(line?.parentElement?.textContent).toMatch(/^Tanya \(Yiddish\), part 2 of 4/);
   });
 });
 

@@ -34,6 +34,7 @@ import {
   topicTree,
   type TopicsSource,
 } from "../model.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, "../../../../../..");
@@ -91,7 +92,7 @@ const descendants = (id: string): Set<string> => {
 
 describe("the tree", () => {
   it("has every listed gate as a heading, its topics beneath, deeper topics run in", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const gates = topicTree(ed, src);
       const roots = src.topics.filter((t) => t.parentId === null && t.count > 0);
       expect(gates.map((g) => g.id).sort()).toEqual(roots.map((r) => r.id).sort());

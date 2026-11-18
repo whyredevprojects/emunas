@@ -29,7 +29,7 @@ import type {
   PublicShiur,
 } from "@emunas/corpus/public";
 import { dataPaths } from "../app/data/paths.ts";
-import { SOURCE_LANGS, UI_LANGS, type UiLang } from "@emunas/i18n";
+import { UI_LANGS, isSourceLang, type UiLang } from "@emunas/i18n";
 import {
   liveConceptPage,
   livePersonPage,
@@ -107,8 +107,6 @@ export function lcopy(l: LocalizedText | null | undefined): LocalizedText {
   }
   return out as LocalizedText;
 }
-
-const isSourceLang = (lang: UiLang): boolean => (SOURCE_LANGS as readonly UiLang[]).includes(lang);
 
 /** A label whose `he` is set only when it differs from the Yiddish form. */
 export function facetLabel(en: string, yi: string, he: string | null | undefined): FacetLabel {

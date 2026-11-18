@@ -1,4 +1,4 @@
-import { UI_DIR, type UiLang } from "./lang.ts";
+import { UI_DIR, UI_LANGS, type UiLang } from "./lang.ts";
 
 /**
  * The content-language layer: how a site picks which language of a published text to show.
@@ -18,6 +18,13 @@ export type SourceLang = (typeof SOURCE_LANGS)[number];
 
 /** Interface languages whose content comes from translation overlays (today `he`). */
 export type TranslatedLang = Exclude<UiLang, SourceLang>;
+
+export function isSourceLang(lang: UiLang): lang is SourceLang {
+  return (SOURCE_LANGS as readonly UiLang[]).includes(lang);
+}
+
+/** Every `TranslatedLang`, in `UI_LANGS` order: the optional keys of a `Localized` value. */
+export const TRANSLATED_LANGS: readonly TranslatedLang[] = UI_LANGS.filter((l): l is TranslatedLang => !isSourceLang(l));
 
 /**
  * One published value per language: the source languages required, every other `UiLang` optional

@@ -9,7 +9,7 @@ import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@
 import type { JSX } from "react";
 import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import { getEngine } from "../../player-ui/index.ts";
 import type { RoomContext } from "./context.ts";
 import { mainTopics } from "./corpus.ts";
@@ -17,7 +17,6 @@ import { topicTargets } from "./model.ts";
 import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
 import { printableUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
-import { labelText } from "../../i18n/content.ts";
 
 export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; quietOrigin: string | null }): JSX.Element {
   const { shiur, ui, rt, reading } = room;
@@ -77,9 +76,12 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
           <div>
             <dt className={s.visuallyHidden}>{rt("related.series")}</dt>
             <dd>
-              {shiur.series.order !== null
-                ? rt("room.seriesPart", { series: labelText(series, ui), n: shiur.series.order, count: shiur.series.count })
-                : rt("room.seriesPartNoOrder", { series: labelText(series, ui) })}
+              {aroundText(
+                shiur.series.order !== null
+                  ? rt("room.seriesPart", { series: TEXT_SLOT, n: shiur.series.order, count: shiur.series.count })
+                  : rt("room.seriesPartNoOrder", { series: TEXT_SLOT }),
+                <Text value={series} lang={ui} />,
+              )}
               {shiur.perek ? <> · {rt("room.perek", { perek: shiur.perek })}</> : null}
             </dd>
           </div>

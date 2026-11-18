@@ -48,10 +48,11 @@ const title = (r: RowRef) => r.title || t("catalog.noTitle");
   {positions.map(({ key, view, text }) => {
     const [before, after] = split(text);
     const name = view.label || (key === "series" ? t("catalog.seriesFallback") : "");
+    const attrs = view.label && view.labelAttrs ? view.labelAttrs : runAttrs(name, shiurLang, ed);
     return (
       <div class="place" data-place={key}>
         <p class="place-where">
-          {before}{view.href ? <a href={view.href}><bdi {...runAttrs(name, shiurLang, ed)}>{name}</bdi></a> : <bdi {...runAttrs(name, shiurLang, ed)}>{name}</bdi>}{after}
+          {before}{view.href ? <a href={view.href}><bdi {...attrs}>{name}</bdi></a> : <bdi {...attrs}>{name}</bdi>}{after}
         </p>
         {(view.prev || view.next) && (
           <ul role="list" class="prev-next">

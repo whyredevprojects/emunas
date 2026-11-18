@@ -277,7 +277,7 @@ describe("this week", () => {
     expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:chanukah:soon"]);
     expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:soon"]);
     for (const d of w.days) for (const k of d.blocks) expect(w.blocks.has(k), `${d.date} ${k}`).toBe(true);
-    for (const ed of ["en", "yi"] as const) {
+    for (const ed of EDS) {
       const labels = thisWeekWindow(corpus, ed, "2026-11-19").days.map((d) => d.hebrewDate);
       expect(new Set(labels).size, ed).toBe(labels.length);
     }
@@ -364,7 +364,7 @@ describe("catalog models on today's data", () => {
   });
 
   it("catalog-only rows carry no AI text on any section or series page", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const rows: CatalogRow[] = [
         ...sectionSummaries(corpus).flatMap((s) => sectionModel(corpus, s.slug, ed)!.rows),
         ...seriesSummaries(corpus, ed).flatMap((s) => seriesModel(corpus, s.id, ed)!.rows),

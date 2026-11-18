@@ -187,7 +187,7 @@ function Graph({ center, rows, facets, ui, centerHref }: ConnectionsProps & { ce
                 {edges.map((e) => (
                   <li key={edgeId(e)} data-edge={edgeId(e)}>
                     <button type="button" className={s.textButton} aria-pressed={active === e} onClick={() => toggle(e)}>
-                      <Text value={labelText(e.label, ui)} shiurLang={null} />
+                      <Text value={e.label} lang={ui} />
                     </button>{" "}
                     <span className={s.count}>{et("explore.connections.shared", { count: e.shared })}</span>{" "}
                     <Link to={centerHref({ kind: e.kind, key: e.key })}>{withName(et("explore.connections.recentre"), labelText(e.label, ui))}</Link>
@@ -222,7 +222,7 @@ function EdgeShiurim({
   return (
     <div className={s.edgeShiurim} aria-labelledby={headingId} role="region" data-testid="edge-shiurim">
       <h3 id={headingId} className={s.subTitle}>
-        {fill(along, { a: <Text key="a" value={name} shiurLang={null} />, b: <Text key="b" value={labelText(edge.label, ui)} shiurLang={null} /> })}
+        {fill(along, { a: <Text key="a" value={name} shiurLang={null} />, b: <Text key="b" value={edge.label} lang={ui} /> })}
       </h3>
       <ul className={s.edgeList}>
         {list.map((r) => (

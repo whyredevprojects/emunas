@@ -22,7 +22,7 @@ import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX } from "react";
 import { Link } from "react-router";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import {
   DataError,
   loadTopic,
@@ -38,7 +38,6 @@ import { ShiurCard } from "../today/ShiurCard.tsx";
 import { hebrewName } from "./labels.ts";
 import { topicsT } from "./strings.ts";
 import { topicsStyles as s } from "./styles.ts";
-import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -138,14 +137,14 @@ function TopicBody({
           {f.person?.page ? (
             <li>
               <Link className={s.chip} to={paths.person(ui, f.person.id)} data-person={f.person.id}>
-                {t("topic.person", { name: labelText(f.person.label, ui) })}
+                {aroundText(t("topic.person", { name: TEXT_SLOT }), <Text value={f.person.label} lang={ui} />)}
               </Link>
             </li>
           ) : null}
           {f.work?.page ? (
             <li>
               <Link className={s.chip} to={paths.work(ui, f.work.id)} data-work={f.work.id}>
-                {t("topic.work", { name: labelText(f.work.label, ui) })}
+                {aroundText(t("topic.work", { name: TEXT_SLOT }), <Text value={f.work.label} lang={ui} />)}
               </Link>
             </li>
           ) : null}

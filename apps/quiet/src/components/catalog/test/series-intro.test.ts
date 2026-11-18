@@ -24,6 +24,7 @@ import SeriesIntro from "../SeriesIntro.astro";
 import { loadCatalogCorpus, type CatalogCorpus } from "../corpus.ts";
 import { seriesModel, seriesSummaries, type SeriesSynthesis } from "../model.ts";
 import { catalogEn, catalogYi } from "../strings.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, "../../../../../..");
@@ -162,7 +163,7 @@ describe("series introductions on the real data", () => {
   it("tanya-yi has its introduction and keeps the part without notes as a row", () => {
     const synth = layer.series("tanya-yi");
     expect(synth).not.toBeNull();
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const m = seriesModel(real, "tanya-yi", ed, synth)!;
       expect(m.intro?.overview).toBeTruthy();
       expect(m.intro!.keyThemes.length).toBeGreaterThan(0);

@@ -26,7 +26,7 @@ import { livePaths, parseMomentId } from "@emunas/links";
 import { useEffect, useRef, type JSX, type ReactNode } from "react";
 import { Tab, TabList, TabPanel, Tabs, type Key } from "react-aria-components";
 import { Link } from "react-router";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import type { PublicSource } from "@emunas/corpus/public";
 import { loadShiur } from "./data.ts";
 import { settingsStore } from "../../shell/settings.ts";
@@ -41,7 +41,6 @@ import { relatedTitles, seriesTitle, useWriteup, type RelatedTitle } from "./use
 import { playAt as enginePlayAt } from "../../player-ui/index.ts";
 import { TRANSCRIPT_VIEW } from "../../config/feature-flags.ts";
 import { TRANSCRIPT_TAB, TranscriptTab, transcriptT, useTranscripts } from "../transcript/index.ts";
-import { labelText } from "../../i18n/content.ts";
 
 export type TabId = "read" | "sources" | "insights" | "questions" | "stories" | "related" | typeof TRANSCRIPT_TAB;
 
@@ -499,7 +498,7 @@ function StoryPeopleLine({ room, momentId }: { room: RoomContext; momentId: stri
             </Link>
           ) : (
             <span data-story-person="">
-              <Text value={"id" in p ? labelText(p.label, ui) : p.name} shiurLang={null} />
+              {"id" in p ? <Text value={p.label} lang={ui} /> : <Text value={p.name} shiurLang={null} />}
             </span>
           )}
         </span>
@@ -578,7 +577,7 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
             {topics.map((t) => (
               <li key={t.id} data-topic={t.id}>
                 <Link to={paths.topic(ui, t.id)} className={s.relatedLink}>
-                  {rt("end.topic", { topic: labelText(t.label, ui) })}
+                  {aroundText(rt("end.topic", { topic: TEXT_SLOT }), <Text value={t.label} lang={ui} />)}
                 </Link>
               </li>
             ))}
@@ -630,7 +629,7 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
             {shiur.series ? (
               <li>
                 <Link to={paths.series(ui, shiur.series.id)} className={s.relatedLink}>
-                  {room.info.seriesTitle ? labelText(room.info.seriesTitle, ui) : <Text value={shiur.series.id} lang="en" />}
+                  {room.info.seriesTitle ? <Text value={room.info.seriesTitle} lang={ui} /> : <Text value={shiur.series.id} lang="en" />}
                 </Link>
               </li>
             ) : null}

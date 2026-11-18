@@ -7,6 +7,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
+import { UI_LANGS, byUiLang } from "@emunas/i18n";
 import type { FacetsFile, QuickIndexFile } from "../live-data.ts";
 import { createQuickSearch, type Suggestion } from "../engine.ts";
 
@@ -14,14 +15,11 @@ const dataDir = join(dirname(fileURLToPath(import.meta.url)), "../../../data/fix
 const read = <T,>(file: string): T => JSON.parse(readFileSync(join(dataDir, file), "utf8")) as T;
 
 const facets = read<FacetsFile>("facets.json");
-const engines = {
-  en: createQuickSearch({ ui: "en", quick: read<QuickIndexFile>("quick-index.en.json"), facets }),
-  yi: createQuickSearch({ ui: "yi", quick: read<QuickIndexFile>("quick-index.yi.json"), facets }),
-};
+const engines = byUiLang((ui) => createQuickSearch({ ui, quick: read<QuickIndexFile>(`quick-index.${ui}.json`), facets }));
 
 const entityKeys = (xs: Suggestion[]) => xs.flatMap((s) => (s.type === "entity" ? [`${s.kind}:${s.id}`] : []));
 
-describe.each(["en", "yi"] as const)("suggestions on the emitted quick index (%s)", (ui) => {
+describe.each(UI_LANGS)("suggestions on the emitted quick index (%s)", (ui) => {
   const e = engines[ui];
 
   it("'hester' suggests the topic Hester Panim", () => {

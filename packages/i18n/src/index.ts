@@ -2,6 +2,8 @@ export { UI_DIR, UI_ENDONYM, UI_LANGS, UI_LOCALE, byUiLang, isUiLang, otherUiLan
 export {
   CONTENT_FALLBACK,
   SOURCE_LANGS,
+  TRANSLATED_LANGS,
+  isSourceLang,
   hasContent,
   pickLocalized,
   pickText,

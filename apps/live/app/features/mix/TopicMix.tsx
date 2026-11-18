@@ -78,7 +78,7 @@ export function TopicMix({ file, ui, read, loadPage = (id, n) => loadTopicMoment
         {t("mix.title")}
       </h2>
       <p className={s.header} data-testid="mix-header" data-sections={totals.sections} data-shiurim={totals.shiurim}>
-        <Text value={label} lang={ui} />
+        <Text value={file.label} lang={ui} />
         {`: ${t("mix.header", {
           sections: t("mix.sections", { count: totals.sections }),
           shiurim: t("mix.shiurim", { count: totals.shiurim }),

@@ -23,7 +23,6 @@ import { playTelling } from "./play.ts";
 import { maasiosT } from "./strings.ts";
 import { maasiosStyles as s } from "./styles.ts";
 import { OwnRetelling, TellingLine } from "./Telling.tsx";
-import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -94,7 +93,7 @@ function StoryBody({ file, ui }: { file: StoryFile; ui: UiLang }): JSX.Element {
               </Link>
             ) : (
               <span key={"id" in p ? p.id : `n${i}`} data-name="">
-                <Text value={"id" in p ? labelText(p.label, ui) : p.name} shiurLang={null} />
+                {"id" in p ? <Text value={p.label} lang={ui} /> : <Text value={p.name} shiurLang={null} />}
               </span>
             ),
           )}

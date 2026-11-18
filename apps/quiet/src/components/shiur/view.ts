@@ -6,7 +6,7 @@
  * Nothing here reads raw data: the input is the allow-listed public contract, so there is no
  * field through which transcript text could arrive.
  */
-import { pickLocalized, sourceRefParts, type AudioLang, type Picked, type SourceRefParts } from "@emunas/i18n";
+import { pickLocalized, sourceRefParts, type AudioLang, type Picked, type PickedText, type SourceRefParts } from "@emunas/i18n";
 import { quietPaths } from "@emunas/links";
 import { sefariaUrl, WORK_GROUP_LABELS, WORK_GROUPS, workByKey, type WorkGroup } from "@emunas/normalize";
 import type { IndexRow, PublicCatalog, PublicNotes, PublicShiur, PublicSource, PublicWriteupBlock } from "@emunas/corpus/public";
@@ -243,6 +243,11 @@ export interface RowRef {
 
 export interface PositionView {
   readonly label: string;
+  /**
+   * `lang`/`dir` of `label` when its language is known (the series title is generated text, picked
+   * along `CONTENT_FALLBACK`); null for a catalog string (the section name), read by its script.
+   */
+  readonly labelAttrs: { readonly lang: Ed; readonly dir: "ltr" | "rtl" } | null;
   readonly href: string | null;
   readonly pos: number;
   readonly count: number;
@@ -290,13 +295,14 @@ export function catalogPlace(
   shiur: Pick<PublicShiur, "catalog" | "parsha" | "zman" | "series">,
   neighbours: Neighbours | undefined,
   rows: RowLookup,
-  seriesTitle?: (id: string) => string | undefined,
+  seriesTitle?: (id: string) => PickedText | undefined,
 ): CatalogPlaceView {
   const paths = quietPaths();
   const ref = (id: string | null) => (id === null ? null : rowRef(ed, id, rows));
   const section: PositionView | null = neighbours
     ? {
         label: shiur.catalog.sectionTitle,
+        labelAttrs: null,
         href: sectionHref(ed, shiur.catalog),
         pos: neighbours.section.pos,
         count: neighbours.section.count,
@@ -305,10 +311,12 @@ export function catalogPlace(
       }
     : null;
   const s = neighbours?.series ?? null;
+  const picked = shiur.series ? seriesTitle?.(shiur.series.id) : undefined;
   const series: PositionView | null =
     s && shiur.series
       ? {
-          label: seriesTitle?.(shiur.series.id) ?? "",
+          label: picked?.text ?? "",
+          labelAttrs: picked ? { lang: picked.lang, dir: picked.dir } : null,
           href: paths.series(ed, shiur.series.id),
           pos: s.pos,
           count: s.count,

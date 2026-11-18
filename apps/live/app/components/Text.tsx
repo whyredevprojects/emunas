@@ -63,3 +63,23 @@ export function Text(props: TextProps): JSX.Element {
     </Tag>
   );
 }
+
+/** Placeholder for a data string inside a message (`t("key", { name: TEXT_SLOT })`), see `aroundText`. */
+export const TEXT_SLOT = "\u0000";
+
+/**
+ * A message with `TEXT_SLOT` in it, with `node` (usually a `<Text>`) in its place, so a data string
+ * inside a sentence keeps the `lang`/`dir` of the text actually shown (a fallback language may differ
+ * from the sentence's) instead of taking the sentence's.
+ */
+export function aroundText(message: string, node: JSX.Element): JSX.Element {
+  const at = message.indexOf(TEXT_SLOT);
+  if (at < 0) return <>{message}</>;
+  return (
+    <>
+      {message.slice(0, at)}
+      {node}
+      {message.slice(at + TEXT_SLOT.length)}
+    </>
+  );
+}

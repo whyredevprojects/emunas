@@ -213,8 +213,9 @@ export function createPageText(corpus: SeoCorpus): (pathname: string) => PageTex
       case "series": {
         const s = series.get(key);
         if (!s) return null;
-        const title = pickText(s.title, ui).text;
-        return { kind: page.kind, title, description: str.series(title, count(ui, s.count)), titleLang: null };
+        const picked = pickText(s.title, ui);
+        const title = picked.text;
+        return { kind: page.kind, title, description: str.series(title, count(ui, s.count)), titleLang: picked.lang === ui ? null : picked.lang };
       }
       case "occasion": {
         const o = occasions.get(key);

@@ -10,15 +10,16 @@ import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { findMetaComments } from "@emunas/corpus-guard";
+import { SOURCE_LANGS, TRANSLATED_LANGS } from "@emunas/i18n";
 import { describe, expect, it } from "vitest";
 import { ABOUT_PARTS } from "../pages/[ed]/about/_strings.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const drafts = join(here, "about-drafts");
 const published = join(here, "about");
-const EDS = ["en", "yi"] as const;
+const EDS = SOURCE_LANGS;
 /** Translated editions: their About texts are translations of the source editions' texts. */
-const TRANSLATED = ["he"] as const;
+const TRANSLATED = TRANSLATED_LANGS;
 const PUBLISHED = ABOUT_PARTS.filter((p) => existsSync(join(published, "en", `${p}.md`)));
 const DRAFTED = ABOUT_PARTS.filter((p) => !PUBLISHED.includes(p));
 const filesIn = (dir: string): string[] => (existsSync(dir) ? readdirSync(dir).sort() : []);

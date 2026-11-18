@@ -14,7 +14,8 @@ import { existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join } from "node:path";
 import { chromium, type Browser, type BrowserContext, type Page, type Route } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { Ed, Links } from "@emunas/links";
+import { CONTENT_FALLBACK, pickText, type LocalizedText } from "@emunas/i18n";
+import { EDS, type Ed, type Links } from "@emunas/links";
 import {
   checkLiveUrl,
   checkQuietUrl,
@@ -37,7 +38,7 @@ interface Chapter {
   idx: number;
   t: number;
   end: number;
-  title: { en: string; yi: string };
+  title: LocalizedText;
 }
 interface ShiurFile {
   id: string;
@@ -49,14 +50,14 @@ interface ShiurFile {
 
 interface Samples {
   shiur: ShiurFile & { notes: { chapters: Chapter[] } };
-  series: { id: string; title: { en: string; yi: string } };
-  parsha: { key: string; en: string; yi: string };
-  zman: { key: string; en: string; yi: string };
+  series: { id: string; title: LocalizedText };
+  parsha: { key: string; en: string; yi: string; he?: string };
+  zman: { key: string; en: string; yi: string; he?: string };
   work: string;
   person: string;
   concept: { id: string; he: string };
   topic: { id: string; label: { en?: string; yi?: string; he?: string } };
-  story: { id: string; title: { en: string; yi: string } };
+  story: { id: string; title: LocalizedText };
 }
 
 let facts: CorpusFacts;
@@ -149,7 +150,7 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
   };
 
   it("both sides of every equivalence row resolve in the builds", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       for (const [label, q, l] of pairs(ed)) {
         expect(checkQuietUrl(paths.quietDist, q), `${ed} ${label}: ${q}`).toBeNull();
         expect(checkLiveUrl(paths.liveClient, l), `${ed} ${label}: ${l}`).toBeNull();
@@ -158,7 +159,7 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
   });
 
   it("links.equivalent maps each side to the other", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       for (const [label, q, l] of pairs(ed)) {
         const toLive = links.equivalent(q);
         const toQuiet = links.equivalent(l);
@@ -330,7 +331,8 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
 
   /** Shiur ids linked from a page (Quiet `/{ed}/shiur/<id>/`, Live `/{ui}/s/<id>`). */
   async function shiurIds(page: Page, site: "quiet" | "live"): Promise<Set<string>> {
-    const re = site === "quiet" ? /^\/(?:yi|en)\/shiur\/([^/#?]+)\//u : /^\/(?:yi|en)\/s\/([^/#?]+)/u;
+    const eds = EDS.join("|");
+    const re = new RegExp(site === "quiet" ? `^/(?:${eds})/shiur/([^/#?]+)/` : `^/(?:${eds})/s/([^/#?]+)`, "u");
     const hrefs = await page.locator("main a[href]").evaluateAll((as) => as.map((a) => a.getAttribute("href")!));
     const out = new Set<string>();
     for (const h of hrefs) {
@@ -350,7 +352,7 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
     }
   }
 
-  for (const ed of ["en", "yi"] as const) {
+  for (const ed of EDS) {
     it(`shiur: the same catalog title on both sites, and each links to the other (${ed})`, async () => {
       const title = norm(s.shiur.catalog.titleOriginal);
       const quiet = await open(links.quiet.shiur(ed, s.shiur.id));
@@ -373,12 +375,12 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
       const ch = s.shiur.notes.chapters[2]!;
       const quiet = await open(links.quiet.shiur(ed, s.shiur.id, { section: ch.idx }));
       const qHeading = norm(await quiet.locator(`[id="s${ch.idx}"]`).innerText());
-      expect(qHeading).toContain(norm(ch.title[ed]));
+      expect(qHeading).toContain(norm(pickText(ch.title, ed).text));
       await quiet.close();
       const live = await open(links.live.shiur(ed, s.shiur.id, { t: ch.t, m: `${s.shiur.id}~s${ch.idx}` }));
       const active = live.locator(`[data-chapter="${ch.idx}"]`).first();
       await active.waitFor();
-      expect(norm(await active.innerText())).toContain(norm(ch.title[ed]));
+      expect(norm(await active.innerText())).toContain(norm(pickText(ch.title, ed).text));
       const t = Number(await live.locator("[data-dock-slot] [data-player-status]").getAttribute("data-player-t"));
       expect(Math.abs(t - ch.t), `live t ${t} vs ${ch.t}`).toBeLessThanOrEqual(1);
       await live.close();
@@ -410,7 +412,7 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
       const live = await open(links.live.series(ed, s.series.id));
       const qt = norm(await h1(quiet));
       const lt = norm(await h1(live));
-      expect(qt.includes(norm(s.series.title[ed])) || lt.includes(qt) || qt.includes(lt), `${qt} | ${lt}`).toBe(true);
+      expect(qt.includes(norm(pickText(s.series.title, ed).text)) || lt.includes(qt) || qt.includes(lt), `${qt} | ${lt}`).toBe(true);
       // the same parts: every part Live lists is on the Quiet page
       const q = await shiurIds(quiet, "quiet");
       const l = await shiurIds(live, "live");
@@ -454,9 +456,13 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
         for (const id of li) expect(qi.has(id), `${what} ${l}: ${id} not on the Quiet page`).toBe(true);
         if (what === "parsha" || what === "zman") {
           const occ = what === "parsha" ? s.parsha : s.zman;
-          const label = norm(occ[ed]);
-          expect(norm(await h1(quiet))).toContain(label);
-          expect(norm(await h1(live))).toContain(label);
+          // An occasion's name along the edition's fallback chain (Hebrew-script editions may head
+          // with the Hebrew or the Yiddish form).
+          const labels = CONTENT_FALLBACK[ed].map((l) => norm(occ[l] ?? "")).filter(Boolean);
+          const qh = norm(await h1(quiet));
+          const lh = norm(await h1(live));
+          expect(labels.some((n) => qh.includes(n)), `Quiet h1 ${qh}`).toBe(true);
+          expect(labels.some((n) => lh.includes(n)), `Live h1 ${lh}`).toBe(true);
         }
         // Corpus entries: both pages name the same entity (Quiet heads with the Hebrew name).
         if (what === "topic") {
@@ -472,7 +478,7 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
           expect(norm(await live.locator("main").innerText())).toContain(norm(s.concept.he));
         }
         if (what === "story") {
-          const titles = [s.story.title[ed], s.story.title.en, s.story.title.yi].map(norm).filter(Boolean);
+          const titles = [pickText(s.story.title, ed).text, s.story.title.en, s.story.title.yi].map(norm).filter(Boolean);
           const qh = norm(await h1(quiet));
           const lh = norm(await h1(live));
           expect(titles.some((t) => qh.includes(t)), `Quiet h1 ${qh}`).toBe(true);

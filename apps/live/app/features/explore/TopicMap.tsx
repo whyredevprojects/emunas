@@ -76,7 +76,7 @@ export function TopicMap({ tree, ui, browseHref, filterHref }: TopicMapProps): J
           return (
             <li key={n.id} className={s.tile} data-tile={n.id} data-count={n.count} data-open={expanded ? "true" : "false"}>
               <button type="button" className={s.tileButton} aria-expanded={expanded} aria-controls={panelId} onClick={() => toggle(n.id)}>
-                <Text as="span" className={s.tileName} value={name} lang={ui} />
+                <Text as="span" className={s.tileName} value={n.label} lang={ui} />
                 {he ? <Text as="span" className={s.tileHe} value={he} lang="he" /> : null}
                 <span className={s.tileCount}>{formatNumber(n.count, ui)}</span>
               </button>

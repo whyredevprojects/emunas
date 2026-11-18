@@ -7,7 +7,7 @@
  */
 import * as v from "valibot";
 import type { MediaUrl } from "@emunas/corpus/public";
-import { UI_LANGS } from "@emunas/i18n";
+import { SOURCE_LANGS, TRANSLATED_LANGS, UI_LANGS, type SourceLang, type TranslatedLang } from "@emunas/i18n";
 import {
   LIVE_DATA_SCHEMA_VERSION,
   type BuildFile,
@@ -43,8 +43,23 @@ const nstr = v.nullable(str);
 const ed = v.picklist(["en", "yi"]);
 /** A reading / interface language (`UI_LANGS`). */
 const uiLang = v.picklist(UI_LANGS);
+/**
+ * A `Localized<string>` schema: every source language required, every translated language optional
+ * (present only when a current translation exists). Built from the language lists, so a new
+ * `UiLang` needs no change here.
+ */
+function localizedStr(): v.StrictObjectSchema<
+  { readonly [K in SourceLang]: typeof str } & { readonly [K in TranslatedLang]: v.ExactOptionalSchema<typeof str, undefined> },
+  undefined
+> {
+  const entries = {
+    ...Object.fromEntries(SOURCE_LANGS.map((l) => [l, str])),
+    ...Object.fromEntries(TRANSLATED_LANGS.map((l) => [l, v.exactOptional(str)])),
+  } as { readonly [K in SourceLang]: typeof str } & { readonly [K in TranslatedLang]: v.ExactOptionalSchema<typeof str, undefined> };
+  return v.strictObject(entries);
+}
 /** `LocalizedText`: the source languages always, a translated language only when present. */
-const L = v.strictObject({ en: str, yi: str, he: v.exactOptional(str) });
+const L = localizedStr();
 const version = v.literal(LIVE_DATA_SCHEMA_VERSION);
 const soft = v.exactOptional(v.literal(true));
 const category = v.picklist(["parsha", "zman", "shonos", "set", "simcha", "misc", "current", "purim"]);
@@ -66,7 +81,7 @@ const momentKind = v.picklist(["kp", "s", "i", "tk", "q", "st"]);
 const entityKind = v.picklist(["p", "c", "o"]);
 const mediaUrl = v.custom<MediaUrl>((x) => typeof x === "string" && /^https?:\/\/[^/]+\/./.test(x), "media URL");
 const counts = v.strictObject({ total: int, full: int, catalogOnly: int, downgraded: int });
-const facetLabel = v.strictObject({ en: str, yi: str, he: v.exactOptional(str) });
+const facetLabel = localizedStr();
 const facetValue = v.strictObject({ label: facetLabel, count: int });
 const momentRefEntries = { id: str, shiurId: str, kind: momentKind, t: nnum, end: nnum };
 const momentRef = v.strictObject(momentRefEntries);

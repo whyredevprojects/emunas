@@ -479,6 +479,12 @@ debugging from scratch.
   server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
   If the gate fails on brotli bytes, Today's data has really outgrown its budget.
 - *Fix:* that is a product or data-size question. Don't raise the budget silently.
+- *Also fails in* `data:budgets` ("over budget: today.json … (today target)") and in the Live
+  data-build real-data test, which use the same 30 KiB target at brotli quality 5.
+- *Seen 2026-11-18, Hebrew:* once the Hebrew overlays are current, every generated text in
+  `today.json` carries a `he` key as well as `en`/`yi`. That adds ~2.8 KiB br (29,278 → 32,068
+  bytes). The way to fix it is to give each language its own Today file, holding only the texts on
+  the reader's `CONTENT_FALLBACK` chain, or to choose a new budget on purpose.
 
 ## 9. Contracts for later packages
 

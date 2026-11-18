@@ -9,7 +9,7 @@
  * walking up from the working directory (`astro build` runs in `apps/quiet`). Without a corpus the
  * site still builds, with no shiur pages and a warning.
  */
-import { pickText } from "@emunas/i18n";
+import { pickText, type PickedText } from "@emunas/i18n";
 import { existsSync, readFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import type { BuildInfo, CorpusIndex, IndexRow, PublicShiur } from "@emunas/corpus/public";
@@ -46,7 +46,7 @@ export interface ShiurCorpus {
   readonly index: CorpusIndex;
   readonly rows: RowLookup;
   readonly neighbours: NeighboursFile;
-  readonly seriesTitle: (id: string, ed: Ed) => string | undefined;
+  readonly seriesTitle: (id: string, ed: Ed) => PickedText | undefined;
   /** The corpus layer (empty, with a warning, when the corpus has none). */
   readonly layer: QuietLayer;
   /** The shiur's layer refs (null: not in the visible set). */
@@ -79,7 +79,7 @@ export function loadShiurCorpus(dir: string): ShiurCorpus {
     neighbours,
     seriesTitle: (id, ed) => {
       const title = seriesTitles.get(id);
-      return title ? pickText(title, ed).text : undefined;
+      return title ? pickText(title, ed) : undefined;
     },
     layer,
     // Only a shiur in the corpus index can have refs; a catalog-only shiur never does.

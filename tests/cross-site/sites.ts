@@ -16,7 +16,7 @@
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
-import { createLinks, pageLookupFromLayer, type LayerPagesInput, type LinkData, type Links, type OccasionKind } from "@emunas/links";
+import { createLinks, isEd, pageLookupFromLayer, type LayerPagesInput, type LinkData, type Links, type OccasionKind } from "@emunas/links";
 
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 export const DOMAIN = "emunas.example";
@@ -62,6 +62,7 @@ interface OccasionRow {
   key: string;
   en: string;
   yi: string;
+  he?: string;
   count: number;
   shiurim: { id: string }[];
 }
@@ -225,7 +226,7 @@ export function checkLiveUrl(client: string, url: string): string | null {
   const parts = p.split("/").filter(Boolean);
   const [ui, kind, key, extra] = parts;
   if (parts.length === 0) return null;
-  if (ui !== "en" && ui !== "yi") return `no UI language in ${u.pathname}`;
+  if (!isEd(ui)) return `no UI language in ${u.pathname}`;
   if (parts.length === 1 || (parts.length === 2 && LIVE_STATIC.has(kind!))) return null;
   if (kind === "shelf" && parts.length === 3) return null;
   const data = join(client, "data");

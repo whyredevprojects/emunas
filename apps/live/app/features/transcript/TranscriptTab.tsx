@@ -4,6 +4,7 @@
  * whose approved public file was emitted. Each cue is a time button that seeks the shared player; the
  * cue under the play position is marked (`aria-current`), with no auto-scroll.
  */
+import { UI_DIR, isUiLang } from "@emunas/i18n";
 import type { JSX } from "react";
 import type { RoomContext } from "../listening-room/context.ts";
 import { TimeButton } from "../listening-room/parts.tsx";
@@ -25,7 +26,7 @@ export function TranscriptTab({ room, files }: { room: RoomContext; files: Reado
       {recordings.length === 0 ? <p className={s.note}>{t("tx.none")}</p> : null}
       {recordings.map((r) => {
         const f = files.get(r.id)!;
-        const dir = f.lang === "yi" || f.lang === "he" ? "rtl" : "ltr";
+        const dir = isUiLang(f.lang) ? UI_DIR[f.lang] : "ltr";
         return (
           <section key={r.id} className={s.group} data-recording={r.id}>
             {multi ? <h4 className={s.h3}>{t("tx.part", { n: r.order + 1 })}</h4> : null}
