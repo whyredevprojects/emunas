@@ -46,7 +46,8 @@
     "search:build": "npm run search:build --workspace=@emunas/search-core --",
     "corpus:aggregate": "tsx scripts/corpus/aggregate.ts",
     "corpus:link": "tsx scripts/corpus/link.ts",
-    "corpus:assemble": "tsx scripts/corpus/assemble.ts"
+    "corpus:assemble": "tsx scripts/corpus/assemble.ts",
+    "translate": "tsx scripts/translate.ts"
   },
   "devDependencies": {
     "@types/node": "^26.6.6",

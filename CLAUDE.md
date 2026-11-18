@@ -4,8 +4,8 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 ## How to refer to him
 
-- In English: "the Mashgiach", "Rav Wolfson", "Rabbi Wolfson" or `Harav Moshe Wolfson zt"l`. In Yiddish: "דער משגיח". Possessive: "the Mashgiach's".
-- Never "the Rav" or "the Rov" (or "דער רב") as a stand-in for him, and never `shlit"a`: he has passed away, so `zt"l`.
+- In English: "the Mashgiach", "Rav Wolfson", "Rabbi Wolfson" or `Harav Moshe Wolfson zt"l`. In Yiddish: "דער משגיח". In Hebrew: "המשגיח" (formal: `הגה"צ רבי משה וולפסון זצ"ל`). Possessive: "the Mashgiach's".
+- Never "the Rav" or "the Rov" (or "דער רב", "הרב") as a stand-in for him, and never `shlit"a` (`שליט"א`): he has passed away, so `zt"l` (`זצ"ל`).
 - This applies to UI copy, labels, meta and SEO text, docs, prompts, and generated write-ups.
 - Other people who are titled Rav keep their titles ("the Rav of Sanz", "Rav Chaim").
 
@@ -15,6 +15,12 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - Only `packages/corpus/src/transcript-gate.ts` and `packages/corpus-guard` may read `data/transcripts`.
 - The guard post-pass over every build output must report 0 findings.
 - Published text never mentions the transcript (or ASR) and never judges the shiur itself ("the shiur is garbled/unclear", "a garbled stretch"). Remarks on the sound or the recording are fine ("poor sound quality", "the recording cuts off").
+
+## Languages
+
+- Three languages: English (`en`), Yiddish (`yi`) and Hebrew (`he`). Both sites and all generated content support all three, and nothing hardcodes the set: code iterates `UI_LANGS` from `@emunas/i18n`, so adding a language means adding it there, its message tables, and its translation run.
+- The pipeline writes `en` and `yi` from the transcript. Every other language is a P4c translation overlay of that published text (`docs/translation-runbook.md`); text with no current translation falls back to Yiddish.
+- UI Yiddish: when a Yiddish UI word is hard to translate (no natural Chassidish Yiddish word, or only a Daytshmerish or English-sounding one), just use the Hebrew word.
 
 ## No backwards compatibility
 

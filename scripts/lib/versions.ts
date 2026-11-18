@@ -8,6 +8,7 @@ export const PROMPT_VERSIONS = {
   p4b: "p4b-v2",        // prompts/p4b-writeup.md
   run: "run-shiur-v1",  // prompts/run-shiur.md (combined P4 + P4b agent)
   audit: "audit-v1",    // prompts/audit.md
+  p4c: "p4c-v1",        // prompts/p4c-translate.md (translation into TRANSLATION_LANGS)
 } as const;
 
 export const PROMPT_FILES: Record<keyof typeof PROMPT_VERSIONS, string> = {
@@ -15,6 +16,7 @@ export const PROMPT_FILES: Record<keyof typeof PROMPT_VERSIONS, string> = {
   p4b: "prompts/p4b-writeup.md",
   run: "prompts/run-shiur.md",
   audit: "prompts/audit.md",
+  p4c: "prompts/p4c-translate.md",
 };
 
 /** Throws when a prompt file's header does not carry the version constant above. */
