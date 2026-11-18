@@ -172,6 +172,11 @@ describe("rate limiting (real RATE binding, 30 requests / 10 s per client)", () 
   it("answers 429 after 30 requests from one address, while others still pass", async () => {
     const limited = makeEnv({ rate: env.RATE });
     const ip = `192.0.2.${Math.floor(Math.random() * 200) + 1}`;
+    // The binding's windows are aligned to the wall clock (miniflare: epoch = floor(now / period)),
+    // so a burst that straddles a boundary gets its count reset and request 31 passes. Start the
+    // burst at the beginning of a window so all 31 requests fall in the same one.
+    const msLeft = 10_000 - (Date.now() % 10_000);
+    if (msLeft < 6_000) await new Promise((resolve) => setTimeout(resolve, msLeft + 50));
     const statuses: number[] = [];
     for (let i = 0; i < 31; i++) {
       const res = await call(limited, "/api/feedback", {
@@ -189,7 +194,7 @@ describe("rate limiting (real RATE binding, 30 requests / 10 s per client)", () 
       body: JSON.stringify(valid),
     });
     expect(other.status).toBe(202);
-  });
+  }, 20_000);
 
   it("search is rate limited too, with Retry-After", async () => {
     let n = 0;
