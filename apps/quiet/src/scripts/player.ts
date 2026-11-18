@@ -156,6 +156,8 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     version = parseAudioVersion(null);
   }
   const failed = new Set<HTMLAudioElement>();
+  // Recordings asked to play: a failed load leaves them paused, but the fallback should still play.
+  const wants = new Set<HTMLAudioElement>();
   const line = dock?.querySelector<HTMLElement>(".listen-version") ?? null;
   const status = line?.querySelector<HTMLElement>("[role=status]");
   const lineText = line?.querySelector("span");
@@ -178,12 +180,11 @@ export function initPlayer(doc: Document, win: Window): Player | null {
   }
 
   /** Points `a` at the version it should play, carrying position, play state and speed. */
-  function apply(a: HTMLAudioElement): void {
+  function apply(a: HTMLAudioElement, playing = !a.paused): void {
     const url = urlOf(a);
     if (a.getAttribute("src") === url) return;
-    const idle = a.readyState === 0 && a.paused && !pending.has(a);
+    const idle = a.readyState === 0 && !playing && !pending.has(a);
     const local = pending.get(a) ?? (a.currentTime || 0);
-    const playing = !a.paused;
     const rate = a.playbackRate;
     a.defaultPlaybackRate = rate;
     a.src = url;
@@ -208,7 +209,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
       } catch {
         /* storage blocked: the choice lasts for this page */
       }
-      audios.forEach(apply);
+      audios.forEach((a) => apply(a));
       render();
       if (status) {
         status.textContent = "";
@@ -217,7 +218,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
       }
     });
   }
-  audios.forEach(apply);
+  audios.forEach((a) => apply(a));
   render();
 
   function seek(a: HTMLAudioElement, local: number, play: boolean): void {
@@ -308,6 +309,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
 
   audios.forEach((a, i) => {
     a.addEventListener("play", () => {
+      wants.add(a);
       setCurrent(a);
       docked();
       mark(now());
@@ -325,6 +327,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
       }
     });
     a.addEventListener("pause", () => {
+      if (!a.error) wants.delete(a);
       if (session && a === current) session.playbackState = "paused";
     });
     a.addEventListener("timeupdate", () => {
@@ -342,7 +345,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
       const d = a.dataset["cleaned"];
       if (!d || failed.has(a) || a.getAttribute("src") !== d) return;
       failed.add(a);
-      apply(a);
+      apply(a, wants.has(a));
       render();
     });
     a.addEventListener("ended", () => {
