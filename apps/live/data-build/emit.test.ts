@@ -256,6 +256,36 @@ describe("emitLiveData on the mini corpus", () => {
     expect(files.has("stories.json")).toBe(false);
   });
 
+  it("works cite only the visible set: a full shiur without layer refs is cited nowhere (plan §3.2)", () => {
+    // Every citation is in a shiur with layer refs (V), as on Quiet's work pages.
+    const pages = get<WorksFile>("works.json").works.filter((w) => w.page);
+    const cited = pages.flatMap((w) => {
+      const f = get<WorkFile>(`work/${w.key}.json`);
+      return [...f.locations.flatMap((l) => l.citations), ...f.unlocated].map((c) => c.shiurId);
+    });
+    expect(cited.length).toBeGreaterThan(0);
+    for (const id of cited) expect(input.layer.refs.has(id), id).toBe(true);
+    // A cited shiur the corpus stage has not reached (still `full`, but no layer refs) drops out.
+    const counts = new Map<string, number>();
+    for (const id of cited) counts.set(id, (counts.get(id) ?? 0) + 1);
+    const [gone] = [...counts.entries()].sort((a, b) => b[1] - a[1])[0]!;
+    const narrowed = readCorpusInput(corpusDir);
+    expect(narrowed.shiurim.find((x) => x.id === gone)?.status).toBe("full");
+    narrowed.layer.refs.delete(gone);
+    const out = emitLiveData(narrowed, { generatedAt: GENERATED_AT });
+    const shelf = out.get("works.json") as WorksFile;
+    let after = 0;
+    for (const w of pages) {
+      const f = out.get(`work/${w.key}.json`) as WorkFile | undefined;
+      if (!f) continue;
+      const ids = [...f.locations.flatMap((l) => l.citations), ...f.unlocated].map((c) => c.shiurId);
+      expect(ids).not.toContain(gone);
+      after += ids.length;
+      expect(f.locations.reduce((a, l) => a + l.citations.length, 0) + f.unlocated.length).toBe(shelf.works.find((x) => x.key === w.key)?.mentions);
+    }
+    expect(after).toBe(cited.length - counts.get(gone)!);
+  });
+
   it("moment shards cover every timed item once, in both languages, and build.json counts them", () => {
     const build = get<BuildFile>("build.json");
     expect(build.generatedAt).toBe(GENERATED_AT);

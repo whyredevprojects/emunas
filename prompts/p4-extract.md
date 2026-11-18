@@ -159,7 +159,7 @@ Every `Localized` field is `{ "en": "...", "yi": "..." }`; both are required and
 6. **No advice he didn't give.** No moral lessons, applications or encouragement of your own.
 7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words of the phrase the Mashgiach himself is clearly heard discussing, and never complete or correct a quote from memory.
 8. **No biography, no dates, no occasions** beyond what the header gives or the Mashgiach says in the evidence. Don't call the shiur "a Shabbos shiur", "delivered at a wedding", etc. unless the header or transcript shows it. No claims about the Mashgiach's life, teachers or influence.
-9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish. Don't add titles or epithets beyond that.
+9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish. Spell "Moshiach" (not "Mashiach") in English. Don't add titles or epithets beyond that.
 10. **No mention of the transcript or ASR, and no judgment of the shiur's clarity** in any `Localized` field, in either language: never call the shiur or his words garbled, unclear or fragmentary (section 2, point 7). Yiddish too: no `צעמישט`, `נישט קלאר`, `טראנסקריפט` about the shiur. A factual note about the sound or recording is allowed. Transcript/ASR notes go only in `asrNotes`.
 
 ## 7. Exact output shape

@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-zmanim-spyrh-04",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-18T12:00:00Z",
+  "counts": {
+    "claimsChecked": 24, "unsupported": 1, "hallucinated": 0,
+    "sourcesChecked": 16, "sourceErrors": 0, "sourcesMissed": 1,
+    "boundariesChecked": 5, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 15, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 18, "yiddishBadSentences": 6, "yiddishTranslationese": 2,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "writeup.en[3].paragraphs[0] / yi[3].paragraphs[0] call Eliyahu 'the one soul' that did not eat from the Etz HaDaas, but he adds 'maybe a few more' (segs 265-268), slightly overstated; Midrash about Har Sinai cited at seg 927 not in sources[] (only in asrNotes); Daytshmerish: 'שילדערט' (sections[4].summary.yi), 'אנטהאלטן' (summary.keyPoints[3].yi), 'אלס' (sections[9].summary.yi, takeaways[2].yi), 'ווי א געוווינהייט' (writeup.yi[9].paragraphs[3], takeaways[1].yi); wrong gender 'זיין ספר יד החזקה צוליב אירע פערצן ספרים' (writeup.yi[5].paragraphs[1]); translationese parenthetical 'פליגן, ערקלערט ער, קומען' (writeup.yi[1].paragraphs[0]) and 'אליהו הנביא, ערקלערט דער משגיח, איז' (writeup.yi[3].paragraphs[0]); audio-remark search hits only in asrNotes (allowed), no rule violations; strong term recovery (Lev Simcha from 'אליב שמחה דער גורל רבי' seg 546, Ohr HaChaim, בעתה אחישנה, דבר שבמנין, חודש זיו, zav from 'זאב')"
+}

@@ -509,6 +509,15 @@ debugging from scratch.
   `EMIT_LIMITS` in `apps/live/data-build/emit.ts` (`todayMixFirst`, `todayPoolPerOccasion`,
   `newlySummarized`) and `TODAY_ROW_PER_LANG` before you touch the budget.
 
+**Live data budgets: `writeup/<id>.<lang>.json` over its brotli target** (`real-data.test.ts`, `unit (live)`)
+- *Why it fails:* a write-up's length follows its shiur's length (800–1,000 words per hour,
+  `scripts/lib/budget.ts`), so the longest shiur sets the size of the largest write-up file. The
+  target was 8 KiB until the Purim seudos (up to 4.2 h) came into scope on 2026-11-18 and reached
+  11,162 B; it is now 13 KiB (`apps/live/data-build/budgets.ts`).
+- *Fix:* check the overrun is a long shiur, not a write-up past its own word budget
+  (`npm run -s writeup:budget -- <shiurId>`). If the shiur is long, raise the target to the new
+  largest file plus ~20% and update the comment. If not, fix the write-up in the pipeline.
+
 ## 9. Contracts for later packages
 
 - `workers/api/wrangler.jsonc` (W2.6): `name: "emunas-api"`, `workers_dev: false`,

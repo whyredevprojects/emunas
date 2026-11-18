@@ -112,7 +112,7 @@ Two arrays, `en` and `yi`, each a list of blocks: `{ "sectionIndex": <index into
 6. **No advice he didn't give.** No moral lessons, applications or encouragement of your own.
 7. **No source text from memory.** Cite sources by name and ref only. Do not quote a passuk, Gemara, Zohar or Tanya passage beyond the few words the Mashgiach himself is clearly heard discussing, and never complete or correct a quote from memory.
 8. **No biography, no dates, no occasions** beyond what the header gives or the Mashgiach says. No claims about the Mashgiach's life, teachers or influence.
-9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish.
+9. Refer to him as "the Mashgiach" in English and "דער משגיח" in Yiddish. Spell "Moshiach" (not "Mashiach") in English.
 10. **No mention of the transcript or ASR, and no judgment of the shiur's clarity**, in either language (section 3). Yiddish too: no `צעמישט`, `נישט קלאר`, `טראנסקריפט` about the shiur. Factual sound/recording remarks are allowed.
 
 ## 6. Exact output shape
