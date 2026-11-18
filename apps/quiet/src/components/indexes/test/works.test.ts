@@ -4,7 +4,7 @@
  */
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { loadEntryDataFrom, type EntryData } from "../entries.ts";
-import { sefariaIndexHref, workPage, workPageIds, worksIndex } from "../works.ts";
+import { GENERIC_LINE_MAX_SHIURIM, sefariaIndexHref, workPage, workPageIds, worksIndex } from "../works.ts";
 import { buildMiniCorpus, type MiniCorpus } from "./mini.ts";
 
 let mini: MiniCorpus;
@@ -54,7 +54,8 @@ describe("works index", () => {
         expect(w.generic).toBe(false);
       } else {
         expect(l.href).toBeNull();
-        expect(l.cites.map((c) => c.shiurId)).toEqual(w.shiurIds);
+        const listed = !(w.generic && l.count > GENERIC_LINE_MAX_SHIURIM);
+        expect(l.cites.map((c) => c.shiurId)).toEqual(listed ? w.shiurIds : []);
       }
     }
     const ids = workPageIds(d);
