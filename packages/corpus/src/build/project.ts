@@ -94,8 +94,8 @@ function recordingsOf(ids: readonly string[], durations: readonly number[], audi
     const transcript = { eligible: false as const };
     const a = lookupAudio(audio, id);
     return a?.playable
-      ? { ...base, audioUrl: a.url, playable: true, transcript }
-      : { ...base, audioUrl: null, playable: false, transcript };
+      ? { ...base, audioUrl: a.url, cleanedUrl: a.cleanedUrl, playable: true, transcript }
+      : { ...base, audioUrl: null, cleanedUrl: null, playable: false, transcript };
   });
 }
 

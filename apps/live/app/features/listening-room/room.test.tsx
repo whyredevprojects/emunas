@@ -7,6 +7,7 @@
  * transcript tab; the AI label on every generated-text surface; axe.
  */
 import { act, cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
+import { AUDIO_VERSION_KEY } from "@emunas/i18n";
 import axe from "axe-core";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
@@ -327,6 +328,85 @@ describe("the dock", () => {
     await settle();
     expect(near(engine.getState().t, 1000)).toBe(true);
   });
+});
+
+describe("the improved-audio line (cleaned-audio-ux)", () => {
+  const dockSlot = (c: HTMLElement) => within(c.querySelector<HTMLElement>("[data-dock-slot]")!);
+  const roomLine = (c: HTMLElement) => c.querySelector<HTMLElement>("[data-room-version]");
+
+  beforeEach(() => {
+    try {
+      localStorage.removeItem(AUDIO_VERSION_KEY);
+    } catch {
+      /* no storage */
+    }
+  });
+
+  it("plays the improved copy by default and says so in the dock and under the play button", async () => {
+    const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.cleanedUrl);
+    expect(roomLine(container)!.textContent).toBe("Sound improved by AI·Switch to the original");
+    const notice = container.querySelector("[data-dock-slot] [data-dock-notice]")!;
+    expect(notice.getAttribute("data-dock-notice")).toBe("version");
+    const button = dockSlot(container).getByRole("button", { name: "Switch to the original" });
+    expect(button.tagName).toBe("BUTTON");
+    expect(document.getElementById(button.getAttribute("aria-describedby")!)!.textContent).toBe("Sound improved by AI");
+  });
+
+  it("switching keeps position, play state and speed, is announced, remembered and switchable back", async () => {
+    const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
+    const dock = dockSlot(container);
+    engine.setRate(1.5);
+    fireEvent.click(dock.getByRole("button", { name: "Play" }));
+    await settle();
+    await act(async () => clock.tick(2000));
+    const before = engine.getState().t;
+    fireEvent.click(dock.getByRole("button", { name: "Switch to the original" }));
+    await settle();
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.audioUrl);
+    expect(near(engine.getState().t, before, 0.2)).toBe(true);
+    expect(engine.getState()).toMatchObject({ status: "playing", rate: 1.5, audioVersion: "original", playingVersion: "original" });
+    expect(engine.audio.playbackRate).toBe(1.5);
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("original");
+    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the original recording.");
+    // Both places now offer the improved copy.
+    expect(roomLine(container)!.textContent).toBe("A version with the sound improved by AI is also available·Listen to it");
+    const back = within(roomLine(container)!).getByRole("button", { name: "Listen to it" });
+    back.focus();
+    fireEvent.click(back);
+    await settle();
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.cleanedUrl);
+    expect(engine.getState().status).toBe("playing");
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("cleaned");
+    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the version improved by AI.");
+  });
+
+  it("the dock's notice row gives a skip notice priority over the version line; the room keeps the line", async () => {
+    const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
+    const ch = tvbb.notes!.chapters;
+    // Chapter 2 is noise and skipped by default: play into it from just before.
+    engine.seek(ch[2]!.t - 1);
+    fireEvent.click(dockSlot(container).getByRole("button", { name: "Play" }));
+    await settle();
+    await act(async () => clock.tick(2000));
+    await settle();
+    expect(engine.getState().lastSkip).not.toBeNull();
+    expect(container.querySelector("[data-dock-slot] [data-dock-notice]")!.getAttribute("data-dock-notice")).toBe("skip");
+    expect(roomLine(container)).not.toBeNull();
+  });
+
+  for (const ui of ["en", "yi"] as const) {
+    it(`axe finds no violations with the line in the dock and the room, state B (${ui})`, async () => {
+      const { container } = await openAt(`/${ui}/s/yi-zmanim-tv-bb-04?t=300`);
+      fireEvent.click(within(roomLine(container)!).getByRole("button"));
+      await settle();
+      expect(container.querySelector("[data-dock-slot] [data-dock-notice]")!.getAttribute("data-dock-notice")).toBe("version");
+      const result = await axe.run(container, {
+        rules: { "color-contrast": { enabled: false }, "document-title": { enabled: false }, region: { enabled: false } },
+      });
+      expect(result.violations.map((v) => `${v.id}: ${v.nodes.map((n) => n.html).join(" | ")}`)).toEqual([]);
+    });
+  }
 });
 
 describe("accessibility and styles", () => {

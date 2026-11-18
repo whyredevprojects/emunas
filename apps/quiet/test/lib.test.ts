@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
+import { cleanedUrl, defaultUrl, playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
 import { clock, runAttrs } from "../src/lib/bidi.ts";
 import { catalogNotice } from "../src/lib/catalog.ts";
 import { dirOf, editionOfPath, otherEdition, switchEdition } from "../src/lib/edition.ts";
@@ -10,8 +10,8 @@ import { INDEXES_ANCHOR, navItems, navSectionOf } from "../src/lib/nav.ts";
 
 const media = "https://media.example.org";
 const two: AudioRecording[] = [
-  { id: "a", offset: 0, duration: 100, audioUrl: `${media}/x/A%20one.mp3` },
-  { id: "b", offset: 100, duration: 50.5, audioUrl: `${media}/x/b.MP3` },
+  { id: "a", offset: 0, duration: 100, audioUrl: `${media}/x/A%20one.mp3`, cleanedUrl: null },
+  { id: "b", offset: 100, duration: 50.5, audioUrl: `${media}/x/b.MP3`, cleanedUrl: null },
 ];
 
 describe("edition", () => {
@@ -112,8 +112,23 @@ describe("audio (Amendment A1)", () => {
   });
 
   it("gives no href when the recording is not playable", () => {
-    const recs: AudioRecording[] = [{ id: "w", offset: 0, duration: 60, audioUrl: null }];
+    const recs: AudioRecording[] = [{ id: "w", offset: 0, duration: 60, audioUrl: null, cleanedUrl: null }];
     expect(timeTarget(recs, 12)).toMatchObject({ recordingId: "w", href: null });
+  });
+
+  it("plays the AI-improved copy by default and links times to it", () => {
+    const orig = `${media}/x/A%20one.mp3`;
+    const fixed = `${media}/fixed/sidon/x/A%20one.mp3`;
+    const rec = { audioUrl: orig, cleanedUrl: fixed };
+    expect(cleanedUrl(rec)).toBe(fixed);
+    expect(defaultUrl(rec)).toBe(fixed);
+    expect(playableUrl(rec)).toBe(orig);
+    expect(defaultUrl({ audioUrl: orig, cleanedUrl: null })).toBe(orig);
+    // an improved copy never makes an unplayable recording playable, and it obeys the same URL rule
+    expect(defaultUrl({ audioUrl: null, cleanedUrl: fixed })).toBeNull();
+    expect(cleanedUrl({ audioUrl: orig, cleanedUrl: "javascript:x//.mp3" })).toBeNull();
+    const recs: AudioRecording[] = [{ id: "a", offset: 0, duration: 100, ...rec }];
+    expect(timeTarget(recs, 12.5)?.href).toBe(`${fixed}#t=12.5`);
   });
 });
 

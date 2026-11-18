@@ -129,6 +129,7 @@ export const roomEn = {
   "dock.unavailable": "This recording cannot be played here.",
   "dock.error": "The recording could not be played.",
   "dock.chapterNow": "Now: {title}",
+  "dock.versionFallback": "The version improved by AI could not load, so the original is playing.",
 } as const;
 
 export type RoomKey = keyof typeof roomEn;
@@ -255,6 +256,7 @@ export const roomYi: MessageTable<RoomKey> = {
   "dock.unavailable": "די רעקארדירונג קען מען דא נישט שפילן.",
   "dock.error": "מ׳האט נישט געקענט שפילן די רעקארדירונג.",
   "dock.chapterNow": "יעצט: {title}",
+  "dock.versionFallback": "די ווערסיע אויסגעבעסערט דורך AI האט זיך נישט געלאדט, דעריבער שפילט די מקורית.",
 };
 
 export type RoomT = TFunction<RoomKey>;

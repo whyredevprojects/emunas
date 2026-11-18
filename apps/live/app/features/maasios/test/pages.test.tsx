@@ -77,7 +77,7 @@ const shiur = (id: string): PlayerShiur => ({
   lang: id.startsWith("en") ? "en" : "yi",
   duration: 8000,
   catalog: { titleOriginal: id },
-  recordings: [{ id: `${id}-r`, offset: 0, duration: 8000, audioUrl: `https://media.example.invalid/${id}.mp3` }],
+  recordings: [{ id: `${id}-r`, offset: 0, duration: 8000, audioUrl: `https://media.example.invalid/${id}.mp3`, cleanedUrl: null }],
 });
 
 beforeAll(() => {

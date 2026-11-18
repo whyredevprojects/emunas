@@ -10,6 +10,7 @@
  *   it returns the idle state and never creates the engine.
  */
 import type { L } from "@emunas/corpus/public";
+import { DEFAULT_AUDIO_VERSION, type AudioVersion } from "@emunas/i18n";
 import { useSyncExternalStore } from "react";
 import {
   DEFAULT_SKIP,
@@ -19,6 +20,7 @@ import {
   type PlayerShiur,
   type PlayerState,
 } from "../player-engine/index.ts";
+import { applyAudioVersion, onlineForCleaned, readStoredAudioVersion } from "./audio-version.ts";
 import { makeDescribe } from "./describe.ts";
 
 /** What the dock and the Media Session need to know about a loaded shiur beyond `PlayerShiur`. */
@@ -65,7 +67,20 @@ export function canPlay(): boolean {
 
 /** The app's engine. Throws where `canPlay()` is false. */
 export function getEngine(): PlayerEngine {
-  return installed ?? getPlayerEngine({ describe: appDescribe });
+  return (
+    installed ??
+    getPlayerEngine({ describe: appDescribe, audioVersion: readStoredAudioVersion(), canTryCleaned: onlineForCleaned })
+  );
+}
+
+/**
+ * The listener's click on "Switch to the original" / "Listen to it": remembered, applied to the
+ * engine at the same second, announced, and mirrored into the personal store.
+ */
+export function chooseAudioVersion(version: AudioVersion): void {
+  applyAudioVersion(version, (v) => {
+    if (canPlay()) getEngine().setAudioVersion(v);
+  });
 }
 
 /** Tests: use this engine instead of the shared one (null restores the default). Install before rendering. */
@@ -95,6 +110,10 @@ export const IDLE_STATE: PlayerState = Object.freeze({
   skip: DEFAULT_SKIP,
   readingLang: "yi",
   error: null,
+  audioVersion: DEFAULT_AUDIO_VERSION,
+  playingVersion: "original",
+  cleanedAvailable: false,
+  versionFallback: false,
 }) as PlayerState;
 
 function subscribe(listener: () => void): () => void {
@@ -104,6 +123,13 @@ function subscribe(listener: () => void): () => void {
 
 function snapshot(): PlayerState {
   return canPlay() ? getEngine().getState() : IDLE_STATE;
+}
+
+/** The version playing for `shiurId` right now, or null when that shiur is not the one loaded. */
+export function playingVersionFor(shiurId: string): AudioVersion | null {
+  if (!canPlay()) return null;
+  const st = getEngine().getState();
+  return st.shiurId === shiurId ? st.playingVersion : null;
 }
 
 export function usePlayerState(): PlayerState {

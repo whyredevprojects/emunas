@@ -19,6 +19,7 @@ import {
   type FeedbackTarget,
   type SubmitOutcome,
 } from "./api.ts";
+import { playingVersionFor } from "../../player-ui/index.ts";
 import { feedbackConfig } from "./config.ts";
 import { feedbackT, type FeedbackKey, type FeedbackT } from "./strings.ts";
 import { feedbackStyles as s } from "./styles.ts";
@@ -186,7 +187,7 @@ function ReportForm({
   const send = useCallback(
     async (reason: FeedbackReason, turnstile: string) => {
       setPhase({ kind: "sending", reason });
-      const body = buildBody({ target, reason, text, ui, rev, turnstile });
+      const body = buildBody({ target, reason, text, ui, rev, turnstile, audio: playingVersionFor(target.shiurId) });
       const outcome = await submitFeedback(body, feedbackConfig().fetch);
       if (!alive.current) return;
       freshToken();

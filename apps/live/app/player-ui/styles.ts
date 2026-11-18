@@ -14,6 +14,7 @@ export const DOCK_CLASSES = [
   "idle",
   "info",
   "notice",
+  "noticeText",
   "play",
   "range",
   "root",
@@ -26,6 +27,7 @@ export const DOCK_CLASSES = [
   "title",
   "titleRow",
   "transport",
+  "versionText",
   "visuallyHidden",
   "wide",
 ] as const;

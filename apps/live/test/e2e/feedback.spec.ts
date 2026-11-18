@@ -13,6 +13,7 @@
  */
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test, type Page, type Request } from "@playwright/test";
+import { serveSilentMedia } from "./helpers.ts";
 
 const STAGING = process.env["LIVE_E2E_FEEDBACK_API"]?.replace(/\/+$/, "") ?? "";
 const SHIUR = "/s/yi-zmanim-tv-bb-04";
@@ -71,7 +72,10 @@ test.describe("against a stand-in API", () => {
 
   test("keyboard only: Tab to the control, Enter, write a note, choose a reason; Escape returns focus", async ({ page }) => {
     const stub = await stubApi(page);
+    // The room loads the shiur paused; with its media reachable, the improved copy is the one cued.
+    await serveSilentMedia(page);
     await openRoom(page, "en");
+    await expect(page.locator("[data-room-version]")).toContainText("Sound improved by AI");
     const chapter = page.locator("[data-chapter='0']");
     const report = page.locator("li[data-moment] [data-report]").first();
     const momentId = await report.getAttribute("data-report");
@@ -99,6 +103,7 @@ test.describe("against a stand-in API", () => {
         ui: "en",
         rev: expect.any(String),
         turnstile: "e2e-token-1",
+        audio: "cleaned",
       },
     ]);
     await expect(dialog(page).getByRole("button", { name: "Close" })).toBeFocused();

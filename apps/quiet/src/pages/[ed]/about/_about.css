@@ -14,3 +14,8 @@
 .about-placeholder-label {
   font-weight: var(--weight-semibold);
 }
+
+/* The shared paragraph on the AI-improved sound, after "How this site is arranged". */
+.about-audio {
+  margin-block-start: var(--space-s);
+}

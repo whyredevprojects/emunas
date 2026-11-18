@@ -4,19 +4,47 @@
  * clickable table of contents (`catalogTopicIdx`), the play control and the "Printable page" link.
  * Above them, the shiur's top three topics (salience 0.5 and above) as one line, each opening the topic
  * beside the shiur, with the corpus layer's AI label once for the page (concept-live-corpus D, E.3).
+ * Under the play button, the version line (cleaned-audio-ux §4 Live): which copy plays, and the
+ * button to switch. When the room's shiur is not the loaded one it describes the version that would
+ * play.
  */
 import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@emunas/i18n";
 import type { JSX } from "react";
 import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
 import { Text } from "../../components/Text.tsx";
-import { getEngine } from "../../player-ui/index.ts";
+import type { AudioVersion } from "@emunas/i18n";
+import { getEngine, usePlayerState, VersionLine, versionLineState } from "../../player-ui/index.ts";
+import { locate, type PlayerState } from "../../player-engine/index.ts";
 import type { RoomContext } from "./context.ts";
+import type { ShiurFile } from "./data.ts";
 import { mainTopics } from "./corpus.ts";
 import { topicTargets } from "./model.ts";
 import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
 import { printableUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
+
+/**
+ * The version line's state for this room: the engine's when the shiur is loaded, else the recording
+ * at the room's start point with the listener's preference (null: no improved copy, no line).
+ */
+export function roomVersion(state: PlayerState, shiur: ShiurFile, start: number): AudioVersion | null {
+  if (state.shiurId === shiur.id) return versionLineState(state.playingVersion, state.cleanedAvailable);
+  const loc = locate(shiur, start);
+  const rec = (loc ? shiur.recordings[loc.index] : undefined) ?? shiur.recordings.find((r) => r.playable);
+  return rec?.playable && rec.cleanedUrl ? state.audioVersion : null;
+}
+
+function RoomVersionLine({ room }: { room: RoomContext }): JSX.Element | null {
+  const state = usePlayerState();
+  const version = room.playable ? roomVersion(state, room.shiur, room.start) : null;
+  if (version === null) return null;
+  return (
+    <p className={s.versionLine} data-room-version="">
+      <VersionLine version={version} ui={room.ui} buttonClassName={s.versionButton} separatorClassName={s.versionSeparator} />
+    </p>
+  );
+}
 
 export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; quietOrigin: string | null }): JSX.Element {
   const { shiur, ui, rt, reading } = room;
@@ -122,6 +150,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
         <Report room={room} id={null} />
         <DownloadButton shiur={shiur} ui={ui} className={s.printable} />
       </div>
+      <RoomVersionLine room={room} />
       {!room.playable ? <p className={s.note}>{rt("room.unavailable")}</p> : null}
       {shiur.recordings.some((r) => !r.playable) && room.playable ? (
         <p className={s.note}>

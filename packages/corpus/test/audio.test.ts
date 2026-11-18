@@ -87,8 +87,16 @@ describe("recordings[].audioUrl", () => {
     expect(b!.offset).toBe(a!.duration);
 
     const table = readJson<AudioTable>(join(out, "audio-table.json"));
-    expect(table[DUP]).toEqual({ canonicalId: canonical, size: expect.any(Number), playable: true, url: a!.audioUrl });
-    expect(table[WMA]).toEqual({ canonicalId: WMA, size: expect.any(Number), playable: false, url: null });
+    expect(a!.cleanedUrl).toBe(`${ORIGIN}/fixed/sidon/Y%20Zemanim/07%20Taamuz-Av/%D7%98%22%D7%95%20%D7%91%D7%90%D7%91%20%231.mp3`);
+    expect(b).toMatchObject({ cleanedUrl: null });
+    expect(table[DUP]).toEqual({
+      canonicalId: canonical,
+      size: expect.any(Number),
+      playable: true,
+      url: a!.audioUrl,
+      cleanedUrl: a!.cleanedUrl,
+    });
+    expect(table[WMA]).toEqual({ canonicalId: WMA, size: expect.any(Number), playable: false, url: null, cleanedUrl: null });
     // Only in-scope recordings are in the table (the canonical is not in any in-scope shiur).
     expect(table[canonical]).toBeUndefined();
     expect(r.report.warnings).toContain(`audio: ${WMA} not playable (not-mp3); shown as unavailable`);
@@ -116,8 +124,9 @@ describe("recordings[].audioUrl", () => {
       const policyDir = policyWith({ policyVersion: 1, mp3Siblings: [WMA_KEY] });
       const p = projectCorpus({ dataDir: withWma(), policyDir, mediaOrigin: ORIGIN });
       const sibling = `${ORIGIN}/Y%20Zemanim/07%20Taamuz-Av/04-2%2015%20Av%20%232.mp3`;
-      expect(recOf(p.shiurim)).toMatchObject({ playable: true, audioUrl: sibling });
-      expect(p.audioTable[WMA]).toEqual({ canonicalId: WMA, size: 0, playable: true, url: sibling });
+      const cleaned = `${ORIGIN}/fixed/sidon/Y%20Zemanim/07%20Taamuz-Av/04-2%2015%20Av%20%232.mp3`;
+      expect(recOf(p.shiurim)).toMatchObject({ playable: true, audioUrl: sibling, cleanedUrl: cleaned });
+      expect(p.audioTable[WMA]).toEqual({ canonicalId: WMA, size: 0, playable: true, url: sibling, cleanedUrl: cleaned });
       expect(p.report.warnings.some((w) => w.includes(WMA))).toBe(false);
       const json = JSON.stringify([p.shiurim, p.index, p.audioTable]);
       expect(json).not.toContain("WMA");
@@ -147,6 +156,60 @@ describe("recordings[].audioUrl", () => {
       ]) {
         expect(() => projectCorpus({ dataDir: MINI_DATA, policyDir: policyWith(body), mediaOrigin: ORIGIN })).toThrow(
           /audio-transcoded\.json/,
+        );
+      }
+    });
+  });
+
+  describe("site-policy/audio-cleaned.json (rejected AI-improved copies)", () => {
+    const SHIUR = "yi-zmanim-tv-bb-04";
+    const policyWith = (body: unknown) => {
+      const p = join(tmp(), "site-policy");
+      cpSync(MINI_POLICY, p, { recursive: true });
+      writeFileSync(join(p, "audio-cleaned.json"), JSON.stringify(body));
+      return p;
+    };
+    const entry = (key: string) => ({ key, reason: "a word changed at 12:40", reviewedBy: "reviewer", reviewedAt: "2026-11-18" });
+    const ingestKeyOf = (id: string) =>
+      readJson<IngestOutput>(join(MINI_DATA, "derived/ingest.json")).recordings.find((r) => r.id === id)!.audioKey;
+
+    it("by default every playable recording links its copy under fixed/sidon/", () => {
+      const p = projectCorpus({ dataDir: MINI_DATA, policyDir: MINI_POLICY, mediaOrigin: ORIGIN });
+      const recs = p.shiurim.flatMap((s) => s.recordings);
+      expect(recs.length).toBeGreaterThan(0);
+      for (const r of recs) {
+        if (r.playable) expect(r.cleanedUrl).toBe(r.audioUrl.replace(`${ORIGIN}/`, `${ORIGIN}/fixed/sidon/`));
+        else expect(r.cleanedUrl).toBeNull();
+      }
+    });
+
+    it("a rejected served key gets cleanedUrl null; audioUrl is unchanged", () => {
+      const s = projectCorpus({ dataDir: MINI_DATA, policyDir: MINI_POLICY, mediaOrigin: ORIGIN }).shiurim.find((x) => x.id === SHIUR)!;
+      const first = s.recordings[0]!;
+      const policyDir = policyWith({ policyVersion: 1, rejected: [entry(ingestKeyOf(first.id))] });
+      const p = projectCorpus({ dataDir: MINI_DATA, policyDir, mediaOrigin: ORIGIN });
+      const after = p.shiurim.find((x) => x.id === SHIUR)!.recordings;
+      expect(after[0]).toMatchObject({ playable: true, audioUrl: first.audioUrl, cleanedUrl: null });
+      expect(after[1]!.cleanedUrl).toBe(s.recordings[1]!.cleanedUrl);
+      expect(p.audioTable[first.id]?.cleanedUrl).toBeNull();
+    });
+
+    it("an invalid file, an unknown key or a key listed twice is fatal", () => {
+      const known = ingestKeyOf(projectCorpus({ dataDir: MINI_DATA, policyDir: MINI_POLICY, mediaOrigin: ORIGIN }).shiurim[0]!.recordings[0]!.id);
+      for (const body of [
+        { policyVersion: 2, rejected: [] },
+        { policyVersion: 1 },
+        { policyVersion: 1, rejected: [], cleaned: [] },
+        { policyVersion: 1, rejected: ["a/b.mp3"] },
+        { policyVersion: 1, rejected: [{ key: known, reason: "", reviewedBy: "x", reviewedAt: "2026-11-18" }] },
+        { policyVersion: 1, rejected: [{ key: known, reason: "r", reviewedBy: "x", reviewedAt: "yesterday" }] },
+        { policyVersion: 1, rejected: [entry("a/b.WMA")] },
+        { policyVersion: 1, rejected: [entry("transcripts/a/b.mp3")] },
+        { policyVersion: 1, rejected: [entry("not/a/recording.mp3")] },
+        { policyVersion: 1, rejected: [entry(known), entry(known)] },
+      ]) {
+        expect(() => projectCorpus({ dataDir: MINI_DATA, policyDir: policyWith(body), mediaOrigin: ORIGIN })).toThrow(
+          /audio-cleaned\.json/,
         );
       }
     });

@@ -71,3 +71,16 @@ export {
   type PersonGroup,
   type TopicGrade,
 } from "./vocab/corpus.ts";
+export {
+  AUDIO_VERSIONS,
+  AUDIO_VERSION_KEY,
+  AUDIO_VERSION_LABELS,
+  AUDIO_VERSION_LABEL_STATUS,
+  DEFAULT_AUDIO_VERSION,
+  audioVersionLabel,
+  audioVersionLabelsEn,
+  audioVersionLabelsYi,
+  parseAudioVersion,
+  type AudioVersion,
+  type AudioVersionLabelKey,
+} from "./vocab/audio-version.ts";
