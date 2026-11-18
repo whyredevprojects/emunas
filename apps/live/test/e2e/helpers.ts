@@ -6,7 +6,7 @@
  * against a real-data build (`LIVE_E2E_DATA=build`, after `corpus:build` + `data:build` + `build`).
  */
 import AxeBuilder from "@axe-core/playwright";
-import { expect, type APIRequestContext, type Page, type Route } from "@playwright/test";
+import { expect, test, type APIRequestContext, type Page, type Route } from "@playwright/test";
 
 export const UIS = ["en", "yi"] as const;
 export type Ui = (typeof UIS)[number];
@@ -31,6 +31,19 @@ export async function ready(page: Page): Promise<void> {
 export async function settled(page: Page): Promise<void> {
   await ready(page);
   await expect(page.locator("main [aria-busy=true]")).toHaveCount(0, { timeout: 15_000 });
+}
+
+/**
+ * Time allowed per page in a test that loads and axe-scans several pages. One page (load, settle,
+ * axe pass) takes 1–2 s on an idle machine, but several times that when four workers share the CI
+ * runner's four vCPUs (WebKit most of all), so a scan of six to sixteen pages overran the 30 s
+ * per-test default. The budget is per page, so it grows with the list and stays bounded.
+ */
+export const AXE_PAGE_MS = 8_000;
+
+/** Gives the running test `AXE_PAGE_MS` per page it scans (never less than the 30 s default). */
+export function axeBudget(pages: number): void {
+  test.setTimeout(Math.max(30_000, pages * AXE_PAGE_MS));
 }
 
 /** axe (WCAG 2.0–2.2 A/AA + best practices): one line per violation, `[]` when clean. */
@@ -70,12 +83,37 @@ export interface Row {
   series: { id: string; order: number } | null;
   duration: number;
   derived: string;
-  entities: { works: string[]; people: string[]; concepts: string[] };
   counts: { chapters: number; stories: number; questions: number; insights: number };
 }
 
 export async function corpusRows(request: APIRequestContext): Promise<Row[]> {
   return (await dataJson<{ shiurim: Row[] }>(request, "corpus.json")).shiurim;
+}
+
+/** A `corpus.json` row with its entity ids, as Explore's entity facets see them. */
+export type EntityRow = Row & { entities: { works: string[]; people: string[]; concepts: string[] } };
+
+/**
+ * `corpus.json` rows joined with `explore/entities.json` (corpus.json carries no entity ids), an
+ * independent reference for Explore's entity facets: a person, concept or work counts only when
+ * `facets.json` lists it (Live lists it); a shiur without an entry has none.
+ */
+export async function entityRows(request: APIRequestContext): Promise<EntityRow[]> {
+  type Ids = { people?: unknown; concepts?: unknown; works?: unknown };
+  const [rows, file, facets] = await Promise.all([
+    corpusRows(request),
+    dataJson<{ shiurim: Record<string, Ids> }>(request, "explore/entities.json"),
+    dataJson<Record<"person" | "concept" | "work", Record<string, unknown>>>(request, "facets.json"),
+  ]);
+  const ids = (x: unknown, listed: Record<string, unknown>): string[] =>
+    Array.isArray(x) ? [...new Set(x.filter((v): v is string => typeof v === "string" && Object.hasOwn(listed, v)))] : [];
+  return rows.map((r) => {
+    const e: Ids = Object.hasOwn(file.shiurim, r.id) ? file.shiurim[r.id]! : {};
+    return {
+      ...r,
+      entities: { people: ids(e.people, facets.person), concepts: ids(e.concepts, facets.concept), works: ids(e.works, facets.work) },
+    };
+  });
 }
 
 /** App pages that need no data file to exist (the rail, indexes, personal pages). */
@@ -128,6 +166,13 @@ export class LinkResolver {
         return (await this.exists(`work/${enc}.json`)) ? null : `no work file ${key} (${href})`;
       case "series":
         return (await this.exists(`series/${enc}.json`)) ? null : `no series file ${key} (${href})`;
+      // Corpus layer (corpus-wave-plan §3.5): each page renders its own file; an id without one is a 404.
+      case "t":
+        return parts.length === 3 && (await this.exists(`topic/${enc}.json`)) ? null : `no topic file ${key} (${href})`;
+      case "th":
+        return parts.length === 3 && (await this.exists(`thread/${enc}.json`)) ? null : `no thread file ${key} (${href})`;
+      case "maasios":
+        return parts.length === 3 && (await this.exists(`story/${enc}.json`)) ? null : `no story file ${key} (${href})`;
       default:
         return `unknown page ${href}`;
     }

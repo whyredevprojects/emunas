@@ -258,19 +258,27 @@ export function buildWorks(ctx: LayerContext, people: Map<string, PersonBase>, l
   return { works: out };
 }
 
-/** How a story's `people[]` entry is shown: linked id, or plain text (unresolved, excluded or invisible). */
-export function storyPersonOf(ctx: LayerContext, people: Map<string, PersonBase>): (raw: string) => LayerStoryPerson {
+/**
+ * How a story's `people[]` entry is shown: a linked person id, or (a person the sites do not list,
+ * or a "person" that is now a concept) that entity's own display name as plain text. A name that
+ * resolves to no corpus entity is a raw extraction spelling, possibly an ASR one, and is never
+ * published: null.
+ */
+export function storyPersonOf(ctx: LayerContext, people: Map<string, PersonBase>): (raw: string) => LayerStoryPerson | null {
   const allById = new Map(ctx.input.people.map((p) => [p.id, p]));
   const conceptsById = new Map(ctx.input.concepts.map((c) => [c.id, c]));
   return (raw) => {
     const r = ctx.resolveRef("people", raw);
     // A "person" that is now a concept (Moshiach, the Kohen Gadol): its label, as plain text.
-    if (r?.kind === "concepts") return { name: conceptsById.get(r.id)?.label.en ?? raw, linked: false };
-    const id = r?.kind === "people" ? r.id : null;
-    const base = id === null ? undefined : people.get(id);
-    if (id !== null && base && base.excluded === null) return { id };
-    const rec = id === null ? undefined : allById.get(id);
-    return { name: rec ? rec.nameEn : raw, linked: false };
+    if (r?.kind === "concepts") {
+      const label = conceptsById.get(r.id)?.label.en ?? "";
+      return label.trim() === "" ? null : { name: label, linked: false };
+    }
+    if (r?.kind !== "people") return null;
+    const base = people.get(r.id);
+    if (base && base.excluded === null) return { id: r.id };
+    const name = allById.get(r.id)?.nameEn ?? "";
+    return name.trim() === "" ? null : { name, linked: false };
   };
 }
 

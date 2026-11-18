@@ -6,7 +6,7 @@ import { parseMomentId } from "./moment.ts";
 import { formatLive } from "./live.ts";
 import { formatQuiet } from "./quiet.ts";
 import { quietSectionPath, type SectionRef } from "./section.ts";
-import { isEd, type CorpusKind, type Ed, type EntityKind, type LinkData, type MomentRef, type Route } from "./types.ts";
+import { isEd, type CorpusKind, type Ed, type LinkData, type MomentRef, type Route } from "./types.ts";
 
 function ed(value: Ed): Ed {
   if (!isEd(value)) throw new TypeError(`@emunas/links: edition must be "yi" or "en", got ${JSON.stringify(value)}`);
@@ -28,26 +28,18 @@ function sectionIndex(i: number): number {
 export interface QuietShiurOptions {
   /** Section index → `#s{i}`. Wins over `t` (a page has one fragment). */
   readonly section?: number | undefined;
-  /** Global seconds → `#t={t}` (rounded; ignored if not a finite non-negative number). */
+  /** Global seconds → `#t={t}` (kept to the millisecond; ignored if not a finite non-negative number). */
   readonly t?: number | undefined;
 }
 
 export interface LiveShiurOptions {
-  /** Global seconds → `?t=` (rounded; ignored if not a finite non-negative number). */
+  /** Global seconds → `?t=` (kept to the millisecond; ignored if not a finite non-negative number). */
   readonly t?: number | undefined;
   /** Moment to focus: a moment id `<shiurId>~<kind><index>` or `{kind, index}` → `&m=`. */
   readonly m?: string | MomentRef | undefined;
 }
 
-export interface EntityOptions {
-  /**
-   * Shiurim count; below the legacy Quiet page threshold the link is the index anchor. When
-   * given it wins over the `hasPage` lookup for this entity.
-   */
-  readonly count?: number | undefined;
-}
-
-export interface EntryOptions extends EntityOptions {
+export interface EntryOptions {
   /** Quiet only: the `all/` continuation page (topics and people). Ignored elsewhere. */
   readonly all?: boolean | undefined;
 }
@@ -64,33 +56,14 @@ function liveMoment(id: string, m: string | MomentRef | undefined): MomentRef | 
   return { kind: parsed.kind, index: parsed.index };
 }
 
-function entityData(base: LinkData, entity: EntityKind, k: string, opts: EntityOptions | undefined): LinkData {
-  if (opts?.count === undefined) return base;
-  const count = opts.count;
-  const hasPage = base.hasPage;
-  return {
-    ...base,
-    entityCount: (e, kk) => (e === entity && kk === k ? count : base.entityCount?.(e, kk)),
-    // An explicit count wins over the layer flag for this one entity.
-    ...(hasPage ? { hasPage: (site, kind, id) => (kind === entity && id === k ? undefined : hasPage(site, kind, id)) } : {}),
-  } satisfies LinkData;
-}
-
 function entryRoute(e: Ed, entry: CorpusKind, id: string, all?: boolean): Route {
   return { kind: "entry", ed: ed(e), entry, id: key(`${entry} id`, id), ...(all ? { all: true } : {}) };
 }
 
 export function quietPaths(data: LinkData = {}) {
-  const f = (r: Route, d: LinkData = data) => formatQuiet(r, d);
-  /** Legacy normalize-keyed entity (Quiet concepts under `/inyanim/`). */
-  const entity = (entity: EntityKind) => (e: Ed, k: string, opts?: EntityOptions) =>
-    f({ kind: "entity", ed: ed(e), entity, key: key(entity, k) }, entityData(data, entity, k, opts));
-  /** Corpus entry by id (people and works keep the address shape they always had). */
-  const entry = (kind: CorpusKind) => (e: Ed, id: string, opts?: EntryOptions) =>
-    f(
-      entryRoute(e, kind, id, opts?.all),
-      kind === "person" || kind === "work" || kind === "concept" ? entityData(data, kind, id, opts) : data,
-    );
+  const f = (r: Route) => formatQuiet(r, data);
+  /** Corpus entry by id. */
+  const entry = (kind: CorpusKind) => (e: Ed, id: string, opts?: EntryOptions) => f(entryRoute(e, kind, id, opts?.all));
   const index = (name: "topics" | "glossary" | "people" | "sources" | "stories") => (e: Ed) =>
     f({ kind: "index", ed: ed(e), index: name });
   return {
@@ -114,11 +87,6 @@ export function quietPaths(data: LinkData = {}) {
     work: entry("work"),
     /** `/{ed}/people/{personId}/` (`all: true` → `…/all/`), or the index anchor. */
     person: entry("person"),
-    /**
-     * @deprecated The legacy concept address `/{ed}/inyanim/{key}/` (normalize key), kept for
-     * pages not yet on the corpus layer. Glossary entries use `glossaryEntry`; C3.1 removes this.
-     */
-    concept: entity("concept"),
     /** `/{ed}/inyanim/{topicId}/` (`all: true` → `…/all/`). */
     topic: entry("topic"),
     /** `/{ed}/erachim/{conceptId}/`; a concept merged into a topic → the topic; else the anchor. */

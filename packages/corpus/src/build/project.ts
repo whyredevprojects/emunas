@@ -31,7 +31,7 @@ import type { Meta } from "./schemas.ts";
 import { TimeModel, mergeRanges, type RecTime, type SpanResult } from "./time.ts";
 
 /** Bump when the projection output changes for the same input (feeds every fingerprint). */
-export const PROJECTOR_VERSION = "2";
+export const PROJECTOR_VERSION = "3";
 
 export interface ProjectContext {
   keyer: Keyer;
@@ -259,10 +259,10 @@ function buildNotes(
   }
   const skipChapters = chapters.filter((c) => SKIP_KINDS.has(c.kind)).map((c): SkipRange => [c.t, c.end, c.kind]);
   const skip: SkipRange[] = [
-    // ASR-noise ranges already inside a skippable chapter add nothing.
+    // Pause ranges (segments flagged as noise in meta.json) already inside a skippable chapter add nothing.
     ...mergeRanges(noise)
       .filter(([a, b]) => !skipChapters.some(([s, e]) => a >= s && b <= e))
-      .map(([a, b]): SkipRange => [a, b, "asr-noise"]),
+      .map(([a, b]): SkipRange => [a, b, "pause"]),
     ...skipChapters,
   ].sort((x, y) => x[0] - y[0] || x[1] - y[1]);
 
@@ -343,11 +343,11 @@ function buildNotes(
       id: mid,
       title: L2(st.title),
       retelling: L2(st.retelling),
-      people: [...st.people],
-      peopleKeys: st.people.map((p) => keyed(ctx, "person", p, shiurId)),
+      // st.people (raw extraction names) is never projected: the layer's merged story names them.
       ...time(mid, tm.span(st.evidence.recordingId, st.evidence.segs)),
     };
     if (soft) out.soft = true;
+    report.dropped.rawPersonNames += st.people.length;
     stories.push(out);
   });
 
@@ -382,6 +382,8 @@ function buildNotes(
       return { sectionIndex: b.sectionIndex, heading: b.heading, paragraphs };
     });
 
+  // The extraction's people list (raw names) is never projected (F.1).
+  report.dropped.rawPersonNames += ex.people.length;
   return {
     summary: { oneLiner, abstract, keyPoints: moments("kp", ex.summary.keyPoints) },
     chapters,
@@ -391,8 +393,6 @@ function buildNotes(
     takeaways: moments("tk", ex.takeaways),
     questions,
     stories,
-    people: ex.people.map((p) => ({ name: p.name, key: keyed(ctx, "person", p.name, shiurId) })),
-    concepts: ex.concepts.map((c) => ({ he: c.he, key: keyed(ctx, "concept", c.he, shiurId) })),
     writeup: { en: writeupOf("en"), yi: writeupOf("yi") },
   };
 }

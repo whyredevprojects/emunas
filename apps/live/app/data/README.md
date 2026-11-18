@@ -15,9 +15,8 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/series/<id>.json` | `SeriesFile` (ordered parts, perek groups) | `loadSeries(id)` |
 | `/data/works.json`, `/data/work/<key>.json` | `WorksFile`, `WorkFile` (locations, unlocated) | `loadWorks()`, `loadWork(key)` |
 | `/data/entity/{p,c,o}/<key>.json` | `EntityFile` | `loadEntity(kind, key)` |
-| `/data/stories.json` | `StoriesFile` (no retelling) | `loadStories()` (memoized) |
 | `/data/moments/<lang>-<n>.json` | `MomentShardFile` (1,000 per shard) | `loadMomentShard(lang, n)` |
-| `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch) | `loadQuickIndex(lang)` |
+| `/data/quick-index.<lang>.json` | `QuickIndexFile` (serialized MiniSearch + the Live-page entities for suggestions) | `loadQuickIndex(lang)` |
 | `/data/topics.json` | `TopicsFile` (tree rows; `topicNodes()`) | `loadTopics()` (memoized) |
 | `/data/topic/<id>.json`, `.moments-<n>.json` | `TopicFile`, `TopicMomentsFile` | `loadTopic(id)`, `loadTopicMoments(id, n)` |
 | `/data/topic-shiurim/<id>.<n>.json` | `TopicShiurimFile` (rows after the topic file's first `TOPIC_FIRST_SHIURIM`) | `loadTopicShiurim(id, n)` |
@@ -34,7 +33,7 @@ Explore, search and the shelf. Every corpus entity is AI-generated and unreviewe
 shows `<CorpusLabel>` (app/components) once. Entity ids are corpus ids; which entities have a Live
 page is `live-pages.ts`, shared by the emit and the prerender list.
 
-Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION` (2 since C1.7); the client rejects anything else.
+Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION` (5 since F.1: no raw extraction names in shiur files, story refs carry `otherShiurim` and the merged story's people; 4 since C3.1: no `stories.json`, no entity ids in `corpus.json`); the client rejects anything else.
 Errors are `DataError` (`status` 404 for a missing file; `notFoundToNull()` maps that to `null`).
 
 **Audio (Amendment A1).** `ShiurFile.recordings[].audioUrl` is the media-host URL

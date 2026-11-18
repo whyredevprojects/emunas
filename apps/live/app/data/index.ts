@@ -34,7 +34,6 @@ export {
   loadQuickIndex,
   loadSeries,
   loadShiur,
-  loadStories,
   loadToday,
   loadWork,
   loadWorks,

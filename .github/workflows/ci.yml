@@ -1,14 +1,23 @@
 name: ci
 
 # integration-plan §3.5: typecheck (pipeline + sites) → lint → unit tests → corpus:build on
-# the real data → guard pre-pass → rebuild with the suppress list → both app builds →
-# guard post-pass → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
-# The e2e job (W5.1) builds both sites from the real data again for the browser gates: Playwright
-# (Chromium + WebKit, desktop + mobile, JS off for Quiet), axe on every route type, cross-site
-# equivalence and link checks, html-validate, the search eval regression gate and Lighthouse budgets.
+# the real data → guard pre-pass → rebuild with the suppress list → the three app builds →
+# guard post-pass (layer-aware) → budgets → PR preview uploads (staging Workers, `pr-<n>` alias).
+# The build steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts, corpus-wave-
+# plan §6); tests/chain/site-chain.test.ts fails when this file and the script disagree, and the
+# chain's planted self-tests (an asrVariants key, an ASR synonym) must fail guard post.
+# The browser gates (W5.1, C3.8) need both sites built from the real data with the test domain, so
+# build-test makes that build once and hands it to parallel jobs: Live Playwright per engine
+# (Chromium, WebKit; desktop + mobile; the corpus pages and Live's first-load request gate), Quiet
+# e2e (JS on and off, route types in WebKit), cross-site equivalence (incl. topic, concept and story)
+# and link checks with html-validate and the search eval regression gate, and Lighthouse budgets.
+# Unit tests run as four parallel groups (site:test:<group>); the chain self-tests run in parallel
+# off the build job's output. `passed` is the one job that needs everything: require it on main.
 
 on:
   pull_request:
+  # Lets a merge queue on main run this workflow on the queued commit (and record its marker).
+  merge_group:
   push:
     branches: [main]
   workflow_dispatch:
@@ -22,6 +31,8 @@ concurrency:
 
 env:
   NODE_VERSION: 22.23.4
+  LHCI_VERSION: 0.15.1
+  HTML_VALIDATE_VERSION: 11.17.0
   WRANGLER_VERSION: 4.156.0
   WRANGLER_SEND_METRICS: "false"
 
@@ -31,22 +42,39 @@ jobs:
     timeout-minutes: 20
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
       - name: Typecheck (pipeline, unchanged)
         run: npm run typecheck
-      # site:typecheck and site:test also cover the site Workers (site:*:workers) and the Live
-      # search eval suite (site:*:eval), so those have no steps of their own.
+      # site:typecheck also covers the site Workers and the Live search eval suite.
       - name: Typecheck (sites, site Workers, eval suite)
         run: npm run site:typecheck
       - name: Lint
         run: npm run site:lint
-      - name: Unit tests (sites, site Workers, eval suite)
-        run: npm run site:test
+      - name: Chain script (typecheck, lint, unit tests; the order below must match it)
+        run: |
+          npx tsc --noEmit -p tests/chain/tsconfig.json
+          npx eslint --config packages/config/eslint.config.js --max-warnings 0 tests/chain
+          npx vitest run --config tests/chain/vitest.config.ts
+
+  unit:
+    # npm run site:test, split into its groups (package.json): api (its real-data sync test is the
+    # longest single file), Quiet (+ Worker), Live (+ Worker, eval suite), and every package + Home.
+    name: unit (${{ matrix.group }})
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [api, quiet, live, rest]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Unit tests (site:test:${{ matrix.group }})
+        run: npm run site:test:${{ matrix.group }}
 
   build:
     runs-on: ubuntu-24.04
@@ -58,12 +86,9 @@ jobs:
     steps:
       # The transcript folder is in git; only the guard steps below read it (from its default path).
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
 
       - name: Corpus build
         run: npm run corpus:build
@@ -85,16 +110,22 @@ jobs:
         run: npm run build --workspace=@emunas/quiet
       - name: Build Live
         run: npm run build --workspace=@emunas/live
+      - name: Build Home
+        run: npm run build --workspace=@emunas/home
+      # Home's public/_headers has no media origin to fill in (its files are same-origin /files/*),
+      # so it ships as built.
       - name: Render _headers (media origin into CSP)
         run: |
           npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
           npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
-      - name: Validate wrangler configs and bundle the Live Worker (dry run)
+      - name: Validate wrangler configs and bundle the Live and Home Workers (dry run)
         run: |
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="")
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="" --outdir ../../.wrangler/bundles/live)
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="" --outdir ../../.wrangler/bundles/home)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env=staging)
 
       - name: Guard self-test (a planted leak must fail)
         run: |
@@ -108,13 +139,12 @@ jobs:
       - name: Guard post-pass (all outputs and the Worker bundle)
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
-          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
-          --corpus .corpus --report guard-post.json
+          post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles
+          --corpus .corpus --corpus-data data/derived/corpus --report guard-post.json
       - name: Budgets
-        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client apps/home/dist
       - name: Live data budgets (tech-live size targets; over-target is a warning)
         run: npm run data:budgets --workspace=@emunas/live
-
       - name: Job summary
         if: always()
         run: |
@@ -129,79 +159,193 @@ jobs:
             console.log(`- ${c.full} of ${c.total} shiurim with notes; ${c.catalogOnly} catalog-only; ${c.downgraded} downgraded`);
           }
           if (sup) console.log(`- verbatim: ${sup.suppress.length} suppressed, ${sup.report.length} reported (ids only)`);
+          const corpusIds = (sup?.suppress ?? []).map((s) => s.id).filter((id) => id.startsWith("corpus:"));
+          if (corpusIds.length) console.log(`- suppressed corpus ids: ${corpusIds.join(", ")}`);
+          const guard = read("guard-post.json");
+          if (guard) console.log(`- guard post: ${guard.counts.findings} finding(s), ${guard.counts.filesScanned} files, alias terms checked ${guard.counts.aliasTermsChecked}`);
+          // Corpus layer counts (corpus-wave-plan §6): visible recounts, pages per site, files not read.
+          const layer = read(".corpus/layer/layer.json");
+          if (layer?.counts) {
+            const c = layer.counts;
+            console.log(`- layer: ${c.visibleShiurim} visible shiurim; topics ${c.topics}, concepts ${c.concepts}, people ${c.people}, works ${c.works}, stories ${c.stories}, threads ${c.threads}, series ${c.series}`);
+            for (const [site, p] of Object.entries(c.pages ?? {})) console.log(`- ${site} pages: ${Object.entries(p).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+            console.log(`- files not read: ${(layer.notRead ?? []).join(", ") || "none"}`);
+          }
           JS
 
-      - name: Keep build output for the preview job
-        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+      - name: Keep build output (chain self-tests, PR preview)
         uses: actions/upload-artifact@v4
         with:
-          name: site-builds
+          name: build-outputs
           path: |
+            .corpus
             apps/quiet/dist
             apps/live/build/client
+            apps/home/dist
+            .wrangler/bundles
           include-hidden-files: true
           retention-days: 3
           if-no-files-found: error
 
-  e2e:
-    # W5.1 gates. Builds both sites from the real data/ with the test domain emunas.example (RFC
-    # 2606, never resolves): the specs route both hosts to the build outputs and answer the
-    # placeholder media host with silent audio, so nothing leaves the runner.
+  chain-selftest:
+    # A planted asrVariants key and a planted ASR synonym must each fail guard post.
+    # tests/chain/site-chain.ts plants into the built layer, runs guard post, restores the file;
+    # --expect-fail-at makes the step pass only when the chain fails exactly at guard post. The two
+    # plants edit .corpus in place, so each runs on its own copy of the build job's output.
+    name: chain self-test (${{ matrix.plant }})
+    needs: [build]
     runs-on: ubuntu-24.04
-    timeout-minutes: 75
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        plant: [asr-key, asr-synonym]
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: build-outputs
+      - name: Chain self-test (planted ${{ matrix.plant }} must fail guard post)
+        run: >-
+          npm run --silent site:chain -- --from guard-post --to guard-post --plant "${{ matrix.plant }}"
+          --expect-fail-at guard-post --report "$RUNNER_TEMP/planted-${{ matrix.plant }}.json"
+
+  build-test:
+    # The W5.1 gates' build: both sites from the real data/ with the test domain emunas.example
+    # (RFC 2606, never resolves). The specs route both hosts to these outputs and answer the
+    # placeholder media host with silent audio, so nothing leaves the runner. The chain's build
+    # steps (tests/chain/site-chain.ts), so the browser gates see the same outputs the deploy
+    # ships; the build job runs guard post and the budgets.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
     env:
       EMUNAS_MEDIA_ORIGIN: https://media.example.invalid
       EMUNAS_DOMAIN: emunas.example
-      PW_CHANNEL: chromium
-      CHROME_PATH: /usr/bin/google-chrome
-      LHCI_VERSION: 0.15.1
-      HTML_VALIDATE_VERSION: 11.17.0
     steps:
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
-      - name: Install Playwright browsers (Chromium, WebKit)
-        run: npx playwright install --with-deps chromium webkit
+      - name: Corpus, guard pre, suppress rebuild, search rows, Live data, both builds (real data, test domain)
+        run: npm run site:chain -- --to live-build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: test-builds
+          path: |
+            .corpus
+            apps/quiet/dist
+            apps/live/build/client
+          include-hidden-files: true
+          retention-days: 1
+          if-no-files-found: error
 
-      - name: Corpus, search rows and Live data (real data)
+  live-e2e:
+    # Live Playwright matrix (playwright.matrix.config.ts), one job per engine with its desktop and
+    # mobile projects: the contract fixtures, then the real-data build (@data specs).
+    name: live e2e (${{ matrix.browser }})
+    needs: [build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, webkit]
+    env:
+      PW_CHANNEL: chromium
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - uses: ./.github/actions/playwright
+        with:
+          browsers: ${{ matrix.browser }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: test-builds
+      - name: Live e2e, contract fixtures (${{ matrix.browser }}, desktop + mobile)
+        working-directory: apps/live
+        run: >-
+          npx playwright test -c test/e2e/playwright.matrix.config.ts
+          --project=${{ matrix.browser }} --project=mobile-${{ matrix.browser }}
+      - name: Live e2e, real-data build (@data specs)
+        working-directory: apps/live
+        env:
+          LIVE_E2E_DATA: build
+        run: >-
+          npx playwright test -c test/e2e/playwright.matrix.config.ts --grep @data
+          --project=${{ matrix.browser }} --project=mobile-${{ matrix.browser }}
+      - name: Keep reports
+        if: failure() || cancelled()
+        uses: actions/upload-artifact@v4
+        with:
+          name: live-e2e-reports-${{ matrix.browser }}
+          path: |
+            apps/live/playwright-report
+            apps/live/test-results
+          if-no-files-found: ignore
+          retention-days: 7
+
+  quiet-e2e:
+    needs: [build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CHROME_PATH: /usr/bin/google-chrome
+      QUIET_E2E_DIST: ${{ github.workspace }}/apps/quiet/dist
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      # Chrome is the runner's (CHROME_PATH); only WebKit comes from Playwright.
+      - uses: ./.github/actions/playwright
+        with:
+          browsers: webkit
+      # shiur.test.ts makes its silent test recordings with ffmpeg, which the runner image lacks.
+      - name: Install ffmpeg
         run: |
-          npm run corpus:build
-          npm run search:build
-          npm run data:build --workspace=@emunas/live
-      - name: Build Quiet and Live (test domain)
-        run: |
-          npm run build --workspace=@emunas/quiet
-          npm run build --workspace=@emunas/live
+          sudo apt-get update -q
+          sudo apt-get install -y -q --no-install-recommends ffmpeg
+      - uses: actions/download-artifact@v4
+        with:
+          name: test-builds
+      - name: Quiet e2e (Chrome; JS on and off)
+        run: npm run test:e2e --workspace=@emunas/quiet
+      - name: Quiet route types in WebKit
+        working-directory: apps/quiet
+        env:
+          QUIET_E2E_BROWSER: webkit
+        run: npx vitest run --config vitest.e2e.config.ts test/e2e/routes.test.ts
+
+  cross-site:
+    needs: [build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    env:
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@v5
+      - uses: ./.github/actions/setup
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      # html-validate runs through npx and is not in the lockfile.
+      - name: Cache npx packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm/_npx
+          key: npx-${{ runner.os }}-html-validate-${{ env.HTML_VALIDATE_VERSION }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: test-builds
 
       - name: Typecheck and lint the cross-site suite
         run: |
           npx tsc --noEmit -p tests/cross-site/tsconfig.json
           npx eslint --config packages/config/eslint.config.js --max-warnings 0 tests/cross-site
-
-      - name: Live e2e, contract fixtures (Chromium + WebKit, desktop + mobile)
-        working-directory: apps/live
-        run: npx playwright test -c test/e2e/playwright.matrix.config.ts
-      - name: Live e2e, real-data build (@data specs)
-        working-directory: apps/live
-        env:
-          LIVE_E2E_DATA: build
-        run: npx playwright test -c test/e2e/playwright.matrix.config.ts --grep @data
-
-      - name: Quiet e2e (Chrome; JS on and off)
-        env:
-          QUIET_E2E_DIST: ${{ github.workspace }}/apps/quiet/dist
-        run: npm run test:e2e --workspace=@emunas/quiet
-      - name: Quiet route types in WebKit
-        working-directory: apps/quiet
-        env:
-          QUIET_E2E_DIST: ${{ github.workspace }}/apps/quiet/dist
-          QUIET_E2E_BROWSER: webkit
-        run: npx vitest run --config vitest.e2e.config.ts test/e2e/routes.test.ts
-
       - name: Cross-site equivalence (both builds, Chrome)
         run: npx vitest run --config tests/cross-site/vitest.config.ts
       - name: Cross-site link check
@@ -232,6 +376,27 @@ jobs:
           --cache "$RUNNER_TEMP/eval-cache" --out "$RUNNER_TEMP/eval"
           --baseline apps/live/tests/eval/report.json
 
+  lighthouse:
+    # Static servers only (Quiet's dist, Live's serve.js over build/client) and the runner's Chrome,
+    # so no npm install.
+    needs: [build-test]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      CHROME_PATH: /usr/bin/google-chrome
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: Cache npx packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm/_npx
+          key: npx-${{ runner.os }}-lhci-${{ env.LHCI_VERSION }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: test-builds
       - name: Lighthouse budgets, Quiet (mobile; perf >= 0.95, LCP < 1.8 s)
         run: npx --yes "@lhci/cli@${LHCI_VERSION}" autorun --config=tests/cross-site/lighthouse/quiet.lighthouserc.json
       - name: Lighthouse budgets, Live (mobile; LCP <= 2.0 s, TBT <= 200 ms)
@@ -239,24 +404,55 @@ jobs:
         # the W5.1 report). Reported on every run; make it blocking once the Live budgets are met.
         continue-on-error: true
         run: npx --yes "@lhci/cli@${LHCI_VERSION}" autorun --config=tests/cross-site/lighthouse/live.lighthouserc.json
-
       - name: Keep reports
         if: failure() || cancelled()
         uses: actions/upload-artifact@v4
         with:
-          name: e2e-reports
-          path: |
-            apps/live/playwright-report
-            apps/live/test-results
-            .lighthouseci
+          name: lighthouse-reports
+          path: .lighthouseci
+          include-hidden-files: true
           if-no-files-found: ignore
           retention-days: 7
+
+  passed:
+    # The single required check: fails unless every job above succeeded (a skipped or cancelled
+    # job fails it too, so a required check can never pass by being skipped). Then records that
+    # this exact tree passed: an artifact named after the git tree id (content only, not the
+    # commit). deploy.yml looks it up and skips its typecheck, lint and unit tests for a tree CI
+    # already passed; a squash or rebase merge of a PR whose last run tested refs/pull/N/merge
+    # against the current main has the same tree. A miss only means the deploy runs them again.
+    if: always()
+    needs: [check, unit, build, chain-selftest, build-test, live-e2e, quiet-e2e, cross-site, lighthouse]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - name: Every job succeeded
+        env:
+          RESULTS: ${{ toJSON(needs.*.result) }}
+        run: |
+          echo "$RESULTS"
+          if [ "$(jq -r 'map(select(. != "success")) | length' <<< "$RESULTS")" != "0" ]; then
+            echo "::error::not every CI job succeeded"
+            exit 1
+          fi
+      - uses: actions/checkout@v5
+      - name: Tree id
+        id: tree
+        run: |
+          echo "tree=$(git rev-parse 'HEAD^{tree}')" >> "$GITHUB_OUTPUT"
+          printf '%s\n' "$GITHUB_SHA" > "$RUNNER_TEMP/ci-passed.txt"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ci-passed-${{ steps.tree.outputs.tree }}
+          path: ${{ runner.temp }}/ci-passed.txt
+          retention-days: 30
+          if-no-files-found: error
 
   preview:
     # Same-repo PRs only (fork PRs get no secrets). Uploads a version of each staging Worker
     # with the alias pr-<n>; nothing is promoted, production is never touched (§3.4).
     if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
-    needs: [check, build]
+    needs: [check, unit, build]
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     concurrency:
@@ -274,21 +470,22 @@ jobs:
             apps/quiet/wrangler.jsonc
             apps/live/wrangler.jsonc
             apps/live/worker
+            apps/home/wrangler.jsonc
+            apps/home/worker
           sparse-checkout-cone-mode: false
       - uses: actions/setup-node@v5
         with:
           node-version: ${{ env.NODE_VERSION }}
       - uses: actions/download-artifact@v4
         with:
-          name: site-builds
-          path: apps
+          name: build-outputs
       - name: Upload preview versions (staging Workers)
         run: |
           if [ -z "${CLOUDFLARE_API_TOKEN}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID}" ]; then
             echo "::notice::Cloudflare secrets are not configured; skipping preview upload."
             exit 0
           fi
-          for app in quiet live; do
+          for app in quiet live home; do
             (cd "apps/${app}" && npx --yes "wrangler@${WRANGLER_VERSION}" versions upload --env=staging \
               --preview-alias "pr-${PR_NUMBER}" --message "PR #${PR_NUMBER} ${HEAD_SHA:0:12}" \
               | tee "../../preview-${app}.log")

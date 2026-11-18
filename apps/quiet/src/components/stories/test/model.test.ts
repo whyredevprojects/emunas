@@ -87,7 +87,7 @@ const PEOPLE = [
   person("avraham-avinu", { nameEn: "Avraham Avinu", nameHe: "אברהם אבינו", type: "tanach", group: "tanach" }),
   person("chofetz-chaim", { nameEn: "the Chofetz Chaim", nameHe: "החפץ חיים", type: "acharon", group: "acharon", pages: { quiet: false, live: false } }),
   person("a-politician", { nameEn: "A Politician", type: "other", group: "other", listed: { quiet: false, live: false }, pages: { quiet: false, live: false } }),
-  person("the-ravs-father", { nameEn: "the Rav's father", type: "individual", group: "other", excluded: "family", listed: { quiet: false, live: false } }),
+  person("the-mashgiachs-father", { nameEn: "the Mashgiach's father", type: "individual", group: "other", excluded: "family", listed: { quiet: false, live: false } }),
 ];
 
 const STORIES: LayerStory[] = [
@@ -95,14 +95,14 @@ const STORIES: LayerStory[] = [
   story(
     "the-poretz-and-the-sled",
     [telling("yi-a-02", 0, 5750), telling("en-b-01", 1, null), telling("yi-a-01", 2, 5743), telling("en-b-02", 3, 5770), telling("yi-c-01", 4, null), telling("no-such-shiur", 0, 5700)],
-    { people: [{ id: "baal-shem-tov" }, { name: "Reb Aryeh", linked: false }], attributionVaries: true },
+    { people: [{ id: "baal-shem-tov" }, { name: "Moshiach", linked: false }], attributionVaries: true },
   ),
   // told twice, Avraham Avinu and the Baal Shem Tov
   story("avraham-and-the-guests", [telling("yi-a-01", 1, 5743), telling("en-b-01", 0, null)], { people: [{ id: "avraham-avinu" }, { id: "baal-shem-tov" }] }),
   // told once, about the Chofetz Chaim (listed, no page)
   story("the-chofetz-chaim-and-the-wagon", [telling("yi-a-02", 3, 5750, 615.4)], { people: [{ id: "chofetz-chaim" }] }),
   // told once, nobody listed: only an unresolved name, an unlisted and an excluded person
-  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "Chaim", linked: false }, { id: "a-politician" }, { id: "the-ravs-father" }] }),
+  story("the-cook", [telling("en-b-02", 1, 5770, null, 4)], { people: [{ name: "the Mashgiach's grandfather", linked: false }, { id: "a-politician" }, { id: "the-mashgiachs-father" }] }),
   // told once with no time and no chapter
   story("a-boy-at-the-kosel", [telling("en-b-01", 2, null, null, null)], { title: { en: "A boy at the Kosel", yi: "" } }),
   // nothing citable: dropped from the index
@@ -129,7 +129,7 @@ describe("story strings", () => {
     }
   });
 
-  it("speak of the Rav as דער משגיח in Yiddish", () => {
+  it("speak of the Mashgiach as דער משגיח in Yiddish", () => {
     expect(storiesYi["index.lead"]).toContain("דער משגיח");
   });
 });
@@ -147,7 +147,7 @@ describe("tellings", () => {
   });
 
   it("links to the time, else the chapter, else the shiur", () => {
-    expect(tellingHref("yi", { shiurId: "x", t: 61.5, chapterIdx: 3 })).toBe("/yi/shiur/x/#t=62");
+    expect(tellingHref("yi", { shiurId: "x", t: 61.5, chapterIdx: 3 })).toBe("/yi/shiur/x/#t=61.5");
     expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: 3 })).toBe("/yi/shiur/x/#s3");
     expect(tellingHref("yi", { shiurId: "x", t: null, chapterIdx: null })).toBe("/yi/shiur/x/");
   });
@@ -165,7 +165,7 @@ describe("story page", () => {
     expect(m.title.text).toBe("Story the-poretz-and-the-sled");
     expect(m.people.map((p) => [p.name.text, p.href])).toEqual([
       ["the Baal Shem Tov", "/en/people/baal-shem-tov/"],
-      ["Reb Aryeh", null],
+      ["Moshiach", null],
     ]);
     expect(m.attributionVaries).toBe(true);
     expect(m.retelling).toBe("Retelling of the-poretz-and-the-sled.");
@@ -183,9 +183,9 @@ describe("story page", () => {
   it("prints unlisted and excluded people as plain names, never linked", () => {
     const people = storyPeople("en", STORIES[3]!, source());
     expect(people.map((p) => [p.name.text, p.href])).toEqual([
-      ["Chaim", null],
+      ["the Mashgiach's grandfather", null],
       ["A Politician", null],
-      ["the Rav's father", null],
+      ["the Mashgiach's father", null],
     ]);
   });
 
@@ -228,7 +228,7 @@ describe("stories index", () => {
     expect(m.groups[0]!.people[0]!.stories.map((s) => s.id)).toEqual(["avraham-and-the-guests"]);
     const names = m.groups.flatMap((g) => g.people.map((p) => p.id));
     expect(names).not.toContain("a-politician");
-    expect(names).not.toContain("the-ravs-father");
+    expect(names).not.toContain("the-mashgiachs-father");
   });
 
   it("puts every story not under a listed person in 'without a name', alphabetically", () => {
@@ -239,7 +239,7 @@ describe("stories index", () => {
     const once = m.groups[1]!.people[0]!.stories[0]!;
     expect(once.id).toBe("the-chofetz-chaim-and-the-wagon");
     expect(once.href).toBeNull();
-    expect(once.moments.map((x) => [x.href, x.time, x.langName])).toEqual([["/en/shiur/yi-a-02/#t=615", "10:15", "Yiddish"]]);
+    expect(once.moments.map((x) => [x.href, x.time, x.langName])).toEqual([["/en/shiur/yi-a-02/#t=615.4", "10:15", "Yiddish"]]);
     const cook = m.withoutName.find((l) => l.id === "the-cook")!;
     expect(cook.moments[0]!.href).toBe("/en/shiur/en-b-02/#s4");
   });
@@ -264,7 +264,7 @@ describe("stories index", () => {
     expect(line.moments).toHaveLength(2);
   });
 
-  it("is empty without a layer", () => {
+  it("is empty with no stories", () => {
     expect(storiesIndexModel("yi", source([], []), ROWS)).toEqual({ mostRetold: [], groups: [], withoutName: [], total: 0 });
   });
 });

@@ -1,0 +1,31 @@
+/*
+ * The dedication footer (corpus-wave-plan F.3): one centered Hebrew line, small, in the muted ink,
+ * with no border or decoration. Inside the app shell it moves up into the space the shell reserves
+ * for the fixed dock (and, on narrow screens, the rail bar) and reserves that space below itself
+ * instead, so it reads as the end of the page and is never covered by the player.
+ */
+@layer components {
+  .footer {
+    padding: var(--space-l) var(--space-m) var(--space-m);
+  }
+
+  .line {
+    margin: 0;
+    text-align: center;
+    font-family: var(--font-ui);
+    font-size: var(--step--1);
+    color: var(--color-ink-muted);
+  }
+
+  [data-ui] + .footer {
+    margin-block-start: calc(-1 * var(--dock-height));
+    padding-block-end: calc(var(--space-m) + var(--dock-height));
+  }
+
+  @media (max-width: 48rem) {
+    [data-ui] + .footer {
+      margin-block-start: calc(-1 * (var(--dock-height) + var(--rail-bar-height)));
+      padding-block-end: calc(var(--space-m) + var(--dock-height) + var(--rail-bar-height));
+    }
+  }
+}

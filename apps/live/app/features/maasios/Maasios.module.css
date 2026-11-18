@@ -1,13 +1,20 @@
 /*
  * Maasios library and story pages (concept-live-corpus C.4). Logical properties only, so every row,
  * chip line and button group mirrors with `dir`.
+ *
+ * Every grid here has one `minmax(0, 1fr)` column, so no child can widen the page past the screen:
+ * the topic `<select>` is as wide as its longest option, and with an `auto` track that width pushed
+ * the page sideways on a phone, under the fixed bottom navigation (F.2). Long words wrap.
  */
 @layer components {
   .page {
     max-inline-size: var(--measure-wide);
+    min-inline-size: 0;
     padding: var(--space-l) var(--space-m) var(--space-2xl);
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-l);
+    overflow-wrap: anywhere;
   }
 
   .title {
@@ -36,6 +43,7 @@
 
   .section {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-s);
   }
 
@@ -57,6 +65,7 @@
   .chip {
     display: inline-flex;
     align-items: center;
+    max-inline-size: 100%;
     gap: var(--space-3xs);
     min-block-size: var(--tap-min);
     padding-inline: var(--space-s);
@@ -75,6 +84,8 @@
 
   .select {
     min-block-size: var(--tap-min);
+    inline-size: 100%;
+    min-inline-size: 0;
     max-inline-size: 100%;
     padding-inline: var(--space-s);
     border: var(--rule-hairline) solid var(--color-rule-strong);
@@ -86,6 +97,7 @@
 
   .field {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-3xs);
     max-inline-size: 24rem;
   }
@@ -125,11 +137,13 @@
     margin: 0;
     padding: 0;
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-s);
   }
 
   .card {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-2xs);
     padding-block: var(--space-xs);
     border-block-end: var(--rule-hairline) solid var(--color-rule);
@@ -148,6 +162,7 @@
 
   .telling {
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
     gap: var(--space-2xs);
     padding-block: var(--space-xs);
     padding-inline-start: var(--space-s);

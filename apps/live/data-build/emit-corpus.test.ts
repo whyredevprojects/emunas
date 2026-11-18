@@ -5,6 +5,8 @@
  * glossary shards resolve, nothing pairs shiurim across languages, and the featured
  * mix follows the owner policy (D7).
  */
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { glossaryShardFor } from "../app/data/paths.ts";
 import type {
@@ -14,6 +16,7 @@ import type {
   DataKind,
   FacetsFile,
   GlossaryShardFile,
+  QuickIndexFile,
   ShiurFile,
   StoriesIndexFile,
   StoryFile,
@@ -34,7 +37,7 @@ import { GENERATED_AT, MINI_DATA, MINI_POLICY, allKeys, buildCorpusTo } from "./
 
 const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
 const input = readCorpusInput(corpusDir);
-const layer = input.layer!;
+const layer = input.layer;
 const files = emitLiveData(input, { generatedAt: GENERATED_AT });
 const get = <T>(f: string, from: EmittedFiles = files): T => {
   const x = from.get(f);
@@ -45,7 +48,7 @@ const under = (prefix: string, from: EmittedFiles = files) => [...from.keys()].f
 const clone = <T>(x: T): T => structuredClone(x);
 
 /** The mini input with a changed layer (thread pages, an occasion topic), for cases the mini corpus lacks. */
-function withLayer(edit: (l: NonNullable<CorpusInput["layer"]>) => void): CorpusInput {
+function withLayer(edit: (l: CorpusInput["layer"]) => void): CorpusInput {
   const copy = { ...input, layer: clone(layer) };
   edit(copy.layer);
   return copy;
@@ -61,7 +64,7 @@ describe("corpus-layer files on the mini corpus", () => {
   });
 
   it("schemas are strict for every new file: an unknown key fails", () => {
-    const thread = emitLiveData(withLayer((l) => (l.threads![0]!.page = true)), { generatedAt: GENERATED_AT });
+    const thread = emitLiveData(withLayer((l) => (l.threads[0]!.page = true)), { generatedAt: GENERATED_AT });
     const samples: [string, unknown][] = [
       ["topics.json", files.get("topics.json")],
       [under("topic/").find((f) => !f.includes(".moments-"))!, null],
@@ -98,10 +101,10 @@ describe("corpus-layer files on the mini corpus", () => {
     expect((layer.threads ?? []).some((t) => t.page)).toBe(false);
     // With thread pages in the layer, exactly those threads get a file.
     const flipped = withLayer((l) => {
-      for (const t of l.threads!.slice(0, 2)) t.page = true;
+      for (const t of l.threads.slice(0, 2)) t.page = true;
     });
     const out = emitLiveData(flipped, { generatedAt: GENERATED_AT });
-    expect(new Set(under("thread/", out))).toEqual(new Set(flipped.layer!.threads!.filter((t) => t.page).map((t) => `thread/${t.id}.json`)));
+    expect(new Set(under("thread/", out))).toEqual(new Set(flipped.layer.threads.filter((t) => t.page).map((t) => `thread/${t.id}.json`)));
     for (const f of under("thread/", out)) {
       const t = get<ThreadFile>(f, out);
       expect(t.members.length).toBeGreaterThan(0);
@@ -242,10 +245,40 @@ describe("corpus-layer files on the mini corpus", () => {
       // C2.6: a person page shows the person's own display aliases ("also called"), and only those.
       const person = /^entity\/p\//.test(f) ? (body as EntityFile).person : undefined;
       if (person) expect(person.aliases.every((a) => people.get(person.id)!.aliases.includes(a)), f).toBe(true);
+      // C3.6: the quick index carries the clean synonyms (layer synonyms.json) of its suggestible entities.
+      const quick = /^quick-index\./.test(f) ? (body as QuickIndexFile) : undefined;
+      if (quick) {
+        const own = new Map(layer.synonyms.map((x) => [`${x.kind}:${x.id}`, new Set(x.terms)]));
+        for (const e of quick.entities) {
+          const terms = own.get(`${e.kind}:${e.id}`) ?? new Set<string>();
+          expect(e.synonyms.every((t) => terms.has(t)), `${f} ${e.kind}:${e.id}`).toBe(true);
+        }
+      }
       for (const k of ["aliases", "synonyms", "transliterations", "terms_", "asrVariants", "heardAsSamples", "sibling", "counterpart"]) {
         if (k === "aliases" && person) continue;
+        if (k === "synonyms" && quick) continue;
         expect(keys.has(k), `${f}: ${k}`).toBe(false);
       }
+    }
+  });
+
+  it("the quick index suggests exactly the entities with a Live page, with clean synonyms (C3.6)", () => {
+    for (const lang of ["en", "yi"] as const) {
+      const quick = get<QuickIndexFile>(`quick-index.${lang}.json`);
+      const has = (kind: string, id: string) => quick.entities.some((e) => e.kind === kind && e.id === id);
+      expect(has("topic", "hester-panim")).toBe(true);
+      expect(has("person", "baal-shem-tov")).toBe(true);
+      // Every person suggestion has a page; no `other`-group person is ever suggested (E.1, D2).
+      for (const p of layer.people) {
+        const page = files.has(`entity/p/${p.id}.json`);
+        expect(has("person", p.id), p.id).toBe(page);
+        if (p.type === "other" || p.group === "other") expect(has("person", p.id), p.id).toBe(false);
+      }
+      for (const c of layer.concepts) expect(has("concept", c.id), c.id).toBe(files.has(`entity/c/${c.id}.json`));
+      for (const w of layer.works) expect(has("work", w.id), w.id).toBe(files.has(`work/${w.id}.json`));
+      for (const t of layer.topics) expect(has("topic", t.id), t.id).toBe(files.has(`topic/${t.id}.json`));
+      // An ASR mishearing of the Baal Shem Tov is not a synonym of anything.
+      expect(quick.entities.flatMap((e) => e.synonyms)).not.toContain("hashem tov");
     }
   });
 
@@ -287,12 +320,107 @@ describe("corpus-layer files on the mini corpus", () => {
     for (const st of out) expect(st.attributionVaries).toBe(stories.get(st.id)!.attributionVaries);
     // A layer story with attributionVaries keeps it on its page file.
     const flipped = withLayer((l) => {
-      const s = l.stories!.find((x) => x.pages.live)!;
+      const s = l.stories.find((x) => x.pages.live)!;
       s.attributionVaries = true;
     });
     const again = emitLiveData(flipped, { generatedAt: GENERATED_AT });
-    const id = flipped.layer!.stories!.find((x) => x.attributionVaries && x.pages.live)!.id;
+    const id = flipped.layer.stories.find((x) => x.attributionVaries && x.pages.live)!.id;
     expect(get<StoryFile>(`story/${id}.json`, again).attributionVaries).toBe(true);
+  });
+
+  it("story files publish no unresolved raw name: linked people and corpus display names only (C3.1)", () => {
+    const raw = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "stories.json"), "utf8")) as { id: string; people: string[] }[];
+    const rawPeople = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "people.json"), "utf8")) as { id: string; nameEn: string }[];
+    const rawConcepts = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "concepts.json"), "utf8")) as { label: { en: string } }[];
+    const ids = new Set(rawPeople.map((p) => p.id));
+    const display = new Set([...rawPeople.map((p) => p.nameEn), ...rawConcepts.map((c) => c.label.en)]);
+    const unresolved = raw.flatMap((s) => s.people.filter((p) => !ids.has(p) && !p.startsWith("syn-")));
+    expect(unresolved.length).toBeGreaterThan(0);
+    let named = 0;
+    for (const f of [...under("story/"), "stories-index.json"]) {
+      const text = JSON.stringify(files.get(f));
+      for (const n of unresolved) expect(text, f).not.toContain(JSON.stringify(n));
+    }
+    for (const f of under("story/")) {
+      for (const p of get<StoryFile>(f).people) {
+        if (!("name" in p)) continue;
+        named++;
+        expect(display.has(p.name), `${f}: ${p.name}`).toBe(true);
+      }
+    }
+    for (const row of get<StoriesIndexFile>("stories-index.json").stories) for (const n of row.names) expect(display.has(n), n).toBe(true);
+    expect(named).toBeGreaterThan(0);
+  });
+
+  it("shiur files publish no raw extraction name: story people come from the merged story only (F.1)", () => {
+    const rawPeople = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "people.json"), "utf8")) as { nameEn: string }[];
+    const rawConcepts = JSON.parse(readFileSync(join(MINI_DATA, "derived", "corpus", "concepts.json"), "utf8")) as { label: { en: string } }[];
+    const display = new Set([...rawPeople.map((p) => p.nameEn), ...rawConcepts.map((c) => c.label.en)]);
+    let named = 0;
+    let chips = 0;
+    for (const f of under("shiur/")) {
+      const file = get<ShiurFile>(f);
+      const notes = file.notes as unknown as Record<string, unknown> | undefined;
+      if (notes) {
+        expect(Object.keys(notes)).not.toContain("people");
+        expect(Object.keys(notes)).not.toContain("concepts");
+        for (const st of file.notes!.stories) expect(Object.keys(st), f).not.toContain("people");
+      }
+      // Every name the shiur file carries is a corpus entity's display name; extraction names never.
+      if (file.status !== "full") continue;
+      const ex = JSON.parse(readFileSync(join(MINI_DATA, "derived", "shiurim", file.id, "extraction.json"), "utf8")) as {
+        stories?: { people?: string[] }[];
+        people?: { name: string }[];
+      };
+      // (A source's work string is the cited work, not a person: "Bnei Yissaschar" is both.)
+      const text = JSON.stringify({ ...file, notes: file.notes ? { ...file.notes, sources: [] } : undefined });
+      for (const n of [...(ex.people ?? []).map((p) => p.name), ...(ex.stories ?? []).flatMap((x) => x.people ?? [])]) {
+        if (!display.has(n)) expect(text, `${f}: ${n}`).not.toContain(JSON.stringify(n));
+      }
+      for (const x of file.corpus?.stories ?? []) {
+        for (const p of x.people) {
+          if ("name" in p) {
+            named++;
+            expect(display.has(p.name), `${f}: ${p.name}`).toBe(true);
+          } else {
+            chips++;
+            expect(layer.people.some((q) => q.id === p.id), p.id).toBe(true);
+          }
+        }
+      }
+    }
+    expect(named).toBeGreaterThan(0);
+    expect(chips).toBeGreaterThan(0);
+  });
+
+  it("'told in N other shiurim' counts distinct other shiurim, not tellings (F.1)", () => {
+    // A story told twice in one shiur and once in another: one other shiur, never two.
+    const refs = [...layer.refs.values()].find((r) => (r.stories ?? []).length > 0)!;
+    const ref = refs.stories[0]!;
+    const other = input.shiurim.find((s) => s.status === "full" && s.id !== refs.shiurId && s.notes!.stories.length > 0)!;
+    const edited = withLayer((l) => {
+      const st = l.stories.find((x) => x.id === ref.storyId)!;
+      const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
+      st.tellings = [
+        { ...t0 },
+        { ...t0, momentId: `${refs.shiurId}~st99` },
+        { ...t0, shiurId: other.id, momentId: other.notes!.stories[0]!.id },
+        { ...t0, shiurId: other.id, momentId: `${other.id}~st98` },
+      ];
+    });
+    const out = emitLiveData(edited, { generatedAt: GENERATED_AT });
+    const mine = get<ShiurFile>(`shiur/${refs.shiurId}.json`, out).corpus!.stories.find((x) => x.momentId === ref.momentId)!;
+    expect(mine.otherShiurim).toBe(1);
+    // With only this shiur's two tellings there is no other shiur: no line.
+    const alone = emitLiveData(
+      withLayer((l) => {
+        const st = l.stories.find((x) => x.id === ref.storyId)!;
+        const t0 = st.tellings.find((t) => t.shiurId === refs.shiurId)!;
+        st.tellings = [{ ...t0 }, { ...t0, momentId: `${refs.shiurId}~st99` }];
+      }),
+      { generatedAt: GENERATED_AT },
+    );
+    expect(get<ShiurFile>(`shiur/${refs.shiurId}.json`, alone).corpus!.stories.find((x) => x.momentId === ref.momentId)!.otherShiurim).toBe(0);
   });
 
   it("stories-index.json (C2.7): labelled people, plain names, the topic join and one telling to play per language", () => {
@@ -301,7 +429,7 @@ describe("corpus-layer files on the mini corpus", () => {
     const topicFiles = new Map(under("topic/").filter((f) => !f.includes(".moments-")).map((f) => [f, get<TopicFile>(f)]));
     for (const row of idx.stories) {
       const st = stories.get(row.id)!;
-      // Every linked person has a label; a raw name or an unlisted person is a plain name, never an id.
+      // Every linked person has a label; an unlisted person is a plain name, never an id.
       for (const id of row.people) expect(idx.people[id], id).toBeDefined();
       for (const n of row.names) expect(idx.people[n]).toBeUndefined();
       // Unresolved raw extraction names never go in `names` (an alias-bearing key the corpus guard
@@ -330,7 +458,7 @@ describe("corpus-layer files on the mini corpus", () => {
 
     // Catalogued shiurim come before uncatalogued ones when picking the telling to play.
     const flipped = clone(input);
-    const st = flipped.layer!.stories!.find((x) => x.tellings.length > 1)!;
+    const st = flipped.layer.stories.find((x) => x.tellings.length > 1)!;
     const [a, b] = st.tellings;
     b!.lang = a!.lang;
     const shiurA = flipped.shiurim.find((s) => s.id === a!.shiurId)!;
@@ -340,7 +468,7 @@ describe("corpus-layer files on the mini corpus", () => {
     expect(row.plays.find((p) => p.lang === a!.lang)!.momentId).toBe(b!.momentId);
   });
 
-  it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json keeps them until C3.1", () => {
+  it("explore/entities.json holds corpus-id arrays per summarized shiur; corpus.json has none (C3.1)", () => {
     const ex = get<{ shiurim: Record<string, { topics: string[]; people: string[]; concepts: string[]; works: string[] }> }>("explore/entities.json");
     const facets = get<FacetsFile>("facets.json");
     const corpus = get<CorpusFile>("corpus.json");
@@ -350,22 +478,10 @@ describe("corpus-layer files on the mini corpus", () => {
       for (const p of e.people) expect(facets.person[p]).toBeDefined();
       for (const c of e.concepts) expect(facets.concept[c]).toBeDefined();
       for (const w of e.works) expect(facets.work[w]).toBeDefined();
-      const row = corpus.shiurim.find((r) => r.id === id)!;
-      expect(row.entities).toEqual({ works: e.works, people: e.people, concepts: e.concepts });
+      expect(corpus.shiurim.find((r) => r.id === id)).not.toHaveProperty("entities");
     }
     // No type-other person and no below-threshold entity is a facet.
     for (const p of layer.people) if (p.type === "other" || !p.pages.live) expect(facets.person[p.id], p.id).toBeUndefined();
-  });
-
-  it("no layer: the emit still works, with empty corpus-layer files", () => {
-    const out = emitLiveData({ ...input, layer: null }, { generatedAt: GENERATED_AT });
-    for (const [f, body] of out) expect(validateFile(f, body), f).toBeNull();
-    expect(get<TopicsFile>("topics.json", out).topics).toEqual([]);
-    expect(get<StoriesIndexFile>("stories-index.json", out).stories).toEqual([]);
-    expect(get<BuildFile>("build.json", out).glossaryShards).toEqual([]);
-    expect(Object.keys(get<FacetsFile>("facets.json", out).person)).toEqual([]);
-    expect(under("entity/p/", out)).toEqual([]);
-    expect(under("shiur/", out).every((f) => get<ShiurFile>(f, out).corpus === undefined)).toBe(true);
   });
 });
 
@@ -401,6 +517,31 @@ describe("the occasion mix in today.json (D7)", () => {
     });
     const mix = get<TodayFile>("today.json", emitLiveData(speaker, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix;
     for (const m of mix?.first ?? []) expect(m.id.startsWith(`${firstShiur}~`)).toBe(false);
+    // The client fills the rest of the mix from the topic file and drops what `skip` names.
+    expect(mix?.skip).toEqual([firstShiur]);
+    expect(base.skip).toBeUndefined();
+  });
+
+  it("skip names the sections tagged with an excluded topic, not the whole shiur", () => {
+    const today = get<TodayFile>("today.json", emitLiveData(mapped, { generatedAt: GENERATED_AT })).occasions["noach"]!.mix!;
+    const topicFile = get<TopicFile>(`topic/${topicId}.json`, emitLiveData(mapped, { generatedAt: GENERATED_AT }));
+    // Exclude a topic co-tagged on one of the topic's sections (not the mix topic or an ancestor).
+    const parent = new Map(layer.topics.map((t) => [t.id, t.parentId]));
+    const ancestors = new Set<string>();
+    for (let id: string | null | undefined = topicId; id; id = parent.get(id)) ancestors.add(id);
+    const coTag = (m: { id: string; shiurId: string }): string | undefined =>
+      layer.refs
+        .get(m.shiurId)
+        ?.chapters.find((c) => m.id === `${m.shiurId}~s${c.idx}`)
+        ?.topicIds.find((t) => !ancestors.has(t));
+    const first = topicFile.moments.find((m) => coTag(m) !== undefined)!;
+    expect(first).toBeDefined();
+    const co = coTag(first)!;
+    const out = emitLiveData(mapped, { generatedAt: GENERATED_AT, featured: { maxOtherSpeakerShare: 0.5, excludeTopicIds: [co] } });
+    const mix = get<TodayFile>("today.json", out).occasions["noach"]!.mix!;
+    expect(mix.skip ?? []).toContain(first.id);
+    expect(mix.skip ?? []).not.toContain(first.shiurId);
+    expect(mix.sections).toBeLessThan(today.sections);
   });
 });
 

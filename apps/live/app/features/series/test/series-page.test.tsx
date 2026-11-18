@@ -91,7 +91,10 @@ async function renderAt(path: string, ready: string) {
   return { router, ...utils };
 }
 
-const shiurIds = (root: Element) => [...root.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur"));
+/** Every part row's shiur id, linked or not. */
+const shiurIds = (root: Element) => [...root.querySelectorAll("[data-shiur]")].map((a) => a.getAttribute("data-shiur"));
+/** The part rows that are links. */
+const linkedIds = (root: Element) => [...root.querySelectorAll("a[data-shiur]")].map((a) => a.getAttribute("data-shiur"));
 
 async function noAxeViolations(): Promise<void> {
   const result = await axe.run(document, { rules: { "color-contrast": { enabled: false }, "document-title": { enabled: false } } });
@@ -137,6 +140,36 @@ describe("series page", () => {
     await noAxeViolations();
   });
 
+  it("links only the visible parts; a part that is not visible is plain text in its place", async () => {
+    const { container } = await renderAt("/en/series/tanya-yi", "ol");
+    const list = container.querySelector("ol")!;
+    // yi-tanya-1-01 is catalog-only in this fixture: listed, not linked.
+    expect(linkedIds(list)).toEqual(["yi-tanya-1-02", "yi-tanya-1-03"]);
+    const hidden = list.querySelector('[data-shiur="yi-tanya-1-01"]')!;
+    expect(hidden.tagName).toBe("DIV");
+    expect(hidden.hasAttribute("data-unlinked")).toBe(true);
+    expect(hidden.closest("a")).toBeNull();
+    expect(hidden.querySelector("a")).toBeNull();
+    expect(hidden.textContent).toContain("Title yi-tanya-1-01");
+    expect(container.querySelector('a[href^="/en/s/yi-tanya-1-01"]')).toBeNull();
+    // the perek view follows the same rule
+    cleanup();
+    const perek = await renderAt("/en/series/tanya-yi?view=perek", "[data-perek]");
+    expect(perek.container.querySelector('a[data-shiur="yi-tanya-1-01"]')).toBeNull();
+    expect(perek.container.querySelector('[data-perek="0"] [data-shiur="yi-tanya-1-01"]')).not.toBeNull();
+    await noAxeViolations();
+  });
+
+  it("offers no continue link to a part that is not visible", async () => {
+    restore = registerProgressSource({
+      progress: () => Promise.resolve([{ shiurId: "yi-tanya-1-01", t: 300, completed: false, updatedAt: "2026-11-11T00:00:00Z" }]),
+    });
+    await renderAt("/en/series/tanya-yi", "[data-testid=series-progress]");
+    const prog = screen.getByTestId("series-progress");
+    expect(prog.textContent).toContain("0 of 3 parts heard");
+    expect(prog.querySelector("a")).toBeNull();
+  });
+
   it("shows progress and continue from the personal store", async () => {
     restore = registerProgressSource({
       progress: () =>
@@ -173,7 +206,7 @@ describe("series page", () => {
     await noAxeViolations();
   });
 
-  it("renders no 'both' view: an old ?view=both link shows this course in order, never the other language", async () => {
+  it("has no 'both' view: ?view=both shows this course in order, never the other language", async () => {
     const requested: string[] = [];
     configureData({
       fetch: (input, init) => {

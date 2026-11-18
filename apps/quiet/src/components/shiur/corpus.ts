@@ -48,7 +48,7 @@ export interface ShiurCorpus {
   readonly seriesTitle: (id: string, ed: Ed) => string | undefined;
   /** The corpus layer (empty, with a warning, when the corpus has none). */
   readonly layer: QuietLayer;
-  /** The shiur's layer refs (null: not in the visible set, or no layer). */
+  /** The shiur's layer refs (null: not in the visible set). */
   refs(id: string): LayerShiurRefs | null;
   shiur(id: string): PublicShiur;
 }

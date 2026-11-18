@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "yi-parshas-hashavua-hzynv-01",
- "rev": "722946551226",
+ "rev": "56f99d2da722",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -53,7 +53,7 @@
     "momentId": "yi-parshas-hashavua-shvptym-01~s14",
     "shiurId": "yi-parshas-hashavua-shvptym-01",
     "t": 4961,
-    "score": 0.317
+    "score": 0.316
    }
   ],
   "titles": {
@@ -591,26 +591,55 @@
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st0",
     "storyId": "the-ramban-and-his-student-avner",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "ramban",
+      "label": {
+       "en": "the Ramban",
+       "yi": "דער רמב\"ן",
+       "he": "רמב\"ן"
+      },
+      "page": true
+     },
+     {
+      "name": "Avner"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st1",
     "storyId": "the-chassan-waiting-for-the-mechutan",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rav Nosson Wachtfogel"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st2",
     "storyId": "the-lechovitcher-chassid-who-heard-hamelech",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Mordechai of Lechovitch"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-hzynv-01~st3",
     "storyId": "rebbi-the-calf-and-the-mouse",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Yehudah HaNasi (Rebbi)"
+     }
+    ]
    }
   ],
   "insights": [
@@ -636,11 +665,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav teaches that Parshas Haazinu, which contains everything that will happen to the Jewish people, is the parsha of emunah, and that the Aseres Yemei Teshuvah are the time to strengthen that emunah, daven with it and accept Hashem as King.",
+    "en": "The Mashgiach teaches that Parshas Haazinu, which contains everything that will happen to the Jewish people, is the parsha of emunah, and that the Aseres Yemei Teshuvah are the time to strengthen that emunah, daven with it and accept Hashem as King.",
     "yi": "דער משגיח לערנט אז פרשת האזינו, וואס איז כולל אלעס וואס וועט פאסירן מיט כלל ישראל, איז די פרשה פון אמונה, און אז די עשרת ימי תשובה איז די צייט זיך צו שטארקן אין אמונה, דאווענען מיט איר, און מקבל זיין דעם אייבערשטן פאר א מלך."
    },
    "abstract": {
-    "en": "The Rav explains that Haazinu is read between Rosh Hashanah and Yom Kippur because, like Rosh Hashanah for the year, it contains the whole Torah and all that will happen. He brings the Ramban that Haazinu promises the redemption with no condition of teshuvah, and that all its words have come true. From Haazinu he answers those who ask why the Jews of Europe did not resist, and he reads recent events and the failure of peace efforts in its light. Haazinu is called a song because with emunah even bitter decrees are known to come from Hashem. He stresses davening with emunah and answering amen in the Aseres Yemei Teshuvah, and describes Rosh Hashanah as the day of gathering, when each Jew reaches the point of yechidah and makes Hashem King. He closes with a call to daven with mercy for the Jewish people.",
+    "en": "The Mashgiach explains that Haazinu is read between Rosh Hashanah and Yom Kippur because, like Rosh Hashanah for the year, it contains the whole Torah and all that will happen. He brings the Ramban that Haazinu promises the redemption with no condition of teshuvah, and that all its words have come true. From Haazinu he answers those who ask why the Jews of Europe did not resist, and he reads recent events and the failure of peace efforts in its light. Haazinu is called a song because with emunah even bitter decrees are known to come from Hashem. He stresses davening with emunah and answering amen in the Aseres Yemei Teshuvah, and describes Rosh Hashanah as the day of gathering, when each Jew reaches the point of yechidah and makes Hashem King. He closes with a call to daven with mercy for the Jewish people.",
     "yi": "דער משגיח ערקלערט אז מ'ליינט האזינו צווישן ראש השנה און יום כיפור ווייל אזוי ווי ראש השנה איז כולל דעם גאנצן יאר, איז האזינו כולל די גאנצע תורה און אלעס וואס וועט פאסירן. ער ברענגט דעם רמב\"ן אז האזינו זאגט צו די גאולה אן קיין תנאי פון תשובה, און אז אלע אירע ווערטער זענען מקוים געווארן. פון האזינו ענטפערט ער די וואס פרעגן פארוואס די אידן אין אייראפע האבן זיך נישט קעגנגעשטעלט, און ער קוקט אויף די פאסירונגען פון די לעצטע צייט און אויף דעם וואס עס ווערט נישט קיין שלום לויט האזינו. האזינו הייסט א שירה ווייל מיט אמונה ווייסט מען אז אפילו ביטערע גזירות קומען פונעם אייבערשטן. ער שטעלט זיך אויף דאווענען מיט אמונה און ענטפערן אמן אין די עשרת ימי תשובה, און ער ערקלערט ראש השנה אלס דעם טאג פון קיבוץ, ווען יעדער איד קומט צו צו דער נקודה פון יחידה און מאכט דעם אייבערשטן פאר א מלך. ער ענדיגט מיט א רוף צו דאווענען מיט רחמים פאר כלל ישראל."
    },
    "keyPoints": [
@@ -721,7 +750,7 @@
      "yi": "האזינו איז כולל די גאנצע תורה"
     },
     "summary": {
-     "en": "The Rav explains that each Shabbos draws its influences from its parsha, and that Haazinu falls between Rosh Hashanah and Yom Kippur because it includes everything. He tells how the Ramban showed a student his name hinted in Haazinu, and shows from the mitzvah of writing a Sefer Torah, learned from 'write for yourselves this song', that Haazinu contains the whole Torah.",
+     "en": "The Mashgiach explains that each Shabbos draws its influences from its parsha, and that Haazinu falls between Rosh Hashanah and Yom Kippur because it includes everything. He tells how the Ramban showed a student his name hinted in Haazinu, and shows from the mitzvah of writing a Sefer Torah, learned from 'write for yourselves this song', that Haazinu contains the whole Torah.",
      "yi": "דער משגיח ערקלערט אז יעדער שבת נעמט זיינע השפעות פון זיין פרשה, און אז האזינו פאלט צווישן ראש השנה און יום כיפור ווייל זי איז כולל אלעס. ער דערציילט ווי דער רמב\"ן האט געוויזן א תלמיד זיין נאמען וואס איז רמז'ט אין האזינו, און ער ווייזט פון דער מצוה פון כתיבת ספר תורה, וואס מ'לערנט ארויס פון \"כתבו לכם את השירה הזאת\", אז האזינו האלט אין זיך די גאנצע תורה."
     },
     "kind": "intro",
@@ -739,7 +768,7 @@
      "yi": "דער רמב\"ן: א הבטחה אן א תנאי"
     },
     "summary": {
-     "en": "The Rav brings the Ramban that Haazinu contains no condition of teshuvah: it foretells the suffering, then vengeance on the enemies and the redemption, so that the nations will not say the world is not run by Hashem. With the Sifri he adds the Ramban's point that even if a stargazer had written this song one would have to believe it, since every word of it has come true.",
+     "en": "The Mashgiach brings the Ramban that Haazinu contains no condition of teshuvah: it foretells the suffering, then vengeance on the enemies and the redemption, so that the nations will not say the world is not run by Hashem. With the Sifri he adds the Ramban's point that even if a stargazer had written this song one would have to believe it, since every word of it has come true.",
      "yi": "דער משגיח ברענגט דעם רמב\"ן אז אין האזינו שטייט נישט קיין תנאי פון תשובה: זי זאגט פאראויס די צרות, און דערנאך די נקמה אין די שונאים און די גאולה, כדי די גוים זאלן נישט זאגן אז די וועלט פירט זיך נישט דורכן רבונו של עולם. מיטן ספרי לייגט ער צו דעם רמב\"נס ווארט, אז אפילו ווען א חוזה בכוכבים וואלט געשריבן די שירה, וואלט מען געדארפט גלייבן אין איר, ווייל יעדעס ווארט דערפון איז מקוים געווארן."
     },
     "kind": "main",
@@ -759,7 +788,7 @@
      "yi": "ראש השנה, דער ראש פונעם יאר"
     },
     "summary": {
-     "en": "From 'He tells the end from the beginning' the Rav compares Haazinu to Rosh Hashanah: like the first letter of a word, Rosh Hashanah holds the whole year in potential, so not a minute of it may be lost. He speaks of the great events of the past year, tells R' Nosson Wachtfogel's mashal of a long-delayed wedding to show that the redemption is close, and ties the Aseres Yemei Teshuvah to the ten utterances of creation.",
+     "en": "From 'He tells the end from the beginning' the Mashgiach compares Haazinu to Rosh Hashanah: like the first letter of a word, Rosh Hashanah holds the whole year in potential, so not a minute of it may be lost. He speaks of the great events of the past year, tells R' Nosson Wachtfogel's mashal of a long-delayed wedding to show that the redemption is close, and ties the Aseres Yemei Teshuvah to the ten utterances of creation.",
      "yi": "פון \"מגיד מראשית אחרית\" גלייכט דער משגיח צו האזינו צו ראש השנה: אזוי ווי דער ערשטער אות פון א ווארט, האלט ראש השנה בכח דעם גאנצן יאר, און דערפאר טאר מען נישט פארלירן קיין איין מינוט דערפון. ער רעדט פון די גרויסע פאסירונגען פונעם פארגאנגענעם יאר, דערציילט דעם משל פון ר' נתן וואכטפויגל וועגן א חתונה וואס האט זיך לאנג געצויגן, צו ווייזן אז די גאולה איז נאנט, און פארבינדט די עשרת ימי תשובה מיט די עשרה מאמרות פון בריאת העולם."
     },
     "kind": "main",
@@ -777,7 +806,7 @@
      "yi": "פארוואס האבן זיי זיך נישט קעגנגעשטעלט?"
     },
     "summary": {
-     "en": "The Rav takes up a question bachurim brought to him: why did thousands of Jews in Europe let themselves be led to the gas chambers without resisting? He answers from Haazinu, 'how could one chase a thousand' unless 'their Rock sold them': Hashem handed them over. Haazinu also promises vengeance for the spilled blood and says it is near, and the Rav brings 'see now that I, I am He'.",
+     "en": "The Mashgiach takes up a question bachurim brought to him: why did thousands of Jews in Europe let themselves be led to the gas chambers without resisting? He answers from Haazinu, 'how could one chase a thousand' unless 'their Rock sold them': Hashem handed them over. Haazinu also promises vengeance for the spilled blood and says it is near, and the Mashgiach brings 'see now that I, I am He'.",
      "yi": "דער משגיח נעמט אויף א קשיא וואס בחורים האבן אים געפרעגט: פארוואס האבן טויזנטער אידן אין אייראפע זיך געלאזט פירן אין די גאז קאמערן אן זיך קעגנצושטעלן? ער ענטפערט פון האזינו: \"איכה ירדוף אחד אלף\", נאר \"כי צורם מכרם\", דער אייבערשטער האט זיי איבערגעגעבן. האזינו זאגט אויך צו נקמה פארן פארגאסענעם בלוט, און אז דער טאג איז נאנט, און דער משגיח ברענגט \"ראו עתה כי אני אני הוא\"."
     },
     "kind": "main",
@@ -795,7 +824,7 @@
      "yi": "א קבלה: קיין שלום פאר משיח'ס קומען"
     },
     "summary": {
-     "en": "The Rav describes a manuscript he has of traditions from chassidic gedolim, recorded with the name of each teller as the Russian chassidim did. From it he brings that before Moshiach every nation will want to rule the world, and a teaching in the name of the Apter Rav that the nations will see war does not help and will want peace, but will be dragged back and not allowed to make it. He applies this to the failed peace efforts of his day.",
+     "en": "The Mashgiach describes a manuscript he has of traditions from chassidic gedolim, recorded with the name of each teller as the Russian chassidim did. From it he brings that before Moshiach every nation will want to rule the world, and a teaching in the name of the Apter Rav that the nations will see war does not help and will want peace, but will be dragged back and not allowed to make it. He applies this to the failed peace efforts of his day.",
      "yi": "דער משגיח באשרייבט א כתב יד וואס ער האט פון קבלות פון גדולי החסידים, וואו יעדע זאך איז פארשריבן מיטן נאמען פון וועמען מ'האט עס געהערט, אזוי ווי די רוסישע חסידים האבן געהאלטן. פון דארט ברענגט ער אז פאר משיח'ס קומען וועט יעדע מדינה וועלן הערשן איבער דער גאנצער וועלט, און א ווארט אין נאמען פונעם אפטער רב, אז די גוים וועלן איינזען אז מלחמה טויג נישט און וועלן וועלן מאכן שלום, אבער מ'וועט זיי צוריקשלעפן און נישט לאזן מאכן קיין שלום. ער ווענדט עס אן אויף די שלום-פרואוון פון יענער צייט."
     },
     "kind": "main",
@@ -813,7 +842,7 @@
      "yi": "די נסים פון אונזערע טעג און די אמת'ע גאולה"
     },
     "summary": {
-     "en": "The Rav reads Haazinu's verses of vengeance as what must happen before Moshiach, and laments that we are too small to grasp the great miracles of our days. He sees a blessing of Bechukosai fulfilled in recent events, when the enemies fought one another and no Jew was harmed. He brings the Rizhiner that the redemption will come through nature, yet stresses that the present government in Eretz Yisrael is not what Jews wait for: Moshiach is as the Rambam describes him, and anything else is a cheap imitation, though it may be a preparation.",
+     "en": "The Mashgiach reads Haazinu's verses of vengeance as what must happen before Moshiach, and laments that we are too small to grasp the great miracles of our days. He sees a blessing of Bechukosai fulfilled in recent events, when the enemies fought one another and no Jew was harmed. He brings the Rizhiner that the redemption will come through nature, yet stresses that the present government in Eretz Yisrael is not what Jews wait for: Moshiach is as the Rambam describes him, and anything else is a cheap imitation, though it may be a preparation.",
      "yi": "דער משגיח לערנט די פסוקים פון נקמה אין האזינו אלס דאס וואס מוז פארקומען פאר משיח'ס קומען, און ער קלאגט אז מיר זענען צו קליין צו אפשאצן די גרויסע נסים פון אונזערע טעג. ער זעט א ברכה פון בחוקותי מקוים ווערן אין די לעצטע פאסירונגען, ווען די שונאים האבן געקעמפט איינער מיטן אנדערן און קיין איין איד איז נישט געשעדיגט געווארן. ער ברענגט פונעם רוזשינער אז די גאולה וועט קומען דורך טבע, אבער ער שטעלט זיך אז די היינטיגע ממשלה אין ארץ ישראל איז נישט דאס וואס אידן ווארטן אויף: משיח איז אזוי ווי דער רמב\"ם באשרייבט אים, און אלעס אנדערש איז א ביליגע נאכמאכונג, כאטש עס קען זיין א הכנה."
     },
     "kind": "main",
@@ -831,7 +860,7 @@
      "yi": "פארוואס האזינו הייסט א שירה"
     },
     "summary": {
-     "en": "The Rav asks why Haazinu is called a song when most of it tells of bitter things. To answer, he brings the Sfas Emes on why Rosh Hashanah speaks constantly of judgment: Jews love Hashem so much that they want to be judged by Him, like a child who runs to his mother even if she will slap him. It is a great merit that Hashem remembers us, and this is why the day is called Yom HaZikaron.",
+     "en": "The Mashgiach asks why Haazinu is called a song when most of it tells of bitter things. To answer, he brings the Sfas Emes on why Rosh Hashanah speaks constantly of judgment: Jews love Hashem so much that they want to be judged by Him, like a child who runs to his mother even if she will slap him. It is a great merit that Hashem remembers us, and this is why the day is called Yom HaZikaron.",
      "yi": "דער משגיח פרעגט פארוואס האזינו הייסט א שירה, ווען רוב דערפון רעדט פון ביטערע זאכן. צו ענטפערן ברענגט ער דעם שפת אמת וועגן דעם פארוואס מ'רעדט ראש השנה כסדר פון דין: אידן האבן אזוי ליב דעם רבונו של עולם אז זיי ווילן געמשפט ווערן נאר פון אים, אזוי ווי א קינד וואס לויפט צו דער מאמען כאטש זי וועט אים געבן א פעטש. עס איז א גרויסער זכות אז דער אייבערשטער געדענקט אונז, און דערפאר הייסט דער טאג יום הזכרון."
     },
     "kind": "main",
@@ -849,7 +878,7 @@
      "yi": "אמונה מאכט פון דעם גזר דין א שירה"
     },
     "summary": {
-     "en": "Following the Ramban, the Rav says Haazinu teaches emunah, and brings a segulah of saying Haazinu every day for emunah. Since Haazinu shows there is no chance and every Jew's whole life is written there by Hashem, what comes can be bitter but not bad, like a bitter but excellent wine that only an expert appreciates. Neither the White House nor the Kremlin writes the destiny of the world, and so Haazinu is a song of joy.",
+     "en": "Following the Ramban, the Mashgiach says Haazinu teaches emunah, and brings a segulah of saying Haazinu every day for emunah. Since Haazinu shows there is no chance and every Jew's whole life is written there by Hashem, what comes can be bitter but not bad, like a bitter but excellent wine that only an expert appreciates. Neither the White House nor the Kremlin writes the destiny of the world, and so Haazinu is a song of joy.",
      "yi": "לויטן רמב\"ן זאגט דער משגיח אז אין האזינו לערנט מען אמונה, און ער ברענגט א סגולה צו זאגן יעדן טאג פרשת האזינו פאר אמונה. ווייל האזינו ווייזט אז עס איז נישטא קיין מקרה, און יעדן אידנס גאנצע לעבן איז דארט פארשריבן פונעם אייבערשטן, קען דאס וואס קומט זיין ביטער אבער נישט שלעכט, אזוי ווי א ביטערער אבער טייערער וויין וואס נאר א מבין ווייסט צו שאצן. נישט דאס ווייסע הויז און נישט דער קרעמלין שרייבן אויס דעם גורל פון דער וועלט, און דערפאר איז האזינו א שירה פון פרייד."
     },
     "kind": "main",
@@ -869,7 +898,7 @@
      "yi": "דער שופר און זיינע הונדערט קולות"
     },
     "summary": {
-     "en": "The Rav brings a responsum of the Rambam describing how he trembled on the bimah when he remembered Who commanded the shofar. The shofar is Hashem's message to the Jewish people; its hundred sounds correspond to the ten utterances of creation, each made of ten, with the first tekiah before them all. He returns to Haazinu: unlike other sidros it ends with harsh verses, because with emunah all of it is a song.",
+     "en": "The Mashgiach brings a responsum of the Rambam describing how he trembled on the bimah when he remembered Who commanded the shofar. The shofar is Hashem's message to the Jewish people; its hundred sounds correspond to the ten utterances of creation, each made of ten, with the first tekiah before them all. He returns to Haazinu: unlike other sidros it ends with harsh verses, because with emunah all of it is a song.",
      "yi": "דער משגיח ברענגט א תשובה פונעם רמב\"ם וואו ער באשרייבט ווי ער האט געציטערט אויף דער בימה ווען ער האט זיך דערמאנט ווער עס האט באפוילן צו בלאזן שופר. דער שופר איז דעם אייבערשטנס מעלדונג צו כלל ישראל; זיינע הונדערט קולות זענען קעגן די עשרה מאמרות, יעדער כולל צען, און די ערשטע תקיעה איז פאר זיי אלע. ער קומט צוריק צו האזינו: נישט אזוי ווי אנדערע סדרות ענדיגט זי זיך מיט הארבע פסוקים, ווייל מיט אמונה איז אלעס א שירה."
     },
     "kind": "main",
@@ -887,7 +916,7 @@
      "yi": "דאווענען מיט אמונה און ענטפערן אמן"
     },
     "summary": {
-     "en": "The Rav says the success of the Aseres Yemei Teshuvah depends on davening with emunah, as if one saw the Judge writing the year's decree, and Haazinu is the revelation of emunah. From 'children in whom there is no faith', which the Midrash reads as those who do not answer amen, he explains the severe words of the Shulchan Aruch about talking during chazaras hashatz, and brings R' Elchonon Wasserman that every minute of galus is pikuach nefesh, so one who does not answer amen prolongs it.",
+     "en": "The Mashgiach says the success of the Aseres Yemei Teshuvah depends on davening with emunah, as if one saw the Judge writing the year's decree, and Haazinu is the revelation of emunah. From 'children in whom there is no faith', which the Midrash reads as those who do not answer amen, he explains the severe words of the Shulchan Aruch about talking during chazaras hashatz, and brings R' Elchonon Wasserman that every minute of galus is pikuach nefesh, so one who does not answer amen prolongs it.",
      "yi": "דער משגיח זאגט אז די הצלחה פון די עשרת ימי תשובה הענגט אין דאווענען מיט אמונה, גלייך ווי מ'וואלט געזען ווי דער דיין שרייבט דעם פסק פונעם יאר, און האזינו איז דער גילוי פון אמונה. פון \"בנים לא אמון בם\", וואס דער מדרש טייטשט אויף די וואס ענטפערן נישט אמן, ערקלערט ער דעם שארפן לשון פונעם שולחן ערוך וועגן רעדן אינמיטן חזרת הש\"ץ, און ער ברענגט פון ר' אלחנן וואסערמאן אז יעדע מינוט אין גלות איז פיקוח נפש, און ממילא איז דער וואס ענטפערט נישט אמן ממשיך דעם גלות."
     },
     "kind": "main",
@@ -907,7 +936,7 @@
      "yi": "ראש השנה, דער טאג פון קיבוץ"
     },
     "summary": {
-     "en": "The Rav explains why chassidim went to great lengths to be with their Rebbe on Rosh Hashanah: it is a day of gathering and friendship, as in 'yom teruah'. Following Sefer Yetzirah's world, year and soul, all the days of the year gather to their head and all souls gather to their root. The shofar calls them together like a shepherd's horn, as in 'and the lost ones will come… and bow down on the holy mountain in Yerushalayim'.",
+     "en": "The Mashgiach explains why chassidim went to great lengths to be with their Rebbe on Rosh Hashanah: it is a day of gathering and friendship, as in 'yom teruah'. Following Sefer Yetzirah's world, year and soul, all the days of the year gather to their head and all souls gather to their root. The shofar calls them together like a shepherd's horn, as in 'and the lost ones will come… and bow down on the holy mountain in Yerushalayim'.",
      "yi": "דער משגיח ערקלערט פארוואס חסידים פלעגן זיך מוסר נפש זיין צו פארן צום רבי'ן אויף ראש השנה: עס איז א טאג פון קיבוץ און פון פריינטשאפט, אזוי ווי \"יום תרועה\". לויט דעם ספר יצירה, עולם שנה נפש, קומען זיך אלע טעג פונעם יאר צוזאמען צו זייער ראש, און אלע נשמות צו זייער שורש. דער שופר רופט זיי צוזאמען אזוי ווי א פאסטעך מיט זיין הארן, ווי עס שטייט \"ובאו האובדים... והשתחוו לה' בהר הקודש בירושלים\"."
     },
     "kind": "main",
@@ -925,7 +954,7 @@
      "yi": "די נקודה פון יחידה און מלכיות"
     },
     "summary": {
-     "en": "In galus each Jew must find the holy mountain within himself: the innermost point of the soul, yechidah, where all Jewish souls are one with Hashem, and this is the avodah from Rosh Hashanah to Yom Kippur. Malchiyos opens with Aleinu, said by Yehoshua when the walls of Yericho fell, because one must break the wall in one's heart. The Rav tells of a Lechovitcher chassid lost in a forest on Rosh Hashanah, and explains that a Jew who makes Hashem King over himself is the switch for the whole world.",
+     "en": "In galus each Jew must find the holy mountain within himself: the innermost point of the soul, yechidah, where all Jewish souls are one with Hashem, and this is the avodah from Rosh Hashanah to Yom Kippur. Malchiyos opens with Aleinu, said by Yehoshua when the walls of Yericho fell, because one must break the wall in one's heart. The Mashgiach tells of a Lechovitcher chassid lost in a forest on Rosh Hashanah, and explains that a Jew who makes Hashem King over himself is the switch for the whole world.",
      "yi": "אין גלות דארף יעדער איד געפינען דעם הר הקודש ביי זיך: די אינערלעכסטע נקודה פון דער נשמה, יחידה, וואו אלע אידישע נשמות זענען איינס מיטן אייבערשטן, און דאס איז די עבודה פון ראש השנה ביז יום כיפור. מלכיות הייבט זיך אן מיט עלינו לשבח, וואס יהושע האט געזאגט ווען די חומות פון יריחו זענען איינגעפאלן, ווייל מ'דארף צעברעכן די חומה אין הארצן. דער משגיח דערציילט פון א לעכאוויטשער חסיד וואס האט זיך פארבלאנדזשעט אין א וואלד אויף ראש השנה, און ערקלערט אז א איד וואס מאכט דעם אייבערשטן פאר א מלך איבער זיך איז דער סוויטש פאר דער גאנצער וועלט."
     },
     "kind": "main",
@@ -943,7 +972,7 @@
      "yi": "רבי און דאס קעלבל"
     },
     "summary": {
-     "en": "The Rav reports from a letter what a tzaddik said when hostages were taken: Rebbi suffered for thirteen years because he did not show mercy to a calf fleeing the slaughter. To the question why Yom Kippur did not atone, the answer is that this is not a matter of sin but of reality: as a person acts with mercy, so Hashem acts with him. From here the Rav says one must have great mercy on Jews in danger.",
+     "en": "The Mashgiach reports from a letter what a tzaddik said when hostages were taken: Rebbi suffered for thirteen years because he did not show mercy to a calf fleeing the slaughter. To the question why Yom Kippur did not atone, the answer is that this is not a matter of sin but of reality: as a person acts with mercy, so Hashem acts with him. From here the Mashgiach says one must have great mercy on Jews in danger.",
      "yi": "דער משגיח ברענגט פון א בריוו וואס א צדיק האט געזאגט ווען מ'האט געכאפט די ארעסטאנטן: רבי האט געליטן דרייצן יאר יסורים ווייל ער האט נישט געהאט רחמנות אויף א קעלבל וואס איז אנטלאפן פון דער שחיטה. אויף דער קשיא פארוואס יום כיפור האט עס נישט מכפר געווען, איז דער תירוץ אז דאס איז נישט א ענין פון חטא נאר פון מציאות: אזוי ווי א מענטש פירט זיך מיט רחמים, אזוי פירט זיך דער אייבערשטער מיט אים. פון דעם זאגט דער משגיח אז מ'דארף האבן גרויס רחמנות אויף אידן וואס זענען אין סכנה."
     },
     "kind": "story",
@@ -961,7 +990,7 @@
      "yi": "א רוף צו דאווענען מיט רחמים"
     },
     "summary": {
-     "en": "The Rav urges not to forget, in the days of judgment, to daven with mercy for the Jewish people and Eretz Yisrael: our mercy is the master key that opens all locked gates. He closes with a tefillah that Hashem bring the redemption and fulfill the other blessing of Bechukosai, so that Jews may sing a song not only over suffering but over good.",
+     "en": "The Mashgiach urges not to forget, in the days of judgment, to daven with mercy for the Jewish people and Eretz Yisrael: our mercy is the master key that opens all locked gates. He closes with a tefillah that Hashem bring the redemption and fulfill the other blessing of Bechukosai, so that Jews may sing a song not only over suffering but over good.",
      "yi": "דער משגיח מאנט אז מ'זאל אין די ימי הדין נישט פארגעסן צו דאווענען מיט רחמים פאר כלל ישראל און ארץ ישראל: אונזערע רחמים זענען דער גרעסטער שליסל וואס עפנט אלע פארשלאסענע טויערן. ער ענדיגט מיט א תפילה אז דער אייבערשטער זאל ברענגען די גאולה און מקיים זיין די אנדערע ברכה פון בחוקותי, אז אידן זאלן זינגען א שירה נישט נאר אויף צרות נאר אויף גוטס."
     },
     "kind": "closing",
@@ -1263,7 +1292,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~i0",
     "text": {
-     "en": "The Rav reads 'Rosh' Hashanah like the first letter of a word, which already holds the whole word in potential: the whole year is contained in Rosh Hashanah, and in the same way Haazinu contains the whole Torah.",
+     "en": "The Mashgiach reads 'Rosh' Hashanah like the first letter of a word, which already holds the whole word in potential: the whole year is contained in Rosh Hashanah, and in the same way Haazinu contains the whole Torah.",
      "yi": "דער משגיח טייטשט \"ראש\" השנה אזוי ווי דער ערשטער אות פון א ווארט, וואס האלט שוין בכח דאס גאנצע ווארט: דער גאנצער יאר ליגט אין ראש השנה, און פונקט אזוי איז האזינו כולל די גאנצע תורה."
     },
     "t": 576.73,
@@ -1330,7 +1359,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~tk0",
     "text": {
-     "en": "The Rav says not a single minute of Rosh Hashanah may be wasted; every minute should be used for teshuvah, tefillah and good deeds.",
+     "en": "The Mashgiach says not a single minute of Rosh Hashanah may be wasted; every minute should be used for teshuvah, tefillah and good deeds.",
      "yi": "דער משגיח זאגט אז מ'טאר נישט פארלירן קיין איין מינוט פון ראש השנה; יעדע מינוט דארף מען אויסנוצן פאר תשובה, תפילה און מעשים טובים."
     },
     "t": 639.45,
@@ -1339,7 +1368,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~tk1",
     "text": {
-     "en": "The Rav says one must daven in the Aseres Yemei Teshuvah with true emunah, as if seeing with one's own eyes how the year is being decided.",
+     "en": "The Mashgiach says one must daven in the Aseres Yemei Teshuvah with true emunah, as if seeing with one's own eyes how the year is being decided.",
      "yi": "דער משגיח זאגט אז מ'דארף דאווענען אין די עשרת ימי תשובה מיט אמת'ע אמונה, גלייך ווי מ'זעט מיט די אייגענע אויגן ווי מ'באשטימט דעם יאר."
     },
     "t": 2734.74,
@@ -1348,7 +1377,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~tk2",
     "text": {
-     "en": "The Rav urges listening to every brachah of the chazzan and answering amen, and not talking during chazaras hashatz.",
+     "en": "The Mashgiach urges listening to every brachah of the chazzan and answering amen, and not talking during chazaras hashatz.",
      "yi": "דער משגיח מאנט מ'זאל זיך צוהערן צו יעדע ברכה פונעם חזן און ענטפערן אמן, און נישט רעדן אינמיטן חזרת הש\"ץ."
     },
     "t": 2860.75,
@@ -1358,7 +1387,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~tk3",
     "text": {
-     "en": "The Rav says one must make Hashem King over all of one's desires, thoughts, words and deeds.",
+     "en": "The Mashgiach says one must make Hashem King over all of one's desires, thoughts, words and deeds.",
      "yi": "דער משגיח זאגט אז מ'דארף ממליך זיין דעם אייבערשטן איבער אלע זיינע רצונות, מחשבות, דיבורים און מעשים."
     },
     "t": 3483.18,
@@ -1367,7 +1396,7 @@
    {
     "id": "yi-parshas-hashavua-hzynv-01~tk4",
     "text": {
-     "en": "The Rav says that in the days of judgment one must not forget for a minute to daven with mercy for the Jewish people and Eretz Yisrael.",
+     "en": "The Mashgiach says that in the days of judgment one must not forget for a minute to daven with mercy for the Jewish people and Eretz Yisrael.",
      "yi": "דער משגיח זאגט אז אין די ימי הדין טאר מען נישט פאר א מינוט פארגעסן צו דאווענען מיט רחמים פאר כלל ישראל און ארץ ישראל."
     },
     "t": 3832.77,
@@ -1467,14 +1496,6 @@
      "en": "The Ramban told his students that everything is contained in Haazinu. A student named Avner, who had left the path, asked where he himself was hinted, not expecting his teacher to know. The Ramban showed him his name in a verse of Haazinu, and the student was shaken by it. The account ends with a ship that sank.",
      "yi": "דער רמב\"ן האט געזאגט פאר זיינע תלמידים אז אלעס איז כולל אין האזינו. א תלמיד מיטן נאמען אבנר, וואס איז ארויס פונעם וועג, האט אים געפרעגט וואו ער אליין איז רמז'ט, און האט נישט ערווארטעט אז דער רבי וועט וויסן. דער רמב\"ן האט אים געוויזן זיין נאמען אין א פסוק פון האזינו, און דער תלמיד האט זיך דערשראקן. די מעשה ענדיגט זיך מיט א שיף וואס איז פארזונקען געווארן."
     },
-    "people": [
-     "the Ramban",
-     "Avner"
-    ],
-    "peopleKeys": [
-     "ramban",
-     "avner"
-    ],
     "t": 141.95,
     "end": 196.07,
     "soft": true
@@ -1486,15 +1507,9 @@
      "yi": "ר' נתן וואכטפויגלס משל פון דער חתונה"
     },
     "retelling": {
-     "en": "The Rav tells that R' Nosson Wachtfogel, who always speaks of the redemption being near, had promised him the redemption, and when it had not come he asked him about it. R' Nosson answered with a mashal of a bachur who waited very long for his match; his friends kept pushing him, but once the wedding had begun, the guests were seated and the kallah was waiting, there was no more need to push. So too now, he said, everything is already prepared and one can already see it.",
+     "en": "The Mashgiach tells that R' Nosson Wachtfogel, who always speaks of the redemption being near, had promised him the redemption, and when it had not come he asked him about it. R' Nosson answered with a mashal of a bachur who waited very long for his match; his friends kept pushing him, but once the wedding had begun, the guests were seated and the kallah was waiting, there was no more need to push. So too now, he said, everything is already prepared and one can already see it.",
      "yi": "דער משגיח דערציילט אז ר' נתן וואכטפויגל, וואס רעדט כסדר אז די גאולה איז נאנט, האט אים צוגעזאגט די גאולה, און ווען זי איז נישט געקומען האט ער אים געפרעגט. ר' נתן האט געענטפערט מיט א משל פון א בחור וואס איז לאנג געזעסן אן א שידוך; זיינע חברים האבן אים כסדר געשטופט, אבער ווען די חתונה האט שוין אנגעהויבן, די געסט זיצן שוין און די כלה ווארט, דארף מען שוין נישט שטופן. אזוי אויך יעצט, האט ער געזאגט, איז שוין אלעס גרייט און מ'קען עס שוין זען."
     },
-    "people": [
-     "R' Nosson Wachtfogel"
-    ],
-    "peopleKeys": [
-     "rabbi-nosson-wachtfogel"
-    ],
     "t": 699.57,
     "end": 806.27,
     "soft": true
@@ -1509,12 +1524,6 @@
      "en": "A Lechovitcher chassid travelling to his Rebbe for Rosh Hashanah got lost in a forest and had to daven alone there. At Shacharis, the word 'HaMelech' as his Rebbe says it suddenly came into his mind, and this gave him great strength to daven. When he later came to the Rebbe, R' Mordechai of Lechovitch told him that when a Jew says 'HaMelech' it is heard across the whole world.",
      "yi": "א לעכאוויטשער חסיד וואס איז געפארן צום רבי'ן אויף ראש השנה האט זיך פארבלאנדזשעט אין א וואלד און האט געמוזט דארט דאווענען אליין. ביי שחרית איז אים פלוצלינג אריינגעפלויגן אין זינען ווי זיין רבי זאגט \"המלך\", און דאס האט אים געגעבן גרויס כח צו דאווענען. ווען ער איז שפעטער געקומען צום רבי'ן, האט אים ר' מרדכי לעכאוויטשער געזאגט אז ווען א איד זאגט \"המלך\" הערט מען עס איבער דער גאנצער וועלט."
     },
-    "people": [
-     "R' Mordechai of Lechovitch"
-    ],
-    "peopleKeys": [
-     "rabbi-mordechai-of-lechovitch"
-    ],
     "t": 3425.8,
     "end": 3475.14,
     "soft": true
@@ -1529,135 +1538,9 @@
      "en": "A calf being led to slaughter fled to Rebbi for protection, and he sent it back, saying it was created for this. Because he showed no mercy, he suffered great pain for thirteen years, until he again showed mercy.",
      "yi": "א קעלבל וואס מ'האט געפירט צו דער שחיטה איז אנטלאפן צו רבי'ן זוכן שוץ, און ער האט עס צוריקגעשיקט און געזאגט אז דערצו איז עס באשאפן. ווייל ער האט נישט געהאט רחמנות, האט ער דרייצן יאר געליטן גרויסע יסורים, ביז ער האט ווידער ארויסגעוויזן רחמנות."
     },
-    "people": [
-     "Rebbi (R' Yehuda HaNasi)"
-    ],
-    "peopleKeys": [
-     "rebbi"
-    ],
     "t": 3662.51,
     "end": 3754.85,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "Avner",
-    "key": "avner"
-   },
-   {
-    "name": "R' Nosson Wachtfogel",
-    "key": "rabbi-nosson-wachtfogel"
-   },
-   {
-    "name": "R' Aharon Kotler",
-    "key": "rabbi-aharon-kotler"
-   },
-   {
-    "name": "the Apter Rav (Ohev Yisroel)",
-    "key": "apter-rav"
-   },
-   {
-    "name": "the Rizhiner",
-    "key": "ruzhiner"
-   },
-   {
-    "name": "Nasser",
-    "key": "nasser"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Sfas Emes",
-    "key": "sfas-emes"
-   },
-   {
-    "name": "Kayin",
-    "key": "kayin"
-   },
-   {
-    "name": "R' Elchonon Wasserman",
-    "key": "rabbi-elchonon-wasserman"
-   },
-   {
-    "name": "Yehoshua bin Nun",
-    "key": "yehoshua-bin-nun"
-   },
-   {
-    "name": "R' Mordechai of Lechovitch",
-    "key": "rabbi-mordechai-of-lechovitch"
-   },
-   {
-    "name": "Rebbi (R' Yehuda HaNasi)",
-    "key": "rebbi"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "האזינו",
-    "key": "hazynv-00107d"
-   },
-   {
-    "he": "ראש השנה",
-    "key": "rash-hshnh-833f25"
-   },
-   {
-    "he": "יום כיפור",
-    "key": "yvm-kypvr-c5e624"
-   },
-   {
-    "he": "עשרת ימי תשובה",
-    "key": "eshrs-ymy-sshvbh-03066e"
-   },
-   {
-    "he": "עשרה מאמרות",
-    "key": "eshrh-mamrvs-f47d90"
-   },
-   {
-    "he": "שירה",
-    "key": "shyrh-f1dc80"
-   },
-   {
-    "he": "אמונה",
-    "key": "amvnh-6dd509"
-   },
-   {
-    "he": "קול השופר",
-    "key": "kvl-hshvpr-2687ea"
-   },
-   {
-    "he": "חזרת הש\"ץ",
-    "key": "chzrs-hshtz-8d5eec"
-   },
-   {
-    "he": "יחידה",
-    "key": "ychydh-52db0e"
-   },
-   {
-    "he": "מלכיות",
-    "key": "mlkyvs-ee86b4"
-   },
-   {
-    "he": "עלינו לשבח",
-    "key": "elynv-lshbch-58c258"
-   },
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "יום הדין",
-    "key": "yvm-hdyn-343343"
-   },
-   {
-    "he": "קיבוץ",
-    "key": "kybvtz-cce670"
    }
   ],
   "writeupLangs": [

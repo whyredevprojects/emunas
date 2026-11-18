@@ -1,6 +1,7 @@
 /**
  * Aggregated indexes over the projected corpus (integration-plan §5.1, W2.1): sections, catalog
- * neighbours, series, occasions, years, works, people, concepts, stories and entity counts.
+ * neighbours, series, occasions, years and the works' reference-order layout. Entities (people,
+ * concepts, stories, works by corpus id) come from the corpus layer, not from here (C3.1).
  *
  * Pure: takes the projected shiurim and index (keys already produced by the Keyer) and the
  * @emunas/normalize tables; no I/O. Never throws on data: a value the tables do not know lands in
@@ -8,45 +9,33 @@
  * was left out go to `warnings`.
  */
 import {
-  CONCEPT_MIN_SHIURIM,
   OCCASIONS,
   OTHER_OCCASION_KEY,
   PARSHIYOS,
   compareSortKeys,
   compareWorks,
   foldBasic,
-  lookupConcept,
   lookupParsha,
   lookupZman,
   parseSefariaRef,
-  personByKey,
   refLabel,
   workByKey,
   type Work,
 } from "@emunas/normalize";
-import { ENTITY_THRESHOLDS } from "../public/index.ts";
 import type { CorpusIndex, PublicShiur } from "../public/types.ts";
 import { UNPLACED, parshaPosition, zmanPosition } from "./calendar-order.ts";
 import type {
   Aggregates,
-  ConceptEntry,
-  ConceptsFile,
-  EntitiesFile,
-  EntityCount,
   MentionRef,
   Neighbours,
   NeighboursFile,
   OccasionShiurRef,
   OccasionsFile,
   ParshaOccasion,
-  PeopleFile,
-  PersonEntry,
   SectionListing,
   SectionsFile,
   SeriesEntry,
   SeriesFile,
-  StoriesFile,
-  StoryEntry,
   WorkEntry,
   WorkRef,
   WorksFile,
@@ -57,8 +46,8 @@ import type {
 export interface AggregateInput {
   shiurim: readonly PublicShiur[];
   index: CorpusIndex;
-  /** Source moment id → merged corpus work id (corpus layer, C1.2); absent → every `workId` is null. */
-  sourceWorkIds?: ReadonlyMap<string, string>;
+  /** Source moment id → merged corpus work id (corpus layer, C1.2). */
+  sourceWorkIds: ReadonlyMap<string, string>;
 }
 
 export interface AggregateResult {
@@ -197,7 +186,7 @@ function seriesFile(c: Ctx): SeriesFile {
 
 // ---------------------------------------------------------------- occasions
 
-function occasions(c: Ctx): { file: OccasionsFile; counts: Map<string, number> } {
+function occasions(c: Ctx): OccasionsFile {
   const parsha = new Map<string, OccasionShiurRef[]>();
   const zman = new Map<string, { main: OccasionShiurRef[]; seudah: OccasionShiurRef[]; lechaim: OccasionShiurRef[] }>();
   const other: OccasionShiurRef[] = [];
@@ -230,12 +219,10 @@ function occasions(c: Ctx): { file: OccasionsFile; counts: Map<string, number> }
     }
   }
   const byYear = (l: OccasionShiurRef[]) => l.sort((a, b) => c.cmpYear(a.id, b.id));
-  const counts = new Map<string, number>();
 
   const parshiyos: ParshaOccasion[] = PARSHIYOS.map((p) => {
     const l = byYear(parsha.get(p.key) ?? []);
     parsha.delete(p.key);
-    counts.set(p.key, l.length);
     return { key: p.key, order: p.order, chumash: p.chumash, he: p.he, yi: p.yi, en: p.en, parts: p.parts ? [p.parts[0], p.parts[1]] : null, count: l.length, shiurim: l };
   });
   const zmanim: ZmanOccasion[] = OCCASIONS.map((o) => {
@@ -245,14 +232,13 @@ function occasions(c: Ctx): { file: OccasionsFile; counts: Map<string, number> }
     if (e.seudah.length > 0) subs.push({ sub: "seudah", shiurim: byYear(e.seudah) });
     if (e.lechaim.length > 0) subs.push({ sub: "lechaim", shiurim: byYear(e.lechaim) });
     const count = e.main.length + e.seudah.length + e.lechaim.length;
-    counts.set(o.key, count);
     return { key: o.key, order: o.order, he: o.he, yi: o.yi, en: o.en, count, shiurim: byYear(e.main), subs };
   });
   // Keys the tables do not list (a Keyer other than normalize): keep them visible under "other".
   for (const l of parsha.values()) other.push(...l);
   for (const e of zman.values()) other.push(...e.main, ...e.seudah, ...e.lechaim);
   other.sort((a, b) => c.cmpYear(a.id, b.id) || cmpStr(a.raw, b.raw));
-  return { file: { parshiyos, zmanim, other, excluded: { uncataloguedGuesses: guesses } }, counts };
+  return { parshiyos, zmanim, other, excluded: { uncataloguedGuesses: guesses } };
 }
 
 // ---------------------------------------------------------------- years
@@ -301,8 +287,7 @@ function mostUsed(names: Map<string, number>): string {
 }
 
 /** The corpus work most of an entry's mentions resolve to (ties: the smaller id). */
-function corpusWorkOf(w: WorkAcc, sourceWorkIds: ReadonlyMap<string, string> | undefined): string | null {
-  if (!sourceWorkIds) return null;
+function corpusWorkOf(w: WorkAcc, sourceWorkIds: ReadonlyMap<string, string>): string | null {
   const tally = new Map<string, number>();
   for (const m of [...[...w.refs.values()].flatMap((r) => r.mentions), ...w.unlocated]) {
     const id = sourceWorkIds.get(m.id);
@@ -360,7 +345,6 @@ function works(c: Ctx): { file: WorksFile; unparsedRefs: number } {
       sefaria: work ? [...work.sefaria] : [],
       scheme: work?.scheme ?? "none",
       genre: work?.genre ?? false,
-      names: [...w.names.keys()].sort(cmpStr),
       shiurCount: w.shiurim.size,
       mentionCount: w.mentions,
       refs,
@@ -377,157 +361,6 @@ function works(c: Ctx): { file: WorksFile; unparsedRefs: number } {
   return { file: { works: entries.map((x) => x.e) }, unparsedRefs };
 }
 
-// ---------------------------------------------------------------- people
-
-function people(c: Ctx): PeopleFile {
-  const acc = new Map<string, { names: Map<string, number>; shiurim: Map<string, { mentioned: boolean; stories: string[] }> }>();
-  const get = (key: string, sid: string, name: string) => {
-    let p = acc.get(key);
-    if (!p) acc.set(key, (p = { names: new Map(), shiurim: new Map() }));
-    p.names.set(name, (p.names.get(name) ?? 0) + 1);
-    let e = p.shiurim.get(sid);
-    if (!e) p.shiurim.set(sid, (e = { mentioned: false, stories: [] }));
-    return e;
-  };
-  for (const s of c.ordered) {
-    const n = s.notes;
-    if (!n) continue;
-    for (const p of n.people) get(p.key, s.id, p.name).mentioned = true;
-    for (const st of n.stories) {
-      st.peopleKeys.forEach((key, i) => {
-        const e = get(key, s.id, st.people[i] ?? key);
-        if (!e.stories.includes(st.id)) e.stories.push(st.id);
-      });
-    }
-  }
-  const out: PersonEntry[] = [...acc.entries()].map(([key, p]) => {
-    const person = personByKey(key);
-    return {
-      key,
-      mapped: person !== null,
-      en: person?.en ?? mostUsed(p.names),
-      he: person?.he ?? null,
-      names: [...p.names.keys()].sort(cmpStr),
-      shiurCount: p.shiurim.size,
-      shiurim: [...p.shiurim.entries()]
-        .sort((a, b) => c.cmpCatalog(a[0], b[0]))
-        .map(([id, e]) => ({ id, mentioned: e.mentioned, stories: e.stories })),
-    };
-  });
-  out.sort((a, b) => cmpStr(foldBasic(a.en), foldBasic(b.en)) || cmpStr(a.key, b.key));
-  return { people: out };
-}
-
-// ---------------------------------------------------------------- concepts
-
-function concepts(c: Ctx): { file: ConceptsFile; all: { key: string; shiurim: number }[] } {
-  const acc = new Map<string, { he: string; variants: Set<string>; shiurim: Map<string, string[]>; stop: boolean }>();
-  for (const s of c.ordered) {
-    const n = s.notes;
-    if (!n) continue;
-    for (const x of n.concepts) {
-      const m = lookupConcept(x.he);
-      let e = acc.get(x.key);
-      if (!e) acc.set(x.key, (e = { he: m.he, variants: new Set(), shiurim: new Map(), stop: m.stop }));
-      e.variants.add(x.he);
-      if (!e.shiurim.has(s.id)) {
-        const term = foldBasic(m.he);
-        const sections = term.length === 0 ? [] : n.chapters.filter((ch) => foldBasic(ch.title.yi).includes(term)).map((ch) => ch.id);
-        e.shiurim.set(s.id, sections);
-      }
-    }
-  }
-  let stopListed = 0;
-  let belowThreshold = 0;
-  const listed: ConceptEntry[] = [];
-  const all: { key: string; shiurim: number }[] = [];
-  for (const [key, e] of acc) {
-    if (e.stop) {
-      stopListed++;
-      continue;
-    }
-    all.push({ key, shiurim: e.shiurim.size });
-    if (e.shiurim.size < CONCEPT_MIN_SHIURIM) {
-      belowThreshold++;
-      continue;
-    }
-    listed.push({
-      key,
-      he: e.he,
-      variants: [...e.variants].sort(cmpStr),
-      shiurCount: e.shiurim.size,
-      shiurim: [...e.shiurim.entries()].sort((a, b) => c.cmpCatalog(a[0], b[0])).map(([id, sections]) => ({ id, sections })),
-    });
-  }
-  listed.sort((a, b) => cmpStr(foldBasic(a.he), foldBasic(b.he)) || cmpStr(a.key, b.key));
-  all.sort((a, b) => cmpStr(a.key, b.key));
-  return { file: { minShiurim: CONCEPT_MIN_SHIURIM, omitted: { stopListed, belowThreshold }, concepts: listed }, all };
-}
-
-// ---------------------------------------------------------------- stories
-
-function stories(c: Ctx, peopleFile: PeopleFile): StoriesFile {
-  const list: StoryEntry[] = [];
-  for (const s of c.ordered) {
-    for (const st of s.notes?.stories ?? []) {
-      const e: StoryEntry = {
-        id: st.id,
-        shiurId: s.id,
-        lang: s.lang,
-        years: [...s.years],
-        title: { en: st.title.en, yi: st.title.yi },
-        people: [...st.people],
-        peopleKeys: [...st.peopleKeys],
-        t: st.t,
-        end: st.end,
-      };
-      if (st.soft) e.soft = true;
-      list.push(e);
-    }
-  }
-  const groups = new Map<string | null, string[]>();
-  for (const st of list) {
-    const k = st.peopleKeys[0] ?? null;
-    const l = groups.get(k) ?? [];
-    l.push(st.id);
-    groups.set(k, l);
-  }
-  const rank = new Map(peopleFile.people.map((p, i) => [p.key, i]));
-  const byPerson = [...groups.entries()]
-    .sort((a, b) => {
-      if (a[0] === null) return b[0] === null ? 0 : 1;
-      if (b[0] === null) return -1;
-      return (rank.get(a[0]) ?? Number.MAX_SAFE_INTEGER) - (rank.get(b[0]) ?? Number.MAX_SAFE_INTEGER) || cmpStr(a[0], b[0]);
-    })
-    .map(([key, storyIds]) => ({ key, storyIds }));
-  return { stories: list, byPerson };
-}
-
-// ---------------------------------------------------------------- entities
-
-function entities(
-  w: WorksFile,
-  p: PeopleFile,
-  conceptCounts: { key: string; shiurim: number }[],
-  occasionCounts: Map<string, number>,
-): EntitiesFile {
-  const T = ENTITY_THRESHOLDS;
-  const count = (key: string, n: number, quietMin: number, pageable = true): EntityCount => ({
-    key,
-    shiurim: n,
-    quietPage: pageable && n >= quietMin,
-    livePrerender: pageable && n >= T.live.prerender,
-  });
-  const byKey = (a: { key: string }, b: { key: string }) => cmpStr(a.key, b.key);
-  return {
-    thresholds: { quiet: { ...T.quiet }, live: { ...T.live } },
-    works: w.works.map((x) => count(x.key, x.shiurCount, T.quiet.work, !x.genre)).sort(byKey),
-    people: p.people.map((x) => count(x.key, x.shiurCount, T.quiet.person)).sort(byKey),
-    concepts: conceptCounts.map((x) => count(x.key, x.shiurim, T.quiet.concept)),
-    occasions: [...occasionCounts.entries()].map(([key, shiurim]) => ({ key, shiurim })).sort(byKey),
-  };
-}
-
 // ---------------------------------------------------------------- all
 
 export function aggregate(input: AggregateInput): AggregateResult {
@@ -536,28 +369,22 @@ export function aggregate(input: AggregateInput): AggregateResult {
   const ser = seriesFile(c);
   const occ = occasions(c);
   const wk = works(c);
-  const ppl = people(c);
-  const con = concepts(c);
   const files: Aggregates = {
     sections: sec,
     neighbours: neighbours(c, sec, ser),
     series: ser,
-    occasions: occ.file,
+    occasions: occ,
     years: years(c),
     works: wk.file,
-    people: ppl,
-    concepts: con.file,
-    stories: stories(c, ppl),
-    entities: entities(wk.file, ppl, con.all, occ.counts),
   };
 
   const warnings: string[] = [];
   const unlisted = sec.sections.reduce((a, x) => a + x.count, 0) !== input.shiurim.length;
   if (unlisted) warnings.push("aggregate: some shiurim are in no catalog section of index.json");
-  if (occ.file.excluded.uncataloguedGuesses > 0) {
-    warnings.push(`aggregate: ${occ.file.excluded.uncataloguedGuesses} uncatalogued shiurim with a guessed parsha/zman left out of occasions`);
+  if (occ.excluded.uncataloguedGuesses > 0) {
+    warnings.push(`aggregate: ${occ.excluded.uncataloguedGuesses} uncatalogued shiurim with a guessed parsha/zman left out of occasions`);
   }
-  if (occ.file.other.length > 0) warnings.push(`aggregate: ${occ.file.other.length} parsha/zman values in the "other" occasion bucket`);
+  if (occ.other.length > 0) warnings.push(`aggregate: ${occ.other.length} parsha/zman values in the "other" occasion bucket`);
   if (wk.unparsedRefs > 0) warnings.push(`aggregate: ${wk.unparsedRefs} sefariaRef values did not parse (listed as place not identified)`);
   return { files, warnings };
 }
@@ -570,10 +397,6 @@ export const AGGREGATE_FILES: Readonly<Record<keyof Aggregates, string>> = {
   occasions: "occasions.json",
   years: "years.json",
   works: "works.json",
-  people: "people.json",
-  concepts: "concepts.json",
-  stories: "stories.json",
-  entities: "entities.json",
 };
 
 /** `{ "<file>.json": content }` for buildCorpus's `extraOutputs`. */

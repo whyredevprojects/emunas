@@ -110,8 +110,7 @@ describe("hreflangPair", () => {
     }
   });
 
-  it("is empty for non-pages, including legacy /audio/ paths", () => {
-    expect(links.hreflangPair("/audio/r1.mp3")).toEqual([]);
+  it("is empty for non-pages", () => {
     expect(links.hreflangPair("/nope/")).toEqual([]);
   });
 });

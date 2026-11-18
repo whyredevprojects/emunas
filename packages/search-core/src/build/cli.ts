@@ -45,7 +45,7 @@ function main(argv: string[]): number {
     const r = writeSearchOutputs(opts);
     console.log(
       `search:build ${r.docs} docs (${r.keywordsFrom} with keywords), ${r.moments} moments, ${r.entities} entities; ` +
-        `layer ${r.layer ? "on" : "off"}, synonyms ${r.synonymsChecked ? "checked" : "not checked"}; ` +
+        `synonyms ${r.synonymsChecked ? "checked" : "not checked"}; ` +
         `changed: ${r.written.join(", ") || "none"} in ${Math.round(performance.now() - t0)} ms`,
     );
     return 0;

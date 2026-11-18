@@ -11,7 +11,8 @@
  *   hiding every edge with fewer than `MIN_SHARED` shared shiurim (unreviewed extraction).
  */
 import { OCCASIONS, PARSHIYOS } from "@emunas/normalize";
-import type { CorpusRow, EntityFile, EntityKind, FacetLabel, FacetsFile, FacetValue } from "./live-data.ts";
+import type { EntityFile, EntityKind, FacetLabel, FacetsFile, FacetValue } from "./live-data.ts";
+import type { ExploreRow } from "./entities.ts";
 import { UNDATED } from "./model.ts";
 
 // ------------------------------------------------------------------------------------------- Luach
@@ -129,14 +130,14 @@ export function connectionsModel(entity: EntityFile, facets: FacetsFile | null, 
 }
 
 /** Whether a row carries an entity. */
-export function rowHas(row: Pick<CorpusRow, "entities" | "parsha" | "zman">, kind: EntityKind, key: string): boolean {
+export function rowHas(row: Pick<ExploreRow, "entities" | "parsha" | "zman">, kind: EntityKind, key: string): boolean {
   if (kind === "p") return row.entities.people.includes(key);
   if (kind === "c") return row.entities.concepts.includes(key);
   return row.parsha === key || row.zman === key;
 }
 
 /** The shiurim along an edge: rows carrying both entities, in corpus order. */
-export function sharedRows<R extends Pick<CorpusRow, "entities" | "parsha" | "zman">>(
+export function sharedRows<R extends Pick<ExploreRow, "entities" | "parsha" | "zman">>(
   rows: readonly R[],
   a: { kind: EntityKind; key: string },
   b: { kind: EntityKind; key: string },

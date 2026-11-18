@@ -1,0 +1,20 @@
+---
+/**
+ * A link that opens in a new tab: the text, the new-tab mark, and the words "(opens in a new tab)"
+ * for screen readers. `hreflang` for links into the other site.
+ */
+import NewTabIcon from "./NewTabIcon.astro";
+import { useT } from "../i18n/index.ts";
+import type { Ed } from "../lib/edition.ts";
+
+interface Props {
+  ed: Ed;
+  href: string;
+  hreflang?: string;
+  class?: string;
+}
+
+const { ed, href, hreflang, class: className } = Astro.props;
+const t = useT(ed);
+---
+<a href={href} hreflang={hreflang} class={className} target="_blank" rel="noopener"><slot /><NewTabIcon /><span class="visually-hidden"> {t("link.newTab")}</span></a>

@@ -167,12 +167,12 @@ describe("work keys", () => {
 });
 
 describe("concept keys", () => {
-  it("merges spelling variants and flags the stop-list", () => {
+  it("merges spelling variants", () => {
     expect(conceptKey("מידת הדין")).toBe(conceptKey("מדת הדין"));
     expect(lookupConcept("מידת הדין")).toMatchObject({ he: "מדת הדין", merged: true });
     expect(conceptKey("מסירת נפש")).toBe(conceptKey("מסירות נפש"));
-    expect(lookupConcept("רבונו של עולם").stop).toBe(true);
-    expect(lookupConcept("אמונה").stop).toBe(false);
+    expect(lookupConcept("ריבונו של עולם")).toMatchObject({ he: "רבונו של עולם", merged: true });
+    expect(lookupConcept("אמונה")).toEqual({ key: conceptKey("אמונה"), he: "אמונה", merged: false });
   });
 
   it("nikud and quote style do not change the key", () => {

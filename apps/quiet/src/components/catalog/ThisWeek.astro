@@ -1,50 +1,46 @@
 ---
 /**
  * "This week" on the title page (concept-quiet §5.1): the parsha of the week and the nearest zman,
- * each as a short list of shiur titles with a link into the calendar index. Computed at build time
- * (the site is rebuilt daily), so it needs no script.
+ * each as a short list of shiur titles with a link into the calendar index. Built for the build day
+ * and shown as such without script. The days around it (model.ts `thisWeekWindow`) are carried in
+ * inert templates, and scripts/this-week.ts swaps in the visitor's own day on load.
  */
-import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
-import type { OccasionPick, ThisWeekModel } from "./model.ts";
+import type { OccasionPick, ThisWeekDay, ThisWeekWindow } from "./model.ts";
 import { useCatalogT } from "./strings.ts";
+import WeekOccasion from "./WeekOccasion.astro";
 
 interface Props {
   ed: Ed;
-  week: ThisWeekModel;
+  week: ThisWeekWindow;
 }
 
 const { ed, week } = Astro.props;
 const c = useCatalogT(ed);
-const picks = [week.parsha, week.zman].filter((p): p is OccasionPick => p !== null);
-const heading = (p: OccasionPick) =>
-  p.kind === "parsha"
-    ? c("home.parsha", { name: p.label })
-    : p.active
-      ? c("home.zmanNow", { name: p.label })
-      : c("home.zmanSoon", { name: p.label });
+const picksOf = (d: ThisWeekDay) => d.blocks.map((k) => week.blocks.get(k)).filter((p): p is OccasionPick => p !== undefined);
+const lead = (d: ThisWeekDay) => (d.hebrewDate ? c("home.thisWeekLead", { date: d.hebrewDate }) : "");
+const todayLead = lead(week.today);
 ---
-{picks.length > 0 && (
-  <section class="this-week" aria-labelledby="this-week">
+{week.days.some((d) => d.blocks.length > 0) && (
+  <section class="this-week" aria-labelledby="this-week" data-this-week data-week-date={week.today.date}>
     <h2 id="this-week">{c("home.thisWeek")}</h2>
-    {week.hebrewDate && (
-      <p class="this-week-lead">{c("home.thisWeekLead", { date: week.hebrewDate })}</p>
-    )}
-    <div class="this-week-grid">
-      {picks.map((p) => (
-        <section class="occasion" aria-labelledby={`week-${p.kind}`} data-occasion={p.key}>
-          <h3 id={`week-${p.kind}`}><a href={p.href}>{heading(p)}</a></h3>
-          <ul role="list">
-            {p.rows.map((r) => (
-              <li><a href={r.href}><bdi {...runAttrs(r.title, r.lang)}>{r.title}</bdi></a></li>
-            ))}
-          </ul>
-          <p class="occasion-all"><a href={p.href}>{c("home.allOn", { count: p.count, name: p.label })}</a></p>
-        </section>
-      ))}
+    <p class="this-week-lead" data-week-lead hidden={todayLead === ""}>{todayLead}</p>
+    <div class="this-week-grid" data-week-grid>
+      {picksOf(week.today).map((p) => <WeekOccasion ed={ed} pick={p} />)}
     </div>
+    <template data-week-days>
+      {week.days.map((d) => <p data-day={d.date} data-blocks={d.blocks.join(" ")}>{lead(d)}</p>)}
+    </template>
+    {[...week.blocks].map(([key, p]) => (
+      <template data-week-block={key}><WeekOccasion ed={ed} pick={p} /></template>
+    ))}
   </section>
 )}
+
+<script>
+  import { showVisitorDay } from "../../scripts/this-week.ts";
+  showVisitorDay(document, new Date());
+</script>
 
 <style>
   .this-week > * + * {
@@ -65,21 +61,5 @@ const heading = (p: OccasionPick) =>
     .this-week-grid {
       grid-template-columns: 1fr 1fr;
     }
-  }
-
-  .occasion > * + * {
-    margin-block-start: var(--space-xs);
-  }
-
-  .occasion li + li {
-    margin-block-start: var(--space-2xs);
-  }
-
-  .occasion ul {
-    font-size: var(--step-0);
-  }
-
-  .occasion-all {
-    font-size: var(--step-0);
   }
 </style>

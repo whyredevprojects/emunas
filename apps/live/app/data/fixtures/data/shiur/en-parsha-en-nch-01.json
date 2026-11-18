@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "en-parsha-en-nch-01",
- "rev": "5dab8276b2f6",
+ "rev": "28d40af77d07",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -505,8 +505,22 @@
    {
     "momentId": "en-parsha-en-nch-01~st0",
     "storyId": "rav-nachum-of-chernobyl-and-his-little-bread",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Menachem Nachum of Chernobyl (the Me'or Einayim)"
+     },
+     {
+      "id": "baal-shem-tov",
+      "label": {
+       "en": "the Baal Shem Tov",
+       "yi": "דער הייליגער בעל שם טוב",
+       "he": "רבי ישראל בעל שם טוב"
+      },
+      "page": true
+     }
+    ]
    }
   ],
   "insights": []
@@ -514,18 +528,18 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav explains that Noach's Teivah was a holy island of the perfected world, where even the lion ate grass, until Cham's sin brought back the curse, and that Hashem still remembered Noach with love because Avraham and the Jewish people would come from him.",
+    "en": "The Mashgiach explains that Noach's Teivah was a holy island of the perfected world, where even the lion ate grass, until Cham's sin brought back the curse, and that Hashem still remembered Noach with love because Avraham and the Jewish people would come from him.",
     "yi": "דער משגיח ערקלערט אז די תיבה פון נח איז געווען א הייליגער אינדזל פון דער פארריכטער וועלט, וואו אפילו דער לייב האט געגעסן גראז, ביז דער חטא פון חם האט צוריקגעברענגט די קללה, און אז השם יתברך האט פונדעסטוועגן געדענקט נח באהבה ווייל פון אים וועט ארויסקומען אברהם אבינו און כלל ישראל."
    },
    "abstract": {
-    "en": "The Rav opens with the contrast between Noach finding favor, an unearned gift, and being called a tzaddik. Cheshvan's combination of Hashem's Name, drawn from 'u'dvash' ending one passuk in Devarim into the next, teaches that the honey of Tishrei must be carried into Cheshvan, the month of decay. In Zichronos we recall that Hashem remembered Noach with love, and the Rav asks why love was needed when the rescue was planned, and why the lion could wound Noach. He explains that man's deeds govern creation: the generation's sin corrupted even the animals and the soil, while Noach's portion stayed pure. The Teivah was a sanctuary like the world before Adam's sin, where the lion needed no meat. Cham's sin spoiled it, the lion needed meat, and Noach was wounded. Hashem still remembered him for the sake of Avraham, which gives encouragement in Cheshvan.",
+    "en": "The Mashgiach opens with the contrast between Noach finding favor, an unearned gift, and being called a tzaddik. Cheshvan's combination of Hashem's Name, drawn from 'u'dvash' ending one passuk in Devarim into the next, teaches that the honey of Tishrei must be carried into Cheshvan, the month of decay. In Zichronos we recall that Hashem remembered Noach with love, and the Mashgiach asks why love was needed when the rescue was planned, and why the lion could wound Noach. He explains that man's deeds govern creation: the generation's sin corrupted even the animals and the soil, while Noach's portion stayed pure. The Teivah was a sanctuary like the world before Adam's sin, where the lion needed no meat. Cham's sin spoiled it, the lion needed meat, and Noach was wounded. Hashem still remembered him for the sake of Avraham, which gives encouragement in Cheshvan.",
     "yi": "דער משגיח עפנט מיט דער סתירה צווישן \"ונח מצא חן\", א מתנת חנם, און \"נח איש צדיק\". דערנאך רעדט ער וועגן חודש חשון, וועמענס צירוף פון שם הוי\"ה ווערט ארויסגענומען פון דעם לעצטן ווארט פון א פסוק אין ספר דברים, \"ודבש\", און די ערשטע ווערטער פונעם קומענדיגן פסוק; דאס לערנט אז מ'דארף אריינטראגן דעם האניג פון תשרי אין חשון, דעם חודש פון פארפוילונג. אין זכרונות זאגן מיר אז השם האט געדענקט נח באהבה, און דער משגיח פרעגט פארוואס מ'האט געדארפט אהבה ווען אלעס איז געווען פלאנירט, און פארוואס דער לייב האט געקענט צעווונדן נח. ער ערקלערט אז דער מענטש'ס מעשים פירן די בריאה: דער חטא פונעם דור האט פארדארבן אפילו די חיות און די ערד, אבער נח'ס חלק איז געבליבן ריין. די תיבה איז געווען א מקדש, ווי די וועלט פאר דעם חטא פון אדם הראשון, וואו דער לייב האט נישט געדארפט פלייש. דער חטא פון חם האט עס קאליע געמאכט, דער לייב האט געדארפט פלייש און האט צעווונדן נח. פונדעסטוועגן האט השם אים געדענקט צוליב אברהם אבינו, און דאס גיט חיזוק אין חודש חשון."
    },
    "keyPoints": [
     {
      "id": "en-parsha-en-nch-01~kp0",
      "text": {
-      "en": "Cheshvan, the month of Bul, of withering and decay, follows Tishrei, and the Rav says the sweetness and renewal of Tishrei must be carried into it.",
+      "en": "Cheshvan, the month of Bul, of withering and decay, follows Tishrei, and the Mashgiach says the sweetness and renewal of Tishrei must be carried into it.",
       "yi": "חשון, דער ירח בול, דער חודש פון פארוועלקן און פארפוילן, קומט נאך תשרי, און דער משגיח זאגט אז מ'דארף אריינטראגן אין אים די זיסקייט און די התחדשות פון תשרי."
      },
      "t": 652.81,
@@ -534,7 +548,7 @@
     {
      "id": "en-parsha-en-nch-01~kp1",
      "text": {
-      "en": "In the Zichronos of Rosh Hashanah we recall that Hashem remembered Noach with love, and the Rav asks why that love was needed when the whole rescue had been planned in advance.",
+      "en": "In the Zichronos of Rosh Hashanah we recall that Hashem remembered Noach with love, and the Mashgiach asks why that love was needed when the whole rescue had been planned in advance.",
       "yi": "אין זכרונות פון ראש השנה דערמאנען מיר אז השם האט געדענקט נח באהבה, און דער משגיח פרעגט פארוואס מ'האט געדארפט די אהבה ווען די גאנצע הצלה איז געווען פלאנירט פון פריער."
      },
      "t": 1005.11,
@@ -581,7 +595,7 @@
      "yi": "חן אדער צדקות; חשון נאך תשרי"
     },
     "summary": {
-     "en": "The Rav contrasts 'Noach found favor', which the Midrash reads as an unearned gift, with the next passuk calling Noach a tzaddik. He then notes that Cheshvan has begun and that people still long for the honey-sweet days and prayers of Tishrei.",
+     "en": "The Mashgiach contrasts 'Noach found favor', which the Midrash reads as an unearned gift, with the next passuk calling Noach a tzaddik. He then notes that Cheshvan has begun and that people still long for the honey-sweet days and prayers of Tishrei.",
      "yi": "דער משגיח שטעלט אוועק \"ונח מצא חן\", וואס דער מדרש טייטשט אלס א מתנת חנם, קעגן דעם קומענדיגן פסוק וואס רופט נח א צדיק. דערנאך זאגט ער אז חודש חשון האט זיך אנגעהויבן, און מ'בענקט נאך צו די זיסע טעג און תפילות פון תשרי."
     },
     "kind": "intro",
@@ -599,7 +613,7 @@
      "yi": "דער צירוף פון שם הוי\"ה פון חשון"
     },
     "summary": {
-     "en": "The Rav explains that each month is governed by one of the twelve combinations of Hashem's Name, each derived from a passuk. Cheshvan's combination, vav-hei-hei-yud, comes from 'u'dvash' at the end of one passuk in Devarim and the opening words of the next, the only combination that runs from one passuk into another.",
+     "en": "The Mashgiach explains that each month is governed by one of the twelve combinations of Hashem's Name, each derived from a passuk. Cheshvan's combination, vav-hei-hei-yud, comes from 'u'dvash' at the end of one passuk in Devarim and the opening words of the next, the only combination that runs from one passuk into another.",
      "yi": "דער משגיח ערקלערט אז יעדער חודש ווערט געפירט דורך איינעם פון די צוועלף צירופים פון שם הוי\"ה, און יעדער צירוף קומט פון א פסוק. דער צירוף פון חשון, ו-ה-ה-י, קומט פון \"ודבש\" אין סוף פון א פסוק אין ספר דברים און די ערשטע ווערטער פונעם קומענדיגן פסוק; ס'איז דער איינציגער צירוף וואס גייט אריבער פון איין פסוק אינעם צווייטן."
     },
     "kind": "main",
@@ -617,7 +631,7 @@
      "yi": "אריינטראגן דעם האניג פון תשרי אין ירח בול"
     },
     "summary": {
-     "en": "Tishrei is a month of honey, and 'Av HaRachaman' has the gematria of 'dvash', 306. Cheshvan, called Bul in Tanach, is the month of decay, so the combination runs from 'u'dvash' into 'hayom hazeh': with Rashi's 'every day they should be new in your eyes', the Rav says the renewal of Tishrei must be carried into Cheshvan.",
+     "en": "Tishrei is a month of honey, and 'Av HaRachaman' has the gematria of 'dvash', 306. Cheshvan, called Bul in Tanach, is the month of decay, so the combination runs from 'u'dvash' into 'hayom hazeh': with Rashi's 'every day they should be new in your eyes', the Mashgiach says the renewal of Tishrei must be carried into Cheshvan.",
      "yi": "תשרי איז א חודש פון האניג, און \"אב הרחמן\" איז בגימטריא \"דבש\", 306. חשון, וואס ווערט אין תנ\"ך גערופן ירח בול, איז דער חודש פון פארפוילונג, דערפאר גייט דער צירוף פון \"ודבש\" אריבער אין \"היום הזה\": מיט רש\"י'ס ווערטער \"בכל יום יהיו בעיניך חדשים\" זאגט דער משגיח אז מ'דארף אריינטראגן די התחדשות פון תשרי אין חשון."
     },
     "kind": "main",
@@ -635,7 +649,7 @@
      "yi": "זכרונות: פארוואס נח האט געדארפט געדענקט ווערן"
     },
     "summary": {
-     "en": "The Rav describes the Zichronos blessing of Rosh Hashanah, whose first passuk tells how Hashem remembered Noach and passed a wind over the earth so the waters receded. He asks why Hashem had to remember Noach with love when the whole plan of the Teivah had been told to Noach 120 years earlier.",
+     "en": "The Mashgiach describes the Zichronos blessing of Rosh Hashanah, whose first passuk tells how Hashem remembered Noach and passed a wind over the earth so the waters receded. He asks why Hashem had to remember Noach with love when the whole plan of the Teivah had been told to Noach 120 years earlier.",
      "yi": "דער משגיח באשרייבט די ברכה פון זכרונות פון ראש השנה, וואס איר ערשטער פסוק דערציילט ווי השם האט געדענקט נח און האט אריבערגעפירט א רוח איבער דער ערד אז די וואסערן זאלן זיך אפשטילן. ער פרעגט פארוואס השם האט געדארפט געדענקן נח באהבה ווען דער גאנצער פלאן פון דער תיבה איז געזאגט געווארן צו נח 120 יאר פריער."
     },
     "kind": "main",
@@ -653,7 +667,7 @@
      "yi": "דער לייב וואס האט צעווונדן נח"
     },
     "summary": {
-     "en": "The Mabul wiped out every trace of the old world. Rashi on 'ach Noach' says Noach was late in feeding the lion, which wounded him. The Rav brings the Ramban that the Teivah was a great miracle, small yet holding every species, and asks: if Hashem helped Noach with everything, why was the lion allowed to injure him?",
+     "en": "The Mabul wiped out every trace of the old world. Rashi on 'ach Noach' says Noach was late in feeding the lion, which wounded him. The Mashgiach brings the Ramban that the Teivah was a great miracle, small yet holding every species, and asks: if Hashem helped Noach with everything, why was the lion allowed to injure him?",
      "yi": "דער מבול האט אויסגעמעקט יעדן סימן פון דער אלטער וועלט. רש\"י אויף \"אך נח\" זאגט אז נח האט זיך פארשפעטיגט מיטן געבן עסן פארן לייב, און דער לייב האט אים צעווונדן. דער משגיח ברענגט דעם רמב\"ן אז די תיבה איז געווען א גרויסער נס, קליין און פונדעסטוועגן האט זי אריינגענומען אלע מינים, און פרעגט: אויב השם האט געהאלפן נח מיט אלעס, פארוואס האט דער לייב באקומען רשות אים צו שעדיגן?"
     },
     "kind": "main",
@@ -671,7 +685,7 @@
      "yi": "האט נח געקענט אריינברענגען פלייש?"
     },
     "summary": {
-     "en": "The Rav brings the Ibn Ezra, who answers those who ask where Noach found meat that the lion could eat straw, and argues from Chazal that Noach brought each creature its own food. Since Rashi says Hashem promised that the food would not rot, Noach could have brought meat, so why did he fail to feed the lion?",
+     "en": "The Mashgiach brings the Ibn Ezra, who answers those who ask where Noach found meat that the lion could eat straw, and argues from Chazal that Noach brought each creature its own food. Since Rashi says Hashem promised that the food would not rot, Noach could have brought meat, so why did he fail to feed the lion?",
      "yi": "דער משגיח ברענגט דעם אבן עזרא, וואס ענטפערט די וואס פרעגן פון וואו נח האט גענומען פלייש, אז דער לייב האט געקענט עסן שטרוי; און ער ווייזט פון חז\"ל אז נח האט אריינגעברענגט פאר יעדער באשעפעניש איר אייגענע שפייז. ווייל רש\"י זאגט אז השם האט צוגעזאגט אז די שפייז וועט נישט פארפוילן, האט נח געקענט אריינברענגען פלייש; פארוואס זשע האט ער נישט באוויזן צו שפייזן דעם לייב?"
     },
     "kind": "main",
@@ -689,7 +703,7 @@
      "yi": "ווען משיח וועט קומען: דער לייב וועט עסן שטרוי"
     },
     "summary": {
-     "en": "Recalling a song mothers sang about what will be when Mashiach comes, the Rav says that era already existed before Adam's sin, when lions and tigers ate grass. He brings Yeshayahu's prophecy of the wolf with the sheep and the lion eating straw, and the Ramban that wild beasts were meant to be gentle and became predators only through Adam's sin.",
+     "en": "Recalling a song mothers sang about what will be when Mashiach comes, the Mashgiach says that era already existed before Adam's sin, when lions and tigers ate grass. He brings Yeshayahu's prophecy of the wolf with the sheep and the lion eating straw, and the Ramban that wild beasts were meant to be gentle and became predators only through Adam's sin.",
      "yi": "דער משגיח דערמאנט א לידל וואס מאמעס האבן געזונגען וועגן וואס עס וועט זיין ווען משיח וועט קומען, און זאגט אז די צייט איז שוין אמאל געווען, פאר דעם חטא פון אדם הראשון, ווען לייבן און טיגערס האבן געגעסן גראז. ער ברענגט די נבואה פון ישעיה וועגן דעם וואלף מיטן שעפעלע און דעם לייב וואס עסט שטרוי, און דעם רמב\"ן אז די ווילדע חיות האבן געדארפט זיין צאם און זענען געווארן רויב-חיות נאר צוליב דעם חטא פון אדם."
     },
     "kind": "main",
@@ -707,7 +721,7 @@
      "yi": "דעם מענטש'ס מעשים פירן די בריאה; נח'ס חלק"
     },
     "summary": {
-     "en": "Man was made to rule creation, and through mitzvos and aveiros he perfects or spoils it. Rashi says even the animals of the Mabul's generation were corrupt, which the Rav explains as man's sin mirrored in them, and even the topsoil was wiped away. Noach's portion, the animals that came to the Teivah and Eretz Yisrael, where no Mabul fell, stayed pure.",
+     "en": "Man was made to rule creation, and through mitzvos and aveiros he perfects or spoils it. Rashi says even the animals of the Mabul's generation were corrupt, which the Mashgiach explains as man's sin mirrored in them, and even the topsoil was wiped away. Noach's portion, the animals that came to the Teivah and Eretz Yisrael, where no Mabul fell, stayed pure.",
      "yi": "דער מענטש איז באשאפן געווארן צו הערשן איבער דער בריאה, און מיט מצוות און עבירות פארריכט ער אדער פארדארבט ער זי. רש\"י זאגט אז אפילו די חיות פונעם דור המבול זענען געווען פארדארבן, און דער משגיח ערקלערט אז דאס איז געווען דעם מענטש'ס חטא וואס האט זיך אפגעשפיגלט אין זיי; אפילו די אויבערשטע שיכט ערד איז אויסגעמעקט געווארן. נח'ס חלק, די חיות וואס זענען געקומען צו דער תיבה און ארץ ישראל וואו ס'איז נישט געווען קיין מבול, איז געבליבן ריין."
     },
     "kind": "main",
@@ -727,7 +741,7 @@
      "yi": "די תיבה אלס א מקדש און א גן עדן"
     },
     "summary": {
-     "en": "Hashem created a perfect world in Adam's time; Adam's sin spoiled it until, ten generations later, even animals and soil were corrupt. Noach, his family and his animals were to be the embryo of a new world. The Rav explains that the Teivah, built to exact dimensions like the Mishkan and the Beis HaMikdash, was a place of kedushah, heaven on earth, exempt from the Mabul, a society of tzaddikim like the world before the sin.",
+     "en": "Hashem created a perfect world in Adam's time; Adam's sin spoiled it until, ten generations later, even animals and soil were corrupt. Noach, his family and his animals were to be the embryo of a new world. The Mashgiach explains that the Teivah, built to exact dimensions like the Mishkan and the Beis HaMikdash, was a place of kedushah, heaven on earth, exempt from the Mabul, a society of tzaddikim like the world before the sin.",
      "yi": "השם האט באשאפן א שלימות'דיגע וועלט אין די צייטן פון אדם, און דער חטא פון אדם האט זי פארדארבן ביז, צען דורות שפעטער, זענען אפילו די חיות און די ערד געווען פארדארבן. נח, זיין משפחה און זיינע חיות האבן געדארפט זיין דער עובר פון א נייער וועלט. דער משגיח ערקלערט אז די תיבה, געבויט לויט די גענויע מאסן ווי דער משכן און דער בית המקדש, איז געווען א מקום הקדושה, הימל אויף דער ערד, פטור פונעם מבול, א חברה פון צדיקים ווי די וועלט פאר דעם חטא."
     },
     "kind": "main",
@@ -747,7 +761,7 @@
      "yi": "פארוואס דער לייב עסט פלייש; דער חטא פון חם"
     },
     "summary": {
-     "en": "The Rav explains that life in food is Hashem's word; a tzaddik extracts it from little, a kosher animal draws it from grass, but the cruel, unclean lion cannot and needs concentrated food, meat. In the Teivah's utopia the lion did not need meat and Noach brought none. Then, as Rashi explains, Cham, the raven and the dog violated the prohibition on cohabitation in the Teivah and were cursed.",
+     "en": "The Mashgiach explains that life in food is Hashem's word; a tzaddik extracts it from little, a kosher animal draws it from grass, but the cruel, unclean lion cannot and needs concentrated food, meat. In the Teivah's utopia the lion did not need meat and Noach brought none. Then, as Rashi explains, Cham, the raven and the dog violated the prohibition on cohabitation in the Teivah and were cursed.",
      "yi": "דער משגיח ערקלערט אז דאס לעבן אין דער שפייז איז דאס דבר השם; א צדיק ציט עס ארויס פון א ביסל, א כשר'ע בהמה ציט עס ארויס פון גראז, אבער דער אכזריות'דיגער, טמא'ער לייב קען נישט, און דארף געדיכטע שפייז, פלייש. אין דער תיבה, וואו ס'איז געווען א גן עדן, האט דער לייב נישט געדארפט פלייש און נח האט נישט אריינגעברענגט. דערנאך, ווי רש\"י ערקלערט, האבן חם, דער ראב און דער הונט עובר געווען אויפן איסור תשמיש אין דער תיבה, און זענען פארשאלטן געווארן."
     },
     "kind": "main",
@@ -767,7 +781,7 @@
      "yi": "אגב אורחא: די קללה פון חם"
     },
     "summary": {
-     "en": "In a digression the Rav contrasts the Torah's account of Noach cursing Cham with the outlook of a society that does not live by the Torah, insisting this does not mean Torah Jews look down on other people, since all men are created equal, while holding that the curse remains until its cause is removed in the days of Mashiach.",
+     "en": "In a digression the Mashgiach contrasts the Torah's account of Noach cursing Cham with the outlook of a society that does not live by the Torah, insisting this does not mean Torah Jews look down on other people, since all men are created equal, while holding that the curse remains until its cause is removed in the days of Mashiach.",
      "yi": "אגב אורחא שטעלט דער משגיח אוועק די תורה'ס דערציילונג ווי נח האט געשאלטן חם קעגן דער השקפה פון א געזעלשאפט וואס לעבט נישט לויט דער תורה; ער באטאנט אז דאס מיינט נישט אז אידן וואס לערנען תורה קוקן אראפ אויף אנדערע מענטשן, ווייל אלע מענטשן זענען באשאפן גלייך, אבער ער האלט אז די קללה בלייבט ביז איר סיבה ווערט אויסגעמעקט אין די ימות המשיח."
     },
     "kind": "tangent",
@@ -805,7 +819,7 @@
      "yi": "חיזוק פאר חשון: די דריטע וועלט"
     },
     "summary": {
-     "en": "In Zichronos we ask Hashem to spare us as He spared Noach, for the sake of what will come. The Rav explains that Hashem makes three tries: two worlds, Adam's and Noach's, were spoiled, and the third will be perfect, like the third Beis HaMikdash. The Mabul began in Cheshvan, and in Cheshvan, disappointed with Tishrei, we take encouragement from the sedra, which ends with the birth of Avraham Avinu.",
+     "en": "In Zichronos we ask Hashem to spare us as He spared Noach, for the sake of what will come. The Mashgiach explains that Hashem makes three tries: two worlds, Adam's and Noach's, were spoiled, and the third will be perfect, like the third Beis HaMikdash. The Mabul began in Cheshvan, and in Cheshvan, disappointed with Tishrei, we take encouragement from the sedra, which ends with the birth of Avraham Avinu.",
      "yi": "אין זכרונות בעטן מיר השם ער זאל אונז שוינען ווי ער האט געשוינט נח, צוליב דעם וואס וועט קומען. דער משגיח ערקלערט אז השם פרובירט דריי מאל: צוויי וועלטן, די וועלט פון אדם און די וועלט פון נח, זענען פארדארבן געווארן, און די דריטע וועט זיין שלימות'דיג, ווי דער דריטער בית המקדש. דער מבול האט זיך אנגעהויבן אין חשון, און אין חשון, ווען מ'איז אנטוישט פון תשרי, נעמט מען חיזוק פון דער סדרה, וואס ענדיגט זיך מיט דער געבורט פון אברהם אבינו."
     },
     "kind": "closing",
@@ -817,12 +831,12 @@
    [
     2022.06,
     2024.1,
-    "asr-noise"
+    "pause"
    ],
    [
     3810.69,
     3812.27,
-    "asr-noise"
+    "pause"
    ]
   ],
   "sources": [
@@ -1227,7 +1241,7 @@
    {
     "id": "en-parsha-en-nch-01~tk0",
     "text": {
-     "en": "The Rav says one should not lose the renewal and resolutions gained in Tishrei, but carry them into Cheshvan so that the Torah feels new every day.",
+     "en": "The Mashgiach says one should not lose the renewal and resolutions gained in Tishrei, but carry them into Cheshvan so that the Torah feels new every day.",
      "yi": "דער משגיח זאגט אז מ'זאל נישט פארלירן די התחדשות און די קבלות וואס מ'האט געווינען אין תשרי, נאר זיי אריינטראגן אין חשון, אז די תורה זאל זיין נייע יעדן טאג."
     },
     "t": 854.73,
@@ -1236,7 +1250,7 @@
    {
     "id": "en-parsha-en-nch-01~tk1",
     "text": {
-     "en": "The Rav says that in Cheshvan, though one is not satisfied with what Tishrei achieved, one finds encouragement in Parshas Noach, which ends with the birth of Avraham Avinu.",
+     "en": "The Mashgiach says that in Cheshvan, though one is not satisfied with what Tishrei achieved, one finds encouragement in Parshas Noach, which ends with the birth of Avraham Avinu.",
      "yi": "דער משגיח זאגט אז אין חשון, הגם מ'איז נישט צופרידן מיט וואס מ'האט אויפגעטאן אין תשרי, געפינט מען חיזוק אין פרשת נח, וואס ענדיגט זיך מיט דער געבורט פון אברהם אבינו."
     },
     "t": 4121.75,
@@ -1318,152 +1332,12 @@
      "yi": "רב נחום פון טשערנאביל און זיין ביסל ברויט"
     },
     "retelling": {
-     "en": "The Rav tells that Rav Nachum of Chernobyl ate only a very small amount of bread each day, and yet he was a heavy man. The Ba'al Shem Tov said of him that he was heavy from the nourishment he received from answering 'Amen, yehei shmei rabba'. The Rav brings this to show that a tzaddik extracts much life from little food.",
+     "en": "The Mashgiach tells that Rav Nachum of Chernobyl ate only a very small amount of bread each day, and yet he was a heavy man. The Ba'al Shem Tov said of him that he was heavy from the nourishment he received from answering 'Amen, yehei shmei rabba'. The Mashgiach brings this to show that a tzaddik extracts much life from little food.",
      "yi": "דער משגיח דערציילט אז רב נחום פון טשערנאביל האט געגעסן נאר א גאנץ קליין ביסל ברויט יעדן טאג, און פונדעסטוועגן איז ער געווען א גראבער מענטש. דער בעל שם טוב האט געזאגט אויף אים אז ער איז גראב פון דער נארונג וואס ער באקומט פון ענטפערן \"אמן יהא שמיה רבא\". דער משגיח ברענגט דאס צו ווייזן אז א צדיק ציט ארויס א סך לעבן פון ווייניג שפייז."
     },
-    "people": [
-     "Rav Nachum of Chernobyl",
-     "the Ba'al Shem Tov"
-    ],
-    "peopleKeys": [
-     "rabbi-nachum-of-chernobyl",
-     "baal-shem-tov"
-    ],
     "t": 3171.06,
     "end": 3186.78,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Noach",
-    "key": "noach"
-   },
-   {
-    "name": "Cham",
-    "key": "cham"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Chava",
-    "key": "chavah"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "the Ibn Ezra",
-    "key": "ibn-ezra"
-   },
-   {
-    "name": "the Chazon Ish",
-    "key": "chazon-ish"
-   },
-   {
-    "name": "Yeshayahu HaNavi",
-    "key": "yeshayahu-hanavi"
-   },
-   {
-    "name": "the Lechovicher tzaddik",
-    "key": "lechovicher-tzaddik"
-   },
-   {
-    "name": "Rav Nachum of Chernobyl",
-    "key": "rabbi-nachum-of-chernobyl"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Miriam",
-    "key": "miriam-haneviah"
-   },
-   {
-    "name": "Aharon HaKohen",
-    "key": "aharon-hakohen"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תיבה",
-    "key": "sybh-210ce3"
-   },
-   {
-    "he": "מבול",
-    "key": "mbvl-34b703"
-   },
-   {
-    "he": "חשון",
-    "key": "chshvn-dc0f93"
-   },
-   {
-    "he": "ירח בול",
-    "key": "yrch-bvl-a79bd9"
-   },
-   {
-    "he": "צירוף",
-    "key": "tzyrvf-a40a60"
-   },
-   {
-    "he": "שם הוי\"ה",
-    "key": "shm-hvyh-ebf833"
-   },
-   {
-    "he": "דבש",
-    "key": "dbsh-b274b5"
-   },
-   {
-    "he": "אב הרחמן",
-    "key": "ab-hrchmn-b1ecc8"
-   },
-   {
-    "he": "זכרונות",
-    "key": "zkrvnvs-6779b2"
-   },
-   {
-    "he": "מלכיות",
-    "key": "mlkyvs-ee86b4"
-   },
-   {
-    "he": "שופרות",
-    "key": "shvprvs-c0f194"
-   },
-   {
-    "he": "עץ הדעת",
-    "key": "etz-hdes-7164a8"
-   },
-   {
-    "he": "נעמיות",
-    "key": "nemyvs-8e3150"
-   },
-   {
-    "he": "סייעתא דשמיא",
-    "key": "syyesa-dshmya-bc83f9"
-   },
-   {
-    "he": "התחדשות",
-    "key": "hschdshvs-c1b1c6"
-   },
-   {
-    "he": "קדושה",
-    "key": "kdvshh-2d0766"
    }
   ],
   "writeupLangs": [

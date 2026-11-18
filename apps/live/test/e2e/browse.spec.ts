@@ -3,7 +3,7 @@
  * - the shelf lists works by group, and genre-only works are not shelved as sefarim;
  * - the Bereishis (Genesis) chapter view lists its pesukim in order, each with moments that open
  *   the listening room at a time;
- * - the maasios "stories only" mode queues the listed stories back to back: the queue holds them in
+ * - the maasios "stories only" mode queues the listed stories one after another: the queue holds them in
  *   page order and, when one story's end is reached, the next one plays;
  * - person pages split cited / in stories / discussed; concept and occasion pages list shiurim;
  * - every in-app link on these pages resolves (shiur in corpus.json, entity/work/series file exists);
@@ -12,7 +12,7 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
-import { axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
+import { axeBudget, axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
 
@@ -22,8 +22,8 @@ interface WorkFile {
   locations: { ref: string; sefariaRef: string | null; citations: { shiurId: string; sourceId: string; t: number }[] }[];
   unlocated: unknown[];
 }
-interface StoriesFile {
-  stories: { id: string; shiurId: string; t: number; end: number; lang: "en" | "yi"; peopleKeys: string[] }[];
+interface StoriesIndexFile {
+  stories: { id: string; plays: { lang: "en" | "yi"; shiurId: string; momentId: string; t: number | null; end: number | null }[] }[];
 }
 interface EntityRef {
   kind: "p" | "c" | "o";
@@ -119,7 +119,7 @@ test.describe("@data seforim", () => {
 
 test.describe("@data maasios", () => {
   test("stories only: the listed stories queue back to back, and the next plays when one ends", async ({ page, request, browserName }) => {
-    const stories = (await dataJson<StoriesFile>(request, "stories.json")).stories;
+    const stories = (await dataJson<StoriesIndexFile>(request, "stories-index.json")).stories;
     test.skip(stories.length < 2, "fewer than two stories in this data");
     await serveSilentMedia(page);
     // The player engine plays through `new Audio()` (not in the DOM); keep a handle on each element.
@@ -142,10 +142,13 @@ test.describe("@data maasios", () => {
     const known = new Set(stories.map((s) => s.id));
     for (const id of listed) expect(known.has(id), id).toBe(true);
 
-    const play = page.locator("main [data-action=play-all]").first();
-    await expect(play).toContainText("back to back");
+    // The stories-only control (C.4) queues one telling per listed story that has a timed play.
+    const queued = listed.filter((id) => (stories.find((s) => s.id === id)?.plays[0]?.t ?? null) !== null);
+    expect(queued.length, "listed stories with a timed telling").toBeGreaterThan(1);
+    const play = page.locator("main [data-action=stories-only]");
+    await expect(play).toHaveText(/^Play [\d,]+ stor(y|ies)$/u);
     await play.click();
-    await expect(page.locator("main")).toContainText(/Playing \d+ in the queue/u);
+    await expect(page.locator("main")).toContainText(/Playing [\d,]+ stor(y|ies) in the queue/u);
 
     // The queue holds the stories in page order; the first is playing.
     await page.getByRole("navigation").getByRole("link", { name: "My Shelf" }).click();
@@ -158,8 +161,10 @@ test.describe("@data maasios", () => {
     // listening-room spec sees the same), so playback itself is checked in Chromium only.
     if (browserName === "webkit") return;
     await expect(items.nth(0)).toHaveAttribute("aria-current", "true", { timeout: 10_000 });
-    // Jump to just before the first story's end: the second story takes over.
-    const firstStory = stories.find((s) => s.id === listed[0])!;
+    // Jump to just before the end of the first queued story's telling (both audio languages: the
+    // first play): the second story takes over.
+    const firstEnd = stories.find((s) => s.id === queued[0])?.plays[0]?.end ?? null;
+    expect(firstEnd, "the first story's telling has an end").not.toBeNull();
     await expect(dock(page)).toHaveAttribute("data-player-status", "playing", { timeout: 10_000 });
     const seeked = await page.evaluate((t) => {
       const audios = (window as unknown as { __audios: HTMLAudioElement[] }).__audios;
@@ -167,10 +172,42 @@ test.describe("@data maasios", () => {
       if (!a) return false;
       a.currentTime = t;
       return true;
-    }, firstStory.end - 1.5);
+    }, (firstEnd ?? 0) - 1.5);
     expect(seeked, "the engine's audio element").toBe(true);
     await expect(items.nth(1)).toHaveAttribute("aria-current", "true", { timeout: 15_000 });
     expect(errors).toEqual([]);
+  });
+});
+
+test.describe("@data maasios layout", () => {
+  // The library and a story page fit the screen: nothing (the topic select is as wide as its longest
+  // option) pushes the page sideways under the fixed bottom navigation, whose links stay on screen
+  // and are the topmost element where a tap lands (F.2).
+  test("the library and a story page fit the viewport; the navigation stays on top", async ({ page, request }) => {
+    const index = await dataJson<{ stories: { id: string; page: boolean }[] }>(request, "stories-index.json");
+    const paths = ["/en/maasios", "/yi/maasios"];
+    const story = index.stories.find((s) => s.page);
+    if (story) paths.push(`/en/maasios/${encodeURIComponent(story.id)}`);
+    for (const path of paths) {
+      await open(page, path);
+      const { scroll, client } = await page.evaluate(() => ({
+        scroll: document.documentElement.scrollWidth,
+        client: document.documentElement.clientWidth,
+      }));
+      expect(scroll, `${path}: no sideways scroll`).toBeLessThanOrEqual(client);
+      const viewport = page.viewportSize()!;
+      for (const link of await page.getByRole("navigation", { name: /^(Main|הויפט)$/u }).getByRole("link").all()) {
+        const box = (await link.boundingBox())!;
+        expect(box.x, path).toBeGreaterThanOrEqual(0);
+        expect(box.x + box.width, path).toBeLessThanOrEqual(viewport.width + 0.5);
+        const topmost = await link.evaluate((el) => {
+          const r = el.getBoundingClientRect();
+          const hit = document.elementFromPoint(r.left + r.width / 2, r.top + r.height / 2);
+          return hit !== null && (hit === el || el.contains(hit));
+        });
+        expect(topmost, `${path}: ${await link.textContent()} is tappable`).toBe(true);
+      }
+    }
   });
 });
 
@@ -208,6 +245,7 @@ test.describe("accessibility", () => {
       const g = await genesis(request);
       if (g) paths.push(`/${ui}/seforim/${g.work.key}`, `/${ui}/seforim/${g.work.key}/${g.chapter}`);
       for (const { kind, key } of await entitySample(request, 1)) paths.push(`/${ui}/${kind}/${encodeURIComponent(key)}`);
+      axeBudget(paths.length);
       for (const p of paths) {
         await open(page, p);
         expect(await axeViolations(page), p).toEqual([]);

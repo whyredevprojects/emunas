@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "yi-zmanim-svkvs-08",
- "rev": "2531ab951b9d",
+ "rev": "5adb7c14f2ab",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -53,7 +53,7 @@
     "momentId": "yi-parshas-hashavua-brshys-01~s2",
     "shiurId": "yi-parshas-hashavua-brshys-01",
     "t": 914.48,
-    "score": 0.364
+    "score": 0.363
    }
   ],
   "titles": {
@@ -750,8 +750,24 @@
    {
     "momentId": "yi-zmanim-svkvs-08~st0",
     "storyId": "chizkiyahu-sleeps-during-sanherivs-siege",
-    "tellings": 2,
-    "page": true
+    "otherShiurim": 1,
+    "page": true,
+    "people": [
+     {
+      "name": "Chizkiyahu HaMelech"
+     },
+     {
+      "name": "Sancheiriv"
+     },
+     {
+      "id": "yeshayahu-hanavi",
+      "label": {
+       "en": "Yeshayahu HaNavi",
+       "yi": "ישעיהו הנביא"
+      },
+      "page": true
+     }
+    ]
    }
   ],
   "insights": []
@@ -759,11 +775,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav explains that the sukkah, Yaakov Avinu's gift to his children, carries the holiness of the Beis HaMikdash and the shelter of the Shechinah, and that from it a Jew takes bitachon, protection and simcha for the whole year.",
+    "en": "The Mashgiach explains that the sukkah, Yaakov Avinu's gift to his children, carries the holiness of the Beis HaMikdash and the shelter of the Shechinah, and that from it a Jew takes bitachon, protection and simcha for the whole year.",
     "yi": "דער משגיח ערקלערט אז די סוכה, וואס יעקב אבינו האט איבערגעלאזט פאר זיינע קינדער, האט אין זיך די קדושה פונעם בית המקדש און דעם שיץ פון די כנפי השכינה, און פון איר נעמט א איד מיט ביטחון, הגנה און שמחה אויפן גאנצן יאר."
    },
    "abstract": {
-    "en": "The Rav opens with the Zohar's reading of 'betzilo chimadti veyashavti' as the sukkah, the shade of emunah under the wings of the Shechinah, which carries the holiness of Eretz Yisrael and of the Beis HaMikdash. He traces the sukkah to Yaakov Avinu and shows that each Yom Tov gives its own gift: Pesach gives emunah, Sukkos gives bitachon, a higher level. Through the dispute of Rabbi Eliezer and Rabbi Akiva, the Rambam, the Divrei Chaim and the Rokeach, he shows that the sukkah's shelter goes with a person wherever he goes. He explains why the sukkah, like Noach's teivah and the Mishkan, is built by measurements, and illustrates bitachon with Chizkiyahu sleeping while Sanheriv besieged Yerushalayim. He ties bitachon to simcha, gives practical applications, and closes with the sukkah as a place of renewed judgment and of chassadim.",
+    "en": "The Mashgiach opens with the Zohar's reading of 'betzilo chimadti veyashavti' as the sukkah, the shade of emunah under the wings of the Shechinah, which carries the holiness of Eretz Yisrael and of the Beis HaMikdash. He traces the sukkah to Yaakov Avinu and shows that each Yom Tov gives its own gift: Pesach gives emunah, Sukkos gives bitachon, a higher level. Through the dispute of Rabbi Eliezer and Rabbi Akiva, the Rambam, the Divrei Chaim and the Rokeach, he shows that the sukkah's shelter goes with a person wherever he goes. He explains why the sukkah, like Noach's teivah and the Mishkan, is built by measurements, and illustrates bitachon with Chizkiyahu sleeping while Sanheriv besieged Yerushalayim. He ties bitachon to simcha, gives practical applications, and closes with the sukkah as a place of renewed judgment and of chassadim.",
     "yi": "דער משגיח עפנט מיטן זוהר וואס טייטשט \"בצלו חמדתי וישבתי\" אויף די סוכה, דער צילא דמהימנותא תחת כנפי השכינה, וואס האט אין זיך קדושת ארץ ישראל און קדושת בית המקדש. ער ווייזט אז די סוכה נעמט זיך פון יעקב אבינו, און אז יעדער יום טוב גיט זיין אייגענע מתנה: פון פסח נעמט מען אמונה, און פון סוכות ביטחון, א העכערע מדריגה. דורך דער מחלוקת פון רבי אליעזר און רבי עקיבא, דעם רמב\"ם, דעם דברי חיים און דעם רוקח, ווייזט ער אז דער שיץ פון די סוכה גייט מיט מיטן מענטש וואו ער גייט. ער ערקלערט פארוואס די סוכה, אזוי ווי די תיבה פון נח און דער משכן, איז געבויט מיט מדידות, און ער ברענגט חזקיהו המלך וואס האט געשלאפן בשעת סנחריב האט באלאגערט ירושלים. ער בינדט ביטחון מיט שמחה, גיט פראקטישע עצות, און ענדיגט אז די סוכה ברענגט א נייעם דין און ממשיך חסדים."
    },
    "keyPoints": [
@@ -835,7 +851,7 @@
      "yi": "בצלו חמדתי: די סוכה אלס צילא דמהימנותא"
     },
     "summary": {
-     "en": "The Rav opens with the Zohar on 'betzilo chimadti veyashavti': a Jew longs to sit in the sukkah, the shade of emunah under the wings of the Shechinah. He brings that the sukkah carries the holiness of Eretz Yisrael and of the Beis HaMikdash, and reconciles the Midrash that reads the same passuk on the Beis HaMikdash.",
+     "en": "The Mashgiach opens with the Zohar on 'betzilo chimadti veyashavti': a Jew longs to sit in the sukkah, the shade of emunah under the wings of the Shechinah. He brings that the sukkah carries the holiness of Eretz Yisrael and of the Beis HaMikdash, and reconciles the Midrash that reads the same passuk on the Beis HaMikdash.",
      "yi": "דער משגיח עפנט מיטן זוהר אויף \"בצלו חמדתי וישבתי\": א איד בענקט צו זיצן אין סוכה, אינעם צילא דמהימנותא תחת כנפי השכינה. ער ברענגט אז די סוכה האט אין זיך קדושת ארץ ישראל און קדושת בית המקדש, און ער ווייזט אז דאס שטימט מיטן מדרש וואס טייטשט דעם זעלבן פסוק אויפן בית המקדש."
     },
     "kind": "intro",
@@ -855,7 +871,7 @@
      "yi": "יעקב אבינו, דער שורש פון די סוכה"
     },
     "summary": {
-     "en": "The Rav shows that the holiness of the sukkah comes from Yaakov Avinu, who made sukkos and to whom the Beis HaMikdash came in chutz la'aretz. He brings the Zohar that after his encounter with Esav Yaakov went to Sukkos, as Jews enter the sukkah after Yom Kippur, and the Zera Kodesh that the earthly sechach is a shadow of Hashem's heavenly sukkah.",
+     "en": "The Mashgiach shows that the holiness of the sukkah comes from Yaakov Avinu, who made sukkos and to whom the Beis HaMikdash came in chutz la'aretz. He brings the Zohar that after his encounter with Esav Yaakov went to Sukkos, as Jews enter the sukkah after Yom Kippur, and the Zera Kodesh that the earthly sechach is a shadow of Hashem's heavenly sukkah.",
      "yi": "דער משגיח ווייזט אז די קדושה פון די סוכה נעמט זיך פון יעקב אבינו, וואס האט געמאכט סוכות און צו וועמען דער בית המקדש איז געקומען אין חוץ לארץ. ער ברענגט דעם זוהר אז נאכן געשעפט מיט עשו איז יעקב געגאנגען קיין סוכות, אזוי ווי אידן גייען אריין אין סוכה נאך יום כיפור, און דעם זרע קודש אז דער סכך איז א שאטן פון דער הימלישער סוכה פונעם אייבערשטן."
     },
     "kind": "main",
@@ -875,7 +891,7 @@
      "yi": "סוכות, דער יום טוב פון ביטחון"
     },
     "summary": {
-     "en": "The Rav explains that each Yom Tov has a segulah one takes for the whole year: Rosh Hashanah yiras Shamayim, Yom Kippur teshuvah, Pesach emunah, Shavuos Torah and Sukkos bitachon. He contrasts a fortified house with a flimsy sukkah that rain can enter, and brings the Ramban that bitachon is a level above emunah.",
+     "en": "The Mashgiach explains that each Yom Tov has a segulah one takes for the whole year: Rosh Hashanah yiras Shamayim, Yom Kippur teshuvah, Pesach emunah, Shavuos Torah and Sukkos bitachon. He contrasts a fortified house with a flimsy sukkah that rain can enter, and brings the Ramban that bitachon is a level above emunah.",
      "yi": "דער משגיח ערקלערט אז יעדער יום טוב האט א סגולה וואס מ'נעמט מיט אויפן גאנצן יאר: ראש השנה יראת שמים, יום כיפור תשובה, פסח אמונה, שבועות תורה, און סוכות ביטחון. ער שטעלט אקעגן א פארפעסטיגטע שטוב מיט א שוואכער סוכה וואס עס קען אריינרעגענען, און ברענגט דעם רמב\"ן אז ביטחון איז א מדריגה העכער פון אמונה."
     },
     "kind": "main",
@@ -895,7 +911,7 @@
      "yi": "די סוכה אלס דירה, און רעגן די ערשטע נאכט"
     },
     "summary": {
-     "en": "The Rav brings the dispute of Rabbi Eliezer and Rabbi Akiva on whether the sukkos were clouds of glory or actual huts, and the Bach's reason why the Tur and Shulchan Aruch follow Rabbi Eliezer. He then asks why the Rambam limits the bad sign of rain to the first night, and answers with the Divrei Chaim that the sukkah is one's address: the first meal establishes it, and later rain is only like a leak in the roof.",
+     "en": "The Mashgiach brings the dispute of Rabbi Eliezer and Rabbi Akiva on whether the sukkos were clouds of glory or actual huts, and the Bach's reason why the Tur and Shulchan Aruch follow Rabbi Eliezer. He then asks why the Rambam limits the bad sign of rain to the first night, and answers with the Divrei Chaim that the sukkah is one's address: the first meal establishes it, and later rain is only like a leak in the roof.",
      "yi": "דער משגיח ברענגט די מחלוקת פון רבי אליעזר און רבי עקיבא צי די סוכות זענען געווען ענני כבוד אדער סוכות ממש, און דעם ב\"ח פארוואס דער טור און שולחן ערוך פסקנען ווי רבי אליעזר. דערנאך פרעגט ער פארוואס דער רמב\"ם זאגט אז דער סימן פון רעגן איז נאר די ערשטע נאכט, און ענטפערט מיטן דברי חיים אז די סוכה איז דער מענטשנס אדרעס: די ערשטע סעודה איז קובע די דירה, און א רעגן שפעטער איז נאר ווי א לעק אין דאך."
     },
     "kind": "main",
@@ -915,7 +931,7 @@
      "yi": "דער רוקח: סוכות ביי דער מלחמה מיט סיחון ועוג"
     },
     "summary": {
-     "en": "The Rav brings the Rokeach that Rabbi Akiva's 'actual sukkos' were the huts the Jews lived in during the war with Sichon and Og, and asks what that minor detail has to do with the miracle of the Exodus. He answers that both Tannaim agree the miracle was the protection of the clouds of glory; Rabbi Akiva adds that this protection went out with them to war, so instead of digging trenches they sat in flimsy sukkos.",
+     "en": "The Mashgiach brings the Rokeach that Rabbi Akiva's 'actual sukkos' were the huts the Jews lived in during the war with Sichon and Og, and asks what that minor detail has to do with the miracle of the Exodus. He answers that both Tannaim agree the miracle was the protection of the clouds of glory; Rabbi Akiva adds that this protection went out with them to war, so instead of digging trenches they sat in flimsy sukkos.",
      "yi": "דער משגיח ברענגט דעם רוקח אז די \"סוכות ממש\" פון רבי עקיבא זענען די סוכות וואו אידן האבן געוואוינט ביי דער מלחמה מיט סיחון ועוג, און פרעגט וואס פאר א שייכות האט אזא קליינער פרט מיטן נס פון יציאת מצרים. ער ענטפערט אז ביידע תנאים זענען מודה אז דער נס איז די הגנה פון די ענני כבוד; רבי עקיבא לייגט צו אז די הגנה איז מיטגעגאנגען מיט זיי אין מלחמה, און דערפאר האבן זיי נישט געגראבן קיין גריבער נאר געזעסן אין שוואכע סוכות."
     },
     "kind": "main",
@@ -935,7 +951,7 @@
      "yi": "תיבה, משכן און סוכה: קדושה מיט מדידות"
     },
     "summary": {
-     "en": "The Rav notes that the Torah gives measurements in three places: Noach's teivah, the Mishkan and the sukkah. Measurement belongs to the lowest level, and a lofty light can only be drawn into this world through it; the teivah lifted Noach out of the world under the decree, and so the sukkah's walls and sechach lift a Jew to where a harsh decree does not apply. He connects 'ki yitzpeneni besukko' to the teivah and explains why sleeping is central to dwelling in the sukkah.",
+     "en": "The Mashgiach notes that the Torah gives measurements in three places: Noach's teivah, the Mishkan and the sukkah. Measurement belongs to the lowest level, and a lofty light can only be drawn into this world through it; the teivah lifted Noach out of the world under the decree, and so the sukkah's walls and sechach lift a Jew to where a harsh decree does not apply. He connects 'ki yitzpeneni besukko' to the teivah and explains why sleeping is central to dwelling in the sukkah.",
      "yi": "דער משגיח מערקט אן אז די תורה גיט מדידות אין דריי ערטער: ביי דער תיבה פון נח, ביים משכן און ביי די סוכה. א חשבון געהערט צו דער נידריגסטער מדריגה, און א הויכע ליכטיגקייט קען מען נאר ממשיך זיין אויף דער וועלט דורך א חשבון; די תיבה האט ארויסגעהויבן נח פון דער וועלט וואס די גזירה איז געווען אויף איר, און אזוי הייבן די מחיצות און דער סכך פון די סוכה א איד צו אן ארט וואו קיין גזירה איז נישט חל. ער בינדט \"כי יצפנני בסכה\" מיט דער תיבה און ערקלערט פארוואס שלאפן איז דער עיקר פון וואוינען אין סוכה."
     },
     "kind": "main",
@@ -955,7 +971,7 @@
      "yi": "חזקיהו המלך שלאפט: ביטחון אין סוכה"
     },
     "summary": {
-     "en": "The Rav tells how Chizkiyahu went to sleep while Sanheriv's huge army besieged Yerushalayim, and that night the army was destroyed; his greatness was that he could sleep. From here he explains that one sits in the sukkah with calm and security so that one can sleep there, and that this bitachon is Yaakov Avinu's gift.",
+     "en": "The Mashgiach tells how Chizkiyahu went to sleep while Sanheriv's huge army besieged Yerushalayim, and that night the army was destroyed; his greatness was that he could sleep. From here he explains that one sits in the sukkah with calm and security so that one can sleep there, and that this bitachon is Yaakov Avinu's gift.",
      "yi": "דער משגיח דערציילט ווי חזקיהו המלך האט זיך געלייגט שלאפן בשעת סנחריבס ריזיגע ארמיי האט באלאגערט ירושלים, און יענע נאכט איז די ארמיי אומגעקומען; זיין גבורה איז געווען אז ער האט געקענט שלאפן. פון דעם ערקלערט ער אז מ'זיצט אין סוכה מיט רואיגקייט און פארזיכערונג אז מ'זאל דארט קענען שלאפן, און אז דער ביטחון איז די מתנה פון יעקב אבינו."
     },
     "kind": "main",
@@ -975,7 +991,7 @@
      "yi": "לולב און אתרוג: אריינברענגען דאס ליכט פון סוכה"
     },
     "summary": {
-     "en": "The Rav brings from the Arizal that the light of the sukkah is a makif, too lofty to enter a person, and that taking the lulav and esrog in the sukkah and bringing them to the heart draws it inward. He connects this to Rabban Yochanan ben Zakai's enactment to take the lulav all seven days as a remembrance of the Mikdash, since the sukkah carries the Mikdash's holiness.",
+     "en": "The Mashgiach brings from the Arizal that the light of the sukkah is a makif, too lofty to enter a person, and that taking the lulav and esrog in the sukkah and bringing them to the heart draws it inward. He connects this to Rabban Yochanan ben Zakai's enactment to take the lulav all seven days as a remembrance of the Mikdash, since the sukkah carries the Mikdash's holiness.",
      "yi": "דער משגיח ברענגט פונעם אריז\"ל אז דאס ליכט פון די סוכה איז א מקיף, צו הויך אז עס זאל אריינגיין אינעם מענטש, און אז מיט נעמען דעם לולב און אתרוג אין סוכה און עס צוברענגען צום הארץ ווערט עס א פנימי. ער בינדט דאס מיט דער תקנה פון רבן יוחנן בן זכאי צו נעמען דעם לולב אלע זיבן טעג זכר למקדש, ווייל די סוכה האט אין זיך קדושת המקדש."
     },
     "kind": "main",
@@ -995,7 +1011,7 @@
      "yi": "דער ביטחון פון יעקב און א הגנה פאר אלע דורות"
     },
     "summary": {
-     "en": "The Rav brings pesukim showing that bitachon belongs to Yaakov and that the sukkah is Yaakov's inheritance to his children. According to Rabbi Akiva the sukkah's protection moves from place to place and so from time to time, for the whole year and all generations, as in Hashkiveinu. He describes the Jewish people surrounded by enemies, especially in Eretz Yisrael, kept safe by open miracles every day.",
+     "en": "The Mashgiach brings pesukim showing that bitachon belongs to Yaakov and that the sukkah is Yaakov's inheritance to his children. According to Rabbi Akiva the sukkah's protection moves from place to place and so from time to time, for the whole year and all generations, as in Hashkiveinu. He describes the Jewish people surrounded by enemies, especially in Eretz Yisrael, kept safe by open miracles every day.",
      "yi": "דער משגיח ברענגט פסוקים וואס ווייזן אז ביטחון געהערט צו יעקב, און אז די סוכה איז די נחלה פון יעקב פאר זיינע קינדער. לויט רבי עקיבא רוקט זיך די הגנה פון די סוכה פון מקום אל מקום, און ממילא אויך פון זמן אל זמן, אויפן גאנצן יאר און אויף אלע דורות, אזוי ווי אין השכיבנו. ער שילדערט ווי אידן זענען ארומגערינגלט מיט שונאים, בפרט אין ארץ ישראל, און ווערן באשיצט מיט נסים גלויים יעדן טאג."
     },
     "kind": "main",
@@ -1015,7 +1031,7 @@
      "yi": "די סוכה באשיצט די גאנצע וועלט; ביטחון ברענגט שמחה"
     },
     "summary": {
-     "en": "The Rav explains that a Jew's mitzvos affect all of creation, as washing negel vasser removes impurity from the whole world, so a Jew who exerts himself for the mitzvah of sukkah may protect thousands in Eretz Yisrael. He then asks why Sukkos is the time of joy and answers that simcha comes from bitachon: one who knows Hashem is his insurance can rejoice.",
+     "en": "The Mashgiach explains that a Jew's mitzvos affect all of creation, as washing negel vasser removes impurity from the whole world, so a Jew who exerts himself for the mitzvah of sukkah may protect thousands in Eretz Yisrael. He then asks why Sukkos is the time of joy and answers that simcha comes from bitachon: one who knows Hashem is his insurance can rejoice.",
      "yi": "דער משגיח ערקלערט אז די מצוות פון א איד ווירקן אויף דער גאנצער בריאה, אזוי ווי נעגל וואסער נעמט אראפ די טומאה פון דער גאנצער וועלט, און ממילא קען א איד וואס שטרענגט זיך אן מיט מצות סוכה באשיצן טויזנטער אידן אין ארץ ישראל. דערנאך פרעגט ער פארוואס סוכות איז זמן שמחתנו, און ענטפערט אז שמחה נעמט זיך פון ביטחון: ווער עס ווייסט אז דער רבונו של עולם איז זיין אינשורענס קען זיך פרייען."
     },
     "kind": "main",
@@ -1035,7 +1051,7 @@
      "yi": "שמחה און סומך; עצבות און עזוב"
     },
     "summary": {
-     "en": "The Rav brings the approach that similar-sounding words are related: simcha is linked to somech, having something firm to lean on, while atzvus comes from azuv, being forsaken. He then describes Yaakov as the middle bar that runs through all levels, and says that while there are lofty levels of bitachon, every Jew can climb gradually to some measure of it.",
+     "en": "The Mashgiach brings the approach that similar-sounding words are related: simcha is linked to somech, having something firm to lean on, while atzvus comes from azuv, being forsaken. He then describes Yaakov as the middle bar that runs through all levels, and says that while there are lofty levels of bitachon, every Jew can climb gradually to some measure of it.",
      "yi": "דער משגיח ברענגט די שיטה אז ווערטער וואס קלינגען ענליך האבן א שייכות: שמחה איז פארבונדן מיט סומך, האבן אויף וואס זיך אנצושפארן, און עצבות נעמט זיך פון עזוב, פארלאזט. דערנאך שילדערט ער יעקב אלס דעם בריח התיכון וואס גייט דורך אלע מדריגות, און זאגט אז כאטש ס'איז דא הויכע מדריגות אין ביטחון, קען יעדער איד ביסלעכווייז צוקומען צו א שטיקל ביטחון."
     },
     "kind": "main",
@@ -1055,7 +1071,7 @@
      "yi": "ביטחון למעשה: דאווענען, אויגן און דער טעלעפאן"
     },
     "summary": {
-     "en": "The Rav gives concrete applications of bitachon: not rushing davening for business but davening with a minyan that davens with chayus even if it means arriving later; not being curious in the street; and not interrupting a learning seder or a seudah for a telephone call that might bring business. He brings the Be'er Mayim Chaim on one who runs after parnassah.",
+     "en": "The Mashgiach gives concrete applications of bitachon: not rushing davening for business but davening with a minyan that davens with chayus even if it means arriving later; not being curious in the street; and not interrupting a learning seder or a seudah for a telephone call that might bring business. He brings the Be'er Mayim Chaim on one who runs after parnassah.",
      "yi": "דער משגיח גיט קאנקרעטע אנווייזונגען אין ביטחון: נישט לויפן ביים דאווענען צוליב געשעפט, נאר דאווענען מיט א מנין וואס דאווענט מיט חיות, אפילו מ'קומט שפעטער; נישט זיין נייגעריג אין גאס; און נישט איבעררייסן א סדר פון לערנען אדער א סעודה צוליב א טעלעפאן וואס קען ברענגען א געשעפט. ער ברענגט דעם באר מים חיים אויף איינעם וואס לויפט נאך פרנסה."
     },
     "kind": "main",
@@ -1075,7 +1091,7 @@
      "yi": "די סוכה אלס ארץ ישראל: מ'דן איבער דעם דין"
     },
     "summary": {
-     "en": "The Rav notes that the Gemara puts the sealing of judgment on Yom Kippur, while the Zohar extends it to Shemini Atzeres and sefarim in the name of the Arizal until Chanukah. He explains this with the Gemara in Makkos that one who flees to Eretz Yisrael has his judgment reopened in its merit: entering the sukkah is entering Eretz Yisrael and the Mikdash, so the judgment is heard anew.",
+     "en": "The Mashgiach notes that the Gemara puts the sealing of judgment on Yom Kippur, while the Zohar extends it to Shemini Atzeres and sefarim in the name of the Arizal until Chanukah. He explains this with the Gemara in Makkos that one who flees to Eretz Yisrael has his judgment reopened in its merit: entering the sukkah is entering Eretz Yisrael and the Mikdash, so the judgment is heard anew.",
      "yi": "דער משגיח מערקט אן אז די גמרא שטעלט די חתימה יום כיפור, דער זוהר ציט עס ביז שמיני עצרת, און ספרים בשם דעם אריז\"ל ביז חנוכה. ער ערקלערט דאס מיט דער גמרא אין מכות אז ווער עס אנטלויפט קיין ארץ ישראל, דן מען איבער זיין דין צוליב דעם זכות פון ארץ ישראל: אריינגיין אין סוכה איז אריינגיין אין ארץ ישראל און אין מקדש, און ממילא ווערט דער דין פון ניי געדן."
     },
     "kind": "main",
@@ -1095,7 +1111,7 @@
      "yi": "זמן שמחתנו: רוח הקודש, חסדים און שמחה"
     },
     "summary": {
-     "en": "The Rav closes that on Sukkos one draws emunah, bitachon and ruach hakodesh, which he explains with the Divrei Chaim as being aimed at the truth of Torah. He calls for taking simcha and bitachon for the whole year, davening with a minyan that davens with feeling, and brings from the Arizal that Sukkos draws chassadim that sweeten the judgments, ending with a tefillah that Hashem rejoice with His people.",
+     "en": "The Mashgiach closes that on Sukkos one draws emunah, bitachon and ruach hakodesh, which he explains with the Divrei Chaim as being aimed at the truth of Torah. He calls for taking simcha and bitachon for the whole year, davening with a minyan that davens with feeling, and brings from the Arizal that Sukkos draws chassadim that sweeten the judgments, ending with a tefillah that Hashem rejoice with His people.",
      "yi": "דער משגיח ענדיגט אז סוכות שעפט מען אמונה, ביטחון און רוח הקודש, וואס ער ערקלערט מיטן דברי חיים אז דאס מיינט מכוון זיין לאמיתה של תורה. ער רופט צו מיטנעמען שמחה און ביטחון אויפן גאנצן יאר און דאווענען מיט א מנין וואס דאווענט מיט א געשמאק, און ברענגט פונעם אריז\"ל אז סוכות ווערן ממשיך חסדים וואס זענען ממתיק די גבורות, און ענדיגט מיט א תפילה אז דער אייבערשטער זאל זיך פרייען מיט אידן."
     },
     "kind": "closing",
@@ -1760,7 +1776,7 @@
    {
     "id": "yi-zmanim-svkvs-08~tk0",
     "text": {
-     "en": "The Rav says one should have in mind, while sitting in the sukkah, that one is sitting in the shade of emunah under the wings of the Shechinah.",
+     "en": "The Mashgiach says one should have in mind, while sitting in the sukkah, that one is sitting in the shade of emunah under the wings of the Shechinah.",
      "yi": "דער משגיח זאגט אז בשעת מ'זיצט אין סוכה דארף מען טראכטן אז מ'זיצט אינעם צילא דמהימנותא, תחת כנפי השכינה."
     },
     "t": 528.57,
@@ -1769,7 +1785,7 @@
    {
     "id": "yi-zmanim-svkvs-08~tk1",
     "text": {
-     "en": "The Rav says Jews today should strengthen themselves in the mitzvah of sukkah to bring protection to their brethren wherever they are.",
+     "en": "The Mashgiach says Jews today should strengthen themselves in the mitzvah of sukkah to bring protection to their brethren wherever they are.",
      "yi": "דער משגיח זאגט אז אידן היינט דארפן זיך אנשטרענגען מיט מצות סוכה כדי צוצושטעלן הגנה פאר אונזערע ברידער וואו זיי זענען."
     },
     "t": 3283.64,
@@ -1778,7 +1794,7 @@
    {
     "id": "yi-zmanim-svkvs-08~tk2",
     "text": {
-     "en": "The Rav says not to rush davening for business, but to daven with a minyan that davens with chayus even if one arrives later, trusting that what is destined will come.",
+     "en": "The Mashgiach says not to rush davening for business, but to daven with a minyan that davens with chayus even if one arrives later, trusting that what is destined will come.",
      "yi": "דער משגיח זאגט מ'זאל נישט לויפן ביים דאווענען צוליב געשעפט, נאר דאווענען מיט א מנין וואס דאווענט מיט חיות, אפילו מ'קומט שפעטער, מיט ביטחון אז וואס איז באשערט וועט מען באקומען."
     },
     "t": 3622.85,
@@ -1787,7 +1803,7 @@
    {
     "id": "yi-zmanim-svkvs-08~tk3",
     "text": {
-     "en": "The Rav says not to be curious about what one passes in the street, trusting that whatever one truly needs to know Hashem will provide.",
+     "en": "The Mashgiach says not to be curious about what one passes in the street, trusting that whatever one truly needs to know Hashem will provide.",
      "yi": "דער משגיח זאגט מ'זאל נישט זיין נייגעריג אויף וואס מ'זעט אין גאס, מיט ביטחון אז וואס מ'דארף באמת וויסן וועט דער אייבערשטער צושטעלן."
     },
     "t": 3713.59,
@@ -1796,7 +1812,7 @@
    {
     "id": "yi-zmanim-svkvs-08~tk4",
     "text": {
-     "en": "The Rav says not to interrupt a learning seder or a seudah for a telephone call that might bring business; Hashem will provide greater earnings.",
+     "en": "The Mashgiach says not to interrupt a learning seder or a seudah for a telephone call that might bring business; Hashem will provide greater earnings.",
      "yi": "דער משגיח זאגט מ'זאל נישט איבעררייסן א סדר פון לערנען אדער א סעודה צוליב א טעלעפאן וואס קען ברענגען א געשעפט; דער אייבערשטער וועט צושטעלן א גרעסערע פארדינסט."
     },
     "t": 3784.99,
@@ -1891,185 +1907,11 @@
      "yi": "חזקיהו המלך שלאפט ביי סנחריבס באלאגערונג"
     },
     "retelling": {
-     "en": "Sanheriv surrounded Yerushalayim with an army so vast that he boasted each soldier could throw one stone and bury the city. Yeshayahu told Chizkiyahu not to worry. It was the night of Pesach, and after midnight Chizkiyahu went to sleep; that night the army was destroyed. The Rav says Chazal apply 'ani shachavti va'ishana' to this, and that Chizkiyahu's strength was that he could sleep, unlike a person who cannot sleep because tomorrow he must pay the rent.",
+     "en": "Sanheriv surrounded Yerushalayim with an army so vast that he boasted each soldier could throw one stone and bury the city. Yeshayahu told Chizkiyahu not to worry. It was the night of Pesach, and after midnight Chizkiyahu went to sleep; that night the army was destroyed. The Mashgiach says Chazal apply 'ani shachavti va'ishana' to this, and that Chizkiyahu's strength was that he could sleep, unlike a person who cannot sleep because tomorrow he must pay the rent.",
      "yi": "סנחריב האט ארומגערינגלט ירושלים מיט אזא ריזיגע ארמיי אז ער האט זיך באריימט אז יעדער סאלדאט וועט ווארפן איין שטיינדל און ירושלים וועט ווערן באגראבן. ישעיהו הנביא האט געזאגט צו חזקיהו המלך ער זאל זיך נישט זארגן. ס'איז געווען פסח ביינאכט, און נאך חצות האט חזקיהו זיך געלייגט שלאפן; יענע נאכט איז די ארמיי אומגעקומען. דער משגיח זאגט אז חז\"ל זאגן דערויף \"אני שכבתי ואישנה\", און אז די גבורה פון חזקיהו איז געווען אז ער האט געקענט שלאפן, נישט ווי א מענטש וואס קען נישט שלאפן ווייל מארגן דארף ער באצאלן רענט."
     },
-    "people": [
-     "Chizkiyahu",
-     "Sanheriv",
-     "Yeshayahu"
-    ],
-    "peopleKeys": [
-     "chizkiyahu-hamelech",
-     "sancheriv",
-     "yeshayahu-hanavi"
-    ],
     "t": 2332.37,
     "end": 2423.27
-   }
-  ],
-  "people": [
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Rebbe Shalom of Belz",
-    "key": "rabbi-shalom-of-belz"
-   },
-   {
-    "name": "Rebbe Pinchas of Koretz",
-    "key": "rebbe-pinchas-of-koretz"
-   },
-   {
-    "name": "the Ropshitzer (Zera Kodesh)",
-    "key": "rabbi-naftali-of-ropshitz"
-   },
-   {
-    "name": "Rabbi Akiva",
-    "key": "rabbi-akiva"
-   },
-   {
-    "name": "Rabbi Eliezer",
-    "key": "rabbi-eliezer"
-   },
-   {
-    "name": "Rabbi Yehoshua",
-    "key": "rabbi-yehoshua"
-   },
-   {
-    "name": "Onkelos",
-    "key": "onkelos"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Ramban",
-    "key": "ramban"
-   },
-   {
-    "name": "the Bach",
-    "key": "bach"
-   },
-   {
-    "name": "the Divrei Chaim",
-    "key": "sanzer-rav"
-   },
-   {
-    "name": "the Rokeach",
-    "key": "rokeach"
-   },
-   {
-    "name": "Noach",
-    "key": "noach"
-   },
-   {
-    "name": "Chizkiyahu",
-    "key": "chizkiyahu-hamelech"
-   },
-   {
-    "name": "Sanheriv",
-    "key": "sancheriv"
-   },
-   {
-    "name": "Yeshayahu",
-    "key": "yeshayahu-hanavi"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Rabban Yochanan ben Zakai",
-    "key": "rabban-yochanan-ben-zakkai"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   },
-   {
-    "name": "Aharon",
-    "key": "aharon-hakohen"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "צילא דמהימנותא",
-    "key": "tzyla-dmhymnvsa-08221a"
-   },
-   {
-    "he": "כנפי השכינה",
-    "key": "knpy-hshkynh-619868"
-   },
-   {
-    "he": "ביטחון",
-    "key": "btchvn-032372"
-   },
-   {
-    "he": "ענני כבוד",
-    "key": "enny-kbvd-43c6c6"
-   },
-   {
-    "he": "קפיצת הדרך",
-    "key": "kpytzs-hdrk-b1e456"
-   },
-   {
-    "he": "תשבו כעין תדורו",
-    "key": "sshbv-keyn-sdvrv-7cd63d"
-   },
-   {
-    "he": "סכך",
-    "key": "skk-a202ae"
-   },
-   {
-    "he": "מקיף",
-    "key": "mkyf-5a0cf5"
-   },
-   {
-    "he": "פנימי",
-    "key": "pnymy-7613d6"
-   },
-   {
-    "he": "זכר למקדש",
-    "key": "zkr-lmkdsh-d151cb"
-   },
-   {
-    "he": "שמיני עצרת",
-    "key": "shmyny-etzrs-7c7ac8"
-   },
-   {
-    "he": "גמר חתימה",
-    "key": "gmr-chsymh-5bd4ca"
-   },
-   {
-    "he": "שמחת בית השואבה",
-    "key": "shmchs-bys-hshvabh-33f108"
-   },
-   {
-    "he": "רוח הקודש",
-    "key": "rvch-hkvdsh-1fd584"
-   },
-   {
-    "he": "עצבות",
-    "key": "etzbvs-c44877"
-   },
-   {
-    "he": "תיבה",
-    "key": "sybh-210ce3"
-   },
-   {
-    "he": "מחיצות",
-    "key": "mchytzvs-63aea3"
    }
   ],
   "writeupLangs": [

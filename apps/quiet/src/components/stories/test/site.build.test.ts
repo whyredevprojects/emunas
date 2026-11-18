@@ -139,6 +139,28 @@ describe("C2.3 stories on the real corpus", () => {
     }
   });
 
+  it("prints only corpus entities' display names as story people, each marked for the guard (C3.1)", () => {
+    const stories = readJson<LayerStoriesFile>(join(corpus, "layer", "stories.json")).stories;
+    const people = readJson<LayerPeopleFile>(join(corpus, "layer", "people.json")).people;
+    const concepts = readJson<{ concepts: { label: { en: string; yi: string }; canonicalHe: string }[] }>(join(corpus, "layer", "concepts.json")).concepts;
+    const display = new Set<string>([
+      ...people.flatMap((p) => [p.nameEn, p.nameHe, p.nameYi, ...(p.aliases ?? [])]),
+      ...concepts.flatMap((c) => [c.label.en, c.label.yi, c.canonicalHe]),
+    ].filter((x): x is string => typeof x === "string" && x !== "").map(esc));
+    // The layer itself: a plain name is always some entity's display name.
+    for (const s of stories) for (const p of s.people) if ("name" in p) expect(display.has(esc(p.name)), `${s.id}`).toBe(true);
+    let checked = 0;
+    for (const ed of EDS) {
+      for (const s of stories.filter((x) => x.pages.quiet)) {
+        for (const m of mainOf(page(`${ed}/stories/${s.id}`)).matchAll(/<bdi[^>]*\sdata-story-person[^>]*>([^<]*)<\/bdi>/g)) {
+          checked++;
+          expect(display.has(m[1]!), `${ed}/stories/${s.id}`).toBe(true);
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(100);
+  });
+
   it("lists every story with a telling, each anchored once, under the index label", () => {
     const stories = readJson<LayerStoriesFile>(join(corpus, "layer", "stories.json")).stories;
     for (const ed of EDS) {
@@ -198,7 +220,7 @@ describe("C2.3 stories on the real corpus", () => {
             const row = rows.get(decodeURIComponent(shiur[2]!));
             if (!row) bad("unknown shiur");
             else if (frag !== undefined) {
-              const t = /^t=(\d+)$/.exec(frag);
+              const t = /^t=(\d+(?:\.\d+)?)$/.exec(frag);
               const s = /^s(\d+)$/.exec(frag);
               if (t) {
                 if (Number(t[1]) > Math.ceil(row.duration)) bad("time beyond the shiur");

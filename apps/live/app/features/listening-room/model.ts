@@ -1,6 +1,7 @@
 /**
  * Pure helpers of the listening room (no React, no DOM): deep links (`?t=` and `&m=`), moment lookup,
- * clickable catalog topics, the active write-up paragraph, source grouping and Sefaria links.
+ * clickable catalog topics, the active write-up paragraph and Sefaria links (source grouping by merged
+ * work is in `corpus.ts`).
  */
 import type { PublicSource, PublicWriteupBlock, SectionKind } from "@emunas/corpus/public";
 import { parseMomentId } from "@emunas/links";
@@ -17,17 +18,19 @@ export interface TimeSpan {
 }
 
 /**
- * Seconds from a `?t=` value: a non-negative number (`754`, `754.5`). `h/m/s` forms (`12m34s`) are
- * accepted too because people type them. Anything else is null.
+ * Seconds from a `?t=` value: a non-negative number (`754`, `582.12`), kept to the millisecond like
+ * Quiet's `#t=`. `h/m/s` forms (`12m34s`) are accepted too because people type them. Anything else
+ * is null.
  */
 export function parseTimeParam(raw: string | null): number | null {
   if (raw === null) return null;
   const v = raw.trim();
-  if (/^\d+(?:\.\d+)?$/.test(v)) return Number(v);
+  const ms = (x: number) => Math.round(x * 1000) / 1000;
+  if (/^\d+(?:\.\d+)?$/.test(v)) return ms(Number(v));
   const m = /^(?:(\d+)h)?(?:(\d+)m)?(?:(\d+(?:\.\d+)?)s)?$/.exec(v);
   if (!m || v === "") return null;
   const [, h, min, s] = m;
-  return Number(h ?? 0) * 3600 + Number(min ?? 0) * 60 + Number(s ?? 0);
+  return ms(Number(h ?? 0) * 3600 + Number(min ?? 0) * 60 + Number(s ?? 0));
 }
 
 /** The time span of a moment of this shiur by id (`<shiurId>~<kind><n>`), null when unknown or untimed. */
@@ -121,29 +124,6 @@ export function chapterAt(chapters: readonly { t: number }[], t: number): number
     else break;
   }
   return found;
-}
-
-export interface SourceGroup {
-  /** `workKey` (or the work's name, or "" for unnamed). */
-  key: string;
-  work: string | null;
-  sources: PublicSource[];
-}
-
-/** Sources in order of first appearance, grouped by work (concept-live §5.3 Sources tab). */
-export function groupSources(sources: readonly PublicSource[]): SourceGroup[] {
-  const byKey = new Map<string, SourceGroup>();
-  const ordered = [...sources].sort((a, b) => (a.t ?? Infinity) - (b.t ?? Infinity) || a.idx - b.idx);
-  for (const s of ordered) {
-    const key = s.workKey ?? s.work ?? "";
-    let g = byKey.get(key);
-    if (!g) {
-      g = { key, work: s.work, sources: [] };
-      byKey.set(key, g);
-    }
-    g.sources.push(s);
-  }
-  return [...byKey.values()];
 }
 
 /**

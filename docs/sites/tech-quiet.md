@@ -1,6 +1,6 @@
 # Technical plan — Concept A "Quiet" (the catalog as a sefer)
 
-> **Superseded in part by `docs/sites/integration-plan.md` (2026-11-15), which wins on conflict.** Corrections that apply here: the data stage is the shared `corpus:build` CLI writing `.corpus/` (not `apps/quiet/scripts/build-data.ts` reading `data/`); `packages/corpus-maps` is merged into `packages/normalize`; status values are `full`/`catalog-only`; public times are global seconds (`toLocal` builds the `/audio/{rec}.mp3#t=` links); the verbatim guard reports at 12 and auto-suppresses at 20 tokens; eligibility lives in `site-policy/transcript-eligibility.json`; audio uses the shared `@emunas/audio` handler; the hostname is the apex `<domain>`. See integration-plan §1.4 (C1–C21).
+> **Superseded in part by `docs/sites/integration-plan.md` (2026-11-15), which wins on conflict.** Corrections that apply here: the data stage is the shared `corpus:build` CLI writing `.corpus/` (not `apps/quiet/scripts/build-data.ts` reading `data/`); `packages/corpus-maps` is merged into `packages/normalize`; status values are `full`/`catalog-only`; public times are global seconds (`toLocal` builds the `/audio/{rec}.mp3#t=` links); the verbatim guard reports at 12 and auto-suppresses at 20 tokens; eligibility lives in `site-policy/transcript-eligibility.json`; audio uses the shared `@emunas/audio` handler; the hostname is `library.<domain>` (the apex is the home site). See integration-plan §1.4 (C1–C21).
 
 Status: implementation plan, nothing built. Companion to `docs/sites/concept-quiet.md`. Site code lives in `apps/quiet/` and `packages/*`. It never writes to `data/`, `scripts/` or `src/`; it only reads `data/` and imports types from `src/types.ts`.
 
@@ -24,7 +24,7 @@ Verified against the repo on 15 Nov 2026: 997 in-scope shiurim in `data/derived/
 |---|---|---|
 | Language | TypeScript, `strict: true`, `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes` | The data has a lot of optional and nullable fields (`work`, `ref`, `recordingId?`); these flags make them visible. |
 | Site framework | **Astro** (current major at start, exact version pinned), `output: "static"` | Zero JS by default, `.astro` components are close to plain HTML, and `getStaticPaths` fits 997 × 2 pages. No UI framework runtime (no React, no Preact). |
-| Client scripts | Vanilla TS modules bundled by Astro/Vite, attached with `<script>` and progressive enhancement | Only the player (§7) and search (§5) run any script. The page works without either. |
+| Client scripts | Vanilla TS modules bundled by Astro/Vite, attached with `<script>` and progressive enhancement | The player (§7), search (§5), the edition switch and "this week" on the title page run script. Every page works without it. |
 | Styling | One hand-written CSS system: custom properties for tokens, **logical properties only** (`margin-inline-start`, `inset-inline-end`), `@layer` for base/layout/components/print; Stylelint with a logical-properties rule | RTL and LTR from the same CSS. No Tailwind, so print and RTL behave predictably. |
 | Fonts | Self-hosted woff2, subset at build time with `fonttools`/`glyphhanger`: a Hebrew text face (candidate: Frank Ruhl Libre, OFL) and a Latin book face (candidate: Source Serif 4, OFL) | Concept rule: no third-party resources. Yiddish needs U+05F0–U+05F2 (װ ױ ײ), U+FB1D–FB4F and nikud. A test checks that coverage (§11). |
 | i18n | Two editions as a route parameter `[ed]` ∈ {`yi`,`en`}, typed string tables `src/i18n/yi.ts` and `en.ts` sharing one `UiKey` union (a missing key fails `tsc`); `<html lang dir>` set per edition | Astro's i18n routing isn't needed. The two editions have identical structure (concept §8). |
@@ -55,9 +55,9 @@ All slugs are ASCII and stable, built from ids that exist before any AI data. Tr
 | `/{ed}/calendar/zman/` and `/{ed}/calendar/zman/{zmanKey}/` | By zman, from Elul | `zmanKey` (normalised) |
 | `/{ed}/years/` and `/{ed}/years/{5743}/`, `/{ed}/years/unknown/` | Year index, partial and says so | `hebrewYears` |
 | `/{ed}/sources/` and `/{ed}/sources/{workKey}/` | Sources by sefer, in traditional order | notes |
-| `/{ed}/stories/` | Stories grouped by person (one page, jump list) | notes |
-| `/{ed}/people/` and `/{ed}/people/{personKey}/` | People | notes |
-| `/{ed}/inyanim/` and `/{ed}/inyanim/{conceptKey}/` | Concepts (Hebrew headwords) | notes |
+| `/{ed}/stories/` | Stories grouped by person (one page, jump list) | corpus layer (`stories.json`) |
+| `/{ed}/people/` and `/{ed}/people/{personKey}/` | People | corpus layer (`people.json`, shiur refs) |
+| `/{ed}/inyanim/` and `/{ed}/inyanim/{conceptKey}/` | Concepts (Hebrew headwords) | corpus layer (`concepts.json`, shiur refs) |
 | `/{ed}/search/` | Search (Pagefind); without JS it shows the index links | search index |
 | `/{ed}/about/` | About (human-written text, placeholder until supplied) | static |
 | `/audio/{recordingId}.mp3` | Audio (Worker, Range); `?download=1` adds `attachment` | public audio bucket |
@@ -96,7 +96,7 @@ The data root is configurable (`EMUNAS_DATA_DIR`, default `<repo>/data`) so test
 2. **Per shiur** (in-scope only): decide `notesStatus` (§0.5); load meta/extraction/writeup; validate with valibot; on failure set `pending` and add a report entry.
 3. **Project** to `PublicShiur` (§3.3) with the allow-list. Drop items with confidence < 0.6. Drop sources with `resolution: "unresolved"` and `work: null`. **Remap `writeup.paragraphs[].sourceIdx`** to the filtered source list (the indexes point into the unfiltered `extraction.sources[]`).
 4. **Resolve times**: `evidence.segs[0]` → `meta.recordings[rec].starts[seg]`. `rec` is `evidence.recordingId`, else the paragraph's section `recordingId`, else the shiur's only recording. Sections use `starts[startSeg]` / `ends[endSeg]`. An out-of-range index drops the time (the item stays) and logs a warning. A section whose time can't be resolved makes the whole shiur pending.
-5. **Normalise** with `packages/corpus-maps`: `parshaKey`, `zmanKey` (+ seudah sub-heading), `workKey` + traditional order, `personKey`, `conceptKey`, Hebrew year strings. An unmapped value never fails the build. It goes to the report and falls into an "other" bucket.
+5. **Normalise** with `packages/corpus-maps`: `parshaKey`, `zmanKey` (+ seudah sub-heading), `workKey` + traditional order, Hebrew year strings (people and concepts are not keyed from the notes: their ids come from the corpus layer). An unmapped value never fails the build. It goes to the report and falls into an "other" bucket.
 6. **Aggregate** the indexes: calendar, years, sources (work → ref → [shiur, time]), stories by person, people, concepts, catalog neighbours, series prev/next, coverage counts.
 7. **Emit** `apps/quiet/.generated/` (git-ignored):
    - `corpus/shiur/<id>.json`, one `PublicShiur` per file (pages import per id, so no 100 MB object sits in memory per page)
@@ -133,8 +133,10 @@ interface PublicShiur {
                resolution: "resolved" | "inferred" | "unresolved"; mention: string; at?: At }[];
     insights: { text: L; at?: At }[]; takeaways: { text: L; at?: At }[];
     questions: { q: L; a: L; at?: At }[];
-    stories: { title: L; retelling: L; people: string[]; at?: At }[];
-    people: { name: string; key: string }[]; concepts: { he: string; key: string }[];
+    stories: { title: L; retelling: L; at?: At }[];
+    // No people or concept names, and no story people: raw extraction names may be ASR mishearings.
+    // People, concepts, works and a story's people come from the corpus layer: the shiur's refs in
+    // `.corpus/layer/shiur/<id>.json` (personIds, conceptIds, merged story ids) and the entity files.
     topics: string[];                                 // candidateTopics: search keywords only, never shown
     writeup: Record<Ed, { sectionIndex: number; heading: string | null;
                           paragraphs: { text: string; src: number[]; at?: At }[] }[]>;
@@ -161,6 +163,7 @@ Nothing named `heardAs`, `asrNotes`, `segs`, `audioKey` or `transcriptKey` exist
 | Pending shiur page | ≤ 15 KB raw | catalog + audio + neighbours |
 | CSS (all) | ≤ 12 KB br | |
 | JS on a shiur page | ≤ 6 KB br (player) | |
+| JS on the title page | ≤ 1.5 KB br (edition switch, "this week") | the "this week" days ride in the HTML as templates, about 2 KB br |
 | JS on search page | Pagefind UI-less API + our 3 KB glue | Pagefind loads index chunks lazily |
 | Fonts | ≤ 140 KB total woff2; only the edition's body face preloaded | |
 | Static asset files | ≤ 18,000 (CI fails above; Free plan limit is 20,000 per version, Paid 100,000) | ~2,000 shiur + ~4,000 index pages at full corpus + ~1,500 Pagefind files + ~30 assets |
@@ -286,12 +289,12 @@ One Worker, `quiet-site` (`apps/quiet/worker/index.ts`):
 API surface (the whole backend): `GET|HEAD /audio/{recordingId}.mp3[?download=1]`. No database, KV, D1 or Vectorize. Error reports are a `mailto:` link prefilled with the shiur id (concept §5.4.10). If the owner later wants a form, that is a small `POST /report` → Email Workers or D1, out of scope here.
 
 `dist/_headers`:
-- `/*`: `Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'` (Pagefind needs `wasm-unsafe-eval`), `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, `Permissions-Policy` minimal
+- `/*`: `Content-Security-Policy: default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…'; style-src 'self'; font-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'` (Pagefind needs `wasm-unsafe-eval`; the hash allows the one inline script, the colour-theme init `THEME_INIT_SCRIPT` from `@emunas/tokens`), `Referrer-Policy: strict-origin-when-cross-origin`, `X-Content-Type-Options: nosniff`, `Permissions-Policy` minimal
 - `/_astro/*`, `/fonts/*`: `Cache-Control: public, max-age=31536000, immutable`
 - HTML: the platform default (revalidating); pages change daily.
 
 **Deploy and rebuild** (`.github/workflows/quiet.yml`; the reconciler may merge it into shared CI):
-- triggers: push to the main branch touching `data/derived/**`, `data/catalog/**`, `apps/quiet/**`, `packages/**`; schedule daily at 05:17 UTC (about 00:17 US Eastern; picks up data and refreshes "this week"); manual dispatch
+- triggers: push to the main branch touching `data/derived/**`, `data/catalog/**`, `apps/quiet/**`, `packages/**`; manual dispatch. `refresh-quiet.yml` rebuilds and deploys Quiet alone every second day at 05:17 UTC, so the "this week" window (build day −1…+3, the build day in America/New_York) stays current.
 - `concurrency: quiet-deploy, cancel-in-progress: true`, since data commits arrive in bursts
 - steps: install → `build-data` → `astro build` → `build-search` → guards (§11) → `wrangler deploy` (secrets `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`)
 - PRs: `wrangler versions upload` gives a preview URL, no promotion

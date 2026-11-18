@@ -28,4 +28,15 @@ describe("site-policy", () => {
   it("ships an empty verbatim allow-list", () => {
     expect(read("verbatim-allow.json")).toStrictEqual([]);
   });
+
+  it("keeps the transcript/shiur remark allow-list small, reviewed and phrase-specific", () => {
+    const list = read("meta-comment-allow.json") as Record<string, unknown>[];
+    expect(Array.isArray(list)).toBe(true);
+    expect(list.length).toBeLessThanOrEqual(12);
+    for (const e of list) {
+      expect(Object.keys(e).sort()).toEqual(["file", "phrase", "reason", "reviewedAt", "reviewedBy"]);
+      expect(String(e["phrase"]).split(/\s+/).length, String(e["phrase"])).toBeGreaterThanOrEqual(3);
+      expect(String(e["reviewedAt"])).toMatch(/^\d{4}-\d{2}-\d{2}$/);
+    }
+  });
 });

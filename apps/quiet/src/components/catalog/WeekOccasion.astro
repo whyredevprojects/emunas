@@ -1,0 +1,52 @@
+---
+/**
+ * One occasion block of "this week" on the title page (concept-quiet §5.1): a heading linking into
+ * the calendar index, a few shiur titles, and a link to all of them. Rendered in the visible grid
+ * and inside the per-day templates of ThisWeek.astro.
+ */
+import { runAttrs } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import type { OccasionPick } from "./model.ts";
+import { useCatalogT } from "./strings.ts";
+
+interface Props {
+  ed: Ed;
+  pick: OccasionPick;
+}
+
+const { ed, pick: p } = Astro.props;
+const c = useCatalogT(ed);
+const heading =
+  p.kind === "parsha"
+    ? c("home.parsha", { name: p.label })
+    : p.active
+      ? c("home.zmanNow", { name: p.label })
+      : c("home.zmanSoon", { name: p.label });
+---
+<section class="occasion" aria-labelledby={`week-${p.kind}`} data-occasion={p.key}>
+  <h3 id={`week-${p.kind}`}><a href={p.href}>{heading}</a></h3>
+  <ul role="list">
+    {p.rows.map((r) => (
+      <li><a href={r.href}><bdi {...runAttrs(r.title, r.lang)}>{r.title}</bdi></a></li>
+    ))}
+  </ul>
+  <p class="occasion-all"><a href={p.href}>{c("home.allOn", { count: p.count, name: p.label })}</a></p>
+</section>
+
+<style>
+  .occasion > * + * {
+    margin-block-start: var(--space-xs);
+  }
+
+  .occasion li + li {
+    margin-block-start: var(--space-2xs);
+  }
+
+  .occasion ul {
+    font-size: var(--step-0);
+  }
+
+  .occasion-all {
+    font-size: var(--step-0);
+  }
+</style>

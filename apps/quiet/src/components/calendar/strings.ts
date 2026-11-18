@@ -11,7 +11,7 @@ import type { Ed } from "../../lib/edition.ts";
 
 export const calendarEn = {
   "cal.label": "Calendar",
-  "cal.views": "Ways into the calendar",
+  "cal.views": "Calendar views",
   "cal.byParsha": "By parsha",
   "cal.byZman": "By zman",
   "cal.byYear": "By year",

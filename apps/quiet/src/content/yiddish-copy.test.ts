@@ -5,12 +5,18 @@
  * here. Wording itself is reviewed by a person; this only guards the decisions already made.
  */
 import { describe, expect, it } from "vitest";
+import { findMetaComments } from "@emunas/corpus-guard";
+import { CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS } from "@emunas/i18n";
 import { calendarEn, calendarYi } from "../components/calendar/strings.ts";
 import { catalogEn, catalogYi } from "../components/catalog/strings.ts";
 import { indexesEn, indexesYi } from "../components/indexes/strings.ts";
 import { followTextEn, followTextYi } from "../components/shiur/follow-text-strings.ts";
 import { shiurEn, shiurYi } from "../components/shiur/strings.ts";
+import { corpusEn } from "../components/corpus/strings.ts";
+import { storiesEn } from "../components/stories/strings.ts";
+import { topicsEn } from "../components/topics/strings.ts";
 import { tables as ui } from "../i18n/index.ts";
+import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
 import { ABOUT_STRINGS } from "../pages/[ed]/about/_strings.ts";
 import { SEARCH_STRINGS } from "../pages/[ed]/search/_strings.ts";
 
@@ -86,9 +92,23 @@ describe("Yiddish UI copy (Quiet)", () => {
     });
   }
 
-  it("speaks of the Rav as דער משגיח, never as דער רב", () => {
+  it("speaks of the Mashgiach as דער משגיח, never as דער רב", () => {
     expect(ALL.filter(([, s]) => /דער רב(?![\u05D0-\u05EA])|דעם רב(?![\u05D0-\u05EA])/u.test(s))).toEqual([]);
     expect(ALL.some(([, s]) => s.includes("דער משגיח"))).toBe(true);
+  });
+
+  it("calls him the Mashgiach in English, never the Rav or the Rov", () => {
+    const en = [
+      ...Object.entries(PAIRS).flatMap(([name, pair]) => strings(pair.en, name)),
+      ...strings(corpusEn, "corpus"),
+      ...strings(storiesEn, "stories"),
+      ...strings(topicsEn, "topics"),
+      ...strings(corpusLabelsEn, "corpusLabels"),
+      ...strings(AI_LABEL.en, "aiLabel"),
+    ];
+    expect(en.length).toBeGreaterThan(200);
+    expect(en.filter(([, s]) => /\bthe R[ao]v\b(?! of\b)|\bR[ao]v['’]s\b/i.test(s))).toEqual([]);
+    expect(en.some(([, s]) => s.includes("the Mashgiach"))).toBe(true);
   });
 
   it("has the same keys and {placeholders} as English (wording changes only)", () => {
@@ -99,5 +119,22 @@ describe("Yiddish UI copy (Quiet)", () => {
         expect(placeholders(yiValue), `${name}.${key}`).toEqual(placeholders(en));
       }
     }
+  });
+
+  it("never remarks on the transcript or the shiur itself, in either language (the guard's term list)", () => {
+    // The follow-text view is designed and OFF (EMUNAS_TRANSCRIPT_VIEW); its strings name what it shows.
+    const tables = Object.entries(PAIRS).filter(([name]) => name !== "followText");
+    const all = [
+      ...tables.flatMap(([name, pair]) => [...strings(pair.en, `${name}.en`), ...strings(pair.yi, `${name}.yi`)]),
+      ...strings(corpusEn, "corpus"),
+      ...strings(storiesEn, "stories"),
+      ...strings(topicsEn, "topics"),
+      ...strings(CORPUS_LABELS, "corpusLabels"),
+      ...strings(SECTION_KIND_LABELS, "sectionKinds"),
+      ...strings(NOTICES, "notices"),
+      ...strings(AI_LABEL, "aiLabel"),
+    ];
+    expect(all.length).toBeGreaterThan(400);
+    expect(all.flatMap(([path, s]) => findMetaComments(s).map((h) => `${path}: ${h.term}`))).toEqual([]);
   });
 });

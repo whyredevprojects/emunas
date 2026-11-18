@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "en-miscellaneous-en-02",
- "rev": "5656a942ea2f",
+ "rev": "0b597b32d64f",
  "lang": "en",
  "category": "misc",
  "catalog": {
@@ -51,7 +51,7 @@
     "momentId": "en-miscellaneous-en-01~s4",
     "shiurId": "en-miscellaneous-en-01",
     "t": 1074.87,
-    "score": 0.523
+    "score": 0.522
    }
   ],
   "titles": {
@@ -399,14 +399,42 @@
    {
     "momentId": "en-miscellaneous-en-02~st0",
     "storyId": "rav-shimon-sofer-and-the-factory-on-shabbos",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Shimon Sofer"
+     },
+     {
+      "id": "chasam-sofer",
+      "label": {
+       "en": "the Chasam Sofer",
+       "yi": "דער חתם סופר",
+       "he": "חתם סופר"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-miscellaneous-en-02~st1",
     "storyId": "the-chiddushei-harim-declines-to-name-a-child",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "chiddushei-harim",
+      "label": {
+       "en": "the Chiddushei HaRim",
+       "yi": "דער חידושי הרי\"ם",
+       "he": "רבי יצחק מאיר מגור"
+      },
+      "page": true
+     },
+     {
+      "name": "the Chozeh of Lublin"
+     }
+    ]
    }
   ],
   "insights": [
@@ -466,11 +494,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "Learning the opening of the sixth perek of Pirkei Avos, the Rav explains that the very names of the Chachamim are Torah, because a Jewish name is the substance of the neshamah, and mentioning it connects the learner to the Tanna himself.",
+    "en": "Learning the opening of the sixth perek of Pirkei Avos, the Mashgiach explains that the very names of the Chachamim are Torah, because a Jewish name is the substance of the neshamah, and mentioning it connects the learner to the Tanna himself.",
     "yi": "ביים לערנען דעם אנהייב פון פרק ו אין פרקי אבות ערקלערט דער משגיח אז די נעמען אליין פון די חכמים זענען תורה, ווייל א אידישער נאמען איז דער עצם פון דער נשמה, און ווען מ'דערמאנט אים פארבינדט מען זיך מיט דעם תנא אליין."
    },
    "abstract": {
-    "en": "The Rav opens by comparing the exile of Klal Yisrael to Adam HaRishon's exile from Gan Eden, and says that young people, who are still in their own Gan Eden, have the opportunity to learn. He introduces the sixth perek of Avos, braisos about Torah written in the language of the Mishnah. Words of Torah said with ruach hakodesh contain far more than their plain meaning, so several explanations of one phrase are all true. He asks why the Gemara spends so much time repeating the names of the Chachamim, and answers that the name itself is Torah. Speech is powerful, as shown by the fruit of Eretz Yisrael in the days of the Midbar. He tells how Rav Shimon Sofer silenced scoffers in Krakow with a story about a holy name, brings the Mishnah's mention of Chevron on Yom Kippur, and explains with Adam's naming of the animals that a name holds a being's essence. Finally he explains why the Tanna does not spell out the reward of Torah lishmah: Olam Haba is too holy even for the Nevi'im to see.",
+    "en": "The Mashgiach opens by comparing the exile of Klal Yisrael to Adam HaRishon's exile from Gan Eden, and says that young people, who are still in their own Gan Eden, have the opportunity to learn. He introduces the sixth perek of Avos, braisos about Torah written in the language of the Mishnah. Words of Torah said with ruach hakodesh contain far more than their plain meaning, so several explanations of one phrase are all true. He asks why the Gemara spends so much time repeating the names of the Chachamim, and answers that the name itself is Torah. Speech is powerful, as shown by the fruit of Eretz Yisrael in the days of the Midbar. He tells how Rav Shimon Sofer silenced scoffers in Krakow with a story about a holy name, brings the Mishnah's mention of Chevron on Yom Kippur, and explains with Adam's naming of the animals that a name holds a being's essence. Finally he explains why the Tanna does not spell out the reward of Torah lishmah: Olam Haba is too holy even for the Nevi'im to see.",
     "yi": "דער משגיח עפנט מיט א משל: אזוי ווי אדם הראשון איז ארויסגעטריבן געווארן פון גן עדן, אזוי איז כלל ישראל אין גלות, און יונגע לייט וואס זענען נאך אין זייער גן עדן האבן די געלעגנהייט צו לערנען. ער שטעלט פאר דעם פרק ו פון אבות, ברייתות וועגן תורה וואס זענען געשריבן אין לשון המשנה. דברי תורה מיט רוח הקודש האלטן אין זיך אסאך מער ווי דער פשוט פשט, דערפאר זענען אלע פשטים אמת. ער פרעגט פארוואס די גמרא פארברענגט אזוי פיל צייט מיט דערמאנען די נעמען פון די חכמים, און ענטפערט אז דער נאמען אליין איז תורה. דיבור האט א גרויסן כח, ווי מ'זעט ביי די פירות פון ארץ ישראל אין מדבר. ער דערציילט ווי רב שמעון סופר האט אפגעשטעלט די ליצנים אין קראקא מיט א מעשה פון א שם, ער ברענגט דאס דערמאנען פון חברון אום יום כיפור, און ער ערקלערט פון אדם הראשון וואס האט געגעבן נעמען צו די באשעפענישן אז א נאמען האלט דעם עצם פון א זאך. צום סוף ערקלערט ער פארוואס דער תנא זאגט נישט אויס דעם שכר פון תורה לשמה: עולם הבא איז צו הייליג אפילו פאר נביאים צו זען."
    },
    "keyPoints": [
@@ -533,7 +561,7 @@
      "yi": "גלות, יוגנט, און דער זעקסטער פרק"
     },
     "summary": {
-     "en": "The Rav compares Klal Yisrael's exile from Eretz Yisrael to Adam HaRishon's exile from Gan Eden, and says young people are still in their Gan Eden and can learn. He introduces the sixth perek of Avos, added before Shavuos, made of braisos about Torah written in the language of the Mishnah.",
+     "en": "The Mashgiach compares Klal Yisrael's exile from Eretz Yisrael to Adam HaRishon's exile from Gan Eden, and says young people are still in their Gan Eden and can learn. He introduces the sixth perek of Avos, added before Shavuos, made of braisos about Torah written in the language of the Mishnah.",
      "yi": "דער משגיח פארגלייכט דעם גלות פון כלל ישראל מיט דעם וואס אדם הראשון איז ארויסגעטריבן געווארן פון גן עדן, און זאגט אז יונגע לייט זענען נאך אין זייער גן עדן און קענען לערנען. ער שטעלט פאר דעם פרק ו פון אבות, וואס מ'האט צוגעלייגט פאר שבועות, ברייתות וועגן תורה וואס זענען געשריבן אין לשון המשנה."
     },
     "kind": "intro",
@@ -551,7 +579,7 @@
      "yi": "פארוואס מ'דערמאנט די נעמען פון די חכמים"
     },
     "summary": {
-     "en": "The Rav explains that Torah said with ruach hakodesh contains much in few words, so several explanations are all true. He asks why so much time is spent repeating the names of the Chachamim, and answers that the name itself is Torah, reading 'baruch shebachar bahem' as praise of the one who devotes himself to them.",
+     "en": "The Mashgiach explains that Torah said with ruach hakodesh contains much in few words, so several explanations are all true. He asks why so much time is spent repeating the names of the Chachamim, and answers that the name itself is Torah, reading 'baruch shebachar bahem' as praise of the one who devotes himself to them.",
      "yi": "דער משגיח ערקלערט אז תורה וואס איז געזאגט מיט רוח הקודש האלט אסאך אין ווייניג ווערטער, ממילא זענען אלע פשטים אמת. ער פרעגט פארוואס מ'פארברענגט אזוי פיל צייט מיט חזר'ן די נעמען פון די חכמים, און ענטפערט אז דער נאמען אליין איז תורה, און ער טייטשט \"ברוך שבחר בהם\" אויף דעם וואס גיט זיך אוועק פאר זיי."
     },
     "kind": "main",
@@ -571,7 +599,7 @@
      "yi": "דער כח פון דיבור"
     },
     "summary": {
-     "en": "The Rav explains that every word a Jew says reaches the heavens: a good word brings light and bounty, a bad word destroys. He points to the huge fruit the meraglim brought back while Klal Yisrael learned Torah in the Midbar, and to Rashi's reading of 'yadber' as leading.",
+     "en": "The Mashgiach explains that every word a Jew says reaches the heavens: a good word brings light and bounty, a bad word destroys. He points to the huge fruit the meraglim brought back while Klal Yisrael learned Torah in the Midbar, and to Rashi's reading of 'yadber' as leading.",
      "yi": "דער משגיח ערקלערט אז יעדעס ווארט וואס א איד זאגט דערגרייכט ביז אין הימל: א גוט ווארט ברענגט ליכט און שפע, א שלעכט ווארט חרוב'ט. ער ווייזט אן אויף די ריזיגע פירות וואס די מרגלים האבן געברענגט ווען כלל ישראל האבן געלערנט תורה אין מדבר, און אויף רש\"י וואס טייטשט \"ידבר\" לשון הנהגה."
     },
     "kind": "main",
@@ -591,7 +619,7 @@
      "yi": "רב שמעון סופר און דער שם"
     },
     "summary": {
-     "en": "The Rav says mentioning a tzaddik's name gives a hold on him, and that tzaddikim accomplished things through holy names. He tells how Rav Shimon Sofer, facing scoffers at his first drasha in Krakow, told of the Shabbos-desecrating factory owner in his father the Chasam Sofer's city whose factory burned when he pronounced a name his father taught him.",
+     "en": "The Mashgiach says mentioning a tzaddik's name gives a hold on him, and that tzaddikim accomplished things through holy names. He tells how Rav Shimon Sofer, facing scoffers at his first drasha in Krakow, told of the Shabbos-desecrating factory owner in his father the Chasam Sofer's city whose factory burned when he pronounced a name his father taught him.",
      "yi": "דער משגיח זאגט אז דערמאנען דעם נאמען פון א צדיק גיט א אחיזה אין אים, און אז צדיקים האבן אויפגעטון דורך שמות. ער דערציילט ווי רב שמעון סופר, ווען ליצנים האבן אים געוואלט פארשעמען ביי זיין ערשטע דרשה אין קראקא, האט דערציילט פון א פאבריק בעל הבית אין דער שטאט פון זיין טאטן דעם חתם סופר וואס האט מחלל שבת געווען, און די פאבריק איז אפגעברענט געווארן ווען ער האט ארויסגעזאגט א שם וואס זיין טאטע האט אים געלערנט."
     },
     "kind": "story",
@@ -611,7 +639,7 @@
      "yi": "חברון אום יום כיפור; דער נאמען איז די נשמה"
     },
     "summary": {
-     "en": "The Rav brings that Moshe Rabbeinu killed the Mitzri with a holy name and that a tzaddik's name brings down chesed. He cites the Gemara asking why the announcement on Yom Kippur morning mentioned Chevron, and answers that naming the city of the Avos draws down rachamim; all the more the name of a Chacham, which is his very neshamah.",
+     "en": "The Mashgiach brings that Moshe Rabbeinu killed the Mitzri with a holy name and that a tzaddik's name brings down chesed. He cites the Gemara asking why the announcement on Yom Kippur morning mentioned Chevron, and answers that naming the city of the Avos draws down rachamim; all the more the name of a Chacham, which is his very neshamah.",
      "yi": "דער משגיח ברענגט אז משה רבינו האט געהרגעט דעם מצרי מיט א שם, און אז דער נאמען פון א צדיק ברענגט אראפ חסד. ער ברענגט די גמרא וואס פרעגט פארוואס מ'האט אום יום כיפור אינדערפרי דערמאנט חברון, און ענטפערט אז דאס דערמאנען די שטאט פון די אבות ברענגט רחמים; כל שכן דער נאמען פון א חכם, וואס איז זיין נשמה אליין."
     },
     "kind": "main",
@@ -631,7 +659,7 @@
      "yi": "אדם הראשונ'ס נעמען און רבי מאיר'ס נשמה"
     },
     "summary": {
-     "en": "The Rav tells that the Chiddushei HaRim told a father to name his child himself so he would merit ruach hakodesh. He explains that Adam HaRishon named each creature by the letters it is made of, as with the aryeh, and that Rabbi Meir judged people by their names; so saying 'Rabbi Meir' before his halacha draws his neshamah into the learner and makes the halacha easier to understand.",
+     "en": "The Mashgiach tells that the Chiddushei HaRim told a father to name his child himself so he would merit ruach hakodesh. He explains that Adam HaRishon named each creature by the letters it is made of, as with the aryeh, and that Rabbi Meir judged people by their names; so saying 'Rabbi Meir' before his halacha draws his neshamah into the learner and makes the halacha easier to understand.",
      "yi": "דער משגיח דערציילט אז דער חידושי הרי\"ם האט געזאגט א טאטן ער זאל אליין געבן דעם נאמען כדי ער זאל זוכה זיין צו רוח הקודש. ער ערקלערט אז אדם הראשון האט געגעבן יעדער באשעפעניש א נאמען לויט די אותיות פון וואס עס איז געמאכט, ווי ביי דעם ארי', און אז רבי מאיר איז געווען דורש בשמא; ממילא ווען מ'זאגט \"רבי מאיר\" פאר זיין הלכה ציט מען אריין זיין נשמה, און די הלכה ווערט גרינגער צו פארשטיין."
     },
     "kind": "main",
@@ -651,7 +679,7 @@
      "yi": "תורה לשמה איז זוכה לדברים הרבה"
     },
     "summary": {
-     "en": "The Rav goes through the braisa that one who learns Torah lishmah merits many things and is lifted above all creation. He asks why the Tanna does not say what the many things are, and answers that the Nevi'im described only the reward of those who help the talmid chacham; his own Olam Haba is too great for a living person to behold.",
+     "en": "The Mashgiach goes through the braisa that one who learns Torah lishmah merits many things and is lifted above all creation. He asks why the Tanna does not say what the many things are, and answers that the Nevi'im described only the reward of those who help the talmid chacham; his own Olam Haba is too great for a living person to behold.",
      "yi": "דער משגיח גייט דורך די ברייתא אז דער וואס לערנט תורה לשמה איז זוכה לדברים הרבה און ווערט דערהויבן איבער אלע מעשים. ער פרעגט פארוואס דער תנא זאגט נישט וואס די דברים הרבה זענען, און ענטפערט אז די נביאים האבן באשריבן נאר דעם שכר פון די וואס העלפן א תלמיד חכם; זיין אייגענער עולם הבא איז צו גרויס פאר א לעבעדיקן מענטש צו זען."
     },
     "kind": "main",
@@ -671,7 +699,7 @@
      "yi": "וואס הייליגער, אלץ גרינגער צו קאליע ווערן"
     },
     "summary": {
-     "en": "The Rav explains with the yayin hameshumar that the holier something is, the more easily it is spoiled: levels of tumah, meat versus vegetables, and wine that a goy touches. Olam Haba is so holy and so opposed to this world that no eye may see it, which is why the Tanna cannot describe it.",
+     "en": "The Mashgiach explains with the yayin hameshumar that the holier something is, the more easily it is spoiled: levels of tumah, meat versus vegetables, and wine that a goy touches. Olam Haba is so holy and so opposed to this world that no eye may see it, which is why the Tanna cannot describe it.",
      "yi": "דער משגיח ערקלערט מיט דעם יין המשומר אז וואס הייליגער א זאך איז, אלץ גרינגער ווערט עס קאליע: די מדריגות פון טומאה, פלייש לגבי גרינצייג, און וויין וואס א גוי רירט אן. עולם הבא איז אזוי הייליג און אזוי קעגנגעזעצט צו דער וועלט אז קיין אויג טאר עס נישט זען, און דערפאר קען דער תנא עס נישט באשרייבן."
     },
     "kind": "main",
@@ -812,7 +840,7 @@
    {
     "id": "en-miscellaneous-en-02~i0",
     "text": {
-     "en": "The Rav reads 'baruch shebachar bahem uvemishnasam' not only as praise of Hashem but as praise of the talmid who chose to devote his life to these Chachamim and their Torah.",
+     "en": "The Mashgiach reads 'baruch shebachar bahem uvemishnasam' not only as praise of Hashem but as praise of the talmid who chose to devote his life to these Chachamim and their Torah.",
      "yi": "דער משגיח טייטשט \"ברוך שבחר בהם ובמשנתם\" נישט נאר אויפן אויבערשטן, נאר אויף דעם תלמיד וואס האט אויסגעקליבן אוועקצוגעבן זיין לעבן פאר די חכמים און זייער תורה."
     },
     "t": 611.24,
@@ -869,7 +897,7 @@
    {
     "id": "en-miscellaneous-en-02~tk0",
     "text": {
-     "en": "The Rav says that saying a Tanna's name before his halacha makes contact with his neshamah, and that this makes the halacha easier to understand.",
+     "en": "The Mashgiach says that saying a Tanna's name before his halacha makes contact with his neshamah, and that this makes the halacha easier to understand.",
      "yi": "דער משגיח זאגט אז ווען מ'זאגט דעם נאמען פון א תנא פאר זיין הלכה, פארבינדט מען זיך מיט זיין נשמה, און דאס מאכט גרינגער צו פארשטיין די הלכה."
     },
     "t": 1565.2,
@@ -941,14 +969,6 @@
      "en": "When Rav Shimon Sofer, son of the Chasam Sofer, came to Krakow as Rav, some who had opposed him prepared questions to embarrass him at his first drasha. He stopped and told a story from his youth: in his father's city a factory owner kept his factory open on Shabbos, and the Chasam Sofer sent his son to warn him. The owner mocked him, then threatened to set his dogs on him; the third time his father taught him a holy name, and when the dogs were set loose and he pronounced it, the factory went up in flames with its owner. Rav Shimon Sofer then told his listeners that if they wanted to learn, all would be well, but if not, he still remembered that name.",
      "yi": "ווען רב שמעון סופר, דער זון פונעם חתם סופר, איז געקומען קיין קראקא אלס רב, האבן געוויסע וואס האבן נישט געוואלט אים געגרייט קשיות כדי אים צו פארשעמען ביי זיין ערשטע דרשה. ער האט זיך אפגעשטעלט און דערציילט א מעשה פון זיין יוגנט: אין זיין טאטנ'ס שטאט האט א פאבריק בעל הבית געהאלטן זיין פאבריק אפן אום שבת, און דער חתם סופר האט געשיקט זיין זון אים צו ווארענען. דער בעל הבית האט אים אויסגעלאכט, דערנאך געסטראשעט אז ער וועט אויף אים אנהעצן זיינע הינט; דאס דריטע מאל האט אים דער טאטע געלערנט א שם, און ווען מ'האט ארויסגעלאזט די הינט און ער האט ארויסגעזאגט דעם שם, איז די פאבריק אויפגעגאנגען אין פייער מיטן בעל הבית. רב שמעון סופר האט דאן געזאגט צום עולם אז אויב זיי ווילן לערנען איז אלעס גוט, אבער אויב נישט, געדענקט ער נאך דעם שם."
     },
-    "people": [
-     "Rav Shimon Sofer",
-     "the Chasam Sofer"
-    ],
-    "peopleKeys": [
-     "rabbi-shimon-sofer",
-     "chasam-sofer"
-    ],
     "t": 870.66,
     "end": 1108.44
    },
@@ -962,102 +982,8 @@
      "en": "Someone asked the Chiddushei HaRim what name to give his newborn child. He answered that he did not want to deprive the father of the chance to receive ruach hakodesh, since a father merits ruach hakodesh when he names his child.",
      "yi": "איינער האט געפרעגט דעם חידושי הרי\"ם וואספארא נאמען ער זאל געבן זיין נייגעבוירן קינד. ער האט געענטפערט אז ער וויל אים נישט צונעמען די געלעגנהייט צו באקומען רוח הקודש, ווייל א טאטע ווערט זוכה צו רוח הקודש ווען ער גיט א נאמען."
     },
-    "people": [
-     "the Chiddushei HaRim"
-    ],
-    "peopleKeys": [
-     "chiddushei-harim"
-    ],
     "t": 1375.21,
     "end": 1390.29
-   }
-  ],
-  "people": [
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "Rabbeinu HaKadosh",
-    "key": "rebbi"
-   },
-   {
-    "name": "David HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Rav Shimon Sofer",
-    "key": "rabbi-shimon-sofer"
-   },
-   {
-    "name": "the Chasam Sofer",
-    "key": "chasam-sofer"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "the Chiddushei HaRim",
-    "key": "chiddushei-harim"
-   },
-   {
-    "name": "Rabbi Meir",
-    "key": "rabbi-meir"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "רוח הקודש",
-    "key": "rvch-hkvdsh-1fd584"
-   },
-   {
-    "he": "לשון הקודש",
-    "key": "lshvn-hkvdsh-63af69"
-   },
-   {
-    "he": "ברייתא",
-    "key": "bryysa-06f9c5"
-   },
-   {
-    "he": "הפסק",
-    "key": "hpsk-41d4a6"
-   },
-   {
-    "he": "שם",
-    "key": "shm-a29008"
-   },
-   {
-    "he": "דיבור",
-    "key": "dybvr-a776b8"
-   },
-   {
-    "he": "תורה לשמה",
-    "key": "svrh-lshmh-f5d40c"
-   },
-   {
-    "he": "עולם הבא",
-    "key": "evlm-hba-68958b"
-   },
-   {
-    "he": "יין המשומר",
-    "key": "yyn-hmshvmr-4ebe98"
-   },
-   {
-    "he": "יין נסך",
-    "key": "yyn-nsk-679502"
-   },
-   {
-    "he": "אותיות",
-    "key": "avsyvs-c8d5a2"
-   },
-   {
-    "he": "רחמים",
-    "key": "rchmym-096a2e"
    }
   ],
   "writeupLangs": [

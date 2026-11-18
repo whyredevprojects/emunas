@@ -1,5 +1,8 @@
 /**
- * Shapes of the aggregate files in `.corpus/` (integration-plan §5.1, W2.1). Types only and
+ * Shapes of the aggregate files in `.corpus/` (integration-plan §5.1, W2.1): what the catalog
+ * gives (sections, neighbours, series, occasions, years) and the works pages' reference-order
+ * layout. People, concepts and stories come from the corpus layer (`.corpus/layer/`, C1.2); the
+ * site-derived entity aggregates are retired (C3.1). Types only and
  * browser-safe. Every list is in a fixed, deterministic order; ties are broken by catalog order
  * (the order of `index.json` rows) and then by id.
  *
@@ -169,7 +172,7 @@ export interface WorkEntry {
   key: string;
   /**
    * The merged corpus work (`.corpus/layer/works.json` id) most of this entry's mentions resolve
-   * to through `shiur-tags.sourceWorkIds`; null when none does or the corpus layer is off.
+   * to through `shiur-tags.sourceWorkIds`; null when none does.
    */
   workId: string | null;
   /** false: not in the works table (key is a slug of the name, listed in build-report). */
@@ -183,8 +186,6 @@ export interface WorkEntry {
   scheme: "tanach" | "shas" | "chapter" | "none";
   /** Generic label ("Midrash", "Gemara"): listed, not shelved. */
   genre: boolean;
-  /** Distinct `work` strings filed under this key. */
-  names: string[];
   shiurCount: number;
   mentionCount: number;
   /** Resolved and inferred mentions with a parseable Sefaria ref, in the work's own order. */
@@ -198,95 +199,6 @@ export interface WorksFile {
   works: WorkEntry[];
 }
 
-// ---------------------------------------------------------------- people.json
-
-export interface PersonShiur {
-  id: string;
-  /** Listed in the shiur's `people`. */
-  mentioned: boolean;
-  /** Moment ids of the shiur's stories that involve the person. */
-  stories: string[];
-}
-
-export interface PersonEntry {
-  key: string;
-  mapped: boolean;
-  en: string;
-  he: string | null;
-  names: string[];
-  shiurCount: number;
-  /** Catalog order. */
-  shiurim: PersonShiur[];
-}
-
-export interface PeopleFile {
-  /** Alphabetical by English name, then key. */
-  people: PersonEntry[];
-}
-
-// ---------------------------------------------------------------- concepts.json
-
-export interface ConceptEntry {
-  key: string;
-  /** Canonical Hebrew term (after alias merging, nikud stripped): the headword in both editions. */
-  he: string;
-  /** Distinct spellings filed under this key. */
-  variants: string[];
-  shiurCount: number;
-  /** Catalog order; `sections` are chapter moment ids whose title contains the term. */
-  shiurim: { id: string; sections: string[] }[];
-}
-
-export interface ConceptsFile {
-  /** Minimum number of shiurim for a concept to be listed (CONCEPT_MIN_SHIURIM). */
-  minShiurim: number;
-  omitted: { stopListed: number; belowThreshold: number };
-  /** Sorted by the folded Hebrew term, then key. */
-  concepts: ConceptEntry[];
-}
-
-// ---------------------------------------------------------------- stories.json
-
-export interface StoryEntry {
-  id: string;
-  shiurId: string;
-  lang: Ed;
-  years: number[];
-  title: L;
-  people: string[];
-  peopleKeys: string[];
-  t: number | null;
-  end: number | null;
-  soft?: true;
-}
-
-export interface StoriesFile {
-  /** Catalog order, then position in the shiur. No retellings. */
-  stories: StoryEntry[];
-  /** Grouped by the first person of each story (null: no person), in people.json order. */
-  byPerson: { key: string | null; storyIds: string[] }[];
-}
-
-// ---------------------------------------------------------------- entities.json
-
-export interface EntityCount {
-  key: string;
-  shiurim: number;
-  /** Quiet makes an entity page (works/people ≥2, concepts ≥3; never for genre works). */
-  quietPage: boolean;
-  /** Live prerenders the entity route (≥3). */
-  livePrerender: boolean;
-}
-
-export interface EntitiesFile {
-  thresholds: { quiet: { work: number; person: number; concept: number }; live: { prerender: number } };
-  works: EntityCount[];
-  people: EntityCount[];
-  /** All concepts not on the stop-list, including those below the listing threshold. */
-  concepts: EntityCount[];
-  occasions: { key: string; shiurim: number }[];
-}
-
 export interface Aggregates {
   sections: SectionsFile;
   neighbours: NeighboursFile;
@@ -294,8 +206,4 @@ export interface Aggregates {
   occasions: OccasionsFile;
   years: YearsFile;
   works: WorksFile;
-  people: PeopleFile;
-  concepts: ConceptsFile;
-  stories: StoriesFile;
-  entities: EntitiesFile;
 }

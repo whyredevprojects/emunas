@@ -5,6 +5,9 @@
  * Any finding fails the deploy. Findings and reports carry file paths, ids, field paths,
  * key names, counts and run lengths, never transcript or shipped text.
  *
+ * Remarks on the transcript or the shiur itself (meta-comment.ts) fail in built pages and published data;
+ * those findings carry the listed term and a short folded excerpt of the published text around it.
+ *
  * Corpus-layer text (`.corpus/layer/` stories, threads, topics, concepts, series) is compared with
  * the transcripts of its member shiurim, under its `corpus:` item id; those comparisons run when the
  * result is taken, grouped by shiur, so each shiur's index is built once.
@@ -12,12 +15,29 @@
 import { readFileSync, statSync } from "node:fs";
 import { basename, extname, relative, sep } from "node:path";
 import { walkFiles } from "./budgets.ts";
-import { decodeJsEscapes, htmlProse } from "./extract.ts";
+import { decodeHtmlEntities, decodeJsEscapes, htmlProse, htmlToText } from "./extract.ts";
 import { collectShiurItems, fieldOf } from "./items.ts";
-import { ALIAS_KEYS, entityKindOfFile, isLegacyAggregateFile, aliasTerms, isEntityKind, type AliasRule, type AliasRules, type EntityKind } from "./aliases.ts";
+import {
+  ALIAS_KEYS,
+  aliasTerms,
+  entityKindOfFile,
+  isEntityKind,
+  isShiurNamesFile,
+  isStoryNamesFile,
+  markedPersonNames,
+  markedStoryNames,
+  PAGEFIND_LABEL_KEYS,
+  PAGEFIND_NAME_KEYS,
+  PERSON_ATTR,
+  STORY_PERSON_ATTR,
+  type AliasRule,
+  type AliasRules,
+  type EntityKind,
+} from "./aliases.ts";
 import { layerFileOf, layerFileUnits, pathKey, type CorpusUnit } from "./layer.ts";
 import { findKeysInText, findSubstrings, isForbiddenKey } from "./rules.ts";
 import { NO_RUN, mergeScans, type ScanResult, type VerbatimMatcher } from "./verbatim.ts";
+import { findMetaComments, isMetaCommentAllowed, type CompiledAllow } from "./meta-comment.ts";
 import { NO_TRANSCRIPTS, checkTranscriptFile, type TranscriptEligibility, type TranscriptRejection } from "./eligible.ts";
 
 export type Finding =
@@ -27,6 +47,8 @@ export type Finding =
   | { kind: "verbatim"; source: string; itemId?: string; shiurId?: string; field?: string; runLength: number }
   /** An alias-bearing string that is an ASR variant or not a display field of its entity (`entity` = `kind:id`). */
   | { kind: "alias"; source: string; rule: AliasRule; entity?: string; field: string; count: number }
+  /** Published text remarking on the transcript or the shiur itself (`term` as listed in meta-comment.ts). */
+  | { kind: "meta-comment"; source: string; term: string; field?: string; context: string; count: number }
   | { kind: "unreadable"; source: string; reason: string };
 
 export interface VerbatimReportEntry {
@@ -53,8 +75,17 @@ export interface PostCounts {
   corpusUnits: number;
   /** Strings in alias-bearing positions checked against the display fields and ASR variants. */
   aliasTermsChecked: number;
-  /** Strings in alias-bearing positions of the legacy `.corpus/` aggregates (not checked; C3.1 retires them). */
-  aliasTermsLegacy: number;
+  /** Person names on stories (story files and `data-story-person` on pages) checked against every entity's display names. */
+  storyNamesChecked: number;
+  /**
+   * Other name fields (F.1): names in shiur files, search docs, Pagefind records and entity rows'
+   * `labels`, and `data-person` names on pages, checked against the corpus entities' display names.
+   */
+  namesChecked: number;
+  /** Published strings (data values, page text) checked for remarks on the transcript or the shiur itself. */
+  metaCommentUnits: number;
+  /** Hits of a listed term passed by `site-policy/meta-comment-allow.json`. */
+  metaCommentAllowed: number;
   findings: number;
 }
 
@@ -82,6 +113,8 @@ export interface ScannerOptions {
   aliases?: AliasRules | null;
   /** Extra alias-bearing JSON keys (e.g. a minified quick-index field) on top of ALIAS_KEYS. */
   aliasKeys?: readonly string[];
+  /** Reviewed exceptions for the audio/transcript remark check (`site-policy/meta-comment-allow.json`). */
+  metaCommentAllow?: readonly CompiledAllow[];
 }
 
 /** Context for scanning one parsed value. */
@@ -92,8 +125,15 @@ export interface ValueContext {
   fileKind?: EntityKind | null;
   /** Entity the alias-bearing fields of this value belong to when the value itself does not say (Pagefind entity records). */
   entity?: { kind: EntityKind; id: string } | null;
-  /** A legacy `.corpus/` aggregate: its alias positions name no corpus entity and are not checked. */
-  legacyAggregate?: boolean;
+  /**
+   * A story file (`isStoryNamesFile`): `people[].name` is checked too, and every entity-less name
+   * (there and in `names`) must be some corpus entity's display name (`AliasRules.checkName`).
+   */
+  storyNames?: boolean;
+  /** A shiur file (`isShiurNamesFile`): every person and concept name in it is checked (F.1). */
+  shiurNames?: boolean;
+  /** A Pagefind record: its name-bearing meta/filter keys are checked (F.1). */
+  pagefind?: boolean;
 }
 
 const JSON_EXT = new Set([".json", ".map", ".webmanifest"]);
@@ -130,7 +170,10 @@ export class LeakScanner {
     verbatimReported: 0,
     corpusUnits: 0,
     aliasTermsChecked: 0,
-    aliasTermsLegacy: 0,
+    storyNamesChecked: 0,
+    namesChecked: 0,
+    metaCommentUnits: 0,
+    metaCommentAllowed: 0,
     findings: 0,
   };
   private readonly matcher: VerbatimMatcher | null;
@@ -141,6 +184,7 @@ export class LeakScanner {
   private readonly allow: ReadonlySet<string>;
   private readonly transcripts: TranscriptEligibility;
   private readonly baseDir: string;
+  private readonly metaCommentAllow: readonly CompiledAllow[];
 
   constructor(opts: ScannerOptions = {}) {
     this.matcher = opts.matcher ?? null;
@@ -149,6 +193,55 @@ export class LeakScanner {
     this.baseDir = opts.baseDir ?? process.cwd();
     this.aliases = opts.aliases ?? null;
     this.aliasKeys = new Set<string>([...ALIAS_KEYS, ...(opts.aliasKeys ?? [])]);
+    this.metaCommentAllow = opts.metaCommentAllow ?? [];
+  }
+
+  // ---- remarks on the transcript or the shiur itself ------------------------------------
+
+  /** Check published texts of one source; one finding per term (first field and context, total count). */
+  private checkMetaComments(texts: Iterable<{ text: string; field?: string }>, source: string): void {
+    const acc = new Map<string, Extract<Finding, { kind: "meta-comment" }>>();
+    for (const { text, field } of texts) {
+      this.counts.metaCommentUnits++;
+      for (const hit of findMetaComments(text)) {
+        if (isMetaCommentAllowed(this.metaCommentAllow, source, hit)) {
+          this.counts.metaCommentAllowed++;
+          continue;
+        }
+        const prev = acc.get(hit.term);
+        if (prev) prev.count++;
+        else acc.set(hit.term, { kind: "meta-comment", source, term: hit.term, ...(field !== undefined ? { field } : {}), context: hit.context, count: 1 });
+      }
+    }
+    for (const f of acc.values()) this.add(f);
+  }
+
+  /**
+   * The approved transcript view (Quiet's `data-follow-text` section) names what it shows: with the
+   * view on and an eligible recording, that section is left out of the remark check. Its words never
+   * sit in the page; the verbatim and key checks still read the whole page.
+   */
+  private withoutApprovedTranscriptView(html: string): string {
+    if (!this.transcripts.enabled || this.transcripts.versions.size === 0 || !html.includes("data-follow-text")) return html;
+    return html.replace(/<section\b[^>]*\bdata-follow-text\b[^>]*>[\s\S]*?<\/section\s*>/gi, " ");
+  }
+
+  /**
+   * Every string value of a parsed value, except identifiers (see `isIdentifier`): bare paths and URLs (no spaces, with
+   * `/` or `:`) and slugs (`yi-simchos-…-03`), which are not prose.
+   */
+  private *metaCommentTexts(value: unknown): Generator<{ text: string; field: string }> {
+    const stack: { node: unknown; path: (string | number)[] }[] = [{ node: value, path: [] }];
+    while (stack.length > 0) {
+      const { node, path } = stack.pop()!;
+      if (typeof node === "string") {
+        if (!isIdentifier(node)) yield { text: node, field: fieldOf(path) };
+      } else if (Array.isArray(node)) {
+        for (let i = node.length - 1; i >= 0; i--) stack.push({ node: node[i], path: [...path, i] });
+      } else if (isRecord(node)) {
+        for (const [k, c] of Object.entries(node).reverse()) stack.push({ node: c, path: [...path, k] });
+      }
+    }
   }
 
   private add(f: Finding): void {
@@ -283,16 +376,32 @@ export class LeakScanner {
       let e = entity;
       if (isEntityKind(node.kind) && typeof node.id === "string") e = { kind: node.kind, id: node.id };
       else if (ctx.fileKind && typeof node.id === "string") e = { kind: ctx.fileKind, id: node.id };
+      // A person on a story: `{ name }` inside a `people` list.
+      const storyPerson = ctx.storyNames === true && path.at(-2) === "people" && typeof path.at(-1) === "number";
+      // An entity row (quick-index entity, EntityDoc): its labels are that entity's display names (F.1).
+      if (isEntityKind(node.kind) && typeof node.id === "string" && isRecord(node.labels)) {
+        const field = fieldOf([...path, "labels"]);
+        for (const term of Object.values(node.labels)) {
+          if (typeof term !== "string" || term.trim() === "") continue;
+          this.counts.namesChecked++;
+          const v = rules.check({ kind: node.kind, id: node.id }, term);
+          if (!v) continue;
+          const entityKey = `${node.kind}:${node.id}`;
+          const key = `${v.rule}\u0000${entityKey}\u0000${field}`;
+          const prev = acc.get(key);
+          if (prev) prev.count++;
+          else acc.set(key, { rule: v.rule, entity: entityKey, field, count: 1 });
+        }
+      }
       for (const [k, c] of Object.entries(node)) {
-        if (this.aliasKeys.has(k)) {
+        const asName = storyPerson && k === "name";
+        if (this.aliasKeys.has(k) || asName) {
           const field = fieldOf([...path, k]);
-          for (const term of aliasTerms(c)) {
-            if (e === null && ctx.legacyAggregate) {
-              this.counts.aliasTermsLegacy++;
-              continue;
-            }
-            this.counts.aliasTermsChecked++;
-            const v = rules.check(e, term);
+          for (const term of asName ? (typeof c === "string" ? [c] : []) : aliasTerms(c)) {
+            const strict = ctx.storyNames === true && (asName || e === null);
+            if (strict) this.counts.storyNamesChecked++;
+            else this.counts.aliasTermsChecked++;
+            const v = strict ? rules.checkName(term) : rules.check(e, term);
             if (!v) continue;
             const entityKey = e ? `${e.kind}:${e.id}` : undefined;
             const key = `${v.rule}\u0000${entityKey ?? ""}\u0000${field}`;
@@ -305,6 +414,77 @@ export class LeakScanner {
       }
     };
     walk(value, [], ctx.entity ?? null);
+    for (const a of acc.values()) this.add({ kind: "alias", source, ...a });
+  }
+
+  /**
+   * Name fields (F.1): in a shiur file every person name (a string in a `people` list, a
+   * `people[].name`, `people[].label.*`) and concept name (`concepts[].he`); in a search doc
+   * (`kind` "shiur" with a `titleOriginal`) its `people`/`concepts` strings; in a Pagefind record
+   * its name-bearing meta/filter keys (entity labels against the record's entity). Each must be a
+   * display name of a corpus entity: raw extraction names (possible ASR mishearings) never ship.
+   */
+  private walkNames(value: unknown, source: string, ctx: ValueContext): void {
+    const rules = this.aliases;
+    if (!rules) return;
+    const acc = new Map<string, { rule: AliasRule; entity?: string; field: string; count: number }>();
+    const check = (term: unknown, path: (string | number)[], entity: { kind: EntityKind; id: string } | null = null) => {
+      if (typeof term !== "string" || term.trim() === "") return;
+      this.counts.namesChecked++;
+      const v = entity ? rules.check(entity, term) : rules.checkName(term);
+      if (!v) return;
+      const field = fieldOf(path);
+      const entityKey = entity ? `${entity.kind}:${entity.id}` : undefined;
+      const key = `${v.rule}\u0000${entityKey ?? ""}\u0000${field}`;
+      const prev = acc.get(key);
+      if (prev) prev.count++;
+      else acc.set(key, entityKey === undefined ? { rule: v.rule, field, count: 1 } : { rule: v.rule, entity: entityKey, field, count: 1 });
+    };
+    const shiurWalk = (node: unknown, path: (string | number)[]): void => {
+      if (Array.isArray(node)) {
+        node.forEach((c, i) => shiurWalk(c, [...path, i]));
+        return;
+      }
+      if (!isRecord(node)) return;
+      for (const [k, c] of Object.entries(node)) {
+        if (k === "people" && Array.isArray(c)) {
+          c.forEach((p, i) => {
+            const at = [...path, k, i];
+            if (typeof p === "string") check(p, at);
+            else if (isRecord(p)) {
+              check(p.name, [...at, "name"]);
+              if (isRecord(p.label)) for (const [lk, lv] of Object.entries(p.label)) check(lv, [...at, "label", lk]);
+            }
+          });
+        } else if (k === "concepts" && Array.isArray(c)) {
+          c.forEach((x, i) => {
+            if (typeof x === "string") check(x, [...path, k, i]);
+            else if (isRecord(x)) check(x.he, [...path, k, i, "he"]);
+          });
+        }
+        if (typeof c === "object" && c !== null) shiurWalk(c, [...path, k]);
+      }
+    };
+    if (ctx.shiurNames === true) shiurWalk(value, []);
+    else if (isRecord(value) && value.kind === "shiur" && typeof value.titleOriginal === "string") {
+      // A SearchDoc: its top-level name lists (facets hold ids, not names).
+      for (const k of ["people", "concepts"] as const) {
+        const list = value[k];
+        if (Array.isArray(list)) list.forEach((x, i) => check(x, [k, i]));
+      }
+    }
+    if (ctx.pagefind === true && isRecord(value)) {
+      for (const part of ["meta", "filters"] as const) {
+        const o = value[part];
+        if (!isRecord(o)) continue;
+        for (const [k, c] of Object.entries(o)) {
+          const asLabel = (PAGEFIND_LABEL_KEYS as readonly string[]).includes(k);
+          if (!asLabel && !(PAGEFIND_NAME_KEYS as readonly string[]).includes(k)) continue;
+          const entity = asLabel ? (ctx.entity ?? null) : null;
+          for (const term of aliasTerms(c)) check(term, [part, k], entity);
+        }
+      }
+    }
     for (const a of acc.values()) this.add({ kind: "alias", source, ...a });
   }
 
@@ -324,7 +504,9 @@ export class LeakScanner {
     const keyCounts = new Map<string, { count: number; field: string }>();
     const subCounts = new Map<string, number>();
     const fallbackShiur = pathHint;
+    this.checkMetaComments(this.metaCommentTexts(value), source);
     this.walkAliases(value, source, vctx);
+    this.walkNames(value, source, vctx);
     const layerUnits = new Map<string, CorpusUnit>();
     if (vctx.layerFile) for (const u of layerFileUnits(vctx.layerFile, value)) layerUnits.set(pathKey(u.path), u);
 
@@ -393,6 +575,41 @@ export class LeakScanner {
   private flush(source: string, keys: Map<string, { count: number; field: string }>, subs: Map<string, number>): void {
     for (const [key, { count, field }] of keys) this.add({ kind: "key", source, key, field, count });
     for (const [substring, count] of subs) this.add({ kind: "substring", source, substring, count });
+  }
+
+  /** Story names marked on a built page (`data-story-person`): each must be a corpus entity's display name. */
+  private checkMarkedNames(html: string, source: string): void {
+    const rules = this.aliases;
+    if (!rules || !html.includes(STORY_PERSON_ATTR)) return;
+    const acc = new Map<AliasRule, number>();
+    for (const name of markedStoryNames(html)) {
+      this.counts.storyNamesChecked++;
+      const v = rules.checkName(decodeHtmlEntities(name));
+      if (v) acc.set(v.rule, (acc.get(v.rule) ?? 0) + 1);
+    }
+    for (const [rule, count] of acc) this.add({ kind: "alias", source, rule, field: `[${STORY_PERSON_ATTR}]`, count });
+  }
+
+  /**
+   * Person names marked on a built page (`data-person="<id>"`, F.1): each must be a display name
+   * of that person (any corpus entity's when the id is empty).
+   */
+  private checkMarkedPersons(html: string, source: string): void {
+    const rules = this.aliases;
+    if (!rules || !html.includes(PERSON_ATTR)) return;
+    const acc = new Map<string, { rule: AliasRule; entity?: string; count: number }>();
+    for (const { id, name } of markedPersonNames(html)) {
+      this.counts.namesChecked++;
+      const entity = id !== "" ? { kind: "person" as const, id } : null;
+      const term = decodeHtmlEntities(name);
+      const v = entity ? rules.check(entity, term) : rules.checkName(term);
+      if (!v) continue;
+      const key = `${v.rule}\u0000${id}`;
+      const prev = acc.get(key);
+      if (prev) prev.count++;
+      else acc.set(key, entity ? { rule: v.rule, entity: `person:${id}`, count: 1 } : { rule: v.rule, count: 1 });
+    }
+    for (const a of acc.values()) this.add({ kind: "alias", source, field: `[${PERSON_ATTR}]`, ...a });
   }
 
   /** Scan free text (HTML text, a JS bundle): keys by pattern, substrings, one verbatim unit. */
@@ -466,7 +683,12 @@ export class LeakScanner {
         this.scanText(raw, source, decodeJsEscapes(raw), hint);
         return;
       }
-      this.scanValue(parsed, source, hint, { layerFile: layerFileOf(file), fileKind: entityKindOfFile(file), legacyAggregate: isLegacyAggregateFile(file) });
+      this.scanValue(parsed, source, hint, {
+        layerFile: layerFileOf(file),
+        fileKind: entityKindOfFile(file),
+        storyNames: isStoryNamesFile(file),
+        shiurNames: isShiurNamesFile(file),
+      });
       return;
     }
     if (NDJSON_EXT.has(ext)) {
@@ -482,6 +704,9 @@ export class LeakScanner {
       return;
     }
     if (HTML_EXT.has(ext)) {
+      this.checkMetaComments([{ text: htmlToText(withoutIdentifierAttributes(this.withoutApprovedTranscriptView(raw))) }], source);
+      this.checkMarkedNames(raw, source);
+      this.checkMarkedPersons(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);
       return;
     }
@@ -489,6 +714,7 @@ export class LeakScanner {
       this.scanText(raw, source, decodeJsEscapes(raw), hint);
       return;
     }
+    if (PROSE_TEXT_EXT.has(ext)) this.checkMetaComments([{ text: raw }], source);
     this.scanText(raw, source, PROSE_TEXT_EXT.has(ext) || !isText ? raw : null, hint);
   }
 
@@ -513,4 +739,22 @@ export class LeakScanner {
       verbatim: [...this.verbatim],
     };
   }
+}
+
+/**
+ * Identifiers, not prose: bare paths and URLs (no spaces, with `/` or `:`) and slugs
+ * (`yi-simchos-…-03`). Recording ids and media keys come from archive file names and are
+ * not published text, so the remark check leaves them out.
+ */
+function isIdentifier(value: string): boolean {
+  return /^\S*[/:]\S*$/.test(value) || /^[a-z0-9]+(?:[-_.~][a-z0-9]+)+$/.test(value);
+}
+
+/** Blank attribute values that are identifiers (`href`, `src`, `data-rec`, …) inside the tags of a page. */
+function withoutIdentifierAttributes(html: string): string {
+  return html.replace(/<[a-zA-Z][^<>]*>/g, (tag) =>
+    tag.replace(/(=\s*)(?:"([^"]*)"|'([^']*)')/g, (m, eq: string, dq?: string, sq?: string) =>
+      isIdentifier(dq ?? sq ?? "") ? `${eq}""` : m,
+    ),
+  );
 }

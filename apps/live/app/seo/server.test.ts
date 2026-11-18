@@ -5,6 +5,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { createElement } from "react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { afterAll, describe, expect, it } from "vitest";
+import { DEDICATION } from "../components/dedication-text.ts";
 import { checkFallback, checkPage, exportsServerLoader, flattenPages, pagePathOf, parseHead, postBuild } from "./check.server.ts";
 import { liveBuildEnd, livePrerenderPaths } from "./config.server.ts";
 import { findCorpusDir, readDataFileSet, readSeoCorpus } from "./corpus.server.ts";
@@ -13,7 +14,7 @@ import { createSeoContext, resetSeoContext, seoDataFor, seoLoader, SPA_MODE_HEAD
 import { seoMeta } from "./meta.ts";
 import { prerenderPaths } from "./model.ts";
 import { SeoHead } from "./SeoHead.tsx";
-import { corpusFixture, SHIUR_CATALOG, SHIUR_FULL, writeCorpusFixture } from "./test-fixtures.ts";
+import { corpusFixture, OTHER_IDS, SHIUR_CATALOG, SHIUR_FULL, writeCorpusFixture } from "./test-fixtures.ts";
 import { prerenderSetsFromCorpus, projectedPrerender } from "../../data-build/budgets.ts";
 import { readCorpusInput } from "../../data-build/corpus-input.ts";
 import { emitLiveData } from "../../data-build/emit.ts";
@@ -31,7 +32,9 @@ function tmp(): string {
 }
 
 const ENV = { EMUNAS_DOMAIN: "example.org" };
-const QUIET = "https://example.org";
+/** The body every built page ends with (root layout): the dedication footer (F.3). */
+const DEDICATED_BODY = `<body><main></main><footer class="f"><p class="l" dir="rtl" lang="he" data-dedication="">${DEDICATION}</p></footer></body>`;
+const QUIET = "https://library.example.org";
 
 /**
  * Renders the SeoHead for `path` with the given root loader data, as the prerender does, plus the
@@ -59,15 +62,30 @@ describe(".corpus reader", () => {
   const corpus = readSeoCorpus(dir);
 
   it("reads shiurim, series, occasions and entities with labels and prerender flags", () => {
-    expect(corpus.shiurim.map((s) => s.id)).toEqual([SHIUR_FULL, SHIUR_CATALOG, "yi-other-01"]);
+    expect(corpus.shiurim.map((s) => s.id)).toEqual([SHIUR_FULL, SHIUR_CATALOG, ...OTHER_IDS]);
     expect(corpus.shiurim[0]!.oneLiner?.en).toContain("Knesses Yisrael");
     expect(corpus.series).toEqual(corpusFixture.series);
     expect(corpus.occasions).toEqual(corpusFixture.occasions);
     expect(corpus.works).toEqual(corpusFixture.works);
     expect(corpus.people).toEqual(corpusFixture.people);
-    expect(corpus.concepts[0]).toEqual(corpusFixture.concepts[0]);
-    // A concept below the listing threshold has no concepts.json row: labelled by its key.
-    expect(corpus.concepts[1]!.label.en).toBe("bitachon-2");
+    expect(corpus.concepts).toEqual(corpusFixture.concepts);
+  });
+
+  it("fails without the corpus layer (it is required)", () => {
+    const bare = writeCorpusFixture(join(tmp(), ".corpus"));
+    rmSync(join(bare, "layer"), { recursive: true });
+    expect(() => readSeoCorpus(bare)).toThrow(/the corpus layer is required/);
+  });
+
+  it("gives a series with no parts no route (the emit writes no data file for it)", () => {
+    const d = writeCorpusFixture(join(tmp(), ".corpus"));
+    const file = join(d, "series.json");
+    const s = JSON.parse(readFileSync(file, "utf8")) as { series: { id: string; count: number }[] };
+    s.series.push({ ...s.series[0]!, id: "empty-en", count: 0 });
+    writeFileSync(file, JSON.stringify(s));
+    const c = readSeoCorpus(d);
+    expect(c.series.map((x) => x.id)).toEqual(corpusFixture.series.map((x) => x.id));
+    expect(prerenderPaths(c).paths.some((p) => p.includes("/series/empty-en"))).toBe(false);
   });
 
   it("finds .corpus by EMUNAS_CORPUS_DIR or walking up", () => {
@@ -245,7 +263,7 @@ describe("post-build checks", () => {
     const c = join(tmp(), "client");
     const put = (file: string, body: string) => {
       mkdirSync(dirname(join(c, file)), { recursive: true });
-      writeFileSync(join(c, file), body);
+      writeFileSync(join(c, file), file.endsWith(".html") ? body.replace(/(<\/html>)$/u, `${DEDICATED_BODY}$1`) : body);
     };
     put("index.html", '<html><head><meta name="robots" content="noindex"/></head></html>');
     put("en/index.html", `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head></html>`);
@@ -284,9 +302,29 @@ describe("post-build checks", () => {
 
   it("flags an SPA fallback that is indexable", () => {
     const c = fakeClient();
-    writeFileSync(join(c, "index.html"), `<html><head><link rel="canonical" href="${QUIET}/"/></head></html>`);
+    writeFileSync(join(c, "index.html"), `<html><head><link rel="canonical" href="${QUIET}/"/></head>${DEDICATED_BODY}</html>`);
     const r = postBuild({ clientDir: c, hosts, routeFiles: [] });
     expect(r.findings.map((f) => f.problem)).toEqual(["SPA fallback without noindex", "SPA fallback carries a canonical link"]);
+  });
+
+  it("flags an HTML file whose dedication is missing, doubled or not the footer's last line (F.3)", () => {
+    const run = (html: string) => {
+      const c = fakeClient();
+      writeFileSync(join(c, "en/index.html"), html);
+      return postBuild({ clientDir: c, hosts, routeFiles: [] }).findings.filter((f) => f.file === "en/index.html").map((f) => f.problem);
+    };
+    const head = `<head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head>`;
+    expect(run(`<html>${head}${DEDICATED_BODY}</html>`)).toEqual([]);
+    expect(run(`<html>${head}<body></body></html>`)).toEqual(["no dedication line"]);
+    expect(run(`<html>${head}${DEDICATED_BODY}${DEDICATED_BODY}</html>`)).toEqual(["the dedication appears 2 times"]);
+    const notLast = `<body><footer><p dir="rtl" lang="he">${DEDICATION}</p><p>more</p></footer></body>`;
+    expect(run(`<html>${head}${notLast}</html>`)).toEqual(["the dedication is not the last line of a <footer>"]);
+    const noLang = `<body><footer><p dir="rtl">${DEDICATION}</p></footer></body>`;
+    expect(run(`<html>${head}${noLang}</html>`)).toEqual(['the dedication is not marked lang="he"']);
+    // The SPA fallback is checked too.
+    const c = fakeClient();
+    writeFileSync(join(c, "index.html"), '<html><head><meta name="robots" content="noindex"/></head></html>');
+    expect(postBuild({ clientDir: c, hosts, routeFiles: [] }).findings).toEqual([{ file: "index.html", problem: "no dedication line" }]);
   });
 
   it("flattenPages leaves the UI homes and existing targets alone", () => {
@@ -336,7 +374,7 @@ describe("react-router config hooks", () => {
     expect(() => liveBuildEnd(args, ENV, () => {})).toThrow(/app-only page \(today\) without noindex/u);
     writeFileSync(
       join(client, "en", "index.html"),
-      `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head></html>`,
+      `<html><head><meta name="robots" content="noindex"/><link rel="canonical" href="${QUIET}/en/"/><meta property="og:title" content="t"/></head>${DEDICATED_BODY}</html>`,
     );
     const logs: string[] = [];
     liveBuildEnd(args, ENV, (m) => logs.push(m));
@@ -348,7 +386,6 @@ describe(".corpus reader with the corpus layer (C1.7)", () => {
   it("reads corpus ids and the Live and Quiet page flags, as the data emit does", () => {
     const corpusDir = buildCorpusTo(MINI_DATA, MINI_POLICY);
     const c = readSeoCorpus(corpusDir);
-    expect(c.layer).toBe(true);
     expect(c.topics.length).toBeGreaterThan(100);
     const files = emitLiveData(readCorpusInput(corpusDir), { generatedAt: "2026-11-15T00:00:00.000Z" });
     const pages = (xs: { key: string; prerender: boolean }[]) => xs.filter((x) => x.prerender).map((x) => x.key).sort();

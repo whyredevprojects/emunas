@@ -1,6 +1,7 @@
 /**
  * Test fixtures for `app/seo` (not shipped): a small `SeoCorpus` and the same corpus as `.corpus/`
- * aggregate files on disk (only the fields `corpus.server.ts` reads are meaningful).
+ * files on disk, catalog aggregates and corpus-layer entity files (only the fields
+ * `corpus.server.ts` reads are meaningful).
  */
 import { mkdirSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
@@ -8,6 +9,8 @@ import type { SeoCorpus } from "./model.ts";
 
 export const SHIUR_FULL = "yi-parshas-hashavua-brshys-01";
 export const SHIUR_CATALOG = "en-emunah-en-01";
+/** Catalogued shiurim of a one-off occasion outside the tables (the "other" bucket). */
+export const OTHER_IDS = ["yi-other-01", "yi-other-02", "yi-other-03"] as const;
 
 export const corpusFixture: SeoCorpus = {
   shiurim: [
@@ -18,7 +21,7 @@ export const corpusFixture: SeoCorpus = {
       subTitle: null,
       sectionTitle: "פרשת השבוע",
       years: [5736],
-      oneLiner: { en: "The Rav explains the bond of Hashem and Knesses Yisrael.", yi: "דער משגיח ערקלערט." },
+      oneLiner: { en: "The Mashgiach explains the bond of Hashem and Knesses Yisrael.", yi: "דער משגיח ערקלערט." },
     },
     {
       id: SHIUR_CATALOG,
@@ -38,22 +41,21 @@ export const corpusFixture: SeoCorpus = {
     { key: "a-wedding", kind: null, label: { en: "חתונה", yi: "חתונה" }, count: 3 },
   ],
   works: [
-    { key: "genesis", label: { en: "Genesis", yi: "בראשית" }, count: 40, prerender: true },
-    { key: "midrash", label: { en: "Midrash", yi: "מדרש" }, count: 30, prerender: false },
-    { key: "abudraham", label: { en: "Abudraham", yi: "אבודרהם" }, count: 2, prerender: false },
+    { key: "genesis", label: { en: "Genesis", yi: "בראשית" }, count: 40, prerender: true, quietPage: true },
+    { key: "midrash", label: { en: "Midrash", yi: "מדרש" }, count: 30, prerender: false, quietPage: false },
+    { key: "abudraham", label: { en: "Abudraham", yi: "אבודרהם" }, count: 2, prerender: false, quietPage: true },
   ],
   people: [
-    { key: "achashverosh", label: { en: "Achashverosh", yi: "אחשורוש" }, count: 5, prerender: true },
-    { key: "rabbi-x", label: { en: "Rabbi X", yi: "Rabbi X" }, count: 1, prerender: false },
+    { key: "achashverosh", label: { en: "Achashverosh", yi: "אחשורוש" }, count: 5, prerender: true, quietPage: true },
+    { key: "rabbi-x", label: { en: "Rabbi X", yi: "Rabbi X" }, count: 1, prerender: false, quietPage: false },
   ],
   concepts: [
-    { key: "emunah-1", label: { en: "אמונה", yi: "אמונה" }, count: 9, prerender: true },
-    { key: "bitachon-2", label: { en: "בטחון", yi: "בטחון" }, count: 2, prerender: false },
+    { key: "emunah-1", label: { en: "אמונה", yi: "אמונה" }, count: 9, prerender: true, quietPage: true, topicId: null },
+    { key: "bitachon-2", label: { en: "בטחון", yi: "בטחון" }, count: 2, prerender: false, quietPage: false, topicId: null },
   ],
   topics: [],
   stories: [],
   threads: [],
-  layer: false,
 };
 
 /**
@@ -62,7 +64,6 @@ export const corpusFixture: SeoCorpus = {
  */
 export const layerCorpusFixture: SeoCorpus = {
   ...corpusFixture,
-  layer: true,
   works: [{ key: "bereishis", label: { en: "Bereishis", yi: "בראשית" }, count: 40, prerender: true, quietPage: true }],
   people: [
     { key: "moshe-rabbeinu", label: { en: "Moshe Rabbeinu", yi: "משה רבינו" }, count: 30, prerender: true, quietPage: true },
@@ -107,16 +108,16 @@ export function writeCorpusFixture(dir: string): string {
         years: s.years,
         oneLiner: s.oneLiner,
       })),
-      // A shiur whose zman is outside the tables: its catalog spelling labels the occasion.
-      {
-        id: "yi-other-01",
+      // Shiurim whose zman is outside the tables: the catalog spelling labels the occasion.
+      ...OTHER_IDS.map((id) => ({
+        id,
         lang: "yi",
         catalog: { titleOriginal: "x", subTitle: null, sectionTitle: "y" },
         parsha: null,
         zman: { raw: "חתונה", key: "a-wedding" },
         years: [],
         oneLiner: null,
-      },
+      })),
     ],
   });
   write(dir, "series.json", { series: c.series.map((s) => ({ ...s, lang: "yi", parts: [] })) });
@@ -126,31 +127,34 @@ export function writeCorpusFixture(dir: string): string {
       { key: "chanukah", en: "Chanukah", yi: "חנוכה", he: "חנוכה", count: 2, shiurim: [], subs: [] },
       { key: "adar", en: "Adar", yi: "אדר", he: "אדר", count: 1, shiurim: [], subs: [] },
     ],
-    other: [],
+    other: OTHER_IDS.map((id) => ({ id, lang: "yi", years: [], raw: "חתונה", audience: null })),
     excluded: { uncataloguedGuesses: 0 },
   });
-  write(dir, "works.json", {
-    works: [
-      { key: "genesis", en: "Genesis", yi: null, he: "בראשית" },
-      { key: "midrash", en: "Midrash", yi: "מדרש", he: "מדרש" },
-      { key: "abudraham", en: "Abudraham", yi: "אבודרהם", he: null },
-    ],
+  // The corpus layer's entity files, with the page flags the fixture's entities carry.
+  const layer = join(dir, "layer");
+  mkdirSync(layer, { recursive: true });
+  const flags = (e: SeoCorpus["works"][number]) => ({ count: e.count, pages: { quiet: e.quietPage === true, live: e.prerender } });
+  write(layer, "layer.json", { counts: { visibleShiurim: c.shiurim.length } });
+  write(layer, "topics.json", { tree: [], detail: [] });
+  write(layer, "stories.json", { stories: [] });
+  write(layer, "threads.json", { threads: [] });
+  write(layer, "works.json", {
+    works: c.works.map((e) => ({ id: e.key, titleEn: e.label.en, titleHe: e.label.yi, generic: e.key === "midrash", ...flags(e) })),
   });
-  write(dir, "people.json", {
-    people: [
-      { key: "achashverosh", en: "Achashverosh", he: "אחשורוש" },
-      { key: "rabbi-x", en: "Rabbi X", he: null },
-    ],
+  write(layer, "people.json", {
+    people: c.people.map((e) => ({
+      id: e.key,
+      nameEn: e.label.en,
+      nameYi: e.label.yi,
+      type: "acharon",
+      group: "acharon",
+      excluded: null,
+      listed: { quiet: true, live: e.prerender },
+      ...flags(e),
+    })),
   });
-  write(dir, "concepts.json", { minShiurim: 3, omitted: {}, concepts: [{ key: "emunah-1", he: "אמונה" }] });
-  const ent = (xs: SeoCorpus["works"]) =>
-    xs.map((e) => ({ key: e.key, shiurim: e.count, quietPage: e.count >= 2, livePrerender: e.prerender }));
-  write(dir, "entities.json", {
-    thresholds: { quiet: { work: 2, person: 2, concept: 3 }, live: { prerender: 3 } },
-    works: ent(c.works),
-    people: ent(c.people),
-    concepts: ent(c.concepts),
-    occasions: c.occasions.map((o) => ({ key: o.key, shiurim: o.count })),
+  write(layer, "concepts.json", {
+    concepts: c.concepts.map((e) => ({ id: e.key, label: { en: e.label.en, yi: e.label.yi }, canonicalHe: e.label.yi, mergedIntoTopic: e.topicId ?? null, ...flags(e) })),
   });
   return dir;
 }

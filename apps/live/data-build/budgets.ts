@@ -16,8 +16,7 @@
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { join, relative, sep } from "node:path";
 import { brotliCompressSync, constants } from "node:zlib";
-import type { EntitiesFile } from "@emunas/corpus/aggregate";
-import { readLayerLists } from "../app/seo/corpus.server.ts";
+import { readSeoCorpus } from "../app/seo/corpus.server.ts";
 import { MAX_FILES, MAX_FILE_BYTES, checkBudgets, walkFiles } from "@emunas/corpus-guard/budgets";
 import type { DataKind } from "../app/data/types.ts";
 import { kindOfFile } from "./schemas.ts";
@@ -35,7 +34,6 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   today: 30 * KB,
   shiur: 40 * KB,
   writeup: 8 * KB,
-  stories: 120 * KB,
   quickIndex: 600 * KB,
   build: 4 * KB,
   // Corpus layer (plan §4).
@@ -117,8 +115,8 @@ export interface LiveBudgetOptions {
 export const APP_BUILD_FILES = 120;
 
 /**
- * Keys whose entity routes the build prerenders (W4.5 `prerenderPaths`): with a corpus layer, the
- * Live page flags of `.corpus/layer/` (C1.7); without one, `.corpus/entities.json`.
+ * Keys whose entity routes the build prerenders (W4.5 `prerenderPaths`): the Live page flags of
+ * `.corpus/layer/` (C1.7) and the occasions with enough shiurim.
  */
 export interface PrerenderSets {
   /** Works with a Live page (≥3 shiurim, not a genre label). */
@@ -136,35 +134,23 @@ export interface PrerenderSets {
 /** W4.5 `OCCASION_PRERENDER_MIN` (app/seo/model.ts). */
 const OCCASION_PRERENDER_MIN = 2;
 
-export function prerenderSetsFromEntities(entities: EntitiesFile): PrerenderSets {
-  const live = (xs: readonly { key: string; livePrerender: boolean }[]) => new Set(xs.filter((x) => x.livePrerender).map((x) => x.key));
-  return {
-    works: live(entities.works),
-    people: live(entities.people),
-    concepts: live(entities.concepts),
-    occasions: new Set(entities.occasions.filter((o) => o.shiurim >= OCCASION_PRERENDER_MIN).map((o) => o.key)),
-  };
-}
-
 /**
- * The prerender sets of `<corpusDir>`: occasions from `entities.json`, entity routes from the corpus
- * layer's Live page flags when there is a layer (else from `entities.json`). Null without either.
+ * The prerender sets of `<corpusDir>`, read as the prerender list reads them (`readSeoCorpus`):
+ * occasions from the catalog aggregates, entity routes from the corpus layer's Live page flags. Null
+ * without a corpus.
  */
 export function prerenderSetsFromCorpus(corpusDir: string | null | undefined): PrerenderSets | null {
-  const file = corpusDir ? join(corpusDir, "entities.json") : null;
-  if (!corpusDir || !file || !existsSync(file)) return null;
-  const legacy = prerenderSetsFromEntities(JSON.parse(readFileSync(file, "utf8")) as EntitiesFile);
-  const layer = readLayerLists(corpusDir);
-  if (!layer) return legacy;
+  if (!corpusDir || !existsSync(join(corpusDir, "occasions.json"))) return null;
+  const c = readSeoCorpus(corpusDir);
   const live = (xs: readonly { key: string; prerender: boolean }[]) => new Set(xs.filter((x) => x.prerender).map((x) => x.key));
   return {
-    works: live(layer.works),
-    people: live(layer.people),
-    concepts: live(layer.concepts),
-    occasions: legacy.occasions,
-    topics: live(layer.topics),
-    threads: live(layer.threads),
-    stories: live(layer.stories),
+    works: live(c.works),
+    people: live(c.people),
+    concepts: live(c.concepts),
+    occasions: new Set(c.occasions.filter((o) => o.count >= OCCASION_PRERENDER_MIN).map((o) => o.key)),
+    topics: live(c.topics),
+    threads: live(c.threads),
+    stories: live(c.stories),
   };
 }
 

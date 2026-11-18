@@ -20,8 +20,8 @@ export interface CorpusInput {
   aggregates: Aggregates;
   /** Manifest `updatedAt` per full shiur (`.corpus/updated.json`); empty when the file is absent. */
   updatedAt: Record<string, string>;
-  /** The corpus layer (`.corpus/layer/`, C1.2), or null when it is off or absent. */
-  layer: LayerInput | null;
+  /** The corpus layer (`.corpus/layer/`, C1.2); required. */
+  layer: LayerInput;
 }
 
 export class CorpusInputError extends Error {

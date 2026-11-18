@@ -150,6 +150,26 @@
     background: var(--color-surface);
   }
 
+  .chipAction {
+    min-block-size: var(--tap-min);
+    min-inline-size: var(--tap-min);
+    padding-inline: var(--space-xs);
+    border: none;
+    background: none;
+    color: var(--color-ink-muted);
+    font: inherit;
+    font-size: var(--step--1);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2xs);
+    align-items: center;
+  }
+
   .notice {
     margin: 0;
     padding: var(--space-xs) var(--space-s);

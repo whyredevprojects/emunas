@@ -11,7 +11,7 @@ export { lookupParsha, lookupZman, parshaByKey, occasionByKeyOf } from "./occasi
 export type { OccasionMatch, Audience, OccasionSub } from "./occasion.ts";
 export { lookupWork, workByKey, workForm, compareWorks } from "./work.ts";
 export type { WorkMatch } from "./work.ts";
-export { lookupPerson, personByKey, personForm, lookupConcept, isStopConcept } from "./person.ts";
+export { lookupPerson, personByKey, personForm, lookupConcept } from "./person.ts";
 export type { PersonMatch, ConceptMatch } from "./person.ts";
 export { parseSefariaRef, compareRefs, compareSortKeys, sefariaUrl, refLabel } from "./sefaria.ts";
 export type { ParsedRef, UnparsedRef, RefParse, RefPoint, RefCorpus } from "./sefaria.ts";
@@ -30,6 +30,6 @@ export { TRACTATES, tractatesReviewStatus } from "./tables/tractates.ts";
 export type { Tractate, Seder } from "./tables/tractates.ts";
 export { PEOPLE, peopleReviewStatus } from "./tables/people.ts";
 export type { Person } from "./tables/people.ts";
-export { CONCEPT_ALIASES, CONCEPT_STOP_LIST, CONCEPT_MIN_SHIURIM, conceptsReviewStatus } from "./tables/concepts.ts";
+export { CONCEPT_ALIASES, conceptsReviewStatus } from "./tables/concepts.ts";
 export { VARIANTS, variantsReviewStatus } from "./tables/variants.ts";
 export { MISHNEH_TORAH_HILCHOS, SHULCHAN_ARUKH_PARTS, SEFER_HAMITZVOT_PARTS, refSectionsReviewStatus } from "./tables/ref-sections.ts";

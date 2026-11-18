@@ -9,11 +9,14 @@
  * - checks every prerendered page: canonical on the Quiet origin (never `listen.*`), OG title and
  *   description on content pages, a `<title>` carrying the page's own name on content pages (W5.4),
  *   `noindex` on app-only pages and on the SPA fallback;
+ * - checks that every HTML file, the SPA fallback included, ends its footer with the dedication line,
+ *   exactly once (corpus-wave-plan F.3);
  * - checks the static file budget (≤ 18,000 files, tech-live §3.3).
  */
 import { existsSync, readFileSync, readdirSync, renameSync, rmSync, rmdirSync, statSync, writeFileSync } from "node:fs";
 import { dirname, join, relative, sep } from "node:path";
-import { LIVE_SUBDOMAIN, hostOf, type Hosts } from "@emunas/links";
+import { LIVE_SUBDOMAIN, hostOf, type SiteHosts } from "@emunas/links";
+import { dedicationProblems } from "../components/dedication-text.ts";
 import { TITLE_SEPARATOR } from "./meta.ts";
 import { APP_ONLY_KINDS, ENTRY_KINDS, classifyLivePath, isIndexable, normalizeLivePath } from "./policy.ts";
 import { ROBOTS_TXT } from "./robots.ts";
@@ -129,7 +132,7 @@ export function flattenPages(clientDir: string): number {
 }
 
 /** Checks one prerendered page. `hosts` null: canonical/hreflang are not required (no hosts configured). */
-export function checkPage(file: string, html: string, hosts: Hosts | null): SeoFinding[] {
+export function checkPage(file: string, html: string, hosts: SiteHosts | null): SeoFinding[] {
   const f: SeoFinding[] = [];
   const bad = (problem: string) => f.push({ file, problem });
   const head = parseHead(html);
@@ -191,7 +194,7 @@ export function exportsServerLoader(source: string): boolean {
 
 export interface PostBuildOptions {
   clientDir: string;
-  hosts: Hosts | null;
+  hosts: SiteHosts | null;
   /** Route module files other than root (absolute paths), to refuse `.data` removal when one has a loader. */
   routeFiles: readonly string[];
   maxFiles?: number;
@@ -237,6 +240,7 @@ export function postBuild(opts: PostBuildOptions): PostBuildResult {
     const file = rel(clientDir, p);
     if (!file.endsWith(".html") || file.startsWith("data/")) continue;
     const html = readFileSync(p, "utf8");
+    for (const problem of dedicationProblems(html)) findings.push({ file, problem });
     if (file === SPA_FALLBACK_FILE) {
       findings.push(...checkFallback(html));
       continue;

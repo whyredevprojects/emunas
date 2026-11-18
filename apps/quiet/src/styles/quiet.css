@@ -1,7 +1,8 @@
 /*
  * Quiet: a printed catalog from a careful publisher (concept-quiet §11). Paper background,
  * near-black text, one restrained accent for links and the "now playing" mark, hairline rules,
- * spaced lettering for labels. No icons, shadows, badges or animation.
+ * spaced lettering for labels. No icons where a word will do (the exceptions: the new-tab mark and
+ * the sun and moon of the theme switch), no shadows, badges or animation.
  *
  * Logical properties only (Stylelint enforces it), so the Yiddish (rtl) and English (ltr)
  * editions share every rule. No quotation styling anywhere: there is no blockquote or q.
@@ -247,6 +248,46 @@
     flex: 0 0 auto;
   }
 
+  /* Light and dark: a sun and a moon, the icon exception to "a word will do". Each button is named
+     (aria-label); the chosen one is in ink with a hairline under it, the other muted.
+     Until script shows it (`hidden`), it keeps its box but is invisible: its 44px buttons set the
+     height of the header row, so revealing it after first paint must not push the page down (CLS). */
+  .theme-switch {
+    display: flex;
+    gap: var(--space-2xs);
+  }
+
+  .theme-switch[hidden] {
+    visibility: hidden;
+  }
+
+  .theme-switch button {
+    display: inline-grid;
+    place-items: center;
+    inline-size: 2.75rem;
+    block-size: 2.75rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    color: var(--color-ink-muted);
+    cursor: pointer;
+  }
+
+  .theme-switch svg {
+    inline-size: 1.25rem;
+    block-size: 1.25rem;
+  }
+
+  .theme-switch button:hover {
+    color: var(--color-ink);
+  }
+
+  /* The hairline is as wide as the icon, not the 44px tap target. */
+  .theme-switch button[aria-pressed="true"] {
+    color: var(--color-ink);
+    background: linear-gradient(currentColor, currentColor) no-repeat center bottom 0.4rem / 1.25rem 1px;
+  }
+
   .breadcrumb {
     padding-block: var(--space-s) 0;
     font-size: var(--step-0);
@@ -480,6 +521,20 @@
     .chooser {
       grid-template-columns: 1fr 1fr;
     }
+  }
+
+  /* The new-tab mark (components/NewTabIcon.astro, components/new-tab-icon.ts). Mirrors in RTL so
+     the arrow leaves on the reading side. */
+  .new-tab-icon {
+    display: inline-block;
+    inline-size: 0.8em;
+    block-size: 0.8em;
+    margin-inline-start: 0.25em;
+    vertical-align: baseline;
+  }
+
+  [dir="rtl"] .new-tab-icon {
+    transform: scaleX(-1);
   }
 }
 

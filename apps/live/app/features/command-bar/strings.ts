@@ -7,7 +7,7 @@ import { createT, type MessageTable, type TFunction, type UiLang } from "@emunas
 
 export const searchEn = {
   "cb.label": "Search or go to",
-  "cb.placeholder": "A parsha, a sefer, “Tanya 12”, a year…",
+  "cb.placeholder": "A topic, a parsha, a sefer, “Tanya 12”, a year…",
   "cb.hint": "Press / to search from anywhere.",
   "cb.goTo": "Go to",
   "cb.moments": "Moments",
@@ -18,9 +18,10 @@ export const searchEn = {
   "cb.nothing": "Nothing found for “{q}”.",
   "cb.count": { one: "{count} shiur", other: "{count} shiurim" },
   "cb.type.occasion": "Parsha or occasion",
+  "cb.type.topic": "Topic",
   "cb.type.work": "Sefer",
   "cb.type.person": "Person",
-  "cb.type.concept": "Inyan",
+  "cb.type.concept": "Glossary entry",
   "cb.type.series": "Series",
   "cb.type.year": "Year",
   "cb.seriesPerek": "perek {n}",
@@ -59,13 +60,16 @@ export const searchEn = {
   "search.play": "Play from {time}",
   "search.open": "Open the shiur",
   "search.noResults": "No results for “{q}”.",
+  "search.filters": "Only shiurim with",
+  "search.filter.add": "Search within {name}",
+  "search.filter.remove": "Remove the filter {name}",
 } as const;
 
 export type SearchKey = keyof typeof searchEn;
 
 export const searchYi: MessageTable<SearchKey> = {
   "cb.label": "זוכן אדער גיין צו",
-  "cb.placeholder": "א פרשה, א ספר, „תניא 12“, א יאר…",
+  "cb.placeholder": "א ענין, א פרשה, א ספר, „תניא 12“, א יאר…",
   "cb.hint": "דריקט / צו זוכן פון יעדן ארט.",
   "cb.goTo": "גיין צו",
   "cb.moments": "מאמענטן",
@@ -76,9 +80,10 @@ export const searchYi: MessageTable<SearchKey> = {
   "cb.nothing": "גארנישט געפונען פאר „{q}“.",
   "cb.count": { one: "{count} שיעור", other: "{count} שיעורים" },
   "cb.type.occasion": "פרשה אדער זמן",
+  "cb.type.topic": "ענין",
   "cb.type.work": "ספר",
   "cb.type.person": "פערזאן",
-  "cb.type.concept": "ענין",
+  "cb.type.concept": "ערך",
   "cb.type.series": "סדרה",
   "cb.type.year": "יאר",
   "cb.seriesPerek": "פרק {n}",
@@ -117,6 +122,9 @@ export const searchYi: MessageTable<SearchKey> = {
   "search.play": "שפילן פון {time}",
   "search.open": "עפענען דעם שיעור",
   "search.noResults": "קיין רעזולטאטן פאר „{q}“.",
+  "search.filters": "נאר שיעורים מיט",
+  "search.filter.add": "זוכן נאר אין {name}",
+  "search.filter.remove": "אראפנעמען דעם פילטער {name}",
 };
 
 export type SearchT = TFunction<SearchKey>;

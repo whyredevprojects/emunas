@@ -2,7 +2,7 @@
  * Corpus-layer input (corpus-wave-plan §3.1): reads the corpus-wide files through the allow-listed
  * data reader only, validates every record with the loose schemas and applies the failure policy:
  *
- * - corpus absent (no `index.json` and no core file) → layer off, with a warning;
+ * - corpus absent (no `index.json`) → fatal (FatalDataError): the corpus layer is required;
  * - `index.json` version not in KNOWN_CORPUS_VERSIONS → warning, or fatal when the corpus policy
  *   says `unknownVersion: "fail"`;
  * - a core file (topics, concepts, people, works) missing, not JSON, not an array, or with most of
@@ -76,8 +76,6 @@ export interface DroppedRecord {
 }
 
 export interface CorpusInputReport {
-  /** False when the corpus is absent: the layer is off and the sites build without it. */
-  present: boolean;
   version: number | null;
   knownVersion: boolean;
   generatedAt: string | null;
@@ -122,8 +120,7 @@ export interface CorpusInput {
 }
 
 export interface CorpusInputResult {
-  /** null when the corpus is absent (layer off). */
-  input: CorpusInput | null;
+  input: CorpusInput;
   report: CorpusInputReport;
 }
 
@@ -133,7 +130,6 @@ export interface ReadCorpusInputOptions {
 
 function emptyReport(): CorpusInputReport {
   return {
-    present: false,
     version: null,
     knownVersion: false,
     generatedAt: null,
@@ -323,14 +319,11 @@ const SERIES_FILE_RE = /^series\/([a-z0-9][a-z0-9-]*)\.json$/;
 const SHIUR_TAGS_FILE_RE = /^shiur-tags\/([a-z0-9][a-z0-9-]*)\.json$/;
 const KNOWN_TOP = new Set<string>(["index.json", ...CORE_FILES, ...OPTIONAL_FILES]);
 
-function loadIndex(reader: DataReader, report: CorpusInputReport): CorpusIndexIn | null {
+function loadIndex(reader: DataReader, report: CorpusInputReport): CorpusIndexIn {
   const j = readJson(reader, "index.json", report);
   if (!j.ok) {
-    if (j.reason !== "missing") throw new FatalDataError(`${CORPUS_DIR}/index.json ${j.reason}`);
-    // No index: the corpus is absent unless core files are lying around without it.
-    const stray = CORE_FILES.filter((f) => reader.exists(`${CORPUS_DIR}/${f}`));
-    if (stray.length > 0) throw new FatalDataError(`${CORPUS_DIR}/index.json is missing but ${stray.join(", ")} exist`);
-    return null;
+    const why = j.reason === "missing" ? "is missing: the corpus layer is required" : j.reason;
+    throw new FatalDataError(`${CORPUS_DIR}/index.json ${why}`);
   }
   const r = v.safeParse(CorpusIndexSchema, j.json);
   if (!r.success) throw new FatalDataError(`${CORPUS_DIR}/index.json is invalid: ${issueSummary(r.issues, 5).join("; ")}`);
@@ -350,16 +343,11 @@ function loadIndex(reader: DataReader, report: CorpusInputReport): CorpusIndexIn
 
 /**
  * Read the corpus-wide layer input. Throws FatalDataError under the fatal rules above; otherwise
- * returns the parsed input (or null when the corpus is absent) and the report.
+ * returns the parsed input and the report.
  */
 export function readCorpusInput(reader: DataReader, opts: ReadCorpusInputOptions): CorpusInputResult {
   const report = emptyReport();
   const index = loadIndex(reader, report);
-  if (index === null) {
-    report.warnings.push(`${CORPUS_DIR}/ is absent: the corpus layer is off and the sites build without the corpus indexes`);
-    return { input: null, report };
-  }
-  report.present = true;
   report.version = index.version;
   report.generatedAt = index.generatedAt || null;
   report.knownVersion = KNOWN_CORPUS_VERSIONS.includes(index.version);

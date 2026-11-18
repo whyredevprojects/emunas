@@ -29,13 +29,13 @@ import { loadLayerInput } from "@emunas/corpus/layer";
 import { synonymKey, type SearchLayer, type SearchLayerTopic } from "../layer-types.ts";
 import { ENTITY_DOC_KINDS, type EntityDocKind } from "../types.ts";
 
-/** The layer files the search build reads (parsed), or null when the layer is off/absent. */
+/** The layer files the search build reads (parsed). */
 export interface LayerFiles {
   topics: LayerTopicsFile;
   concepts: LayerConceptsFile;
   people: LayerPeopleFile;
   works: LayerWorksFile;
-  stories: LayerStoriesFile | null;
+  stories: LayerStoriesFile;
   synonyms: LayerSynonymsFile;
 }
 
@@ -46,29 +46,29 @@ function readJson<T>(path: string): T {
 const arr = <T>(x: unknown): T[] => (Array.isArray(x) ? (x as T[]) : []);
 
 /**
- * The layer files, or null when `.corpus/layer/` is missing or its layer.json says the layer is off.
- * Optional parts are read defensively (missing arrays read as empty).
+ * The layer files. The corpus layer is required: a missing `.corpus/layer/` file throws. Optional
+ * parts inside a file are read defensively (missing arrays read as empty).
  */
-export function readLayerFiles(corpusDir: string): LayerFiles | null {
+export function readLayerFiles(corpusDir: string): LayerFiles {
   const dir = join(corpusDir, LAYER_DIR);
-  const infoPath = join(dir, LAYER_FILES.layer);
-  if (!existsSync(infoPath)) return null;
-  const info = readJson<{ enabled?: unknown }>(infoPath);
-  if (info.enabled === false) return null;
-  const opt = <T>(name: string): T | null => (existsSync(join(dir, name)) ? readJson<T>(join(dir, name)) : null);
-  const topics = opt<Partial<LayerTopicsFile>>(LAYER_FILES.topics);
-  const concepts = opt<Partial<LayerConceptsFile>>(LAYER_FILES.concepts);
-  const people = opt<Partial<LayerPeopleFile>>(LAYER_FILES.people);
-  const works = opt<Partial<LayerWorksFile>>(LAYER_FILES.works);
-  const stories = opt<Partial<LayerStoriesFile>>(LAYER_FILES.stories);
-  const synonyms = opt<Partial<LayerSynonymsFile>>(LAYER_FILES.synonyms);
+  const need = <T>(name: string): Partial<T> => {
+    const path = join(dir, name);
+    if (!existsSync(path)) throw new Error(`search:build: ${LAYER_DIR}/${name} is missing (the corpus layer is required; run corpus:build)`);
+    return readJson<Partial<T>>(path);
+  };
+  const topics = need<LayerTopicsFile>(LAYER_FILES.topics);
+  const concepts = need<LayerConceptsFile>(LAYER_FILES.concepts);
+  const people = need<LayerPeopleFile>(LAYER_FILES.people);
+  const works = need<LayerWorksFile>(LAYER_FILES.works);
+  const stories = need<LayerStoriesFile>(LAYER_FILES.stories);
+  const synonyms = need<LayerSynonymsFile>(LAYER_FILES.synonyms);
   return {
-    topics: { tree: arr(topics?.tree), detail: arr(topics?.detail) },
-    concepts: { concepts: arr(concepts?.concepts) },
-    people: { people: arr(people?.people) },
-    works: { works: arr(works?.works) },
-    stories: stories === null ? null : { stories: arr(stories.stories) },
-    synonyms: { synonyms: arr(synonyms?.synonyms) },
+    topics: { tree: arr(topics.tree), detail: arr(topics.detail) },
+    concepts: { concepts: arr(concepts.concepts) },
+    people: { people: arr(people.people) },
+    works: { works: arr(works.works) },
+    stories: { stories: arr(stories.stories) },
+    synonyms: { synonyms: arr(synonyms.synonyms) },
   };
 }
 
@@ -106,11 +106,40 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
     if (existsSync(p)) refs.set(id, readJson<LayerShiurRefs>(p));
   }
   const storyPeople = new Map<string, readonly string[]>();
-  for (const st of files.stories?.stories ?? []) {
+  for (const st of files.stories.stories) {
     const ids = arr<{ id?: unknown }>(st.people)
       .map((p) => (typeof p.id === "string" ? p.id : null))
       .filter((x): x is string => x !== null && facetIds.person.has(x));
     storyPeople.set(st.id, [...new Set(ids)].sort());
+  }
+  const nonEmpty = (xs: unknown[]): string[] => {
+    const out: string[] = [];
+    for (const x of xs) {
+      const v = typeof x === "string" ? x.trim() : "";
+      if (v !== "" && !out.includes(v)) out.push(v);
+    }
+    return out;
+  };
+  const personNames = new Map<string, readonly string[]>();
+  for (const p of files.people.people) {
+    if (typeof p.id !== "string" || (p.excluded ?? null) !== null) continue;
+    const names = nonEmpty([p.nameEn, p.nameYi, p.nameHe]);
+    if (names.length > 0) personNames.set(p.id, names);
+  }
+  const conceptNames = new Map<string, readonly string[]>();
+  for (const c of files.concepts.concepts) {
+    if (typeof c.id !== "string" || !(c.count > 0)) continue;
+    const names = nonEmpty([c.canonicalHe, c.label?.en, c.label?.yi]);
+    if (names.length > 0) conceptNames.set(c.id, names);
+  }
+  const storyNames = new Map<string, readonly string[]>();
+  for (const st of files.stories.stories) {
+    const names: string[] = [];
+    for (const p of arr<{ id?: unknown; name?: unknown }>(st.people)) {
+      const got = typeof p.id === "string" ? (personNames.get(p.id) ?? []) : nonEmpty([p.name]);
+      for (const n of got) if (!names.includes(n)) names.push(n);
+    }
+    if (names.length > 0) storyNames.set(st.id, names);
   }
   const sectionConcepts = new Map<string, string[]>();
   for (const c of files.concepts.concepts) {
@@ -123,7 +152,7 @@ export function readSearchLayer(corpusDir: string, files: LayerFiles, shiurIds: 
     }
   }
   for (const l of sectionConcepts.values()) l.sort();
-  return { topics, synonyms, refs, storyPeople, sectionConcepts, facetIds };
+  return { topics, synonyms, refs, storyPeople, personNames, conceptNames, storyNames, sectionConcepts, facetIds };
 }
 
 // ---------------------------------------------------------------- synonym check
@@ -185,11 +214,10 @@ export function displaySetsOf(input: Record<"topics" | "concepts" | "people" | "
  * Display-field sets read from the corpus data through @emunas/corpus's allow-listed reader. Also
  * asserts D1: `corpus-policy.json` `search.asrVariants` must be false.
  */
-export function loadDisplaySets(dataDir: string, policyDir: string): DisplaySets | null {
+export function loadDisplaySets(dataDir: string, policyDir: string): DisplaySets {
   const sources = loadLayerInput({ dataDir, policyDir });
   assertNoAsrVariants(sources.policy);
   const input = sources.corpus.input;
-  if (input === null) return null;
   return displaySetsOf({ topics: input.topics, concepts: input.concepts, people: input.people, works: input.works });
 }
 

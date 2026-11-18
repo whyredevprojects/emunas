@@ -72,14 +72,18 @@ export function buildQuery(pairs: readonly (readonly [string, string | undefined
   return parts.length ? `?${parts.join("&")}` : "";
 }
 
-/** Seconds as written in URLs: whole, non-negative. Undefined for anything that is not a usable time. */
-export function formatSeconds(t: number | undefined): string | undefined {
+/**
+ * Seconds as written in URLs, kept to the millisecond (`582.12`, `754`): Quiet's `#t=` page hash and
+ * Live's `?t=`. The players seek to them exactly, so a link lands on the item that starts at 582.12
+ * rather than on the one before it. Undefined for anything that is not a usable time.
+ */
+export function formatExactSeconds(t: number | undefined): string | undefined {
   if (t === undefined || !Number.isFinite(t) || t < 0) return undefined;
-  return String(Math.round(t));
+  return String(Math.round(t * 1000) / 1000);
 }
 
-/** Parses `754` or `754.5` (rounded). Undefined for anything else. */
-export function parseSeconds(value: string | undefined): number | undefined {
+/** Parses `754` or `582.12`, kept to the millisecond. Undefined for anything else. */
+export function parseExactSeconds(value: string | undefined): number | undefined {
   if (value === undefined || !/^\d{1,7}(?:\.\d+)?$/.test(value)) return undefined;
-  return Math.round(Number(value));
+  return Math.round(Number(value) * 1000) / 1000;
 }

@@ -1,0 +1,49 @@
+---
+/** About the Mashgiach: a short introduction, the name "Emunas", and the two magazine features (PDF). */
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import DocCard from "../components/DocCard.astro";
+import { ARTICLES, fileAt } from "../lib/legacy-files.ts";
+import { CONTACT, EXTERNAL } from "../lib/content.ts";
+import { currentSiteEnv, siteLinks } from "../lib/site-env.ts";
+
+const portrait = fileAt("/files/images/portrait.jpg");
+const links = siteLinks(currentSiteEnv().hosts);
+---
+<Base
+  title="About the Mashgiach"
+  description={'Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath: a short introduction, and two magazine features on his life and impact.'}
+>
+  <div class="wrap">
+    <PageHead title="About the Mashgiach" label="About" labelYi="וועגן">
+      <p class="yi-title" lang="yi" dir="rtl">דער משגיח</p>
+    </PageHead>
+    <div class="page-body page-grid">
+      <div class="prose">
+        <p class="dropcap">Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath, led Beis Medrash
+        Emunas Yisrael in Brooklyn and was one of the most revered rabbinic figures of our time.</p>
+        <p>The Mashgiach connected us to a deeper level of Torah, giving us new perceptions of a pulsating Judaism.
+        The title <em>Emunas</em> was chosen for his teaching on the singular importance of emunah in our times.</p>
+        <h2 id="articles">Two magazine features</h2>
+        <p>Two articles on the Mashgiach&rsquo;s life and impact, as printed. Both are PDFs.</p>
+        <ul class="articles">
+          {ARTICLES.map((a) => <DocCard file={a} />)}
+        </ul>
+        <h2>Learn from the Mashgiach</h2>
+        <p>His shiurim are in the <a href={links.library}>Library</a>, with a written summary of each, and on
+        <a href={links.listen}>Listen</a>, to hear in your browser. His <a href="/essays/">essays</a> on the parsha
+        and the Yomim Tovim are free to download, and <a href="/sefarim/">sefarim in English</a> are drawn from his
+        teaching.</p>
+      </div>
+      <aside>
+        <img class="portrait" src={portrait.path} alt={portrait.title} width="225" height="224" />
+        <div class="card">
+          <h2>Hear the shiurim</h2>
+          <p>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
+          <p>On <a href={EXTERNAL.torahAnytime}>TorahAnytime</a>, in English and Yiddish</p>
+          <p>Recordings by mail: <a href="/contact/">contact us</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

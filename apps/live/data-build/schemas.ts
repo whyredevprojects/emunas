@@ -28,7 +28,6 @@ import {
   type QuickIndexFile,
   type SeriesFile,
   type ShiurFile,
-  type StoriesFile,
   type TodayFile,
   type WorkFile,
   type WorksFile,
@@ -116,7 +115,7 @@ const notes = v.strictObject({
       sub: v.array(v.strictObject({ title: L, summary: L, t: num })),
     }),
   ),
-  skip: v.array(v.tuple([num, num, v.picklist([...sectionKind.options, "asr-noise"])])),
+  skip: v.array(v.tuple([num, num, v.picklist([...sectionKind.options, "pause"])])),
   sources: v.array(
     v.strictObject({
       idx: int,
@@ -139,15 +138,11 @@ const notes = v.strictObject({
       id: str,
       title: L,
       retelling: L,
-      people: v.array(str),
-      peopleKeys: v.array(str),
       t: nnum,
       end: nnum,
       soft,
     }),
   ),
-  people: v.array(v.strictObject({ name: str, key: str })),
-  concepts: v.array(v.strictObject({ he: str, key: str })),
   writeupLangs: v.array(ed),
 });
 
@@ -184,7 +179,6 @@ export const CorpusSchema = v.strictObject({
       parsha: nstr,
       zman: nstr,
       series: v.nullable(v.strictObject({ id: str, order: v.nullable(num) })),
-      entities: v.strictObject({ works: v.array(str), people: v.array(str), concepts: v.array(str) }),
       counts: v.strictObject({ chapters: int, stories: int, questions: int, insights: int }),
     }),
   ),
@@ -216,6 +210,8 @@ export const FacetsSchema = v.strictObject({
 const yearSpan = v.nullable(v.tuple([int, int]));
 const level = v.picklist([1, 2, 3]);
 const chip = v.strictObject({ id: str, label: facetLabel, page: v.boolean() });
+/** A story's person: a chip, or a corpus entity's display name as plain text (never a raw extraction name). */
+const storyPerson = v.union([chip, v.strictObject({ name: str })]);
 const card = v.strictObject({
   id: str,
   lang: ed,
@@ -244,6 +240,7 @@ export const TodaySchema = v.strictObject({
           sections: int,
           shiurim: int,
           first: v.array(v.strictObject({ id: str, t: num, end: num, title: L })),
+          skip: v.exactOptional(v.array(str)),
         }),
       ),
     }),
@@ -287,7 +284,9 @@ export const ShiurSchema = v.strictObject({
       topicLabels: v.record(str, chip),
       terms: v.array(chip),
       sources: v.array(v.strictObject({ momentId: str, workId: str, page: v.boolean() })),
-      stories: v.array(v.strictObject({ momentId: str, storyId: str, tellings: int, page: v.boolean() })),
+      stories: v.array(
+        v.strictObject({ momentId: str, storyId: str, otherShiurim: int, page: v.boolean(), people: v.array(storyPerson) }),
+      ),
       insights: v.array(
         v.strictObject({
           momentId: str,
@@ -413,22 +412,6 @@ export const EntitySchema = v.strictObject({
   concept: v.exactOptional(v.strictObject({ he: str, label: L, definition: L })),
 });
 
-export const StoriesSchema = v.strictObject({
-  schemaVersion: version,
-  stories: v.array(
-    v.strictObject({
-      id: str,
-      shiurId: str,
-      title: L,
-      peopleKeys: v.array(str),
-      t: nnum,
-      end: nnum,
-      year: v.nullable(int),
-      lang: ed,
-    }),
-  ),
-});
-
 export const MomentShardSchema = v.strictObject({
   schemaVersion: version,
   lang: ed,
@@ -441,6 +424,15 @@ export const QuickIndexSchema = v.strictObject({
   lang: ed,
   options: v.strictObject({ fields: v.array(str), storeFields: v.array(str), idField: str }),
   index: v.unknown(),
+  entities: v.array(
+    v.strictObject({
+      kind: v.picklist(["topic", "concept", "person", "work"]),
+      id: str,
+      labels: v.strictObject({ he: nstr, en: nstr, yi: nstr }),
+      synonyms: v.array(str),
+      count: int,
+    }),
+  ),
 });
 
 // ---------------------------------------------------------------- corpus layer (C1.7)
@@ -538,7 +530,7 @@ export const StorySchema = v.strictObject({
   title: L,
   retelling: L,
   reviewed: v.boolean(),
-  people: v.array(v.union([chip, v.strictObject({ name: str })])),
+  people: v.array(storyPerson),
   attributionVaries: v.boolean(),
   tellings: v.array(v.strictObject(memberEntries)),
 });
@@ -599,7 +591,6 @@ export const DATA_SCHEMAS = {
   works: WorksSchema,
   work: WorkSchema,
   entity: EntitySchema,
-  stories: StoriesSchema,
   moments: MomentShardSchema,
   quickIndex: QuickIndexSchema,
   topics: TopicsSchema,
@@ -630,7 +621,6 @@ export const _typeChecks: {
   works: Same<Out<"works">, WorksFile>;
   work: Same<Out<"work">, WorkFile>;
   entity: Same<Out<"entity">, EntityFile>;
-  stories: Same<Out<"stories">, StoriesFile>;
   moments: Same<Out<"moments">, MomentShardFile>;
   quickIndex: Same<Out<"quickIndex">, QuickIndexFile>;
   topics: Same<Out<"topics">, TopicsFile>;
@@ -653,7 +643,6 @@ export const _typeChecks: {
   works: true,
   work: true,
   entity: true,
-  stories: true,
   moments: true,
   quickIndex: true,
   topics: true,
@@ -678,7 +667,6 @@ export function kindOfFile(file: string): DataKind | null {
   if (file === "facets.json") return "facets";
   if (file === "today.json") return "today";
   if (file === "works.json") return "works";
-  if (file === "stories.json") return "stories";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
   if (file === "explore/entities.json") return "exploreEntities";

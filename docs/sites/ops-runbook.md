@@ -1,10 +1,16 @@
-# Ops runbook: the two sites on Cloudflare
+# Ops runbook: the sites on Cloudflare
 
-How the Quiet site (`<domain>`), the Live site (`listen.<domain>`) and the `emunas-api` Worker
-are provisioned, configured, deployed and rolled back. Source of truth for the design:
+How the landing site ("home", on the apex `<domain>`), the Quiet site (the library,
+`library.<domain>`), the Live site (`listen.<domain>`) and the `emunas-api` Worker are provisioned, configured, deployed and rolled back. Source of truth for the design:
 `integration-plan.md` §3 and §4, as changed by **Amendment A1** (audio is served straight from
-the `emunas` bucket on `media.<domain>`; there is no audio bucket, no audio Worker route, no
-`AUDIO_ENABLED` switch and no `audio-publish` workflow).
+R2 on `media.<domain>`; there is no audio Worker route, no `AUDIO_ENABLED` switch and no
+`audio-publish` workflow). The custom domain is on the `emunas` bucket itself. That bucket also
+holds `transcripts/` and `site/files/`; they are reachable by key on the media host, which is
+accepted (owner decision): nothing the sites publish ever links to them.
+
+`<domain>` is `EMUNAS_DOMAIN`: today `emunas.torahlearningtools.com`, later `emunas.com`. Every
+host is derived from it (`@emunas/links` `productionHosts`), so the move is a config change only
+(§3 "Domains and cutover").
 
 Nothing here has been run against a real account yet. The configs are validated with
 `wrangler deploy --dry-run` and the workflows with `actionlint`; the first real deploy is part
@@ -14,12 +20,13 @@ of W6.1 and follows the checklist in §11. Every GitHub variable and secret is l
 
 | Worker | Config | Serves | Code |
 |---|---|---|---|
+| `emunas-home` | `apps/home/wrangler.jsonc` | the landing site on `<domain>`; `/files/*` (essay and article PDFs, images) from the `emunas` bucket, key prefix `site/files/` (`/files/essays/<slug>.pdf`, `/files/articles/<slug>.pdf`, `/files/images/<name>`) | see `apps/home` |
 | `emunas-quiet` | `apps/quiet/wrangler.jsonc` | `apps/quiet/dist` (Astro static), `html_handling: auto-trailing-slash`, `not_found_handling: 404-page` | **none** (assets only) |
 | `emunas-live` | `apps/live/wrangler.jsonc` | `apps/live/build/client`, `not_found_handling: single-page-application`; Worker first for `/`, `/api/*`, `/admin/*` | `apps/live/worker/index.ts` |
 | `emunas-api` | `workers/api/wrangler.jsonc` (W2.6) | reached only through Live's `API` service binding (`workers_dev: false`, no route) | `workers/api/src` |
 
-Each config has a top level (production) and `env.staging` (`emunas-quiet-staging`,
-`emunas-live-staging` → `emunas-api-staging`). PR previews are versions of the **staging**
+Each config has a top level (production) and `env.staging` (`emunas-home-staging`,
+`emunas-quiet-staging`, `emunas-live-staging` → `emunas-api-staging`). PR previews are versions of the **staging**
 Workers, so a preview can never reach production D1.
 
 Live Worker behaviour:
@@ -50,7 +57,7 @@ the tool are identical apart from their header comment (a test enforces it).
 
 | | Quiet | Live |
 |---|---|---|
-| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus `connect-src 'self' <media>` (service-worker offline downloads), Turnstile in `script-src`/`frame-src`, `worker-src 'self'`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
+| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…' (theme init script); style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus `connect-src 'self' <media>` (service-worker offline downloads), Turnstile in `script-src`/`frame-src`, `worker-src 'self'`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
 | immutable | `/_astro/*` | `/assets/*` |
 | other caching | `/fonts/*` one day + SWR (font names are not hashed), `/pagefind/*` 1 h | `/data/*` 5 min + SWR 1 day, `/sw.js` no-cache |
 | noindex | `https://:worker.:subdomain.workers.dev/*` | same, plus the Worker (above) |
@@ -107,9 +114,9 @@ Audio (Amendment A1, W3.11; owner action):
 2. Set CORS on the bucket. Plain `<audio src>` playback needs no CORS (the media element does not
    send `Origin` without a `crossorigin` attribute, and neither site sets one); CORS is for Live's
    `fetch()` of audio (offline downloads in the service worker, which also sends `Range` to
-   resume). The rule: **GET and HEAD only, the `Range` request header, both site origins**, plus
+   resume). The rule: **GET and HEAD only, the `Range` request header, the Quiet and Live origins**, plus
    the staging Live/Quiet workers.dev origins if offline downloads should work on staging. Before
-   the domain exists (O8) the production origins are the workers.dev ones. Example `cors.json`
+   a domain is set the production origins are the workers.dev ones. Example `cors.json`
    (replace `<domain>` and `<sub>`; origins are exact, scheme + host, no trailing slash):
 
    ```json
@@ -118,7 +125,7 @@ Audio (Amendment A1, W3.11; owner action):
        {
          "allowed": {
            "origins": [
-             "https://<domain>",
+             "https://library.<domain>",
              "https://listen.<domain>",
              "https://emunas-quiet-staging.<sub>.workers.dev",
              "https://emunas-live-staging.<sub>.workers.dev"
@@ -155,14 +162,43 @@ Audio (Amendment A1, W3.11; owner action):
    Caching → Purge, hostname `media.<domain>`); propagation can take up to 30 s.
 3. Set `EMUNAS_MEDIA_ORIGIN=https://media.<domain>` as a GitHub variable (below).
 
-Domains (owner decision O8): add to each `wrangler.jsonc` at the top level, then deploy:
+### Domains and cutover
 
-```jsonc
-"routes": [{ "pattern": "<domain>", "custom_domain": true }]          // apps/quiet
-"routes": [{ "pattern": "listen.<domain>", "custom_domain": true }]   // apps/live
-```
+| Host | Worker / service | `wrangler.jsonc` route (top level only; `env.staging` has `"routes": []`) |
+|---|---|---|
+| `<domain>` | `emunas-home` | `[{ "pattern": "<domain>", "custom_domain": true }]` |
+| `library.<domain>` | `emunas-quiet` | `[{ "pattern": "library.<domain>", "custom_domain": true }]` |
+| `listen.<domain>` | `emunas-live` | `[{ "pattern": "listen.<domain>", "custom_domain": true }]` |
+| `media.<domain>` | R2 bucket `emunas` (custom domain, not a Worker) | none |
 
-`www.<domain>` → apex is a zone Redirect Rule (dashboard), not Worker code.
+The routes must match `productionHosts(<domain>)` of `@emunas/links`;
+`apps/quiet/worker/test/site-routes.test.ts` reads the three `wrangler.jsonc` files and fails when
+they disagree (it takes `<domain>` from Quiet's `library.` route). Each Worker has exactly one
+host. There is no `www.<domain>` host and no redirect to the apex.
+
+Custom Domains create their DNS records and certificates themselves when the zone is on the
+account; remove any existing A/AAAA/CNAME record for the same name first (the old site's records in
+particular), or the Custom Domain cannot be attached.
+
+Cutover to a new domain `<new>` (e.g. `emunas.com`), all config, no code:
+
+1. Zone `<new>` on the Cloudflare account (nameservers moved). Lower the TTLs of the old records
+   beforehand if the old site is still live.
+2. Change the `routes` in `apps/home/wrangler.jsonc`, `apps/quiet/wrangler.jsonc` and
+   `apps/live/wrangler.jsonc` to `<new>`, `library.<new>`, `listen.<new>` (PR; the
+   routes test must pass).
+3. Set the GitHub variable `EMUNAS_DOMAIN=<new>` on `production` and
+   `EMUNAS_MEDIA_ORIGIN=https://media.<new>` (§4).
+4. R2 → `emunas` → Custom Domains: add `media.<new>`. Add `https://library.<new>` and
+   `https://listen.<new>` to the bucket CORS rule (§3 Audio).
+5. Turnstile widget: add `listen.<new>`. Access application: add `listen.<new>/admin/*`.
+6. Deploy production (§5). The deploy attaches the Custom Domains; check each host (§11
+   production smoke).
+7. Keep the old hosts attached until the new ones are verified, then remove their routes. Once the
+   old routes are gone, remove `media.<old>` from `emunas` and the old origins from CORS.
+
+Old `emunas.com` addresses (the Weebly site's page and file paths) are not preserved and are not
+redirected.
 
 Turnstile: one widget for `listen.<domain>` (dashboard → Turnstile → Add widget, hostname
 `listen.<domain>`, mode Managed). Its **site key** is public and goes to the GitHub variable
@@ -188,8 +224,9 @@ without it.
 | secret | `CLOUDFLARE_ACCOUNT_ID` | same | yes | same; also the R2 S3 endpoint `https://<id>.r2.cloudflarestorage.com` | account id |
 | secret | `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` | environments (optional) | no | deploy.yml embedding mirror (and the W3.10 sync) | an R2 API token pair, read on `emunas-site-build`. Unset: derived from `CLOUDFLARE_API_TOKEN` (key id = token id, secret = sha256(token)) |
 | variable | `EMUNAS_MEDIA_ORIGIN` | repository (also serves PR builds) or each environment | yes | corpus build (audio URLs), `_headers` CSP `media-src`/`connect-src` | `https://media.<domain>` (no path, no trailing slash) |
-| variable | `EMUNAS_DOMAIN` | environment `production` **only** (see "Staging vs production hosts") | one of these two | Quiet build (canonical, hreflang, sitemaps, robots.txt, OG, cross-site links); Live build (canonical to Quiet, hreflang) | registrable apex, e.g. `example.org` (Quiet = apex, Live = `listen.` + it). Leave unset until O8 |
+| variable | `EMUNAS_DOMAIN` | environment `production` **only** (see "Staging vs production hosts") | one of these two | home build (links to the library and the listening app); Quiet build (canonical, hreflang, sitemaps, robots.txt, OG, cross-site links); Live build (canonical to Quiet, hreflang) | the apex, e.g. `emunas.torahlearningtools.com` (home = apex, Quiet = `library.` + it, Live = `listen.` + it). Must match the `wrangler.jsonc` routes (§3) |
 | variable | `EMUNAS_WORKERS_SUBDOMAIN` | repository | one of these two | same, for the workers.dev hosts | the `<sub>` in `emunas-quiet.<sub>.workers.dev` (dashboard → Workers → Subdomain) |
+| variable | `EMUNAS_HOME_ORIGIN`, `EMUNAS_QUIET_ORIGIN`, `EMUNAS_LIVE_ORIGIN` | not set in GitHub | no | local builds only: explicit origins override the derived ones | e.g. `http://localhost:4321`. Without a domain or subdomain, code that needs all three hosts (`hostsFromEnv`) needs all three set; Live SEO (`siteHostsFromEnv`) needs only Quiet and Live |
 | variable | `EMUNAS_FEEDBACK_EMAIL` | repository or each environment | yes | Quiet "report an error" `mailto:` (C18) | one plain address |
 | variable | `VITE_TURNSTILE_SITE_KEY` | environment `production`; `staging` (own widget or test key) | no (warning) | Live build: feedback dialog's Turnstile widget (W4.7) | the widget's public site key. Unset: the report control is hidden on deployed hosts |
 | variable | `EMUNAS_NEIGHBORS` | repository (optional) | no | deploy.yml "same idea elsewhere" | `auto` (default: real embeddings when the R2 cache can be mirrored, else lexical) or `lexical` (skip the mirror) |
@@ -205,15 +242,16 @@ hosts, so their pages are `noindex` with placeholder canonicals and are never de
 
 ### Staging vs production hosts (canonical, hreflang, cross-site links)
 
-The builds compute every absolute URL with `@emunas/links` `hostsFromEnv`, from `EMUNAS_DOMAIN`,
+The builds compute every absolute URL with `@emunas/links` `hostsFromEnv` (Live SEO:
+`siteHostsFromEnv`, the same without home), from `EMUNAS_DOMAIN`,
 `EMUNAS_WORKERS_SUBDOMAIN` and `EMUNAS_STAGE` (deploy.yml sets `EMUNAS_STAGE=staging` for
 `target: staging`, empty for production):
 
-| Target | `EMUNAS_DOMAIN` | `EMUNAS_WORKERS_SUBDOMAIN` | Quiet / Live origins in the build |
+| Target | `EMUNAS_DOMAIN` | `EMUNAS_WORKERS_SUBDOMAIN` | home / Quiet / Live origins in the build |
 |---|---|---|---|
-| production, before O8 | unset | set | `https://emunas-quiet.<sub>.workers.dev` / `https://emunas-live.<sub>.workers.dev` |
-| production, after O8 | set | any | `https://<domain>` / `https://listen.<domain>` |
-| staging | unset **for staging** | set | `https://emunas-quiet-staging.<sub>.workers.dev` / `https://emunas-live-staging.<sub>.workers.dev` |
+| production, no domain | unset | set | `https://emunas-{home,quiet,live}.<sub>.workers.dev` |
+| production | set | any | `https://<domain>` / `https://library.<domain>` / `https://listen.<domain>` |
+| staging | unset **for staging** | set | `https://emunas-{home,quiet,live}-staging.<sub>.workers.dev` |
 | staging (misconfigured) | set, no subdomain | unset | production origins: staging pages would link and canonicalize to production |
 
 So: set `EMUNAS_WORKERS_SUBDOMAIN` at repository level and `EMUNAS_DOMAIN` on the `production`
@@ -225,16 +263,15 @@ What this means for search engines:
 - Quiet is the canonical copy. Its pages are self-canonical with `hreflang` yi/en/x-default and a
   sitemap per edition; Live pages carry `<link rel="canonical">` to the Quiet equivalent and no
   sitemap (integration-plan §2.3).
-- Every `*.workers.dev` host (production before O8, all of staging, PR previews) answers with
-  `X-Robots-Tag: noindex` (`_headers` and the Live Worker), so staging canonicals pointing at
-  staging hosts never compete with production, and pre-O8 production is not indexed either.
+- Every `*.workers.dev` host (production without a domain, all of staging, PR previews) answers
+  with `X-Robots-Tag: noindex` (`_headers` and the Live Worker), so staging canonicals pointing at
+  staging hosts never compete with production, and production without a domain is not indexed either.
 - Builds without hosts (local, PR): Quiet uses `example.invalid` placeholders and marks every
   page `noindex`; Live emits no canonical/hreflang rather than a guessed one. A Quiet deploy build
   (`CI` + `EMUNAS_DEPLOY`) refuses to run without hosts or `EMUNAS_FEEDBACK_EMAIL`, and
   deploy.yml's "Check configuration" stops earlier still.
-- When the domain arrives (O8): add the `routes` (§3), set `EMUNAS_DOMAIN` on `production`, add the
-  new origins to the media bucket CORS and the Turnstile widget, deploy. The workers.dev URLs keep
-  working, stay `noindex`, and their pages now canonicalize to the domain.
+- A new domain: follow "Domains and cutover" (§3). The workers.dev URLs keep working, stay
+  `noindex`, and their pages canonicalize to `library.<domain>`.
 
 **Deploy builds and the media origin.** `corpus:build` falls back to the dev placeholder
 `https://media.example.invalid` when `EMUNAS_MEDIA_ORIGIN` is unset; normally that is only a
@@ -256,21 +293,36 @@ open pull requests.
 
 ## 5. Workflows
 
-**ci.yml** (PRs, pushes to main): `check` (pipeline typecheck; `site:typecheck`, which also
-covers the site Workers and the Live search eval suite; lint; `site:test`, which also runs the
-Worker/config/`_headers` tests and the eval suite) and `build` (corpus:build → guard pre →
-corpus:build --suppress → `search:build` → Live `data:build` (lexical neighbours; no embedding
-cache in PRs) → Quiet and Live builds → render `_headers` → `wrangler deploy --dry-run`
-for both Workers and both environments, bundling the Live Worker → guard self-test (a planted
-`heardAs` file must fail) → guard post-pass over `.corpus`, both outputs and the Worker bundle
-→ budgets → Live `data:budgets`). The Live build therefore ships the real `public/data` in PR
-builds and previews, exactly as deploys do. Same-repo PRs then get `preview`: `wrangler versions upload --env=staging
---preview-alias pr-<n>` for both sites; the URLs land in the job summary. Without Cloudflare
-secrets the preview step logs a notice and passes.
+**ci.yml** (PRs, merge queue, pushes to main). Jobs run in parallel where they can:
+
+- `check`: pipeline typecheck; `site:typecheck`, which also covers the site Workers and the Live
+  search eval suite; lint; the chain script's own tests.
+- `unit (api|quiet|live|rest)`: `npm run site:test:<group>`, the four parts of `site:test`
+  (Worker/config/`_headers` tests and the eval suite included).
+- `build`: corpus:build → guard pre → corpus:build --suppress → `search:build` → Live `data:build`
+  (lexical neighbours; no embedding cache in PRs) → Quiet, Live and Home builds → render
+  `_headers` → `wrangler deploy --dry-run` for the Workers in both environments, bundling Live and
+  Home → guard self-test (a planted `heardAs` file must fail) → guard post-pass over `.corpus`,
+  the outputs and the Worker bundles → budgets → Live `data:budgets`. Its outputs go to
+  `chain self-test (asr-key|asr-synonym)` (each plant must fail guard post) and to `preview`.
+  The Live build therefore ships the real `public/data` in PR builds and previews, exactly as
+  deploys do.
+- `build-test`: the same chain to the Live build, with the test domain `emunas.example`; its
+  outputs feed `live e2e (chromium|webkit)`, `quiet-e2e`, `cross-site` (equivalence, link check,
+  html-validate, search eval gate) and `lighthouse`.
+- `passed`: needs every job above and fails unless all succeeded; this is the check to require
+  on `main`. It then uploads a `ci-passed-<git tree id>` marker, which deploy.yml reads.
+- `preview` (same-repo PRs): `wrangler versions upload --env=staging --preview-alias pr-<n>` for
+  the sites; the URLs land in the job summary. Without Cloudflare secrets it logs a notice and passes.
+
+`node_modules` and Playwright browsers come from the Actions cache (`.github/actions/setup`,
+`.github/actions/playwright`), saved from `main` only.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
-`workers`, `site-policy`; daily 05:17 UTC; manual dispatch with `target: production|staging`):
-configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → provisioning check (§3)
+`workers`, `site-policy`; manual dispatch with `target: production|staging`):
+configuration check (`EMUNAS_MEDIA_ORIGIN` and the Cloudflare secrets) → typecheck, lint and
+`site:test`, skipped when ci.yml already uploaded a `ci-passed-<tree id>` marker for this exact
+tree → provisioning check (§3)
 → corpus:build (with `EMUNAS_DEPLOY=1`) → guard pre → corpus:build --suppress →
 `npm run search:build` → embedding cache mirror (below) → `npm run data:build --workspace=@emunas/live` → Quiet and Live builds →
 render `_headers` → Worker bundles (dry run) → guard post (covers the api bundle too) → budgets →
@@ -278,6 +330,16 @@ render `_headers` → Worker bundles (dry run) → guard post (covers the api bu
 `npm run search:sync --workspace=@emunas/api -- --env <target>` when that script exists (W3.10) →
 deploy `emunas-api` → `emunas-quiet` → `emunas-live` → job summary (full/total, newly full ids, downgrades with reasons, unmapped
 counts, suppressed ids; never text). `concurrency: deploy-<target>`, cancel in progress.
+
+**refresh-quiet.yml** (every second day at 05:17 UTC; manual dispatch): rebuilds and deploys Quiet
+alone from `main`, so the title page's "this week" window stays current: build day −1…+3, with
+the build day taken in America/New_York. Steps: configuration check → corpus:build → guard pre →
+corpus:build --suppress → search:build → Quiet build → render `_headers` → guard post over
+`.corpus` and `apps/quiet/dist` → budgets → deploy `emunas-quiet`. It skips the tests (main has
+passed them), Live, D1/Vectorize and emunas-api. It shares the `deploy-production` concurrency
+group without cancelling: a full deploy cancels a refresh, and a refresh waits for a full deploy.
+If GitHub's schedule runs late or one run fails, the window still covers the next day. If runs
+keep failing, dispatch it by hand or push to `main`.
 
 The data steps between the corpus build and the app builds:
 
@@ -331,13 +393,14 @@ npm run guard --workspace=@emunas/corpus-guard -- pre --corpus .corpus --out .co
 npm run corpus:build -- --suppress .corpus/suppress.json
 npm run search:build
 npm run data:build --workspace=@emunas/live
-npm run build --workspace=@emunas/quiet && npm run build --workspace=@emunas/live
+npm run build --workspace=@emunas/quiet && npm run build --workspace=@emunas/live && npm run build --workspace=@emunas/home
 export EMUNAS_MEDIA_ORIGIN=https://media.example.org
 npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
 npx tsx apps/live/worker/render-headers.ts apps/live/build/client/_headers
 (cd apps/quiet && npx --yes wrangler@4.156.0 deploy --dry-run --env="")
 (cd apps/live && npx --yes wrangler@4.156.0 deploy --dry-run --env="" --outdir ../../.wrangler/bundles/live)
-npm run guard --workspace=@emunas/corpus-guard -- post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles --corpus .corpus
+(cd apps/home && npx --yes wrangler@4.156.0 deploy --dry-run --env="" --outdir ../../.wrangler/bundles/home)
+npm run guard --workspace=@emunas/corpus-guard -- post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles --corpus .corpus
 npm run data:budgets --workspace=@emunas/live
 npm run site:typecheck && npm run site:lint && npm run site:test   # includes Workers + eval suite
 actionlint
@@ -377,6 +440,45 @@ what it tests; `LIVE_E2E_DATA=build` serves the built data instead for a manual 
 | Budgets | > 18,000 files or a file > 25 MiB | look at what grew |
 | Live data budgets | a data file over its hard limit (warnings alone do not fail) | look at what grew; targets are in `apps/live/data-build/budgets.ts` |
 | Deploy emunas-live | service binding target missing | deploy `emunas-api` for that environment first |
+
+### Known CI failures that can come back
+
+These have failed before for reasons other than a bug, and are likely to fail again. Check this list before
+debugging from scratch.
+
+**Search eval regression gate** (ci.yml `cross-site`: "fail on a drop of more than 5 points")
+- *Why it fails:* the expected shiur ids in `apps/live/tests/eval/queries.json` are frozen, but
+  `data/` keeps growing through pipeline merges. New on-topic shiurim count as misses and there are
+  more distractors, so recall@10 and MRR fall without any change to the search code. First seen
+  2026-11-16: the corpus grew from 36,595 to 59,512 moments, and the drop was ~10 points recall
+  and ~12 points MRR.
+- *How to tell it's the data, not a regression:* the moment count in the header of
+  `apps/live/tests/eval/report.md` is well below the current corpus, and `git log` shows no
+  search change since the baseline (`packages/search-core`, the Live search code). If unsure,
+  run the baseline commit's code on today's data. A matching score means it's the data.
+- *Quick fix:* regenerate the baseline. Never loosen the 5-point threshold.
+  ```bash
+  EMUNAS_MEDIA_ORIGIN=https://media.example.invalid EMUNAS_DOMAIN=emunas.example npm run site:chain -- --to search-build
+  npx tsx apps/live/tests/eval/run.ts --embedder fake
+  ```
+  Commit `report.json` and `report.md`, and give the old and new numbers in the commit message.
+- *Lasting fix (not done yet):* `run.ts --refresh` re-resolves the expected ids from the selectors
+  and rewrites `queries.json`. It added 305 ids (800 → 1105) on 2026-11-16. That changes what the
+  gate measures, so make it a deliberate decision. Then do it on every large data merge, or in CI
+  before the gate.
+
+**Live e2e: multi-page axe tests time out** (`shell.spec` stubs, `explore.spec` lenses, `browse.spec`)
+- *Why it fails:* each test loads and scans several pages. With 4 Playwright workers on the 4-vCPU
+  runner, each page takes 2–3× longer than on an idle machine. The tests get `axeBudget(pages)`
+  (`apps/live/test/e2e/helpers.ts`): 8 s per page, at least 30 s.
+- *Fix:* if they time out again (more pages, a slower runner), raise `AXE_PAGE_MS`. Don't drop
+  pages from the scan.
+
+**Live first-load gate: `today.json ≤ 30 KiB`** (`first-load.spec`)
+- *Why it fails:* the gate counts brotli bytes, which is what production serves. The plain-HTTP test
+  server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
+  If the gate fails on brotli bytes, Today's data has really outgrown its budget.
+- *Fix:* that is a product or data-size question. Don't raise the budget silently.
 
 ## 9. Contracts for later packages
 
@@ -428,9 +530,8 @@ In order; each step names where it is described. Staging first, then production.
 
 **Media (A1)**
 
-- [ ] Custom domain on bucket `emunas` (`media.<domain>`; before O8 any hostname on a zone in the
-      account), `r2.dev` URL off (§3 Audio).
-- [ ] CORS rule set: GET/HEAD, `Range`, both site origins (+ staging) (§3); purge the media
+- [ ] Custom domain `media.<domain>` on bucket `emunas`, `r2.dev` URL off (§3 Audio).
+- [ ] CORS rule set: GET/HEAD, `Range`, the Quiet and Live origins (+ staging) (§3); purge the media
       hostname if mp3s were already cached; the `curl -sI` check returns `206` with
       `access-control-allow-origin`.
 - [ ] `.WMA` recordings transcoded (§10) and `site-policy/audio-transcoded.json` merged.
@@ -441,7 +542,7 @@ In order; each step names where it is described. Staging first, then production.
 - [ ] Secrets `CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID` on both environments and the repository.
 - [ ] Variables: `EMUNAS_MEDIA_ORIGIN`, `EMUNAS_WORKERS_SUBDOMAIN`, `EMUNAS_FEEDBACK_EMAIL` at
       repository level; `VITE_TURNSTILE_SITE_KEY` per environment; `EMUNAS_DOMAIN` on
-      `production` only, and only once O8 is decided.
+      `production` only, equal to the domain in the `wrangler.jsonc` routes.
 - [ ] Optional: `EMUNAS_NEIGHBORS=lexical` until the embeddings threshold is calibrated.
 - [ ] Actions settings for data-sync (§4, last paragraph).
 
@@ -469,9 +570,13 @@ In order; each step names where it is described. Staging first, then production.
 **Production run**
 
 - [ ] Merge to `main` (or dispatch `target: production`) and approve the environment.
-- [ ] Same smoke as staging on the production hosts. Before O8 they are workers.dev and `noindex`;
-      after O8, `https://<domain>/robots.txt` names the sitemaps, pages are self-canonical without
-      `noindex`, and Live pages canonicalize to `https://<domain>/…`.
+- [ ] Custom Domains attached (§3 "Domains and cutover"): `<domain>` on
+      `emunas-home`, `library.<domain>` on `emunas-quiet`, `listen.<domain>` on `emunas-live`,
+      `media.<domain>` on `emunas`; each answers over https.
+      `https://media.<domain>/transcripts/<any key>.json` returns 404.
+- [ ] Same smoke as staging on the production hosts: `https://library.<domain>/robots.txt` names
+      the sitemaps, Quiet pages are self-canonical without `noindex`, and Live pages canonicalize
+      to `https://library.<domain>/…`. `https://<domain>/files/essays/<slug>.pdf` serves a PDF.
 - [ ] Access application on `listen.<domain>/admin/*` and `ACCESS_TEAM_DOMAIN`/`ACCESS_AUD` set;
       `/admin/feedback` asks for login.
 - [ ] Note the deployed version ids (`wrangler deployments list`) for rollback (§7).

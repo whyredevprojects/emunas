@@ -14,7 +14,7 @@ import { createT, type MessageTable, type MessageTables, type Params, type TFunc
  * - Live (concept-live-corpus E.3): the standing AI label (`AI_LABEL`) plus `label.grouped` once
  *   under the title of an entity page; a reviewed entity shows `label.grouped.reviewed` instead.
  *
- * Yiddish speaks of the Rav as "דער משגיח" (the upstream voice); English says "the Rav".
+ * Yiddish speaks of the Mashgiach as "דער משגיח" (the upstream voice); English says "the Mashgiach".
  * Wording status: PROPOSED, not yet signed off by the owner or a Yiddish reader (like AI_LABEL).
  */
 export const CORPUS_LABEL_STATUS = "proposed" as const;
@@ -36,7 +36,7 @@ export const corpusLabelsEn = {
   // ---- AI labels (Live E.3, C.1, C.5)
   "label.grouped": "Grouped and named by AI across all the shiurim. Not reviewed by a person.",
   "label.grouped.reviewed": "Reviewed",
-  "thread.heading": "A teaching the Rav returns to",
+  "thread.heading": "A teaching the Mashgiach returns to",
   "glossary.asUsed": "As the term is used in these shiurim",
 
   // ---- indexes (Quiet C5, in order)
@@ -45,7 +45,7 @@ export const corpusLabelsEn = {
   "index.names": "Names",
   "index.sources": "Sources",
   "index.stories": "Stories",
-  "index.threads": "Teachings the Rav returned to",
+  "index.threads": "Teachings the Mashgiach returned to",
 
   // ---- kinds (report subject, headings)
   "kind.topic": "topic",

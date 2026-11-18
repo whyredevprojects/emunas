@@ -13,7 +13,8 @@ import { Text } from "../../components/Text.tsx";
 import { useLoad } from "../today/use-data.ts";
 import type { FacetCounts } from "./engine.ts";
 import { connectionsModel, entityLabel, MIN_SHARED, polar, sharedRows, type ConnectionEdge } from "./lenses.ts";
-import { loadEntity, notFoundToNull, type CorpusRow, type EntityKind, type FacetsFile } from "./live-data.ts";
+import { loadEntity, notFoundToNull, type EntityKind, type FacetsFile } from "./live-data.ts";
+import type { ExploreRow } from "./entities.ts";
 import { useRoving } from "./roving.ts";
 import { exploreT } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
@@ -32,7 +33,7 @@ export function entityHref(ui: UiLang, kind: EntityKind, key: string): string {
 
 export interface ConnectionsProps {
   center: ConnectionsCenter | null;
-  rows: readonly CorpusRow[];
+  rows: readonly ExploreRow[];
   facets: FacetsFile;
   counts: FacetCounts | null;
   selected: { p: readonly string[]; c: readonly string[]; o: readonly string[] };
@@ -206,7 +207,7 @@ function EdgeShiurim({
   name,
   ui,
 }: {
-  rows: readonly CorpusRow[];
+  rows: readonly ExploreRow[];
   center: ConnectionsCenter;
   edge: ConnectionEdge;
   name: string;

@@ -3,7 +3,7 @@
  */
 import { livePaths, quietPaths, type LivePaths, type QuietPaths } from "./builders.ts";
 import { hrefFor } from "./corpus.ts";
-import { validateHosts, type Hosts } from "./hosts.ts";
+import { validateHosts, type SiteHosts } from "./hosts.ts";
 import { formatLive, parseLive } from "./live.ts";
 import { hasPageOn, resolveEntry } from "./pages.ts";
 import { formatQuiet, parseQuiet } from "./quiet.ts";
@@ -23,7 +23,7 @@ export interface ParsedSiteUrl {
 type Absolute<T> = { readonly [K in keyof T]: T[K] extends (...args: infer A) => string ? (...args: A) => string : never };
 
 export interface Links {
-  readonly hosts: Hosts;
+  readonly hosts: SiteHosts;
   /** Absolute Quiet URLs (origin + path). For same-site links use `quietPaths()`. */
   readonly quiet: Absolute<QuietPaths>;
   /** Absolute Live URLs. */
@@ -86,8 +86,9 @@ function absolutize<T extends Record<string, (...args: never[]) => string>>(orig
   return out as Absolute<T>;
 }
 
-export function createLinks(options: { readonly hosts: Hosts; readonly data?: LinkData }): Links {
-  const hosts = validateHosts(options.hosts);
+export function createLinks(options: { readonly hosts: SiteHosts; readonly data?: LinkData }): Links {
+  const { quiet, live } = validateHosts(options.hosts);
+  const hosts: SiteHosts = { quiet, live };
   const data = options.data ?? {};
   const origin = (site: Site) => (site === "quiet" ? hosts.quiet : hosts.live);
   const format = (site: Site, route: Route, bare = false) =>

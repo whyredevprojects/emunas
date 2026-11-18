@@ -146,7 +146,7 @@ describe("pageParts", () => {
     const n = notesOf(s);
     const bare: PublicShiur = {
       ...s,
-      notes: { ...n, sources: [], insights: [], takeaways: [], questions: [], stories: [], summary: { ...n.summary, keyPoints: [] }, people: [], concepts: [] },
+      notes: { ...n, sources: [], insights: [], takeaways: [], questions: [], stories: [], summary: { ...n.summary, keyPoints: [] } },
     };
     expect(pageParts(bare, "en")).toEqual(["about", "outline", "writeup", "catalog"]);
   });

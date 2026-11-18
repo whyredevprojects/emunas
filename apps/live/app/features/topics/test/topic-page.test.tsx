@@ -181,7 +181,7 @@ describe("topic page", () => {
     expect(grades).toEqual(["main", "discussed", "touched"].filter((g) => f.shiurim.some((r) => r.grade === g)));
     const touched = f.shiurim.find((r) => r.grade === "touched")!;
     const a = list.querySelector(`[data-shiur-row="${touched.id}"] a`)!;
-    expect(a.getAttribute("href")).toBe(`/en/s/${touched.id}?t=${Math.floor(touched.section!.t)}&m=${encodeURIComponent(touched.section!.id).replace(/%7E/gu, "~")}`);
+    expect(a.getAttribute("href")).toBe(`/en/s/${touched.id}?t=${Math.round(touched.section!.t * 1000) / 1000}&m=${encodeURIComponent(touched.section!.id).replace(/%7E/gu, "~")}`);
     const main = f.shiurim.find((r) => r.grade === "main")!;
     expect(list.querySelector(`[data-shiur-row="${main.id}"] a`)!.getAttribute("href")).toBe(`/en/s/${main.id}`);
     // each row carries its own language

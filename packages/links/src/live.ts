@@ -10,10 +10,9 @@
  */
 import { momentId, parseMomentId } from "./moment.ts";
 import { resolveEntry } from "./pages.ts";
-import { isEd, type CorpusKind, type EntityKind, type IndexName, type LinkData, type Route } from "./types.ts";
-import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
+import { isEd, type CorpusKind, type IndexName, type LinkData, type Route } from "./types.ts";
+import { buildQuery, formatExactSeconds, parseExactSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
-const ENTITY_SEG: Readonly<Record<EntityKind, string>> = { work: "seforim", person: "p", concept: "c" };
 
 /** Corpus entry segments. */
 export const LIVE_ENTRY_SEG: Readonly<Record<CorpusKind, string>> = {
@@ -46,7 +45,6 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   about: null,
   people: null,
   glossary: null,
-  concepts: null,
 };
 
 export function formatLive(route: Route, data: LinkData = {}, opts: { readonly bare?: boolean } = {}): string {
@@ -61,14 +59,12 @@ export function formatLive(route: Route, data: LinkData = {}, opts: { readonly b
       let t = route.t;
       if (route.moment?.kind === "s") t = data.sectionStart?.(route.id, route.moment.index) ?? t;
       const m = route.moment ? momentId(route.id, route.moment.kind, route.moment.index) : undefined;
-      return base + buildQuery([["t", formatSeconds(t)], ["m", m]]);
+      return base + buildQuery([["t", formatExactSeconds(t)], ["m", m]]);
     }
     case "series":
       return `/${route.ed}/series/${seg(route.id)}`;
     case "occasion":
       return `/${route.ed}/o/${seg(route.key)}`;
-    case "entity":
-      return `/${route.ed}/${ENTITY_SEG[route.entity]}/${seg(route.key)}`;
     case "entry": {
       const r = resolveEntry(route, data);
       return `/${r.ed}/${LIVE_ENTRY_SEG[r.entry]}/${seg(r.id)}`;
@@ -95,7 +91,7 @@ export function parseLive(url: string, data: LinkData = {}): Route | null {
   switch (a) {
     case "s": {
       if (s.length !== 3 || b === undefined) return null;
-      const t = parseSeconds(queryGet(u.query, "t"));
+      const t = parseExactSeconds(queryGet(u.query, "t"));
       const parsed = parseMomentId(queryGet(u.query, "m") ?? "");
       const moment = parsed && parsed.shiurId === b ? { kind: parsed.kind, index: parsed.index } : undefined;
       return {

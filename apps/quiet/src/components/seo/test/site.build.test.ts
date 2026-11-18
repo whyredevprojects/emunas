@@ -5,7 +5,7 @@
  * - each edition sitemap lists exactly the pages built for that edition, every shiur among them;
  *   the sitemap index and robots.txt name them;
  * - the About page exists in both editions with `#notes`, every page links to it, and it holds
- *   only headings, placeholder marks and the report address (no generated text);
+ *   the approved texts from src/content/about/ and a placeholder for every part without one;
  * - link checker over every page: internal links and anchors resolve, cross-site links to the
  *   listening app match the Live route table (apps/live/app/routes.ts) and map back to a built
  *   Quiet page through @emunas/links; the only other external links are the media host, Sefaria
@@ -19,12 +19,13 @@ import { createLinks } from "@emunas/links";
 import { buildCorpus } from "./corpus-build.ts";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../../test/astro-build.ts";
-import { ABOUT_PARTS, ABOUT_STRINGS } from "../../../pages/[ed]/about/_strings.ts";
+import { ABOUT_PARTS } from "../../../pages/[ed]/about/_strings.ts";
 
 const app = resolve(dirname(fileURLToPath(import.meta.url)), "../../../..");
 const repo = resolve(app, "../..");
 const DOMAIN = "emunas.example";
-const QUIET = `https://${DOMAIN}`;
+const HOME = `https://${DOMAIN}`;
+const QUIET = `https://library.${DOMAIN}`;
 const LIVE = `https://listen.${DOMAIN}`;
 const MEDIA = "https://media.example.org";
 const FEEDBACK = "errors@emunas.example";
@@ -45,6 +46,7 @@ beforeAll(() => {
     EMUNAS_DOMAIN: DOMAIN,
     EMUNAS_FEEDBACK_EMAIL: FEEDBACK,
     // Never let a caller's own host settings leak into this build.
+    EMUNAS_HOME_ORIGIN: "",
     EMUNAS_QUIET_ORIGIN: "",
     EMUNAS_LIVE_ORIGIN: "",
     EMUNAS_WORKERS_SUBDOMAIN: "",
@@ -208,26 +210,18 @@ describe("About", () => {
     expect(missing.slice(0, 20)).toEqual([]);
   });
 
-  it("holds no generated text: only headings, placeholder marks and the report address", () => {
+  it("shows the approved texts and a placeholder for every part still unwritten", () => {
+    const content = join(app, "src/content/about");
     for (const ed of EDS) {
-      const s = ABOUT_STRINGS[ed];
       const main = mainOf(html(`/${ed}/about/`));
-      const text = main
-        .replace(/<[^>]+>/g, "\n")
-        .split("\n")
-        .map((l) => l.replace(/&quot;/g, '"').replace(/&#39;/g, "'").trim())
-        .filter((l) => l !== "");
-      const allowed = new Set([
-        s.title,
-        ...Object.values(s.headings),
-        `${s.placeholderLabel}:`,
-        s.placeholder,
-        s.reportAddress,
-        FEEDBACK,
-      ]);
-      expect(text.filter((l) => !allowed.has(l))).toEqual([]);
+      for (const part of ABOUT_PARTS) {
+        const approved = existsSync(join(content, ed, `${part}.md`));
+        const section = new RegExp(`<section[^>]*id="${part}"[\\s\\S]*?</section>`).exec(main)?.[0] ?? "";
+        expect(section, `${ed}/${part}`).toContain(approved ? 'class="about-text"' : `data-placeholder="${part}"`);
+        expect(section, `${ed}/${part}`).not.toContain(approved ? "data-placeholder=" : 'class="about-text"');
+      }
       expect(main).toContain(`href="mailto:${FEEDBACK}"`);
-      expect(main.match(/data-placeholder=/g)).toHaveLength(ABOUT_PARTS.length);
+      expect(main).toContain('data-placeholder="mashgiach"');
     }
   });
 });
@@ -268,6 +262,8 @@ describe("link checker", () => {
           else if (!exists(back.slice(QUIET.length).replace(/[?#].*$/, ""))) bad(`maps back to a missing page ${back}`);
           continue;
         }
+        // The footer's link to the home site (apex), on every page.
+        if (href === `${HOME}/`) continue;
         if (href.startsWith(`${MEDIA}/`) || /^https:\/\/(?:www\.)?sefaria\.org\//.test(href)) continue;
         let local = href;
         if (href.startsWith(`${QUIET}/`)) local = href.slice(QUIET.length);
@@ -287,7 +283,7 @@ describe("link checker", () => {
           bad("no such page or file");
           continue;
         }
-        if (frag === undefined || frag === "" || /^t=\d+$/.test(frag)) continue;
+        if (frag === undefined || frag === "" || /^t=\d+(?:\.\d+)?$/.test(frag)) continue;
         if (!pages().has(path) || !idsOf(path).has(decodeURIComponent(frag))) bad("no such anchor");
       }
     }

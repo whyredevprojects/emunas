@@ -154,7 +154,7 @@ describe("seforim", () => {
       for (const [i, m] of moments.entries()) {
         const c = loc.citations[i]!;
         const href = m.querySelector("a")!.getAttribute("href")!;
-        expect(href).toBe(c.t === null ? `/en/s/${c.shiurId}` : `/en/s/${c.shiurId}?t=${Math.round(c.t)}`);
+        expect(href).toBe(c.t === null ? `/en/s/${c.shiurId}` : `/en/s/${c.shiurId}?t=${Math.round(c.t * 1000) / 1000}`);
       }
     }
     expect(places[0]!.textContent).toContain("Bereishis 2:16");

@@ -21,7 +21,11 @@ export const en = {
   "nav.maasios": "Maasios",
   "nav.series": "Series",
   "nav.shelf": "My Shelf",
+  "nav.quiet": "Catalog and indexes",
+  "nav.newTab": "(opens in a new tab)",
   "nav.search": "Search",
+
+  "theme.dark": "Dark colours",
 
   "lang.button": "Language",
   "lang.dialog": "Language settings",

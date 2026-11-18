@@ -119,7 +119,7 @@ export interface ShiurEntityIds {
 }
 
 export interface CorpusView {
-  layer: LayerInput | null;
+  layer: LayerInput;
   topics: Map<string, LayerTopicNode>;
   /** Live-listed (= Live page) entities. */
   people: Map<string, LayerPerson>;
@@ -133,13 +133,11 @@ export interface CorpusView {
   personLabel(id: string): FacetLabel;
   conceptLabel(id: string): FacetLabel;
   workLabel(id: string): FacetLabel;
-  /** Story moment id (a telling) → its merged story. */
-  storyOfMoment: Map<string, LayerStory>;
   /** Live-listed entity ids of a summarized shiur (empty without layer refs). */
   entitiesOf(shiurId: string): ShiurEntityIds;
 }
 
-export function corpusView(layer: LayerInput | null): CorpusView {
+export function corpusView(layer: LayerInput): CorpusView {
   const topics = new Map<string, LayerTopicNode>();
   const people = new Map<string, LayerPerson>();
   const concepts = new Map<string, LayerConcept>();
@@ -147,7 +145,6 @@ export function corpusView(layer: LayerInput | null): CorpusView {
   const allConcepts = new Map<string, LayerConcept>();
   const allPeople = new Map<string, LayerPerson>();
   const allWorks = new Map<string, LayerWork>();
-  const storyOfMoment = new Map<string, LayerStory>();
   if (layer) {
     for (const t of layer.topics) if (liveTopicPage(t)) topics.set(t.id, t);
     for (const p of layer.people) {
@@ -162,13 +159,12 @@ export function corpusView(layer: LayerInput | null): CorpusView {
       allWorks.set(w.id, w);
       if (liveWorkPage(w)) works.set(w.id, w);
     }
-    for (const st of layer.stories ?? []) for (const t of arr(st.tellings)) storyOfMoment.set(t.momentId, st);
   }
   const labelOf = <T>(m: Map<string, T>, f: (x: T) => FacetLabel) => (id: string): FacetLabel => {
     const x = m.get(id);
     return x ? f(x) : { en: id, yi: id };
   };
-  const topicLabel = labelOf(new Map(layer?.topics.map((t) => [t.id, t]) ?? []), (t) =>
+  const topicLabel = labelOf(new Map(layer.topics.map((t) => [t.id, t])), (t) =>
     facetLabel(nz(t.label?.en), nz(t.label?.yi), t.label?.he),
   );
   const personLabel = labelOf(allPeople, (p) => facetLabel(nz(p.nameEn), nz(p.nameYi) || nz(p.nameHe), p.nameHe));
@@ -190,9 +186,8 @@ export function corpusView(layer: LayerInput | null): CorpusView {
     personLabel,
     conceptLabel,
     workLabel,
-    storyOfMoment,
     entitiesOf(shiurId) {
-      const r = layer?.refs.get(shiurId);
+      const r = layer.refs.get(shiurId);
       if (!r) return { topics: [], people: [], concepts: [], works: [] };
       return {
         topics: sortedIds([...arr(r.topics).map((t) => t.id), ...arr(r.chapters).flatMap((c) => arr(c.topicIds))], topics),
@@ -221,6 +216,12 @@ export interface FeaturedMix {
   sections: number;
   shiurim: number;
   first: MixItem[];
+  /**
+   * What the topic's moment list holds that may not be featured (D7), so the client can assemble the
+   * rest of the occasion mix from the topic file: shiur ids mostly by another speaker, then section
+   * ids tagged with an excluded topic. Sorted; empty when everything is eligible.
+   */
+  skip: string[];
 }
 
 export interface CorpusEmitResult {
@@ -278,7 +279,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const visible = (id: string) => byId.get(id)?.status === "full";
 
   // ------------------------------------------------------------------ topics.json
-  const allTopics = layer?.topics ?? [];
+  const allTopics = layer.topics;
   const parentOf = new Map(allTopics.map((t) => [t.id, t.parentId ?? null]));
   const chain = (id: string): string[] => {
     const out: string[] = [];
@@ -304,7 +305,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const SECTION_ONLY = 0.05;
   const perTopic = new Map<string, Map<string, { sal: number; secs: Section[] }>>();
   for (const s of ctx.input.shiurim) {
-    const r = layer?.refs.get(s.id);
+    const r = layer.refs.get(s.id);
     if (!r || s.status !== "full" || !s.notes) continue;
     const sal = new Map<string, number>();
     for (const t of arr(r.topics)) for (const a of chain(t.id)) sal.set(a, Math.max(sal.get(a) ?? 0, t.salience));
@@ -353,8 +354,8 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   const toMix = (x: Section): MixItem => ({ id: x.id, shiurId: x.shiurId, t: x.t, end: x.end, lang: x.lang, title: x.title });
 
   // ------------------------------------------------------------------ topic/<id>.json
-  const threadById = new Map((layer?.threads ?? []).map((t) => [t.id, t]));
-  const storyById = new Map((layer?.stories ?? []).map((s) => [s.id, s]));
+  const threadById = new Map(layer.threads.map((t) => [t.id, t]));
+  const storyById = new Map(layer.stories.map((s) => [s.id, s]));
   const chipFor = (kind: "person" | "work", id: string | undefined | null): EntityChip | null => {
     if (!id) return null;
     if (kind === "person") {
@@ -408,7 +409,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   };
   for (const t of allTopics) {
     if (!view.topics.has(t.id)) continue;
-    const d = layer?.topicDetail.get(t.id);
+    const d = layer.topicDetail.get(t.id);
     const secs = ordered(perTopic.get(t.id));
     const rows = shiurRows(d);
     const shiurRest = rows.slice(TOPIC_FIRST_SHIURIM);
@@ -489,7 +490,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   // ------------------------------------------------------------------ featured mixes (today.json)
   const excluded = new Set(ctx.featured.excludeTopicIds);
   const otherSpeaker = (shiurId: string): boolean => {
-    const share = layer?.refs.get(shiurId)?.otherSpeakerShare;
+    const share = layer.refs.get(shiurId)?.otherSpeakerShare;
     return typeof share === "number" && share >= ctx.featured.maxOtherSpeakerShare;
   };
   const featuredMix = (topicId: string): FeaturedMix | null => {
@@ -497,23 +498,30 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     const keep = (x: Section) => !otherSpeaker(x.shiurId) && !x.topicIds.some((id) => chain(id).some((a) => excluded.has(a)));
     const secs = ordered(perTopic.get(topicId), keep);
     if (secs.length === 0) return null;
+    const skipShiurim = new Set<string>();
+    const skipSections = new Set<string>();
+    for (const x of ordered(perTopic.get(topicId), (x) => !keep(x))) {
+      if (otherSpeaker(x.shiurId)) skipShiurim.add(x.shiurId);
+      else skipSections.add(x.id);
+    }
     return {
       topicId,
       label: view.topicLabel(topicId),
       sections: secs.length,
       shiurim: new Set(secs.map((x) => x.shiurId)).size,
       first: secs.slice(0, CORPUS_LIMITS.mixFirst).map(toMix),
+      skip: [...[...skipShiurim].sort(cmp), ...[...skipSections].sort(cmp)],
     };
   };
   const occasionTopic = new Map<string, string>();
-  for (const o of layer?.occasionTopics ?? []) if (view.topics.has(o.topicId) && !occasionTopic.has(o.key)) occasionTopic.set(o.key, o.topicId);
+  for (const o of layer.occasionTopics) if (view.topics.has(o.topicId) && !occasionTopic.has(o.key)) occasionTopic.set(o.key, o.topicId);
 
   // ------------------------------------------------------------------ thread/<id>.json
   const insightText = (shiurId: string, momentId: string): L | null => {
     const i = byId.get(shiurId)?.notes?.insights.find((x) => x.id === momentId);
     return i ? lcopy(i.text) : null;
   };
-  for (const th of layer?.threads ?? []) {
+  for (const th of layer.threads) {
     if (!liveThreadPage(th)) continue;
     const file: ThreadFile = {
       schemaVersion: V,
@@ -536,21 +544,24 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   }
 
   // ------------------------------------------------------------------ story/<id>.json, stories-index.json
+  // A plain `{ name }` from the layer is a corpus entity's own display name (a person no index
+  // lists, or a "person" that is now a concept): the layer leaves unresolved raw extraction names
+  // out (C3.1), and the guard checks every published story name.
   const storyPerson = (p: LayerStory["people"][number]): StoryPerson | null => {
     if ("id" in p && typeof p.id === "string") {
       const listed = view.people.get(p.id);
       if (listed) return { id: p.id, label: view.personLabel(p.id), page: true };
-      const any = view.allPeople.get(p.id);
-      // Not listed on Live (type other, excluded, below the line): the name as plain text.
-      return any ? { name: nz(any.nameEn) || p.id } : null;
+      // Not listed on Live (type other, excluded, below the line): the display name as plain text.
+      const name = nz(view.allPeople.get(p.id)?.nameEn);
+      return name ? { name } : null;
     }
-    return "name" in p && typeof p.name === "string" && p.name !== "" ? { name: p.name } : null;
+    return "name" in p && typeof p.name === "string" && p.name.trim() !== "" ? { name: p.name } : null;
   };
   // The section join (layer topics' storyIds), restricted to topics Live lists.
   const topicsOfStory = new Map<string, string[]>();
   for (const t of allTopics) {
     if (!view.topics.has(t.id)) continue;
-    for (const id of arr(layer?.topicDetail.get(t.id)?.storyIds)) {
+    for (const id of arr(layer.topicDetail.get(t.id)?.storyIds)) {
       const list = topicsOfStory.get(id) ?? [];
       if (!list.includes(t.id)) list.push(t.id);
       topicsOfStory.set(id, list);
@@ -570,7 +581,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     byId.get(shiurId)?.notes?.stories.find((x) => x.id === momentId)?.end ?? null;
   const storiesIndex: StoriesIndexFile = { schemaVersion: V, stories: [], people: {} };
   const indexPeople = new Set<string>();
-  for (const st of layer?.stories ?? []) {
+  for (const st of layer.stories) {
     const tellings = arr(st.tellings).filter((t) => visible(t.shiurId));
     const first = tellings[0];
     if (!first) continue;
@@ -648,7 +659,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   // ------------------------------------------------------------------ explore/entities.json
   const explore: ExploreEntitiesFile = { schemaVersion: V, shiurim: {} };
   for (const s of ctx.input.shiurim) {
-    if (s.status !== "full" || !layer?.refs.has(s.id)) continue;
+    if (s.status !== "full" || !layer.refs.has(s.id)) continue;
     const e = view.entitiesOf(s.id);
     if (e.topics.length + e.people.length + e.concepts.length + e.works.length === 0) continue;
     explore.shiurim[s.id] = e;
@@ -658,7 +669,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
 
   // ------------------------------------------------------------------ per-shiur corpus block (G.1)
   const shiurCorpus = (shiurId: string): ShiurCorpus | undefined => {
-    const r: LayerShiurRefs | undefined = layer?.refs.get(shiurId);
+    const r: LayerShiurRefs | undefined = layer.refs.get(shiurId);
     if (!r || !visible(shiurId)) return undefined;
     const topics = arr(r.topics)
       .filter((t) => view.topics.has(t.id))
@@ -677,7 +688,18 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
       sources: arr(r.sources)
         .filter((x) => view.allWorks.has(x.workId))
         .map((x) => ({ momentId: x.momentId, workId: x.workId, page: view.works.has(x.workId) })),
-      stories: arr(r.stories).map((x) => ({ momentId: x.momentId, storyId: x.storyId, tellings: x.tellings, page: liveStoryPage(storyById.get(x.storyId) ?? {}) })),
+      stories: arr(r.stories).map((x) => {
+        const st = storyById.get(x.storyId);
+        // Distinct other shiurim, not tellings: one shiur may tell the story twice.
+        const others = new Set(arr(st?.tellings).flatMap((t) => (t.shiurId !== shiurId && visible(t.shiurId) ? [t.shiurId] : [])));
+        return {
+          momentId: x.momentId,
+          storyId: x.storyId,
+          otherShiurim: others.size,
+          page: liveStoryPage(st ?? {}),
+          people: arr(st?.people).flatMap((p) => storyPerson(p) ?? []),
+        };
+      }),
       insights: arr(r.insights).map((x) => ({
         momentId: x.momentId,
         threadId: x.threadId,
@@ -691,14 +713,14 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     };
   };
   const shiurPointers = (shiurId: string): string[] =>
-    arr(layer?.refs.get(shiurId)?.insights).flatMap((x) => (x.other && visible(x.other.shiurId) ? [x.other.shiurId] : []));
+    arr(layer.refs.get(shiurId)?.insights).flatMap((x) => (x.other && visible(x.other.shiurId) ? [x.other.shiurId] : []));
 
   return { glossaryShards: glossaryShards.map(([s]) => s), featuredMix, occasionTopic, shiurCorpus, shiurPointers };
 }
 
 /** The series synthesis for a series file, or undefined (concept-live C.6). */
-export function seriesSynthesis(layer: LayerInput | null, seriesId: string, visibleIds: ReadonlySet<string>): SeriesSynthesis | undefined {
-  const x = layer?.series.get(seriesId);
+export function seriesSynthesis(layer: LayerInput, seriesId: string, visibleIds: ReadonlySet<string>): SeriesSynthesis | undefined {
+  const x = layer.series.get(seriesId);
   if (!x) return undefined;
   return {
     title: lcopy(x.title),

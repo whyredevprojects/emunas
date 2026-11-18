@@ -126,18 +126,20 @@ All packages are `"private": true`, named `@emunas/<dir>`, ESM, TypeScript sourc
 
 ## 2. Domains, URLs, SEO
 
-### 2.1 Decision: two hostnames on one registrable domain
+### 2.1 Decision: one registrable domain, a hostname per site
 
-- **Quiet is primary and canonical**: `https://<domain>/` (apex; `www` redirects to apex). It pre-renders every shiur in both editions, works without JS, and is the copy search engines should index.
-- **Live**: `https://listen.<domain>/`.
+- **Home** (the landing site, essays and files): `https://<domain>/` (apex; `www` redirects to apex).
+- **Quiet is primary and canonical**: `https://library.<domain>/`. It pre-renders every shiur in both editions, works without JS, and is the copy search engines should index.
+- **Live**: `https://listen.<domain>/`. **Media** (R2): `https://media.<domain>/`.
+- `<domain>` is `EMUNAS_DOMAIN` (`emunas.torahlearningtools.com` now, `emunas.com` later); every host derives from it, so moving domains is config only (ops-runbook §3 "Domains and cutover").
 - Rejected: **subpaths** (`<domain>/listen/…`) — two frameworks and two Workers on one host means one Worker fronting the other, colliding `/_astro` vs `/assets`, a service-worker scope fight, and Live's SPA fallback swallowing Quiet's 404s. Rejected: **separate registrable domains** — two names for one collection confuses people and splits trust; nothing needs separate cookies.
-- The domain name itself is an owner decision (O8). Until then: `emunas-quiet.<account>.workers.dev` and `emunas-live.<account>.workers.dev`, both `noindex` (header `X-Robots-Tag: noindex` on `*.workers.dev` hosts, set by the site Workers).
+- Without a domain (and on staging): `emunas-{home,quiet,live}[-staging].<account>.workers.dev`, all `noindex` (header `X-Robots-Tag: noindex` on `*.workers.dev` hosts, set by the site Workers).
 
 ### 2.2 Equivalent deep links (`@emunas/links`)
 
 Edition/UI language is the first path segment on both sites (`yi` | `en`). Time is always **global seconds** (C5). Moment ids: `<shiurId>~<kind><index>` (`s3`, `i2`, `q0`, `st1`, `tk4`, `kp0`).
 
-| Thing | Quiet (`<domain>`) | Live (`listen.<domain>`) |
+| Thing | Quiet (`library.<domain>`) | Live (`listen.<domain>`) |
 |---|---|---|
 | Home | `/{ed}/` | `/{ui}/` |
 | Shiur | `/{ed}/shiur/{shiurId}/` | `/{ui}/s/{shiurId}` |
@@ -146,13 +148,16 @@ Edition/UI language is the first path segment on both sites (`yi` | `en`). Time 
 | Series | `/{ed}/series/{seriesId}/` | `/{ui}/series/{seriesId}` |
 | Parsha | `/{ed}/calendar/parsha/{parshaKey}/` | `/{ui}/o/{parshaKey}` |
 | Zman | `/{ed}/calendar/zman/{zmanKey}/` | `/{ui}/o/{zmanKey}` |
-| Work | `/{ed}/sources/{workKey}/` | `/{ui}/seforim/{workKey}` |
-| Person | `/{ed}/people/{personKey}/` | `/{ui}/p/{personKey}` |
-| Concept | `/{ed}/inyanim/{conceptKey}/` | `/{ui}/c/{conceptKey}` |
+| Topic | `/{ed}/inyanim/{topicId}/` (+ `all/`) | `/{ui}/t/{topicId}` |
+| Work | `/{ed}/sources/{workId}/` | `/{ui}/seforim/{workId}` |
+| Person | `/{ed}/people/{personId}/` (+ `all/`) | `/{ui}/p/{personId}` |
+| Concept (glossary entry) | `/{ed}/erachim/{conceptId}/` | `/{ui}/c/{conceptId}` (merged into a topic: the topic) |
+| Story | `/{ed}/stories/{storyId}/` | `/{ui}/maasios/{storyId}` |
+| Thread | none (edition home `#indexes`) | `/{ui}/th/{threadId}` (noindex) |
 | Search | `/{ed}/search/?q=` | `/{ui}/search?q=` |
 | Audio | `recordings[].audioUrl` on `media.<domain>` (A1; not built by `@emunas/links`) | same URL |
 
-All keys come from `@emunas/normalize` and exist before any AI data, so URLs never change when notes arrive. Parsha keys and zman keys share one occasion namespace and are guaranteed disjoint by a test. Quiet creates entity pages only at ≥2 shiurim (concepts ≥3); `links.quiet.entity()` falls back to the index page anchor (`/{ed}/people/#{key}`) below the threshold, using the counts in `.corpus/entities.json`. Live serves every entity through its SPA fallback.
+Parsha and zman keys come from `@emunas/normalize`; they share one occasion namespace and are guaranteed disjoint by a test. Topics, concepts, people, works, stories and threads are addressed by their corpus id (corpus-wave-plan §3.5). Whether an entry has a page on a site is the corpus layer's page flag (`pageLookupFromLayer`); a Quiet entry without a page links to its index anchor (`/{ed}/people/#{id}`), a Live one has no link.
 
 Moving between sites: Quiet shiur page has "Open in the listening app" (`links.live.shiur(id, {t: currentTime})`; JS adds the live player time). Live listening room has "Printable page / catalog entry" (`links.quiet.shiur(id, {section})`). Live-only query params (`audio`, `read`, `lens`) are dropped when crossing.
 
@@ -173,7 +178,7 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 |---|---|---|---|
 | R2 | `emunas` (exists) | pipeline (write); browsers (read, via `media.<domain>`) | **public custom domain `media.<domain>` with CORS for both site origins (A1); never bound to any Worker.** Holds mp3s and `transcripts/…`; the transcripts are reachable but never linked (accepted by the owner until they are removed from the bucket). |
 | R2 | `emunas-site-build` | CI only | embedding cache `emb/<model>/<hash>.f16`; private |
-| Worker | `emunas-quiet` | `<domain>` | static assets (`dist/`); no audio route (A1) |
+| Worker | `emunas-quiet` | `library.<domain>` | static assets (`dist/`); no audio route (A1) |
 | Worker | `emunas-live` | `listen.<domain>` | static assets (`build/client`), `not_found_handling: "single-page-application"`, `run_worker_first: ["/", "/api/*", "/admin/*"]`, service binding `API` → `emunas-api` |
 | Worker | `emunas-api` | via service binding only (`workers_dev: false`, no route) | `/api/search`, `/api/similar`, `/api/feedback`, `/api/health`, `/admin/feedback` |
 | D1 | `emunas-search`, `emunas-feedback` (+ `-staging`) | api | separate DBs: rebuildable index vs. user reports that must never be wiped |
@@ -212,7 +217,7 @@ Per Amendment A1 (owner decision): audio is served straight from the `emunas` bu
 
 | Env | Deployed from | Sites | api bindings |
 |---|---|---|---|
-| production | `main` (push, daily cron, dispatch) | `<domain>`, `listen.<domain>` | prod D1/Vectorize |
+| production | `main` (push, daily cron, dispatch) | `<domain>`, `library.<domain>`, `listen.<domain>` | prod D1/Vectorize |
 | staging | manual dispatch (api schema changes, search tuning) | `*-staging` workers.dev | `-staging` D1/Vectorize, `emunas-api-staging` |
 | preview | every same-repo PR: `wrangler versions upload --preview-alias pr-<n>` | per-PR preview URL, `noindex` | staging bindings (so a PR can never write prod D1) |
 
@@ -220,8 +225,9 @@ Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `co
 
 ### 3.5 CI/CD (GitHub Actions)
 
-- `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → both app builds → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
-- `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; daily at 05:17 UTC; dispatch): same build (with `EMUNAS_MEDIA_ORIGIN` set) → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
+- `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → the three app builds (Quiet, Live, Home) → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
+- `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; dispatch): same build (with `EMUNAS_MEDIA_ORIGIN` set) → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
+- `refresh-quiet.yml` (every second day at 05:17 UTC; dispatch): Quiet only, from `main`: corpus build → guard pre → rebuild with suppress → search build → Quiet build → `_headers` → guard post over `.corpus` and `apps/quiet/dist` → budgets → deploy `emunas-quiet`. It keeps the title page's "this week" window current. It shares the `deploy-production` concurrency group without cancelling, so a full deploy cancels a refresh and never the other way round.
 - `data-sync.yml`: see §4.
 - The checkout includes `data/transcripts` (it is in git) only because the guard reads it; no other step does.
 - Rollback: `wrangler rollback` per Worker; D1 search is rebuildable; feedback D1 is never touched by deploys.
@@ -267,8 +273,14 @@ deploy.yml on main
   build.json            { buildId, dataSha, schemaVersion, mediaOrigin, counts: {total, full, catalogOnly, downgraded} }
   shiurim/<id>.json     PublicShiur (below), one per in-scope shiur (997)
   index.json            list rows for all shiurim (catalog fields, oneLiner, duration, status, entity ids)
-  series.json, occasions.json, years.json, works.json, people.json, concepts.json, stories.json, entities.json
-  search/docs.ndjson    SearchDoc per shiur and per moment (search-core allow-list; includes candidateTopics keywords)
+  sections.json, neighbours.json, series.json, occasions.json, years.json
+                        catalog aggregates (W2.1)
+  works.json            the works pages' reference-order layout, each entry keyed by its corpus `workId`
+  layer/                corpus layer (corpus-wave-plan §3.3): layer.json, topics.json, concepts.json,
+                        people.json, works.json, stories.json, threads.json, series/<id>.json,
+                        shiur/<shiurId>.json, synonyms.json, occasion-topics.json
+  search/               docs.ndjson, moments.ndjson, entities.ndjson (search-core allow-list; keywords
+                        are topic labels and aliases)
   audio-table.json      recordingId → { url, canonicalId, playable, size }   (A1; url null when not playable)
   build-report.json     downgrades, unmapped values, dropped items, time warnings, suppressed ids
   suppress.json         from guard pre-pass (ids only)
@@ -297,13 +309,15 @@ interface PublicShiur {
     summary: { oneLiner: L; abstract: L; keyPoints: Moment[] };
     chapters: { idx: number; t: number; end: number; title: L; summary: L; kind: SectionKind;
                 catalogTopicIdx: number[]; sub: { title: L; summary: L; t: number }[]; soft?: true }[];
-    skip: [number, number, SectionKind | "asr-noise"][];      // seconds only
+    skip: [number, number, SectionKind | "pause"][];      // seconds only
     sources: { idx: number; work: string | null; workKey: string | null; ref: string | null; sefariaRef: string | null;
                resolution: "resolved" | "inferred" | "unresolved"; mention: "quoted" | "paraphrased" | "alluded"; t: number }[];
     insights: Moment[]; takeaways: Moment[];
     questions: { id: string; q: L; a: L; tq: number; ta: number; soft?: true }[];
-    stories: { id: string; title: L; retelling: L; people: string[]; peopleKeys: string[]; t: number; end: number }[];
-    people: { name: string; key: string }[]; concepts: { he: string; key: string }[];
+    stories: { id: string; title: L; retelling: L; t: number | null; end: number | null; soft?: true }[];
+    // No people or concept names, and no story people: raw extraction names may be ASR mishearings.
+    // People, concepts, works and a story's people come from the corpus layer: the shiur's refs in
+    // `.corpus/layer/shiur/<id>.json` (personIds, conceptIds, merged story ids) and the entity files.
     writeup: Record<Ed, { sectionIndex: number; heading: string | null;
                           paragraphs: { text: string; src: number[]; t: number; end: number }[] }[]>;
   };
@@ -332,7 +346,7 @@ Never present (type test + guard): `heardAs`, `asrNotes`, `segs`, `startSeg`, `e
 | O5 | Accounts / sync for Live | **Local-only** first |
 | O6 | `@hebcal/core` GPL-2.0 at build time only | **Accept** (generates a data table; no code shipped); fallback hand-made table |
 | O7 | `current` (79) and `simcha` (72) in general browse | Own sections; excluded from Today/Explore defaults (`publish-policy.json`) |
-| O8 | Domain name | `<domain>` apex = Quiet, `listen.<domain>` = Live |
+| O8 | Domain name | `<domain>` apex = home, `library.<domain>` = Quiet, `listen.<domain>` = Live, `media.<domain>` = R2 |
 | O9 | Pipeline branch vs `main` | **`data-sync.yml`** merging data-only commits |
 | O10 | Embedding model | bge-m3 unless the Yiddish eval says otherwise |
 
@@ -474,7 +488,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/live/app/player-engine/**`
 - **Depends on:** W1.2
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/asr-noise ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from recordings[].audioUrl (media host, A1); playable:false recordings are skipped with an "unavailable" state.
+- **Brief (inputs, deliverables):** Inputs: tech-live §4.1; PublicShiur recordings/chapters/skip from @emunas/corpus/public. Framework-free engine with one HTMLAudioElement created outside React, getState/subscribe, global timeline over recordings with src swap at boundaries, chapter next/prev (restart if >3 s), skip rules (default noise/singing/other_speaker/pause ≥20 s) scheduled from currentTime and playbackRate with undo event, moment queue items {shiurId,start,end?} pausing at end, Media Session (metadata, position state, prev/next = chapters, seek ±15 s, seekto), speed 0.75–2, sleep timer, progress callback every 5 s/pause/pagehide. Audio URLs from recordings[].audioUrl (media host, A1); playable:false recordings are skipped with an "unavailable" state.
 - **Acceptance:** Vitest with a fake media element: timeline math across 2 recordings, skip scheduling at 1×/1.5×/2×, recording swap, moment end pause, chapter prev rule; no React import in the engine.
 
 #### W2.6 — emunas-api Worker: D1 schema, search API, feedback API
@@ -567,7 +581,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `(no repo files; Cloudflare account resources)`
 - **Depends on:** W1.5, W2.7
-- **Brief (inputs, deliverables):** A person with Cloudflare credentials attaches the custom domain media.<domain> to the existing emunas bucket (A1) and sets its CORS rules (AllowedOrigins: https://<domain>, https://listen.<domain>, plus staging/preview origins as needed; methods GET, HEAD; Range allowed as a request header), sets EMUNAS_MEDIA_ORIGIN for deploy builds, and creates emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app. No emunas-audio bucket and no copy step.
+- **Brief (inputs, deliverables):** A person with Cloudflare credentials attaches the custom domain media.<domain> to the existing emunas bucket (A1) and sets its CORS rules (AllowedOrigins: https://library.<domain>, https://listen.<domain>, plus staging/preview origins as needed; methods GET, HEAD; Range allowed as a request header), sets EMUNAS_MEDIA_ORIGIN for deploy builds, and creates emunas-site-build, D1 emunas-search/-staging and emunas-feedback/-staging, Vectorize emunas-moments/-staging (1024, cosine, metadata indexes audio_lang, kind, category, year), Turnstile widget, Access app. No emunas-audio bucket and no copy step.
 - **Acceptance:** a manual iOS Safari and Android Chrome check plays and seeks an audioUrl from a staging page (Range → 206); a CORS fetch() from both site origins succeeds; a recording with a Hebrew/space/# key plays; the 3 .WMA recordings show as unavailable.
 
 ### Wave 4
@@ -648,7 +662,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/quiet/src/content/**`, `apps/live/app/content/**`, `packages/i18n/src/vocab/**`
 - **Depends on:** W4.6, W4.5
-- **Brief (inputs, deliverables):** Human-supplied About texts (the Rav and the collection, how the notes were made, how to report an error, what is excluded) in en and yi; final wording of the standing AI label; review of Yiddish UI strings by a Yiddish reader. Placeholders stay clearly marked until text arrives.
+- **Brief (inputs, deliverables):** Human-supplied About texts (the Mashgiach and the collection, how the notes were made, how to report an error, what is excluded) in en and yi; final wording of the standing AI label; review of Yiddish UI strings by a Yiddish reader. Placeholders stay clearly marked until text arrives.
 - **Acceptance:** No generated text in About; Yiddish copy signed off by a named reviewer; label identical in both sites.
 
 ### Wave 6

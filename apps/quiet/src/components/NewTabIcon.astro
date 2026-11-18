@@ -1,0 +1,12 @@
+---
+/**
+ * The "opens in a new tab" mark after an external link: a box with an arrow leaving it. Decorative;
+ * the link carries the words. Mirrors in RTL so the arrow leaves on the reading side. The same
+ * markup is in ./new-tab-icon.ts for links built as HTML strings; the styles are in quiet.css.
+ */
+import { NEW_TAB_ICON_PATH } from "./new-tab-icon.ts";
+---
+<svg class="new-tab-icon" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+  <path d={NEW_TAB_ICON_PATH} fill="currentColor" />
+</svg>
+

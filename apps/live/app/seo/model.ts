@@ -8,7 +8,7 @@
  */
 import type { Ed, L } from "@emunas/corpus/public";
 import { formatHebrewYears, type UiLang } from "@emunas/i18n";
-import type { CorpusKind, EntityKind, LinkData, OccasionKind, Site } from "@emunas/links";
+import type { CorpusKind, LinkData, OccasionKind, Site } from "@emunas/links";
 import { tFor } from "../i18n/index.ts";
 import { classifyLivePath, normalizeLivePath, type LivePageKind } from "./policy.ts";
 import { seoStrings } from "./strings.ts";
@@ -42,12 +42,12 @@ export interface SeoOccasion {
 }
 
 export interface SeoEntity {
-  /** Corpus id (corpus layer), or the legacy site key without a layer. */
+  /** Corpus id (corpus layer). */
   key: string;
   label: SeoLabel;
-  /** Number of visible shiurim (layer recount; entities.json without a layer). */
+  /** Number of visible shiurim (layer recount). */
   count: number;
-  /** Has a Live page, which is prerendered (layer page flags, C1.7; entities.json `livePrerender` without a layer). */
+  /** Has a Live page, which is prerendered (layer page flags, C1.7). */
   prerender: boolean;
   /** Has a Quiet page (layer page flags): else the Live page has no canonical and is noindex. */
   quietPage?: boolean;
@@ -59,15 +59,13 @@ export interface SeoCorpus {
   shiurim: SeoShiur[];
   series: SeoSeries[];
   occasions: SeoOccasion[];
+  /** Corpus layer entities (C1.7). */
   works: SeoEntity[];
   people: SeoEntity[];
   concepts: SeoEntity[];
-  /** Corpus layer (C1.7); empty without one. */
   topics: SeoEntity[];
   stories: SeoEntity[];
   threads: SeoEntity[];
-  /** True when the entity lists come from the corpus layer: their page flags are authoritative. */
-  layer: boolean;
 }
 
 export const EMPTY_CORPUS: SeoCorpus = {
@@ -80,7 +78,6 @@ export const EMPTY_CORPUS: SeoCorpus = {
   topics: [],
   stories: [],
   threads: [],
-  layer: false,
 };
 
 /** Live entity data files exist from this many shiurim on (W3.6 `EMIT_LIMITS.entityFileMin`). */
@@ -140,22 +137,12 @@ export function prerenderPaths(corpus: SeoCorpus, dataFiles: DataFileSet = null)
   return { paths, skipped };
 }
 
-/** `@emunas/links` lookups (entity counts for the Quiet page thresholds, parsha vs zman). */
+/** `@emunas/links` lookups: the layer's page flags per site, merged concepts, parsha vs zman. */
 export function linkDataFor(corpus: SeoCorpus): LinkData {
-  const counts: Record<EntityKind, Map<string, number>> = {
-    work: new Map(corpus.works.map((e) => [e.key, e.count])),
-    person: new Map(corpus.people.map((e) => [e.key, e.count])),
-    concept: new Map(corpus.concepts.map((e) => [e.key, e.count])),
-  };
   const kinds = new Map<string, OccasionKind>();
   for (const o of corpus.occasions) if (o.kind !== null) kinds.set(o.key, o.kind);
-  const base: LinkData = {
-    // Unknown key: 0 (no Quiet page), so the canonical falls back to the index, never a 404.
-    entityCount: (entity, key) => counts[entity].get(key) ?? 0,
-    occasionKind: (key) => kinds.get(key),
-  };
-  if (!corpus.layer) return base;
-  // Corpus layer: page flags per site decide canonicals, noindex and links (plan §3.5).
+  // Page flags per site decide canonicals, noindex and links (plan §3.5). An unknown id has no
+  // page, so a canonical falls back to the index, never a 404.
   const flags = (xs: readonly SeoEntity[]) => new Map(xs.map((e) => [e.key, e]));
   const by: Record<CorpusKind, Map<string, SeoEntity>> = {
     topic: flags(corpus.topics),
@@ -166,7 +153,7 @@ export function linkDataFor(corpus: SeoCorpus): LinkData {
     thread: flags(corpus.threads),
   };
   return {
-    ...base,
+    occasionKind: (key) => kinds.get(key),
     hasPage: (site: Site, kind: CorpusKind, id: string) => {
       if (kind === "thread" && site === "quiet") return false;
       const e = by[kind].get(id);
@@ -203,7 +190,7 @@ export function createPageText(corpus: SeoCorpus): (pathname: string) => PageTex
   const stories = by(corpus.stories);
   const threads = by(corpus.threads);
   /** Layer entries: noindex when Quiet has no page for them. */
-  const entry = (e: SeoEntity) => (corpus.layer && e.quietPage !== true ? { noindex: true } : {});
+  const entry = (e: SeoEntity) => (e.quietPage !== true ? { noindex: true } : {});
 
   return (pathname) => {
     const page = classifyLivePath(normalizeLivePath(pathname));

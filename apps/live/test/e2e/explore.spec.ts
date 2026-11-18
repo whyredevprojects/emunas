@@ -12,7 +12,7 @@
  * `@data`: every expectation comes from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, NO_SERVICE_WORKER, pageErrors, ready, UIS, type Row } from "./helpers.ts";
+import { axeBudget, axeViolations, corpusRows, dataJson, entityRows, NO_SERVICE_WORKER, pageErrors, ready, UIS, type EntityRow } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
 
@@ -24,7 +24,7 @@ function bucket(seconds: number): string {
 }
 
 /** Independent reference for the facet values of a row (tech-live §4.3 semantics). */
-function values(r: Row, facet: string): string[] {
+function values(r: EntityRow, facet: string): string[] {
   switch (facet) {
     case "lang":
       return [r.lang];
@@ -56,7 +56,7 @@ function values(r: Row, facet: string): string[] {
 }
 
 /** Disjunctive counts for `facet` with every *other* selected facet applied (OR within, AND across). */
-function referenceCounts(rows: readonly Row[], facet: string, selected: Record<string, string[]>): Map<string, number> {
+function referenceCounts(rows: readonly EntityRow[], facet: string, selected: Record<string, string[]>): Map<string, number> {
   const counts = new Map<string, number>();
   for (const r of rows) {
     const passes = Object.entries(selected).every(
@@ -76,8 +76,12 @@ async function shownCounts(page: Page, facet: string): Promise<Map<string, numbe
   return new Map(items);
 }
 
+/**
+ * Opens Explore's facet view. Explore opens on the topic map (C.2 "The map"); the facets, lenses and
+ * results are one tap behind it (`view=browse`, implied by any filter, lens or list setting).
+ */
 async function openExplore(page: Page, query = "", ui = "en"): Promise<void> {
-  await page.goto(`/${ui}/explore${query}`);
+  await page.goto(`/${ui}/explore${query === "" ? "?view=browse" : query}`);
   await ready(page);
   await expect(page.getByTestId("explore-status")).not.toHaveText("", { timeout: 15_000 });
 }
@@ -86,7 +90,7 @@ const total = (page: Page) => page.getByTestId("explore-status").getAttribute("d
 
 test.describe("@data facets", () => {
   test("facet counts equal a brute-force reference, with and without a filter", async ({ page, request }) => {
-    const rows = await corpusRows(request);
+    const rows = await entityRows(request);
     const errors = pageErrors(page);
     await openExplore(page);
     expect(await total(page)).toBe(rows.length);
@@ -127,10 +131,10 @@ test.describe("@data facets", () => {
   });
 
   test("filtering takes less than 5 ms in the facet worker", async ({ page, request }) => {
-    const rows = await corpusRows(request);
+    const rows = await entityRows(request);
     const langs = [...new Set(rows.map((r) => r.lang))].sort();
     const cats = [...referenceCounts(rows, "category", {}).keys()].sort();
-    const queries = ["", `?kind=${cats[0]}`, `?kind=${cats[0]}&ai=full`, `?audio=${langs[0]}&dur=gte90`, "?y=undated", "?stories=yes"];
+    const queries = ["?view=browse", `?kind=${cats[0]}`, `?kind=${cats[0]}&ai=full`, `?audio=${langs[0]}&dur=gte90`, "?y=undated", "?stories=yes"];
     const times: number[] = [];
     await openExplore(page);
     // Three passes: the first warms the worker's JIT (and is not measured); each query's time is the
@@ -154,7 +158,7 @@ test.describe("@data facets", () => {
   });
 
   test("URL state round-trips: click → URL → fresh load shows the same selection; back undoes it", async ({ page, request }) => {
-    const rows = await corpusRows(request);
+    const rows = await entityRows(request);
     await openExplore(page);
     const ai = referenceCounts(rows, "ai", {});
     const value = (ai.get("full") ?? 0) > 0 ? "full" : "catalog-only";
@@ -195,7 +199,7 @@ test.describe("@data facets", () => {
 
 test.describe("@data lenses", () => {
   test("the Years lens's undated lane equals the shiurim without years", async ({ page, request }) => {
-    const rows = await corpusRows(request);
+    const rows = await entityRows(request);
     const undated = rows.filter((r) => r.years.length === 0).length;
     await openExplore(page, "?lens=years");
     const lane = page.locator('[data-lens=years] [data-year="undated"]');
@@ -214,7 +218,7 @@ test.describe("@data lenses", () => {
   });
 
   test("the Connections lens hides every edge with fewer than 5 shared shiurim", async ({ page, request }) => {
-    const rows = await corpusRows(request);
+    const rows = await entityRows(request);
     // The person who appears in the most shiurim is the centre.
     const people = referenceCounts(rows, "person", {});
     const top = [...people.entries()].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))[0];
@@ -286,7 +290,14 @@ test.describe("keyboard", () => {
 test.describe("accessibility", () => {
   for (const ui of UIS) {
     test(`axe is clean on every lens and the moments unit (${ui})`, async ({ page }) => {
-      for (const q of ["", "?lens=luach", "?lens=years", "?lens=connections", "?unit=moments"]) {
+      const lenses = ["", "?lens=luach", "?lens=years", "?lens=connections", "?unit=moments"];
+      axeBudget(1 + lenses.length);
+      // The topic map Explore opens on.
+      await page.goto(`/${ui}/explore`);
+      await ready(page);
+      await expect(page.getByTestId("topic-map")).toBeVisible({ timeout: 15_000 });
+      expect(await axeViolations(page), `${ui}/explore (map)`).toEqual([]);
+      for (const q of lenses) {
         await openExplore(page, q, ui);
         if (q === "?unit=moments") await expect(page.getByTestId("moments-progress")).toHaveCount(0, { timeout: 15_000 });
         expect(await axeViolations(page), `${ui}/explore${q}`).toEqual([]);

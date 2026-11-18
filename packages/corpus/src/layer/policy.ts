@@ -62,7 +62,7 @@ export const DEFAULT_CORPUS_POLICY: CorpusPolicy = {
   people: {
     other: { pages: false, quietLineMinShiurim: 3, liveListed: false },
     excludeFamily: true,
-    familyPattern: "\\bthe Rav'?s\\b",
+    familyPattern: "\\bthe Mashgiach'?s\\b",
     excludeIds: [],
   },
   threads: { pageMinShiurim: 3, twoMember: "inline-line", timelineMinDated: 3 },

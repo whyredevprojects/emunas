@@ -1,9 +1,10 @@
 /**
  * Build-time reader: `.corpus/` → `SeoCorpus` (W4.5). Node only (`.server` keeps it out of the
- * client bundle). Reads the aggregate files, `index.json` and the corpus layer's entity files
- * (`layer/`, C1.7), never per-shiur files and never anything under the pipeline's `data/` folder
- * (integration-plan §1.4 C3). With a layer, works, people and concepts are corpus ids and every
- * page flag comes from the layer, by the same rules as the data emit (`app/data/live-pages.ts`).
+ * client bundle). Reads `index.json`, the catalog aggregates (`series.json`, `occasions.json`) and
+ * the corpus layer's entity files (`layer/`, C1.7), never per-shiur files and never anything under
+ * the pipeline's `data/` folder (integration-plan §1.4 C3). Works, people, concepts, topics,
+ * stories and threads are corpus ids, and every page flag comes from the layer, by the same rules
+ * as the data emit (`app/data/live-pages.ts`). Without a layer there are no entity pages.
  */
 import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative, resolve, sep } from "node:path";
@@ -19,16 +20,8 @@ import {
   type LayerWork,
 } from "@emunas/corpus/public";
 import { liveConceptPage, livePersonPage, liveStoryPage, liveThreadPage, liveTopicPage, liveWorkPage } from "../data/live-pages.ts";
-import type {
-  ConceptsFile,
-  EntitiesFile,
-  EntityCount,
-  OccasionsFile,
-  PeopleFile,
-  SeriesFile,
-  WorksFile,
-} from "@emunas/corpus/aggregate";
-import type { SeoCorpus, SeoEntity, SeoLabel, SeoOccasion } from "./model.ts";
+import type { OccasionsFile, SeriesFile } from "@emunas/corpus/aggregate";
+import type { SeoCorpus, SeoEntity, SeoOccasion } from "./model.ts";
 
 function readJson<T>(dir: string, file: string): T {
   return JSON.parse(readFileSync(join(dir, file), "utf8")) as T;
@@ -62,15 +55,13 @@ interface LayerLists {
   threads: SeoEntity[];
 }
 
-/** The corpus layer's entities with their page flags, or null when `.corpus/layer/` is off or absent. */
-export function readLayerLists(corpusDir: string): LayerLists | null {
+/** The corpus layer's entities with their page flags. Throws when a `.corpus/layer/` file is missing. */
+export function readLayerLists(corpusDir: string): LayerLists {
   const dir = join(corpusDir, LAYER_DIR);
-  const info = join(dir, LAYER_FILES.layer);
-  if (!existsSync(info)) return null;
-  if ((JSON.parse(readFileSync(info, "utf8")) as { enabled?: unknown }).enabled === false) return null;
   const read = (file: string): Record<string, unknown> => {
     const p = join(dir, file);
-    return existsSync(p) ? (JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>) : {};
+    if (!existsSync(p)) throw new Error(`${LAYER_DIR}/${file} is missing in ${corpusDir}: the corpus layer is required (run npm run corpus:build)`);
+    return JSON.parse(readFileSync(p, "utf8")) as Record<string, unknown>;
   };
   const quiet = (x: { pages?: { quiet?: unknown } | null }) => x.pages?.quiet === true;
   return {
@@ -124,10 +115,6 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
   const index = readJson<CorpusIndex>(corpusDir, "index.json");
   const seriesFile = readJson<SeriesFile>(corpusDir, "series.json");
   const occasionsFile = readJson<OccasionsFile>(corpusDir, "occasions.json");
-  const worksFile = readJson<WorksFile>(corpusDir, "works.json");
-  const peopleFile = readJson<PeopleFile>(corpusDir, "people.json");
-  const conceptsFile = readJson<ConceptsFile>(corpusDir, "concepts.json");
-  const entities = readJson<EntitiesFile>(corpusDir, "entities.json");
 
   const shiurim = index.shiurim.map((r) => ({
     id: r.id,
@@ -139,55 +126,29 @@ export function readSeoCorpus(corpusDir: string): SeoCorpus {
     oneLiner: r.oneLiner,
   }));
 
-  const series = seriesFile.series.map((s) => ({ id: s.id, title: s.title, count: s.count }));
+  // A series with no parts has no data file (the Live emit writes none), so it has no route.
+  const series = seriesFile.series.filter((s) => s.count > 0).map((s) => ({ id: s.id, title: s.title, count: s.count }));
 
-  // Occasions: table parshiyos and zmanim (labelled, parsha/zman known), then keys outside the
-  // tables (the "other" bucket and unmapped slugs) labelled by the catalog spelling.
-  const table = new Map<string, { kind: "parsha" | "zman"; label: SeoLabel }>();
-  for (const p of occasionsFile.parshiyos) table.set(p.key, { kind: "parsha", label: { en: p.en, yi: p.yi } });
-  for (const z of occasionsFile.zmanim) table.set(z.key, { kind: "zman", label: { en: z.en, yi: z.yi } });
-  const raw = new Map<string, string>();
-  for (const r of index.shiurim) {
-    for (const v of [r.parsha, r.zman]) if (v && !raw.has(v.key)) raw.set(v.key, v.raw);
+  // Occasions: every table parsha and zman with its catalog count (occasions.json lists them all),
+  // then the keys of the "other" bucket (one-off events, values outside the tables), grouped by the
+  // shiur's own key as the data emit groups them and labelled by the catalog spelling.
+  const occasions: SeoOccasion[] = [
+    ...occasionsFile.parshiyos.map((p): SeoOccasion => ({ key: p.key, kind: "parsha", label: { en: p.en, yi: p.yi }, count: p.count })),
+    ...occasionsFile.zmanim.map((z): SeoOccasion => ({ key: z.key, kind: "zman", label: { en: z.en, yi: z.yi }, count: z.count })),
+  ];
+  const table = new Set(occasions.map((o) => o.key));
+  const rows = new Map(index.shiurim.map((r) => [r.id, r]));
+  const other = new Map<string, SeoOccasion>();
+  for (const ref of arr<{ id?: unknown }>(occasionsFile.other)) {
+    const r = typeof ref.id === "string" ? rows.get(ref.id) : undefined;
+    const v = r?.zman && !table.has(r.zman.key) ? r.zman : (r?.parsha ?? null);
+    if (!v || table.has(v.key)) continue;
+    const prev = other.get(v.key);
+    other.set(v.key, { key: v.key, kind: null, label: prev?.label ?? { en: v.raw, yi: v.raw }, count: (prev?.count ?? 0) + 1 });
   }
-  const occasions: SeoOccasion[] = entities.occasions.map((o) => {
-    const t = table.get(o.key);
-    const fallback = raw.get(o.key) ?? o.key;
-    return { key: o.key, kind: t?.kind ?? null, label: t?.label ?? { en: fallback, yi: fallback }, count: o.shiurim };
-  });
+  occasions.push(...other.values());
 
-  const entity = (counts: readonly EntityCount[], label: (key: string) => SeoLabel): SeoEntity[] =>
-    counts.map((c) => ({ key: c.key, label: label(c.key), count: c.shiurim, prerender: c.livePrerender }));
-
-  const layer = readLayerLists(corpusDir);
-  if (layer) return { shiurim, series, occasions, ...layer, layer: true };
-
-  const works = new Map(worksFile.works.map((w) => [w.key, w]));
-  const people = new Map(peopleFile.people.map((p) => [p.key, p]));
-  const concepts = new Map(conceptsFile.concepts.map((c) => [c.key, c]));
-  // Without a layer: every entity in entities.json (for the Quiet thresholds); labels from the
-  // aggregate files.
-  return {
-    shiurim,
-    series,
-    occasions,
-    topics: [],
-    stories: [],
-    threads: [],
-    layer: false,
-    works: entity(entities.works, (key) => {
-      const w = works.get(key);
-      return w ? { en: w.en, yi: w.yi ?? w.he ?? w.en } : { en: key, yi: key };
-    }),
-    people: entity(entities.people, (key) => {
-      const p = people.get(key);
-      return p ? { en: p.en, yi: p.he ?? p.en } : { en: key, yi: key };
-    }),
-    concepts: entity(entities.concepts, (key) => {
-      const c = concepts.get(key);
-      return c ? { en: c.he, yi: c.he } : { en: key, yi: key };
-    }),
-  };
+  return { shiurim, series, occasions, ...readLayerLists(corpusDir) };
 }
 
 /** Relative paths of every file under the emitted `/data/` tree (`shiur/x.json`), or null without one. */

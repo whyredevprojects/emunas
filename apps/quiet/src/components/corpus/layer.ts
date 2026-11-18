@@ -2,10 +2,10 @@
  * Build-time reader of `.corpus/layer/` for the Quiet site (corpus-wave-plan §3.3, C1.8).
  *
  * Reads only the files `corpus:build` writes into `.corpus/layer/` (never the pipeline's data
- * folder, never anything under its raw folder). Every file is optional: a missing layer, or a
- * layer built with `enabled: false`, gives empty indexes and one warning, so a shell-only build
- * still works. The pipeline's shapes keep changing, so records are read defensively: a record
- * without a string `id` is skipped, a missing array is empty, and flags are read as `=== true`.
+ * folder, never anything under its raw folder). The layer is required: a missing `.corpus/`,
+ * `.corpus/layer/` or layer file stops the build. The pipeline's shapes keep changing, so records
+ * are read defensively: a record without a string `id` is skipped, a missing array is empty, and
+ * flags are read as `=== true`.
  *
  * The page lookups (`hasPage`, `links`) come from the layer's own page flags through
  * `@emunas/links` `pageLookupFromLayer`, so every page and every link agrees on which entries
@@ -50,12 +50,10 @@ export interface LayerIndexCounts {
 }
 
 export interface QuietLayer {
-  /** `.corpus/layer/`, or null when there is none. */
-  readonly dir: string | null;
-  /** False when there is no layer (or it was built with the corpus absent): every list is empty. */
-  readonly enabled: boolean;
-  readonly info: LayerInfo | null;
-  /** |V|: the shiurim the layer counts from (0 without a layer). */
+  /** `.corpus/layer/`. */
+  readonly dir: string;
+  readonly info: LayerInfo;
+  /** |V|: the shiurim the layer counts from. */
   readonly visibleShiurim: number;
   readonly topics: readonly LayerTopicNode[];
   readonly concepts: readonly LayerConcept[];
@@ -99,6 +97,16 @@ function hasId(v: unknown): boolean {
 /** Parsed JSON, or null when the file is missing. A file that does not parse is a broken build. */
 function readJson(path: string): unknown {
   if (!existsSync(path)) return null;
+  return parse(path);
+}
+
+/** Parsed JSON of a layer file the build cannot do without. */
+function readRequired(path: string): unknown {
+  if (!existsSync(path)) throw new Error(`${path} is missing: the corpus layer is required (run npm run corpus:build)`);
+  return parse(path);
+}
+
+function parse(path: string): unknown {
   try {
     return JSON.parse(readFileSync(path, "utf8")) as unknown;
   } catch (e) {
@@ -108,10 +116,6 @@ function readJson(path: string): unknown {
 
 /** The array at `file[key]`, records without an id dropped. */
 function records<T>(file: unknown, key: string, name: string, warnings: string[]): T[] {
-  if (file === null) {
-    warnings.push(`${name} missing`);
-    return [];
-  }
   const list = isRecord(file) ? file[key] : undefined;
   if (!Array.isArray(list)) {
     warnings.push(`${name}: no "${key}" list`);
@@ -126,31 +130,30 @@ function byId<T extends { id: string }>(list: readonly T[]): Map<string, T> {
   return new Map(list.map((r) => [r.id, r]));
 }
 
-/** The layer folder of a corpus directory, or null when the corpus has none. */
-export function findLayerDir(corpusDir: string | null): string | null {
-  if (corpusDir === null) return null;
+/** The layer folder of a corpus directory; throws when the corpus has none. */
+export function findLayerDir(corpusDir: string): string {
   const dir = join(corpusDir, LAYER_DIR);
-  return existsSync(join(dir, LAYER_FILES.layer)) ? dir : null;
+  if (!existsSync(join(dir, LAYER_FILES.layer))) {
+    throw new Error(`no ${LAYER_DIR}/${LAYER_FILES.layer} in ${corpusDir}: the corpus layer is required (run npm run corpus:build)`);
+  }
+  return dir;
 }
 
-/** Loads `.corpus/layer/` (null: no layer, every list empty). */
-export function loadQuietLayer(dir: string | null): QuietLayer {
+/** Loads `.corpus/layer/`. */
+export function loadQuietLayer(dir: string): QuietLayer {
   const warnings: string[] = [];
-  const info = dir === null ? null : (readJson(join(dir, LAYER_FILES.layer)) as LayerInfo | null);
-  const enabled = dir !== null && isRecord(info) && info.enabled === true;
-  if (dir === null) warnings.push("no .corpus/layer/ (run npm run corpus:build)");
-  else if (!enabled) warnings.push(".corpus/layer/ was built without the corpus data: the corpus indexes are empty");
+  const info = readRequired(join(dir, LAYER_FILES.layer));
+  if (!isRecord(info)) throw new Error(`${join(dir, LAYER_FILES.layer)} is not a layer.json object (re-run npm run corpus:build)`);
 
-  const read = (name: string): unknown => (enabled && dir !== null ? readJson(join(dir, name)) : null);
-  const w: string[] = [];
+  const read = (name: string): unknown => readRequired(join(dir, name));
   const topicsFile = read(LAYER_FILES.topics);
-  const topics = records<LayerTopicNode>(topicsFile, "tree", LAYER_FILES.topics, w);
-  const details = topicsFile === null ? [] : records<LayerTopicDetail>(topicsFile, "detail", LAYER_FILES.topics, w);
-  const concepts = records<LayerConcept>(read(LAYER_FILES.concepts), "concepts", LAYER_FILES.concepts, w);
-  const people = records<LayerPerson>(read(LAYER_FILES.people), "people", LAYER_FILES.people, w);
-  const works = records<LayerWork>(read(LAYER_FILES.works), "works", LAYER_FILES.works, w);
-  const stories = records<LayerStory>(read(LAYER_FILES.stories), "stories", LAYER_FILES.stories, w);
-  const threads = records<LayerThread>(read(LAYER_FILES.threads), "threads", LAYER_FILES.threads, w);
+  const topics = records<LayerTopicNode>(topicsFile, "tree", LAYER_FILES.topics, warnings);
+  const details = records<LayerTopicDetail>(topicsFile, "detail", LAYER_FILES.topics, warnings);
+  const concepts = records<LayerConcept>(read(LAYER_FILES.concepts), "concepts", LAYER_FILES.concepts, warnings);
+  const people = records<LayerPerson>(read(LAYER_FILES.people), "people", LAYER_FILES.people, warnings);
+  const works = records<LayerWork>(read(LAYER_FILES.works), "works", LAYER_FILES.works, warnings);
+  const stories = records<LayerStory>(read(LAYER_FILES.stories), "stories", LAYER_FILES.stories, warnings);
+  const threads = records<LayerThread>(read(LAYER_FILES.threads), "threads", LAYER_FILES.threads, warnings);
   const synonymsFile = read(LAYER_FILES.synonyms);
   const synonymsIn = isRecord(synonymsFile) && Array.isArray(synonymsFile["synonyms"]) ? (synonymsFile["synonyms"] as unknown[]) : [];
   const synonyms = synonymsIn.filter(
@@ -162,8 +165,6 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
     (o): o is LayerOccasionTopic =>
       isRecord(o) && typeof o["key"] === "string" && (o["kind"] === "parsha" || o["kind"] === "zman") && typeof o["topicId"] === "string",
   );
-  // Without a layer the one warning above says it all.
-  if (enabled) warnings.push(...w);
 
   const topicMap = byId(topics);
   const detailMap = byId(details);
@@ -172,15 +173,20 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
   const workMap = byId(works);
   const storyMap = byId(stories);
   const threadMap = byId(threads);
-  const links = pageLookupFromLayer(
-    enabled ? { topics: { tree: topics }, concepts: { concepts }, people: { people }, works: { works }, stories: { stories }, threads: { threads } } : {},
-  );
+  const links = pageLookupFromLayer({
+    topics: { tree: topics },
+    concepts: { concepts },
+    people: { people },
+    works: { works },
+    stories: { stories },
+    threads: { threads },
+  });
   const seriesCache = new Map<string, LayerSeries | null>();
   const shiurCache = new Map<string, LayerShiurRefs | null>();
-  const visible = isRecord(info) && isRecord(info.counts) && typeof info.counts.visibleShiurim === "number" ? info.counts.visibleShiurim : 0;
+  const visible = isRecord(info["counts"]) && typeof info["counts"]["visibleShiurim"] === "number" ? info["counts"]["visibleShiurim"] : 0;
 
   function perId<T>(cache: Map<string, T | null>, sub: string, id: string, ok: (v: unknown) => boolean): T | null {
-    if (!enabled || dir === null || !SAFE_ID.test(id)) return null;
+    if (!SAFE_ID.test(id)) return null;
     const hit = cache.get(id);
     if (hit !== undefined) return hit;
     const v = readJson(join(dir, sub, `${id}.json`));
@@ -191,9 +197,8 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
 
   return {
     dir,
-    enabled,
-    info: enabled ? info : null,
-    visibleShiurim: enabled ? visible : 0,
+    info: info as unknown as LayerInfo,
+    visibleShiurim: visible,
     topics,
     concepts,
     people,
@@ -227,12 +232,14 @@ export function loadQuietLayer(dir: string | null): QuietLayer {
 let cached: { key: string; layer: QuietLayer } | null = null;
 
 /**
- * The layer for the current build (memoised per directory). Without a layer, an empty one and a
- * single warning. Pages call this from `getStaticPaths` and from their frontmatter.
+ * The layer for the current build (memoised per directory). Throws without a `.corpus/` or its
+ * layer. Pages call this from `getStaticPaths` and from their frontmatter.
  */
 export function quietLayer(): QuietLayer {
-  const dir = findLayerDir(findCorpusDir());
-  const key = dir ?? "";
+  const corpusDir = findCorpusDir();
+  if (corpusDir === null) throw new Error("no .corpus/ found: the corpus layer is required (run npm run corpus:build)");
+  const dir = findLayerDir(corpusDir);
+  const key = dir;
   if (cached && cached.key === key) return cached.layer;
   const layer = loadQuietLayer(dir);
   if (layer.warnings.length > 0) console.warn(`[quiet layer] ${layer.warnings.join("; ")}`);

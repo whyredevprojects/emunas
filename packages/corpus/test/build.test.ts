@@ -33,7 +33,8 @@ describe("buildCorpus → .corpus/", () => {
     expect(index.sections.length).toBeGreaterThan(10);
     const tv = index.shiurim.find((x) => x.id === "yi-zmanim-tv-bb-04")!;
     expect(tv.oneLiner?.en.length).toBeGreaterThan(0);
-    expect(tv.entities.works.length).toBeGreaterThan(0);
+    // No per-shiur entity keys (nothing reads them; names come from the corpus layer).
+    expect("entities" in tv).toBe(false);
     const audio = readJson<AudioTable>(join(out, "audio-table.json"));
     expect(Object.keys(audio).sort()).toEqual([...new Set(index.shiurim.flatMap((s) => s.recordingIds))].sort());
     for (const [id, e] of Object.entries(audio)) {

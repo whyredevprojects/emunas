@@ -11,7 +11,7 @@ the media host (Amendment A1). There is no `/audio/*` route on either site.
 
 Both sites' paths parse into one site-neutral `Route` (`parseQuiet`, `parseLive`) and format
 back (`formatQuiet`, `formatLive`). Every cross-site mapping is "parse on one site, format on
-the other". Time is global seconds (C5), written as whole seconds.
+the other". Time is global seconds (C5), written to the millisecond (`582.12`) in both Quiet's `#t=` and Live's `?t=`.
 
 | Thing | Quiet | Live |
 |---|---|---|
@@ -39,8 +39,8 @@ wording is in `@emunas/i18n`, `CORPUS_LABELS`).
 
 - **Pages** come from the layer's page flags: `pageLookupFromLayer({ topics, concepts, people,
   works, stories, threads })` (the `.corpus/layer/*.json` files; each optional) gives
-  `LinkData.hasPage(site, kind, id)` and `conceptTopic(id)`. Without flags Quiet falls back to the
-  legacy shiur-count thresholds and anything else is assumed to have a page.
+  `LinkData.hasPage(site, kind, id)` and `conceptTopic(id)`. Without flags an entry is assumed to
+  have a page.
 - **Below threshold**: Quiet links the index anchor (`/{ed}/erachim/#{id}`); Live has no link
   (`hrefFor("live", route)` and `equivalent()` return null).
 - **Merged concept**: a concept with `mergedIntoTopic` formats as its topic on both sites.
@@ -48,26 +48,23 @@ wording is in `@emunas/i18n`, `CORPUS_LABELS`).
   `canonicalFor` is null and `noindexFor` is true. Threads always: null and noindex.
 - **No old addresses**: the sites have never been published, so there are no redirects, legacy
   paths or retired-id mappings here.
-
-**Still used by current pages, until the C2 page wave replaces them:** the `{ kind: "entity" }` route and
-`quietPaths().concept()` still format the normalize-keyed addresses (Quiet concepts at
-`/{ed}/inyanim/{key}/`, index `"concepts"` at `/{ed}/inyanim/`) so the pages that are not on
-the layer yet keep their links. No parser returns them any more.
+  The normalize-keyed `{ kind: "entity" }` route, `quietPaths().concept()` and the `entityCount`
+  fallback were retired in C3.1.
 
 ## Use
 
 ```ts
-import { createLinks, hostsFromEnv, quietPaths, livePaths } from "@emunas/links";
+import { createLinks, hostsFromEnv, pageLookupFromLayer, quietPaths, livePaths } from "@emunas/links";
 
 // Same-site links: root-relative paths.
-const q = quietPaths({ entityCount }); // entityCount from .corpus/entities.json
+const q = quietPaths(pageLookupFromLayer(layerFiles)); // page flags from .corpus/layer/
 q.shiur("yi", id, { section: 2 });     // "/yi/shiur/<id>/#s2"
-q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" below 2 shiurim
+q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" without a Quiet page
 
 // Cross-site, canonical, hreflang: absolute URLs.
 const links = createLinks({
-  hosts: hostsFromEnv(env), // EMUNAS_DOMAIN | EMUNAS_WORKERS_SUBDOMAIN (+ EMUNAS_STAGE) | EMUNAS_{QUIET,LIVE}_ORIGIN
-  data: { entityCount, occasionKind, sectionStart }, // all optional lookups from .corpus/
+  hosts: hostsFromEnv(env), // EMUNAS_DOMAIN | EMUNAS_WORKERS_SUBDOMAIN (+ EMUNAS_STAGE) | EMUNAS_{HOME,QUIET,LIVE}_ORIGIN
+  data: { ...pageLookupFromLayer(layerFiles), occasionKind, sectionStart }, // all optional lookups from .corpus/
 });
 links.live.shiur("en", id, { t: player.currentTime }); // "Open in the listening app"
 links.equivalent(url);       // the same page on the other site (Live-only params dropped)
@@ -81,19 +78,35 @@ links.withEdition(url, "yi"); // edition switch that keeps the place
 
 | Lookup | Needed for | Without it |
 |---|---|---|
-| `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | `entityCount`, else the page is assumed to exist |
+| `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | the page is assumed to exist |
 | `conceptTopic(id)` | concept merged into a topic → the topic | the concept's own address |
-| `entityCount(kind, key)` | legacy fallback: Quiet page vs index anchor (works/people ≥2, concepts ≥3) | the page is assumed to exist |
 | `occasionKind(key)` | Live `/o/{key}` → Quiet parsha or zman page | Quiet edition home |
 | `sectionStart(id, i)` | Quiet `#s{i}` → Live `?t=` | Live link carries only `m=` |
 
 ### Hosts
 
-Production: Quiet on the apex `https://<domain>`, Live on `https://listen.<domain>`. Before the
-domain exists (O8) and on staging: `emunas-quiet[-staging].<subdomain>.workers.dev` and
-`emunas-live[-staging].<subdomain>.workers.dev`. `isIndexableOrigin()` is false for
-workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`). A Quiet origin on `listen.*`
-is rejected, so a canonical can never point at Live.
+Three sites, one domain `<d>` (`EMUNAS_DOMAIN`):
+
+| Site | Production | workers.dev (before the domain, and staging) |
+|---|---|---|
+| home (landing site, essays, files) | `https://<d>` | `emunas-home[-staging].<subdomain>.workers.dev` |
+| Quiet (library, canonical) | `https://library.<d>` | `emunas-quiet[-staging].<subdomain>.workers.dev` |
+| Live (listening app) | `https://listen.<d>` | `emunas-live[-staging].<subdomain>.workers.dev` |
+
+Media (R2) is `media.<d>`, set separately as `EMUNAS_MEDIA_ORIGIN`. Every host derives from
+`EMUNAS_DOMAIN`, so moving to another domain is a config change only.
+
+- `hostsFromEnv(env)` gives all three (`Hosts`). Explicit origins (`EMUNAS_HOME_ORIGIN`,
+  `EMUNAS_QUIET_ORIGIN`, `EMUNAS_LIVE_ORIGIN`) override the derived ones; without a domain or
+  subdomain all three must be set.
+- `siteHostsFromEnv(env)` gives only Quiet and Live (`SiteHosts`), for code that never links to
+  home; it does not need `EMUNAS_HOME_ORIGIN`.
+- `createLinks` takes `SiteHosts` (a full `Hosts` works too): cross-site links, canonical and
+  hreflang are between Quiet and Live only.
+- `validateHosts` requires every origin it is given to be distinct and rejects a Quiet origin on
+  `listen.*`, so a canonical can never point at Live. `productionHosts` rejects a domain that
+  starts with `library.`, `listen.` or `media.` (it must be the apex).
+- `isIndexableOrigin()` is false for workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`).
 
 Pages that exist on one site only map to the closest page on the other (Live Explore → the
 Quiet topic tree; shelf → Quiet edition home; Quiet contents, years, about → Live UI home; seforim ↔ sources,

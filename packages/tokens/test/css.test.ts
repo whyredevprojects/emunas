@@ -34,12 +34,12 @@ describe("generated CSS", () => {
     for (let i = 1; i < steps.length; i++) expect(steps[i]?.[1]).toBeGreaterThan(steps[i - 1]?.[1] ?? 0);
   });
 
-  it("supports system dark mode and an explicit data-theme override both ways", () => {
+  it("is light by default whatever the OS prefers; data-theme=\"dark\" opts into dark", () => {
     const css = read("tokens.css");
-    expect(css).toContain("@media (prefers-color-scheme: dark)");
-    expect(css).toContain(':root:not([data-theme="light"])');
-    expect(css).toContain(':root[data-theme="dark"]');
-    expect(css).toContain(':root[data-theme="light"]');
+    expect(css).toMatch(/:root \{\s*color-scheme: light;/);
+    expect(css).not.toContain("prefers-color-scheme");
+    expect(css).toContain(':root[data-theme="dark"] {\n    color-scheme: dark;');
+    expect(css).not.toContain('[data-theme="light"]');
   });
 
   it("uses no physical direction properties (RTL and LTR share one stylesheet)", () => {

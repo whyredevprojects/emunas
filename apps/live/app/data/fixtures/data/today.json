@@ -1,5 +1,5 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "counts": {
   "total": 60,
   "full": 31,
@@ -739,21 +739,21 @@
     "shiurim": 3,
     "first": [
      {
-      "id": "yi-zmanim-tv-bb-04~s4",
-      "t": 1001.27,
-      "end": 1489.54,
-      "title": {
-       "en": "Yom Kippur begins on Chamishah Asar b'Av",
-       "yi": "יום כיפור הייבט זיך אן חמשה עשר באב"
-      }
-     },
-     {
       "id": "yi-zmanim-shbs-chzvn-01~s3",
       "t": 890.25,
       "end": 1252.85,
       "title": {
        "en": "Three matzos, three nations, three weeks",
        "yi": "דריי מצות, דריי פעלקער, דריי וואכן"
+      }
+     },
+     {
+      "id": "yi-zmanim-tv-bb-04~s4",
+      "t": 1001.27,
+      "end": 1489.54,
+      "title": {
+       "en": "Yom Kippur begins on Chamishah Asar b'Av",
+       "yi": "יום כיפור הייבט זיך אן חמשה עשר באב"
       }
      }
     ]
@@ -1266,21 +1266,21 @@
     "shiurim": 5,
     "first": [
      {
-      "id": "en-parsha-en-svldvs-01~s1",
-      "t": 537.62,
-      "end": 869.92,
-      "title": {
-       "en": "Why did Yitzchak love Esav?",
-       "yi": "פארוואס האט יצחק ליב געהאט עשו?"
-      }
-     },
-     {
       "id": "en-parsha-en-vyshlch-01~s2",
       "t": 696.22,
       "end": 1169.06,
       "title": {
        "en": "580 animals: a bone thrown to Esav",
        "yi": "580 בהמות: א ביין וואס מ'ווארפט צו עשו"
+      }
+     },
+     {
+      "id": "en-parsha-en-svldvs-01~s1",
+      "t": 537.62,
+      "end": 869.92,
+      "title": {
+       "en": "Why did Yitzchak love Esav?",
+       "yi": "פארוואס האט יצחק ליב געהאט עשו?"
       }
      }
     ]
@@ -1533,7 +1533,7 @@
    "years": [],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that Pharaoh's decree 'let the work be made heavier' lives on today as a klipah of constant busyness, from phones and cell phones to social obligations and lavish simchas, that robs a Jew of any moment of calm reflection.",
+    "en": "The Mashgiach explains that Pharaoh's decree 'let the work be made heavier' lives on today as a klipah of constant busyness, from phones and cell phones to social obligations and lavish simchas, that robs a Jew of any moment of calm reflection.",
     "yi": "דער משגיח ערקלערט אז פרעה'ס גזירה \"תכבד העבודה\" לעבט היינט ווייטער אלס א קליפה פון אייביגע פארנומענקייט, פון טעלעפאן און סעלפאן ביז די געזעלשאפטליכע חובות און די הוצאות אויף שמחות, וואס נעמט צו פון א איד יעדע מינוט ישוב הדעת."
    }
   },
@@ -1546,7 +1546,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that in a time of crisis before the redemption, Hashem withholds the means for mitzvos like hachnasas kallah so that they are done with mesiras nefesh, the one weapon the Satan cannot stop, which will bring Mashiach.",
+    "en": "The Mashgiach explains that in a time of crisis before the redemption, Hashem withholds the means for mitzvos like hachnasas kallah so that they are done with mesiras nefesh, the one weapon the Satan cannot stop, which will bring Mashiach.",
     "yi": "דער משגיח ערקלערט אז אין א שווערע צייט פאר דער גאולה נעמט דער רבונו של עולם צו די מיטלען פאר מצוות ווי הכנסת כלה, כדי מ'זאל זיי טאן מיט מסירת נפש, דער איינציגער וואפן וואס דער שטן קען נישט אפשטעלן, און דאס וועט ברענגען משיח."
    }
   },
@@ -1559,7 +1559,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that the Chanukah victory was a miracle wrought through the power of Torah, which cannot openly break nature, and that the miracle of the oil in the Beis HaMikdash revealed that the war itself was a miracle.",
+    "en": "The Mashgiach explains that the Chanukah victory was a miracle wrought through the power of Torah, which cannot openly break nature, and that the miracle of the oil in the Beis HaMikdash revealed that the war itself was a miracle.",
     "yi": "דער משגיח ערקלערט אז דער נצחון פון חנוכה איז געווען א נס דורכן כח התורה, וואס קען נישט בפירוש משנה זיין די טבע, און אז דער נס פון שמן אינעם בית המקדש האט אנגעוויזן אז די מלחמה אליין איז געווען א נס."
    }
   },
@@ -1595,7 +1595,7 @@
    "years": [],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav teaches that the lowly work of cleaning before Pesach is precious to Hashem, and that Nissan, the month in which all of creation is renewed, calls on every Jew to renew himself through emunah and to begin again.",
+    "en": "The Mashgiach teaches that the lowly work of cleaning before Pesach is precious to Hashem, and that Nissan, the month in which all of creation is renewed, calls on every Jew to renew himself through emunah and to begin again.",
     "yi": "דער משגיח לערנט אז די נידעריגע ארבעט פון ארויסקערן פאר פסח איז טייער ביים אייבערשטן, און אז ניסן, דער חודש וואס די גאנצע בריאה ווערט באנייט, רופט יעדן איד זיך מחדש צו זיין מיט אמונה און אנצופאנגען פון ניי."
    }
   },
@@ -1608,7 +1608,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav describes the great power of Purim, a day of turning around and of accepting the Torah with love whose holiness lasts all day, and guides how to keep it: with joy, with kavanah in its foods, without drunkenness, and with tefillah for every yeshuah.",
+    "en": "The Mashgiach describes the great power of Purim, a day of turning around and of accepting the Torah with love whose holiness lasts all day, and guides how to keep it: with joy, with kavanah in its foods, without drunkenness, and with tefillah for every yeshuah.",
     "yi": "דער משגיח שילדערט דעם גרויסן כח פון פורים, א טאג פון זיך איבערדרייען און פון מקבל זיין די תורה מיט אהבה, וואס זיין קדושה בלייבט א גאנצן טאג, און ער גיט א הדרכה ווי אזוי זיך צו פירן: מיט שמחה, מיט כוונה ביים עסן, אן שכרות, און מיט תפילה אויף אלע ישועות."
    }
   },
@@ -1621,7 +1621,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that the Three Weeks are the hidden, still-unconquered 'territory of Esav' in time, that Shabbos Chazon already lets every Jew see the future consolation, and that shemittah, like Shabbos and Yerushalayim, makes every Jew a kohen who lives on Hashem's blessing.",
+    "en": "The Mashgiach explains that the Three Weeks are the hidden, still-unconquered 'territory of Esav' in time, that Shabbos Chazon already lets every Jew see the future consolation, and that shemittah, like Shabbos and Yerushalayim, makes every Jew a kohen who lives on Hashem's blessing.",
     "yi": "דער משגיח ערקלערט אז די דריי וואכן זענען די באהאלטענע גבול פון עשו אין זמן וואס מ'האט נאך נישט איינגענומען, אז שבת חזון זעט יעדער איד שוין די נחמה פון לעתיד, און אז שמיטה, אזוי ווי שבת און ירושלים, מאכט פון יעדן איד א כהן וואס לעבט פון דעם אייבערשטנס ברכה."
    }
   },
@@ -1634,7 +1634,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that the days of Sefirah, as the beginning and root of the year, are the time to do teshuvah on the root of sin, the middos, and that this is the meaning of 'kedoshim tihyu'.",
+    "en": "The Mashgiach explains that the days of Sefirah, as the beginning and root of the year, are the time to do teshuvah on the root of sin, the middos, and that this is the meaning of 'kedoshim tihyu'.",
     "yi": "דער משגיח ערקלערט אז די ימי הספירה, וואס זענען דער אנפאנג און דער שורש פונעם יאר, זענען די צייט צו טאן תשובה אויפן שורש פון די עבירות, די מידות, און אז דאס איז דער פשט פון \"קדושים תהיו\"."
    }
   },
@@ -1647,7 +1647,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that the Megillah has two faces, the level of Kesuvim all year and on Purim a light higher even than Toras Moshe, and that through it Klal Yisroel, even in its lowest state, is revealed as Hashem's kallah.",
+    "en": "The Mashgiach explains that the Megillah has two faces, the level of Kesuvim all year and on Purim a light higher even than Toras Moshe, and that through it Klal Yisroel, even in its lowest state, is revealed as Hashem's kallah.",
     "yi": "דער משגיח ערקלערט אז די מגילה האט צוויי פנים, א גאנץ יאר די מדריגה פון כתובים און פורים א ליכט וואס איז העכער אפילו ווי תורת משה, און אז דורך איר ווערט אנטפלעקט אז כלל ישראל, אפילו אין זייער נידריגסטן מצב, איז דעם רבונו של עולם'ס כלה."
    }
   },
@@ -1663,7 +1663,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains Shushan Purim as the Yom Tov of the higher levels, Mordechai's refusal to bow as a deeper standard of emunah, and Purim as a foretaste of the complete wiping out of Amalek in the days of Moshiach.",
+    "en": "The Mashgiach explains Shushan Purim as the Yom Tov of the higher levels, Mordechai's refusal to bow as a deeper standard of emunah, and Purim as a foretaste of the complete wiping out of Amalek in the days of Moshiach.",
     "yi": "דער משגיח ערקלערט אז שושן פורים איז דער יום טוב פון די העכערע מדריגות, אז מרדכי'ס \"לא יכרע\" איז א טיפערע מדריגה פון אמונה, און אז פורים איז א טעם פון דער פולשטענדיגער מחיית עמלק לעתיד לבוא."
    }
   },
@@ -1676,7 +1676,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "At the seudah of Zos Chanukah the Rav explains that Chanukah is the Yom Tov of Aharon and the kohanim, the day of hod and hallel, on which every Jew, by lighting his candles, builds a piece of the menorah of the Beis Hamikdash that Moshiach will bring down.",
+    "en": "At the seudah of Zos Chanukah the Mashgiach explains that Chanukah is the Yom Tov of Aharon and the kohanim, the day of hod and hallel, on which every Jew, by lighting his candles, builds a piece of the menorah of the Beis Hamikdash that Moshiach will bring down.",
     "yi": "ביי דער סעודה פון זאת חנוכה ערקלערט דער משגיח אז חנוכה איז דער יום טוב פון אהרן און די כהנים, דער טאג פון הוד און הלל, וואס יעדער איד בויט דאן מיט זיינע ליכט א שטיקל פון דער מנורה פונעם בית המקדש וואס משיח וועט אראפברענגען."
    }
   },
@@ -1689,7 +1689,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains that the sukkah, Yaakov Avinu's gift to his children, carries the holiness of the Beis HaMikdash and the shelter of the Shechinah, and that from it a Jew takes bitachon, protection and simcha for the whole year.",
+    "en": "The Mashgiach explains that the sukkah, Yaakov Avinu's gift to his children, carries the holiness of the Beis HaMikdash and the shelter of the Shechinah, and that from it a Jew takes bitachon, protection and simcha for the whole year.",
     "yi": "דער משגיח ערקלערט אז די סוכה, וואס יעקב אבינו האט איבערגעלאזט פאר זיינע קינדער, האט אין זיך די קדושה פונעם בית המקדש און דעם שיץ פון די כנפי השכינה, און פון איר נעמט א איד מיט ביטחון, הגנה און שמחה אויפן גאנצן יאר."
    }
   },
@@ -1702,7 +1702,7 @@
    ],
    "status": "full",
    "oneLiner": {
-    "en": "The Rav explains Chamishah Asar b'Av as the start of the season of yiras shamayim and teshuvah leading to Yom Kippur, a day of shidduchim between Hashem and Klal Yisrael, and the yom tov of the hidden good in the churban: that the avodah of Jews in galus is more precious to Hashem than ever, which is why one adds in Torah from that day.",
+    "en": "The Mashgiach explains Chamishah Asar b'Av as the start of the season of yiras shamayim and teshuvah leading to Yom Kippur, a day of shidduchim between Hashem and Klal Yisrael, and the yom tov of the hidden good in the churban: that the avodah of Jews in galus is more precious to Hashem than ever, which is why one adds in Torah from that day.",
     "yi": "דער משגיח ערקלערט אז חמשה עשר באב איז דער אנהייב פון די צייט פון יראת שמים און תשובה ביז יום כיפור, א טאג פון שידוכים צווישן דעם רבונו של עולם און כלל ישראל, און דער יום טוב פון דעם גוטן וואס איז באהאלטן אינעם חורבן: אז די עבודה פון אידן אין גלות איז ביים רבונו של עולם טייערער ווי אלעמאל, און דערפאר לייגט מען צו אין תורה פון דעם טאג אן."
    }
   }

@@ -24,7 +24,7 @@ interface Props {
 
 const { ed, kind, occasionKey, name } = Astro.props;
 const src = topicsSource();
-const line = src ? calendarCrossLine(ed, src, kind, occasionKey) : null;
+const line = calendarCrossLine(ed, src, kind, occasionKey);
 const t = useCalendarT(ed);
 ---
 {line && (

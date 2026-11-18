@@ -142,14 +142,14 @@ const tally = (values: Iterable<string>) => {
 const facetRecord = (m: Map<string, number>, label: (k: string) => FacetValue["label"]) =>
   Object.fromEntries([...m].sort().map(([k, count]) => [k, { label: label(k), count }]));
 
-/** corpus.json: the rows with the corpus.json entity copy (no topics; Explore reads its own file). */
-export function corpusFile(rows: readonly CorpusRow[]): CorpusFile {
+/** corpus.json: the rows without entity ids (Explore reads its own file). */
+export function corpusFile(rows: readonly ExploreRow[]): CorpusFile {
   const full = rows.filter((r) => r.status === "full").length;
   return {
     schemaVersion: LIVE_DATA_SCHEMA_VERSION,
     buildId: "test",
     counts: { total: rows.length, full, catalogOnly: rows.length - full, downgraded: 0 },
-    shiurim: rows.map((r) => ({ ...r, entities: { works: r.entities.works, people: r.entities.people, concepts: r.entities.concepts } })),
+    shiurim: rows.map(({ entities: _entities, ...r }): CorpusRow => r),
   };
 }
 
@@ -177,7 +177,7 @@ export function topicsFile(rows: readonly ExploreRow[]): TopicsFile {
   return { schemaVersion: LIVE_DATA_SCHEMA_VERSION, topics };
 }
 
-export function facetsFile(rows: CorpusRow[]): FacetsFile {
+export function facetsFile(rows: ExploreRow[]): FacetsFile {
   const same = (k: string) => ({ en: k, yi: k });
   const tableLabel = new Map([...PARSHIYOS, ...OCCASIONS].map((o) => [o.key, { en: o.en, yi: o.yi, he: o.he }]));
   const occ = tally(rows.flatMap((r) => [r.parsha, r.zman].filter((x): x is string => x !== null)));

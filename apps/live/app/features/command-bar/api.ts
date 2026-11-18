@@ -51,11 +51,29 @@ export const API_RESPONSE_KEYS = {
   group: ["count", "shiurId"],
 } as const;
 
+/** Entity filter kinds the Worker accepts (`ENTITY_TYPES` in workers/api/src/contract.ts), in URL order. */
+export const ENTITY_FILTER_KINDS = ["topic", "concept", "person", "work"] as const;
+export type EntityFilterKind = (typeof ENTITY_FILTER_KINDS)[number];
+
+/** Corpus ids per entity kind; a shiur must carry every listed entity. */
+export type EntityFilters = Partial<Record<EntityFilterKind, readonly string[]>>;
+
+/** Most ids per kind the Worker accepts (`MAX_LIST_VALUES`). */
+export const API_MAX_FILTER_IDS = 10;
+/** Corpus ids are ASCII slugs (the Worker rejects anything else with 400). */
+const ID_RE = /^[a-z0-9][a-z0-9-]{0,119}$/;
+
+export function isCorpusId(v: string): boolean {
+  return ID_RE.test(v);
+}
+
 export interface SearchRequest {
   q: string;
   ui: Ed;
   /** Audio-language filter; omitted when both languages are allowed. */
   audio?: Ed[];
+  /** Corpus-id entity filters (C3.6). Invalid ids are dropped, not sent. */
+  filters?: EntityFilters;
   limit?: number;
   cursor?: string | null;
 }
@@ -114,6 +132,10 @@ export function searchUrl(req: SearchRequest, base = config.base): string {
   sp.set("q", apiQuery(req.q));
   sp.set("ui", req.ui);
   if (req.audio && req.audio.length === 1) sp.set("audio", req.audio.join(","));
+  for (const kind of ENTITY_FILTER_KINDS) {
+    const ids = [...new Set(req.filters?.[kind] ?? [])].filter(isCorpusId).slice(0, API_MAX_FILTER_IDS);
+    if (ids.length > 0) sp.set(kind, ids.join(","));
+  }
   if (req.limit !== undefined) sp.set("limit", String(req.limit));
   if (req.cursor) sp.set("cursor", req.cursor);
   return `${base}/api/search?${sp.toString()}`;

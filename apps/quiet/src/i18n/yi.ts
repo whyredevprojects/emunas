@@ -11,7 +11,7 @@ import type { UiKey } from "./en.ts";
 export const yi: MessageTable<UiKey> = {
   "site.name": "די שיעורים פון דעם משגיח",
   "site.nameShort": "שיעורים",
-  "site.description": "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל, אויסגעשטעלט ווי א קאטאלאג.",
+  "site.description": "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל.",
 
   "skip.toMain": "גייט צום טעקסט",
 
@@ -27,10 +27,17 @@ export const yi: MessageTable<UiKey> = {
   "edition.other": "English",
   "edition.otherName": "ענגלישע אויסגאבע",
 
+  "theme.label": "פארבן",
+  "theme.light": "העל",
+  "theme.dark": "טונקל",
+
+  "link.newTab": "(עפנט זיך אין א נייעם טאב)",
+
   "breadcrumb.label": "דא זענט איר",
 
   "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
   "footer.otherEdition": "דער בלאט אויף ענגליש",
+  "footer.home": "אמונת",
 
   "time.playFrom": "שפילן פון {time}",
   "time.playFromPart": "שפילן פון {time} (טייל {part})",

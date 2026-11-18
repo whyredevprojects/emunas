@@ -39,7 +39,7 @@ describe("hashes", () => {
 
   const shiurim = readCorpusShiurim(a);
   const shiur = shiurim.find((s) => s.id === ID)!;
-  const layer = readSearchLayerInput(a, shiurim)!.layer;
+  const layer = readSearchLayerInput(a, shiurim).layer;
   const clone = (): PublicShiur => JSON.parse(JSON.stringify(shiur)) as PublicShiur;
 
   it("ignore rev and object key order, but follow text, metadata and the layer", () => {
@@ -75,9 +75,9 @@ describe("hashes", () => {
   });
 
   it("EntityDoc hashes are stable and follow the synonyms", () => {
-    const files = readLayerFiles(a)!;
+    const files = readLayerFiles(a);
     const one = buildEntityDocs(files);
-    expect(buildEntityDocs(readLayerFiles(b)!).map((e) => e.hash)).toEqual(one.map((e) => e.hash));
+    expect(buildEntityDocs(readLayerFiles(b)).map((e) => e.hash)).toEqual(one.map((e) => e.hash));
     const first = files.synonyms.synonyms[0]!;
     const changed = { ...files, synonyms: { synonyms: [{ ...first, terms: first.terms.slice(1) }, ...files.synonyms.synonyms.slice(1)] } };
     const two = buildEntityDocs(changed);

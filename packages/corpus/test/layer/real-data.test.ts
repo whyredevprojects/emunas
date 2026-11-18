@@ -3,13 +3,11 @@
  * where they can grow; the fixed ones (78 sameAs topics, the sugar-sled redirect, shabbos-tefilah-en)
  * are the ones the plan names.
  */
-import { existsSync, readFileSync, readdirSync, statSync, utimesSync } from "node:fs";
+import { existsSync, readdirSync, statSync, utimesSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
-import { aggregate, aggregateOutputs } from "../../src/aggregate/aggregate.ts";
 import { buildCorpusWithAggregates, projectAndAggregate } from "../../src/aggregate/build.ts";
-import { buildCorpus, toJson } from "../../src/build/build.ts";
-import { createNormalizeKeyer } from "../../src/keyer-normalize.ts";
+import { toJson } from "../../src/build/build.ts";
 import { finishLayer, loadLayerInput, prepareLayer } from "../../src/layer/build.ts";
 import type {
   LayerConceptsFile,
@@ -110,34 +108,6 @@ describe("corpus layer on real data", () => {
     buildCorpusWithAggregates({ dataDir: REAL_DATA, policyDir: REAL_POLICY, outDir: out, dataSha: null });
     expect(all(out).filter((f) => statSync(f).mtimeMs !== old.getTime())).toEqual([]);
 
-    // The same build without the layer (the W2.1 wiring): identical outputs except works.json.
-    const plain = join(tmp(), "without-layer");
-    buildCorpus({
-      dataDir: REAL_DATA,
-      policyDir: REAL_POLICY,
-      outDir: plain,
-      dataSha: null,
-      keyer: createNormalizeKeyer(),
-      extraOutputs: (corpus) => {
-        const a = aggregate({ shiurim: corpus.shiurim, index: corpus.index });
-        corpus.report.warnings.push(...a.warnings);
-        return aggregateOutputs(a.files);
-      },
-    });
-    const rel = (dir: string) => all(dir).map((f) => f.slice(dir.length + 1)).sort();
-    const withFiles = rel(out).filter((f) => !f.startsWith("layer/"));
-    expect(withFiles).toEqual(rel(plain));
-    for (const f of withFiles) {
-      const a = readFileSync(join(out, f), "utf8");
-      const b = readFileSync(join(plain, f), "utf8");
-      if (f === "works.json") {
-        const strip = (t: string) => t.replace(/\n {3}"workId": (?:null|"[a-z0-9-]+"),/g, "");
-        expect(strip(a)).toBe(strip(b));
-        expect(a).not.toBe(b);
-      } else {
-        expect(a === b, f).toBe(true);
-      }
-    }
     expect(existsSync(join(out, "layer/layer.json"))).toBe(true);
   });
 

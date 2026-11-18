@@ -64,7 +64,7 @@ export const sampleUncatalogued: CatalogHeaderShiur = {
 /** Hand-written sample notes, in reported speech, one per edition. */
 export const sampleNotes = {
   en: {
-    oneLiner: "Sample text: the Rav explains how a place of learning carries its own holiness.",
+    oneLiner: "Sample text: the Mashgiach explains how a place of learning carries its own holiness.",
     outline: [
       { t: 0, title: "Opening" },
       { t: 754, title: "The question from the parsha" },

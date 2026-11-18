@@ -193,7 +193,11 @@ export function personHref(ed: Ed, id: string, links: LinkData): string {
   return formatQuiet({ kind: "entry", ed, entry: "person", id }, links);
 }
 
-/** The people of a story, in the layer's order: linked when listed on Quiet, else plain names. */
+/**
+ * The people of a story, in the layer's order: linked when listed on Quiet, else plain names. A
+ * plain `{ name }` is a corpus entity's own display name (the layer leaves raw extraction names
+ * out, C3.1); the pages mark every name `data-story-person` for the guard.
+ */
 export function storyPeople(ed: Ed, story: Pick<LayerStory, "people">, src: Pick<StoriesSource, "person" | "links">): StoryPersonRef[] {
   const out: StoryPersonRef[] = [];
   const seen = new Set<string>();

@@ -69,14 +69,6 @@ export function aggregateViolations(files: Aggregates, shiurim: readonly PublicS
     }
   }
 
-  // stories carry no retelling; every story of every shiur is listed once
-  const storyIds = files.stories.stories.map((s) => s.id);
-  const want = shiurim.flatMap((s) => s.notes?.stories.map((x) => x.id) ?? []);
-  if (JSON.stringify([...storyIds].sort()) !== JSON.stringify([...want].sort())) v.push("stories.json does not list every story once");
-  for (const s of files.stories.stories) if ("retelling" in s) v.push(`${s.id}: retelling in stories.json`);
-  const grouped = files.stories.byPerson.flatMap((g) => g.storyIds).sort();
-  if (JSON.stringify(grouped) !== JSON.stringify([...storyIds].sort())) v.push("stories byPerson does not cover every story once");
-
   // works: every published source with a work key is filed once
   const mentions = files.works.works.reduce((a, w) => a + w.mentionCount, 0);
   const filed = files.works.works.reduce((a, w) => a + w.unlocated.length + w.refs.reduce((b, r) => b + r.mentions.length, 0), 0);

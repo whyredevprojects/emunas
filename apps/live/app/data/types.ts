@@ -33,7 +33,7 @@ import type {
 
 export type { Ed, L, Moment, ShiurStatus };
 
-export const LIVE_DATA_SCHEMA_VERSION = 3;
+export const LIVE_DATA_SCHEMA_VERSION = 6;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -98,11 +98,6 @@ export interface CorpusRow extends Pick<
   parsha: string | null;
   zman: string | null;
   series: { id: string; order: number | null } | null;
-  /**
-   * Corpus ids (corpus layer, C1.7) of the entities listed in `facets.json`; labels are there.
-   * Explore's own copy, with topics, is `explore/entities.json`; this one goes in C3.1.
-   */
-  entities: IndexRow["entities"];
   counts: Pick<IndexRow["counts"], "chapters" | "stories" | "questions" | "insights">;
 }
 
@@ -218,6 +213,12 @@ export interface TodayMix {
   shiurim: number;
   /** The first items, ready to queue. */
   first: TodayMixItem[];
+  /**
+   * Not featured (D7) among the topic's moment list: shiur ids mostly by another speaker, then
+   * section ids tagged with an excluded topic. The client drops them when it fills the rest of the
+   * mix from the topic file. Omitted when empty.
+   */
+  skip?: string[];
 }
 
 /** Shiurim per audio language in an occasion's row (the occasion page lists all of them). */
@@ -301,8 +302,13 @@ export interface ShiurCorpus {
   terms: EntityChip[];
   /** Resolved work per source moment. */
   sources: { momentId: string; workId: string; page: boolean }[];
-  /** Story moments that belong to a merged story: visible tellings (this one included) and page flag. */
-  stories: { momentId: string; storyId: string; tellings: number; page: boolean }[];
+  /**
+   * Story moments that belong to a merged story: the number of other visible shiurim it is told in
+   * (distinct shiurim, this one not counted), its page flag, and the merged story's people. The
+   * people are corpus entities (a chip, or an entity's display name as plain text): the
+   * extraction's raw names may be ASR mishearings and are never published (F.1).
+   */
+  stories: { momentId: string; storyId: string; otherShiurim: number; page: boolean; people: StoryPerson[] }[];
   /**
    * Insight moments in a thread: distinct shiurim, year span, page flag; a two-shiur thread carries
    * the other member instead (one line at the insight, never a headline).
@@ -525,26 +531,6 @@ export interface ConceptDetail {
 }
 
 // ---------------------------------------------------------------------------------------------
-// /data/stories.json — all stories, without the retelling
-
-export interface StoryRow {
-  id: string;
-  shiurId: string;
-  title: L;
-  /** Corpus person ids with a Live page (from the merged story the telling belongs to). */
-  peopleKeys: string[];
-  t: number | null;
-  end: number | null;
-  year: number | null;
-  lang: Ed;
-}
-
-export interface StoriesFile {
-  schemaVersion: typeof LIVE_DATA_SCHEMA_VERSION;
-  stories: StoryRow[];
-}
-
-// ---------------------------------------------------------------------------------------------
 // /data/moments/<lang>-<n>.json — Explore "moments" unit, sharded by 1,000
 
 export const MOMENT_SHARD_SIZE = 1000;
@@ -573,6 +559,29 @@ export interface QuickIndexFile {
   options: { fields: string[]; storeFields: string[]; idField: string };
   /** `JSON.stringify(miniSearch)`; opaque to the contract. */
   index: unknown;
+  /**
+   * The command bar's entity suggestions (C3.6): the search-core EntityDocs of the topics, concepts,
+   * people and works that have a Live page (`live-pages.ts`), sorted by kind then id.
+   */
+  entities: QuickEntity[];
+}
+
+/** Entity kinds the command bar suggests (search-core `EntityDocKind`). */
+export type QuickEntityKind = "topic" | "concept" | "person" | "work";
+
+/**
+ * One entity suggestion, from its search-core EntityDoc. `synonyms` are search-folded terms from the
+ * entity's own display fields (layer synonyms.json; never an ASR variant or alias-map key): query
+ * expansion only, never displayed. AI-generated and unreviewed like every corpus entity.
+ */
+export interface QuickEntity {
+  kind: QuickEntityKind;
+  /** Corpus id (the Live route key). */
+  id: string;
+  labels: { he: string | null; en: string | null; yi: string | null };
+  synonyms: string[];
+  /** Visible shiurim. */
+  count: number;
 }
 
 // ---------------------------------------------------------------------------------------------
@@ -831,7 +840,6 @@ export interface DataFiles {
   works: WorksFile;
   work: WorkFile;
   entity: EntityFile;
-  stories: StoriesFile;
   moments: MomentShardFile;
   quickIndex: QuickIndexFile;
   topics: TopicsFile;

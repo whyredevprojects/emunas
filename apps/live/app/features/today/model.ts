@@ -12,6 +12,9 @@
  *   week, from all pools.
  * - **Continue**: unfinished shiurim, then the next part of each series in progress (rows from the
  *   heard shiurim's own files, `continue.ts`).
+ * - **The occasion mix** (concept-live-corpus C.3, C3.4): one per week, for the most specific occasion
+ *   whose `today.json` entry has a mix, in the same priority as the moment of the day. Its head (the
+ *   first sections, inline) plays without another request; `mix/occasion.ts` holds the rules.
  * - **Newly summarized** and the corpus counter come from `today.json`.
  *
  * Today renders from `today.json` alone (corpus-wave-plan §4, C1.7): its cards carry every shiur it
@@ -21,7 +24,9 @@
  */
 import { calendar as defaultCalendar, type Calendar, type HebrewDate, type ThisWeek } from "@emunas/calendar";
 import type { BuildCounts, Ed, L, ShiurStatus } from "@emunas/corpus/public";
-import type { TodayFile } from "./live-data.ts";
+import type { FacetLabel, TodayFile } from "./live-data.ts";
+import { MIX_SIZE, type MixSource } from "../mix/model.ts";
+import { headSources, occasionCatalog, occasionMix, skipSet } from "../mix/occasion.ts";
 import { audioAllows, type AudioFilter } from "../../shell/settings.ts";
 import type { ProgressRecord } from "./personal.ts";
 import { pickForDay } from "./pick.ts";
@@ -104,6 +109,25 @@ export interface DayMoment extends PoolMoment {
   occasionKey: string | null;
 }
 
+/** The week's occasion mix: which occasion, its topic, and the head that plays at once. */
+export interface WeekMix {
+  /** The occasion key whose mix it is. */
+  key: string;
+  /** Every key of that occasion (both parts of a combined parsha): their catalog shiurim come first. */
+  keys: string[];
+  topicId: string;
+  label: FacetLabel;
+  /** Sections and distinct shiurim of the whole mix (all languages, build-time count). */
+  sections: number;
+  shiurim: number;
+  /** Eligible inline sections in the listener's audio language, in order. */
+  head: MixSource[];
+  /** The occasion's catalog shiurim as today.json knows them. */
+  catalog: string[];
+  /** Shiur and section ids that may not be featured (D7). */
+  skip: string[];
+}
+
 export interface TodayView {
   date: string;
   /** Null outside the calendar table (5787–5800). */
@@ -112,6 +136,8 @@ export interface TodayView {
   parsha: ParshaBlock | null;
   occasions: OccasionBlock[];
   moment: DayMoment | null;
+  /** The occasion mix button's data, or null when no occasion of the week has a mix. */
+  mix: WeekMix | null;
   newly: { row: TodayRow; updatedAt: string }[];
   counts: BuildCounts;
   /** False once every in-scope shiur has notes; the newly-summarized strip disappears then. */
@@ -188,6 +214,37 @@ export function momentOfTheDay(
   return pick ? { ...pick, occasionKey: null } : null;
 }
 
+/**
+ * The week's occasion mix: the first occasion in `priority` (each entry an occasion's keys) with a
+ * mix whose head has a section in the listener's language; else the first with a mix at all (its
+ * sections then come from the topic file when play is pressed).
+ */
+export function weekMix(priority: readonly (readonly string[])[], today: TodayFile, audio: AudioFilter): WeekMix | null {
+  let fallback: WeekMix | null = null;
+  const langOf = (id: string) => today.cards[id]?.lang;
+  for (const keys of priority) {
+    const key = keys.find((k) => today.occasions[k]?.mix);
+    const mix = key === undefined ? null : today.occasions[key]?.mix;
+    if (key === undefined || !mix || typeof mix.topicId !== "string") continue;
+    const skip = skipSet(mix);
+    const head = occasionMix({ head: headSources(mix, langOf), skip, audio, size: MIX_SIZE }).items;
+    const choice: WeekMix = {
+      key,
+      keys: [...keys],
+      topicId: mix.topicId,
+      label: mix.label,
+      sections: mix.sections,
+      shiurim: mix.shiurim,
+      head,
+      catalog: occasionCatalog(keys.map((k) => today.occasions[k])),
+      skip: [...skip],
+    };
+    if (head.length > 0) return choice;
+    fallback ??= choice;
+  }
+  return fallback;
+}
+
 export function buildToday(input: TodayInputs): TodayView {
   const cal = input.calendar ?? defaultCalendar;
   const { date, today, audio } = input;
@@ -240,6 +297,7 @@ export function buildToday(input: TodayInputs): TodayView {
     parsha,
     occasions,
     moment: momentOfTheDay(date, priority, today, byId, audio),
+    mix: weekMix(priority, today, audio),
     newly,
     counts: today.counts,
     stillArriving: today.counts.full < today.counts.total,

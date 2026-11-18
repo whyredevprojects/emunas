@@ -4,7 +4,6 @@ import { TRANSCRIPT_VIEW } from "./flags.ts";
 import {
   activeParagraphId,
   chapterAt,
-  groupSources,
   hasPlayableAudio,
   momentSpan,
   parseTimeParam,
@@ -24,6 +23,9 @@ describe("deep links", () => {
   it("parses ?t= values", () => {
     expect(parseTimeParam("754")).toBe(754);
     expect(parseTimeParam("754.5")).toBe(754.5);
+    expect(parseTimeParam("582.12")).toBe(582.12);
+    expect(parseTimeParam("1855.5444")).toBe(1855.544);
+    expect(parseTimeParam("12m34.25s")).toBe(754.25);
     expect(parseTimeParam("12m34s")).toBe(754);
     expect(parseTimeParam("1h")).toBe(3600);
     expect(parseTimeParam("")).toBeNull();
@@ -102,14 +104,6 @@ describe("time helpers", () => {
 });
 
 describe("sources", () => {
-  it("groups by work in order of appearance", () => {
-    const groups = groupSources(notes.sources);
-    expect(groups.map((g) => g.sources.length).reduce((a, b) => a + b, 0)).toBe(notes.sources.length);
-    expect(groups[0]!.key).toBe(notes.sources[0]!.workKey);
-    const keys = groups.map((g) => g.key);
-    expect(new Set(keys).size).toBe(keys.length);
-  });
-
   it("links only resolved sources to Sefaria", () => {
     expect(sefariaUrl({ resolution: "resolved", sefariaRef: "Deuteronomy 10:12" })).toBe("https://www.sefaria.org/Deuteronomy.10.12");
     expect(sefariaUrl({ resolution: "resolved", sefariaRef: "Song of Songs 1:6" })).toBe("https://www.sefaria.org/Song_of_Songs.1.6");
@@ -123,11 +117,11 @@ describe("sources", () => {
 describe("printable page link (Quiet)", () => {
   it("uses the configured origin", () => {
     expect(quietOrigin({ VITE_EMUNAS_QUIET_ORIGIN: "https://example.org/" }, null)).toBe("https://example.org");
-    expect(quietOrigin({ VITE_EMUNAS_DOMAIN: "example.org" }, null)).toBe("https://example.org");
+    expect(quietOrigin({ VITE_EMUNAS_DOMAIN: "example.org" }, null)).toBe("https://library.example.org");
   });
 
   it("derives Quiet from the Live host", () => {
-    expect(quietOrigin({}, { protocol: "https:", host: "listen.example.org" })).toBe("https://example.org");
+    expect(quietOrigin({}, { protocol: "https:", host: "listen.example.org" })).toBe("https://library.example.org");
     expect(quietOrigin({}, { protocol: "https:", host: "emunas-live.acct.workers.dev" })).toBe(
       "https://emunas-quiet.acct.workers.dev",
     );

@@ -20,8 +20,8 @@ export interface ExploreEntities {
   works: string[];
 }
 
-/** A corpus row with Explore's entity ids in place of the corpus.json copy. */
-export type ExploreRow = Omit<CorpusRow, "entities"> & { entities: ExploreEntities };
+/** A corpus row with Explore's entity ids (corpus.json carries none). */
+export type ExploreRow = CorpusRow & { entities: ExploreEntities };
 
 /** Concepts above this share of the summarized shiurim are dropped from the facet list (D10, Live D). */
 export const CONCEPT_FACET_DROP_ONE_IN = 4;

@@ -170,7 +170,12 @@ export interface SearchDoc {
   /** Question text only (answers are moment-level). */
   questions: L[];
   sources: SearchDocSource[];
+  /**
+   * Display names (corpus layer) of the shiur's people and of the people of its merged stories.
+   * Never a raw extraction name: those may be ASR mishearings (F.1). Empty without layer refs.
+   */
   people: string[];
+  /** Display names (canonicalHe, label en/yi) of the shiur's concepts in the corpus layer. */
   concepts: string[];
   /**
    * The shiur's visible topics: labels (he/en/yi) and the topics' own aliases (search-folded),

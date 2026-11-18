@@ -7,7 +7,7 @@
 import type { Ed } from "../../../lib/edition.ts";
 
 /** The parts of the About page, in order (concept-quiet §5.11). Ids are the in-page anchors. */
-export const ABOUT_PARTS = ["rav", "arrangement", "notes", "report", "excluded"] as const;
+export const ABOUT_PARTS = ["mashgiach", "arrangement", "notes", "report", "excluded"] as const;
 export type AboutPart = (typeof ABOUT_PARTS)[number];
 
 interface AboutStrings {
@@ -25,7 +25,7 @@ export const ABOUT_STRINGS: Readonly<Record<Ed, AboutStrings>> = {
   en: {
     title: "About",
     headings: {
-      rav: "The Rav and the collection",
+      mashgiach: "The Mashgiach and the collection",
       arrangement: "How this site is arranged",
       notes: "How the notes were made",
       report: "How to report an error",
@@ -39,7 +39,7 @@ export const ABOUT_STRINGS: Readonly<Record<Ed, AboutStrings>> = {
   yi: {
     title: "וועגן",
     headings: {
-      rav: "דער משגיח און די זאמלונג",
+      mashgiach: "דער משגיח און די זאמלונג",
       arrangement: "ווי דער זייטל איז אויסגעשטעלט",
       notes: "ווי די נאטיצן זענען געמאכט געווארן",
       report: "ווי אזוי צו מעלדן א טעות",

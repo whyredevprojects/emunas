@@ -7,13 +7,15 @@
  *   playing. Every play control seeks within the shiur or loads it there.
  * - Catalog-only shiurim (no derived data) still play: header from the catalog, the catalog title's
  *   own items as an untimed outline, related shiurim, and a line saying notes are being prepared.
- * - Every generated text surface carries the AI label.
+ * - Every generated text surface carries the AI label; the corpus layer's label sits once in the header.
+ * - Corpus layer (concept-live-corpus D): topic chips open the topic beside the shiur (`TopicPane`),
+ *   and when the shiur ends the room offers what to hear next without playing it.
  */
 import { isUiLang, type UiLang } from "@emunas/i18n";
 import { useEffect, useMemo, useState, type JSX } from "react";
 import { useLocation, useParams } from "react-router";
 import { Text } from "../../components/Text.tsx";
-import type { ShiurFile } from "./data.ts";
+import type { EntityChip, ShiurFile } from "./data.ts";
 import { tFor } from "../../i18n/index.ts";
 import {
   canPlay,
@@ -26,6 +28,8 @@ import {
 } from "../../player-ui/index.ts";
 import { readingLang, useSettings } from "../../shell/settings.ts";
 import { Chapters } from "./Chapters.tsx";
+import { EndOfShiur } from "./EndOfShiur.tsx";
+import { TopicPane } from "./TopicPane.tsx";
 import type { RoomContext } from "./context.ts";
 import { RoomHeaderDetails } from "./Header.tsx";
 import { hasPlayableAudio, resolveDeepLink } from "./model.ts";
@@ -120,6 +124,7 @@ function Room({ ui, shiur }: { ui: UiLang; shiur: ShiurFile }): JSX.Element {
     };
   }, [shiur, ui]);
 
+  const [pane, setPane] = useState<EntityChip | null>(null);
   const mine = state.shiurId === shiur.id;
   const room: RoomContext = {
     ui,
@@ -134,6 +139,7 @@ function Room({ ui, shiur }: { ui: UiLang; shiur: ShiurFile }): JSX.Element {
     skippedKinds: new Set(state.skip.enabled ? state.skip.kinds : []),
     playAt: (t, end) => enginePlayAt(info, t, end),
     playable: hasPlayableAudio(shiur),
+    openTopic: setPane,
   };
 
   const initialTab: TabId = tabForMoment(deep.momentId) ?? availableTabs(room)[0]!;
@@ -149,10 +155,12 @@ function Room({ ui, shiur }: { ui: UiLang; shiur: ShiurFile }): JSX.Element {
         <Text as="h1" className={s.title} value={shiur.catalog.titleOriginal} shiurLang={shiur.lang} />
         <RoomHeaderDetails room={room} quietOrigin={quietOrigin} />
       </header>
+      {mine && state.status === "ended" ? <EndOfShiur room={room} /> : null}
       <div className={s.body}>
         <Chapters room={room} />
         <CompanionTabs room={room} selected={tab} onSelect={setTab} />
       </div>
+      <TopicPane room={room} topic={pane} onClose={() => setPane(null)} />
     </article>
   );
 }

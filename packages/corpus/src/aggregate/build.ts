@@ -1,13 +1,13 @@
 /**
  * corpus:build with the W2.1 wiring: @emunas/normalize as the Keyer and the aggregate files
- * (sections, neighbours, series, occasions, years, works, people, concepts, stories, entities)
+ * (sections, neighbours, series, occasions, years, works)
  * written next to the W1.2 outputs, plus the corpus layer (`.corpus/layer/`, C1.2). Node-only
  * (`@emunas/corpus/build/aggregate`).
  *
  * The layer is read through the allow-listed corpus reader (C1.1). Its warnings go to
  * `layer/layer.json`, never to build-report.json, so the existing outputs do not change. Layer
- * files that are no longer produced (a series or shiur that left the visible set, or the whole
- * layer when the corpus is absent) are removed.
+ * files that are no longer produced (a series or shiur that left the visible set) are removed. The
+ * layer is required: a missing `data/derived/corpus/` fails the build.
  */
 import { existsSync, readdirSync, rmSync, statSync } from "node:fs";
 import { join, relative, resolve } from "node:path";
@@ -69,7 +69,7 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
       corpus.report.warnings.push(...a.warnings);
       const t1 = performance.now();
       layer = finishLayer(prepared);
-      if (prepared.state !== null) suppress = applyCorpusSuppress(layer.files, suppressIds);
+      suppress = applyCorpusSuppress(layer.files, suppressIds);
       layerMs += performance.now() - t1;
       const out = aggregateOutputs(a.files);
       for (const [name, value] of Object.entries(layer.files)) out[`${LAYER_DIR}/${name}`] = value;
@@ -92,12 +92,10 @@ export function buildCorpusWithAggregates(opts: AggregatedBuildOptions = {}): Ag
   }
   const c = done.info.counts;
   opts.log?.(
-    done.info.enabled
-      ? `corpus layer: ${c.visibleShiurim} visible shiurim, ${c.topics} topics, ${c.concepts} concepts, ${c.people} people, ` +
-          `${c.works} works, ${c.stories} stories, ${c.threads} threads, ${c.series} series, ${c.retiredIds} retired ids resolved; ` +
-          `${done.info.warnings.length} warnings ` +
-          `in ${Math.round(layerMs)} ms`
-      : `corpus layer off: ${done.info.warnings.join("; ")}`,
+    `corpus layer: ${c.visibleShiurim} visible shiurim, ${c.topics} topics, ${c.concepts} concepts, ${c.people} people, ` +
+      `${c.works} works, ${c.stories} stories, ${c.threads} threads, ${c.series} series, ${c.retiredIds} retired ids resolved; ` +
+      `${done.info.warnings.length} warnings ` +
+      `in ${Math.round(layerMs)} ms`,
   );
   return { ...r, layer: { info: done.info, files: [...keep].sort(), removed, ms: Math.round(layerMs), suppress } };
 }
@@ -113,8 +111,6 @@ export function projectAndAggregate(
   );
   const aggregates = aggregate({ shiurim: p.shiurim, index: p.index, sourceWorkIds: prepared.sourceWorkIds });
   const layer = finishLayer(prepared);
-  if (prepared.state !== null) {
-    applyCorpusSuppress(layer.files, loadCorpusSuppressIds({ policyDir: opts.policyDir ?? defaultPolicyDir(), suppressFile: opts.suppressFile }));
-  }
+  applyCorpusSuppress(layer.files, loadCorpusSuppressIds({ policyDir: opts.policyDir ?? defaultPolicyDir(), suppressFile: opts.suppressFile }));
   return { ...p, aggregates, layer, sourceWorkIds: prepared.sourceWorkIds };
 }

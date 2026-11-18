@@ -1,11 +1,13 @@
 name: deploy
 
 # integration-plan §3.5 and §4 (as amended by A1: no audio bucket, no audio routes):
-# corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
+# typecheck, lint and unit tests (any failure = nothing deploys) → corpus:build → guard pre → corpus:build --suppress → app builds → _headers → Worker bundles
 # → guard post (FAIL = nothing deploys) → budgets → D1 migrations → D1/Vectorize sync
-# → deploy emunas-api → emunas-quiet → emunas-live → job summary.
-# Production from main (push touching site inputs, daily 05:17 UTC, dispatch);
-# staging by dispatch only. See docs/sites/ops-runbook.md.
+# → deploy emunas-api → emunas-quiet → emunas-live → emunas-home → job summary.
+# The build and guard steps run in the order of `npm run site:chain` (tests/chain/site-chain.ts);
+# tests/chain/site-chain.test.ts fails when this file and the script disagree.
+# Production from main (push touching site inputs, dispatch); staging by dispatch only.
+# The scheduled Quiet-only rebuild for "this week" is refresh-quiet.yml. See docs/sites/ops-runbook.md.
 
 on:
   push:
@@ -17,8 +19,6 @@ on:
       - "packages/**"
       - "workers/**"
       - "site-policy/**"
-  schedule:
-    - cron: "17 5 * * *"
   workflow_dispatch:
     inputs:
       target:
@@ -33,6 +33,8 @@ on:
 
 permissions:
   contents: read
+  # Read ci.yml's ci-passed-<tree> marker artifacts (see the "Already passed CI?" step).
+  actions: read
 
 concurrency:
   # Syncs are hash-diffed and idempotent, so cancelling a stale run is safe.
@@ -47,7 +49,9 @@ env:
 jobs:
   deploy:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # A first fill of an empty Vectorize index embeds ~58k texts at ~14/s (~70 min); later
+    # deploys only embed changed moments. Keep headroom for that first run per index.
+    timeout-minutes: 120
     # GitHub environments hold the protection rules and the Cloudflare secrets/variables.
     environment: ${{ inputs.target || 'production' }}
     env:
@@ -60,7 +64,7 @@ jobs:
       EMUNAS_DEPLOY: "1"
       # Site hosts (canonical, hreflang, sitemaps, cross-site links; integration-plan §2.1) and the
       # Quiet "report an error" address. Set EMUNAS_DOMAIN once the domain exists (O8); until then
-      # EMUNAS_WORKERS_SUBDOMAIN gives the workers.dev hosts. The Quiet build fails without them.
+      # EMUNAS_WORKERS_SUBDOMAIN gives the workers.dev hosts. The Quiet and Home builds fail without them.
       EMUNAS_DOMAIN: ${{ vars.EMUNAS_DOMAIN }}
       EMUNAS_WORKERS_SUBDOMAIN: ${{ vars.EMUNAS_WORKERS_SUBDOMAIN }}
       EMUNAS_STAGE: ${{ (inputs.target || 'production') == 'staging' && 'staging' || '' }}
@@ -94,12 +98,40 @@ jobs:
 
       # The transcript folder is in git; only the guard steps below read it (from its default path).
       - uses: actions/checkout@v5
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: npm
-      - name: Install
-        run: npm ci
+      # ci.yml's `passed` job uploads ci-passed-<tree id> once check, build and e2e are green for a
+      # tree. When this commit's tree has one (from this repository, not a fork, not expired), those
+      # checks already ran on exactly these files, so typecheck, lint and unit tests are skipped
+      # here. Everything from the corpus build on, guard post-pass included, always runs on the
+      # bytes that ship. No marker (a direct push, a data-sync merge, an expired marker) = full checks.
+      - name: Already passed CI?
+        id: ci
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO_ID: ${{ github.repository_id }}
+        run: |
+          tree="$(git rev-parse 'HEAD^{tree}')"
+          n="$(gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts?name=ci-passed-${tree}&per_page=100" \
+            --jq "[.artifacts[] | select(.expired | not) | select(.workflow_run.head_repository_id == ${REPO_ID})] | length")" || n=0
+          if [ "${n:-0}" -gt 0 ]; then
+            echo "passed=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::tree ${tree:0:12} already passed ci.yml; skipping typecheck, lint and unit tests"
+          else
+            echo "passed=false" >> "$GITHUB_OUTPUT"
+            echo "no ci-passed marker for tree ${tree:0:12}; running the full checks"
+          fi
+      # The same checks as ci.yml's check job: a red typecheck, lint or unit test deploys nothing.
+      - name: Typecheck (sites, site Workers, eval suite)
+        if: steps.ci.outputs.passed != 'true'
+        run: npm run site:typecheck
+      - name: Lint
+        if: steps.ci.outputs.passed != 'true'
+        run: npm run site:lint
+      - name: Unit tests (sites, site Workers, eval suite)
+        if: steps.ci.outputs.passed != 'true'
+        run: npm run site:test
       - name: Check emunas-api resources are provisioned
         # wrangler.jsonc ships placeholder D1 ids (00000000-0000-4000-8000-…) until the resources
         # are created (ops-runbook); deploying with them would fail half-way, after the site builds.
@@ -126,6 +158,7 @@ jobs:
           path: |
             .corpus
             apps/quiet/node_modules/.astro
+            apps/home/node_modules/.astro
             node_modules/.astro
           key: site-build-${{ env.TARGET }}-${{ github.sha }}
           restore-keys: site-build-${{ env.TARGET }}-
@@ -232,6 +265,10 @@ jobs:
         run: npm run build --workspace=@emunas/quiet
       - name: Build Live
         run: npm run build --workspace=@emunas/live
+      - name: Build Home
+        run: npm run build --workspace=@emunas/home
+      # Home's public/_headers has no media origin to fill in (its files are same-origin /files/*,
+      # served by its Worker from R2), so it ships as built.
       - name: Render _headers (media origin into CSP; fails without it)
         run: |
           npx tsx apps/quiet/worker/render-headers.ts apps/quiet/dist/_headers
@@ -240,6 +277,7 @@ jobs:
         run: |
           (cd apps/quiet && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}")
           (cd apps/live && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/live)
+          (cd apps/home && npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --env="${WRANGLER_ENV}" --outdir ../../.wrangler/bundles/home)
           npx --yes "wrangler@${WRANGLER_VERSION}" deploy --dry-run --config workers/api/wrangler.jsonc --env="${WRANGLER_ENV}" --outdir .wrangler/bundles/api
 
       - name: Plant a leak fixture (dispatch test only)
@@ -248,10 +286,10 @@ jobs:
       - name: Guard post-pass (all outputs and Worker bundles; any finding stops the deploy)
         run: >-
           npm run guard --workspace=@emunas/corpus-guard --
-          post --scan .corpus apps/quiet/dist apps/live/build/client .wrangler/bundles
-          --corpus .corpus --report "$RUNNER_TEMP/guard-post.json"
+          post --scan .corpus apps/quiet/dist apps/live/build/client apps/home/dist .wrangler/bundles
+          --corpus .corpus --corpus-data data/derived/corpus --report "$RUNNER_TEMP/guard-post.json"
       - name: Budgets
-        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client
+        run: npm run guard --workspace=@emunas/corpus-guard -- budgets apps/quiet/dist apps/live/build/client apps/home/dist
       - name: Live data budgets (tech-live size targets; over-target is a warning)
         run: npm run data:budgets --workspace=@emunas/live
 
@@ -283,6 +321,9 @@ jobs:
         run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
       - name: Deploy emunas-live
         working-directory: apps/live
+        run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
+      - name: Deploy emunas-home
+        working-directory: apps/home
         run: npx --yes "wrangler@${WRANGLER_VERSION}" deploy --env="${WRANGLER_ENV}" --message "deploy ${GITHUB_SHA:0:12}"
 
       - name: Job summary (ids, counts and catalog strings only; never transcript text)
@@ -317,6 +358,16 @@ jobs:
             const un = report.unmapped ?? {};
             out.push("", "### Unmapped catalog/derived strings");
             for (const [k, rows] of Object.entries(un)) out.push(`- ${k}: ${rows.length}`);
+          }
+          // Corpus layer counts (corpus-wave-plan §6): visible recounts, pages per site, files not read.
+          const layer = read(".corpus/layer/layer.json");
+          if (layer?.counts) {
+            const c = layer.counts;
+            out.push("", "### Corpus layer", `- ${c.visibleShiurim} visible shiurim; topics ${c.topics}, concepts ${c.concepts}, people ${c.people}, works ${c.works}, stories ${c.stories}, threads ${c.threads}, series ${c.series}`);
+            for (const [site, p] of Object.entries(c.pages ?? {})) out.push(`- ${site} pages: ${Object.entries(p).map(([k, v]) => `${k} ${v}`).join(", ")}`);
+            out.push(`- files not read: ${(layer.notRead ?? []).join(", ") || "none"}`);
+            const corpusIds = (sup?.suppress ?? []).map((s) => s.id).filter((id) => id.startsWith("corpus:"));
+            out.push(`- suppressed corpus ids: ${corpusIds.join(", ") || "none"}`);
           }
           if (sup) {
             out.push("", `### Verbatim suppressed (${sup.suppress.length}), reported ${sup.report.length}`);

@@ -7,7 +7,7 @@
  *   group by the edition's name (`nameYi`, else `nameHe`, in the Yiddish edition; `nameEn` in the
  *   English one, with the Hebrew beside it), articles ignored.
  * - Only people the layer lists on Quiet appear (`listed.quiet`): type `other` from 3 shiurim, the
- *   Rav's family and other excluded people never. A person with a page links to it; anyone else's
+ *   Mashgiach's family and other excluded people never. A person with a page links to it; anyone else's
  *   line carries their shiurim. No other-type person has a page (the layer's flags say so).
  * - `aliases` show as "also: …" on the line and, in the edition's script, as "ראה" lines filed in
  *   the alphabet of the same group, pointing to the entry.

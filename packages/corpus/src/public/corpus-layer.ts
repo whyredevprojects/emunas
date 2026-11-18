@@ -15,7 +15,7 @@
 import type { Ed, L } from "./types.ts";
 
 /** Bump when the shape of anything in `.corpus/layer/` changes. Separate from SCHEMA_VERSION. */
-export const LAYER_SCHEMA_VERSION = 2;
+export const LAYER_SCHEMA_VERSION = 3;
 
 /** The layer folder inside `.corpus/`. */
 export const LAYER_DIR = "layer";
@@ -109,8 +109,6 @@ export interface LayerCountLint {
 /** `layer.json`. Ids, counts and file names only; never item text. */
 export interface LayerInfo {
   layerSchemaVersion: number;
-  /** False when `data/derived/corpus/` is absent: no other layer file exists. */
-  enabled: boolean;
   corpusVersion: number | null;
   knownCorpusVersion: boolean;
   /** `index.json` `generatedAt` of the corpus (null when absent). */
@@ -337,7 +335,11 @@ export interface LayerWorksFile {
 
 // ---------------------------------------------------------------- stories.json
 
-/** A person on a story: a person id, or a name printed as plain text. */
+/**
+ * A person on a story: a person id, or the display name of a corpus entity the sites do not link (a
+ * person who is not listed, or a "person" that is now a concept) as plain text. A name that is no
+ * corpus entity's is never here (C3.1): raw extraction spellings are not published.
+ */
 export type LayerStoryPerson = { id: string } | { name: string; linked: false };
 
 export interface LayerStory {

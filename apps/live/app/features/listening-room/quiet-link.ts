@@ -1,13 +1,14 @@
 /**
  * The "Printable page" link: the same shiur on the Quiet site (integration-plan §2.2), built with
  * `@emunas/links`. The Quiet origin comes from build config (`VITE_EMUNAS_QUIET_ORIGIN`, or
- * `VITE_EMUNAS_DOMAIN` → the apex) and otherwise from the Live host itself, using the host scheme of
- * `@emunas/links` (`listen.<domain>` ↔ `<domain>`, `emunas-live[-staging].<sub>.workers.dev` ↔
+ * `VITE_EMUNAS_DOMAIN` → `library.<domain>`) and otherwise from the Live host itself, using the host scheme
+ * of `@emunas/links` (`listen.<domain>` ↔ `library.<domain>`, `emunas-live[-staging].<sub>.workers.dev` ↔
  * `emunas-quiet[-staging].<sub>.workers.dev`). Null when it cannot be told (local dev): no link.
  */
 import {
   LIVE_SUBDOMAIN,
   LIVE_WORKER,
+  QUIET_SUBDOMAIN,
   QUIET_WORKER,
   normalizeOrigin,
   productionHosts,
@@ -37,7 +38,7 @@ export function quietOrigin(env: QuietOriginEnv, here: { protocol: string; host:
   const host = here.host.toLowerCase();
   const scheme = here.protocol === "http:" ? "http" : "https";
   if (host.startsWith(`${LIVE_SUBDOMAIN}.`)) {
-    return tryOrigin(() => normalizeOrigin(`${scheme}://${host.slice(LIVE_SUBDOMAIN.length + 1)}`));
+    return tryOrigin(() => normalizeOrigin(`${scheme}://${QUIET_SUBDOMAIN}.${host.slice(LIVE_SUBDOMAIN.length + 1)}`));
   }
   const workers = new RegExp(`^${LIVE_WORKER}(-staging)?\\.([a-z0-9-]+)\\.workers\\.dev$`).exec(host);
   if (workers) {

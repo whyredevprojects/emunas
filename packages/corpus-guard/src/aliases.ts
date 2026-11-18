@@ -12,6 +12,22 @@
  * `sefariaIndexTitle` + `aliases`. Terms compare after `fold` (@emunas/normalize), the same fold
  * the layer's synonyms.json and the search code use.
  *
+ *  - **Story names** (C3.1). In story files (`.corpus/layer/stories.json`, Live
+ *    `story/<id>.json` and `stories-index.json`) every person name (`people[].name`, `names`) and,
+ *    on built pages, every element marked `data-story-person` must be a display name of some corpus
+ *    entity: an unresolved raw extraction name may be an ASR spelling and is never published
+ *    (`asr-variant` when it is one, else `not-entity-name`).
+ *
+ *  - **Shiur names** (F.1). In shiur files (`.corpus/shiurim/<id>.json`, Live `shiur/<id>.json`)
+ *    every person name (a string in a `people` list, a `people[].name`, a `people[].label.*`) and
+ *    every concept name (`concepts[].he`); in search docs (`SearchDoc`: `kind` "shiur" with a
+ *    `titleOriginal`) every `people`/`concepts` string; in Pagefind records every name-bearing
+ *    meta/filter key (`people`, `person`, `names`, `concepts`, `labelHe/En/Yi`); in entity rows
+ *    (an object with an entity `kind` and `id`: quick-index entities, EntityDocs) every `labels.*`;
+ *    and on built pages every element marked `data-person` (its first `<bdi>`, else its text) must
+ *    be a display name of a corpus entity (of that entity when the position names one). The
+ *    extraction's raw names may be ASR mishearings: names reach the sites only through the layer.
+ *
  * This package is the only site code that reads the variant dump, and only to detect leaks, the
  * same way it reads transcripts. Findings carry entity ids, field paths and counts, never a term.
  */
@@ -37,7 +53,7 @@ export const DEFAULT_CORPUS_DATA_DIR = "data/derived/corpus";
 
 const VARIANT_KIND: Record<string, EntityKind> = { concepts: "concept", people: "person", works: "work", topics: "topic" };
 
-export type AliasRule = "asr-variant" | "not-display-field" | "unknown-entity";
+export type AliasRule = "asr-variant" | "not-display-field" | "unknown-entity" | "not-entity-name";
 
 export interface AliasVerdict {
   rule: AliasRule;
@@ -131,6 +147,16 @@ export class AliasRules {
     if (this.variants.has(f)) return { rule: "asr-variant" };
     return { rule: set === undefined ? "unknown-entity" : "not-display-field" };
   }
+
+  /**
+   * Verdict for a published person name on a story (a story file or page): it must be a display
+   * name of some corpus entity (null: fine).
+   */
+  checkName(term: string): AliasVerdict | null {
+    const f = fold(term);
+    if (f === "" || this.anyDisplay.has(f)) return null;
+    return { rule: this.variants.has(f) ? "asr-variant" : "not-entity-name" };
+  }
 }
 
 /**
@@ -171,14 +197,71 @@ export function entityKindOfFile(path: string): EntityKind | null {
 }
 
 /**
- * The site-derived legacy aggregates at the top of `.corpus/` (people, concepts, works, stories,
- * entities). Their `names` are extraction spellings the sites have shipped since wave 2, not corpus
- * entity aliases, so their positions name no corpus entity and the raw ban does not apply to them.
- * They go when the C2 page wave replaces the pages that still read them; drop this exemption with them.
+ * A file whose person names are story names (checked with `AliasRules.checkName`): the layer's
+ * `stories.json`, and Live's `story/<id>.json` and `stories-index.json`.
  */
-export const LEGACY_AGGREGATE_FILES = ["people.json", "concepts.json", "works.json", "stories.json", "entities.json"] as const;
-
-export function isLegacyAggregateFile(path: string): boolean {
+export function isStoryNamesFile(path: string): boolean {
   const parts = path.split(/[\\/]/);
-  return parts.at(-2) === ".corpus" && (LEGACY_AGGREGATE_FILES as readonly string[]).includes(parts.at(-1) ?? "");
+  const name = parts.at(-1) ?? "";
+  if (name === "stories-index.json") return true;
+  if (parts.at(-2) === "layer" && name === "stories.json") return true;
+  return parts.at(-2) === "story" && name.endsWith(".json");
 }
+
+/** Attribute that marks a story person's name on a built page (Quiet story pages). */
+export const STORY_PERSON_ATTR = "data-story-person";
+
+/** Text of every element carrying `data-story-person` (inner tags stripped; entities are left to the caller). */
+export function markedStoryNames(html: string): string[] {
+  const out: string[] = [];
+  const re = new RegExp(`<([a-zA-Z][a-zA-Z0-9]*)\\b[^>]*\\s${STORY_PERSON_ATTR}(?=[\\s=/>])(?:\\s*=\\s*(?:"[^"]*"|'[^']*'|[^\\s>]+))?[^>]*>([\\s\\S]*?)</\\1\\s*>`, "g");
+  for (const m of html.matchAll(re)) {
+    const text = (m[2] ?? "").replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    if (text !== "") out.push(text);
+  }
+  return out;
+}
+
+/** Attribute that marks a person's name on a built page (`data-person="<person id>"`). */
+export const PERSON_ATTR = "data-person";
+
+/**
+ * Every element carrying `data-person`: its value (the person id, may be "") and its name, the
+ * text of the first `<bdi>` inside it, else its whole text (inner tags stripped; entities are left
+ * to the caller). An element whose name is empty is skipped.
+ */
+export function markedPersonNames(html: string): { id: string; name: string }[] {
+  const out: { id: string; name: string }[] = [];
+  const re = new RegExp(
+    `<([a-zA-Z][a-zA-Z0-9]*)\\b([^>]*\\s${PERSON_ATTR}(?=[\\s=/>])(?:\\s*=\\s*(?:"[^"]*"|'[^']*'|[^\\s>]+))?[^>]*)>([\\s\\S]*?)</\\1\\s*>`,
+    "g",
+  );
+  const attrRe = new RegExp(`\\s${PERSON_ATTR}(?:\\s*=\\s*(?:"([^"]*)"|'([^']*)'|([^\\s>]+)))?`);
+  for (const m of html.matchAll(re)) {
+    const a = attrRe.exec(m[2] ?? "");
+    const id = (a?.[1] ?? a?.[2] ?? a?.[3] ?? "").trim();
+    const inner = m[3] ?? "";
+    const bdi = /<bdi\b[^>]*>([\s\S]*?)<\/bdi\s*>/.exec(inner);
+    const name = (bdi ? bdi[1]! : inner).replace(/<[^>]*>/g, " ").replace(/\s+/g, " ").trim();
+    if (name !== "") out.push({ id, name });
+  }
+  return out;
+}
+
+/**
+ * A shiur file whose names are checked (F.1): `.corpus/shiurim/<id>.json` and Live
+ * `shiur/<id>.json` (not the layer's `layer/shiur/<id>.json`, which holds ids only).
+ */
+export function isShiurNamesFile(path: string): boolean {
+  const parts = path.split(/[\\/]/);
+  const name = parts.at(-1) ?? "";
+  if (!name.endsWith(".json")) return false;
+  const dir = parts.at(-2);
+  if (dir === "shiurim") return true;
+  return dir === "shiur" && parts.at(-3) !== "layer";
+}
+
+/** Meta/filter keys of a Pagefind record whose values are names. */
+export const PAGEFIND_NAME_KEYS = ["people", "person", "names", "concepts"] as const;
+/** Meta keys of a Pagefind entity record whose values are its entity's display labels. */
+export const PAGEFIND_LABEL_KEYS = ["labelHe", "labelEn", "labelYi"] as const;

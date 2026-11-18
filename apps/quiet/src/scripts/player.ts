@@ -26,6 +26,15 @@ export function parseTimeHash(hash: string): number | null {
 }
 
 /**
+ * The page hash for global seconds, fractional kept to the millisecond (`#t=582.12`, `#t=754`), so
+ * a reload or a shared address seeks to the same place the link did.
+ */
+export function timeHash(g: number): string {
+  const t = Number.isFinite(g) ? Math.max(0, Math.round(g * 1000) / 1000) : 0;
+  return `#t=${t}`;
+}
+
+/**
  * Index of the last start ≤ `now` in ascending `starts` (binary search), or -1 when `now` is
  * before the first start.
  */
@@ -41,6 +50,18 @@ export function currentIndex(starts: readonly number[], now: number): number {
     } else hi = mid - 1;
   }
   return found;
+}
+
+/**
+ * Seconds of slack for the margin mark. A media element reports the position it could seek to, which
+ * for mp3 can sit a frame (~26 ms) before the time asked for; without slack a seek to an item that
+ * starts at 582.12 would mark the item before it.
+ */
+export const MARK_SLACK = 0.05;
+
+/** The item the margin mark sits on at `now`: `currentIndex` with `MARK_SLACK`. */
+export function markIndex(starts: readonly number[], now: number): number {
+  return currentIndex(starts, now + MARK_SLACK);
 }
 
 /** Previous-chapter rule: restart the current chapter if more than 3 s into it, else go back one. */
@@ -89,11 +110,15 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     return { starts: items.map((x) => x.t), els: items.map((x) => x.el), cur: -1 };
   });
 
-  const now = () => offset(current) + (current.currentTime || 0);
+  // A seek into a recording whose metadata has not loaded waits for `loadedmetadata`; until then its
+  // target stands in for `currentTime` (still 0), so `play` and `timeupdate` keep the mark on the
+  // clicked item instead of moving it to the first one.
+  const pending = new Map<HTMLAudioElement, number>();
+  const now = () => offset(current) + (pending.get(current) ?? (current.currentTime || 0));
 
   function mark(g: number): void {
     for (const group of groups) {
-      const i = currentIndex(group.starts, g);
+      const i = markIndex(group.starts, g);
       if (i === group.cur) continue;
       group.els[group.cur]?.removeAttribute("aria-current");
       group.els[i]?.setAttribute("aria-current", "time");
@@ -116,9 +141,21 @@ export function initPlayer(doc: Document, win: Window): Player | null {
   function seek(a: HTMLAudioElement, local: number, play: boolean): void {
     setCurrent(a);
     const t = Math.max(0, local);
-    if (a.readyState >= 1) a.currentTime = t;
-    else {
-      a.addEventListener("loadedmetadata", () => (a.currentTime = t), { once: true });
+    if (a.readyState >= 1) {
+      pending.delete(a);
+      a.currentTime = t;
+    } else {
+      if (!pending.has(a)) {
+        a.addEventListener(
+          "loadedmetadata",
+          () => {
+            a.currentTime = pending.get(a) ?? 0;
+            pending.delete(a);
+          },
+          { once: true },
+        );
+      }
+      pending.set(a, t);
       if (!play) {
         a.preload = "metadata";
         a.load();
@@ -145,7 +182,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
 
   function setHash(g: number): void {
     try {
-      win.history.replaceState(win.history.state, "", `#t=${Math.round(g)}`);
+      win.history.replaceState(win.history.state, "", timeHash(g));
     } catch {
       /* a sandboxed or file: page: the seek still works */
     }
@@ -161,8 +198,8 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     const a = d["rec"] ? audios.find((x) => x.dataset["rec"] === d["rec"]) : Number.isFinite(g) ? audioAt(g) : undefined;
     if (!a) return;
     e.preventDefault();
-    // `data-t` is the whole second of the no-JS fragment; seek to the exact global time instead,
-    // so the mark lands on the item that was clicked, not the one before it.
+    // Seek to the exact global time (fractional), so playback and the mark land on the item that
+    // was clicked, not the second before it. `data-t` (also fractional) is the fallback.
     const local = Number.isFinite(g) ? g - offset(a) : Number(d["t"]) || 0;
     seek(a, local, true);
     setHash(offset(a) + local);

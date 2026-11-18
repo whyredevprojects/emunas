@@ -10,7 +10,6 @@ import type {
   MediaSessionLike,
   PlayerEngineOptions,
   PlayerEvents,
-  PlayerRecording,
   PlayerShiur,
 } from "../types.ts";
 import { FakeAudio, FakeClock, FakeLifecycle, fakeMediaSession } from "./fakes.ts";
@@ -171,6 +170,25 @@ describe("skip rules", () => {
     clock.flush();
     expect(engine.getState().t).toBeGreaterThanOrEqual(60);
     expect(engine.getState().t).toBeLessThan(60.1);
+  });
+
+  it("skips once when the element applies the seek later (WebKit: currentTime lags until seeked)", () => {
+    const { clock, audio, engine, events } = setup();
+    audio.seekLag = true;
+    engine.load(twoRecordings(), { start: 20, autoplay: true });
+    clock.flush();
+    // Reaching the singing range: the skip's seek is not visible on the element yet. The engine must
+    // not take the old position for "still inside the range" and skip again (it recursed until the
+    // call stack overflowed).
+    clock.tick(10_005);
+    expect(events.skip).toHaveLength(1);
+    expect(events.skip[0]).toMatchObject({ kind: "singing", to: 60 });
+    expect(engine.getState().t).toBeCloseTo(60, 1);
+    clock.flush();
+    expect(events.skip).toHaveLength(1);
+    expect(engine.getState().t).toBeGreaterThanOrEqual(60);
+    expect(engine.getState().t).toBeLessThan(60.1);
+    expect(engine.getState().status).toBe("playing");
   });
 
   it("re-arms the skip timer when the rate changes mid-way", () => {
@@ -459,19 +477,6 @@ describe("speed, sleep, availability", () => {
     engine.load(shiur, { start: 95, autoplay: true });
     clock.tick(6000);
     expect(events.ended).toHaveLength(1);
-  });
-
-  it("never falls back to a legacy same-origin audio path", () => {
-    // Pre-A1 data: no `audioUrl`, only the old same-origin `audio` path (no longer in the type).
-    const legacy = [
-      { id: "a", offset: 0, duration: 100, audio: "/audio/a.mp3" },
-      { id: "b", offset: 100, duration: 60, audio: "/audio/b.mp3" },
-    ] as unknown as PlayerRecording[];
-    const shiur = twoRecordings({ recordings: legacy });
-    const { audio, engine } = setup(shiur);
-    engine.load(shiur);
-    expect(engine.getState().status).toBe("unavailable");
-    expect(audio.srcHistory).toEqual([]);
   });
 
   it("reports a media error", () => {

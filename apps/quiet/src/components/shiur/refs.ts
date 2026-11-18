@@ -8,7 +8,9 @@
  * - `mentionedView`: "mentioned in this shiur", people and glossary terms by corpus id, with names
  *   from the layer, so merged names ("the Sanzer Rav", "the Divrei Chaim") land on one page.
  * - `sourceLinks`: each source moment's corpus work id and its link (the work entry).
- * - `storyLines`: "told in N other shiurim →" for a story with two or more visible tellings.
+ * - `storyLines`: "told in N other shiurim →" for a story told in another visible shiur, and the
+ *   merged story's people (the only names a story prints: the extraction's raw names are never
+ *   printed, F.1).
  *
  * Every link goes through `@emunas/links` with the layer's page flags: an entry with a Quiet page
  * links there, one listed in its index without a page links to its index anchor, and one that is
@@ -172,7 +174,7 @@ function sortByName(list: NamedLink[], ed: Ed): NamedLink[] {
 /**
  * People and glossary terms named in the shiur, by corpus id (the layer has already followed
  * retired ids to the surviving entity, and duplicates are dropped here). Excluded people (the
- * Rav's family, private persons, the owner's list) are not printed at all; anyone else without an
+ * Mashgiach's family, private persons, the owner's list) are not printed at all; anyone else without an
  * index line is printed without a link. Each list is in alphabetical order of the printed name.
  */
 export function mentionedView(ed: Ed, layer: ShiurLayer, refs: Pick<LayerShiurRefs, "personIds" | "conceptIds"> | null | undefined): MentionedView {
@@ -230,29 +232,24 @@ export function sourceLinks(ed: Ed, layer: ShiurLayer, refs: Pick<LayerShiurRefs
 
 export interface StoryLine {
   readonly storyId: string;
-  /** Other visible shiurim the story is told in (this shiur not counted). */
+  /** Other visible shiurim the story is told in (distinct shiurim; this shiur not counted). */
   readonly otherShiurim: number;
   /** The story entry (page, else index anchor). */
   readonly href: string | null;
-  /** People on the merged story, by person id, with the edition's names (for the telling's names). */
-  readonly people: ReadonlyMap<string, string>;
+  /**
+   * The merged story's people, in the edition's spelling: a linked person (page or index line), a
+   * person in no index as plain text, or a name the layer gives as plain text (a corpus entity's
+   * own display name). The telling's raw extraction names are never printed: they may be ASR
+   * mishearings (F.1). Excluded people (family, private) are left out.
+   */
+  readonly people: readonly NamedLink[];
 }
-
-/** Folded form of a name for matching a telling's names to the merged story's people. */
-export const foldName = (s: string): string =>
-  s
-    .normalize("NFKD")
-    .replace(/[̀-֑ͯ-ׇ]/g, "")
-    .replace(/[׳'"״`’‘“”.,()-]/g, "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .toLowerCase();
 
 /**
  * For each story moment of the shiur (`<shiur>~st<i>`): the merged story, the number of other
- * visible shiurim it is told in (from the story's visible tellings in the layer), and its link.
- * A story with fewer than two visible tellings gets a record with `otherShiurim` 0, so the page
- * prints no line for it; its people map is still there for the telling's names.
+ * visible shiurim it is told in (distinct shiurim among the story's visible tellings in the
+ * layer; a second telling in this shiur does not count), its link and its people. A story told in
+ * no other shiur gets a record with `otherShiurim` 0, so the page prints no line for it.
  */
 export function storyLines(ed: Ed, layer: ShiurLayer, shiurId: string, refs: Pick<LayerShiurRefs, "stories"> | null | undefined): Map<string, StoryLine> {
   const out = new Map<string, StoryLine>();
@@ -263,26 +260,27 @@ export function storyLines(ed: Ed, layer: ShiurLayer, shiurId: string, refs: Pic
     const tellings = Array.isArray(story.tellings) ? story.tellings : [];
     const shiurim = new Set(tellings.map((t) => t?.shiurId).filter((id): id is string => typeof id === "string"));
     shiurim.delete(shiurId);
-    const otherShiurim = tellings.length >= 2 ? shiurim.size : 0;
-    const names = new Map<string, string>();
+    const people: NamedLink[] = [];
+    const seen = new Set<string>();
     for (const sp of Array.isArray(story.people) ? story.people : []) {
-      if (!sp || !("id" in sp) || typeof sp.id !== "string") continue;
-      const p = layer.person(sp.id);
-      if (!p || (p.excluded ?? null) !== null) continue;
-      const name = personName(ed, p);
-      if (name === "") continue;
-      for (const n of [p.nameEn, p.nameHe, p.nameYi, ...(Array.isArray(p.aliases) ? p.aliases : [])]) {
-        const f = typeof n === "string" ? foldName(n) : "";
-        if (f !== "" && !names.has(f)) names.set(f, name);
+      if (!sp || typeof sp !== "object") continue;
+      let link: NamedLink | null = null;
+      if ("id" in sp && typeof sp.id === "string") {
+        const p = layer.person(sp.id);
+        if (!p || (p.excluded ?? null) !== null) continue;
+        const name = personName(ed, p);
+        if (name !== "") link = { id: sp.id, name, href: entryHref(ed, layer, "person", sp.id), hebrew: isHebrew(name) };
+      } else if ("name" in sp) {
+        const name = str(sp.name);
+        if (name !== "") link = { id: "", name, href: null, hebrew: isHebrew(name) };
       }
+      if (link === null) continue;
+      const key = link.id !== "" ? `id:${link.id}` : `name:${link.name}`;
+      if (seen.has(key)) continue;
+      seen.add(key);
+      people.push(link);
     }
-    out.set(r.momentId, { storyId: r.storyId, otherShiurim, href: entryHref(ed, layer, "story", r.storyId), people: names });
+    out.set(r.momentId, { storyId: r.storyId, otherShiurim: shiurim.size, href: entryHref(ed, layer, "story", r.storyId), people });
   }
   return out;
-}
-
-/** A name as told in this telling, in the edition's spelling when it is one of the story's people. */
-export function tellingName(line: StoryLine | undefined, name: string): string {
-  if (!line) return name;
-  return line.people.get(foldName(name)) ?? name;
 }

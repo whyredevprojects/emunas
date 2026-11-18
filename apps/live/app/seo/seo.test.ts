@@ -1,4 +1,4 @@
-import { createLinks, type Hosts } from "@emunas/links";
+import { createLinks, type SiteHosts } from "@emunas/links";
 import { describe, expect, it } from "vitest";
 import { buildSeoPage, clip, headTags, type HeadTag, type RootSeoData } from "./head.ts";
 import { createPageText, linkDataFor, prerenderPaths, todayPaths } from "./model.ts";
@@ -7,7 +7,7 @@ import { ROBOTS_TXT } from "./robots.ts";
 import { corpusFixture, layerCorpusFixture, SHIUR_CATALOG, SHIUR_FULL } from "./test-fixtures.ts";
 import { seoHosts } from "./env.ts";
 
-const HOSTS: Hosts = { quiet: "https://example.org", live: "https://listen.example.org" };
+const HOSTS: SiteHosts = { quiet: "https://library.example.org", live: "https://listen.example.org" };
 const links = createLinks({ hosts: HOSTS, data: linkDataFor(corpusFixture) });
 const text = createPageText(corpusFixture);
 
@@ -133,7 +133,7 @@ describe("page text", () => {
     const full = text(`/en/s/${SHIUR_FULL}`)!;
     expect(full.title).toBe("ולאדם לא מצא עזר כנגדו");
     expect(full.titleLang).toBe("yi");
-    expect(full.description).toBe("The Rav explains the bond of Hashem and Knesses Yisrael.");
+    expect(full.description).toBe("The Mashgiach explains the bond of Hashem and Knesses Yisrael.");
     expect(text(`/yi/s/${SHIUR_FULL}`)!.description).toBe("דער משגיח ערקלערט.");
     const cat = text(`/en/s/${SHIUR_CATALOG}`)!;
     expect(cat.title).toBe("Emunah — The Everlasting Essence");
@@ -176,7 +176,7 @@ describe("head tags", () => {
       const tags = headTags(path, seoFor(path));
       const c = canonicals(tags);
       expect(c, path).toHaveLength(1);
-      expect(c[0]!.startsWith("https://example.org/"), path).toBe(true);
+      expect(c[0]!.startsWith("https://library.example.org/"), path).toBe(true);
       expect(c[0]!.includes("listen."), path).toBe(false);
       expect(c[0]!.includes("#"), path).toBe(false);
       expect(meta(tags, "og:title")?.content, path).toBeTruthy();
@@ -187,15 +187,15 @@ describe("head tags", () => {
 
   it("maps canonicals to the Quiet equivalents (§2.2)", () => {
     const c = (p: string) => canonicals(headTags(p, seoFor(p)))[0];
-    expect(c(`/en/s/${SHIUR_FULL}`)).toBe(`https://example.org/en/shiur/${SHIUR_FULL}/`);
-    expect(c(`/yi/series/tanya-yi`)).toBe("https://example.org/yi/series/tanya-yi/");
-    expect(c("/en/o/bereishis")).toBe("https://example.org/en/calendar/parsha/bereishis/");
-    expect(c("/en/o/chanukah")).toBe("https://example.org/en/calendar/zman/chanukah/");
-    expect(c("/en/o/a-wedding")).toBe("https://example.org/en/"); // no Quiet page: edition home
-    expect(c("/en/seforim/genesis")).toBe("https://example.org/en/sources/genesis/");
-    expect(c("/en/p/achashverosh")).toBe("https://example.org/en/people/achashverosh/");
-    expect(c("/yi/c/emunah-1")).toBe("https://example.org/yi/erachim/emunah-1/"); // glossary entry (§3.5)
-    expect(c("/en/")).toBe("https://example.org/en/");
+    expect(c(`/en/s/${SHIUR_FULL}`)).toBe(`https://library.example.org/en/shiur/${SHIUR_FULL}/`);
+    expect(c(`/yi/series/tanya-yi`)).toBe("https://library.example.org/yi/series/tanya-yi/");
+    expect(c("/en/o/bereishis")).toBe("https://library.example.org/en/calendar/parsha/bereishis/");
+    expect(c("/en/o/chanukah")).toBe("https://library.example.org/en/calendar/zman/chanukah/");
+    expect(c("/en/o/a-wedding")).toBe("https://library.example.org/en/"); // no Quiet page: edition home
+    expect(c("/en/seforim/genesis")).toBe("https://library.example.org/en/sources/genesis/");
+    expect(c("/en/p/achashverosh")).toBe("https://library.example.org/en/people/achashverosh/");
+    expect(c("/yi/c/emunah-1")).toBe("https://library.example.org/yi/erachim/emunah-1/"); // glossary entry (§3.5)
+    expect(c("/en/")).toBe("https://library.example.org/en/");
   });
 
   it("noindex on app-only routes, not on content pages", () => {
@@ -228,7 +228,7 @@ describe("head tags", () => {
   it("on client navigation (page data for another path) keeps robots and canonical, drops OG", () => {
     const data = seoFor(`/en/s/${SHIUR_FULL}`);
     const tags = headTags(`/en/s/${SHIUR_CATALOG}`, data);
-    expect(canonicals(tags)).toEqual([`https://example.org/en/shiur/${SHIUR_CATALOG}/`]);
+    expect(canonicals(tags)).toEqual([`https://library.example.org/en/shiur/${SHIUR_CATALOG}/`]);
     expect(meta(tags, "og:title")).toBeUndefined();
     expect(robots(headTags("/en/search", data))).toHaveLength(1);
   });
@@ -236,7 +236,7 @@ describe("head tags", () => {
   it("SPA fallback document: noindex only; the real path takes over after hydration", () => {
     const data: RootSeoData["seo"] = { hosts: HOSTS, page: null, fallback: true };
     expect(headTags("/", data)).toEqual([{ tag: "meta", name: "robots", content: "noindex" }]);
-    expect(canonicals(headTags("/en/p/rabbi-x", data))).toEqual(["https://example.org/en/people/rabbi-x/"]);
+    expect(canonicals(headTags("/en/p/rabbi-x", data))).toEqual(["https://library.example.org/en/people/rabbi-x/"]);
   });
 
   it("without configured hosts: no canonical or hreflang, never a guessed origin", () => {
@@ -305,9 +305,9 @@ describe("corpus layer (C1.7)", () => {
 
   it("canonical to Quiet where Quiet has the page; otherwise noindex and no canonical", () => {
     const tagsOf = (p: string) => headTags(p, lSeo(p));
-    expect(canonicals(tagsOf("/en/t/hester-panim"))).toEqual(["https://example.org/en/inyanim/hester-panim/"]);
+    expect(canonicals(tagsOf("/en/t/hester-panim"))).toEqual(["https://library.example.org/en/inyanim/hester-panim/"]);
     expect(robots(tagsOf("/en/t/hester-panim"))).toHaveLength(0);
-    expect(canonicals(tagsOf("/en/maasios/sugar-sled"))).toEqual(["https://example.org/en/stories/sugar-sled/"]);
+    expect(canonicals(tagsOf("/en/maasios/sugar-sled"))).toEqual(["https://library.example.org/en/stories/sugar-sled/"]);
     for (const p of ["/en/t/rare-topic", "/yi/th/akeidah-last-generation"]) {
       const tags = tagsOf(p);
       expect(canonicals(tags), p).toEqual([]);

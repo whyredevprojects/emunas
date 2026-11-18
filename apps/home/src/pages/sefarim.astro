@@ -1,0 +1,33 @@
+---
+/** The English sefarim based on the Mashgiach's teachings, with links to their publishers. */
+import Base from "../layouts/Base.astro";
+import PageHead from "../components/PageHead.astro";
+import Shelf from "../components/Shelf.astro";
+import { EXTERNAL, SEFARIM } from "../lib/content.ts";
+---
+<Base
+  title="Sefarim in English"
+  description={`${SEFARIM.length} English sefarim based on the teachings of the Mashgiach, Harav Moshe Wolfson zt"l, with links to their publishers.`}
+>
+  <div class="wrap">
+    <PageHead
+      title="Sefarim in English"
+      label="Sefarim"
+      labelYi="ספרים"
+      intro="Books based on the Mashgiach’s teachings. Each is available from its publisher."
+    />
+    <div class="page-body page-grid">
+      <div><Shelf /></div>
+      <aside>
+        <div class="card">
+          <h2>Support</h2>
+          <p>The shiurim are free. You can <a href={EXTERNAL.support}>support the printing of the Mashgiach&rsquo;s sefarim</a>.</p>
+        </div>
+        <div class="card">
+          <h2>New sefarim</h2>
+          <p>Sign up for the <a href="/weekly-devar-torah/">Weekly Devar Torah</a> to hear about new English sefarim.</p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

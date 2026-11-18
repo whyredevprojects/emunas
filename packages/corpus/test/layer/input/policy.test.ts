@@ -88,11 +88,14 @@ describe("corpus policy", () => {
 
   it("the family rule matches the entity's own fields, not a list (D5)", () => {
     const re = familyRegExp(DEFAULT_CORPUS_POLICY);
-    expect(re.test("the Rav's father")).toBe(true);
-    expect(re.test("Reb Eliyahu Shalom (the Rav's father)")).toBe(true);
-    expect(re.test("the Ravs father-in-law")).toBe(true);
+    expect(re.test("the Mashgiach's father")).toBe(true);
+    expect(re.test("Reb Eliyahu Shalom (the Mashgiach's father)")).toBe(true);
+    expect(re.test("R' Motel, the Mashgiach's son-in-law")).toBe(true);
+    expect(re.test("the Mashgiachs father-in-law")).toBe(true);
     expect(re.test("Rav Yosef")).toBe(false);
-    expect(re.test("the Rav")).toBe(false);
+    expect(re.test("the Mashgiach")).toBe(false);
+    // The data no longer says "the Rav" for him; the old form is not matched.
+    expect(re.test("the Rav's father")).toBe(false);
   });
 
   it("the policy hash is stable and changes with the policy", () => {

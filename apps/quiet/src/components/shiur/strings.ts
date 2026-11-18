@@ -4,7 +4,7 @@
  * rule: `yi` is typed against the English key union, so a missing key fails `tsc`.
  *
  * Wording status: unreviewed (W5.3 does the fixed-copy pass). Plain voice, reported speech,
- * "the Rav" / "דער משגיח"; no "content" vocabulary.
+ * "the Mashgiach" / "דער משגיח"; no "content" vocabulary.
  */
 import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
@@ -40,7 +40,7 @@ export const shiurEn = {
   "stories.heading": "Stories",
   "stories.people": "In the story:",
   "insights.heading": "Insights",
-  "takeaways.heading": "What the Rav says to take from it",
+  "takeaways.heading": "What the Mashgiach says to take from it",
 
   "mentioned.heading": "Mentioned in this shiur",
   "mentioned.people": "People",

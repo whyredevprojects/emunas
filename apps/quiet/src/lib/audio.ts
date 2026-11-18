@@ -11,10 +11,7 @@
  */
 import { toLocal } from "@emunas/corpus/public";
 
-/**
- * What the shell needs of a recording. `PublicRecording` from `@emunas/corpus/public` fits once
- * the corpus build emits `audioUrl` (A1); until then pages map it in.
- */
+/** What the shell needs of a recording (`PublicRecording` from `@emunas/corpus/public` fits). */
 export interface AudioRecording {
   readonly id: string;
   /** Global seconds at which this recording starts. */
@@ -44,9 +41,18 @@ export function playableUrl(rec: Pick<AudioRecording, "audioUrl">): string | nul
   return url.href;
 }
 
-/** Whole seconds for a media fragment (`#t=754`): floored, so playback starts at or before the item. */
-function fragmentSeconds(local: number): number {
-  return Math.max(0, Math.floor(local));
+/**
+ * Seconds for a media fragment (`#t=582.12`): the exact recording-local time (to the millisecond,
+ * as `toLocal` gives it), never rounded to a whole second, so a link starts where the item does.
+ * Media fragments (`npt`) and the player both take fractional seconds.
+ */
+export function fragmentSeconds(local: number): number {
+  return Number.isFinite(local) ? Math.max(0, Math.round(local * 1000) / 1000) : 0;
+}
+
+/** `582.12` → `"582.12"`, `754` → `"754"`: the shortest form of `fragmentSeconds`. */
+export function formatFragment(local: number): string {
+  return String(fragmentSeconds(local));
 }
 
 export interface TimeTarget {
@@ -56,7 +62,7 @@ export interface TimeTarget {
   readonly part: number;
   /** Number of recordings of the shiur. */
   readonly parts: number;
-  /** Seconds into that recording (what the player seeks to). */
+  /** Seconds into that recording, fractional (what the no-JS link opens and the player seeks to). */
   readonly local: number;
   /** Global seconds (what the page shows and what `#t=` page URLs carry). */
   readonly global: number;
@@ -65,7 +71,7 @@ export interface TimeTarget {
 }
 
 /**
- * Resolves a global time to its recording and the no-JS link (`audioUrl#t=local`).
+ * Resolves a global time to its recording and the no-JS link (`audioUrl#t=local`, fractional).
  * Null for a shiur without recordings or a time that is not a finite number.
  */
 export function timeTarget(recordings: readonly AudioRecording[], t: number): TimeTarget | null {
@@ -77,12 +83,13 @@ export function timeTarget(recordings: readonly AudioRecording[], t: number): Ti
   if (!rec) return null;
   const url = playableUrl(rec);
   const seconds = fragmentSeconds(local.t);
+  const fragment = formatFragment(seconds);
   return {
     recordingId: rec.id,
     part: index + 1,
     parts: recordings.length,
     local: seconds,
     global: Math.max(0, t),
-    href: url === null ? null : `${url}#t=${seconds}`,
+    href: url === null ? null : `${url}#t=${fragment}`,
   };
 }

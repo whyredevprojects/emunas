@@ -34,7 +34,7 @@ export const browseEn = {
   "browse.related": "Often together with",
   "browse.related.shared": { one: "{count} shiur together", other: "{count} shiurim together" },
 
-  "seforim.lead": "The seforim cited in the shiurim, on the shelf in their traditional order. Each one shows where it is cited and every moment that discusses it.",
+  "seforim.lead": "The seforim cited in the shiurim, in their traditional order. Each one shows where it is cited and every moment that discusses it.",
   "seforim.filter": "Find a sefer",
   "seforim.filter.none": "No sefer matches.",
   "seforim.all": "All seforim",
@@ -111,7 +111,7 @@ export const browseYi: MessageTable<BrowseKey> = {
   "browse.related": "אפט צוזאמען מיט",
   "browse.related.shared": { one: "{count} שיעור צוזאמען", other: "{count} שיעורים צוזאמען" },
 
-  "seforim.lead": "די ספרים וואס ווערן געברענגט אין די שיעורים, אויף דער פאליצע על הסדר. ביי יעדן ספר שטייט וואו ער ווערט געברענגט, מיט יעדן מאמענט וואס רעדט דערפון.",
+  "seforim.lead": "די ספרים וואס ווערן געברענגט אין די שיעורים, על הסדר. ביי יעדן ספר שטייט וואו ער ווערט געברענגט, מיט יעדן מאמענט וואס רעדט דערפון.",
   "seforim.filter": "געפינען א ספר",
   "seforim.filter.none": "קיין ספר פאסט נישט.",
   "seforim.all": "אלע ספרים",

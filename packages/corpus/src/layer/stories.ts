@@ -30,9 +30,10 @@ export interface StoriesResult {
 }
 
 /**
- * @param personOf how a story's `people[]` entry is shown: a linked person id, or plain text.
+ * @param personOf how a story's `people[]` entry is shown: a linked person id, an entity's display
+ *   name as plain text, or null (no corpus entity: the raw name is left out).
  */
-export function buildStories(ctx: LayerContext, personOf: (raw: string) => LayerStoryPerson): StoriesResult {
+export function buildStories(ctx: LayerContext, personOf: (raw: string) => LayerStoryPerson | null): StoriesResult {
   const out: LayerStory[] = [];
   let withoutTelling = 0;
   const pol = ctx.policy.thresholds;
@@ -56,6 +57,7 @@ export function buildStories(ctx: LayerContext, personOf: (raw: string) => Layer
     const shown = new Set<string>();
     for (const raw of s.people) {
       const p = personOf(raw);
+      if (p === null) continue;
       const key = "id" in p ? `id:${p.id}` : `name:${p.name}`;
       if (shown.has(key)) continue;
       shown.add(key);

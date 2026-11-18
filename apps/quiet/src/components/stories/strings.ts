@@ -6,7 +6,7 @@
  * a missing key fails `tsc`.
  *
  * Wording status: unreviewed (proposed; the Yiddish needs a native reader). Yiddish speaks of the
- * Rav as "דער משגיח".
+ * Mashgiach as "דער משגיח".
  */
 import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
@@ -14,7 +14,7 @@ import type { Ed } from "../../lib/edition.ts";
 export const storiesEn = {
   // ---- the index (Quiet C4.5: most retold, by person, without a name)
   "index.lead":
-    "The stories the Rav tells in the shiurim. A story he told in more than one shiur has a page of its own, with every place he tells it; a story told once links to the place in the shiur.",
+    "The stories the Mashgiach tells in the shiurim. A story he told in more than one shiur has a page of its own, with every place he tells it; a story told once links to the place in the shiur.",
   "index.jump": "In this index",
   "index.mostRetold": "Most retold",
   "index.mostRetoldLead": "Stories told in {min} or more shiurim, the most often told first.",

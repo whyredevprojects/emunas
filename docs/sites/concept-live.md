@@ -4,7 +4,7 @@ Status: high-level concept, nothing built. Companion to the opposite concept (th
 
 ## 1. The idea in one paragraph
 
-Treat the corpus as about ten thousand addressable **moments** instead of a thousand files. The pipeline already cut every shiur into timestamped sections and attached sources, insights, stories, questions and takeaways to exact points in the audio. The site is a single app with a player that never stops, where every piece of text on screen is a button that plays the Rav saying that thing. Search, the calendar, the timeline of years, the seforim shelf and the people index are all different ways of arriving at a moment; once you arrive, you are listening.
+Treat the corpus as about ten thousand addressable **moments** instead of a thousand files. The pipeline already cut every shiur into timestamped sections and attached sources, insights, stories, questions and takeaways to exact points in the audio. The site is a single app with a player that never stops, where every piece of text on screen is a button that plays the Mashgiach saying that thing. Search, the calendar, the timeline of years, the seforim shelf and the people index are all different ways of arriving at a moment; once you arrive, you are listening.
 
 The app is for three kinds of visit:
 
@@ -32,9 +32,9 @@ The ASR transcripts are rough and are build-time input only. This shapes the con
 
 **Consequences for the design:**
 
-- The synced reading pane shows the AI write-up (third-person, "The Rav explains…"), not captions. There is no scrolling transcript, no karaoke line, no quote cards, no "share this quote".
+- The synced reading pane shows the AI write-up (third-person, "The Mashgiach explains…"), not captions. There is no scrolling transcript, no karaoke line, no quote cards, no "share this quote".
 - Search results show generated text only (section summary, insight, story title). A hit is never a transcript snippet.
-- Every text surface carries a small, constant label: summary written by AI from the recording, not the Rav's words. The audio is the source; the text is a guide to it.
+- Every text surface carries a small, constant label: summary written by AI from the recording, not the Mashgiach's words. The audio is the source; the text is a guide to it.
 
 **Designed-in but OFF:** each published recording has a `transcript` descriptor, e.g. `{ eligible: false, quality: "budget-asr", version: <hash> }`. A "Transcript" tab in the listening room exists in the design and renders only when `eligible` is true. When a better transcription is produced (the pipeline already tracks `model`/`mode` per transcript and has `config/asr-policy.json`), eligibility is flipped per shiur by whoever owns that policy, and the tab, caption sync and quote-sharing appear for that shiur alone. Nothing else in the app changes.
 
@@ -60,7 +60,7 @@ Counts are for the 519 extractions present today; expect roughly double at compl
 | `writeup.en / .yi` (paragraphs with `evidence`, `sourceIdx`) | every done shiur, ~1,000–1,400 words per language | Reader mode synced to the player. |
 | `evidence.confidence` on every item | — | Hide below 0.6; soften wording between 0.6 and 0.75. |
 
-Everything generated is `{ en, yi }`. Note the voice differs by language in the data itself: English says "the Rav", Yiddish says "דער משגיח". The UI should follow the data and not unify them.
+Everything generated is `{ en, yi }`. The data names him the same way in both languages: English "the Mashgiach", Yiddish "דער משגיח". The UI follows the data.
 
 ### Gaps that limit the concept today
 
@@ -137,7 +137,7 @@ The page type the rest of the app feeds. Three stacked areas, with tabs on small
 
 A shelf of the works he cites, built from `sources.work`: Chumash and Nach by book, Shas by masechta, then Midrash, Zohar, Rashi, Ramban, Bnei Yissaschar (183 mentions), Chasam Sofer (109), Tanya (102), Ohr HaChaim and so on.
 
-A work page lists its cited locations in the work's own order (from `ref` / `sefariaRef`) with, under each, every moment where he discusses it. For Chumash this becomes a **pasuk view**: open Bereishis 12 and see which pesukim have shiurim on them and from which years. For Tehillim (826 mentions) it becomes a kapitel index. Need: a maggid shiur preparing a pasuk, or someone learning a sefer who wants what the Rav said on this piece.
+A work page lists its cited locations in the work's own order (from `ref` / `sefariaRef`) with, under each, every moment where he discusses it. For Chumash this becomes a **pasuk view**: open Bereishis 12 and see which pesukim have shiurim on them and from which years. For Tehillim (826 mentions) it becomes a kapitel index. Need: a maggid shiur preparing a pasuk, or someone learning a sefer who wants what the Mashgiach said on this piece.
 
 Works with only unlocated mentions show a flat list of moments. Genre-only mentions ("Gemara", "Midrash") are not shelved as works.
 
@@ -205,7 +205,7 @@ The bridge is the main product claim for half the audience: an English speaker c
 
 Mixed-direction text is constant (English catalog titles contain Hebrew words: "The קדושה of צדיקים"). Text is stored as written and each string is direction-isolated; nothing is transliterated or "fixed". Search accepts Hebrew script, Yiddish spelling and English transliteration for the same thing (section 8).
 
-Hebrew years are shown as Hebrew years (תשל"ו) with the numeric form secondary. Tone throughout is plain and respectful: no marketing voice, no exclamation, the Rav referred to as the data does, zt"l on first mention per page.
+Hebrew years are shown as Hebrew years (תשל"ו) with the numeric form secondary. Tone throughout is plain and respectful: no marketing voice, no exclamation, the Mashgiach referred to as the data does, zt"l on first mention per page.
 
 ## 8. Search and "same idea"
 

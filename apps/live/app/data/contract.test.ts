@@ -29,7 +29,6 @@ import {
   loadQuickIndex,
   loadSeries,
   loadShiur,
-  loadStories,
   loadToday,
   loadWork,
   loadWorks,
@@ -88,9 +87,8 @@ const REQUIRED: { [K in keyof DataFiles]: readonly (keyof DataFiles[K])[] } = {
   works: ["schemaVersion", "works"],
   work: ["schemaVersion", "key", "name", "label", "locations", "unlocated"],
   entity: ["schemaVersion", "kind", "key", "label", "shiurIds", "years", "moments", "related"],
-  stories: ["schemaVersion", "stories"],
   moments: ["schemaVersion", "lang", "shard", "moments"],
-  quickIndex: ["schemaVersion", "lang", "options", "index"],
+  quickIndex: ["schemaVersion", "lang", "options", "index", "entities"],
   topics: ["schemaVersion", "topics"],
   topic: ["schemaVersion", "id", "label", "description", "reviewed", "hubs", "moments", "momentPages"],
   topicMoments: ["schemaVersion", "topicId", "page", "moments"],
@@ -108,7 +106,6 @@ function kindOf(file: string): keyof DataFiles {
   if (file === "facets.json") return "facets";
   if (file === "today.json") return "today";
   if (file === "works.json") return "works";
-  if (file === "stories.json") return "stories";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
   if (file === "explore/entities.json") return "exploreEntities";
@@ -229,7 +226,9 @@ describe("data contract", () => {
     expect((await loadGlossaryShard(shard)).concepts.map((c) => c.id)).toContain(concept);
     expect(Object.keys((await loadExploreEntities()).shiurim).length).toBeGreaterThan(0);
 
-    expect((await loadStories()).stories.length).toBeGreaterThan(0);
+    // Retired in C3.1: the per-telling stories.json and corpus.json's entity arrays.
+    await expect(fetchData("/data/stories.json")).rejects.toMatchObject({ status: 404 });
+    expect((await loadCorpus()).shiurim.every((r) => !("entities" in r))).toBe(true);
     for (const lang of ["en", "yi"] as const) {
       for (let i = 0; i < build.momentShards[lang]; i++) {
         const shard = await loadMomentShard(lang, i);

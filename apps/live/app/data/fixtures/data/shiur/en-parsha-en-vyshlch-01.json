@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "en-parsha-en-vyshlch-01",
- "rev": "f3e828b39a99",
+ "rev": "b2a2effb1228",
  "lang": "en",
  "category": "parsha",
  "catalog": {
@@ -538,32 +538,105 @@
    {
     "momentId": "en-parsha-en-vyshlch-01~st0",
     "storyId": "rabbi-shimon-bar-yochai-and-the-hunters-birds",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Shimon bar Yochai"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st1",
     "storyId": "rabbi-pinchas-ben-yairs-donkey",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Pinchas ben Yair"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st2",
     "storyId": "eliyahus-two-oxen",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "eliyahu-hanavi",
+      "label": {
+       "en": "Eliyahu HaNavi",
+       "yi": "אליהו הנביא"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st3",
     "storyId": "rabbi-hoshaya-and-the-unlearned-man",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Hoshaya"
+     }
+    ]
    },
    {
     "momentId": "en-parsha-en-vyshlch-01~st4",
     "storyId": "asnas-and-the-charm",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Shechem ben Chamor"
+     },
+     {
+      "id": "yaakov-avinu",
+      "label": {
+       "en": "Yaakov Avinu",
+       "yi": "יעקב אבינו"
+      },
+      "page": true
+     },
+     {
+      "id": "yosef-hatzaddik",
+      "label": {
+       "en": "Yosef HaTzaddik",
+       "yi": "יוסף הצדיק"
+      },
+      "page": true
+     },
+     {
+      "name": "Dinah"
+     },
+     {
+      "name": "Osnas"
+     },
+     {
+      "name": "Potiphar"
+     },
+     {
+      "name": "the angel Michael"
+     },
+     {
+      "name": "the angel Gavriel"
+     },
+     {
+      "name": "Potiphar's wife"
+     },
+     {
+      "name": "Ephraim"
+     },
+     {
+      "name": "Menashe"
+     },
+     {
+      "name": "Potiphera"
+     }
+    ]
    }
   ],
   "insights": []
@@ -571,7 +644,7 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav explains that the 580 animals Yaakov sent Esav are Jewish souls handed to Esav's rule, and that this gift, like Dina who was taken by Shechem, must return to Yaakov's flock.",
+    "en": "The Mashgiach explains that the 580 animals Yaakov sent Esav are Jewish souls handed to Esav's rule, and that this gift, like Dina who was taken by Shechem, must return to Yaakov's flock.",
     "yi": "דער משגיח ערקלערט אז די 580 בהמות וואס יעקב האט געשיקט צו עשו זענען אידישע נשמות וואס זענען אריבער אונטער עשו'ס הערשאפט, און אז די מנחה, אזוי ווי דינה וואס שכם האט צוגענומען, מוז זיך צוריקקערן צו יעקב'ס סטאדע."
    },
    "abstract": {
@@ -647,7 +720,7 @@
      "yi": "ניצוצות פון דער נשמה אין א מענטשנס חפצים"
     },
     "summary": {
-     "en": "The Rav recalls that Yaakov's animals are Jewish souls and that Yaakov endangered himself on a dangerous night for small jars. He explains with the Ba'al Shem Tov that a person's belongings hold sparks of his soul, and that every creature is guided by individual providence.",
+     "en": "The Mashgiach recalls that Yaakov's animals are Jewish souls and that Yaakov endangered himself on a dangerous night for small jars. He explains with the Ba'al Shem Tov that a person's belongings hold sparks of his soul, and that every creature is guided by individual providence.",
      "yi": "דער משגיח דערמאנט אז יעקב'ס בהמות זענען אידישע נשמות, און אז יעקב האט זיך אריינגעשטעלט אין סכנה אין א געפערלעכע נאכט פאר פכים קטנים. ער ערקלערט מיטן בעל שם טוב אז אין א מענטשנס חפצים זענען דא ניצוצות פון זיין נשמה, און אז יעדע באשעפעניש ווערט געפירט מיט השגחה פרטית."
     },
     "kind": "intro",
@@ -665,7 +738,7 @@
      "yi": "די פייגל, דער אייזל און די פכים קטנים"
     },
     "summary": {
-     "en": "The Rav brings Rabbi Shimon bar Yochai, who saw that no bird is caught without a heavenly decree, and the donkey of Rabbi Pinchas ben Yair that would not eat untithed oats because it held sparks of its master's soul. From here he explains why Yaakov crossed back for the jars.",
+     "en": "The Mashgiach brings Rabbi Shimon bar Yochai, who saw that no bird is caught without a heavenly decree, and the donkey of Rabbi Pinchas ben Yair that would not eat untithed oats because it held sparks of its master's soul. From here he explains why Yaakov crossed back for the jars.",
      "yi": "דער משגיח ברענגט רבי שמעון בר יוחאי, וואס האט געזען אז קיין פויגל ווערט נישט געכאפט אן א גזירה פון הימל, און דעם אייזל פון רבי פנחס בן יאיר וואס האט נישט געוואלט עסן האבער אן מעשר, ווייל ער האט געהאט ניצוצות פון זיין בעל הבית'ס נשמה. דערפון ערקלערט ער פארוואס יעקב איז צוריק אריבער נאך די פכים."
     },
     "kind": "main",
@@ -683,7 +756,7 @@
      "yi": "580 בהמות: א ביין וואס מ'ווארפט צו עשו"
     },
     "summary": {
-     "en": "The Rav brings the Ohr HaChaim, who counts the gift as 580, the value of Seir, and shows that the names of the chief of evil and his mate also total 580. The gift is like the Yom Kippur goat, as the Zohar connects it, and he asks why Yaakov would give away animals that were Jewish souls.",
+     "en": "The Mashgiach brings the Ohr HaChaim, who counts the gift as 580, the value of Seir, and shows that the names of the chief of evil and his mate also total 580. The gift is like the Yom Kippur goat, as the Zohar connects it, and he asks why Yaakov would give away animals that were Jewish souls.",
      "yi": "דער משגיח ברענגט דעם אור החיים וואס ציילט די מנחה און געפינט 580, די גימטריא פון שעיר, און ער ווייזט אן אז די נעמען פונעם ראש פון די כחות הרע מיט זיין ווייב קומען אויך אויס 580. די מנחה איז ווי דער שעיר פון יום כיפור, אזוי ווי דער זוהר פארבינדט עס, און ער פרעגט פארוואס יעקב זאל אוועקגעבן בהמות וואס זענען אידישע נשמות."
     },
     "kind": "main",
@@ -703,7 +776,7 @@
      "yi": "אליהו'ס אקס און יעקב'ס פרייוויליגע"
     },
     "summary": {
-     "en": "The Rav tells how the ox chosen for the Baal at Eliyahu's contest refused to move until Eliyahu told it that it too would sanctify Hashem's name. Yaakov's animals stood higher: they volunteered to go to Esav, exactly 580 of them.",
+     "en": "The Mashgiach tells how the ox chosen for the Baal at Eliyahu's contest refused to move until Eliyahu told it that it too would sanctify Hashem's name. Yaakov's animals stood higher: they volunteered to go to Esav, exactly 580 of them.",
      "yi": "דער משגיח דערציילט ווי דער אקס וואס מ'האט אויסגעוועלט פאר דעם בעל ביי אליהו הנביא האט זיך נישט געוואלט רירן, ביז אליהו האט אים געזאגט אז ער וועט אויך מאכן א קידוש השם. יעקב'ס בהמות זענען געשטאנען העכער: זיי האבן זיך אליין געמעלדעט צו גיין צו עשו, פונקט 580."
     },
     "kind": "main",
@@ -723,7 +796,7 @@
      "yi": "רבי הושעיא און דעם עם הארץ'ס חידוש"
     },
     "summary": {
-     "en": "The Rav tells the Midrash of an unlearned man who asked Rabbi Hoshaya to repeat his chiddush in his name: the verse in Tehillim says the kings 'will return' a gift to Mashiach because Esav must give back Yaakov's gift. Rabbi Hoshaya agreed, and the chiddush entered the Midrash.",
+     "en": "The Mashgiach tells the Midrash of an unlearned man who asked Rabbi Hoshaya to repeat his chiddush in his name: the verse in Tehillim says the kings 'will return' a gift to Mashiach because Esav must give back Yaakov's gift. Rabbi Hoshaya agreed, and the chiddush entered the Midrash.",
      "yi": "דער משגיח דערציילט דעם מדרש פון אן עם הארץ וואס האט געבעטן רבי הושעיא ער זאל זאגן זיין חידוש אין זיין נאמען: דער פסוק אין תהלים זאגט אז די מלכים וועלן \"צוריקגעבן\" א מנחה צו משיח, ווייל עשו מוז צוריקגעבן יעקב'ס מנחה. רבי הושעיא האט מסכים געווען, און דער חידוש איז אריין אין מדרש."
     },
     "kind": "story",
@@ -743,7 +816,7 @@
      "yi": "יעדן אידנס אות אין ספר תורה"
     },
     "summary": {
-     "en": "The Rav explains that every Jew has his own letter in the Sefer Torah, his channel of blessing, and brings the teaching that one who sees his letter at hagbah is lit up by it. He then notes that the animals sent to Esav are now managed by Esav.",
+     "en": "The Mashgiach explains that every Jew has his own letter in the Sefer Torah, his channel of blessing, and brings the teaching that one who sees his letter at hagbah is lit up by it. He then notes that the animals sent to Esav are now managed by Esav.",
      "yi": "דער משגיח ערקלערט אז יעדער איד האט זיין אייגענעם אות אין ספר תורה, זיין צינור פון שפע, און ער ברענגט אז ווער עס זעט זיין אות ביי הגבהה ווערט באלויכטן דערפון. דערנאך זאגט ער אז די בהמות וואס זענען אוועק צו עשו ווערן יעצט געפירט פון עשו."
     },
     "kind": "main",
@@ -761,7 +834,7 @@
      "yi": "ווער עס איז דער שופט פונעם צדיק, בינוני און רשע"
     },
     "summary": {
-     "en": "The Rav brings the Gemara that the angel of Esav is the Satan, the yetzer hara and the angel of death, and describes his three roles. With the Gemara on three judges in the heart, he explains that the yetzer hara is the judge of the wicked, and these are the animals that went to Esav.",
+     "en": "The Mashgiach brings the Gemara that the angel of Esav is the Satan, the yetzer hara and the angel of death, and describes his three roles. With the Gemara on three judges in the heart, he explains that the yetzer hara is the judge of the wicked, and these are the animals that went to Esav.",
      "yi": "דער משגיח ברענגט די גמרא אז עשו'ס מלאך איז דער שטן, דער יצר הרע און דער מלאך המות, און ער שילדערט זיינע דריי תפקידים. מיט דער גמרא וועגן דריי שופטים אינעם הארץ ערקלערט ער אז דער יצר הרע איז דער שופט פון די רשעים, און דאס זענען די בהמות וואס זענען אוועק צו עשו."
     },
     "kind": "main",
@@ -779,7 +852,7 @@
      "yi": "פארוואס עשו האט געמוזט באקומען עפעס"
     },
     "summary": {
-     "en": "The Rav explains that Yaakov pacified Esav, who complained about the brachos, because Hashem runs the world with a balanced scale and Esav's complaint would otherwise have prevailed. He digresses about the house of David coming through Rus in a hidden way, then returns: this is why some Jews are under Esav's dictates.",
+     "en": "The Mashgiach explains that Yaakov pacified Esav, who complained about the brachos, because Hashem runs the world with a balanced scale and Esav's complaint would otherwise have prevailed. He digresses about the house of David coming through Rus in a hidden way, then returns: this is why some Jews are under Esav's dictates.",
      "yi": "דער משגיח ערקלערט אז יעקב האט באשטילט עשו, וואס האט זיך באקלאגט אויף די ברכות, ווייל דער אייבערשטער פירט די וועלט מיט א גלייכע וואג, און אנדערש וואלט עשו'ס טענה געוואונען. ער גייט אוועק אויף א זייט וועגן מלכות בית דוד וואס איז געקומען דורך רות אויף א פארבארגענעם אופן, און קומט צוריק: דערפאר זענען דא אידן אונטער עשו'ס פירונג."
     },
     "kind": "main",
@@ -799,7 +872,7 @@
      "yi": "דעם עם הארץ'ס אות צווישן עשו'ס בהמות"
     },
     "summary": {
-     "en": "The Rav explains that without Torah, the only antidote to the yetzer hara, the unlearned man must often have fallen, so his letter is likely among the animals sent to Esav. Since every letter is alive and gives light, every Jew says a chiddush at least once, even without realizing its depth.",
+     "en": "The Mashgiach explains that without Torah, the only antidote to the yetzer hara, the unlearned man must often have fallen, so his letter is likely among the animals sent to Esav. Since every letter is alive and gives light, every Jew says a chiddush at least once, even without realizing its depth.",
      "yi": "דער משגיח ערקלערט אז אן תורה, וואס איז דער איינציגער תבלין קעגן יצר הרע, איז דער עם הארץ מסתמא אסאך געפאלן, און ממילא איז זיין אות מסתמא צווישן די בהמות וואס זענען אוועק צו עשו. ווייל יעדער אות לעבט און לייכט, זאגט יעדער איד אמווייניגסטנס איינמאל א חידוש, אפילו אן צו וויסן ווי טיף ער איז."
     },
     "kind": "main",
@@ -819,7 +892,7 @@
      "yi": "די צוריקגעגעבענע מנחה איז צוריקקערנדיגע נשמות"
     },
     "summary": {
-     "en": "The Rav asks what 580 animals could mean to Mashiach, king of the whole world, and answers that they are Jewish souls, each a world, so their return means that all who strayed will return. He then asks why the unlearned man wanted his chiddush repeated, rejecting that it was for honor.",
+     "en": "The Mashgiach asks what 580 animals could mean to Mashiach, king of the whole world, and answers that they are Jewish souls, each a world, so their return means that all who strayed will return. He then asks why the unlearned man wanted his chiddush repeated, rejecting that it was for honor.",
      "yi": "דער משגיח פרעגט וואס 580 בהמות קענען באדייטן פאר משיח וואס איז א מלך איבער דער גאנצער וועלט, און ענטפערט אז זיי זענען אידישע נשמות, יעדע איינע א גאנצע וועלט, און זייער צוריקקומען מיינט אז אלע וואס זענען אוועק וועלן זיך אומקערן. דערנאך פרעגט ער פארוואס דער עם הארץ האט געוואלט מ'זאל איבערזאגן זיין חידוש, און ער שטויסט אפ אז עס איז געווען פאר כבוד."
     },
     "kind": "main",
@@ -839,7 +912,7 @@
      "yi": "די נשמה'ס בקשה פאר גאולה"
     },
     "summary": {
-     "en": "The Rav explains that the Ba'al Shem Tov and his disciples heard the soul's plea behind a person's physical request. The unlearned man's wish was his soul's: since repeating Torah in the speaker's name brings redemption, he sought redemption from Esav's rule, and his declaration that he will return speeds his return.",
+     "en": "The Mashgiach explains that the Ba'al Shem Tov and his disciples heard the soul's plea behind a person's physical request. The unlearned man's wish was his soul's: since repeating Torah in the speaker's name brings redemption, he sought redemption from Esav's rule, and his declaration that he will return speeds his return.",
      "yi": "דער משגיח ערקלערט אז דער בעל שם טוב און זיינע תלמידים האבן געהערט די נשמה'ס געשריי הינטער א מענטשנס גשמיות'דיגע בקשה. דעם עם הארץ'ס פארלאנג איז געווען פון זיין נשמה: ווייל ווער עס זאגט א דבר תורה בשם אומרו ברענגט גאולה, האט ער געזוכט א גאולה פון עשו'ס הערשאפט, און דאס וואס ער זאגט ארויס אז ער וועט זיך אומקערן איילט זיין תשובה."
     },
     "kind": "main",
@@ -859,7 +932,7 @@
      "yi": "פארוואס מ'האט געטענהט אויף יעקב פאר באהאלטן דינה"
     },
     "summary": {
-     "en": "The Rav brings Rashi that Yaakov hid Dina in a box from Esav and was punished, since she might have brought Esav back to his roots; Dina was then taken by Shechem. He asks why Yaakov is faulted, when no tzaddik ever sought a rasha for his daughter.",
+     "en": "The Mashgiach brings Rashi that Yaakov hid Dina in a box from Esav and was punished, since she might have brought Esav back to his roots; Dina was then taken by Shechem. He asks why Yaakov is faulted, when no tzaddik ever sought a rasha for his daughter.",
      "yi": "דער משגיח ברענגט רש\"י אז יעקב האט באהאלטן דינה אין א קאסטן פון עשו און איז באשטראפט געווארן, ווייל זי האט אפשר געקענט אומקערן עשו צו זיינע שרשים; דערנאך האט שכם צוגענומען דינה. ער פרעגט פארוואס מ'טענהט אויף יעקב, ווען קיין צדיק האט קיינמאל נישט געזוכט א רשע פאר זיין טאכטער."
     },
     "kind": "main",
@@ -879,7 +952,7 @@
      "yi": "לאה'ס טרערן און דער חוב צו עשו"
     },
     "summary": {
-     "en": "The Rav explains that Leah was destined for Esav and escaped through her weeping and tefillah, so Yaakov took what was Esav's and owed it back. Dina, the extension of Leah, should have been the 581st gift; withheld, she went to Esav anyway through Shechem.",
+     "en": "The Mashgiach explains that Leah was destined for Esav and escaped through her weeping and tefillah, so Yaakov took what was Esav's and owed it back. Dina, the extension of Leah, should have been the 581st gift; withheld, she went to Esav anyway through Shechem.",
      "yi": "דער משגיח ערקלערט אז לאה איז געווען באשטימט פאר עשו און איז ארויס דורך איר וויינען און תפילה, ממילא האט יעקב גענומען וואס האט געהערט צו עשו און איז געווען שולדיג עס צוריקצוגעבן. דינה, דער המשך פון לאה, האט געדארפט זיין די 581סטע מתנה; ווייל ער האט זי צוריקגעהאלטן, איז זי סיי ווי אוועק צו עשו דורך שכם."
     },
     "kind": "main",
@@ -899,7 +972,7 @@
      "yi": "אסנת, שכם און דער מנחה'ס צוריקקומען"
     },
     "summary": {
-     "en": "The Rav brings the Midrash that Dina's daughter Osnas was saved by Yaakov, brought to Mitzrayim and married Yosef, who was given Shechem and buried there. With the Ohr HaChaim he shows that Rabbi Chanina ben Teradyon descended from this episode, and closes that the whole gift, every Jewish soul, will return, as the present drizzle of teshuvah shows.",
+     "en": "The Mashgiach brings the Midrash that Dina's daughter Osnas was saved by Yaakov, brought to Mitzrayim and married Yosef, who was given Shechem and buried there. With the Ohr HaChaim he shows that Rabbi Chanina ben Teradyon descended from this episode, and closes that the whole gift, every Jewish soul, will return, as the present drizzle of teshuvah shows.",
      "yi": "דער משגיח ברענגט דעם מדרש אז יעקב האט געראטעוועט דינה'ס טאכטער אסנת, זי איז געבראכט געווארן קיין מצרים און האט חתונה געהאט מיט יוסף, וואס האט באקומען שכם און ליגט דארט באגראבן. מיטן אור החיים ווייזט ער אן אז רבי חנינא בן תרדיון שטאמט פון דער מעשה, און ער שליסט אז די גאנצע מנחה, יעדע אידישע נשמה, וועט זיך אומקערן, אזוי ווי מ'זעט שוין היינט א רעגנדל פון תשובה."
     },
     "kind": "main",
@@ -1214,7 +1287,7 @@
    {
     "id": "en-parsha-en-vyshlch-01~tk0",
     "text": {
-     "en": "The Rav says that one who claims to overcome his evil inclination without Torah is, according to the Gemara, not telling the truth; Torah is the only antidote.",
+     "en": "The Mashgiach says that one who claims to overcome his evil inclination without Torah is, according to the Gemara, not telling the truth; Torah is the only antidote.",
      "yi": "דער משגיח זאגט אז ווער עס טענהט אז ער קען איבערקומען זיין יצר הרע אן תורה, זאגט לויט דער גמרא נישט דעם אמת; תורה איז דער איינציגער תבלין."
     },
     "t": 2545.34,
@@ -1223,7 +1296,7 @@
    {
     "id": "en-parsha-en-vyshlch-01~tk1",
     "text": {
-     "en": "The Rav says that those who know and are not lazy crowd around the Sefer Torah at hagbah to try to see their own letter.",
+     "en": "The Mashgiach says that those who know and are not lazy crowd around the Sefer Torah at hagbah to try to see their own letter.",
      "yi": "דער משגיח זאגט אז די וואס ווייסן און זענען נישט פויל, שטופן זיך צו צום ספר תורה ביי הגבהה כדי צו פרובירן זען זייער אייגענעם אות."
     },
     "t": 1774.72,
@@ -1232,7 +1305,7 @@
    {
     "id": "en-parsha-en-vyshlch-01~tk2",
     "text": {
-     "en": "The Rav says every man to whom it applies must know that his spiritual life depends on the wife he marries.",
+     "en": "The Mashgiach says every man to whom it applies must know that his spiritual life depends on the wife he marries.",
      "yi": "דער משגיח זאגט אז יעדער וואס עס איז נוגע צו אים מוז וויסן אז זיין רוחניות'דיגע לעבן הענגט אפ אין וואספארא ווייב ער וועט באקומען."
     },
     "t": 3474.03,
@@ -1330,12 +1403,6 @@
      "en": "Rabbi Shimon bar Yochai hid in a cave for thirteen years from the Roman king. When he came out he saw a hunter catching birds and heard a heavenly voice announce for each bird whether it would be caught. He concluded that if a bird is not caught without a decree from Hashem, he would certainly not be caught by the king of Rome without one, and he went out.",
      "yi": "רבי שמעון בר יוחאי האט זיך באהאלטן דרייצן יאר אין א הייל פונעם קייסער פון רוים. ווען ער איז ארויס האט ער געזען א יעגער וואס כאפט פייגל, און ער האט געהערט א בת קול וואס האט אויסגערופן ביי יעדן פויגל צי ער וועט געכאפט ווערן. ער האט געזאגט אז אויב א פויגל ווערט נישט געכאפט אן א גזירה פונעם אייבערשטן, וועט ער זיכער נישט געכאפט ווערן פונעם קייסער פון רוים אן דעם, און ער איז ארויס."
     },
-    "people": [
-     "Rabbi Shimon bar Yochai"
-    ],
-    "peopleKeys": [
-     "rabbi-shimon-bar-yochai"
-    ],
     "t": 402.23,
     "end": 466.19
    },
@@ -1346,15 +1413,9 @@
      "yi": "דער אייזל פון רבי פנחס בן יאיר"
     },
     "retelling": {
-     "en": "At an inn, the donkey of Rabbi Pinchas ben Yair refused to eat the oats it was served. When the innkeeper complained, Rabbi Pinchas asked whether the tithe had been taken; once it was, the donkey ate. The Rav notes that a donkey may eat untithed food, especially where the obligation was only a doubt, but this donkey held sparks of its master's soul and would not transgress.",
+     "en": "At an inn, the donkey of Rabbi Pinchas ben Yair refused to eat the oats it was served. When the innkeeper complained, Rabbi Pinchas asked whether the tithe had been taken; once it was, the donkey ate. The Mashgiach notes that a donkey may eat untithed food, especially where the obligation was only a doubt, but this donkey held sparks of its master's soul and would not transgress.",
      "yi": "אין א קרעטשמע האט דער אייזל פון רבי פנחס בן יאיר נישט געוואלט עסן דעם האבער וואס מ'האט אים געגעבן. ווען דער קרעטשמער האט זיך באקלאגט, האט רבי פנחס געפרעגט צי מ'האט אפגעשיידט מעשר; ווען מ'האט עס געטון, האט דער אייזל געגעסן. דער משגיח מערקט אן אז א אייזל מעג עסן אן מעשר, בפרט ווען עס איז נאר געווען א ספק, נאר דער אייזל האט געהאט ניצוצות פון זיין בעל הבית'ס נשמה און האט נישט געוואלט עובר זיין."
     },
-    "people": [
-     "Rabbi Pinchas ben Yair"
-    ],
-    "peopleKeys": [
-     "rabbi-pinchas-ben-yair"
-    ],
     "t": 568.77,
     "end": 639.54
    },
@@ -1368,12 +1429,6 @@
      "en": "At Eliyahu's contest with the worshippers of the Baal, two oxen were prepared, one for Hashem and one for the Baal. The ox chosen for the Baal refused to move, arguing that it and its companion had eaten from the same trough. Eliyahu told it that by being offered to the Baal, with no fire descending, it too would sanctify Hashem's name by proving the negative, and the ox agreed to go.",
      "yi": "ביי אליהו הנביא'ס נסיון מיט די עובדי הבעל האט מען צוגעגרייט צוויי אקסן, איינעם פארן אייבערשטן און איינעם פארן בעל. דער אקס וואס מ'האט אויסגעוועלט פארן בעל האט זיך נישט געוואלט רירן, ווייל ער און זיין חבר האבן געגעסן פון איין קאריטע. אליהו האט אים געזאגט אז אויב ער וועט מקריב ווערן צום בעל און קיין פייער וועט נישט אראפקומען, וועט ער אויך מאכן א קידוש השם, און דער אקס האט מסכים געווען צו גיין."
     },
-    "people": [
-     "Eliyahu HaNavi"
-    ],
-    "peopleKeys": [
-     "eliyahu-hanavi"
-    ],
     "t": 1251.4,
     "end": 1378.71
    },
@@ -1387,12 +1442,6 @@
      "en": "An unlearned man asked Rabbi Hoshaya whether he would repeat a chiddush of his in his name, and Rabbi Hoshaya said he would if it was fitting for the congregation. The man explained that the verse in Tehillim says the kings will 'return' a gift to Mashiach because Esav still holds Yaakov's gift and will have to give it back. Rabbi Hoshaya praised it and repeated it in his name, and it entered the Midrash.",
      "yi": "אן עם הארץ האט געפרעגט רבי הושעיא צי ער וועט זאגן זיין חידוש אין זיין נאמען, און רבי הושעיא האט געזאגט אז יא, אויב עס פאסט פארן עולם. דער עם הארץ האט מסביר געווען אז דער פסוק אין תהלים זאגט אז די מלכים וועלן \"צוריקגעבן\" א מנחה צו משיח, ווייל עשו האלט נאך יעקב'ס מנחה און וועט זי מוזן צוריקגעבן. רבי הושעיא האט עס געלויבט און געזאגט אין זיין נאמען, און עס איז אריין אין מדרש."
     },
-    "people": [
-     "Rabbi Hoshaya"
-    ],
-    "peopleKeys": [
-     "rabbi-hoshaya"
-    ],
     "t": 1469.45,
     "end": 1603.6
    },
@@ -1406,204 +1455,8 @@
      "en": "Dina bore a daughter to Shechem, and the brothers wanted to kill her. According to the Midrash, Yaakov carried her to the desert and placed her on a thorn bush, which is where her name came from, and the angel Gavriel carried her to Mitzrayim. She became Osnas, who married Yosef; Yosef was given Shechem and is buried there with his two sons at his sides.",
      "yi": "דינה האט געבוירן א טאכטער פון שכם, און די שבטים האבן זי געוואלט הרג'ענען. לויטן מדרש האט יעקב זי אוועקגעטראגן אין מדבר און אוועקגעלייגט אויף א סנה, א דארן-קוסט, און פון דארט האט זי באקומען איר נאמען; דער מלאך גבריאל האט זי אוועקגעטראגן קיין מצרים. זי איז געווען אסנת וואס האט חתונה געהאט מיט יוסף; יוסף האט באקומען שכם און ליגט דארט באגראבן מיט זיינע צוויי זין ביי זיינע זייטן."
     },
-    "people": [
-     "Dina",
-     "Shechem",
-     "Osnas",
-     "Yaakov Avinu",
-     "the angel Gavriel",
-     "Yosef",
-     "Efraim",
-     "Menashe"
-    ],
-    "peopleKeys": [
-     "dinah",
-     "shechem-ben-chamor",
-     "osnas",
-     "yaakov-avinu",
-     "gavriel",
-     "yosef-hatzaddik",
-     "efraim",
-     "menashe"
-    ],
     "t": 3983.51,
     "end": 4061.8
-   }
-  ],
-  "people": [
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Esav",
-    "key": "esav"
-   },
-   {
-    "name": "Lavan",
-    "key": "lavan"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Rabbi Shimon bar Yochai",
-    "key": "rabbi-shimon-bar-yochai"
-   },
-   {
-    "name": "Rabbi Pinchas ben Yair",
-    "key": "rabbi-pinchas-ben-yair"
-   },
-   {
-    "name": "the Ohr HaChaim",
-    "key": "ohr-hachaim"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Rabbi Hoshaya",
-    "key": "rabbi-hoshaya"
-   },
-   {
-    "name": "the Arizal",
-    "key": "arizal"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "Dina",
-    "key": "dinah"
-   },
-   {
-    "name": "Leah",
-    "key": "leah-imeinu"
-   },
-   {
-    "name": "Rachel",
-    "key": "rachel-imeinu"
-   },
-   {
-    "name": "Shechem ben Chamor",
-    "key": "shechem-ben-chamor"
-   },
-   {
-    "name": "Osnas",
-    "key": "osnas"
-   },
-   {
-    "name": "Yosef",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "Rabbi Chanina ben Teradyon",
-    "key": "rabbi-chanina-ben-teradyon"
-   },
-   {
-    "name": "Rus",
-    "key": "rus"
-   },
-   {
-    "name": "Boaz",
-    "key": "boaz"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "השגחה פרטית",
-    "key": "hshgchh-prtys-2f201f"
-   },
-   {
-    "he": "ניצוצות",
-    "key": "nytzvtzvs-07037a"
-   },
-   {
-    "he": "פכים קטנים",
-    "key": "pkym-ktnym-98a7c5"
-   },
-   {
-    "he": "מנחה",
-    "key": "mnchh-5a7391"
-   },
-   {
-    "he": "גימטריא",
-    "key": "gymtrya-50ea10"
-   },
-   {
-    "he": "שעיר",
-    "key": "sheyr-e8e93e"
-   },
-   {
-    "he": "שעיר לעזאזל",
-    "key": "sheyr-lezazl-8c8e19"
-   },
-   {
-    "he": "לילית",
-    "key": "lylys-5637e7"
-   },
-   {
-    "he": "קליפות",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "קידוש השם",
-    "key": "kydvsh-hshm-dd21a4"
-   },
-   {
-    "he": "עם הארץ",
-    "key": "em-hartz-150855"
-   },
-   {
-    "he": "חידוש",
-    "key": "chydvsh-6eaec1"
-   },
-   {
-    "he": "אות בספר תורה",
-    "key": "avs-bspr-svrh-d15e85"
-   },
-   {
-    "he": "הגבהה",
-    "key": "hgbhh-a05617"
-   },
-   {
-    "he": "יצר הרע",
-    "key": "ytzr-hre-b32929"
-   },
-   {
-    "he": "יצר טוב",
-    "key": "ytzr-tvb-17ba65"
-   },
-   {
-    "he": "בינונים",
-    "key": "bynvnym-c2bed7"
-   },
-   {
-    "he": "שופט",
-    "key": "shvpt-1758ac"
-   },
-   {
-    "he": "גאולה",
-    "key": "gavlh-3d2e5c"
-   },
-   {
-    "he": "השבה",
-    "key": "hshbh-603398"
-   },
-   {
-    "he": "זיווג",
-    "key": "zyvvg-ae5f16"
-   },
-   {
-    "he": "ישראל מומר",
-    "key": "yshral-mvmr-9573e3"
-   },
-   {
-    "he": "עשרה הרוגי מלכות",
-    "key": "eshrh-hrvgy-mlkvs-1016ab"
    }
   ],
   "writeupLangs": [

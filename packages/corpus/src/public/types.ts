@@ -73,7 +73,7 @@ export interface PublicChapter {
   sub: { title: L; summary: L; t: number }[];
 }
 
-export type SkipKind = SectionKind | "asr-noise";
+export type SkipKind = SectionKind | "pause";
 /** [startSec, endSec, kind] in global seconds. */
 export type SkipRange = [number, number, SkipKind];
 
@@ -103,12 +103,14 @@ export interface PublicQuestion {
   soft?: true;
 }
 
+/**
+ * A story moment. No person names: the extraction's raw names may be ASR mishearings, so names come
+ * only from the corpus layer (the merged story's people, linked entities' display names).
+ */
 export interface PublicStory {
   id: string;
   title: L;
   retelling: L;
-  people: string[];
-  peopleKeys: string[];
   t: number | null;
   end: number | null;
   soft?: true;
@@ -139,8 +141,10 @@ export interface PublicNotes {
   takeaways: Moment[];
   questions: PublicQuestion[];
   stories: PublicStory[];
-  people: { name: string; key: string }[];
-  concepts: { he: string; key: string }[];
+  /*
+   * No people or concept names: raw extraction names may be ASR mishearings. People, terms and
+   * their names come from the corpus layer refs (`layer/shiur/<id>.json`) and entity files.
+   */
   writeup: Record<Ed, PublicWriteupBlock[]>;
 }
 
@@ -201,7 +205,6 @@ export interface IndexRow {
   duration: number;
   recordingIds: string[];
   oneLiner: L | null;
-  entities: { works: string[]; people: string[]; concepts: string[] };
   counts: { chapters: number; sources: number; stories: number; questions: number; insights: number };
 }
 

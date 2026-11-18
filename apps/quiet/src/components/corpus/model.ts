@@ -154,7 +154,7 @@ export interface IndexLine {
   readonly label: string;
   readonly href: string;
   readonly note: string;
-  /** Count from the layer (corpus indexes only; null without a layer). */
+  /** Count from the layer (corpus indexes only; null for the calendar and years). */
   readonly count: string | null;
   /** Extra links on the line (calendar: by parsha, by zman). */
   readonly sub: readonly { readonly label: string; readonly href: string }[];
@@ -180,11 +180,10 @@ export function indexLineHref(ed: Ed, id: IndexLineId): string {
 }
 
 /**
- * The lines of the indexes block. `counts` is null without a layer (no counts shown). `built`
- * says whether an index page exists in this build; a line whose page is not built is left out, so
+ * The lines of the indexes block, with counts from the layer. `built` says whether an index page exists in this build; a line whose page is not built is left out, so
  * the title page never links to a page that is not there.
  */
-export function indexesBlock(ed: Ed, counts: LayerIndexCounts | null, built: (href: string) => boolean = () => true): IndexLine[] {
+export function indexesBlock(ed: Ed, counts: LayerIndexCounts, built: (href: string) => boolean = () => true): IndexLine[] {
   const t = useCorpusT(ed);
   const out: IndexLine[] = [];
   for (const id of INDEX_LINE_ORDER) {
@@ -215,7 +214,7 @@ export function indexesBlock(ed: Ed, counts: LayerIndexCounts | null, built: (hr
       label: corpusLabel(line.label, ed),
       href,
       note: t(line.note),
-      count: counts ? t(line.count, { count: counts[line.of] }) : null,
+      count: t(line.count, { count: counts[line.of] }),
       sub: [],
       generated: true,
     });

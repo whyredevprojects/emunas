@@ -25,7 +25,7 @@ describe("createT", () => {
   });
 
   it("interpolates params and leaves unknown placeholders visible", () => {
-    expect(tEn("shiur.by", { name: "the Rav" })).toBe("Shiur by the Rav");
+    expect(tEn("shiur.by", { name: "the Mashgiach" })).toBe("Shiur by the Mashgiach");
     expect(tYi("shiur.by", { name: "דער משגיח" })).toBe("שיעור פון דער משגיח");
     expect(tEn("shiur.by")).toBe("Shiur by {name}");
     expect(tEn("shiur.by", {})).toBe("Shiur by {name}");

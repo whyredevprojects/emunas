@@ -38,7 +38,7 @@ export const seoStrings: Readonly<Record<UiLang, SeoStrings>> = {
     concept: (term, count) => `${term} in ${count} of ${RAV_EN}.`,
     topic: (title, count) => `${title}: ${count} of ${RAV_EN}, grouped by topic by AI.`,
     story: (title, tellings) => `${title}: a story told ${tellings === 1 ? "once" : `${tellings} times`} in the shiurim of ${RAV_EN}.`,
-    thread: (count) => `A teaching the Rav returns to, in ${count} of ${RAV_EN}. Grouped by AI.`,
+    thread: (count) => `A teaching the Mashgiach returns to, in ${count} of ${RAV_EN}. Grouped by AI.`,
     locale: "en_US",
   },
   yi: {

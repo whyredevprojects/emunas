@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "yi-shonos-10",
- "rev": "23fedd4dcb26",
+ "rev": "fb8b0c9c065c",
  "lang": "yi",
  "category": "shonos",
  "catalog": {
@@ -327,26 +327,52 @@
    {
     "momentId": "yi-shonos-10~st0",
     "storyId": "the-baal-hatanya-and-the-minister-where-are-you",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "id": "baal-hatanya",
+      "label": {
+       "en": "the Baal HaTanya (Rabbi Shneur Zalman of Liadi)",
+       "yi": "דער בעל התניא",
+       "he": "רבי שניאור זלמן מלאדי"
+      },
+      "page": true
+     },
+     {
+      "id": "adam-harishon",
+      "label": {
+       "en": "Adam HaRishon",
+       "yi": "אדם הראשון"
+      },
+      "page": true
+     }
+    ]
    },
    {
     "momentId": "yi-shonos-10~st1",
     "storyId": "the-ravs-first-telephone",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "yi-shonos-10~st2",
     "storyId": "the-man-who-wanted-his-cell-phone-in-the-beis-medrash",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": []
    },
    {
     "momentId": "yi-shonos-10~st3",
     "storyId": "the-skverer-rebbe-and-the-young-mans-mikveh",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Reb Dovid'l of Skver"
+     }
+    ]
    }
   ],
   "insights": []
@@ -354,11 +380,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav explains that Pharaoh's decree 'let the work be made heavier' lives on today as a klipah of constant busyness, from phones and cell phones to social obligations and lavish simchas, that robs a Jew of any moment of calm reflection.",
+    "en": "The Mashgiach explains that Pharaoh's decree 'let the work be made heavier' lives on today as a klipah of constant busyness, from phones and cell phones to social obligations and lavish simchas, that robs a Jew of any moment of calm reflection.",
     "yi": "דער משגיח ערקלערט אז פרעה'ס גזירה \"תכבד העבודה\" לעבט היינט ווייטער אלס א קליפה פון אייביגע פארנומענקייט, פון טעלעפאן און סעלפאן ביז די געזעלשאפטליכע חובות און די הוצאות אויף שמחות, וואס נעמט צו פון א איד יעדע מינוט ישוב הדעת."
    },
    "abstract": {
-    "en": "The Rav opens by saying he will repeat familiar things, as the Mesilas Yesharim says, because they need constant reminding. Following Reb Elchonon Wasserman, he presents the exile in Egypt as a model of today's exile: its last stretch was the hardest. When the Jews gathered on Shabbos to read scrolls promising redemption, Pharaoh decreed 'tichbad ha'avodah' so they would have no time to draw hope. Egypt was a 'house of slaves', a culture of work without thought. In Europe Jews were forced to toil, and a weary sigh at Minchah was precious; in America people choose the burden. Inventions save time, but the klipah fills it with new burdens: the telephone, then the cell phone, ringing in the beis medrash, and social pressures like kiddushes, nightly sheva brachos and costly weddings. He calls on each person to leave this Egypt and promises calm and joy from Heaven.",
+    "en": "The Mashgiach opens by saying he will repeat familiar things, as the Mesilas Yesharim says, because they need constant reminding. Following Reb Elchonon Wasserman, he presents the exile in Egypt as a model of today's exile: its last stretch was the hardest. When the Jews gathered on Shabbos to read scrolls promising redemption, Pharaoh decreed 'tichbad ha'avodah' so they would have no time to draw hope. Egypt was a 'house of slaves', a culture of work without thought. In Europe Jews were forced to toil, and a weary sigh at Minchah was precious; in America people choose the burden. Inventions save time, but the klipah fills it with new burdens: the telephone, then the cell phone, ringing in the beis medrash, and social pressures like kiddushes, nightly sheva brachos and costly weddings. He calls on each person to leave this Egypt and promises calm and joy from Heaven.",
     "yi": "דער משגיח הייבט אן אז ער וועט איבערחזר'ן באקאנטע זאכן, אזוי ווי דער מסילת ישרים זאגט, ווייל מ'דארף זיי כסדר דערמאנען. לויט ר' אלחנן וואסערמאן איז גלות מצרים א משל אויף דעם היינטיגן גלות: די לעצטע תקופה איז געווען די שווערסטע. ווען אידן האבן זיך שבת צוזאמענגעקומען לערנען מגילות וואס האבן צוגעזאגט די גאולה, האט פרעה גוזר געווען \"תכבד העבודה\", זיי זאלן נישט האבן קיין צייט זיך מחיה צו זיין מיט האפענונג. מצרים איז געווען א \"בית עבדים\", א קולטור פון ארבעט אן טראכטן. אין אייראפע האבן אידן געמוזט שווער ארבעטן, און א קרעכץ ביי מנחה איז געווען טייער; אין אמעריקע נעמט מען אויף זיך דעם עול מיט בחירה. די ערפינדונגען שפארן צייט, אבער די קליפה פילט עס אן מיט נייע לאסטן: דער טעלעפאן, דערנאך דער סעלפאן וואס קלינגט אין בית המדרש, און דער געזעלשאפטליכער דרוק פון קידושים, שבע ברכות יעדן טאג און טייערע חתונות. ער רופט יעדן ארויסצוגיין פון דעם מצרים, און זאגט צו אז מ'וועט באקומען פון הימל מנוחת הנפש און שמחה."
    },
    "keyPoints": [
@@ -439,7 +465,7 @@
      "yi": "די שווערסטע סוף פון גלות מצרים"
     },
     "summary": {
-     "en": "The Rav says he will repeat well-known things that need constant reminding, as the Mesilas Yesharim says. Following Reb Elchonon Wasserman he presents the exile in Egypt as a model of today's exile, whose final stage, just as Moshe announced the redemption, was the hardest, culminating in Pharaoh's 'tichbad ha'avodah'.",
+     "en": "The Mashgiach says he will repeat well-known things that need constant reminding, as the Mesilas Yesharim says. Following Reb Elchonon Wasserman he presents the exile in Egypt as a model of today's exile, whose final stage, just as Moshe announced the redemption, was the hardest, culminating in Pharaoh's 'tichbad ha'avodah'.",
      "yi": "דער משגיח זאגט אז ער וועט איבערחזר'ן באקאנטע זאכן וואס מ'דארף כסדר דערמאנען, אזוי ווי דער מסילת ישרים זאגט. לויט ר' אלחנן וואסערמאן שטעלט ער גלות מצרים אלס משל אויף דעם היינטיגן גלות, וואו די לעצטע תקופה, פונקט ווען משה רבינו האט אנגעזאגט די גאולה, איז געווען די שווערסטע, ביז פרעה'ס \"תכבד העבודה\"."
     },
     "kind": "intro",
@@ -459,7 +485,7 @@
      "yi": "פרעה'ס כוונה: נישט האבן קיין צייט צו טראכטן"
     },
     "summary": {
-     "en": "The Rav brings the Midrash that the Jews gathered on Shabbos to read scrolls handed down from Yaakov and Yosef promising redemption, and Pharaoh took even that day away. With the Mesilas Yesharim he explains that the tactic is to leave no moment of calm, and says today too there is a klipah of 'tichbad ha'avodah' that leaves no time for yishuv hadaas.",
+     "en": "The Mashgiach brings the Midrash that the Jews gathered on Shabbos to read scrolls handed down from Yaakov and Yosef promising redemption, and Pharaoh took even that day away. With the Mesilas Yesharim he explains that the tactic is to leave no moment of calm, and says today too there is a klipah of 'tichbad ha'avodah' that leaves no time for yishuv hadaas.",
      "yi": "דער משגיח ברענגט דעם מדרש אז אידן זענען זיך שבת צוזאמענגעקומען לערנען מגילות פון יעקב אבינו און יוסף הצדיק וואס האבן צוגעזאגט די גאולה, און פרעה האט צוגענומען אפילו דעם טאג. מיטן מסילת ישרים ערקלערט ער אז דער פלאן איז נישט צו לאזן קיין מינוט מנוחה, און ער זאגט אז היינט איז אויך דא א קליפה פון \"תכבד העבודה\" וואס לאזט נישט קיין צייט פאר ישוב הדעת."
     },
     "kind": "main",
@@ -479,7 +505,7 @@
      "yi": "א בית עבדים און דער טייערער קרעכץ"
     },
     "summary": {
-     "en": "The Rav explains 'mibeis avadim' as Egypt's culture of work without thought, and calls America in particular such a house. He brings the Ba'al Shem Tov's teaching, via the Magen Avraham, that Pharaoh feared even the sigh of a simple, worn-out Jew who runs to daven Minchah, and the story of the Ba'al HaTanya asking his jailer 'ayeka', where are you in the world.",
+     "en": "The Mashgiach explains 'mibeis avadim' as Egypt's culture of work without thought, and calls America in particular such a house. He brings the Ba'al Shem Tov's teaching, via the Magen Avraham, that Pharaoh feared even the sigh of a simple, worn-out Jew who runs to daven Minchah, and the story of the Ba'al HaTanya asking his jailer 'ayeka', where are you in the world.",
      "yi": "דער משגיח טייטשט \"מבית עבדים\" אז מצרים איז געווען א קולטור פון ארבעט אן טראכטן, און ער רופט אמעריקע בפרט אזא הויז. ער ברענגט דעם בעל שם טוב'ס תורה, דורכן מגן אברהם, אז פרעה האט מורא געהאט אפילו פון דעם קרעכץ פון א פשוט'ן פארמאטערטן איד וואס לויפט דאווענען מנחה, און די מעשה פונעם בעל התניא וואס האט געפרעגט דעם תפיסה-מענטש \"איכה\", וואו ביסטו אויף דער וועלט."
     },
     "kind": "main",
@@ -499,7 +525,7 @@
      "yi": "געצוואונגענע ארבעט דעמאלט, אויסגעקליבענער עול היינט"
     },
     "summary": {
-     "en": "The Rav describes the poverty of Jews in Europe, who worked sixteen hours a day for black bread, and whose sigh was precious; in America one who draws the klipah onto himself by choice is at fault and loses Heaven's help. He adds that the sitra achra invents new forms of 'tichbad ha'avodah', so that the time saved by inventions is filled with new burdens.",
+     "en": "The Mashgiach describes the poverty of Jews in Europe, who worked sixteen hours a day for black bread, and whose sigh was precious; in America one who draws the klipah onto himself by choice is at fault and loses Heaven's help. He adds that the sitra achra invents new forms of 'tichbad ha'avodah', so that the time saved by inventions is filled with new burdens.",
      "yi": "דער משגיח באשרייבט די ארעמקייט פון אידן אין אייראפע, וואס האבן געארבעט זעכצן שעה א טאג פאר שווארץ ברויט, און זייער קרעכץ איז געווען חשוב; אין אמעריקע איז דער וואס ציט אויף זיך די קליפה מיט בחירה א פושע, און ער פארלירט די סייעתא דשמיא. ער לייגט צו אז די סטרא אחרא איז מחדש נייע אופנים פון \"תכבד העבודה\", אז די צייט וואס די ערפינדונגען שפארן ווערט אנגעפילט מיט נייע לאסטן."
     },
     "kind": "main",
@@ -519,7 +545,7 @@
      "yi": "פונעם טעלעפאן אין דראגסטאר ביזן סעלפאן"
     },
     "summary": {
-     "en": "The Rav recalls when a phone call meant a nickel in a drugstore booth, and how he himself had no phone until a break-in at night. Once everyone has a phone, he says, people are busy with it all day, and now cell phones make them walk around like zombies; he grants a businessman's need and judges a kollel yungerman favorably, but an always-on cell phone without need draws the klipah and takes away the last moment of peace.",
+     "en": "The Mashgiach recalls when a phone call meant a nickel in a drugstore booth, and how he himself had no phone until a break-in at night. Once everyone has a phone, he says, people are busy with it all day, and now cell phones make them walk around like zombies; he grants a businessman's need and judges a kollel yungerman favorably, but an always-on cell phone without need draws the klipah and takes away the last moment of peace.",
      "yi": "דער משגיח דערמאנט זיך ווען א טעלעפאן קאל האט געמיינט א ניקל אין א בודקע אין דראגסטאר, און ווי ער אליין האט נישט געהאט קיין טעלעפאן ביז מ'האט אריינגעכאפט ביי נאכט. ווען יעדער האט א טעלעפאן, זאגט ער, איז מען פארנומען דערמיט א גאנצן טאג, און דער סעלפאן מאכט פון מענטשן \"זאמביס\"; ער פארשטייט א בעל עסק און איז דן לכף זכות א כולל יונגערמאן, אבער אן אנגעצונדענער סעלפאן אן א צורך ציט אויף זיך די קליפה און נעמט צו די לעצטע מינוט מנוחה."
     },
     "kind": "main",
@@ -539,7 +565,7 @@
      "yi": "סעלפאנס אין בית המדרש"
     },
     "summary": {
-     "en": "The Rav tells of a man who objected to the sign banning cell phones in the beis medrash because of business emergencies, and explains that a ringing phone brings lightness into learning and davening. He brings a writing of the Lubavitcher Rebbe that a seder of learning should be like Shabbos, and reads 'melech l'sadeh ne'evad' as the king who is really a slave to his field.",
+     "en": "The Mashgiach tells of a man who objected to the sign banning cell phones in the beis medrash because of business emergencies, and explains that a ringing phone brings lightness into learning and davening. He brings a writing of the Lubavitcher Rebbe that a seder of learning should be like Shabbos, and reads 'melech l'sadeh ne'evad' as the king who is really a slave to his field.",
      "yi": "דער משגיח דערציילט פון א איד וואס האט זיך באקלאגט אויפן שילד וואס פארבאט סעלפאנס אין בית המדרש, ווייל אין ביזנעס קען זיך מאכן אן עמערדזשענסי, און ער ערקלערט אז א טעלעפאן וואס קלינגט ברענגט פראסטקייט אין לערנען און דאווענען. ער ברענגט פון די כתבים פונעם ליובאוויטשער רבי'ן אז א סדר לערנען דארף זיין ווי שבת, און טייטשט \"מלך לשדה נעבד\" אז דער מלך איז אין אמת א קנעכט צו זיין פעלד."
     },
     "kind": "main",
@@ -559,7 +585,7 @@
      "yi": "געזעלשאפטליכער דרוק: קידושים, שבע ברכות, חתונות"
     },
     "summary": {
-     "en": "The Rav lists the social culture of having to attend every aufruf, bar mitzvah, vort and several kiddushes after davening, and the new custom of sheva brachos every night, bringing a story of the Skverer Rebbe to ask whether everything Rebbes do must be imitated. He recalls the simple delicatessen at his own wedding, says lavish weddings leave people in debt for life, and calls these pressures part of the klipah of 'tichbad ha'avodah'.",
+     "en": "The Mashgiach lists the social culture of having to attend every aufruf, bar mitzvah, vort and several kiddushes after davening, and the new custom of sheva brachos every night, bringing a story of the Skverer Rebbe to ask whether everything Rebbes do must be imitated. He recalls the simple delicatessen at his own wedding, says lavish weddings leave people in debt for life, and calls these pressures part of the klipah of 'tichbad ha'avodah'.",
      "yi": "דער משגיח רעכנט אויס די געזעלשאפטליכע קולטור אז מ'מוז גיין צו יעדן אויפרוף, בר מצוה, ווארט און עטליכע קידושים נאכן דאווענען, און דעם נייעם מנהג פון שבע ברכות יעדן טאג, און ער ברענגט א מעשה מיטן סקווירער רבי'ן צו פרעגן צי מ'מוז נאכטון די רביים אין אלעס. ער דערמאנט זיך די פשוט'ע דעליקאטעסן ביי זיין אייגענער חתונה, זאגט אז לוקסוס חתונות לאזן מענטשן בעלי חובות אויפן גאנצן לעבן, און רופט דעם דרוק א חלק פון דער קליפה פון \"תכבד העבודה\"."
     },
     "kind": "main",
@@ -579,7 +605,7 @@
      "yi": "ארויסגיין פון דעם מצרים"
     },
     "summary": {
-     "en": "The Rav calls on everyone to leave this Egypt, gaining time to learn, daven and bring joy into the home, and notes that the pressure causes tension and even depression. He asks that each decision to buy something be weighed against this klipah, says one who frees himself is given calm and joy from Heaven, and closes with the season after Chamisha Asar b'Shevat and the parshiyos of the Exodus.",
+     "en": "The Mashgiach calls on everyone to leave this Egypt, gaining time to learn, daven and bring joy into the home, and notes that the pressure causes tension and even depression. He asks that each decision to buy something be weighed against this klipah, says one who frees himself is given calm and joy from Heaven, and closes with the season after Chamisha Asar b'Shevat and the parshiyos of the Exodus.",
      "yi": "דער משגיח רופט יעדן ארויסצוגיין פון דעם מצרים, כדי צו האבן צייט צו לערנען, צו דאווענען און צו ברענגען שמחה אינדערהיים, און ער מערקט אן אז דער דרוק ברענגט אנגעצויגנקייט און אפילו דעפרעסיע. ער בעט אז ביי יעדע באשלוס צו קויפן עפעס זאל מען זיך דערמאנען אין דער קליפה, זאגט אז דער וואס באפרייט זיך באקומט פון הימל מנוחה און שמחה, און ענדיגט מיט דער צייט נאך חמשה עשר בשבט און די פרשיות פון יציאת מצרים."
     },
     "kind": "closing",
@@ -791,7 +817,7 @@
    {
     "id": "yi-shonos-10~tk0",
     "text": {
-     "en": "The Rav says a person must find a minute each day to ask himself 'ayeka', where he stands in the world.",
+     "en": "The Mashgiach says a person must find a minute each day to ask himself 'ayeka', where he stands in the world.",
      "yi": "דער משגיח זאגט אז א מענטש דארף געפינען א מינוט א טאג זיך צו פרעגן \"איכה\", וואו ער האלט אויף דער וועלט."
     },
     "t": 461.22,
@@ -878,27 +904,19 @@
      "en": "While the Ba'al HaTanya was imprisoned, his gentile jailer asked him about the verse 'ayeka', where are you. The Ba'al HaTanya answered by telling him his exact age, in years, months, weeks, days and hours, and asked why in all that time he had never thought about what he is doing in the world. The jailer was deeply moved, because the age was exactly right.",
      "yi": "ווען דער בעל התניא איז געזעסן אין תפיסה, האט דער גוי וואס האט אים געהיטן געפרעגט וועגן דעם פסוק \"איכה\". דער בעל התניא האט אים געענטפערט מיט זיין פונקטליכן עלטער, אין יארן, חדשים, וואכן, טעג און שעה'ן, און געפרעגט פארוואס ער האט אין דער גאנצער צייט קיינמאל נישט געטראכט וואס ער טוט אויף דער וועלט. דער גוי איז שטארק נתפעל געווארן, ווייל דער עלטער איז געווען פונקט ריכטיג."
     },
-    "people": [
-     "the Ba'al HaTanya"
-    ],
-    "peopleKeys": [
-     "baal-hatanya"
-    ],
     "t": 770.58,
     "end": 851.3
    },
    {
     "id": "yi-shonos-10~st1",
     "title": {
-     "en": "The Rav's first telephone",
+     "en": "The Mashgiach's first telephone",
      "yi": "דעם משגיח'ס ערשטער טעלעפאן"
     },
     "retelling": {
-     "en": "The Rav recalls that after his wedding he did not want a telephone at all. Then one night someone broke into their home, they were frightened and could not sleep, and only then did he get a phone so that they could call for help.",
+     "en": "The Mashgiach recalls that after his wedding he did not want a telephone at all. Then one night someone broke into their home, they were frightened and could not sleep, and only then did he get a phone so that they could call for help.",
      "yi": "דער משגיח דערמאנט זיך אז נאך זיין חתונה האט ער בכלל נישט געוואלט האבן קיין טעלעפאן. איין נאכט האט מען אריינגעכאפט אין זייער שטוב, מ'איז געווען דערשראקן און נישט געקענט שלאפן, און ערשט דעמאלט האט ער איינגעשטעלט א טעלעפאן כדי מ'זאל קענען רופן הילף."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1232.88,
     "end": 1268.94
    },
@@ -909,11 +927,9 @@
      "yi": "דער איד וואס האט געוואלט זיין סעלפאן אין בית המדרש"
     },
     "retelling": {
-     "en": "When a sign was put up in the beis medrash asking that cell phones not be brought in, a man came to the Rav to protest. He said he wants to sit and learn, but as a real estate owner he must have his phone in case of an emergency such as a fire. The Rav says the man simply did not understand that a ringing phone takes away the seriousness of the beis medrash.",
+     "en": "When a sign was put up in the beis medrash asking that cell phones not be brought in, a man came to the Mashgiach to protest. He said he wants to sit and learn, but as a real estate owner he must have his phone in case of an emergency such as a fire. The Mashgiach says the man simply did not understand that a ringing phone takes away the seriousness of the beis medrash.",
      "yi": "ווען מ'האט אויפגעהאנגען א שילד אין בית המדרש אז מ'זאל נישט האבן קיין סעלפאנס, איז א איד געקומען צום משגיח זיך באקלאגן. ער האט געזאגט אז ער וויל זיצן און לערנען, אבער ווייל ער האט ריעל עסטעיט מוז ער האבן דעם טעלעפאן אויב עס מאכט זיך אן עמערדזשענסי ווי א פייער. דער משגיח זאגט אז דער איד האט פשוט נישט פארשטאנען אז א טעלעפאן וואס קלינגט נעמט צו די ערנסטקייט פונעם בית המדרש."
     },
-    "people": [],
-    "peopleKeys": [],
     "t": 1534.87,
     "end": 1616.49
    },
@@ -924,106 +940,12 @@
      "yi": "דער סקווירער רבי און דעם יונגערמאנ'ס מקוה"
     },
     "retelling": {
-     "en": "A young man eating at his father-in-law's table began going to the mikveh ten or fifteen times a day, and the father-in-law was unhappy and brought him to Reb Duvid'l of Skver. Asked why he did this, the young man answered that the Rebbe himself goes very often to the mikveh. The Rav brings the story to ask whether every practice of the Rebbes must be imitated.",
+     "en": "A young man eating at his father-in-law's table began going to the mikveh ten or fifteen times a day, and the father-in-law was unhappy and brought him to Reb Duvid'l of Skver. Asked why he did this, the young man answered that the Rebbe himself goes very often to the mikveh. The Mashgiach brings the story to ask whether every practice of the Rebbes must be imitated.",
      "yi": "א יונגערמאן וואס איז געזעסן אויף קעסט ביים שווער האט זיך גענומען גיין אין מקוה צען, פופצן מאל א טאג, און דער שווער איז נישט געווען צופרידן און האט אים געברענגט צו ר' דוד'ל סקווירער. ווען מ'האט אים געפרעגט פארוואס ער טוט אזוי, האט ער געענטפערט אז דער רבי אליין גייט זייער אסאך אין מקוה. דער משגיח ברענגט די מעשה צו פרעגן צי מ'מוז נאכטון די רביים אין אלע זאכן."
     },
-    "people": [
-     "Reb Duvid'l of Skver"
-    ],
-    "peopleKeys": [
-     "rabbi-duvidl-of-skver"
-    ],
     "t": 1857.68,
     "end": 1913.88,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Reb Elchonon Wasserman",
-    "key": "rabbi-elchonon-wasserman"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Pharaoh",
-    "key": "pharaoh"
-   },
-   {
-    "name": "Yaakov Avinu",
-    "key": "yaakov-avinu"
-   },
-   {
-    "name": "Yosef HaTzaddik",
-    "key": "yosef-hatzaddik"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   },
-   {
-    "name": "Reb Mottele of Chernobyl",
-    "key": "rabbi-mottele-of-chernobyl"
-   },
-   {
-    "name": "the Trisker Maggid",
-    "key": "trisker-maggid"
-   },
-   {
-    "name": "the Ba'al HaTanya",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "the Lubavitcher Rebbe",
-    "key": "lubavitcher-rebbe"
-   },
-   {
-    "name": "Reb Duvid'l of Skver",
-    "key": "rabbi-duvidl-of-skver"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תכבד העבודה",
-    "key": "skbd-hebvdh-dd3258"
-   },
-   {
-    "he": "ישוב הדעת",
-    "key": "yshvb-hdes-178900"
-   },
-   {
-    "he": "קליפה",
-    "key": "klyph-ab9afa"
-   },
-   {
-    "he": "מבית עבדים",
-    "key": "mbys-ebdym-13bcf5"
-   },
-   {
-    "he": "סטרא אחרא",
-    "key": "stra-achra-b50a94"
-   },
-   {
-    "he": "מנוחת הנפש",
-    "key": "mnvchs-hnpsh-fd60d9"
-   },
-   {
-    "he": "איכה",
-    "key": "aykh-7e4749"
-   },
-   {
-    "he": "חשבון הנפש",
-    "key": "chshbvn-hnpsh-793e98"
-   },
-   {
-    "he": "שבע ברכות",
-    "key": "shbe-brkvs-a0ae09"
-   },
-   {
-    "he": "פשיעה",
-    "key": "pshyeh-636f5b"
    }
   ],
   "writeupLangs": [

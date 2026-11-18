@@ -5,16 +5,23 @@
  * here. Wording itself is reviewed by a person; this only guards the decisions already made.
  */
 import { describe, expect, it } from "vitest";
+import { findMetaComments } from "@emunas/corpus-guard";
+import { CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS } from "@emunas/i18n";
 import { offlineEn, offlineYi } from "../../sw/client/strings.ts";
 import { searchEn, searchYi } from "../features/command-bar/strings.ts";
 import { browseEn, browseYi } from "../features/entities/strings.ts";
 import { exploreEn, exploreYi } from "../features/explore/strings.ts";
 import { feedbackEn, feedbackYi } from "../features/feedback/strings.ts";
 import { roomEn, roomYi } from "../features/listening-room/strings.ts";
+import { mixEn, mixYi } from "../features/mix/strings.ts";
 import { seriesEn, seriesYi } from "../features/series/strings.ts";
 import { shelfEn, shelfYi } from "../features/shelf/strings.ts";
 import { todayEn, todayYi } from "../features/today/strings.ts";
+import { topicsEn, topicsYi } from "../features/topics/strings.ts";
+import { maasiosEn } from "../features/maasios/strings.ts";
+import { threadsEn } from "../features/threads/strings.ts";
 import { transcriptEn, transcriptYi } from "../features/transcript/strings.ts";
+import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
 import { UI_TABLES } from "../i18n/index.ts";
 import { seoStrings, type SeoStrings } from "../seo/strings.ts";
 
@@ -28,6 +35,9 @@ function seoSamples(s: SeoStrings): Record<string, string> {
     work: s.work("{title}", "{count}"),
     person: s.person("{name}", "{count}"),
     concept: s.concept("{term}", "{count}"),
+    topic: s.topic("{title}", "{count}"),
+    story: s.story("{title}", 2),
+    thread: s.thread("{count}"),
   };
 }
 
@@ -39,9 +49,11 @@ const PAIRS: Record<string, { en: object; yi: object }> = {
   explore: { en: exploreEn, yi: exploreYi },
   feedback: { en: feedbackEn, yi: feedbackYi },
   room: { en: roomEn, yi: roomYi },
+  mix: { en: mixEn, yi: mixYi },
   series: { en: seriesEn, yi: seriesYi },
   shelf: { en: shelfEn, yi: shelfYi },
   today: { en: todayEn, yi: todayYi },
+  topics: { en: topicsEn, yi: topicsYi },
   transcript: { en: transcriptEn, yi: transcriptYi },
   offline: { en: offlineEn, yi: offlineYi },
 };
@@ -109,8 +121,22 @@ describe("Yiddish UI copy (Live)", () => {
     });
   }
 
-  it("never speaks of the Rav as דער רב (he is דער משגיח, or by name)", () => {
+  it("never speaks of the Mashgiach as דער רב (he is דער משגיח, or by name)", () => {
     expect(ALL.filter(([, s]) => /דער רב(?![\u05D0-\u05EA])|דעם רב(?![\u05D0-\u05EA])/u.test(s))).toEqual([]);
+  });
+
+  it("calls him the Mashgiach in English, never the Rav or the Rov", () => {
+    const en = [
+      ...Object.entries(PAIRS).flatMap(([name, pair]) => strings(pair.en, name)),
+      ...strings(seoSamples(seoStrings.en), "seo"),
+      ...strings(threadsEn, "threads"),
+      ...strings(maasiosEn, "maasios"),
+      ...strings(corpusLabelsEn, "corpus"),
+      ...strings(AI_LABEL.en, "aiLabel"),
+    ];
+    expect(en.length).toBeGreaterThan(200);
+    expect(en.filter(([, s]) => /\bthe R[ao]v\b(?! of\b)|\bR[ao]v['’]s\b/i.test(s))).toEqual([]);
+    expect(en.some(([, s]) => s.includes("the Mashgiach"))).toBe(true);
   });
 
   it("has the same keys and {placeholders} as English (wording changes only)", () => {
@@ -121,5 +147,23 @@ describe("Yiddish UI copy (Live)", () => {
         expect(placeholders(yiValue), `${name}.${key}`).toEqual(placeholders(en));
       }
     }
+  });
+
+  it("never remarks on the transcript or the shiur itself, in either language (the guard's term list)", () => {
+    // The transcript tab is designed and OFF (TRANSCRIPT_VIEW); its strings name what it shows.
+    const tables = Object.entries(PAIRS).filter(([name]) => name !== "transcript");
+    const all = [
+      ...tables.flatMap(([name, pair]) => [...strings(pair.en, `${name}.en`), ...strings(pair.yi, `${name}.yi`)]),
+      ...strings(seoSamples(seoStrings.en), "seo.en"),
+      ...strings(seoSamples(seoStrings.yi), "seo.yi"),
+      ...strings(threadsEn, "threads"),
+      ...strings(maasiosEn, "maasios"),
+      ...strings(CORPUS_LABELS, "corpus"),
+      ...strings(SECTION_KIND_LABELS, "sectionKinds"),
+      ...strings(NOTICES, "notices"),
+      ...strings(AI_LABEL, "aiLabel"),
+    ];
+    expect(all.length).toBeGreaterThan(400);
+    expect(all.flatMap(([path, s]) => findMetaComments(s).map((h) => `${path}: ${h.term}`))).toEqual([]);
   });
 });

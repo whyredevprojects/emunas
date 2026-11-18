@@ -3,23 +3,31 @@
  * Related. The Transcript tab (W5.2, `features/transcript`) is appended only behind `TRANSCRIPT_VIEW`
  * (`app/config/feature-flags.ts`, false by default) and only when an approved file loaded, so the
  * default bundle carries no part of it.
+ *
+ * On the corpus layer (concept-live-corpus D, C.1, E.2, F.1), from the shiur file alone: insights in a
+ * thread carry a thread mark (a two-shiur thread is one inline line with a play button, never a
+ * headline), stories told elsewhere say so, sources group by merged work, and Related runs: threads
+ * through this shiur, main topics, other years of the same occasion, then the automatic neighbours.
+ * There is no "counterpart in the other language" item.
  */
-import { formatClock, sourceRefParts } from "@emunas/i18n";
-import { livePaths } from "@emunas/links";
+import { audioLanguageLabel, formatClock, formatHebrewYear, sourceRefParts } from "@emunas/i18n";
+import { livePaths, parseMomentId } from "@emunas/links";
 import { useEffect, useRef, type JSX, type ReactNode } from "react";
 import { Tab, TabList, TabPanel, Tabs, type Key } from "react-aria-components";
 import { Link } from "react-router";
 import { Text } from "../../components/Text.tsx";
 import type { PublicSource } from "@emunas/corpus/public";
-import type { Ed } from "./data.ts";
+import { loadShiur, type Ed } from "./data.ts";
 import { settingsStore } from "../../shell/settings.ts";
 import type { FeedbackField } from "../feedback/index.ts";
 import type { RoomContext } from "./context.ts";
-import { activeParagraphId, groupSources, sefariaUrl } from "./model.ts";
+import { groupSourcesByWork, insightMark, mainTopics, storyMark, storyPeople, threadsThrough, type PairedInsight } from "./corpus.ts";
+import { activeParagraphId, sefariaUrl } from "./model.ts";
 import { AiLabel, Report, TimeButton, isActive } from "./parts.tsx";
 import type { RoomKey } from "./strings.ts";
 import { roomStyles as s } from "./styles.ts";
-import { relatedTitles, useWriteup, type RelatedTitle } from "./use-room-data.ts";
+import { relatedTitles, seriesTitle, useWriteup, type RelatedTitle } from "./use-room-data.ts";
+import { playAt as enginePlayAt } from "../../player-ui/index.ts";
 import { TRANSCRIPT_VIEW } from "../../config/feature-flags.ts";
 import { TRANSCRIPT_TAB, TranscriptTab, transcriptT, useTranscripts } from "../transcript/index.ts";
 
@@ -222,13 +230,18 @@ const MENTION_KEY = { quoted: "sources.quoted", paraphrased: "sources.paraphrase
 
 function SourcesTab({ room }: { room: RoomContext }): JSX.Element {
   const { rt, ui, shiur } = room;
-  const groups = groupSources(shiur.notes?.sources ?? []);
+  const groups = groupSourcesByWork(shiur);
   return (
     <div>
       <AiLabel ui={ui} />
       {groups.map((g) => (
-        <section key={g.key || "_"} className={s.group}>
+        <section key={g.key || "_"} className={s.group} data-work-group={g.workId ?? ""}>
           <h3 className={s.h3}>{g.work ? <Text value={g.work} shiurLang={shiur.lang} /> : rt("sources.unnamed")}</h3>
+          {g.workId && g.page ? (
+            <Link to={paths.work(ui, g.workId)} className={s.outLink} data-work-page={g.workId}>
+              {rt("sources.workPage")}
+            </Link>
+          ) : null}
           <ul className={s.itemList}>
             {g.sources.map((src) => {
               const parts = sourceRefParts(src, ui);
@@ -276,6 +289,7 @@ function MomentList({ room, title, items }: { room: RoomContext; title: string; 
         {items.map((m) => (
           <MomentItem key={m.id} room={room} id={m.id} t={m.t} end={m.end}>
             <Text value={m.text} lang={room.reading} />
+            <ThreadMark room={room} momentId={m.id} />
           </MomentItem>
         ))}
       </ul>
@@ -301,6 +315,70 @@ function MomentItem({ room, id, t, end, field = "summary", children }: { room: R
       </span>
       <Report room={room} id={id} field={field} />
     </li>
+  );
+}
+
+/** "Taught in N other shiurim, Y1 to Y2", for the years a thread mark spans. */
+function threadMarkText(room: RoomContext, others: number, years: [number, number] | null): string {
+  const { rt, ui } = room;
+  if (!years) return rt("thread.markNoYears", { count: others });
+  const from = formatHebrewYear(years[0], ui, { civil: false });
+  if (years[0] === years[1]) return rt("thread.markOneYear", { count: others, from });
+  return rt("thread.mark", { count: others, from, to: formatHebrewYear(years[1], ui, { civil: false }) });
+}
+
+/** Loads the other shiur's file on the listener's tap and plays its insight there. */
+async function playPaired(o: PairedInsight): Promise<void> {
+  const file = await loadShiur(o.shiurId);
+  const m = file.notes?.insights.find((x) => x.id === o.momentId);
+  const t = m?.t ?? o.t;
+  if (t === null) return;
+  const end = m?.end ?? null;
+  enginePlayAt({ shiur: file, seriesTitle: seriesTitle(file) }, t, end === null ? undefined : end);
+}
+
+/** A moment id of `shiurId` (`<shiurId>~<kind><n>`), so `&m=` can name it. */
+function momentOf(shiurId: string, momentId: string): boolean {
+  return parseMomentId(momentId)?.shiurId === shiurId;
+}
+
+/**
+ * The thread mark of an insight (concept-live-corpus D, C.1): a thread with a page is a link,
+ * "taught in N other shiurim, Y1 to Y2"; a two-shiur thread is the line "also taught in <shiur>,
+ * <year>" with a play button, never a headline or a thread page.
+ */
+function ThreadMark({ room, momentId }: { room: RoomContext; momentId: string }): JSX.Element | null {
+  const { rt, ui, shiur } = room;
+  const mark = insightMark(shiur, momentId);
+  if (!mark) return null;
+  if (mark.kind === "thread") {
+    return (
+      <span className={s.mark} data-thread-mark={mark.threadId}>
+        <Link to={paths.thread(ui, mark.threadId)}>{threadMarkText(room, mark.others, mark.years)}</Link>
+      </span>
+    );
+  }
+  const o = mark.other;
+  const row = shiur.related.titles[o.shiurId];
+  const opts = { ...(momentOf(o.shiurId, o.momentId) ? { m: o.momentId } : {}), ...(o.t === null ? {} : { t: o.t }) };
+  return (
+    <span className={s.mark} data-thread-pair={mark.threadId}>
+      {rt("thread.also")}{" "}
+      <Link to={paths.shiur(ui, o.shiurId, opts)}>
+        {row ? <Text value={row.title} shiurLang={row.lang} /> : <Text value={o.shiurId} lang="en" />}
+      </Link>
+      {o.year !== null ? `, ${formatHebrewYear(o.year, ui, { civil: false })}` : null}
+      <span className={s.kind}> {audioLanguageLabel(o.lang, ui)}</span>{" "}
+      <button
+        type="button"
+        className={s.textAction}
+        onClick={() => void playPaired(o)}
+        disabled={o.t === null}
+        data-play-pair={o.momentId}
+      >
+        {rt("thread.play")}
+      </button>
+    </span>
   );
 }
 
@@ -370,6 +448,48 @@ function QuestionsTab({ room }: { room: RoomContext }): JSX.Element {
 
 // ---- Stories ---------------------------------------------------------------------------------
 
+/** "Told in N other shiurim" for a merged story told elsewhere; it opens the story page. */
+function StoryMarkLine({ room, momentId }: { room: RoomContext; momentId: string }): JSX.Element | null {
+  const mark = storyMark(room.shiur, momentId);
+  if (!mark) return null;
+  const text = room.rt("stories.toldElsewhere", { count: mark.others });
+  return (
+    <span className={s.mark} data-story-mark={mark.storyId}>
+      {mark.page ? <Link to={paths.story(room.ui, mark.storyId)}>{text}</Link> : text}
+    </span>
+  );
+}
+
+/**
+ * The people of a story, from the merged story in the corpus layer (F.1): a person with a Live page
+ * links there, anyone else is a corpus entity's display name as plain text. A story moment with no
+ * merged story names no one; the extraction's raw names are never shown.
+ */
+function StoryPeopleLine({ room, momentId }: { room: RoomContext; momentId: string }): JSX.Element | null {
+  const people = storyPeople(room.shiur, momentId);
+  if (people.length === 0) return null;
+  const { rt, ui } = room;
+  return (
+    <p className={s.note} data-story-people="">
+      {rt("stories.people")}:{" "}
+      {people.map((p, i) => (
+        <span key={"id" in p ? p.id : `n${i}`}>
+          {i > 0 ? ", " : null}
+          {"id" in p && p.page ? (
+            <Link to={paths.person(ui, p.id)} data-entity={`p:${p.id}`} data-story-person="">
+              <Text value={p.label[ui]} lang={ui} />
+            </Link>
+          ) : (
+            <span data-story-person="">
+              <Text value={"id" in p ? p.label[ui] : p.name} shiurLang={ui} />
+            </span>
+          )}
+        </span>
+      ))}
+    </p>
+  );
+}
+
 function StoriesTab({ room }: { room: RoomContext }): JSX.Element {
   const { rt, reading, shiur } = room;
   const stories = shiur.notes!.stories;
@@ -380,21 +500,12 @@ function StoriesTab({ room }: { room: RoomContext }): JSX.Element {
         {stories.map((st) => (
           <MomentItem key={st.id} room={room} id={st.id} t={st.t} end={st.end}>
             <Text as="h3" className={s.h3} value={st.title} lang={reading} />
-            {st.people.length > 0 ? (
-              <p className={s.note}>
-                {rt("stories.people")}:{" "}
-                {st.people.map((p, i) => (
-                  <span key={`${p}-${i}`}>
-                    {i > 0 ? ", " : null}
-                    <Text value={p} shiurLang={shiur.lang} />
-                  </span>
-                ))}
-              </p>
-            ) : null}
+            <StoryPeopleLine room={room} momentId={st.id} />
             <details className={s.details}>
               <summary>{rt("stories.retelling")}</summary>
               <Text as="p" value={st.retelling} lang={reading} />
             </details>
+            <StoryMarkLine room={room} momentId={st.id} />
           </MomentItem>
         ))}
       </ul>
@@ -416,17 +527,48 @@ function ShiurLink({ room, id, t, rows }: { room: RoomContext; id: string; t?: n
 }
 
 function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
-  const { rt, shiur, ui } = room;
+  const { rt, shiur, ui, reading } = room;
   const r = shiur.related;
-  // Titles come with the shiur file (G.1): no corpus-wide file is loaded for Related.
+  // Titles and labels come with the shiur file (G.1): no corpus-wide file is loaded for Related.
   const rows = relatedTitles(shiur);
+  const threads = threadsThrough(shiur);
+  const topics = mainTopics(shiur).filter((t) => t.page);
   const same = r.sameOccasion.filter((id) => id !== shiur.id);
-  const empty = same.length === 0 && !r.prev && !r.next && r.neighbors.length === 0 && !shiur.series;
+  const empty = threads.length === 0 && topics.length === 0 && same.length === 0 && !r.prev && !r.next && r.neighbors.length === 0 && !shiur.series;
   return (
     <div>
       {empty ? <p className={s.note}>{rt("related.none")}</p> : null}
+      {threads.length > 0 ? (
+        <section className={s.group} data-related="threads">
+          <h3 className={s.h3}>{rt("related.threads")}</h3>
+          <ul className={s.linkList}>
+            {threads.map((th) => (
+              <li key={th.threadId} data-thread={th.threadId}>
+                <Link to={paths.thread(ui, th.threadId)} className={s.relatedLink}>
+                  {th.text ? <Text value={th.text} lang={reading} /> : threadMarkText(room, th.others, th.years)}
+                </Link>
+                {th.text ? <span className={s.kind}> {threadMarkText(room, th.others, th.years)}</span> : null}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+      {topics.length > 0 ? (
+        <section className={s.group} data-related="topics">
+          <h3 className={s.h3}>{rt("related.topics")}</h3>
+          <ul className={s.linkList}>
+            {topics.map((t) => (
+              <li key={t.id} data-topic={t.id}>
+                <Link to={paths.topic(ui, t.id)} className={s.relatedLink}>
+                  {rt("end.topic", { topic: t.label[ui] })}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       {same.length > 0 ? (
-        <section className={s.group}>
+        <section className={s.group} data-related="occasion">
           <h3 className={s.h3}>{rt("related.sameOccasion")}</h3>
           <ul className={s.linkList}>
             {same.map((id) => (
@@ -437,8 +579,22 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
           </ul>
         </section>
       ) : null}
+      {r.neighbors.length > 0 ? (
+        <section className={s.group} data-related="neighbors">
+          <h3 className={s.h3}>{rt("related.neighbors")}</h3>
+          <AiLabel ui={ui} />
+          <ul className={s.linkList}>
+            {r.neighbors.map((nb) => (
+              <li key={nb.momentId}>
+                <ShiurLink room={room} id={nb.shiurId} t={nb.t} rows={rows} />{" "}
+                <span className={s.timeText}>{rt("time.at", { time: formatClock(nb.t) })}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
       {r.prev || r.next || shiur.series ? (
-        <section className={s.group}>
+        <section className={s.group} data-related="series">
           <h3 className={s.h3}>{rt("related.series")}</h3>
           <ul className={s.linkList}>
             {r.prev ? (
@@ -460,21 +616,6 @@ function RelatedTab({ room }: { room: RoomContext }): JSX.Element {
                 </Link>
               </li>
             ) : null}
-          </ul>
-        </section>
-      ) : null}
-      {r.neighbors.length > 0 ? (
-        <section className={s.group}>
-          <h3 className={s.h3}>{rt("related.neighbors")}</h3>
-          <p className={s.note}>{rt("related.neighbors.note")}</p>
-          <AiLabel ui={ui} />
-          <ul className={s.linkList}>
-            {r.neighbors.map((nb) => (
-              <li key={nb.momentId}>
-                <ShiurLink room={room} id={nb.shiurId} t={nb.t} rows={rows} />{" "}
-                <span className={s.timeText}>{rt("time.at", { time: formatClock(nb.t) })}</span>
-              </li>
-            ))}
           </ul>
         </section>
       ) : null}

@@ -21,7 +21,11 @@ export const yi: MessageTable<UiKey> = {
   "nav.maasios": "מעשיות",
   "nav.series": "סדרות",
   "nav.shelf": "מיין פאליצע",
+  "nav.quiet": "קאטאלאג און מפתחות",
+  "nav.newTab": "(עפנט זיך אין א נייעם טאב)",
   "nav.search": "זוכן",
+
+  "theme.dark": "טונקעלע פארבן",
 
   "lang.button": "שפראך",
   "lang.dialog": "שפראך איינשטעלונגען",

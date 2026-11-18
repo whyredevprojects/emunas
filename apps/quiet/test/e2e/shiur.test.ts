@@ -23,7 +23,7 @@ import { fileURLToPath } from "node:url";
 import { brotliCompressSync } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { PublicShiur } from "@emunas/corpus/public";
+import { round3, type PublicShiur } from "@emunas/corpus/public";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = join(app, "..", "..");
@@ -83,6 +83,7 @@ async function listen(server: Server): Promise<number> {
 
 function run(cmd: string, args: string[], env: NodeJS.ProcessEnv = process.env): void {
   const r = spawnSync(cmd, args, { cwd: app, env, encoding: "utf8", maxBuffer: 64 * 1024 * 1024 });
+  if (r.error) throw new Error(`${cmd} could not be started (${r.error.message}); is it installed and on PATH?`);
   if (r.status !== 0) throw new Error(`${cmd} ${args.join(" ")} failed:\n${r.stdout}\n${r.stderr}`);
 }
 
@@ -154,6 +155,7 @@ beforeAll(async () => {
     ...process.env,
     ASTRO_TELEMETRY_DISABLED: "1",
     EMUNAS_CORPUS_DIR: corpusDir,
+    EMUNAS_HOME_ORIGIN: "http://localhost:4322",
     EMUNAS_QUIET_ORIGIN: origin,
     EMUNAS_LIVE_ORIGIN: "http://localhost:5173",
     EMUNAS_FEEDBACK_EMAIL: "errors@example.org",
@@ -191,9 +193,10 @@ const errors = new WeakMap<Page, string[]>();
 async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: number } = {}): Promise<Page> {
   const context = await browser.newContext({
     javaScriptEnabled: opts.js ?? true,
-    colorScheme: opts.dark ? "dark" : "light",
     viewport: { width: opts.width ?? 1100, height: 900 },
   });
+  // Dark is opt-in (the shared theme cookie), not the OS setting.
+  if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   const page = await context.newPage();
   const list: string[] = [];
   errors.set(page, list);
@@ -210,6 +213,19 @@ const audioState = (page: Page) =>
   page.$$eval("audio.listen-audio", (els) =>
     (els as HTMLAudioElement[]).map((a) => ({ paused: a.paused, t: a.currentTime, current: a.closest(".track")?.hasAttribute("data-current") ?? false })),
   );
+
+/**
+ * Waits until the first recording is really playing. `paused` turns false as soon as play() is
+ * called, which can be before the metadata arrives; the player then applies the time link's seek on
+ * `loadedmetadata`, and a position set by the test in between would be undone. Once `currentTime`
+ * has moved, that seek has run.
+ */
+async function playingFirst(page: Page): Promise<void> {
+  await page.waitForFunction(() => {
+    const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
+    return !a.paused && a.readyState >= 1 && a.currentTime > 0;
+  });
+}
 
 function walk(dir: string): string[] {
   return readdirSync(dir).flatMap((name) => {
@@ -263,13 +279,13 @@ describe.each(["yi", "en"] as const)("the 7 sample shiurim, %s edition", (ed) =>
 });
 
 describe("without script", () => {
-  it("time links open the recording at the local second on the media host", async () => {
+  it("time links open the recording at the exact local time (fractional seconds) on the media host", async () => {
     const page = await open(`/en/shiur/${MULTI}/`, { js: false });
     const shiur = shiurJson(MULTI);
     const [p1, p2] = shiur.recordings;
     expect(await page.locator("#s0 a.time").getAttribute("href")).toBe(`${p1!.audioUrl}#t=0`);
     const late = shiur.notes!.chapters.find((c) => c.t >= p2!.offset)!;
-    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.audioUrl}#t=${Math.floor(late.t - p2!.offset)}`);
+    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.audioUrl}#t=${round3(late.t - p2!.offset)}`);
     expect(await page.locator("audio[preload=none]").count()).toBe(2);
     expect(await page.locator(".listen[data-docked]").count()).toBe(0);
     await page.context().close();
@@ -287,9 +303,10 @@ describe("player", () => {
       return a !== null && !a.paused && a.currentTime > 0;
     });
     const [first] = await audioState(page);
-    expect(first!.t).toBeGreaterThanOrEqual(Math.floor(chapter.t) - 0.5);
+    // the seek keeps the fractional second: playback starts at the item, not the whole second before it
+    expect(first!.t).toBeGreaterThanOrEqual(chapter.t - 0.05);
     expect(first!.t).toBeLessThan(chapter.t + 5);
-    expect(new URL(page.url()).hash).toBe(`#t=${Math.round(chapter.t)}`);
+    expect(new URL(page.url()).hash).toBe(`#t=${round3(chapter.t)}`);
     expect(await page.locator(".listen[data-docked]").count()).toBe(1);
     expect(await page.$eval(".listen", (el) => getComputedStyle(el).position)).toBe("sticky");
     expect(await page.locator(`#s${chapter.idx} a.time[aria-current="time"]`).count()).toBe(1);
@@ -354,7 +371,7 @@ describe("player", () => {
   it("continues into the next recording when one ends", async () => {
     const page = await open(`/en/shiur/${MULTI}/`);
     await page.locator("#s0 a.time").click();
-    await page.waitForFunction(() => !document.querySelector<HTMLAudioElement>("audio.listen-audio")!.paused);
+    await playingFirst(page);
     await page.evaluate(() => {
       const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
       a.currentTime = a.duration - 0.6;
@@ -376,7 +393,7 @@ describe("player", () => {
   it("answers the keyboard only while the dock has focus", async () => {
     const page = await open(`/en/shiur/en-parsha-en-nch-01/`);
     await page.locator("#s0 a.time").click();
-    await page.waitForFunction(() => !document.querySelector<HTMLAudioElement>("audio.listen-audio")!.paused);
+    await playingFirst(page);
     // focus elsewhere: Space/K do nothing to the player
     await page.locator("h1").click();
     await page.keyboard.press("k");

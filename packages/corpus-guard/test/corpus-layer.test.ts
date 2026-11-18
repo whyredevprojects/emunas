@@ -260,6 +260,11 @@ describe("post-pass: raw ban and alias-key assertion", () => {
     expect(rules.check({ kind: "person", id: "nobody" }, "x")).toEqual({ rule: "unknown-entity" });
     expect(rules.check(null, VARIANT)).toEqual({ rule: "asr-variant" });
     expect(rules.check(null, "Besht of Mezhibuzh")).toBeNull();
+    // Story names: any entity's display name passes; anything else is not published.
+    expect(rules.checkName("the  besht")).toBeNull();
+    expect(rules.checkName("Bitachon")).toBeNull();
+    expect(rules.checkName(VARIANT)).toEqual({ rule: "asr-variant" });
+    expect(rules.checkName("Besht of Mezhibuzh")).toEqual({ rule: "not-entity-name" });
     expect(aliasTerms("a|b\nc")).toEqual(["a", "b", "c"]);
     const missing = join(fx.root, "missing");
     expect(() => AliasRules.read(missing)).toThrow(/not found/);
@@ -308,23 +313,175 @@ describe("post-pass: raw ban and alias-key assertion", () => {
     ].join("\n"));
     // An app's own index row without kind: the raw ban still applies (any entity's display names pass).
     writeFile(join(d, "quick.json"), JSON.stringify([{ k: "p:baal-shem-tov", aliases: ["Tania", "Tanya"] }]));
-    // The legacy site-derived aggregate: its names are extraction spellings, not corpus aliases.
+    // A file at the top of `.corpus/` has no exemption (the site-derived aggregates are gone, C3.1).
     writeFile(join(fx.corpus, "people.json"), JSON.stringify({ people: [{ key: "x", names: [VARIANT] }] }));
     const s = scanner(fx, false);
     s.scanPaths([d, join(fx.corpus, "people.json")]);
     const r = s.result();
     expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.entity ?? "-"} ${f.field}` : f.kind)).sort()).toEqual([
+      ".corpus/people.json asr-variant - people[].names",
       "out/layer/people.json asr-variant person:baal-shem-tov people[].aliases",
       "out/quick.json asr-variant - [].aliases",
       "out/search/entities.ndjson:1 asr-variant concept:bitachon synonyms",
     ]);
-    expect(r.counts.aliasTermsLegacy).toBe(1);
 
     const check = createPagefindChecker({ aliases: AliasRules.read(fx.data) });
     const rec = (syn: string) => ({ url: "/en/people/baal-shem-tov/", content: "Baal Shem Tov", meta: { title: "Baal Shem Tov", synonyms: syn } });
     expect(check(rec("the Besht|Reb Yisroel Baal Shem Tov"), { kind: "person", id: "baal-shem-tov" })).toEqual([]);
     expect(check(rec(`the Besht|${VARIANT}`), { kind: "person", id: "baal-shem-tov" }).map((f) => (f.kind === "alias" ? f.rule : f.kind))).toEqual(["asr-variant"]);
     expect(check(rec("Mezhibuzh"), { kind: "person", id: "baal-shem-tov" }).map((f) => (f.kind === "alias" ? f.rule : f.kind))).toEqual(["not-display-field"]);
+  });
+
+  it("story names: a planted raw name in the layer's story people fails post (C3.1)", () => {
+    fx = makeLayerFixture();
+    const file = join(fx.layer, "stories.json");
+    const stories = JSON.parse(readFileSync(file, "utf8")) as { stories: { people: unknown[] }[] };
+    // A display name of a corpus entity the sites do not link is fine; raw spellings are not.
+    stories.stories[0]!.people.push({ name: "Bitachon", linked: false }, { name: "Reb Chaim Yankel", linked: false }, { name: VARIANT, linked: false });
+    writeFile(file, JSON.stringify(stories));
+    const s = scanner(fx, false);
+    s.scanPaths([file]);
+    const r = s.result();
+    expect(r.findings).toEqual([
+      { kind: "alias", source: ".corpus/layer/stories.json", rule: "not-entity-name", field: "stories[].people[].name", count: 1 },
+      { kind: "alias", source: ".corpus/layer/stories.json", rule: "asr-variant", field: "stories[].people[].name", count: 1 },
+    ]);
+    expect(r.counts.storyNamesChecked).toBe(3);
+    expectClean(JSON.stringify(r));
+  });
+
+  it("story names: Live story files and the stories index are checked; other files' `name` keys are not", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.root, "build", "client", "data");
+    writeFile(join(d, "story", `${STORY}.json`), JSON.stringify({
+      id: STORY, people: [{ id: "baal-shem-tov", label: { en: "Baal Shem Tov", yi: "בעל שם טוב" }, page: true }, { name: "Baal Shem Tov" }, { name: "a wagon driver" }],
+    }));
+    writeFile(join(d, "stories-index.json"), JSON.stringify({ stories: [{ id: STORY, people: ["baal-shem-tov"], names: ["the Besht", "Reb Meirel"] }], people: {} }));
+    writeFile(join(d, "manifest.json"), JSON.stringify({ name: "Some app", people: [{ name: "not a story" }] }));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    expect(s.result().findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field}` : f.kind)).sort()).toEqual([
+      "build/client/data/stories-index.json not-entity-name stories[].names",
+      `build/client/data/story/${STORY}.json not-entity-name people[].name`,
+    ]);
+  });
+
+  it("story names: names marked data-story-person on a built page are checked", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.root, "dist");
+    writeFile(join(d, "en", "stories", STORY, "index.html"), `<p class="story-people"><a href="/en/people/baal-shem-tov/"><bdi lang="en" data-story-person>Baal Shem Tov</bdi></a> · <bdi data-story-person="">Bitachon</bdi></p>`);
+    writeFile(join(d, "yi", "stories", STORY, "index.html"), `<p><bdi lang="yi" dir="rtl" data-story-person>בעל שם טוב</bdi> · <bdi data-story-person>Reb&#32;Chaim Yankel</bdi> · <span data-story-person>${VARIANT}</span></p><p data-story-personx>Reb Meirel</p>`);
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    const r = s.result();
+    expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field} ${f.count}` : f.kind)).sort()).toEqual([
+      `dist/yi/stories/${STORY}/index.html asr-variant [data-story-person] 1`,
+      `dist/yi/stories/${STORY}/index.html not-entity-name [data-story-person] 1`,
+    ]);
+    expect(r.counts.storyNamesChecked).toBe(5);
+  });
+
+  it("shiur names (F.1): a planted raw name in a corpus or Live shiur file fails post", () => {
+    fx = makeLayerFixture();
+    const corpusFile = join(fx.corpus, "shiurim", `${SHIUR}.json`);
+    const shiur = JSON.parse(readFileSync(corpusFile, "utf8")) as { notes: Record<string, unknown> };
+    // Resolved names (display names of corpus entities) are fine.
+    shiur.notes["stories"] = [{ id: `${SHIUR}~st0`, title: { en: "t", yi: "t" }, retelling: { en: "r", yi: "r" }, t: 1, end: 2, people: ["Baal Shem Tov", "Reb Chaim Yankel"] }];
+    shiur.notes["people"] = [{ name: "the Besht", key: "x" }, { name: VARIANT, key: "y" }];
+    shiur.notes["concepts"] = [{ he: "ביטחון", key: "b" }, { he: "bitokhn", key: "c" }];
+    writeFile(corpusFile, JSON.stringify(shiur));
+    const live = join(fx.root, "build", "client", "data", "shiur", `${SHIUR}.json`);
+    writeFile(live, JSON.stringify({
+      id: SHIUR,
+      corpus: {
+        stories: [
+          { momentId: `${SHIUR}~st0`, storyId: STORY, otherShiurim: 1, page: true, people: [
+            { id: "baal-shem-tov", label: { en: "Baal Shem Tov", yi: "בעל שם טוב" }, page: true },
+            { name: "Bitachon" },
+            { name: "a wagon driver" },
+          ] },
+        ],
+      },
+    }));
+    // The layer's per-shiur refs (ids only) are not a shiur file.
+    writeFile(join(fx.layer, "shiur", `${SHIUR}.json`), JSON.stringify({ shiurId: SHIUR, personIds: ["baal-shem-tov"], stories: [] }));
+    const s = scanner(fx, false);
+    s.scanPaths([corpusFile, live, join(fx.layer, "shiur")]);
+    const r = s.result();
+    expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field} ${f.count}` : f.kind)).sort()).toEqual([
+      `.corpus/shiurim/${SHIUR}.json asr-variant notes.concepts[].he 1`,
+      `.corpus/shiurim/${SHIUR}.json asr-variant notes.people[].name 1`,
+      `.corpus/shiurim/${SHIUR}.json not-entity-name notes.stories[].people[] 1`,
+      `build/client/data/shiur/${SHIUR}.json not-entity-name corpus.stories[].people[].name 1`,
+    ]);
+    expect(r.counts.namesChecked).toBe(10);
+    expectClean(JSON.stringify(r));
+  });
+
+  it("search-doc names (F.1): a raw name in a SearchDoc's people fails post; facet ids are not names", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.corpus, "search");
+    const doc = (people: string[]) =>
+      JSON.stringify({ id: SHIUR, kind: "shiur", titleOriginal: "בראשית", people, concepts: ["Bitachon"], facets: { people: ["baal-shem-tov"], concepts: ["bitachon"] } });
+    writeFile(join(d, "docs.ndjson"), [doc(["Baal Shem Tov", "the Besht"]), doc(["Reb Chaim Yankel"]), doc([VARIANT])].join("\n"));
+    // Moment rows carry entity ids, not names.
+    writeFile(join(d, "moments.ndjson"), JSON.stringify({ id: `${SHIUR}~st0`, kind: "story", entities: { people: ["baal-shem-tov"], works: [], concepts: [], topics: [] } }));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    const r = s.result();
+    expect(r.findings.map((f) => (f.kind === "alias" ? `${f.source} ${f.rule} ${f.field}` : f.kind)).sort()).toEqual([
+      ".corpus/search/docs.ndjson:2 not-entity-name people[]",
+      ".corpus/search/docs.ndjson:3 asr-variant people[]",
+    ]);
+    expect(r.counts.namesChecked).toBe(7);
+  });
+
+  it("Pagefind and quick-index names (F.1): name keys and entity labels must be display names", () => {
+    fx = makeLayerFixture();
+    const check = createPagefindChecker({ aliases: AliasRules.read(fx.data) });
+    const shiurRec = (people: string[]) => ({ url: `/en/shiur/${SHIUR}/`, content: "x", meta: { titleOriginal: "בראשית" }, filters: { type: ["shiur"], people } });
+    expect(check(shiurRec(["Baal Shem Tov"]))).toEqual([]);
+    expect(check(shiurRec(["Reb Chaim Yankel"])).map((f) => (f.kind === "alias" ? `${f.rule} ${f.field}` : f.kind))).toEqual(["not-entity-name filters.people"]);
+    const entityRec = (labelEn: string) => ({ url: "/en/people/baal-shem-tov/", content: "x", meta: { kind: "person", labelEn, labelHe: "בעל שם טוב" } });
+    expect(check(entityRec("Baal Shem Tov"), { kind: "person", id: "baal-shem-tov" })).toEqual([]);
+    expect(check(entityRec("Bitachon"), { kind: "person", id: "baal-shem-tov" }).map((f) => (f.kind === "alias" ? `${f.rule} ${f.entity} ${f.field}` : f.kind))).toEqual([
+      "not-display-field person:baal-shem-tov meta.labelEn",
+    ]);
+
+    const d = join(fx.root, "build", "client", "data");
+    writeFile(join(d, "quick-index.en.json"), JSON.stringify({
+      lang: "en",
+      index: { storedFields: { 1: { name: "בראשית", lang: "yi" } } },
+      entities: [
+        { kind: "person", id: "baal-shem-tov", labels: { he: "בעל שם טוב", en: "Baal Shem Tov", yi: "בעל שם טוב" }, synonyms: ["the besht"], count: 3 },
+        { kind: "concept", id: CONCEPT, labels: { he: "ביטחון", en: "Reb Chaim Yankel", yi: null }, synonyms: [], count: 3 },
+      ],
+    }));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    expect(s.result().findings.map((f) => (f.kind === "alias" ? `${f.rule} ${f.entity} ${f.field}` : f.kind))).toEqual([
+      `not-display-field concept:${CONCEPT} entities[].labels`,
+    ]);
+  });
+
+  it("person names marked data-person on a built page (F.1): that person's display name, else a finding", () => {
+    fx = makeLayerFixture();
+    const d = join(fx.root, "dist");
+    writeFile(join(d, "en", "shiur", SHIUR, "index.html"), [
+      `<p class="mentioned-line"><a href="/en/people/baal-shem-tov/"><bdi lang="en" data-person="baal-shem-tov">Baal Shem Tov</bdi></a>, <bdi data-person="baal-shem-tov">Reb Chaim Yankel</bdi></p>`,
+      `<ul><li id="baal-shem-tov" data-person="baal-shem-tov"><a class="entry-name"><bdi lang="en">the Besht</bdi></a> <span class="entry-count">3 shiurim</span></li>`,
+      `<li data-person="baal-shem-tov"><bdi>${VARIANT}</bdi> <span>2</span></li><li data-person=""><bdi>Bitachon</bdi></li><li data-person="nobody"><bdi>x</bdi></li></ul>`,
+    ].join("\n"));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    const r = s.result();
+    expect(r.findings.map((f) => (f.kind === "alias" ? `${f.rule} ${f.entity ?? "-"} ${f.field} ${f.count}` : f.kind)).sort()).toEqual([
+      "asr-variant person:baal-shem-tov [data-person] 1",
+      "not-display-field person:baal-shem-tov [data-person] 1",
+      "unknown-entity person:nobody [data-person] 1",
+    ]);
+    expect(r.counts.namesChecked).toBe(6);
+    expectClean(JSON.stringify(r));
   });
 
   it("checkEntityAliases checks an emitter's terms directly", () => {

@@ -24,6 +24,6 @@ imports the pipeline types (read-only) and fails if they drift.
 ## Status of the wording
 
 All Yiddish and English labels are `VOCABULARY_REVIEW_STATUS = "unreviewed"`. They follow the
-concept docs (plain, no marketing voice, "דער משגיח" / "the Rav") but need a native reader's pass,
+concept docs (plain, no marketing voice, "דער משגיח" / "the Mashgiach") but need a native reader's pass,
 especially the Yiddish category names (`set`, `misc`, `current`), the section kinds and the
 "place not identified" wording.

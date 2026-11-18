@@ -42,6 +42,14 @@ An array of `{ "id": "<item id>", "reason": "…", "reviewedBy": "…", "reviewe
 used by `@emunas/corpus-guard` for reviewed verbatim exceptions. Ships empty. Reports and this
 file carry ids only, never transcript text.
 
+## meta-comment-allow.json
+
+An array of `{ "file": "<post-pass source path>", "term": "<term as listed>", "reason": "…", "reviewedBy": "…", "reviewedAt": "YYYY-MM-DD" }`:
+reviewed exceptions to the guard's check for remarks on the transcript or the shiur itself
+(`packages/corpus-guard/src/meta-comment.ts`). `file` is the path as the guard report prints it
+(for NDJSON, without `:line`). A term not on the list or an incomplete entry is fatal. Ships empty:
+reword the text instead wherever possible.
+
 ## audio-transcoded.json
 
 `{ "policyVersion": 1, "mp3Siblings": ["<original .WMA key>", …] }`. Ships with an empty list.
@@ -67,8 +75,8 @@ rebuild.
 | `people.other.pages` | `false` | D2. People of type `other` (and `individual`, private persons from stories) get no page on either site. |
 | `people.other.quietLineMinShiurim` | `3` | D2. Quiet lists a type-`other` person as an index line from this many visible shiurim. |
 | `people.other.liveListed` | `false` | D2. Live gives type-`other` people no index entry and no suggestion. |
-| `people.excludeFamily` | `true` | D5. The Rav's family is not listed, has no page and no suggestion. |
-| `people.familyPattern` | `\bthe Rav'?s\b` | D5. Matched case-insensitively against the person's own `nameEn` and `aliases` (or future `family`/`private` flags). A rule, never a list. |
+| `people.excludeFamily` | `true` | D5. The Mashgiach's family is not listed, has no page and no suggestion. |
+| `people.familyPattern` | `\bthe Mashgiach'?s\b` | D5. Matched case-insensitively against the person's own `nameEn` and `aliases` (or future `family`/`private` flags). A rule, never a list. |
 | `people.excludeIds` | `[]` | D5. Person ids the owner excludes by hand. Ships empty. |
 | `threads.pageMinShiurim` | `3` | D3. A teaching cluster needs this many distinct visible shiurim for a page. |
 | `threads.twoMember` | `"inline-line"` | D3. Two-member clusters only produce an inline line at the insight (`"none"`: nothing). |

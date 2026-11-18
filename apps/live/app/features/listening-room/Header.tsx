@@ -2,15 +2,19 @@
  * The room header (concept-live §5.3): catalog title as written, the generated one-liner, year,
  * parsha/zman, series position, duration, recording language, path notes, the catalog topics as a
  * clickable table of contents (`catalogTopicIdx`), the play control and the "Printable page" link.
+ * Above them, the shiur's top three topics (salience 0.5 and above) as one line, each opening the topic
+ * beside the shiur, with the corpus layer's AI label once for the page (concept-live-corpus D, E.3).
  */
 import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@emunas/i18n";
 import type { JSX } from "react";
 import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
+import { CorpusLabel } from "../../components/CorpusLabel.tsx";
 import { Text } from "../../components/Text.tsx";
 import { getEngine } from "../../player-ui/index.ts";
 import type { RoomContext } from "./context.ts";
+import { mainTopics } from "./corpus.ts";
 import { topicTargets } from "./model.ts";
-import { AiLabel, Report } from "./parts.tsx";
+import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
 import { printableUrl } from "./quiet-link.ts";
 import { roomStyles as s } from "./styles.ts";
 
@@ -21,6 +25,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
   const occasion = shiur.parsha ?? shiur.zman;
   const series = room.info.seriesTitle;
   const printable = printableUrl(quietOrigin, ui, shiur.id);
+  const main = mainTopics(shiur);
 
   const onPlay = () => {
     const engine = getEngine();
@@ -30,6 +35,18 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
 
   return (
     <>
+      {main.length > 0 ? (
+        <nav aria-label={rt("corpus.topics")} data-room-topics="">
+          <ul className={s.topicLine}>
+            {main.map((topic) => (
+              <li key={topic.id}>
+                <TopicChipButton room={room} topic={topic} />
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ) : null}
+      {shiur.corpus ? <CorpusLabel ui={ui} reviewed={false} className={s.corpusLabel} /> : null}
       {shiur.catalog.subTitle ? (
         <Text as="p" className={s.subTitle} value={shiur.catalog.subTitle} shiurLang={shiur.lang} />
       ) : null}

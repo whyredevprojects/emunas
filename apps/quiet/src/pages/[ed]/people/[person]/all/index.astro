@@ -15,13 +15,12 @@ import { EDS, type Ed } from "../../../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
   const data = entryData();
-  if (!data) return [];
   const { all } = personPageIds(data);
   return EDS.flatMap((ed) => all.map((person) => ({ params: { ed, person } })));
 }) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
-const data = entryData()!;
+const data = entryData();
 const person = data.layer.person(Astro.params.person as string)!;
 const page = personPage(data, ed, person, true);
 const t = useIndexesT(ed);

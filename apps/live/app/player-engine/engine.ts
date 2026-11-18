@@ -99,6 +99,12 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
   let currentSrc: string | null = null;
   /** Local seconds to apply once the new src has metadata. */
   let pendingLocal: number | null = null;
+  /**
+   * Local seconds of a seek handed to the element and not yet `seeked`. WebKit applies a seek later,
+   * so `currentTime` read right after setting it still returns the old position; the engine's
+   * position is the seek target until the element reports it arrived.
+   */
+  let seekTarget: number | null = null;
   /** True between setting a new src and its loadedmetadata (pause events are ours, not the user's). */
   let swapping = false;
   let wantPlaying = false;
@@ -139,7 +145,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
     const rec = shiur.recordings[recIndex];
     if (!rec) return 0;
     if (finished) return shiur.duration;
-    const local = pendingLocal ?? el.currentTime;
+    const local = pendingLocal ?? seekTarget ?? el.currentTime;
     const t = rec.offset + Math.min(Math.max(0, Number.isFinite(local) ? local : 0), rec.duration);
     return Math.min(t, shiur.duration);
   }
@@ -264,6 +270,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
       recIndex = index;
       currentSrc = url;
       pendingLocal = local;
+      seekTarget = null;
       swapping = true;
       buffering = true;
       el.src = url;
@@ -273,8 +280,13 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
     } else if (pendingLocal !== null) {
       pendingLocal = local;
     } else {
-      el.currentTime = local;
+      seekElement(local);
     }
+  }
+
+  function seekElement(local: number): void {
+    seekTarget = local;
+    el.currentTime = local;
   }
 
   function startElement(): void {
@@ -444,7 +456,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
         if (pendingLocal !== null) {
           const local = pendingLocal;
           pendingLocal = null;
-          el.currentTime = local;
+          seekElement(local);
         }
         swapping = false;
         el.playbackRate = rate;
@@ -478,6 +490,8 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
         clearSchedules();
         break;
       case "seeked":
+        // The element is where it was sent (or where it clamped the seek to).
+        seekTarget = null;
         updatePosition();
         rearm();
         break;
@@ -594,6 +608,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
       recIndex = -1;
       currentSrc = null;
       pendingLocal = null;
+      seekTarget = null;
       swapping = false;
       buffering = false;
       finished = false;

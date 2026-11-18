@@ -15,12 +15,12 @@ interface Props {
   ed: Ed;
   heading: string;
   lines: readonly IndexLine[];
-  /** Visible shiurim the corpus indexes are compiled from (0: no layer, no label). */
+  /** Visible shiurim the corpus indexes are compiled from. */
   visibleShiurim: number;
 }
 
 const { ed, heading, lines, visibleShiurim } = Astro.props;
-const generated = lines.some((l) => l.generated) && visibleShiurim > 0;
+const generated = lines.some((l) => l.generated);
 ---
 <section class="indexes" id={INDEXES_ANCHOR} aria-labelledby="indexes-heading">
   <h2 id="indexes-heading">{heading}</h2>

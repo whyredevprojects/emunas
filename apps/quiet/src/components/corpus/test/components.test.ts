@@ -223,10 +223,9 @@ describe("indexes block (title page)", () => {
     expect(en.find((l) => l.id === "calendar")!.sub.map((s) => s.href)).toEqual(["/en/calendar/parsha/", "/en/calendar/zman/"]);
   });
 
-  it("shows no counts without a layer and leaves out pages that are not built", () => {
-    const lines = indexesBlock("en", null, (href) => href !== "/en/erachim/");
+  it("leaves out pages that are not built", () => {
+    const lines = indexesBlock("en", counts, (href) => href !== "/en/erachim/");
     expect(lines.map((l) => l.id)).toEqual(["topics", "names", "sources", "stories", "calendar", "years"]);
-    expect(lines.every((l) => l.count === null)).toBe(true);
   });
 
   it("renders #indexes with one AI label and one line per index", async () => {
@@ -235,8 +234,6 @@ describe("indexes block (title page)", () => {
     expect([...html.matchAll(/data-index="(\w+)"/g)].map((m) => m[1])).toEqual([...INDEX_LINE_ORDER]);
     expect(html.match(/corpus-label-index/g)).toHaveLength(1);
     expect(html).toContain("Compiled by AI from the notes on 993 shiurim.");
-    const none = await render(IndexesBlock, { ed: "en", heading: "Indexes", lines: indexesBlock("en", null), visibleShiurim: 0 });
-    expect(none).not.toContain("corpus-label");
   });
 });
 

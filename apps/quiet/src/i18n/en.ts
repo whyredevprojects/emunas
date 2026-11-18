@@ -8,7 +8,7 @@
 export const en = {
   "site.name": "The Shiurim of the Mashgiach",
   "site.nameShort": "Shiurim",
-  "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l, arranged as a catalog.",
+  "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l.",
 
   "skip.toMain": "Skip to the text",
 
@@ -24,10 +24,17 @@ export const en = {
   "edition.other": "אידיש",
   "edition.otherName": "Yiddish edition",
 
+  "theme.label": "Colours",
+  "theme.light": "Light",
+  "theme.dark": "Dark",
+
+  "link.newTab": "(opens in a new tab)",
+
   "breadcrumb.label": "You are here",
 
   "footer.recordingIsSource": "The recordings are the source. Titles are as printed in the 2012 Pocket Guide.",
   "footer.otherEdition": "This page in Yiddish",
+  "footer.home": "Emunas home",
 
   "time.playFrom": "Play from {time}",
   "time.playFromPart": "Play from {time} (part {part})",

@@ -6,7 +6,8 @@
  * Loading (corpus-wave-plan §4, C1.7): the page renders from `today.json` alone. The moment of the
  * day then loads its one shiur file for the text, and Continue loads the heard shiurim's files only
  * when the personal store has progress. `corpus.json`, `facets.json` and the corpus layer's
- * corpus-wide files are never requested here.
+ * corpus-wide files are never requested here. The occasion mix button plays its inline head at once
+ * and only then loads the occasion topic's file for the rest (`occasion-mix.ts`).
  */
 import type { Ed } from "@emunas/corpus/public";
 import { formatClock, formatNumber, notice, type UiLang } from "@emunas/i18n";
@@ -19,8 +20,20 @@ import { tFor, useUi } from "../../i18n/index.ts";
 import { readingLang, useSettings } from "../../shell/settings.ts";
 import { formatCivilDate, formatHebrewDate, momentContent, occasionLabel } from "./format.ts";
 import { useIsrael } from "./israel.ts";
+import { mixT } from "../mix/strings.ts";
+import { playOccasionMix } from "./occasion-mix.ts";
 import { loadContinueRows } from "./continue.ts";
-import { buildToday, continueItems, dateFromQuery, localIsoDay, rowsById, type DayMoment, type TodayRow, type TodayView } from "./model.ts";
+import {
+  buildToday,
+  continueItems,
+  dateFromQuery,
+  localIsoDay,
+  rowsById,
+  type DayMoment,
+  type TodayRow,
+  type TodayView,
+  type WeekMix,
+} from "./model.ts";
 import { readProgress, useProgressSourceVersion } from "./personal.ts";
 import { ShiurCard, type CardData } from "./ShiurCard.tsx";
 import { todayT, type TodayKey } from "./strings.ts";
@@ -146,6 +159,7 @@ function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile
       <h2 id="today-week" className={s.sectionTitle}>
         {tt("today.week")}
       </h2>
+      {view.mix ? <OccasionMix mix={view.mix} ui={ui} /> : null}
       {p ? (
         <div className={s.section} data-parsha={p.key}>
           <h3 className={s.occasionTitle}>
@@ -171,6 +185,49 @@ function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile
       ))}
       {anyNotes ? <p className={s.aiNote}>{notice("aiNotesShort", ui)}</p> : null}
     </section>
+  );
+}
+
+type MixStatus = "idle" | "loading" | "playing" | "error";
+
+/**
+ * The occasion mix button (concept-live-corpus C.3): one per week. It plays the inline head at once;
+ * the rest of the mix joins the queue when the topic's moment list arrives. Labelled once as
+ * assembled automatically from AI tags.
+ */
+function OccasionMix({ mix, ui }: { mix: WeekMix; ui: UiLang }): JSX.Element {
+  const tt = todayT(ui);
+  const mt = mixT(ui);
+  const audio = useSettings((st) => st.audio);
+  const [status, setStatus] = useState<MixStatus>("idle");
+  async function play(): Promise<void> {
+    setStatus("loading");
+    try {
+      setStatus((await playOccasionMix(mix, audio)) > 0 ? "playing" : "error");
+    } catch {
+      setStatus("error");
+    }
+  }
+  return (
+    <div className={s.mix} data-testid="occasion-mix" data-occasion={mix.key} data-topic={mix.topicId}>
+      <button type="button" className={s.mixPlay} data-testid="occasion-mix-play" disabled={status === "loading"} onClick={() => void play()}>
+        {status === "loading" && mix.head.length === 0
+          ? mt("mix.preparing")
+          : <span>{withSlot(tt("today.mix.play"), "name", <Text value={mix.label[ui]} lang={ui} />)}</span>}
+      </button>
+      <p className={s.sectionLead}>
+        {tt("today.mix.lead")}
+        {audio === "both"
+          ? ` ${mt("mix.header", { sections: mt("mix.sections", { count: mix.sections }), shiurim: mt("mix.shiurim", { count: mix.shiurim }) })}`
+          : ""}
+      </p>
+      <p className={s.aiNote} data-mix-label="auto">
+        {mt("mix.auto")}
+      </p>
+      <p role="status" className={s.muted}>
+        {status === "error" ? mt("mix.error") : ""}
+      </p>
+    </div>
   );
 }
 

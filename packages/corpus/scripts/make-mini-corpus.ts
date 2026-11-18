@@ -149,7 +149,7 @@ export const MINI_CORPUS_SYNTHETIC = {
    * shiur's tags and one story still name it, so the layer must follow it across kinds.
    */
   crossKindPersonId: "syn-cross-person",
-  /** The real person whose nameEn is "the Rav's father" (family rule, D5). */
+  /** The real person whose nameEn is "the Mashgiach's father" (family rule, D5). */
   familyPersonId: "eliyahu-shalom-wolfson",
   /** An index.json `files` entry no reader knows. */
   unknownFile: "future-insights.json",

@@ -254,7 +254,7 @@ describe("small helpers (unit)", () => {
   it("statedShiurCounts reads numbers of shiurim in summaries", () => {
     expect(statedShiurCounts("Taught in five shiurim over the years.")).toEqual([5]);
     expect(statedShiurCounts("in 3 talks; two other shiurim add")).toEqual([3, 3]);
-    expect(statedShiurCounts("The Rav teaches two ideas.")).toEqual([]);
+    expect(statedShiurCounts("The Mashgiach teaches two ideas.")).toEqual([]);
   });
 
   it("foldTerms folds, drops empties and deduplicates", () => {
@@ -284,17 +284,12 @@ describe("build files", () => {
     expect(existsSync(join(layerDir, "shiur/stale-shiur.json"))).toBe(false);
   });
 
-  it("with the corpus absent the layer is off: only layer.json, enabled false", () => {
+  it("with the corpus absent the build fails: the layer is required", () => {
     const out = join(tmp(), "out");
-    buildCorpusWithAggregates({ dataDir: MINI_DATA, policyDir: MINI_POLICY, outDir: out, dataSha: null });
     const d = miniCopy();
     rmSync(join(d, CORPUS), { recursive: true, force: true });
-    const r = buildCorpusWithAggregates({ dataDir: d, policyDir: MINI_POLICY, outDir: out, dataSha: null });
-    expect(r.layer.info.enabled).toBe(false);
-    expect(r.layer.files).toEqual(["layer.json"]);
-    expect(readdirSync(join(out, "layer"))).toEqual(["layer.json"]);
-    const info = readJson<LayerInfo>(join(out, "layer/layer.json"));
-    expect(info.warnings.join(" ")).toMatch(/absent/);
-    expect(r.layer.removed.length).toBeGreaterThan(10);
+    expect(() => buildCorpusWithAggregates({ dataDir: d, policyDir: MINI_POLICY, outDir: out, dataSha: null })).toThrow(
+      /the corpus layer is required/,
+    );
   });
 });

@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "yi-parshas-hashavua-shvptym-01",
- "rev": "738b2a367098",
+ "rev": "76e8caefc353",
  "lang": "yi",
  "category": "parsha",
  "catalog": {
@@ -53,7 +53,7 @@
     "momentId": "yi-parshas-hashavua-hzynv-01~s10",
     "shiurId": "yi-parshas-hashavua-hzynv-01",
     "t": 2972.72,
-    "score": 0.317
+    "score": 0.316
    }
   ],
   "titles": {
@@ -621,14 +621,27 @@
    {
     "momentId": "yi-parshas-hashavua-shvptym-01~st0",
     "storyId": "r-naftali-amsterdams-sefer",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Naftali Amsterdam"
+     }
+    ]
    },
    {
     "momentId": "yi-parshas-hashavua-shvptym-01~st1",
     "storyId": "king-yannai-and-the-sanhedrin",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Shimon ben Shetach"
+     },
+     {
+      "name": "Yannai HaMelech"
+     }
+    ]
    }
   ],
   "insights": []
@@ -636,11 +649,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav explains that the king, the kohen and the tzaddik exist so that a Jew can become batel to Hashem through someone greater than himself, and that this bittul is the preparation for crowning Hashem on Rosh Hashanah.",
+    "en": "The Mashgiach explains that the king, the kohen and the tzaddik exist so that a Jew can become batel to Hashem through someone greater than himself, and that this bittul is the preparation for crowning Hashem on Rosh Hashanah.",
     "yi": "דער משגיח ערקלערט אז דער מלך, דער כהן און דער צדיק זענען דא כדי א איד זאל קענען בטל ווערן צום רבונו של עולם דורך איינעם וואס איז גרעסער פון אים, און אז דער ביטול איז די הכנה צו מקבל זיין עול מלכות שמים אויף ראש השנה."
    },
    "abstract": {
-    "en": "The Rav opens with the kohanim's due and asks why the law that service is done standing appears in a parsha about what the people owe the kohen. He explains that Hashem ordered the world as giver and receiver: the lesser bows to the greater, and a Jew needs a rebbe. Malchus, Dovid's trait, means having nothing of one's own, like the moon and like Shabbos; Yerushalayim is the Shabbos of the world, the place of bowing. On Rosh Hashanah the King comes to us. A Jewish king exists to teach the people bittul, which is why his wealth is limited and why kings of Dovid's house, wholly batel, may sit in the Azarah as part of its building. After speaking of 'tamim tihyeh' and bitachon, he answers his question: one is batel to the kohen because the kohen stands batel before Hashem, and he closes with the great Rosh Hashanah of history.",
+    "en": "The Mashgiach opens with the kohanim's due and asks why the law that service is done standing appears in a parsha about what the people owe the kohen. He explains that Hashem ordered the world as giver and receiver: the lesser bows to the greater, and a Jew needs a rebbe. Malchus, Dovid's trait, means having nothing of one's own, like the moon and like Shabbos; Yerushalayim is the Shabbos of the world, the place of bowing. On Rosh Hashanah the King comes to us. A Jewish king exists to teach the people bittul, which is why his wealth is limited and why kings of Dovid's house, wholly batel, may sit in the Azarah as part of its building. After speaking of 'tamim tihyeh' and bitachon, he answers his question: one is batel to the kohen because the kohen stands batel before Hashem, and he closes with the great Rosh Hashanah of history.",
     "yi": "דער משגיח עפנט מיט משפט הכהנים און פרעגט פארוואס דער דין אז די עבודה דארף זיין מעומד שטייט אין א פרשה וואס רעדט פון וואס דער עולם איז מחויב צום כהן. ער ערקלערט אז דער רבונו של עולם האט מסדר געווען די וועלט אין אן אופן פון משפיע און מקבל: דער קלענערער בויגט זיך צום גרעסערן, און א איד דארף האבן א רבי. מלכות, די מדה פון דוד המלך, מיינט אז מ'האט גארנישט פון זיך, אזוי ווי די לבנה און אזוי ווי שבת; ירושלים איז דער שבת פון דער וועלט, דער ארט פון השתחוואה. אויף ראש השנה קומט דער מלך צו אונז. א מלך אין כלל ישראל איז דא כדי צו לערנען דעם עולם ביטול, דערפאר איז זיין עשירות באגרענעצט, און דערפאר מעגן מלכי בית דוד זיצן אין דער עזרה, ווייל זיי ווערן א חלק פונעם בנין. נאך א שמועס איבער \"תמים תהיה\" און בטחון ענטפערט ער אויף זיין קשיא: מ'איז בטל צום כהן ווייל ער שטייט בטל פארן רבונו של עולם. ער שליסט מיטן גרויסן ראש השנה פון דער היסטאריע."
    },
    "keyPoints": [
@@ -721,7 +734,7 @@
      "yi": "משפט הכהנים און שטיין ביי דער עבודה"
     },
     "summary": {
-     "en": "The Rav reads the pesukim of the kohanim's due, the first of the grain, wine and oil, 'for Hashem chose him to stand and serve', from which the Gemara learns that service is done standing. He asks why this law of the avodah appears here, in a parsha about what the people owe the kohen, and not in Vayikra with the other laws of the avodah.",
+     "en": "The Mashgiach reads the pesukim of the kohanim's due, the first of the grain, wine and oil, 'for Hashem chose him to stand and serve', from which the Gemara learns that service is done standing. He asks why this law of the avodah appears here, in a parsha about what the people owe the kohen, and not in Vayikra with the other laws of the avodah.",
      "yi": "דער משגיח לערנט די פסוקים פון משפט הכהנים, אז מ'דארף געבן דעם כהן ראשית דגנך, ווייל \"בו בחר ה' לעמוד לשרת\", און דערפון לערנט די גמרא אז די עבודה דארף זיין מעומד. ער פרעגט פארוואס דער דין שטייט דא, וואו די פרשה רעדט פון וואס דער עולם איז מחויב צום כהן, און נישט אין ספר ויקרא ביי די אנדערע דינים פון עבודה."
     },
     "kind": "intro",
@@ -741,7 +754,7 @@
      "yi": "מלכי צדק, אשרי, און א איד דארף א רבי"
     },
     "summary": {
-     "en": "From the mitzvah of appointing a king the Rav moves to Malki-Tzedek, who blessed Avraham before blessing Hashem and so lost the kehunah, and to Ashrei, which praises the tzaddikim before Tehillah l'Dovid. He explains that Hashem ordered the world as giver and receiver, the lesser bowing to the greater, and that a Jew needs a rebbe to receive yiras Shamayim through bittul.",
+     "en": "From the mitzvah of appointing a king the Mashgiach moves to Malki-Tzedek, who blessed Avraham before blessing Hashem and so lost the kehunah, and to Ashrei, which praises the tzaddikim before Tehillah l'Dovid. He explains that Hashem ordered the world as giver and receiver, the lesser bowing to the greater, and that a Jew needs a rebbe to receive yiras Shamayim through bittul.",
      "yi": "פון דער מצוה פון שום תשים עליך מלך גייט דער משגיח איבער צו מלכי צדק, וואס האט געבענטשט אברהם פאר'ן רבונו של עולם און דערפאר האט מען פון אים צוגענומען די כהונה, און צו אשרי, וואס לויבט די צדיקים פאר תהלה לדוד. ער ערקלערט אז די וועלט איז מסודר אין אן אופן פון משפיע און מקבל, דער קלענערער בויגט זיך צום גרעסערן, און א איד דארף האבן א רבי כדי מקבל צו זיין יראת שמים דורך ביטול."
     },
     "kind": "main",
@@ -761,7 +774,7 @@
      "yi": "דוד המלך, שבת, און גארנישט האבן פון זיך"
     },
     "summary": {
-     "en": "The Rav explains that malchus, the trait Dovid HaMelech teaches among the seven ushpizin, means having nothing of one's own, like the moon that only reflects the sun. Shabbos is the same: on it a Jew lays aside his work and business and acknowledges that all he has comes from Hashem, and Dovid stayed equally humble after he became great.",
+     "en": "The Mashgiach explains that malchus, the trait Dovid HaMelech teaches among the seven ushpizin, means having nothing of one's own, like the moon that only reflects the sun. Shabbos is the same: on it a Jew lays aside his work and business and acknowledges that all he has comes from Hashem, and Dovid stayed equally humble after he became great.",
      "yi": "דער משגיח ערקלערט אז מלכות, די מדה וואס דוד המלך לערנט צווישן די זיבן אושפיזין, מיינט אז מ'האט גארנישט פון זיך, אזוי ווי די לבנה וואס שיינט נאר פון דער זון. שבת איז די זעלבע בחינה: אויף שבת לייגט א איד אוועק זיין ארבעט און זיינע געשעפטן און ער אנערקענט אז אלעס וואס ער האט קומט פונעם רבונו של עולם, און דוד איז געבליבן דער זעלבער שפל ברך אויך ווען ער איז גרויס געווארן."
     },
     "kind": "main",
@@ -781,7 +794,7 @@
      "yi": "ירושלים, דער שבת פון דער וועלט"
     },
     "summary": {
-     "en": "Yerushalayim, the Rav says, is the Shabbos of the world: nothing is produced there, everything is brought there, and it is the place of blessing. Jews came on the Regalim to bow to Hashem, and such true bittul needs preparation, learned by being batel to one's rebbe, who is batel to someone greater.",
+     "en": "Yerushalayim, the Mashgiach says, is the Shabbos of the world: nothing is produced there, everything is brought there, and it is the place of blessing. Jews came on the Regalim to bow to Hashem, and such true bittul needs preparation, learned by being batel to one's rebbe, who is batel to someone greater.",
      "yi": "ירושלים, זאגט דער משגיח, איז דער שבת פון דער וועלט: דארט ווערט גארנישט געמאכט, אלעס ברענגט מען אהין, און דארט איז דער מקום הברכה. אויף די רגלים זענען אידן געקומען זיך בויגן צום רבונו של עולם, און אזא אמת'ער ביטול דארף א הכנה, וואס מ'לערנט זיך דורך בטל זיין צום רבי'ן, וואס איז בטל צו נאך א גרעסערן."
     },
     "kind": "main",
@@ -801,7 +814,7 @@
      "yi": "ראש השנה: דער מלך קומט צו אונז"
     },
     "summary": {
-     "en": "The Rav asks why there is no aliyah l'regel on Rosh Hashanah and Yom Kippur, and answers that on these days, the ten days of 'seek Hashem when He is found', the King comes to us, which is why their tefillos speak of malchus. He then explains the miracle that the people stood crowded yet bowed with room: one who is batel to Hashem takes up no space.",
+     "en": "The Mashgiach asks why there is no aliyah l'regel on Rosh Hashanah and Yom Kippur, and answers that on these days, the ten days of 'seek Hashem when He is found', the King comes to us, which is why their tefillos speak of malchus. He then explains the miracle that the people stood crowded yet bowed with room: one who is batel to Hashem takes up no space.",
      "yi": "דער משגיח פרעגט פארוואס איז נישטא קיין מצוה פון עליה לרגל אויף ראש השנה און יום כיפור, און ער ענטפערט אז אין די טעג, די עשרת ימי תשובה פון \"דרשו ה' בהמצאו\", קומט דער מלך צו אונז, און דערפאר רעדן די תפילות פון מלכות. דערנאך ערקלערט ער דעם נס פון \"עומדים צפופים ומשתחוים רווחים\": ווער עס איז בטל צום רבונו של עולם פארנעמט נישט קיין ארט."
     },
     "kind": "main",
@@ -821,7 +834,7 @@
      "yi": "מלכי צדק און דער תכלית פון א מלך"
     },
     "summary": {
-     "en": "The Rav identifies Malki-Tzedek as Shem ben Noach, king of Yerushalayim and kohen, and explains that blessing Avraham first was itself his acknowledgment that Avraham was greater and could bring him to greater bittul. From here he explains 'som tasim alecha melech': a king whose role is to show the people that they and the world are nothing and to bring them to choose Hashem, unlike the king demanded in Shmuel's time 'like all the nations'.",
+     "en": "The Mashgiach identifies Malki-Tzedek as Shem ben Noach, king of Yerushalayim and kohen, and explains that blessing Avraham first was itself his acknowledgment that Avraham was greater and could bring him to greater bittul. From here he explains 'som tasim alecha melech': a king whose role is to show the people that they and the world are nothing and to bring them to choose Hashem, unlike the king demanded in Shmuel's time 'like all the nations'.",
      "yi": "דער משגיח ברענגט אז מלכי צדק איז שם בן נח, דער מלך פון ירושלים און דער כהן, און ער ערקלערט אז דאס וואס ער האט פריער געבענטשט אברהם איז געווען זיין הודאה אז אברהם איז גרעסער און קען אים ברענגען צו א העכערן ביטול. פון דעם ערקלערט ער \"שום תשים עליך מלך\": א מלך וואס זיין תפקיד איז צו ווייזן דעם עולם אז זיי און די וועלט זענען גארנישט און זיי ברענגען אויסצוקלייבן דעם רבונו של עולם, נישט אזוי ווי דער מלך וואס מ'האט פארלאנגט אין די צייטן פון שמואל \"ככל הגוים\"."
     },
     "kind": "main",
@@ -841,7 +854,7 @@
      "yi": "די גדרים פונעם מלך און דער כבוד פון דער תורה"
     },
     "summary": {
-     "en": "The Rav explains that the king may not have many horses, wives or silver because possessions attach to a person's soul and breed haughtiness, while the king's whole role is to teach bittul. He tells how R' Naftali Amsterdam carried a sefer so that people rising for him would rise for the sefer, and reads the king's sefer Torah that goes with him the same way: the honor is directed to Hashem.",
+     "en": "The Mashgiach explains that the king may not have many horses, wives or silver because possessions attach to a person's soul and breed haughtiness, while the king's whole role is to teach bittul. He tells how R' Naftali Amsterdam carried a sefer so that people rising for him would rise for the sefer, and reads the king's sefer Torah that goes with him the same way: the honor is directed to Hashem.",
      "yi": "דער משגיח ערקלערט אז דער מלך טאר נישט האבן צופיל סוסים, נשים און כסף, ווייל א קנין קלעבט זיך צום נפש פונעם מענטש און ברענגט צו גסות הרוח, און דעם מלך'ס גאנצער תפקיד איז צו לערנען ביטול. ער דערציילט אז רבי נפתלי אמסטערדאם האט אלעמאל געטראגן א ספר, כדי ווען מ'שטייט אויף פאר אים זאל מען אויפשטיין פארן ספר, און אזוי טייטשט ער דעם מלך'ס ספר תורה וואס גייט מיט אים: דער כבוד זאל גיין צום רבונו של עולם."
     },
     "kind": "main",
@@ -861,7 +874,7 @@
      "yi": "זיצן אין דער עזרה; די ברכה פון בונה ירושלים"
     },
     "summary": {
-     "en": "The Rav brings the halacha that no one may sit in the Azarah except kings of the house of Dovid, Rashi's source in 'to stand and serve' and the pasuk 'Dovid sat before Hashem', and the Mishneh LaMelech's doubt about the law. He adds a question on bentching: in the brachah of Boneh Yerushalayim Dovid is mentioned just before the closing, which seems to break the rule that the words before the closing must match it.",
+     "en": "The Mashgiach brings the halacha that no one may sit in the Azarah except kings of the house of Dovid, Rashi's source in 'to stand and serve' and the pasuk 'Dovid sat before Hashem', and the Mishneh LaMelech's doubt about the law. He adds a question on bentching: in the brachah of Boneh Yerushalayim Dovid is mentioned just before the closing, which seems to break the rule that the words before the closing must match it.",
      "yi": "דער משגיח ברענגט דעם דין אז מ'טאר נישט זיצן אין דער עזרה חוץ מלכי בית דוד, רש\"י'ס מקור פון \"לעמוד לשרת\" און דעם פסוק \"וישב לפני ה'\" ביי דוד, און דעם ספק פונעם משנה למלך. ער לייגט צו א קשיא אין בענטשן: אין דער ברכה פון בונה ירושלים דערמאנט מען דוד המלך גלייך פאר דער חתימה, הגם עס דארף זיין מעין חתימה סמוך לחתימתה."
     },
     "kind": "main",
@@ -881,7 +894,7 @@
      "yi": "מלכות איז ביטול: דער גרגשי, חמץ, די מלחמה פון אברהם"
     },
     "summary": {
-     "en": "The Rav explains that malchus, the seventh like Shabbos, is bittul, and brings from the Bnei Yissaschar that even the Girgashi, a malchus of the kelipah, left Eretz Yisrael and so acknowledged Hashem's kingship. He applies this to chametz, which stands for self-importance and is nullified, and to Avraham's war with the kings, where throwing dust showed that the kings were nothing.",
+     "en": "The Mashgiach explains that malchus, the seventh like Shabbos, is bittul, and brings from the Bnei Yissaschar that even the Girgashi, a malchus of the kelipah, left Eretz Yisrael and so acknowledged Hashem's kingship. He applies this to chametz, which stands for self-importance and is nullified, and to Avraham's war with the kings, where throwing dust showed that the kings were nothing.",
      "yi": "דער משגיח ערקלערט אז מלכות, דער זיבעטער אזוי ווי שבת, איז ביטול, און ער ברענגט פונעם בני יששכר אז אפילו דער גרגשי, א מלכות פון קליפה, איז ארויס פון ארץ ישראל און מיט דעם אנערקענט די מלכות פונעם רבונו של עולם. ער ווענדט עס אן אויף חמץ, וואס איז די ישות, וואס מ'איז מבטל, און אויף דער מלחמה פון אברהם אבינו מיט די מלכים, וואו דאס ווארפן עפר האט געוויזן אז די מלכים זענען גארנישט."
     },
     "kind": "main",
@@ -901,7 +914,7 @@
      "yi": "מלכי בית דוד ווערן א חלק פון דער עזרה"
     },
     "summary": {
-     "en": "After the story of King Yannai, who would not stand before the Sanhedrin, the Rav explains that the kings of Dovid's house stand before the court and so can sit in judgment. They may sit in the Azarah because they are so batel to the Mikdash that they become part of its building, like its stones and wood, and this also answers why Dovid belongs right before the closing of Boneh Yerushalayim.",
+     "en": "After the story of King Yannai, who would not stand before the Sanhedrin, the Mashgiach explains that the kings of Dovid's house stand before the court and so can sit in judgment. They may sit in the Azarah because they are so batel to the Mikdash that they become part of its building, like its stones and wood, and this also answers why Dovid belongs right before the closing of Boneh Yerushalayim.",
      "yi": "נאך דער מעשה מיט ינאי המלך, וואס האט נישט געוואלט שטיין פארן סנהדרין, ערקלערט דער משגיח אז מלכי בית דוד שטעלן זיך פארן בית דין, און דערפאר קענען זיי אליין משפט'ן. זיי מעגן זיצן אין דער עזרה ווייל זיי זענען אזוי בטל צום מקדש אז זיי ווערן א חלק פונעם בנין, אזוי ווי די שטיינער און דאס האלץ, און דערמיט איז אויך מתורץ פארוואס דוד געהערט גלייך פאר דער חתימה פון בונה ירושלים."
     },
     "kind": "main",
@@ -921,7 +934,7 @@
      "yi": "אלול און \"תמים תהיה\""
     },
     "summary": {
-     "en": "The Rav says the parshiyos read in Elul are about bittul, since success on Rosh Hashanah depends on the bittul with which one crowns the King. He explains 'tamim tihyeh im Hashem Elokecha' with Rashi: to walk with Hashem wholeheartedly, not to search out the future, and to know that everything is run by Hashem alone; this is bitachon.",
+     "en": "The Mashgiach says the parshiyos read in Elul are about bittul, since success on Rosh Hashanah depends on the bittul with which one crowns the King. He explains 'tamim tihyeh im Hashem Elokecha' with Rashi: to walk with Hashem wholeheartedly, not to search out the future, and to know that everything is run by Hashem alone; this is bitachon.",
      "yi": "דער משגיח זאגט אז די פרשיות וואס מ'ליינט אין חודש אלול רעדן פון ביטול, ווייל די הצלחה פון ראש השנה הענגט אין דעם מיט וואספארא ביטול מ'קרוינט דעם מלך. ער טייטשט \"תמים תהיה עם ה' אלקיך\" לויט רש\"י: גיין מיטן רבונו של עולם בתמימות, נישט נאכפארשן די עתידות, און וויסן אז אלעס ווערט געפירט נאר דורכן רבונו של עולם; דאס איז מדת הבטחון."
     },
     "kind": "main",
@@ -941,7 +954,7 @@
      "yi": "בטחון אין טאג טעגליכן לעבן"
     },
     "summary": {
-     "en": "The Rav says ordinary people too can work on bitachon, as the Chovos HaLevavos teaches, at least at certain moments. One need not envy someone with a better head or more money, since Hashem gave each person exactly what he needs; he brings Dovid strengthening himself in Hashem when everything was taken from him, and points to the constant miracles of the body: a person relies on Hashem for his heart and lungs but not for tomorrow's bread.",
+     "en": "The Mashgiach says ordinary people too can work on bitachon, as the Chovos HaLevavos teaches, at least at certain moments. One need not envy someone with a better head or more money, since Hashem gave each person exactly what he needs; he brings Dovid strengthening himself in Hashem when everything was taken from him, and points to the constant miracles of the body: a person relies on Hashem for his heart and lungs but not for tomorrow's bread.",
      "yi": "דער משגיח זאגט אז אויך פשוטע מענטשן קענען ארבעטן אויף בטחון, ווי דער חובות הלבבות לערנט, כאטש אין געוויסע מינוטן. מ'דארף נישט מקנא זיין איינעם וואס האט א בעסערן קאפ אדער מער געלט, ווייל דער רבונו של עולם האט יעדן געגעבן פונקט וואס ער דארף; ער ברענגט ווי דוד האט זיך מחזק געווען אינעם רבונו של עולם ווען מ'האט אים אלעס צוגענומען, און ער ווייזט אן אויף די ניסים פונעם קערפער וואס געשען כסדר: א מענטש פארלאזט זיך אויפן רבונו של עולם אויף זיין הארץ און לונגען, אבער נישט אויף א שטיקל ברויט פאר מארגן."
     },
     "kind": "main",
@@ -961,7 +974,7 @@
      "yi": "בטל ווערן דורך א גרעסערן"
     },
     "summary": {
-     "en": "One who is batel to Hashem lacks nothing and envies no one. The Rav says bittul is learned only through someone greater, criticizes students who leave the yeshiva thinking they know better than their rebbeim, and brings the Rambam on how avodah zarah began. He names three authorities, father, king and rebbe, and says the first parshiyos of Elul teach bittul to king, judge, navi and kohen.",
+     "en": "One who is batel to Hashem lacks nothing and envies no one. The Mashgiach says bittul is learned only through someone greater, criticizes students who leave the yeshiva thinking they know better than their rebbeim, and brings the Rambam on how avodah zarah began. He names three authorities, father, king and rebbe, and says the first parshiyos of Elul teach bittul to king, judge, navi and kohen.",
      "yi": "ווער עס איז בטל צום רבונו של עולם פעלט אים גארנישט און ער איז קיינעם נישט מקנא. דער משגיח זאגט אז ביטול לערנט מען זיך נאר דורך א גרעסערן, ער רעדט שארף קעגן תלמידים וואס גייען ארויס פון ישיבה און האלטן אז זיי פארשטייען בעסער ווי זייערע רבי'ס, און ער ברענגט דעם רמב\"ם ווי אזוי עבודה זרה האט זיך אנגעהויבן. ער רעכנט אויס דריי מינים אויטאריטעט, א טאטע, א מלך און א רבי, און זאגט אז די ערשטע פרשיות פון אלול לערנען ביטול צום מלך, צום שופט, צום נביא און צום כהן."
     },
     "kind": "main",
@@ -981,7 +994,7 @@
      "yi": "צוריק צו \"לעמוד לשרת\""
     },
     "summary": {
-     "en": "Returning to his opening question, the Rav explains that one gives the kohen the first of everything because he stands in service, batel to Hashem, and one becomes batel to him; therefore the law that the avodah is done standing is stated here. A kohen who serves sitting invalidates the avodah.",
+     "en": "Returning to his opening question, the Mashgiach explains that one gives the kohen the first of everything because he stands in service, batel to Hashem, and one becomes batel to him; therefore the law that the avodah is done standing is stated here. A kohen who serves sitting invalidates the avodah.",
      "yi": "צוריקקומענדיג צו זיין קשיא פונעם אנהייב, ערקלערט דער משגיח אז מ'גיט דעם כהן די ראשית פון אלעס ווייל ער שטייט ביי דער עבודה, בטל צום רבונו של עולם, און מ'ווערט בטל צו אים; דערפאר שטייט דא דער דין אז די עבודה דארף זיין מעומד. א כהן וואס טוט די עבודה זיצנדיג איז פוסל די עבודה."
     },
     "kind": "main",
@@ -1001,7 +1014,7 @@
      "yi": "דער גרויסער ראש השנה פון דער היסטאריע"
     },
     "summary": {
-     "en": "The Rav speaks of the great Rosh Hashanah at the end of history, when the great shofar will be blown and all will come to bow to Hashem in Yerushalayim, and says every Rosh Hashanah is a miniature of it. He closes with the wish that everyone be batel to those greater than him, come to Rosh Hashanah with bittul, and merit a good year.",
+     "en": "The Mashgiach speaks of the great Rosh Hashanah at the end of history, when the great shofar will be blown and all will come to bow to Hashem in Yerushalayim, and says every Rosh Hashanah is a miniature of it. He closes with the wish that everyone be batel to those greater than him, come to Rosh Hashanah with bittul, and merit a good year.",
      "yi": "דער משגיח רעדט פונעם גרויסן ראש השנה פון דער היסטאריע, ווען מ'וועט בלאזן אין שופר גדול און אלע וועלן קומען זיך בויגן צום רבונו של עולם אין ירושלים, און ער זאגט אז יעדער ראש השנה איז א קליינע דוגמא דערפון. ער שליסט מיט א ברכה אז יעדער זאל זיך מבטל זיין צו גרעסערע פון זיך, קומען צו ראש השנה מיט ביטול, און זוכה זיין צו א גוט יאר."
     },
     "kind": "closing",
@@ -1015,7 +1028,7 @@
    [
     974.16,
     978.2,
-    "asr-noise"
+    "pause"
    ]
   ],
   "sources": [
@@ -1516,7 +1529,7 @@
    {
     "id": "yi-parshas-hashavua-shvptym-01~i0",
     "text": {
-     "en": "Malki-Tzedek's blessing of Avraham before Hashem, for which he lost the kehunah, is read by the Rav as also an acknowledgment that Avraham was greater, through whom he could reach a higher bittul to Hashem.",
+     "en": "Malki-Tzedek's blessing of Avraham before Hashem, for which he lost the kehunah, is read by the Mashgiach as also an acknowledgment that Avraham was greater, through whom he could reach a higher bittul to Hashem.",
      "yi": "דאס וואס מלכי צדק האט געבענטשט אברהם פאר'ן רבונו של עולם, וואס דערפאר האט מען אים צוגענומען די כהונה, טייטשט דער משגיח אויך אלס הודאה אז אברהם איז גרעסער, און דורך אים קען ער צוקומען צו א העכערן ביטול צום רבונו של עולם."
     },
     "t": 1878.95,
@@ -1574,7 +1587,7 @@
    {
     "id": "yi-parshas-hashavua-shvptym-01~tk0",
     "text": {
-     "en": "The Rav says a Jew must have a rebbe from whom to receive, and must be batel to him.",
+     "en": "The Mashgiach says a Jew must have a rebbe from whom to receive, and must be batel to him.",
      "yi": "דער משגיח זאגט אז א איד מוז האבן א רבי פון וועמען מקבל צו זיין, און ער דארף זיך מבטל זיין צו אים."
     },
     "t": 611.89,
@@ -1583,7 +1596,7 @@
    {
     "id": "yi-parshas-hashavua-shvptym-01~tk1",
     "text": {
-     "en": "The Rav says that on Shabbos a person should set aside his work and business and acknowledge that he has nothing of his own and everything comes from Hashem.",
+     "en": "The Mashgiach says that on Shabbos a person should set aside his work and business and acknowledge that he has nothing of his own and everything comes from Hashem.",
      "yi": "דער משגיח זאגט אז אויף שבת זאל א מענטש אוועקלייגן זיין ארבעט און געשעפטן און אנערקענען אז ער האט גארנישט פון זיך און אלעס קומט פונעם רבונו של עולם."
     },
     "t": 942.96,
@@ -1592,7 +1605,7 @@
    {
     "id": "yi-parshas-hashavua-shvptym-01~tk2",
     "text": {
-     "en": "The Rav says one should not worry about the future or envy someone who has more, since Hashem gave each person exactly what he needs.",
+     "en": "The Mashgiach says one should not worry about the future or envy someone who has more, since Hashem gave each person exactly what he needs.",
      "yi": "דער משגיח זאגט אז מ'זאל זיך נישט זארגן וועגן דער צוקונפט און נישט מקנא זיין איינעם וואס האט מער, ווייל דער רבונו של עולם האט יעדן געגעבן פונקט וואס ער דארף."
     },
     "t": 3814.37,
@@ -1601,7 +1614,7 @@
    {
     "id": "yi-parshas-hashavua-shvptym-01~tk3",
     "text": {
-     "en": "The Rav says the preparation for Rosh Hashanah is to become batel to those greater than oneself, and through them to Hashem.",
+     "en": "The Mashgiach says the preparation for Rosh Hashanah is to become batel to those greater than oneself, and through them to Hashem.",
      "yi": "דער משגיח זאגט אז די הכנה צו ראש השנה איז זיך מבטל זיין צו גרעסערע פון זיך, און דורך זיי צום רבונו של עולם."
     },
     "t": 3709.58,
@@ -1685,15 +1698,9 @@
      "yi": "רבי נפתלי אמסטערדאם'ס ספר"
     },
     "retelling": {
-     "en": "The Rav relates what is told among the Lithuanian ba'alei mussar about R' Naftali Amsterdam: he always went about holding a sefer. When he came into the shul he took a sefer with him, so that if people rose for him he would not feel they rose for him, since one rises for a sefer anyway.",
+     "en": "The Mashgiach relates what is told among the Lithuanian ba'alei mussar about R' Naftali Amsterdam: he always went about holding a sefer. When he came into the shul he took a sefer with him, so that if people rose for him he would not feel they rose for him, since one rises for a sefer anyway.",
      "yi": "דער משגיח דערציילט וואס מ'דערציילט ביי די ליטווישע בעלי מוסר פון רבי נפתלי אמסטערדאם: ער איז אלעמאל ארומגעגאנגען מיט א ספר. ווען ער איז אריין אין שול האט ער מיטגענומען א ספר, כדי אז מ'שטעלט זיך אויף פאר אים זאל ער נישט שפירן אז מ'שטייט אויף פאר אים, ווייל פאר א ספר שטייט מען סיי ווי אויף."
     },
-    "people": [
-     "R' Naftali Amsterdam"
-    ],
-    "peopleKeys": [
-     "rabbi-naftali-amsterdam"
-    ],
     "t": 2354.36,
     "end": 2378.7
    },
@@ -1704,144 +1711,12 @@
      "yi": "ינאי המלך און דער סנהדרין"
     },
     "retelling": {
-     "en": "The Rav tells the Gemara's story that a servant of King Yannai killed someone and Yannai had to be brought to judgment. Shimon ben Shetach called on Yannai to come and stand before the court, but he would not. From then on, the Rav says, it was established that kings of Yisrael neither judge nor are judged, while the kings of Dovid's house must stand before the Sanhedrin.",
+     "en": "The Mashgiach tells the Gemara's story that a servant of King Yannai killed someone and Yannai had to be brought to judgment. Shimon ben Shetach called on Yannai to come and stand before the court, but he would not. From then on, the Mashgiach says, it was established that kings of Yisrael neither judge nor are judged, while the kings of Dovid's house must stand before the Sanhedrin.",
      "yi": "דער משגיח דערציילט די מעשה אין גמרא אז דער עבד פון ינאי המלך האט געהרגעט א מענטש, און מ'האט געדארפט ברענגען ינאי צום דין. שמעון בן שטח האט געהייסן אז ינאי זאל קומען און זיך שטעלן פארן בית דין, אבער ער האט נישט געוואלט. פון דעמאלט אן, זאגט דער משגיח, איז געווארן דער דין אז מלכי ישראל לא דנין ולא דנין אותם, אבער מלכי בית דוד דארפן זיך שטעלן פארן סנהדרין."
     },
-    "people": [
-     "King Yannai",
-     "Shimon ben Shetach"
-    ],
-    "peopleKeys": [
-     "king-yannai",
-     "shimon-ben-shetach"
-    ],
     "t": 3227.93,
     "end": 3293.43,
     "soft": true
-   }
-  ],
-  "people": [
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Malki-Tzedek",
-    "key": "malki-tzedek"
-   },
-   {
-    "name": "Shem ben Noach",
-    "key": "shem-ben-noach"
-   },
-   {
-    "name": "Dovid HaMelech",
-    "key": "dovid-hamelech"
-   },
-   {
-    "name": "Shmuel HaNavi",
-    "key": "shmuel-hanavi"
-   },
-   {
-    "name": "Shlomo HaMelech",
-    "key": "shlomo-hamelech"
-   },
-   {
-    "name": "Rashi",
-    "key": "rashi"
-   },
-   {
-    "name": "the Rambam",
-    "key": "rambam"
-   },
-   {
-    "name": "the Mishneh LaMelech",
-    "key": "mishneh-lamelech"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "the Alter Rebbe (Ba'al HaTanya)",
-    "key": "baal-hatanya"
-   },
-   {
-    "name": "R' Naftali Amsterdam",
-    "key": "rabbi-naftali-amsterdam"
-   },
-   {
-    "name": "King Yannai",
-    "key": "king-yannai"
-   },
-   {
-    "name": "Shimon ben Shetach",
-    "key": "shimon-ben-shetach"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "רבונו של עולם",
-    "key": "rbvnv-shl-evlm-52e424"
-   },
-   {
-    "he": "ביטול",
-    "key": "bytvl-5b36e7"
-   },
-   {
-    "he": "מלכות שמים",
-    "key": "mlkvs-shmym-27ce7c"
-   },
-   {
-    "he": "משפט הכהנים",
-    "key": "mshpt-hkhnym-87c592"
-   },
-   {
-    "he": "לעמוד לשרת",
-    "key": "lemvd-lshrs-91de40"
-   },
-   {
-    "he": "אין שירות אלא מעומד",
-    "key": "ayn-shyrvs-ala-mevmd-694f49"
-   },
-   {
-    "he": "מלכי צדק",
-    "key": "mlky-tzdk-981448"
-   },
-   {
-    "he": "משפיע ומקבל",
-    "key": "mshpye-vmkbl-606043"
-   },
-   {
-    "he": "עזרה",
-    "key": "ezrh-e59ba3"
-   },
-   {
-    "he": "מלכי בית דוד",
-    "key": "mlky-bys-dvd-ae715c"
-   },
-   {
-    "he": "תמים תהיה",
-    "key": "smym-shyh-fb26ef"
-   },
-   {
-    "he": "בטחון",
-    "key": "btchvn-032372"
-   },
-   {
-    "he": "עומדים צפופים ומשתחוים רווחים",
-    "key": "evmdym-tzpvpym-vmshschvym-rvvchym-625fae"
-   },
-   {
-    "he": "אושפיזין",
-    "key": "avshpyzyn-df018b"
-   },
-   {
-    "he": "חודש אלול",
-    "key": "chvdsh-alvl-82bbff"
    }
   ],
   "writeupLangs": [

@@ -3,7 +3,7 @@
  * `/en/` and `/yi/`, including a switch between the two, so the dock and anything in it persist
  * (concept-live §4: "navigation never interrupts audio").
  *
- * Layout: header (site name, language control) · rail · main · dock slot. Logical CSS only; the
+ * Layout: header (site name, command bar, language control, dark-colours toggle) · rail · main · dock slot. Logical CSS only; the
  * whole shell mirrors with `dir`.
  */
 import { UI_DIR, isUiLang } from "@emunas/i18n";
@@ -17,6 +17,7 @@ import { LanguageMenu } from "./LanguageMenu.tsx";
 import { NotFound } from "./PageStub.tsx";
 import { Rail } from "./Rail.tsx";
 import { styles } from "./styles.ts";
+import { ThemeToggle } from "./ThemeToggle.tsx";
 
 export const MAIN_ID = "main";
 
@@ -46,7 +47,10 @@ export default function UiLayout(): JSX.Element {
           {t("site.short")}
         </Link>
         <CommandBar ui={ui} />
-        <LanguageMenu ui={ui} />
+        <div className={styles.headerTools}>
+          <LanguageMenu ui={ui} />
+          <ThemeToggle ui={ui} />
+        </div>
       </header>
       <Rail ui={ui} />
       <main id={MAIN_ID} className={styles.main} tabIndex={-1}>

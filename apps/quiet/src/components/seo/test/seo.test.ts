@@ -31,7 +31,7 @@ import {
   SITEMAP_URL_LIMIT,
   xmlEscape,
 } from "../sitemap.ts";
-import { aboutFileKey } from "../../../pages/[ed]/about/_content.ts";
+import { aboutFileKey, resolveAboutLinks } from "../../../pages/[ed]/about/_content.ts";
 import { ABOUT_PARTS, ABOUT_STRINGS } from "../../../pages/[ed]/about/_strings.ts";
 
 const repo = resolve(dirname(fileURLToPath(import.meta.url)), "../../../../../..");
@@ -45,27 +45,38 @@ describe("site env", () => {
     expect(env.feedbackEmail).toBe(PLACEHOLDER_FEEDBACK_EMAIL);
     expect(env.placeholder).toEqual({ hosts: true, feedbackEmail: true });
     expect(env.links.live.shiur("en", "x")).toBe("https://listen.example.invalid/en/s/x");
+    expect(env.hosts.quiet).toBe("https://library.example.invalid");
   });
 
   it("reads EMUNAS_DOMAIN, the workers.dev subdomain and explicit origins", () => {
     const prod = siteEnv({ EMUNAS_DOMAIN: "Emunas.Example", EMUNAS_FEEDBACK_EMAIL: " errors@emunas.example " });
-    expect(prod.hosts).toEqual({ quiet: "https://emunas.example", live: "https://listen.emunas.example" });
+    expect(prod.hosts).toEqual({
+      home: "https://emunas.example",
+      quiet: "https://library.emunas.example",
+      live: "https://listen.emunas.example",
+    });
     expect(prod.feedbackEmail).toBe("errors@emunas.example");
     expect(prod.placeholder).toEqual({ hosts: false, feedbackEmail: false });
 
     const staging = siteEnv({ EMUNAS_WORKERS_SUBDOMAIN: "acct", EMUNAS_STAGE: "staging" });
     expect(staging.hosts).toEqual({
+      home: "https://emunas-home-staging.acct.workers.dev",
       quiet: "https://emunas-quiet-staging.acct.workers.dev",
       live: "https://emunas-live-staging.acct.workers.dev",
     });
 
-    const local = siteEnv({ EMUNAS_QUIET_ORIGIN: "http://localhost:4321", EMUNAS_LIVE_ORIGIN: "http://localhost:5173" });
+    const local = siteEnv({
+      EMUNAS_HOME_ORIGIN: "http://localhost:4322",
+      EMUNAS_QUIET_ORIGIN: "http://localhost:4321",
+      EMUNAS_LIVE_ORIGIN: "http://localhost:5173",
+    });
     expect(local.links.quiet.home("yi")).toBe("http://localhost:4321/yi/");
   });
 
   it("fails on malformed or half-set values, deploy or not", () => {
     expect(() => siteEnv({ EMUNAS_LIVE_ORIGIN: "http://localhost:5173" })).toThrow(/no hosts configured/);
     expect(() => siteEnv({ EMUNAS_DOMAIN: "listen.emunas.example" })).toThrow();
+    expect(() => siteEnv({ EMUNAS_DOMAIN: "library.emunas.example" })).toThrow();
     expect(() => siteEnv({ EMUNAS_DOMAIN: "not a domain" })).toThrow();
     expect(() => siteEnv({ EMUNAS_FEEDBACK_EMAIL: "nobody" })).toThrow(/EMUNAS_FEEDBACK_EMAIL/);
     expect(() => parseFeedbackEmail("a@b.c?subject=x")).toThrow();
@@ -202,7 +213,7 @@ describe("sitemaps", () => {
 
 describe("About", () => {
   it("has the five parts of concept-quiet §5.11, notes among them, in both editions", () => {
-    expect(ABOUT_PARTS).toEqual(["rav", "arrangement", "notes", "report", "excluded"]);
+    expect(ABOUT_PARTS).toEqual(["mashgiach", "arrangement", "notes", "report", "excluded"]);
     for (const ed of ["yi", "en"] as const) {
       for (const p of ABOUT_PARTS) expect(ABOUT_STRINGS[ed].headings[p].trim(), `${ed} ${p}`).not.toBe("");
     }
@@ -211,9 +222,20 @@ describe("About", () => {
 
   it("reads human texts only from content/about/{ed}/{part}.md", () => {
     expect(aboutFileKey("../../../content/about/en/notes.md")).toEqual({ ed: "en", part: "notes" });
-    expect(aboutFileKey("../../../content/about/yi/rav.md")).toEqual({ ed: "yi", part: "rav" });
-    expect(aboutFileKey("../../../content/about/de/rav.md")).toBeNull();
+    expect(aboutFileKey("../../../content/about/yi/mashgiach.md")).toEqual({ ed: "yi", part: "mashgiach" });
+    expect(aboutFileKey("../../../content/about/de/mashgiach.md")).toBeNull();
     expect(aboutFileKey("../../../content/about/en/other.md")).toBeNull();
+  });
+
+  it("resolves the About texts' live: and guide: links into new-tab links and leaves site links alone", () => {
+    const t = { ed: "yi", live: "https://listen.example.invalid/yi/", guide: "https://media.example.invalid/g.pdf", newTab: "(new tab)" } as const;
+    const out = resolveAboutLinks('<p><a href="live:">app</a>, <a href="guide:">guide</a>, <a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a></p>', t);
+    expect(out).toContain('<a href="https://listen.example.invalid/yi/" hreflang="yi" target="_blank" rel="noopener">app<svg class="new-tab-icon"');
+    expect(out).toContain('<a href="https://media.example.invalid/g.pdf" target="_blank" rel="noopener">guide<svg');
+    expect(out).toContain('<span class="visually-hidden"> (new tab)</span></a>');
+    expect(out).toContain('<a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a>');
+    expect(() => resolveAboutLinks('<a href="lve:">x</a>', t)).toThrow(/unknown link "lve:"/);
+    expect(() => resolveAboutLinks('<a href="https://example.com/">x</a>', t)).toThrow(/unknown link/);
   });
 });
 

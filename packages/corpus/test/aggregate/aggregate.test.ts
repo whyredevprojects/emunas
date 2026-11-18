@@ -124,18 +124,13 @@ describe("aggregates on the mini corpus", () => {
     }
   });
 
-  it("counts entities against the page thresholds", () => {
-    const e = files.entities;
-    expect(e.thresholds.quiet).toEqual({ work: 2, person: 2, concept: 3 });
-    for (const w of e.works) {
-      const work = files.works.works.find((x) => x.key === w.key)!;
-      expect(w.shiurim).toBe(work.shiurCount);
-      expect(w.quietPage).toBe(!work.genre && w.shiurim >= 2);
-      expect(w.livePrerender).toBe(!work.genre && w.shiurim >= 3);
+  it("writes no site-derived entity aggregates (retired in C3.1)", () => {
+    expect(Object.keys(files).sort()).toEqual(["neighbours", "occasions", "sections", "series", "works", "years"]);
+    for (const name of ["people.json", "concepts.json", "stories.json", "entities.json"]) {
+      expect(Object.values(AGGREGATE_FILES)).not.toContain(name);
     }
-    for (const c of e.concepts) expect(c.quietPage).toBe(c.shiurim >= 3);
-    for (const c of files.concepts.concepts) expect(c.shiurCount).toBeGreaterThanOrEqual(files.concepts.minShiurim);
-    expect(e.concepts.length).toBe(files.concepts.concepts.length + files.concepts.omitted.belowThreshold);
+    // works.json carries ids, labels and references, never the raw extraction strings filed under a key
+    for (const w of files.works.works) expect(w).not.toHaveProperty("names");
   });
 });
 
@@ -173,18 +168,16 @@ describe("buildCorpusWithAggregates", () => {
     const report = readJson<BuildReport>(join(out, "build-report.json"));
     expect(report.unmapped.zman).toEqual([{ raw: "zzz not a zman", key: "other", count: 1 }]);
     expect(report.unmapped.parsha).toEqual([{ raw: "qqq not a parsha", key: "other", count: 1 }]);
-    expect(report.unmapped.person.length).toBeGreaterThan(0);
+    // People are not projected (F.1), so no person string is keyed.
+    expect(report.unmapped.person).toEqual([]);
     expect(report.warnings.some((w) => w.startsWith("aggregate: "))).toBe(true);
     expect(r.report.counts.total).toBe(60);
     const o = readJson<OccasionsFile>(join(out, "occasions.json"));
     expect(o.other.map((x) => x.id).sort()).toEqual(["yi-parshas-hashavua-mvr-01", "yi-zmanim-msybs-lchyym-bkmp-01-c", "yi-zmanim-spyrh-01"]);
-    // every unmapped work string is listed in works.json under its fallback key
+    // every unmapped work string is filed in works.json under its fallback key
     const works = readJson<Aggregates["works"]>(join(out, "works.json")).works;
-    for (const u of report.unmapped.work) {
-      const w = works.find((x) => x.key === u.key);
-      expect(w?.mapped, u.key).toBe(false);
-      expect(w!.names).toContain(u.raw);
-    }
+    for (const u of report.unmapped.work) expect(works.find((x) => x.key === u.key)?.mapped, u.key).toBe(false);
+    for (const name of ["people.json", "concepts.json", "stories.json", "entities.json"]) expect(existsSync(join(out, name)), name).toBe(false);
   });
 
   it("an unchanged rerun rewrites nothing", () => {

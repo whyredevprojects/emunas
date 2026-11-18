@@ -1,7 +1,7 @@
 {
- "schemaVersion": 3,
+ "schemaVersion": 6,
  "id": "yi-zmanim-nysn-05",
- "rev": "5bc54593c179",
+ "rev": "ff949e98b17f",
  "lang": "yi",
  "category": "zman",
  "catalog": {
@@ -632,14 +632,24 @@
    {
     "momentId": "yi-zmanim-nysn-05~st0",
     "storyId": "rav-gifter-takes-out-the-garbage",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rav Gifter"
+     }
+    ]
    },
    {
     "momentId": "yi-zmanim-nysn-05~st1",
     "storyId": "reb-arele-lights-the-chanukah-lights",
-    "tellings": 1,
-    "page": false
+    "otherShiurim": 0,
+    "page": false,
+    "people": [
+     {
+      "name": "Rabbi Aharon Roth (the Shomer Emunim)"
+     }
+    ]
    }
   ],
   "insights": []
@@ -647,11 +657,11 @@
  "notes": {
   "summary": {
    "oneLiner": {
-    "en": "The Rav teaches that the lowly work of cleaning before Pesach is precious to Hashem, and that Nissan, the month in which all of creation is renewed, calls on every Jew to renew himself through emunah and to begin again.",
+    "en": "The Mashgiach teaches that the lowly work of cleaning before Pesach is precious to Hashem, and that Nissan, the month in which all of creation is renewed, calls on every Jew to renew himself through emunah and to begin again.",
     "yi": "דער משגיח לערנט אז די נידעריגע ארבעט פון ארויסקערן פאר פסח איז טייער ביים אייבערשטן, און אז ניסן, דער חודש וואס די גאנצע בריאה ווערט באנייט, רופט יעדן איד זיך מחדש צו זיין מיט אמונה און אנצופאנגען פון ניי."
    },
    "abstract": {
-    "en": "The Rav opens with the terumas hadeshen, the removal of the ashes at night, and explains that this humble night avodah, done in work clothes, is most dear to Hashem; so too taking a broom and helping at home before Pesach, as a story with Rav Gifter shows. He then turns to Nissan, the month of creation. Hashem tried four times in Nissan to bring the world to its tikkun: at creation, at Yetzias Mitzrayim, at the Mishkan, and the Nissan of the geulah still awaited. Hashem does not give up, and a Jew too must always begin again. In Nissan all of nature comes back to life, and the Jew is called to renew himself. The key is matzah, which is emunah: in Hashem, in the chachamim and in oneself. Nissan asks a person to become an adam by ruling over the animal of his own mazal. Avraham Avinu, whose Yom Tov is Pesach, is the spring of Klal Yisrael. The Rav closes with a story of Reb Arele Roth.",
+    "en": "The Mashgiach opens with the terumas hadeshen, the removal of the ashes at night, and explains that this humble night avodah, done in work clothes, is most dear to Hashem; so too taking a broom and helping at home before Pesach, as a story with Rav Gifter shows. He then turns to Nissan, the month of creation. Hashem tried four times in Nissan to bring the world to its tikkun: at creation, at Yetzias Mitzrayim, at the Mishkan, and the Nissan of the geulah still awaited. Hashem does not give up, and a Jew too must always begin again. In Nissan all of nature comes back to life, and the Jew is called to renew himself. The key is matzah, which is emunah: in Hashem, in the chachamim and in oneself. Nissan asks a person to become an adam by ruling over the animal of his own mazal. Avraham Avinu, whose Yom Tov is Pesach, is the spring of Klal Yisrael. The Mashgiach closes with a story of Reb Arele Roth.",
     "yi": "דער משגיח עפנט מיט תרומת הדשן, דאס ארויסנעמען דאס אש ביינאכט, און ערקלערט אז די נידעריגע עבודה פון ביינאכט, אין ארבעטס קליידער, איז די חשובסטע ביים אייבערשטן; אזוי אויך נעמען א בעזעם און העלפן אינדערהיים פאר פסח, ווי א מעשה מיט רב גיפטער ווייזט. דערנאך גייט ער איבער צו ניסן, דער חודש פון בריאת העולם. דער אייבערשטער האט פיר מאל פרובירט אין ניסן צו ברענגען די וועלט צו איר תיקון: ביי די בריאה, ביי יציאת מצרים, ביים משכן, און דער ניסן פון גאולה וואס מ'ווארט נאך אויף אים. דער אייבערשטער גיט נישט אויף, און אזוי דארף א איד אלעמאל אנפאנגען נאכאמאל. אין ניסן לעבט די גאנצע טבע אויף, און דער איד ווערט גערופן זיך מחדש צו זיין. דער שליסל איז די מצה, וואס איז אמונה: אינעם אייבערשטן, אין חכמים און אין זיך אליין. ניסן פאדערט פון א מענטש צו ווערן אן אדם, דורך געוועלטיגן איבער דער חיה פון זיין מזל. אברהם אבינו, וועמענס יום טוב איז פסח, איז דער פרילינג פון כלל ישראל. דער משגיח ענדיגט מיט א מעשה פון רבי ארל'ע ראטה."
    },
    "keyPoints": [
@@ -732,7 +742,7 @@
      "yi": "תרומת הדשן און העלפן פאר פסח"
     },
     "summary": {
-     "en": "The Rav asks why the Torah waits until Tzav to speak of the olah, and explains that the night avodah of removing the ashes, done in work clothes, is the most precious to Hashem, like the avodah of the generation before Mashiach and like sweeping the house before Pesach. He tells how Rav Gifter came himself to take out a couple's garbage.",
+     "en": "The Mashgiach asks why the Torah waits until Tzav to speak of the olah, and explains that the night avodah of removing the ashes, done in work clothes, is the most precious to Hashem, like the avodah of the generation before Mashiach and like sweeping the house before Pesach. He tells how Rav Gifter came himself to take out a couple's garbage.",
      "yi": "דער משגיח פרעגט פארוואס די תורה ווארט ביז פרשת צו צו רעדן פון דער עולה, און ערקלערט אז די עבודה פון ביינאכט, ארויסנעמען דאס אש אין ארבעטס קליידער, איז די טייערסטע ביים אייבערשטן, אזוי ווי די עבודה אין עקבתא דמשיחא און ווי ארויסקערן דאס הויז פאר פסח. ער דערציילט ווי רב גיפטער איז אליין געקומען ארויסטראגן דעם מיסט פון א פארפאלק."
     },
     "kind": "main",
@@ -752,7 +762,7 @@
      "yi": "בריאת העולם אין ניסן און ברכת החמה"
     },
     "summary": {
-     "en": "The Rav brings the dispute of Rabbi Eliezer and Rabbi Yehoshua whether the world was created in Tishrei or Nissan, and that birkas hachamah follows Nissan. As an aside he brings the Ostrovtzer's calculation that it fell on erev Pesach only at the Mishkan and at the time of Purim, and will again at the geulah, and suggests why those were times with little to prepare.",
+     "en": "The Mashgiach brings the dispute of Rabbi Eliezer and Rabbi Yehoshua whether the world was created in Tishrei or Nissan, and that birkas hachamah follows Nissan. As an aside he brings the Ostrovtzer's calculation that it fell on erev Pesach only at the Mishkan and at the time of Purim, and will again at the geulah, and suggests why those were times with little to prepare.",
      "yi": "דער משגיח ברענגט די מחלוקת פון רבי אליעזר און רבי יהושע צי די וועלט איז באשאפן געווארן אין תשרי אדער אין ניסן, און אז ברכת החמה גייט לויט ניסן. אגב ברענגט ער דעם חשבון פונעם אסטראווצער אז זי איז אויסגעקומען ערב פסח נאר ביים משכן און ביי פורים, און וועט ווידער ביי דער גאולה, און ער איז מסביר פארוואס דעמאלט איז נישט געווען קיין סאך צו טאן."
     },
     "kind": "main",
@@ -772,7 +782,7 @@
      "yi": "פיר ניסנ'ס פון תיקון"
     },
     "summary": {
-     "en": "The Rav describes Hashem's plan for a perfected world, spoiled by the sin of Adam HaRishon in Nissan; the second attempt, Yetzias Mitzrayim and Matan Torah, spoiled by the eigel; the third, the Mishkan, which was later destroyed; and the fourth Nissan of geulah that Hashem has promised.",
+     "en": "The Mashgiach describes Hashem's plan for a perfected world, spoiled by the sin of Adam HaRishon in Nissan; the second attempt, Yetzias Mitzrayim and Matan Torah, spoiled by the eigel; the third, the Mishkan, which was later destroyed; and the fourth Nissan of geulah that Hashem has promised.",
      "yi": "דער משגיח שילדערט דעם אייבערשטנס פלאן פאר אן עולם מתוקן, וואס איז קאליע געווארן דורכן חטא פון אדם הראשון אין ניסן; דעם צווייטן פרואוו, יציאת מצרים און מתן תורה, וואס איז קאליע געווארן דורכן עגל; דעם דריטן, דעם משכן, וואס איז שפעטער חרוב געווארן; און דעם פערטן ניסן פון גאולה וואס דער אייבערשטער האט צוגעזאגט."
     },
     "kind": "main",
@@ -792,7 +802,7 @@
      "yi": "אלעמאל אנפאנגען נאכאמאל"
     },
     "summary": {
-     "en": "From Hashem's repeated attempts the Rav draws the lesson that a Jew must always start anew: like a jigsaw puzzle taken apart and begun again, like the tzaddik who falls seven times and rises, every Shabbos, Rosh Chodesh and morning. He adds that Hashem Himself, as it were, asks for a kaparah for diminishing the moon.",
+     "en": "From Hashem's repeated attempts the Mashgiach draws the lesson that a Jew must always start anew: like a jigsaw puzzle taken apart and begun again, like the tzaddik who falls seven times and rises, every Shabbos, Rosh Chodesh and morning. He adds that Hashem Himself, as it were, asks for a kaparah for diminishing the moon.",
      "yi": "פון דעם אייבערשטנס פרואוון נאכאמאל און נאכאמאל לערנט דער משגיח ארויס אז א איד דארף אלעמאל אנפאנגען פון ניי: ווי א פאזל וואס מ'נעמט פונאנדער און מ'הייבט אן נאכאמאל, ווי דער צדיק וואס פאלט זיבן מאל און שטייט אויף, יעדן שבת, ראש חודש און יעדן אינדערפרי. ער לייגט צו אז דער אייבערשטער אליין, כביכול, בעט א כפרה פארן מקטין זיין די לבנה."
     },
     "kind": "main",
@@ -812,7 +822,7 @@
      "yi": "די גאנצע טבע ווערט באנייט אין ניסן"
     },
     "summary": {
-     "en": "The Rav describes, through Shlomo HaMelech's words in Shir HaShirim, how the dead winter gives way to buds, birdsong and fragrance in Nissan, because then Hashem renewed His bond with Klal Yisrael. A Jew who sees all of creation renewed must ask whether he is part of that song, and Hashem knocks and calls him to rise.",
+     "en": "The Mashgiach describes, through Shlomo HaMelech's words in Shir HaShirim, how the dead winter gives way to buds, birdsong and fragrance in Nissan, because then Hashem renewed His bond with Klal Yisrael. A Jew who sees all of creation renewed must ask whether he is part of that song, and Hashem knocks and calls him to rise.",
      "yi": "דער משגיח שילדערט, מיט שלמה המלכ'ס ווערטער אין שיר השירים, ווי דער טויטער ווינטער גייט איבער אין ניסן אויף בלומען, פייגל געזאנג און א גוטן ריח, ווייל דעמאלט האט דער אייבערשטער באנייט זיין קשר מיט כלל ישראל. א איד וואס זעט ווי די גאנצע בריאה ווערט באנייט מוז פרעגן צי ער איז א חלק פון דעם ניגון, און דער אייבערשטער קלאפט און רופט אים אויפצושטיין."
     },
     "kind": "main",
@@ -832,7 +842,7 @@
      "yi": "מצה, אמונה און דער שליסל צום באנייען"
     },
     "summary": {
-     "en": "The Rav calls Nissan the key to a new creation and says the key is matzah, which is emunah. He explains Moshe Rabbeinu's sin at the rock as a lack of faith in himself, and brings Rav Hirsch's three kinds of emunah. He explains why the Targum calls matzah 'petir', opening, and how the seder opens and closes with opening.",
+     "en": "The Mashgiach calls Nissan the key to a new creation and says the key is matzah, which is emunah. He explains Moshe Rabbeinu's sin at the rock as a lack of faith in himself, and brings Rav Hirsch's three kinds of emunah. He explains why the Targum calls matzah 'petir', opening, and how the seder opens and closes with opening.",
      "yi": "דער משגיח רופט ניסן דעם שליסל צו א נייע בריאה און זאגט אז דער שליסל איז די מצה, וואס איז אמונה. ער ערקלערט דעם חטא פון משה רבינו ביים שטיין אלס א חסרון אין אמונה אין זיך אליין, און ברענגט פון רב הירש דריי סארטן אמונה. ער ערקלערט פארוואס דער תרגום רופט מצה 'פטיר', אויפעפענען, און ווי דער סדר הייבט אן און ענדיגט זיך מיט עפענען."
     },
     "kind": "main",
@@ -852,7 +862,7 @@
      "yi": "ווערן אן אדם: נשמות און מזלות"
     },
     "summary": {
-     "en": "The Rav explains that Nissan is the time of 'na'aseh adam' and demands that each person become an adam, but says each must answer for himself how. He brings the Tikkunei Zohar on Esther's plea to save her soul from the dog: souls come from different roots and mazalos, compared to animals, as the shevatim are compared to animals.",
+     "en": "The Mashgiach explains that Nissan is the time of 'na'aseh adam' and demands that each person become an adam, but says each must answer for himself how. He brings the Tikkunei Zohar on Esther's plea to save her soul from the dog: souls come from different roots and mazalos, compared to animals, as the shevatim are compared to animals.",
      "yi": "דער משגיח ערקלערט אז ניסן איז די צייט פון 'נעשה אדם' און פאדערט פון יעדן צו ווערן אן אדם, אבער ער זאגט אז יעדער מוז אליין ענטפערן ווי אזוי. ער ברענגט דעם תיקוני זוהר אויף אסתר'ס בקשה צו ראטעווען איר נשמה פונעם כלב: נשמות קומען פון פארשידענע שרשים און מזלות, צוגעגליכן צו חיות, אזוי ווי די שבטים זענען צוגעגליכן צו חיות."
     },
     "kind": "main",
@@ -872,7 +882,7 @@
      "yi": "רייטן אויף דער אייגענער חיה"
     },
     "summary": {
-     "en": "The Rav explains that each person's yetzer follows his mazal, and that the soul must rule over its animal like a rider. A young man born under the lion who rises easily to learn has nothing to boast about; his test is not to tear at others. Each person must assess which animal he is, ride it, and renew himself in this Nissan.",
+     "en": "The Mashgiach explains that each person's yetzer follows his mazal, and that the soul must rule over its animal like a rider. A young man born under the lion who rises easily to learn has nothing to boast about; his test is not to tear at others. Each person must assess which animal he is, ride it, and renew himself in this Nissan.",
      "yi": "דער משגיח ערקלערט אז יעדנס יצר גייט לויט זיין מזל, און אז די נשמה דארף געוועלטיגן איבער איר חיה ווי א רייטער. א יונגערמאן געבוירן אין מזל אריה וואס שטייט גרינג אויף צו לערנען האט זיך נישט מיט וואס צו בארימען; זיין נסיון איז נישט צו צורייסן יענעם. יעדער דארף אפשאצן וואספארא חיה ער איז, רייטן אויף איר, און זיך מחדש זיין אין דעם ניסן."
     },
     "kind": "main",
@@ -892,7 +902,7 @@
      "yi": "אברהם אבינו, דער פרילינג פון כלל ישראל"
     },
     "summary": {
-     "en": "The Rav shows that Avraham Avinu, the first Jew, is the spring of Klal Yisrael and that Pesach is his Yom Tov: the bris bein habesarim, his milah and his victory over the kings all fell on Pesach. Emunah, Avraham's trait, is the first of the Aseres HaDibros, is taught to small children at the seder, is eaten in the matzah, and, as the Maharal says, is the essence of tefillah.",
+     "en": "The Mashgiach shows that Avraham Avinu, the first Jew, is the spring of Klal Yisrael and that Pesach is his Yom Tov: the bris bein habesarim, his milah and his victory over the kings all fell on Pesach. Emunah, Avraham's trait, is the first of the Aseres HaDibros, is taught to small children at the seder, is eaten in the matzah, and, as the Maharal says, is the essence of tefillah.",
      "yi": "דער משגיח ווייזט אז אברהם אבינו, דער ערשטער איד, איז דער פרילינג פון כלל ישראל און אז פסח איז זיין יום טוב: ברית בין הבתרים, זיין מילה און זיין נצחון איבער די מלכים זענען אלע געווען פסח. אמונה, אברהמ'ס מדה, איז דער אנהייב פון די עשרת הדברות, מ'לערנט עס מיט קליינע קינדער ביים סדר, מ'עסט עס אין דער מצה, און, ווי דער מהר\"ל זאגט, איז עס דער עיקר פון תפילה."
     },
     "kind": "main",
@@ -912,7 +922,7 @@
      "yi": "רבי ארל'ע און די חנוכה ליכט; סיום"
     },
     "summary": {
-     "en": "The Rav urges using the days before Pesach for learning and davening with simchah, and brings Reb Arele Roth's teaching that there is no such thing as not being in the mood. He tells how the gravely weak Reb Arele lit the Chanukah lights with all his strength and danced before the doctor, and closes with a wish that this Nissan be the Nissan of the geulah.",
+     "en": "The Mashgiach urges using the days before Pesach for learning and davening with simchah, and brings Reb Arele Roth's teaching that there is no such thing as not being in the mood. He tells how the gravely weak Reb Arele lit the Chanukah lights with all his strength and danced before the doctor, and closes with a wish that this Nissan be the Nissan of the geulah.",
      "yi": "דער משגיח מוטיגט אויסצונוצן די טעג ביז פסח מיט לערנען און דאווענען מיט שמחה, און ברענגט רבי ארל'ע ראטה'ס לימוד אז ס'איז נישטא אזא זאך ווי נישט אויפגעלייגט זיין. ער דערציילט ווי דער שוואכער רבי ארל'ע האט מיט אלע כוחות אנגעצונדן די חנוכה ליכט און געטאנצט פארן דאקטער, און ענדיגט מיט א ברכה אז דער ניסן זאל זיין דער ניסן פון גאולה."
     },
     "kind": "closing",
@@ -1249,7 +1259,7 @@
    {
     "id": "yi-zmanim-nysn-05~i0",
     "text": {
-     "en": "The Rav reads the terumas hadeshen, a night avodah that is only bedi'eved and done in work clothes, as the avodah most dear to Hashem, and sees in it the avodah of the generation before Mashiach and the sweeping of the house before Pesach.",
+     "en": "The Mashgiach reads the terumas hadeshen, a night avodah that is only bedi'eved and done in work clothes, as the avodah most dear to Hashem, and sees in it the avodah of the generation before Mashiach and the sweeping of the house before Pesach.",
      "yi": "דער משגיח טייטשט תרומת הדשן, אן עבודה פון ביינאכט וואס איז נאר בדיעבד און ווערט געטון אין ארבעטס קליידער, אלס די עבודה וואס איז די חביבסטע ביים אייבערשטן, און ער זעט דערין די עבודה פון עקבתא דמשיחא און דאס ארויסקערן דאס הויז פאר פסח."
     },
     "t": 218.9,
@@ -1305,7 +1315,7 @@
    {
     "id": "yi-zmanim-nysn-05~tk0",
     "text": {
-     "en": "The Rav calls on the young men to take a broom and help at home before Pesach, and says this is a great avodah.",
+     "en": "The Mashgiach calls on the young men to take a broom and help at home before Pesach, and says this is a great avodah.",
      "yi": "דער משגיח רופט די יונגעלייט צו נעמען א בעזעם און העלפן אינדערהיים פאר פסח, און זאגט אז דאס איז א גרויסע עבודה."
     },
     "t": 276.7,
@@ -1314,7 +1324,7 @@
    {
     "id": "yi-zmanim-nysn-05~tk1",
     "text": {
-     "en": "The Rav says a Jew must always begin anew: every Shabbos, every Rosh Chodesh, every Rosh Hashanah and every morning, and if today did not succeed, tomorrow is another day.",
+     "en": "The Mashgiach says a Jew must always begin anew: every Shabbos, every Rosh Chodesh, every Rosh Hashanah and every morning, and if today did not succeed, tomorrow is another day.",
      "yi": "דער משגיח זאגט אז א איד דארף אלעמאל אנפאנגען פון ניי: יעדן שבת, יעדן ראש חודש, יעדן ראש השנה און יעדן אינדערפרי, און אויב היינט איז נישט געגאנגען, איז מארגן נאך א טאג."
     },
     "t": 1069.1,
@@ -1323,7 +1333,7 @@
    {
     "id": "yi-zmanim-nysn-05~tk2",
     "text": {
-     "en": "The Rav says each person must make a cheshbon hanefesh, assess which animal he is, and ride it rather than let it ride him.",
+     "en": "The Mashgiach says each person must make a cheshbon hanefesh, assess which animal he is, and ride it rather than let it ride him.",
      "yi": "דער משגיח זאגט אז יעדער איינער דארף מאכן א חשבון הנפש, אפשאצן וואספארא חיה ער איז, און רייטן אויף איר און נישט לאזן זי רייטן אויף אים."
     },
     "t": 1798.24,
@@ -1332,7 +1342,7 @@
    {
     "id": "yi-zmanim-nysn-05~tk3",
     "text": {
-     "en": "The Rav asks that the days until Pesach be used to strengthen learning and davening, with simchah, and says there is no such thing as not being in the mood to serve Hashem.",
+     "en": "The Mashgiach asks that the days until Pesach be used to strengthen learning and davening, with simchah, and says there is no such thing as not being in the mood to serve Hashem.",
      "yi": "דער משגיח בעט אז מ'זאל אויסנוצן די טעג ביז פסח זיך צו שטארקן אין לערנען און דאווענען, מיט שמחה, און זאגט אז ס'איז נישטא אזא זאך ווי נישט אויפגעלייגט זיין צו דינען דעם אייבערשטן."
     },
     "t": 2529.24,
@@ -1405,12 +1415,6 @@
      "en": "A young couple came to Rav Gifter with an argument: the wife, busy with the children, wanted her husband to take out the garbage, and he said that as a ben Torah it was beneath the honor of the Torah. Rav Gifter ruled that the husband was right. Ten minutes after they went home there was a knock at the door, and it was Rav Gifter. He said that the wife is busy with the babies and cannot take out the garbage, and the husband is a ben Torah and cannot either, so he had come to take it out himself.",
      "yi": "א יונג פארפאלק איז געקומען צו רב גיפטער מיט א מחלוקת: די ווייב, וואס איז פארנומען מיט די קינדער, האט געוואלט אז דער מאן זאל ארויסטראגן דעם מיסט, און ער האט געזאגט אז אלס בן תורה איז דאס נישט קיין כבוד התורה. רב גיפטער האט געזאגט אז דער מאן איז גערעכט. צען מינוט נאכדעם וואס זיי זענען אהיימגעגאנגען האט מען געקלאפט אין טיר, און ס'איז געווען רב גיפטער. ער האט געזאגט אז די ווייב איז פארנומען מיט די קינדער און קען נישט ארויסטראגן דעם מיסט, דער מאן איז א בן תורה און קען אויך נישט, איז ער געקומען עס אליין ארויסטראגן."
     },
-    "people": [
-     "Rav Gifter"
-    ],
-    "peopleKeys": [
-     "rabbi-gifter"
-    ],
     "t": 302.98,
     "end": 365.36
    },
@@ -1424,154 +1428,8 @@
      "en": "Reb Arele was always very weak; his daily food was a glass of borsht, which he would bring back up, living on the little that remained. Once he grew so weak that he could not move a finger, and the doctor said that this was the end. It was a night of Chanukah, and he signaled that the menorah be brought to his bed. With the greatest mesirus nefesh he said the brachah word by word, sat up, stood, and lit the Chanukah lights. He then asked that the doctor be called and began a fervent dance; the doctor, who had not wanted to come to a dying man, found him dancing, and Reb Arele told him he wanted him to see that there is a Ribono shel Olam who runs the world.",
      "yi": "רבי ארל'ע איז אלעמאל געווען זייער שוואך; זיין עסן יעדן טאג איז געווען א גלעזל בארשט, וואס ער האט אויסגעבראכן, און ער האט געלעבט פון דאס ביסל וואס איז געבליבן. איינמאל איז ער געווארן אזוי שוואך אז ער האט נישט געקענט רירן מיט א פינגער, און דער דאקטער האט געזאגט אז דאס איז דער סוף. ס'איז געווען חנוכה ביינאכט, און ער האט געמאכט א סימן מ'זאל אים צוברענגען די מנורה צום בעט. מיט די גרעסטע מסירת נפש האט ער געזאגט די ברכה ווארט ביי ווארט, זיך אויפגעזעצט, זיך אויפגעשטעלט און אנגעצונדן די חנוכה ליכט. דערנאך האט ער געהייסן רופן דעם דאקטער און האט אנגעהויבן טאנצן מיט התלהבות; דער דאקטער, וואס האט נישט געוואלט גיין צו א שטארבנדיגן מענטש, האט אים געטראפן טאנצן, און רבי ארל'ע האט אים געזאגט אז ער האט געוואלט ער זאל זען אז ס'איז דא א רבונו של עולם וואס פירט די וועלט."
     },
-    "people": [
-     "Reb Arele Roth"
-    ],
-    "peopleKeys": [
-     "rabbi-arele-roth"
-    ],
     "t": 2626,
     "end": 2791.36
-   }
-  ],
-  "people": [
-   {
-    "name": "Rav Gifter",
-    "key": "rabbi-gifter"
-   },
-   {
-    "name": "Rabbi Eliezer",
-    "key": "rabbi-eliezer"
-   },
-   {
-    "name": "Rabbi Yehoshua",
-    "key": "rabbi-yehoshua"
-   },
-   {
-    "name": "the Ostrovtzer Rebbe",
-    "key": "ostrovtzer-rebbe"
-   },
-   {
-    "name": "Eliyahu HaNavi",
-    "key": "eliyahu-hanavi"
-   },
-   {
-    "name": "Shlomo HaMelech",
-    "key": "shlomo-hamelech"
-   },
-   {
-    "name": "Adam HaRishon",
-    "key": "adam-harishon"
-   },
-   {
-    "name": "the Maharal",
-    "key": "maharal"
-   },
-   {
-    "name": "the Bnei Yissaschar",
-    "key": "bnei-yissaschar"
-   },
-   {
-    "name": "Moshe Rabbeinu",
-    "key": "moshe-rabbeinu"
-   },
-   {
-    "name": "Miriam",
-    "key": "miriam-haneviah"
-   },
-   {
-    "name": "Korach",
-    "key": "korach"
-   },
-   {
-    "name": "Rav Samson Raphael Hirsch",
-    "key": "rabbi-samson-raphael-hirsch"
-   },
-   {
-    "name": "Esther",
-    "key": "esther"
-   },
-   {
-    "name": "Avraham Avinu",
-    "key": "avraham-avinu"
-   },
-   {
-    "name": "Reb Arele Roth",
-    "key": "rabbi-arele-roth"
-   },
-   {
-    "name": "the Ba'al Shem Tov",
-    "key": "baal-shem-tov"
-   }
-  ],
-  "concepts": [
-   {
-    "he": "תרומת הדשן",
-    "key": "srvms-hdshn-bfc191"
-   },
-   {
-    "he": "זאת תורת העולה",
-    "key": "zas-svrs-hevlh-60e3bf"
-   },
-   {
-    "he": "אברים ופדרים",
-    "key": "abrym-vpdrym-71dc58"
-   },
-   {
-    "he": "עקבתא דמשיחא",
-    "key": "ekbsa-dmshycha-99233e"
-   },
-   {
-    "he": "ברכת החמה",
-    "key": "brks-hchmh-8e9432"
-   },
-   {
-    "he": "עולם מתוקן",
-    "key": "evlm-msvkn-1ec48d"
-   },
-   {
-    "he": "שבע יפול צדיק וקם",
-    "key": "shbe-ypvl-tzdyk-vkm-6d991e"
-   },
-   {
-    "he": "תחיית המתים",
-    "key": "schyys-hmsym-fa97ab"
-   },
-   {
-    "he": "מיכלא דמהימנותא",
-    "key": "mykla-dmhymnvsa-b1776c"
-   },
-   {
-    "he": "פטיר",
-    "key": "ptyr-56cb27"
-   },
-   {
-    "he": "אמונת חכמים",
-    "key": "amvns-chkmym-a5f3ec"
-   },
-   {
-    "he": "נעשה אדם",
-    "key": "neshh-adm-9ec8a3"
-   },
-   {
-    "he": "חשבון הנפש",
-    "key": "chshbvn-hnpsh-793e98"
-   },
-   {
-    "he": "יצר הרע",
-    "key": "ytzr-hre-b32929"
-   },
-   {
-    "he": "ברית בין הבתרים",
-    "key": "brys-byn-hbsrym-b23137"
-   },
-   {
-    "he": "שלישי למילה",
-    "key": "shlyshy-lmylh-47cef0"
-   },
-   {
-    "he": "מאמינים בני מאמינים",
-    "key": "mamynym-bny-mamynym-4f0bc8"
    }
   ],
   "writeupLangs": [

@@ -37,7 +37,7 @@ describe("strings", () => {
     expect(placeholders(calendarEn["cal.topicLine"])).toEqual(["count", "occasion"]);
   });
 
-  it("speaks of the Rav in Yiddish as דער משגיח, never דער רב", () => {
+  it("speaks of the Mashgiach in Yiddish as דער משגיח, never דער רב", () => {
     for (const v of [...Object.values(topicsYi), calendarYi["cal.topicLine"]]) expect(JSON.stringify(v)).not.toContain("דער רב");
   });
 });
@@ -145,7 +145,7 @@ const page: TopicPage = {
   count: 130,
   path: [{ id: "zmanim", name: { title: he("ימים טובים וזמנים"), alt: en("Yamim Tovim") }, href: "/en/inyanim/zmanim/" }],
   seeAlso: [{ label: he("ימים טובים וזמנים"), href: "/en/inyanim/zmanim/", rel: "parent" }],
-  description: "The Rav teaches about the lights.",
+  description: "The Mashgiach teaches about the lights.",
   definition: "The eight days of light.",
   occasions: [{ kind: "zman", key: "chanukah", name: "Chanukah", he: "חנוכה", href: "/en/calendar/zman/chanukah/" }],
   hubs: [],

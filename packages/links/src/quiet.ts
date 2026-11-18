@@ -8,22 +8,9 @@
  * links to its index anchor. Threads have no Quiet page in this cut: the edition home's
  * `#indexes`.
  */
-import { allowsAll, hasPageOn, quietHasEntityPage, resolveEntry, ENTITY_PAGE_THRESHOLD } from "./pages.ts";
-import {
-  isEd,
-  type CorpusKind,
-  type Ed,
-  type EntityKind,
-  type IndexName,
-  type LinkData,
-  type Route,
-} from "./types.ts";
-import { buildQuery, formatSeconds, parseSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
-
-export { ENTITY_PAGE_THRESHOLD, quietHasEntityPage };
-
-/** Legacy entity directories (`{kind: "entity"}`): concepts were under `inyanim`. */
-const ENTITY_DIR: Readonly<Record<EntityKind, string>> = { work: "sources", person: "people", concept: "inyanim" };
+import { allowsAll, hasPageOn, resolveEntry } from "./pages.ts";
+import { isEd, type CorpusKind, type Ed, type IndexName, type LinkData, type Route } from "./types.ts";
+import { buildQuery, formatExactSeconds, parseExactSeconds, pathSegments, queryGet, seg, splitUrl } from "./url.ts";
 
 /** Corpus entry directories; null: no Quiet page of this kind. */
 export const QUIET_ENTRY_DIR: Readonly<Record<CorpusKind, string | null>> = {
@@ -63,7 +50,6 @@ const INDEX_PATH: Readonly<Record<IndexName, string | null>> = {
   people: "people/",
   topics: "inyanim/",
   glossary: "erachim/",
-  concepts: "inyanim/", // legacy concept index, until the glossary replaces it
   series: "contents/", // Quiet has no series index; series are listed in the contents
   explore: null, // Live only → edition home
   shelf: null, // Live only → edition home
@@ -84,7 +70,7 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
       const base = `/${route.ed}/shiur/${seg(route.id)}/`;
       if (opts.bare) return base;
       if (route.moment?.kind === "s") return `${base}#s${route.moment.index}`;
-      const t = formatSeconds(route.t);
+      const t = formatExactSeconds(route.t);
       return t === undefined ? base : `${base}#t=${t}`;
     }
     case "series":
@@ -94,12 +80,6 @@ export function formatQuiet(route: Route, data: LinkData = {}, opts: FormatOptio
       // Unknown parsha/zman: the edition home rather than a guessed URL that may 404.
       if (kind === undefined) return `/${route.ed}/`;
       return `/${route.ed}/calendar/${kind}/${seg(route.key)}/`;
-    }
-    case "entity": {
-      const dir = ENTITY_DIR[route.entity];
-      const count = data.entityCount?.(route.entity, route.key);
-      if (quietHasEntityPage(route.entity, count)) return `/${route.ed}/${dir}/${seg(route.key)}/`;
-      return `/${route.ed}/${dir}/#${seg(route.key)}`;
     }
     case "entry": {
       const r = resolveEntry(route, data);
@@ -194,6 +174,6 @@ function shiurFromHash(ed: Ed, id: string, hash: string): Route {
   const sec = /^s(\d{1,5})$/.exec(hash);
   if (sec) return { kind: "shiur", ed, id, moment: { kind: "s", index: Number(sec[1]) } };
   const tm = /^t=(.*)$/.exec(hash);
-  const t = tm ? parseSeconds(tm[1]) : undefined;
+  const t = tm ? parseExactSeconds(tm[1]) : undefined;
   return t === undefined ? { kind: "shiur", ed, id } : { kind: "shiur", ed, id, t };
 }

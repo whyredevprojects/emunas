@@ -121,9 +121,9 @@ export function gapRow(g: CatalogGap): CatalogRow {
   };
 }
 
-/** The catalog gaps of a section key, in catalog order (older `.corpus/` builds have none). */
+/** The catalog gaps of a section key, in catalog order. */
 export function sectionGaps(corpus: CatalogCorpus, key: string): CatalogGap[] {
-  return (corpus.index.gaps ?? []).filter((g) => g.sectionKey === key);
+  return corpus.index.gaps.filter((g) => g.sectionKey === key);
 }
 
 /**
@@ -580,16 +580,34 @@ function pick(
   };
 }
 
-/** The build date: `EMUNAS_BUILD_DATE` (YYYY-MM-DD) when set, else today in UTC. */
+/** The time zone whose civil day is the build date (the listeners are mostly in New York). */
+export const BUILD_TIME_ZONE = "America/New_York";
+
+const buildDayFormat = new Intl.DateTimeFormat("en-CA", {
+  timeZone: BUILD_TIME_ZONE,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+/** The build date: `EMUNAS_BUILD_DATE` (YYYY-MM-DD) when set, else today in {@link BUILD_TIME_ZONE}. */
 export function buildDate(env: Record<string, string | undefined> = {}, now: Date = new Date()): string {
   const fixed = env["EMUNAS_BUILD_DATE"];
   if (fixed && /^\d{4}-\d{2}-\d{2}$/.test(fixed)) return fixed;
-  return now.toISOString().slice(0, 10);
+  const parts = buildDayFormat.formatToParts(now);
+  const part = (type: Intl.DateTimeFormatPartTypes) => parts.find((p) => p.type === type)?.value ?? "";
+  return `${part("year")}-${part("month")}-${part("day")}`;
+}
+
+/** `YYYY-MM-DD` plus `days` civil days. */
+export function addIsoDays(date: string, days: number): string {
+  const [y, m, d] = date.split("-").map(Number) as [number, number, number];
+  return new Date(Date.UTC(y, m - 1, d + days)).toISOString().slice(0, 10);
 }
 
 /**
- * "This week" on the title page (concept-quiet §5.1), computed at build time (the site is rebuilt
- * daily): the parsha of the week and the nearest zman that has shiurim in the collection.
+ * "This week" on the title page (concept-quiet §5.1) for one day: the parsha of the week and the
+ * nearest zman that has shiurim in the collection.
  */
 export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: Calendar = defaultCalendar): ThisWeekModel {
   const week = cal.thisWeek(date, { lookaheadDays: ZMAN_LOOKAHEAD_DAYS });
@@ -616,6 +634,58 @@ export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: 
   return { date, hebrewDate: hebrewDateLabel(cal, date, ed), parsha, zman };
 }
 
+/** One occasion block on the title page; a zman that is on now and one that is coming differ in heading. */
+export type WeekBlockKey = `parsha:${string}` | `zman:${string}:${"now" | "soon"}`;
+
+export function weekBlockKey(p: OccasionPick): WeekBlockKey {
+  return p.kind === "parsha" ? `parsha:${p.key}` : `zman:${p.key}:${p.active ? "now" : "soon"}`;
+}
+
+export interface ThisWeekDay {
+  /** `YYYY-MM-DD`. */
+  readonly date: string;
+  /** As in {@link ThisWeekModel}. */
+  readonly hebrewDate: string | null;
+  /** Parsha first, then zman; empty when there is nothing to show. */
+  readonly blocks: readonly WeekBlockKey[];
+}
+
+export interface ThisWeekWindow {
+  /** The build day: what the page shows without script. */
+  readonly today: ThisWeekDay;
+  /** {@link WEEK_DAYS_BEFORE} days before the build day to {@link WEEK_DAYS_AFTER} after it, in order. */
+  readonly days: readonly ThisWeekDay[];
+  /** Every block a day in the window refers to, rendered once each. */
+  readonly blocks: ReadonlyMap<WeekBlockKey, OccasionPick>;
+}
+
+/**
+ * The days around the build day that the title page carries, so a small script can show the
+ * visitor's own day: one behind (visitors west of New York before their midnight) and three ahead,
+ * which covers the two days between scheduled rebuilds with a day to spare.
+ */
+export const WEEK_DAYS_BEFORE = 1;
+export const WEEK_DAYS_AFTER = 3;
+
+/** "This week" for every day of the window around `date`, with each occasion block once. */
+export function thisWeekWindow(corpus: CatalogCorpus, ed: Ed, date: string, cal: Calendar = defaultCalendar): ThisWeekWindow {
+  const blocks = new Map<WeekBlockKey, OccasionPick>();
+  const days: ThisWeekDay[] = [];
+  for (let i = -WEEK_DAYS_BEFORE; i <= WEEK_DAYS_AFTER; i++) {
+    const m = thisWeekModel(corpus, ed, addIsoDays(date, i), cal);
+    const keys: WeekBlockKey[] = [];
+    for (const p of [m.parsha, m.zman]) {
+      if (p === null) continue;
+      const key = weekBlockKey(p);
+      if (!blocks.has(key)) blocks.set(key, p);
+      keys.push(key);
+    }
+    days.push({ date: m.date, hebrewDate: m.hebrewDate, blocks: keys });
+  }
+  const today = days[WEEK_DAYS_BEFORE]!;
+  return { today, days, blocks };
+}
+
 export function hebrewDateLabel(cal: Calendar, date: string, ed: Ed): string | null {
   const h = cal.hebrewDate(date);
   if (!h) return null;
@@ -638,4 +708,9 @@ export function corpusTotals(corpus: CatalogCorpus): CorpusTotals {
     full: corpus.build.counts.full,
     hoursAbout: Math.round(seconds / 36000) * 10,
   };
+}
+
+/** The 2012 Pocket Guide as a PDF at the root of the media host. */
+export function pocketGuideUrl(corpus: { readonly build: { readonly mediaOrigin: string } }): string {
+  return `${corpus.build.mediaOrigin}/pocket-guide-2012.pdf`;
 }

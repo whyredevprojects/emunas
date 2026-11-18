@@ -11,7 +11,7 @@ import type { Ed } from "../../lib/edition.ts";
 
 export const catalogEn = {
   "home.lead":
-    "The recorded shiurim of Harav Moshe Wolfson zt\"l, set out like a sefer: the contents in the order of the 2012 Pocket Guide, a page for every shiur, and indexes at the back.",
+    "The recorded shiurim of Harav Moshe Wolfson zt\"l. The contents are based on the {guide}.",
   "home.standing":
     "{total} shiurim, about {hours} hours. Notes are available for {full} so far and are being added.",
   "home.thisWeek": "This week",
@@ -20,6 +20,9 @@ export const catalogEn = {
   "home.zmanNow": "Now: {name}",
   "home.zmanSoon": "Coming: {name}",
   "home.allOn": { one: "The {count} shiur on {name}", other: "All {count} shiurim on {name}" },
+  "home.liveLead": "For a more interactive way to listen, use {link}.",
+  "home.liveLink": "the listening site",
+  "guide.link": "2012 Pocket Guide",
   "home.contents": "The contents in brief",
   "home.contentsAll": "The full contents",
   "home.indexes": "Indexes",
@@ -28,7 +31,7 @@ export const catalogEn = {
   "coverage.withNotes": "{full} of {total} shiurim have notes so far.",
 
   "contents.title": "Contents",
-  "contents.lead": "The sections of the 2012 Pocket Guide, in the guide's own order: the Yiddish shiurim, then the English.",
+  "contents.lead": "The sections of the {guide}, in the guide's own order: the Yiddish shiurim, then the English.",
   "contents.yiddish": "Shiurim in Yiddish",
   "contents.english": "Shiurim in English",
   "contents.uncatalogued": "Not in the 2012 guide",
@@ -85,7 +88,7 @@ export type CatalogKey = keyof typeof catalogEn;
 
 export const catalogYi: MessageTable<CatalogKey> = {
   "home.lead":
-    "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל, אויסגעשטעלט ווי א ספר: דער תוכן לויטן סדר פונעם פאקעט גייד פון 2012, א בלאט פאר יעדן שיעור, און מפתחות אינעם סוף.",
+    "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל. דער תוכן גייט לויטן {guide}.",
   "home.standing": "{total} שיעורים, בערך {hours} שעה. ביז יעצט זענען דא נאטיצן פאר {full}, און מען לייגט צו נאך.",
   "home.thisWeek": "די וואך",
   "home.thisWeekLead": "די פרשה פון דער וואך און דער נאענטסטער זמן, לויט {date}.",
@@ -93,6 +96,9 @@ export const catalogYi: MessageTable<CatalogKey> = {
   "home.zmanNow": "יעצט: {name}",
   "home.zmanSoon": "באלד: {name}",
   "home.allOn": { one: "דער שיעור אויף {name}", other: "אלע {count} שיעורים אויף {name}" },
+  "home.liveLead": "פאר א מער אינטעראקטיוון אופן צו הערן, נוצט {link}.",
+  "home.liveLink": "דעם זייטל צום הערן",
+  "guide.link": "פאקעט גייד פון 2012",
   "home.contents": "דער תוכן בקיצור",
   "home.contentsAll": "דער גאנצער תוכן",
   "home.indexes": "מפתחות",
@@ -101,7 +107,7 @@ export const catalogYi: MessageTable<CatalogKey> = {
   "coverage.withNotes": "{full} פון {total} שיעורים האבן שוין נאטיצן.",
 
   "contents.title": "תוכן",
-  "contents.lead": "די אפטיילונגען פונעם פאקעט גייד פון 2012, לויטן סדר פונעם גייד אליין: די אידישע שיעורים, און דערנאך די ענגלישע.",
+  "contents.lead": "די אפטיילונגען פונעם {guide}, לויטן סדר פונעם גייד אליין: די אידישע שיעורים, און דערנאך די ענגלישע.",
   "contents.yiddish": "שיעורים אויף אידיש",
   "contents.english": "שיעורים אויף ענגליש",
   "contents.uncatalogued": "נישט אינעם גייד פון 2012",
@@ -157,6 +163,17 @@ export const catalogYi: MessageTable<CatalogKey> = {
 const cache = new Map<Ed, TFunction<CatalogKey>>();
 
 /** The typed `t()` of the catalog pages for an edition. */
+/**
+ * A message with one `{slot}` placeholder, split around it so a page can put a link in the slot:
+ * `[before, after]`. The raw table is read because `t()` would fill the placeholder with text.
+ */
+export function catalogSlot(ed: Ed, key: CatalogKey, slot: string): readonly [string, string] {
+  const msg = (ed === "yi" ? catalogYi : catalogEn)[key];
+  if (typeof msg !== "string" || !msg.includes(`{${slot}}`)) throw new Error(`catalog string ${key} has no {${slot}}`);
+  const [before = "", after = ""] = msg.split(`{${slot}}`);
+  return [before, after];
+}
+
 export function useCatalogT(ed: Ed): TFunction<CatalogKey> {
   let t = cache.get(ed);
   if (!t) {

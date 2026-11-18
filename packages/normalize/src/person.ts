@@ -4,7 +4,7 @@
 import { buildAliasIndex } from "./alias-index.ts";
 import { foldBasic, normalizeHe } from "./fold.ts";
 import { slugify } from "./slug.ts";
-import { CONCEPT_ALIASES, CONCEPT_STOP_LIST } from "./tables/concepts.ts";
+import { CONCEPT_ALIASES } from "./tables/concepts.ts";
 import { PEOPLE, type Person } from "./tables/people.ts";
 
 // ---------------- people ----------------
@@ -82,7 +82,6 @@ export function lookupPerson(raw: string | null | undefined): PersonMatch {
 // ---------------- concepts ----------------
 
 let conceptCanon: Map<string, string> | null = null;
-let stopSet: Set<string> | null = null;
 
 function cIdx(): Map<string, string> {
   if (!conceptCanon) {
@@ -103,27 +102,18 @@ export interface ConceptMatch {
   he: string;
   /** true when an alias row merged this spelling into another */
   merged: boolean;
-  /** on the stop-list: keep in shiur data, skip in indexes */
-  stop: boolean;
 }
 
 /** Map a concept term (Extraction.concepts[].he). */
 export function lookupConcept(raw: string | null | undefined): ConceptMatch {
   const n = foldBasic(raw ?? "");
-  if (n.length === 0) return { key: "unknown", he: "", merged: false, stop: false };
+  if (n.length === 0) return { key: "unknown", he: "", merged: false };
   const canonical = cIdx().get(n);
   const he = canonical ?? normalizeHe(raw ?? "");
-  stopSet ??= new Set(CONCEPT_STOP_LIST.map(foldBasic));
   const canonicalFolded = foldBasic(he);
   return {
     key: slugify(canonicalFolded),
     he,
     merged: canonical !== undefined && foldBasic(canonical) !== n,
-    stop: stopSet.has(canonicalFolded),
   };
-}
-
-/** True when the term is on the concept stop-list. */
-export function isStopConcept(raw: string): boolean {
-  return lookupConcept(raw).stop;
 }

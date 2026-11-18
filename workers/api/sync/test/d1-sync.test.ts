@@ -79,7 +79,7 @@ describe("D1 sync: first run, idempotence, incremental", () => {
     const shiur = "en-miscellaneous-en-01";
     const file = join(data, "derived/shiurim", shiur, "writeup.json");
     const w = JSON.parse(readFileSync(file, "utf8")) as { en: { paragraphs: { text: string }[] }[] };
-    (w.en[0] as { paragraphs: { text: string }[] }).paragraphs[0]!.text += " The Rav adds a closing remark about humility.";
+    (w.en[0] as { paragraphs: { text: string }[] }).paragraphs[0]!.text += " The Mashgiach adds a closing remark about humility.";
     writeFileSync(file, JSON.stringify(w));
     const corpus = buildMiniCorpus(data);
     const second = corpusMoments(corpus);

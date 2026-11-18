@@ -24,6 +24,19 @@ export interface SearchLayer {
   refs: ReadonlyMap<string, LayerShiurRefs>;
   /** Story id → linked person ids that are facet-listed. */
   storyPeople: ReadonlyMap<string, readonly string[]>;
+  /**
+   * Person id → the person's own display names (nameEn, nameYi, nameHe), for people not excluded
+   * (family, private). The only source of person names in a SearchDoc: raw extraction names (which
+   * may be ASR mishearings) are never indexed (F.1).
+   */
+  personNames: ReadonlyMap<string, readonly string[]>;
+  /** Concept id → its display names (canonicalHe, label en/yi), for concepts with a visible shiur. */
+  conceptNames: ReadonlyMap<string, readonly string[]>;
+  /**
+   * Story id → the names of the merged story's people: a linked person's display names, or a plain
+   * name the layer gives (a corpus entity's own display name). Unresolved raw names are not there.
+   */
+  storyNames: ReadonlyMap<string, readonly string[]>;
   /** Section moment id → concepts whose example section it is. */
   sectionConcepts: ReadonlyMap<string, readonly string[]>;
   /** Ids allowed in facets and moment entities, per kind (listed on at least one site). */

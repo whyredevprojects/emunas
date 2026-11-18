@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { LIVE_DATA_SCHEMA_VERSION, type CorpusFile, type CorpusRow, type PersonDetail, type PersonStory, type StoryRow } from "../live-data.ts";
+import { LIVE_DATA_SCHEMA_VERSION, type CorpusFile, type CorpusRow, type PersonDetail, type PersonStory } from "../live-data.ts";
 import { alsoCalled, byYear, groupByShiur, personGroups, personNames, queueItems, rowsById, yearHistogram } from "../model.ts";
 
-function row(id: string, years: number[], entities: Partial<CorpusRow["entities"]> = {}): CorpusRow {
+function row(id: string, years: number[]): CorpusRow {
   return {
     id,
     rev: "r",
@@ -20,13 +20,12 @@ function row(id: string, years: number[], entities: Partial<CorpusRow["entities"
     parsha: null,
     zman: null,
     series: null,
-    entities: { works: [], people: [], concepts: [], ...entities },
     counts: { chapters: 0, stories: 0, questions: 0, insights: 0 },
   } as CorpusRow;
 }
 
-function story(id: string, people: string[], t: number | null = 10, lang: "yi" | "en" = "yi"): StoryRow {
-  return { id, shiurId: id.split("~")[0]!, title: { en: id, yi: id }, peopleKeys: people, t, end: t === null ? null : t + 60, year: null, lang };
+function moment(id: string, t: number | null = 10): { id: string; shiurId: string; t: number | null; end: number | null } {
+  return { id, shiurId: id.split("~")[0]!, t, end: t === null ? null : t + 60 };
 }
 
 const corpus = (rows: CorpusRow[]): CorpusFile => ({
@@ -118,6 +117,6 @@ describe("helpers", () => {
   });
 
   it("queue items keep timed moments only, with their end", () => {
-    expect(queueItems([story("a~st0", [], 5), story("b~st1", [], null)])).toEqual([{ shiurId: "a", start: 5, end: 65, momentId: "a~st0" }]);
+    expect(queueItems([moment("a~st0", 5), moment("b~st1", null)])).toEqual([{ shiurId: "a", start: 5, end: 65, momentId: "a~st0" }]);
   });
 });
