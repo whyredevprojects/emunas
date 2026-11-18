@@ -10,7 +10,7 @@ Status: planning. Nothing here is built yet.
 | Show transcripts? | **No.** Budget ASR, input-only | No public corrected transcript, no full translation, no verbatim quotes. ASR cleanup shrinks to what extraction needs. |
 | Human editor for glossary / taxonomy | Not now | Fully automatic, conservative vocab. Every corpus-level artifact gets `reviewStatus: "unreviewed"`; human review is a flagged next step. |
 | Re-transcription | Only if a sponsor appears | Store derived data keyed to a transcript version hash, so a future better transcript can re-run passes P3+ without touching P0. |
-| Purim seudos | Out of scope | Also out (not transcribed): `Y 05 Current` (79), `Emunah_English` uncatalogued parts (24), `Shabbos Tefilah` English (8), `gramen`. |
+| Purim seudos | In scope (brought in 2026-11-18; one shiur per year, all tracks grouped) | Also out (not transcribed): `Y 05 Current` (79), `Emunah_English` uncatalogued parts (24), `Shabbos Tefilah` English (8), `gramen`. |
 | Ongoing? | No — closed corpus (speaker niftar) | One frozen build. No vocab versioning, no incremental re-tagging machinery. A rare new recording can be run through the same pipeline by hand. |
 
 ## The catalogs are the backbone
