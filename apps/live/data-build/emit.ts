@@ -524,7 +524,11 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   });
   // Keyed by corpus work id (C1.7): a work with a Live page (≥3 shiurim, never generic). Each cited
   // source goes to the work its moment resolves to in the layer refs, else to its aggregate entry's
-  // work; locations keep the reference order of the aggregate (W2.1).
+  // work; locations keep the reference order of the aggregate (W2.1). A corpus entry counts only
+  // the visible set (corpus-wave-plan §3.2: `full` ∩ the corpus index, i.e. shiurim with layer
+  // refs), as Quiet's work pages do: a `full` shiur the corpus stage has not reached yet is cited
+  // on neither site.
+  const inV = (shiurId: string): boolean => input.layer.refs.has(shiurId);
   const sourceWork = new Map<string, string>();
   for (const r of input.layer.refs.values()) for (const x of r.sources ?? []) sourceWork.set(x.momentId, x.workId);
   type Loc = { ref: WorkRef; citations: WorkCitation[] };
@@ -536,6 +540,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
   for (const w of agg.works.works) {
     for (const r of w.refs) {
       for (const m of r.mentions) {
+        if (!inV(m.shiurId)) continue;
         const id = workOfMention(m, w.workId);
         if (id === null || !view.allWorks.has(id)) continue;
         mentions.set(id, (mentions.get(id) ?? 0) + 1);
@@ -548,6 +553,7 @@ export function emitLiveData(input: CorpusInput, opts: EmitOptions): EmittedFile
       }
     }
     for (const m of w.unlocated) {
+      if (!inV(m.shiurId)) continue;
       const id = workOfMention(m, w.workId);
       if (id === null || !view.allWorks.has(id)) continue;
       mentions.set(id, (mentions.get(id) ?? 0) + 1);
