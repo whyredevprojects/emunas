@@ -63,9 +63,7 @@
     margin-block-start: var(--space-2xs);
   }
 
-  .indexes-list .note,
-  .indexes-list .sep,
-  .indexes-list .count {
+  .indexes-list .note {
     color: var(--color-ink-muted);
   }
 }

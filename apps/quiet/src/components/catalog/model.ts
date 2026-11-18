@@ -10,7 +10,7 @@
  */
 import { calendar as defaultCalendar, type Calendar } from "@emunas/calendar";
 import type { OccasionShiurRef, ParshaOccasion, SeriesEntry, ZmanOccasion } from "@emunas/corpus/aggregate";
-import type { CatalogGap, CatalogSource, IndexRow, IndexSection } from "@emunas/corpus/public";
+import type { CatalogSource, IndexRow, IndexSection } from "@emunas/corpus/public";
 import { SOURCE_LANGS, UI_DIR, hebrewNumeral, hebrewYearParts, pickLocalized, pickText, type AudioLang, type LocalizedText, type PickedText } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
 import { LANG_SCRIPT } from "@emunas/tokens";
@@ -61,10 +61,6 @@ export interface CatalogRow {
   readonly title: string;
   readonly heading: string | null;
   readonly subTitle: string | null;
-  readonly n: string | null;
-  /** Not a printed Pocket Guide row (uncatalogued guide). */
-  readonly uncatalogued: boolean;
-  readonly derived: IndexRow["catalog"]["derived"];
   readonly parsha: { readonly key: string; readonly raw: string } | null;
   readonly zman: { readonly key: string; readonly raw: string } | null;
   readonly perek: string | null;
@@ -77,8 +73,6 @@ export interface CatalogRow {
    * is in); only for shiurim with notes (status "full").
    */
   readonly oneLiner: PickedText | null;
-  /** A guide row with no recording at all (`index.json` gaps): greyed, no page, no link. */
-  readonly gap?: true;
 }
 
 export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"]): CatalogRow {
@@ -91,9 +85,6 @@ export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"])
     title: row.catalog.titleOriginal,
     heading: row.catalog.heading ?? null,
     subTitle: row.catalog.subTitle,
-    n: row.catalog.n,
-    uncatalogued: row.catalog.source !== GUIDE,
-    derived: row.catalog.derived,
     parsha: row.parsha,
     zman: row.zman,
     perek: row.perek,
@@ -102,57 +93,6 @@ export function catalogRow(row: IndexRow, ed: Ed, audio: CatalogCorpus["audio"])
     playable: row.recordingIds.some((id) => audio[id]?.playable === true),
     oneLiner,
   };
-}
-
-/** A catalog gap (a guide row with no audio) as a greyed table row; `href` is unused (no page). */
-export function gapRow(g: CatalogGap): CatalogRow {
-  return {
-    id: g.id,
-    href: "",
-    lang: g.lang,
-    status: "catalog-only",
-    title: g.catalog.titleOriginal,
-    heading: g.catalog.heading ?? null,
-    subTitle: g.catalog.subTitle,
-    n: g.catalog.n,
-    uncatalogued: g.catalog.source !== GUIDE,
-    derived: g.catalog.derived,
-    parsha: g.parsha,
-    zman: g.zman,
-    perek: g.perek,
-    years: g.years,
-    duration: 0,
-    playable: false,
-    oneLiner: null,
-    gap: true,
-  };
-}
-
-/** The catalog gaps of a section key, in catalog order. */
-export function sectionGaps(corpus: CatalogCorpus, key: string): CatalogGap[] {
-  return corpus.index.gaps.filter((g) => g.sectionKey === key);
-}
-
-/**
- * The rows of a section with its gaps put where the guide prints them: each gap after the in-scope
- * shiur it follows in catalog order (`after`), or first.
- */
-export function withGaps(rows: CatalogRow[], gaps: readonly CatalogGap[]): CatalogRow[] {
-  if (gaps.length === 0) return rows;
-  const out: CatalogRow[] = gaps.filter((g) => g.after === null).map((g) => gapRow(g));
-  const placed = new Set(out.map((r) => r.id));
-  for (const r of rows) {
-    out.push(r);
-    for (const g of gaps) {
-      if (g.after === r.id) {
-        out.push(gapRow(g));
-        placed.add(g.id);
-      }
-    }
-  }
-  // A gap whose predecessor is not on this page goes last rather than disappearing.
-  for (const g of gaps) if (!placed.has(g.id)) out.push(gapRow(g));
-  return out;
 }
 
 /** Index rows by id, memoised per corpus object. */
@@ -189,41 +129,71 @@ export interface SectionSummary {
   /** Language of most of its shiurim. */
   readonly lang: AudioLang;
   readonly count: number;
-  readonly pages: readonly [number, number] | null;
   readonly order: number;
   readonly uncatalogued: boolean;
   readonly shiurIds: readonly string[];
 }
 
 /**
- * Every section with at least one in-scope shiur or catalog gap (a guide row with no audio), in
- * catalog order (guide, then uncatalogued guide). `count` is the in-scope shiurim only.
+ * Display names for section titles that the catalog prints as file-system or all-caps labels
+ * ("TANYA ENGLISH", "Y 05 Current"), by section key, in every edition (`tsc` reports a missing
+ * one). A section not listed here shows its title as catalogued. The Hebrew titles of the Yiddish
+ * sections need no entry.
  */
-export function sectionSummaries(corpus: CatalogCorpus): SectionSummary[] {
+export const SECTION_DISPLAY_NAMES: Readonly<Record<string, Readonly<Record<Ed, string>>>> = {
+  "pocket-guide-2012:parsha-en": { en: "Parsha (English)", yi: "פרשת השבוע (ענגליש)", he: "פרשת השבוע (אנגלית)" },
+  "pocket-guide-2012:zmanim-en": { en: "Zmanim (English)", yi: "זמנים (ענגליש)", he: "זמנים (אנגלית)" },
+  "pocket-guide-2012:miscellaneous-en": { en: "Miscellaneous (English)", yi: "שונות (ענגליש)", he: "שונות (אנגלית)" },
+  "pocket-guide-2012:emunah-en": { en: "Emunah (English)", yi: "אמונה (ענגליש)", he: "אמונה (אנגלית)" },
+  "pocket-guide-2012:tanya-en": { en: "Tanya (English)", yi: "ספר התניא (ענגליש)", he: "ספר התניא (אנגלית)" },
+  "pocket-guide-2012:tefila-en": { en: "Tefilah (English)", yi: "תפילה (ענגליש)", he: "תפילה (אנגלית)" },
+  "uncatalogued-guide:shir-hashirim": { en: "Shir Hashirim", yi: "שיר השירים", he: "שיר השירים" },
+  "uncatalogued-guide:kedushas-hashabbos": { en: "Kedushas HaShabbos", yi: "קדושת השבת", he: "קדושת השבת" },
+  "uncatalogued-guide:simchos": { en: "Simchos", yi: "שמחות", he: "שמחות" },
+  "uncatalogued-guide:current": { en: "Shiurim 5769–5773", yi: "שיעורים תשס״ט–תשע״ג", he: "שיעורים תשס״ט–תשע״ג" },
+  "uncatalogued-guide:parsha-en": { en: "Parsha (English)", yi: "פרשת השבוע (ענגליש)", he: "פרשת השבוע (אנגלית)" },
+  "uncatalogued-guide:zmanim-en": { en: "Zmanim (English)", yi: "זמנים (ענגליש)", he: "זמנים (אנגלית)" },
+  "uncatalogued-guide:miscellaneous-en": { en: "Miscellaneous (English)", yi: "שונות (ענגליש)", he: "שונות (אנגלית)" },
+  "uncatalogued-guide:emunah-en": { en: "Emunah (English)", yi: "אמונה (ענגליש)", he: "אמונה (אנגלית)" },
+  "uncatalogued-guide:tanya-en": { en: "Tanya (English)", yi: "ספר התניא (ענגליש)", he: "ספר התניא (אנגלית)" },
+  "uncatalogued-guide:shabbos-tefilah-en": { en: "Shabbos Tefilah (English)", yi: "תפילת שבת (ענגליש)", he: "תפילת שבת (אנגלית)" },
+  "uncatalogued-guide:simchos-en": { en: "Simchos (English)", yi: "שמחות (ענגליש)", he: "שמחות (אנגלית)" },
+  "uncatalogued-guide:purim-seudos": { en: "Purim Seudos", yi: "פורים סעודות", he: "סעודות פורים" },
+};
+
+/** A section title as shown in an edition: its display name, else the title as catalogued. */
+export function sectionDisplayTitle(key: string, title: string, ed: Ed): string {
+  return SECTION_DISPLAY_NAMES[key]?.[ed] ?? title;
+}
+
+/**
+ * Every section with at least one in-scope shiur, in catalog order (guide, then uncatalogued
+ * guide), titled for the edition. A section whose catalog rows have no recording at all is left
+ * out: no shiur page links to it.
+ */
+export function sectionSummaries(corpus: CatalogCorpus, ed: Ed): SectionSummary[] {
   const meta = new Map(corpus.index.sections.map((s) => [s.key, s]));
   const rows = indexRows(corpus);
-  const gapSections = new Set((corpus.index.gaps ?? []).map((g) => g.sectionKey));
   return corpus.sections.sections
-    .filter((s) => s.count > 0 || gapSections.has(s.key))
+    .filter((s) => s.count > 0)
     .map((s) => {
       const m = meta.get(s.key);
       const source = (m?.source ?? s.source) as CatalogSource;
-      // A section of gaps only takes its language from them.
-      const langs = s.count > 0 ? s.shiurIds.map((id) => rows.get(id)?.lang) : sectionGaps(corpus, s.key).map((g) => g.lang);
+      const langs = s.shiurIds.map((id) => rows.get(id)?.lang);
       const yi = langs.filter((l) => l === "yi").length;
       const en = langs.length - yi;
-      const dir = m?.dir ?? (/[֐-׿]/.test(s.title) ? "rtl" : "ltr");
+      const title = sectionDisplayTitle(s.key, s.title, ed);
+      const dir = title !== s.title ? (/[֐-׿]/.test(title) ? "rtl" : "ltr") : (m?.dir ?? (/[֐-׿]/.test(s.title) ? "rtl" : "ltr"));
       const lang: AudioLang = yi > en ? "yi" : en > yi ? "en" : dir === "rtl" ? "yi" : "en";
       return {
         key: s.key,
         source,
         id: s.id,
         slug: sectionSlug({ source, id: s.id }),
-        title: s.title,
+        title,
         dir,
         lang,
         count: s.count,
-        pages: m?.pages ?? null,
         order: s.order,
         uncatalogued: source !== GUIDE,
         shiurIds: s.shiurIds,
@@ -259,21 +229,21 @@ export interface ContentsModel {
   readonly yiddish: SectionSummary[];
   /** Pocket Guide sections of English shiurim, guide order. */
   readonly english: SectionSummary[];
-  /** Uncatalogued-guide sections, in that file's order. */
-  readonly uncatalogued: SectionSummary[];
+  /** The other recordings' sections (uncatalogued guide), in that file's order. */
+  readonly more: SectionSummary[];
   /** Series by the language they are spoken in. */
   readonly series: Readonly<Record<AudioLang, SeriesSummary[]>>;
 }
 
-/** The contents (concept-quiet §5.2): guide order, Yiddish then English, then the uncatalogued sections. */
+/** The contents (concept-quiet §5.2): catalog order, Yiddish then English, then the other recordings. */
 export function contentsModel(corpus: CatalogCorpus, ed: Ed): ContentsModel {
-  const all = sectionSummaries(corpus);
+  const all = sectionSummaries(corpus, ed);
   const guide = all.filter((s) => !s.uncatalogued);
   const series = seriesSummaries(corpus, ed);
   return {
     yiddish: guide.filter((s) => s.lang === "yi"),
     english: guide.filter((s) => s.lang === "en"),
-    uncatalogued: all.filter((s) => s.uncatalogued),
+    more: all.filter((s) => s.uncatalogued),
     series: { yi: series.filter((s) => s.lang === "yi"), en: series.filter((s) => s.lang === "en") },
   };
 }
@@ -383,9 +353,9 @@ export function sectionLayout(rows: CatalogRow[], corpus: CatalogCorpus, ed: Ed)
 }
 
 export function sectionModel(corpus: CatalogCorpus, slug: string, ed: Ed): SectionModel | null {
-  const section = sectionSummaries(corpus).find((s) => s.slug === slug);
+  const section = sectionSummaries(corpus, ed).find((s) => s.slug === slug);
   if (!section) return null;
-  const rows = withGaps(rowsOf(corpus, section.shiurIds, ed), sectionGaps(corpus, section.key));
+  const rows = rowsOf(corpus, section.shiurIds, ed);
   const ids = new Set(section.shiurIds);
   const series = seriesSummaries(corpus, ed).filter((s) => {
     const entry = corpus.series.series.find((x) => x.id === s.id);
@@ -437,8 +407,6 @@ export interface SeriesModel {
   readonly rows: SeriesRow[];
   /** Tanya: consecutive runs of the same perek, in series order; null when the parts carry no perek. */
   readonly groups: PerekGroup[] | null;
-  /** The catalog sections the set was printed in. */
-  readonly sections: SectionSummary[];
   readonly anyNotes: boolean;
   /** The generated introduction; null for a series with no synthesis or no visible part (no synthesis UI). */
   readonly intro: SeriesIntro | null;
@@ -507,8 +475,6 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
         }))
         .filter((g) => g.rows.length > 0)
     : null;
-  const partIds = new Set(entry.parts.map((p) => p.id));
-  const sections = sectionSummaries(corpus).filter((s) => s.shiurIds.some((x) => partIds.has(x)));
   const title = pickText(entry.title, ed);
   const intro: SeriesIntro | null =
     withIntro && synthesis !== null
@@ -528,7 +494,6 @@ export function seriesModel(corpus: CatalogCorpus, id: string, ed: Ed, synthesis
     count,
     rows,
     groups,
-    sections,
     anyNotes: rows.some((r) => r.oneLiner !== null || r.notPrepared),
     intro,
   };
@@ -730,7 +695,6 @@ export function hebrewDateLabel(cal: Calendar, date: string, ed: Ed): string | n
 
 export interface CorpusTotals {
   readonly total: number;
-  readonly full: number;
   /** Total hours, rounded to the nearest ten ("about 770 hours"). */
   readonly hoursAbout: number;
 }
@@ -739,7 +703,6 @@ export function corpusTotals(corpus: CatalogCorpus): CorpusTotals {
   const seconds = corpus.index.shiurim.reduce((a, r) => a + (Number.isFinite(r.duration) ? r.duration : 0), 0);
   return {
     total: corpus.build.counts.total,
-    full: corpus.build.counts.full,
     hoursAbout: Math.round(seconds / 36000) * 10,
   };
 }

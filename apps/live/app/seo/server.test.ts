@@ -129,6 +129,8 @@ describe("root loader", () => {
 
   it("marks the SPA fallback render and reads process.env once", () => {
     const saved = { ...process.env };
+    // A staging deploy runs the tests with its own host variables set; this test pins its own.
+    for (const k of ["EMUNAS_STAGE", "EMUNAS_WORKERS_SUBDOMAIN", "EMUNAS_QUIET_ORIGIN", "EMUNAS_LIVE_ORIGIN", "EMUNAS_HOME_ORIGIN"]) delete process.env[k];
     Object.assign(process.env, env);
     try {
       resetSeoContext();
@@ -145,7 +147,7 @@ describe("root loader", () => {
   it("works without a corpus or hosts (dev): Today keeps its text, no canonical anywhere", () => {
     const ctx = createSeoContext({ EMUNAS_CORPUS_DIR: join(tmp(), "none") }, tmp());
     expect(seoDataFor(ctx, "/en/s/x")).toEqual({ seo: { hosts: null, page: null } });
-    expect(seoDataFor(ctx, "/yi/").seo.page).toMatchObject({ kind: "today", title: "אמונת — הערן", canonical: null });
+    expect(seoDataFor(ctx, "/yi/").seo.page).toMatchObject({ kind: "today", title: "עיון — שיעורים", canonical: null });
   });
 });
 

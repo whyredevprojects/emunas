@@ -7,8 +7,8 @@ import type { UiKey } from "./en.ts";
  * the Hebrew word is used. Wording is unreviewed until a Hebrew reader checks it.
  */
 export const he: MessageTable<UiKey> = {
-  "site.name": "אמונת — האזנה",
-  "site.short": "אמונת",
+  "site.name": "עיון — שיעורים",
+  "site.short": "עיון",
   "site.tagline": 'שיעורי הגה"צ רבי משה וולפסון זצ"ל',
 
   "shell.skip": "דלג לתוכן",
@@ -22,7 +22,7 @@ export const he: MessageTable<UiKey> = {
   "nav.maasios": "מעשיות",
   "nav.series": "סדרות",
   "nav.shelf": "המדף שלי",
-  "nav.quiet": "קטלוג ומפתחות",
+  "nav.quiet": "ספריה",
   "nav.newTab": "(נפתח בכרטיסייה חדשה)",
   "nav.search": "חיפוש",
 

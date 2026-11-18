@@ -19,7 +19,7 @@ import { clock } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { EntryData } from "../indexes/entries.ts";
 import { citeShiur, citeShiurim, entryHref, hasEntryPage, hebrewRun, nameSortForm, ownTextOf, run, str, strings, textRun } from "../indexes/entry-model.ts";
-import { byLetter, letterOf, sectionHref, type Cite, type LetterBlock, type Run } from "../indexes/model.ts";
+import { byLetter, letterOf, shiurHref, type Cite, type LetterBlock, type Run } from "../indexes/model.ts";
 import { useIndexesT } from "../indexes/strings.ts";
 
 export interface GlossaryLine {
@@ -121,12 +121,12 @@ export function conceptPage(d: EntryData, ed: Ed, c: LayerConcept): ConceptPage 
     const ch = d.chapters(r.shiurId).get(r.sectionIndex);
     const at = typeof r.t === "number" && Number.isFinite(r.t) ? r.t : ch?.t;
     if (at === undefined) continue;
-    const href = sectionHref(ed, r.shiurId, r.sectionIndex);
+    const href = shiurHref(ed, r.shiurId, at);
     const cite = citeShiur(d, ed, r.shiurId, null, href);
     if (!cite) continue;
     seen.add(key);
     const title = ch ? textRun(ch.title, ed) : null;
-    examples.push({ shiurId: r.shiurId, title: title ?? cite.occasion, time: clock(at), href, cite });
+    examples.push({ shiurId: r.shiurId, title: title ?? cite.title, time: clock(at), href, cite });
   }
   const throughout = c.passim === true;
   const gloss = glossOf(c, ed, he);

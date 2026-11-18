@@ -10,7 +10,6 @@ import { calendarEn, calendarHe } from "../components/calendar/strings.ts";
 import { catalogEn, catalogHe } from "../components/catalog/strings.ts";
 import { corpusEn, corpusHe } from "../components/corpus/strings.ts";
 import { indexesEn, indexesHe } from "../components/indexes/strings.ts";
-import { followTextEn, followTextHe } from "../components/shiur/follow-text-strings.ts";
 import { shiurEn, shiurHe } from "../components/shiur/strings.ts";
 import { storiesEn, storiesHe } from "../components/stories/strings.ts";
 import { topicsEn, topicsHe } from "../components/topics/strings.ts";
@@ -23,7 +22,6 @@ const PAIRS: Record<string, { en: object; he: object }> = {
   i18n: ui,
   catalog: { en: catalogEn, he: catalogHe },
   shiur: { en: shiurEn, he: shiurHe },
-  followText: { en: followTextEn, he: followTextHe },
   indexes: { en: indexesEn, he: indexesHe },
   calendar: { en: calendarEn, he: calendarHe },
   corpus: { en: corpusEn, he: corpusHe },
@@ -83,8 +81,7 @@ describe("Hebrew UI copy (Quiet)", () => {
   });
 
   it("never remarks on the transcript or the shiur itself (the guard's term list)", () => {
-    // The follow-text view is designed and OFF (EMUNAS_TRANSCRIPT_VIEW); its strings name what it shows.
-    const tables = Object.entries(PAIRS).filter(([name]) => name !== "followText");
+    const tables = Object.entries(PAIRS);
     const all = tables.flatMap(([name, pair]) => strings(pair.he, `${name}.he`));
     expect(all.flatMap(([path, s]) => findMetaComments(s).map((h) => `${path}: ${h.term}`))).toEqual([]);
   });

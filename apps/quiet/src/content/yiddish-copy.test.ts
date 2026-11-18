@@ -10,7 +10,6 @@ import { CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS } from "@emunas/i18n";
 import { calendarEn, calendarYi } from "../components/calendar/strings.ts";
 import { catalogEn, catalogYi } from "../components/catalog/strings.ts";
 import { indexesEn, indexesYi } from "../components/indexes/strings.ts";
-import { followTextEn, followTextYi } from "../components/shiur/follow-text-strings.ts";
 import { shiurEn, shiurYi } from "../components/shiur/strings.ts";
 import { corpusEn } from "../components/corpus/strings.ts";
 import { storiesEn } from "../components/stories/strings.ts";
@@ -25,7 +24,6 @@ const PAIRS: Record<string, { en: object; yi: object }> = {
   i18n: ui,
   catalog: { en: catalogEn, yi: catalogYi },
   shiur: { en: shiurEn, yi: shiurYi },
-  followText: { en: followTextEn, yi: followTextYi },
   indexes: { en: indexesEn, yi: indexesYi },
   calendar: { en: calendarEn, yi: calendarYi },
   search: SEARCH_STRINGS,
@@ -122,8 +120,7 @@ describe("Yiddish UI copy (Quiet)", () => {
   });
 
   it("never remarks on the transcript or the shiur itself, in either language (the guard's term list)", () => {
-    // The follow-text view is designed and OFF (EMUNAS_TRANSCRIPT_VIEW); its strings name what it shows.
-    const tables = Object.entries(PAIRS).filter(([name]) => name !== "followText");
+    const tables = Object.entries(PAIRS);
     const all = [
       ...tables.flatMap(([name, pair]) => [...strings(pair.en, `${name}.en`), ...strings(pair.yi, `${name}.yi`)]),
       ...strings(corpusEn, "corpus"),

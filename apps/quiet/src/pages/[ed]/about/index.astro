@@ -7,7 +7,7 @@
  * Every text on this page is written by a person (W5.3) and read from
  * `src/content/about/{ed}/{part}.md`; a part with no file in the edition's language shows the text
  * of the next language along `CONTENT_FALLBACK` (with its own `lang`/`dir`), and a part with no file
- * at all shows a clearly marked placeholder. The only non-heading content is the report address from `EMUNAS_FEEDBACK_EMAIL`
+ * in any language is left out (its draft waits in `src/content/about-drafts/`). The only non-heading content is the report address from `EMUNAS_FEEDBACK_EMAIL`
  * (a dev placeholder outside deploy builds, ../../../components/seo/site-env.ts). The texts' links
  * to the listening app and the Pocket Guide are resolved here (`resolveAboutLinks`).
  *
@@ -33,11 +33,11 @@ const s = ABOUT_STRINGS[ed];
 const env = currentSiteEnv();
 const targets = { ed, live: env.links.live.home(ed), guide: pocketGuideUrl(loadCatalogCorpus()), newTab: useT(ed)("link.newTab") };
 const parts = await Promise.all(
-  ABOUT_PARTS.map(async (part) => {
+  ABOUT_PARTS.flatMap((part) => {
     const text = aboutText(ed, part);
-    if (text === null) return { part, html: null, attrs: {} };
-    const html = resolveAboutLinks(await text.md.compiledContent(), { ...targets, textLang: text.lang });
-    return { part, html, attrs: text.fallback ? { lang: text.lang, dir: text.dir } : {} };
+    if (text === null) return [];
+    const attrs = text.fallback ? { lang: text.lang, dir: text.dir } : {};
+    return [text.md.compiledContent().then((html) => ({ part, html: resolveAboutLinks(html, { ...targets, textLang: text.lang }), attrs }))];
   }),
 );
 ---
@@ -48,13 +48,7 @@ const parts = await Promise.all(
       return (
         <section id={part} aria-labelledby={`${part}-heading`}>
           <h2 id={`${part}-heading`}>{s.headings[part]}</h2>
-          {html !== null ? (
-            <div class="about-text" {...attrs} set:html={html} />
-          ) : (
-            <p class="about-placeholder" data-placeholder={part}>
-              <strong class="about-placeholder-label">{s.placeholderLabel}:</strong> {s.placeholder}
-            </p>
-          )}
+          <div class="about-text" {...attrs} set:html={html} />
           {part === "arrangement" && <p class="about-audio" id="audio">{audioVersionLabel("about", ed)}</p>}
           {part === "report" && (
             <p class="about-report">

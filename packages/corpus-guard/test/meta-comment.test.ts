@@ -7,7 +7,7 @@ import { writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { main } from "../src/cli.ts";
-import { LeakScanner, createLeakScanner } from "../src/index.ts";
+import { createLeakScanner } from "../src/index.ts";
 import { UI_LANGS } from "@emunas/i18n";
 import { META_COMMENT_PREFIX_LETTERS, META_COMMENT_TERMS, META_COMMENT_TERMS_BY_LANG, findMetaComments, readMetaCommentAllow } from "../src/meta-comment.ts";
 import { SHIUR, makeFixture, shiurJson, writeFile, type Fixture } from "./fixtures.ts";
@@ -200,17 +200,6 @@ describe("post-pass: remarks on the transcript or the shiur", () => {
       "dist/en/shiur/a/index.html unintelligib* …ast comes the neshama the unintelligible instrument part is [unintelligible]",
     ]);
     expect(r.counts.metaCommentAllowed).toBe(3);
-  });
-
-  it("leaves the approved transcript view out only when it is on for an eligible recording", () => {
-    fx = makeFixture();
-    const d = dist(fx);
-    writeFile(join(d, "en", "shiur", SHIUR, "index.html"), `<html><body><section class="follow-text" data-follow-text><p>From a transcription a person approved.</p></section><p>Opening</p></body></html>`);
-    const off = scan(fx, d);
-    expect(off.findings.map((f) => f.kind)).toEqual(["meta-comment"]);
-    const s = new LeakScanner({ baseDir: fx.root, transcripts: { enabled: true, versions: new Map([["rec", "v"]]) } });
-    s.scanPaths([d]);
-    expect(s.result().findings).toEqual([]);
   });
 
   it("rejects a malformed allow-list or a phrase without a listed term", () => {

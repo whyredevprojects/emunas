@@ -1,7 +1,7 @@
 /**
  * Languages on the home site. Home is written in English; every other interface language of the
  * shiur sites (`UI_LANGS` of `@emunas/i18n`: Yiddish, Hebrew, …) appears as a short aside beside
- * the English label, and the doorways link each edition of Library and Listen. A new interface
+ * the English label, and the doorways link each edition of Library and Analyze. A new interface
  * language is a new `UI_LANGS` entry: tsc then asks for its text in every `Asides` table.
  */
 import { UI_DIR, UI_ENDONYM, UI_LANGS, otherUiLangs, type UiLang } from "@emunas/i18n";
@@ -60,7 +60,7 @@ export interface SiteLinks {
 const editions = (origin: string, home: (lang: UiLang) => string): EditionLink[] =>
   otherUiLangs(HOME_LANG).map((lang) => ({ lang, dir: UI_DIR[lang], name: UI_ENDONYM[lang], href: origin + home(lang) }));
 
-/** Library (Quiet) and Listen (Live) on their own hosts, in English and in every other edition. */
+/** Library (Quiet) and Analyze (Live) on their own hosts, in English and in every other edition. */
 export function siteLinks(hosts: Hosts): SiteLinks {
   const quiet = quietPaths();
   const live = livePaths();

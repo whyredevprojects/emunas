@@ -1,17 +1,17 @@
 /**
  * W3.2 acceptance in a real browser (headless Chrome via playwright-core):
- * - the 7 sample shiurim build and render in both editions, axe-clean (light and dark);
- * - with JS off, time links are `cleanedUrl#t=<local>` links on the media host (the AI-improved copy)
- *   and the version line is a plain link to the original file;
- * - with JS on: a time link seeks the docked player (sticky), the margin mark follows, the address
- *   gets `#t=<global>`, a time in part 2 switches tracks, `#t=` on load seeks without playing,
- *   the end of part 1 continues into part 2, keyboard works only on the focused dock, Media
- *   Session metadata is set;
+ * - the 7 sample shiurim build and render in every edition, axe-clean (light and dark), at phone
+ *   and desktop width without sideways scrolling;
+ * - with JS off, every recording is a native `<audio>` and nothing docks;
+ * - with JS on: playing docks the player (sticky) with Media Session metadata, `#t=<global>` on
+ *   load seeks without playing (the deep links from topic, story and index pages), a `#t=` in
+ *   part 2 switches tracks, the end of part 1 continues into part 2, keyboard works only on the
+ *   focused dock;
  * - improved audio: the version line's button switches every part between the improved copy and
  *   the original keeping position, play state and speed, announces it, remembers it across pages,
  *   and a failing improved file falls back once to the original; downloads stay the original;
  * - player script ≤ 6 KB brotli; every shiur page ≤ 120 KB raw / ≤ 30 KB brotli; no transcript
- *   UI in any built file; print hides the player and the jump list.
+ *   UI in any built file; print hides the player and the links, keeps the notes.
  *
  * Builds a corpus from the mini fixture (media origin = a local media server with Range support
  * serving silent mp3s of each recording's length, made with ffmpeg), builds the site into a
@@ -27,7 +27,7 @@ import { fileURLToPath } from "node:url";
 import { brotliCompressSync } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { round3, type PublicShiur } from "@emunas/corpus/public";
+import type { PublicShiur } from "@emunas/corpus/public";
 import { EDS, dirOf } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
@@ -94,6 +94,7 @@ function run(cmd: string, args: string[], env: NodeJS.ProcessEnv = process.env):
   if (r.status !== 0) throw new Error(`${cmd} ${args.join(" ")} failed:\n${r.stdout}\n${r.stderr}`);
 }
 
+const norm = (x: string | null) => (x ?? "").replace(/[\s\u200e\u200f]+/gu, " ").trim();
 const shiurJson = (id: string) => JSON.parse(readFileSync(join(corpusDir, "shiurim", `${id}.json`), "utf8")) as PublicShiur;
 
 beforeAll(async () => {
@@ -222,13 +223,9 @@ const audioState = (page: Page) =>
     (els as HTMLAudioElement[]).map((a) => ({ paused: a.paused, t: a.currentTime, current: a.closest(".track")?.hasAttribute("data-current") ?? false })),
   );
 
-/**
- * Waits until the first recording is really playing. `paused` turns false as soon as play() is
- * called, which can be before the metadata arrives; the player then applies the time link's seek on
- * `loadedmetadata`, and a position set by the test in between would be undone. Once `currentTime`
- * has moved, that seek has run.
- */
+/** Starts the first recording (as its own play button would) and waits until it is really playing. */
 async function playingFirst(page: Page): Promise<void> {
+  await page.evaluate(() => void document.querySelector<HTMLAudioElement>("audio.listen-audio")!.play());
   await page.waitForFunction(() => {
     const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
     return !a.paused && a.readyState >= 1 && a.currentTime > 0;
@@ -280,22 +277,34 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
       if (id === MULTI || id === "yi-tanya-1-01") {
         await page.screenshot({ path: join(shotDir, `shiur-${id}-${ed}${dark ? "-dark" : ""}.png`), fullPage: true });
       }
+      // the last crumb is the title, cut short on screen only
+      const crumb = page.locator('.breadcrumb [aria-current="page"] bdi');
+      expect(norm(await crumb.textContent())).toBe(norm(shiurJson(id).catalog.titleOriginal));
       expect(errors.get(page)).toEqual([]);
       await page.context().close();
     }
   });
 });
 
+describe("layout", () => {
+  it.each([360, 1100])("has no sideways scroll at %ipx, in every edition", async (width) => {
+    for (const ed of EDS) {
+      const page = await open(`/${ed}/shiur/${MULTI}/`, { width });
+      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+      await page.screenshot({ path: join(shotDir, `shiur-${MULTI}-${ed}-${width}.png`), fullPage: true });
+      await page.context().close();
+    }
+  });
+});
+
 describe("without script", () => {
-  it("time links open the recording at the exact local time (fractional seconds) on the media host", async () => {
+  it("plays each recording in its own native control and docks nothing", async () => {
     const page = await open(`/en/shiur/${MULTI}/`, { js: false });
     const shiur = shiurJson(MULTI);
     const [p1, p2] = shiur.recordings;
-    expect(await page.locator("#s0 a.time").getAttribute("href")).toBe(`${p1!.cleanedUrl}#t=0`);
-    const late = shiur.notes!.chapters.find((c) => c.t >= p2!.offset)!;
-    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.cleanedUrl}#t=${round3(late.t - p2!.offset)}`);
-    expect(await page.locator("audio[preload=none]").count()).toBe(2);
-    // the version line: a plain link to the original file; downloads are the original
+    // each part plays the AI-improved copy; the version line is a plain link to the original file
+    const srcs = await page.$$eval("audio[preload=none]", (els) => els.map((a) => a.getAttribute("src")));
+    expect(srcs).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
     expect(await page.locator("a.listen-version-switch").getAttribute("href")).toBe(p1!.audioUrl);
     expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);
     expect(await page.locator(".listen[data-docked]").count()).toBe(0);
@@ -304,57 +313,39 @@ describe("without script", () => {
 });
 
 describe("player", () => {
-  it("seeks the docked player from a time link, marks the item and records #t=", async () => {
+  it("docks the player once it plays, and sets the Media Session metadata", async () => {
     const page = await open(`/en/shiur/${MULTI}/`);
     const shiur = shiurJson(MULTI);
-    const chapter = shiur.notes!.chapters[2]!;
-    await page.locator(`#s${chapter.idx} a.time`).click();
-    await page.waitForFunction(() => {
-      const a = document.querySelector<HTMLAudioElement>("audio.listen-audio");
-      return a !== null && !a.paused && a.currentTime > 0;
-    });
-    const [first] = await audioState(page);
-    // the seek keeps the fractional second: playback starts at the item, not the whole second before it
-    expect(first!.t).toBeGreaterThanOrEqual(chapter.t - 0.05);
-    expect(first!.t).toBeLessThan(chapter.t + 5);
-    expect(new URL(page.url()).hash).toBe(`#t=${round3(chapter.t)}`);
+    expect(await page.locator(".listen[data-docked]").count()).toBe(0);
+    await playingFirst(page);
     expect(await page.locator(".listen[data-docked]").count()).toBe(1);
     expect(await page.$eval(".listen", (el) => getComputedStyle(el).position)).toBe("sticky");
-    expect(await page.locator(`#s${chapter.idx} a.time[aria-current="time"]`).count()).toBe(1);
-    expect(await page.locator('.outline-list a.time[aria-current="time"]').count()).toBe(1);
-    // the write-up paragraph being heard carries the margin mark too
-    expect(await page.locator('.writeup-text a.time[aria-current="time"]').count()).toBe(1);
 
     // the dock stays in view while reading further down
-    await page.locator("#sources").scrollIntoViewIfNeeded();
-    const box = await page.locator(".listen").boundingBox();
-    expect(box!.y).toBeLessThanOrEqual(1);
+    await page.locator(".prev-next").scrollIntoViewIfNeeded();
     await page.screenshot({ path: join(shotDir, "shiur-docked.png") });
 
-    // Media Session metadata
     const meta = await page.evaluate(() => navigator.mediaSession.metadata?.title ?? null);
     expect(meta).toBe(`${shiur.catalog.titleOriginal} (1/2)`);
     expect(errors.get(page)).toEqual([]);
     await page.context().close();
   });
 
-  it("switches tracks for a time in part 2 and keeps one playing", async () => {
+  it("seeks a `#t=` in part 2 on hashchange (a deep link followed on the page) and switches tracks", async () => {
     const page = await open(`/yi/shiur/${MULTI}/`);
     const shiur = shiurJson(MULTI);
     const p2 = shiur.recordings[1]!;
-    const late = shiur.notes!.chapters.find((c) => c.t >= p2.offset)!;
-    await page.locator("#s0 a.time").click();
-    await page.waitForFunction(() => !document.querySelector<HTMLAudioElement>("audio.listen-audio")!.paused);
-    await page.locator(`#s${late.idx} a.time`).click();
+    const g = Math.round(p2.offset + 60);
+    await playingFirst(page);
+    await page.evaluate((h) => (window.location.hash = h), `#t=${g}`);
     await page.waitForFunction(() => {
       const [a, b] = Array.from(document.querySelectorAll<HTMLAudioElement>("audio.listen-audio"));
-      return a!.paused && b !== undefined && !b.paused && b.currentTime > 0;
+      return a!.paused && b !== undefined && b.readyState >= 1 && b.currentTime > 0;
     });
     const [one, two] = await audioState(page);
     expect(one!.current).toBe(false);
     expect(two!.current).toBe(true);
-    expect(two!.t).toBeGreaterThanOrEqual(Math.floor(late.t - p2.offset) - 0.5);
-    expect(await page.locator(`#s${late.idx} a.time[aria-current="time"]`).count()).toBe(1);
+    expect(Math.abs(two!.t - (g - p2.offset))).toBeLessThan(1);
     // the docked player shows only the current track
     expect(await page.locator(".track:not([data-current]) audio").isVisible()).toBe(false);
     expect(errors.get(page)).toEqual([]);
@@ -374,14 +365,11 @@ describe("player", () => {
     expect(one!.paused && two!.paused).toBe(true);
     expect(two!.current).toBe(true);
     expect(Math.abs(two!.t - (g - p2.offset))).toBeLessThan(1);
-    const expected = shiur.notes!.chapters.filter((c) => c.t <= g).at(-1)!;
-    expect(await page.locator(`#s${expected.idx} a.time[aria-current="time"]`).count()).toBe(1);
     await page.context().close();
   });
 
   it("continues into the next recording when one ends", async () => {
     const page = await open(`/en/shiur/${MULTI}/`);
-    await page.locator("#s0 a.time").click();
     await playingFirst(page);
     await page.evaluate(() => {
       const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
@@ -403,7 +391,6 @@ describe("player", () => {
 
   it("answers the keyboard only while the dock has focus", async () => {
     const page = await open(`/en/shiur/en-parsha-en-nch-01/`);
-    await page.locator("#s0 a.time").click();
     await playingFirst(page);
     // focus elsewhere: Space/K do nothing to the player
     await page.locator("h1").click();
@@ -422,13 +409,13 @@ describe("player", () => {
     await page.context().close();
   });
 
-  it("print hides the player and the jump list, keeps the notes", async () => {
+  it("print hides the player and the links, keeps the notes", async () => {
     const page = await open(`/en/shiur/${MULTI}/`);
     await page.emulateMedia({ media: "print" });
-    for (const sel of [".listen", ".jump-list", ".open-live", ".report-error"]) {
+    for (const sel of [".listen", ".open-live", ".report-error"]) {
       expect(await page.$eval(sel, (el) => getComputedStyle(el).display), sel).toBe("none");
     }
-    expect(await page.$eval("#writeup", (el) => getComputedStyle(el).display)).toBe("block");
+    expect(await page.$eval("#about", (el) => getComputedStyle(el).display)).toBe("block");
     await page.context().close();
   });
 });
@@ -448,7 +435,6 @@ describe("improved audio", () => {
     const reportBody = async () => new URL((await page.locator(".report-error a").getAttribute("href"))!).searchParams.get("body") ?? "";
     expect(await reportBody()).toMatch(/\n\nNow playing the version improved by AI\.$/);
 
-    await page.locator("#s0 a.time").click();
     await playingFirst(page);
     await page.evaluate(() => {
       const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
@@ -514,7 +500,7 @@ describe("improved audio", () => {
     missing.add(path);
     try {
       const page = await open(`/en/shiur/en-parsha-en-nch-01/`);
-      await page.locator("#s0 a.time").click();
+      await page.evaluate(() => void document.querySelector<HTMLAudioElement>("audio.listen-audio")!.play());
       await page.waitForFunction(() => {
         const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
         return !a.paused && a.readyState >= 1;

@@ -17,7 +17,7 @@ the other". Time is global seconds (C5), written to the millisecond (`582.12`) i
 |---|---|---|
 | Home | `/{ed}/` | `/{ui}/` |
 | Shiur | `/{ed}/shiur/{id}/` | `/{ui}/s/{id}` |
-| Section i | `/{ed}/shiur/{id}/#s{i}` | `/{ui}/s/{id}?t={sectionStart}&m={id}~s{i}` |
+| Section i | `/{ed}/shiur/{id}/#t={sectionStart}` (Quiet links a place by its time only) | `/{ui}/s/{id}?t={sectionStart}&m={id}~s{i}` |
 | Time t | `/{ed}/shiur/{id}/#t={t}` | `/{ui}/s/{id}?t={t}` |
 | Catalog section | `/{ed}/section/{slug}/` (`quietPaths().section(ed, {source, id})`; slug = id for the Pocket Guide, `unc-` + id otherwise) | none: maps to the UI home |
 | Series | `/{ed}/series/{id}/` | `/{ui}/series/{id}` |
@@ -58,7 +58,7 @@ import { createLinks, hostsFromEnv, pageLookupFromLayer, quietPaths, livePaths }
 
 // Same-site links: root-relative paths.
 const q = quietPaths(pageLookupFromLayer(layerFiles)); // page flags from .corpus/layer/
-q.shiur("yi", id, { section: 2 });     // "/yi/shiur/<id>/#s2"
+q.shiur("yi", id, { t: 845 });        // "/yi/shiur/<id>/#t=845"
 q.person("en", "baal-shem-tov");      // page, or "/en/people/#baal-shem-tov" without a Quiet page
 
 // Cross-site, canonical, hreflang: absolute URLs.
@@ -88,7 +88,7 @@ its one runtime import (`test/purity.test.ts` allows only that). `Ed` is `UiLang
 | `hasPage(site, kind, id)` | corpus entry page vs index anchor (Quiet) or no link (Live); canonical/noindex | the page is assumed to exist |
 | `conceptTopic(id)` | concept merged into a topic → the topic | the concept's own address |
 | `occasionKind(key)` | Live `/o/{key}` → Quiet parsha or zman page | Quiet edition home |
-| `sectionStart(id, i)` | Quiet `#s{i}` → Live `?t=` | Live link carries only `m=` |
+| `sectionStart(id, i)` | a Live section moment without `t` → its `?t=` | Live link carries only `m=` |
 
 ### Hosts
 

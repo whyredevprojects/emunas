@@ -14,7 +14,6 @@ const SITE_TESTS = [
   "src/components/seo/test/site.build.test.ts",
   "src/components/stories/test/site.build.test.ts",
   "src/components/topics/test/site.build.test.ts",
-  "test/transcript-view.test.ts",
 ];
 
 // Projects that extend the root concatenate its `include`, so the root has none and each project

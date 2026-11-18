@@ -46,7 +46,7 @@ const groups = namesIndex(data, ed);
               )}
               {l.alt && <> <span class="alt-name"><bdi lang={l.alt.lang} dir={l.alt.dir}>{l.alt.text}</bdi></span></>}
               <span class="entry-count">{l.countText}</span>
-              <CiteList ed={ed} cites={l.cites} />
+              <CiteList ed={ed} cites={l.cites} brief />
               {l.also.length > 0 && (
                 <p class="entry-also">{t("names.also")}{" "}{l.also.map((n, i) => <>{i > 0 && ", "}<bdi lang={n.lang} dir={n.dir}>{n.text}</bdi></>)}</p>
               )}

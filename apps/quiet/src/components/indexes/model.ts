@@ -42,10 +42,6 @@ export function shiurHref(ed: Ed, shiurId: string, t: number | null): string {
   return t === null ? formatQuiet({ kind: "shiur", ed, id: shiurId }) : formatQuiet({ kind: "shiur", ed, id: shiurId, t });
 }
 
-export function sectionHref(ed: Ed, shiurId: string, idx: number): string {
-  return formatQuiet({ kind: "shiur", ed, id: shiurId, moment: { kind: "s", index: idx } });
-}
-
 /** Outbound Sefaria link (tech-quiet §4: resolved references only, encoded as one path segment). */
 export function sefariaHref(ref: string): string {
   return `https://www.sefaria.org/${encodeURIComponent(ref.trim())}`;
@@ -53,14 +49,14 @@ export function sefariaHref(ref: string): string {
 
 // ------------------------------------------------------------------ citations
 
-/** One pointer into a shiur: the catalog's own words for it, and where in it. */
+/** One pointer into a shiur: its title, when it was said, and where in it. */
 export interface Cite {
   readonly shiurId: string;
   readonly href: string;
-  /** Parsha or zman as catalogued, else the section title. */
-  readonly occasion: Run;
-  /** Catalog number as printed. */
-  readonly n: string | null;
+  /** The shiur's title as catalogued. */
+  readonly title: Run;
+  /** Parsha or zman as catalogued (null: none, or the same text as the title). */
+  readonly occasion: Run | null;
   readonly years: readonly number[];
   /** Spoken language of the shiur; shown only when it differs from the edition. */
   readonly lang: AudioLang;
@@ -69,12 +65,13 @@ export interface Cite {
 }
 
 export function citeFromRow(row: IndexRow, ed: Ed, t: number | null, href?: string): Cite {
-  const occasion = row.parsha?.raw ?? row.zman?.raw ?? row.catalog.sectionTitle;
+  const occasion = (row.parsha?.raw ?? row.zman?.raw ?? "").trim();
+  const title = row.catalog.titleOriginal.trim() || occasion || row.catalog.sectionTitle;
   return {
     shiurId: row.id,
     href: href ?? shiurHref(ed, row.id, t),
-    occasion: run(occasion, ed, row.lang),
-    n: row.catalog.n,
+    title: run(title, ed, row.lang),
+    occasion: occasion !== "" && occasion !== title ? run(occasion, ed, row.lang) : null,
     years: row.years,
     lang: row.lang,
     t,

@@ -6,17 +6,14 @@
 @layer components {
   .topic-alt,
   .tree-count,
-  .grade-count,
   .topic-tree .sep,
   .topic-tree .dash,
-  .calendar-rule,
   .topic-children .count,
   .full-list .count {
     color: var(--color-ink-muted);
   }
 
-  .tree-count,
-  .grade-count {
+  .tree-count {
     font-variant-numeric: tabular-nums lining-nums;
   }
 
@@ -55,11 +52,6 @@
   .tree-sub > li + li::before {
     content: ", ";
     color: var(--color-ink-muted);
-  }
-
-  .calendar-rule {
-    font-size: var(--step-0);
-    max-inline-size: var(--measure-text);
   }
 
   .topic-notes {

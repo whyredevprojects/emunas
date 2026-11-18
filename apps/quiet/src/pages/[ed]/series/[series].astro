@@ -19,7 +19,7 @@ import JumpList, { type JumpItem } from "../../../components/catalog/JumpList.as
 import SeriesIntro from "../../../components/catalog/SeriesIntro.astro";
 import { quietLayer } from "../../../components/corpus/layer.ts";
 import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
-import { contentsHref, perekIsNumeral, sectionHref, seriesModel, seriesSummaries } from "../../../components/catalog/model.ts";
+import { contentsHref, perekIsNumeral, seriesModel, seriesSummaries } from "../../../components/catalog/model.ts";
 import { useCatalogT } from "../../../components/catalog/strings.ts";
 import { runAttrs } from "../../../lib/bidi.ts";
 import { langAttrs, langAttrsIn } from "../../../lib/content.ts";
@@ -70,14 +70,6 @@ const titleAttrs = langAttrsIn(model.title, ed);
       <span aria-hidden="true"> · </span>
       <span>{c("series.lead", { count: c("count.shiurim", { count: model.count }) })}</span>
     </p>
-    {model.sections.length > 0 && (
-      <p class="series-meta">
-        {c("series.inGuide")}{" "}
-        {model.sections.map((s, i) => (
-          <>{i > 0 && ", "}<a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang, ed)}>{s.title}</bdi></a></>
-        ))}
-      </p>
-    )}
   </header>
 
   {model.anyNotes && <NotesLabel ed={ed} />}

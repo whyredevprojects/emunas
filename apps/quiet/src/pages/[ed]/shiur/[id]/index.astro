@@ -16,7 +16,7 @@ import ShiurPage from "../../../../components/shiur/ShiurPage.astro";
 import { currentSiteEnv } from "../../../../components/seo/site-env.ts";
 import { currentCorpus } from "../../../../components/shiur/corpus.ts";
 import { useShiurT } from "../../../../components/shiur/strings.ts";
-import { catalogPlace, reportHref } from "../../../../components/shiur/view.ts";
+import { prevNext, reportHref } from "../../../../components/shiur/view.ts";
 import { EDS, type Ed } from "../../../../lib/edition.ts";
 
 export const getStaticPaths = (() => {
@@ -30,7 +30,7 @@ const id = Astro.params.id as string;
 const corpus = currentCorpus();
 if (!corpus) throw new Error("shiur page without a corpus");
 const shiur = corpus.shiur(id);
-const place = catalogPlace(ed, shiur, corpus.neighbours[id], corpus.rows, (sid) => corpus.seriesTitle(sid, ed));
+const neighbours = prevNext(ed, shiur, corpus.neighbours[id], corpus.rows, (sid) => corpus.seriesTitle(sid, ed));
 
 const { links, feedbackEmail } = currentSiteEnv();
 const t = useShiurT(ed);
@@ -44,7 +44,7 @@ const report = reportHref(
 <ShiurPage
   ed={ed}
   shiur={shiur}
-  place={place}
+  prevNext={neighbours}
   layer={corpus.layer}
   refs={shiur.status === "full" ? corpus.refs(id) : null}
   liveHref={links.live.shiur(ed, id)}

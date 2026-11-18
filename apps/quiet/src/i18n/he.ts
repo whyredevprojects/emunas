@@ -10,7 +10,7 @@ import type { UiKey } from "./en.ts";
  * used (סדר השיעור, מראי מקומות, מעשיות, מפתחות).
  */
 export const he: MessageTable<UiKey> = {
-  "site.name": "שיעורי המשגיח",
+  "site.name": "ספריה — שיעורים",
   "site.nameShort": "שיעורים",
   "site.description": "השיעורים המוקלטים של הגה\"צ רבי משה וולפסון זצ\"ל.",
 
@@ -33,7 +33,7 @@ export const he: MessageTable<UiKey> = {
 
   "breadcrumb.label": "אתם נמצאים כאן",
 
-  "footer.recordingIsSource": "המקור הוא ההקלטות. הכותרות כפי שנדפסו במדריך הכיס משנת 2012.",
+  "footer.recordingIsSource": "המקור הוא ההקלטות.",
   "footer.inLanguage": "הדף הזה ב{language}",
   "footer.home": "אמונת",
 
@@ -47,15 +47,10 @@ export const he: MessageTable<UiKey> = {
   "listen.unavailable": "ההקלטה עדיין אינה זמינה באינטרנט.",
   "listen.unavailablePart": "חלק {part}: עדיין אינו זמין באינטרנט.",
   "listen.noSupport": "דפדפן זה אינו יכול להשמיע כאן את ההקלטה. השתמשו בקישור להורדה.",
-  "listen.duration": "אורך {duration}",
 
-  "citation.label": "קטלוג",
+  "citation.label": "פרטים",
   "citation.number": "מס׳ {n}",
-  "citation.guidePage": "מדריך הכיס עמ׳ {page}",
-  "citation.series": "סדרה",
-
-  "catalog.derived.filename": "אינו רשום במדריך הכיס משנת 2012; הכותרת נלקחה משם הקובץ.",
-  "catalog.derived.dirPrefix": "אינו רשום במדריך הכיס משנת 2012; הכותרת נלקחה משם התיקייה ומשם הקובץ.",
+  "citation.perek": "פרק {perek}",
 
   "notes.label": "רשימות",
 

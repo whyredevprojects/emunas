@@ -1,8 +1,7 @@
 ---
 /**
  * A list of shiurim on a calendar or year page. Each entry is a catalog line (title exactly as
- * catalogued, then a citation line: parsha/zman on year pages, year, section, spoken language,
- * audience) and, where notes exist, the one-liner in the edition's language. The one-liner is the
+ * catalogued, then a citation line: parsha/zman on year pages, year, spoken language, audience) and, where notes exist, the one-liner in the edition's language. The one-liner is the
  * notes voice: the page shows the standing notes label once (`NotesKey`), never per item.
  */
 import "./calendar.css";
@@ -42,7 +41,6 @@ const t = useCalendarT(ed);
         {showYear && (
           <span class="cite-item">{e.years.length > 0 ? <HebrewYear year={e.years} /> : <span class="cal-no-year">{t("cal.yearUnknown")}</span>}</span>
         )}
-        <span class="cite-item"><bdi {...runAttrs(e.sectionTitle, e.lang, ed)}>{e.sectionTitle}</bdi></span>
         <span class="cite-item" data-lang={e.lang}>{languageName(e.lang, ed)}</span>
         {e.audience && <span class="cite-item">{t(AUDIENCE_KEYS[e.audience])}</span>}
       </p>

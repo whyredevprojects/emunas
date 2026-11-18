@@ -20,14 +20,12 @@ function key(what: string, value: string): string {
   return value;
 }
 
-function sectionIndex(i: number): number {
-  if (!Number.isInteger(i) || i < 0) throw new TypeError(`@emunas/links: bad section index ${i}`);
+function momentIndex(i: number): number {
+  if (!Number.isInteger(i) || i < 0) throw new TypeError(`@emunas/links: bad moment index ${i}`);
   return i;
 }
 
 export interface QuietShiurOptions {
-  /** Section index → `#s{i}`. Wins over `t` (a page has one fragment). */
-  readonly section?: number | undefined;
   /** Global seconds → `#t={t}` (kept to the millisecond; ignored if not a finite non-negative number). */
   readonly t?: number | undefined;
 }
@@ -50,7 +48,7 @@ function shiurRoute(e: Ed, id: string, t: number | undefined, moment: MomentRef 
 
 function liveMoment(id: string, m: string | MomentRef | undefined): MomentRef | undefined {
   if (m === undefined) return undefined;
-  if (typeof m !== "string") return { kind: m.kind, index: sectionIndex(m.index) };
+  if (typeof m !== "string") return { kind: m.kind, index: momentIndex(m.index) };
   const parsed = parseMomentId(m);
   if (!parsed || parsed.shiurId !== id) throw new TypeError(`@emunas/links: moment ${JSON.stringify(m)} is not in shiur ${id}`);
   return { kind: parsed.kind, index: parsed.index };
@@ -70,14 +68,7 @@ export function quietPaths(data: LinkData = {}) {
     root: () => "/",
     home: (e: Ed) => f({ kind: "home", ed: ed(e) }),
     shiur: (e: Ed, id: string, opts: QuietShiurOptions = {}) =>
-      f(
-        shiurRoute(
-          ed(e),
-          key("shiur id", id),
-          opts.t,
-          opts.section === undefined ? undefined : { kind: "s", index: sectionIndex(opts.section) },
-        ),
-      ),
+      f(shiurRoute(ed(e), key("shiur id", id), opts.t, undefined)),
     /** Section page `/{ed}/section/{slug}/` (Quiet only; slug rule in section.ts). */
     section: (e: Ed, section: SectionRef) => quietSectionPath(ed(e), section),
     series: (e: Ed, id: string) => f({ kind: "series", ed: ed(e), id: key("series id", id) }),

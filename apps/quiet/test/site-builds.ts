@@ -41,7 +41,7 @@ const app = join(dirname(fileURLToPath(import.meta.url)), "..");
 const repo = join(app, "..", "..");
 
 /** Settings every build here pins, so a caller's shell cannot change what the tests see. */
-const PINNED = { EMUNAS_DEPLOY: "", EMUNAS_TRANSCRIPT_VIEW: "", EMUNAS_SHELL_SAMPLE: "" };
+const PINNED = { EMUNAS_DEPLOY: "", EMUNAS_SHELL_SAMPLE: "" };
 
 function build(root: string, corpusArgs: string[], siteEnv: Record<string, string>): BuiltSite {
   const corpus = join(root, "corpus");

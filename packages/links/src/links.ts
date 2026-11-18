@@ -64,7 +64,7 @@ export interface Links {
    * plus `x-default` (the site root). Empty for paths that are not pages.
    */
   hreflangAlternates(path: string, site?: Site): HreflangLink[];
-  /** The same page in edition / UI language `ed`, keeping time and section where possible. */
+  /** The same page in edition / UI language `ed`, keeping the time or moment where possible. */
   withEdition(url: string, ed: Ed, site?: Site): string | null;
 }
 

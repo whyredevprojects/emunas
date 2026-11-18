@@ -89,7 +89,7 @@ function shiurPage(ed: string, full: boolean): string {
   const dir = join(dist, ed, "shiur");
   for (const id of readdirSync(dir).sort()) {
     const html = readFileSync(join(dir, id, "index.html"), "utf8");
-    const hasNotes = html.includes('class="chapter"'); // the outline of the notes; absent on catalog-only pages
+    const hasNotes = html.includes('class="voice-notes"'); // the notes block; absent on catalog-only pages
     if (hasNotes === full) return `/${ed}/shiur/${id}/`;
   }
   throw new Error(`no ${full ? "full" : "catalog-only"} shiur page in ${ed}`);

@@ -85,7 +85,7 @@ export const AUDIO_LANGUAGE_LABELS: Labels<AudioLang> = {
   en: { en: "Shiur in English", yi: "שיעור אויף ענגליש", he: "שיעור באנגלית" },
 };
 
-export type NoticeKey = "aiNotes" | "aiNotesShort" | "notesPending" | "uncatalogued" | "listedInGuide";
+export type NoticeKey = "aiNotes" | "aiNotesShort" | "notesPending" | "uncatalogued";
 
 export const NOTICES: Labels<NoticeKey> = {
   /** The standing label over the notes area, once per page (concept-quiet §5.4 part 4). */
@@ -107,8 +107,6 @@ export const NOTICES: Labels<NoticeKey> = {
     yi: "שטייט נישט אינעם פאקעט גייד פון 2012; די פרטים זענען גענומען פון דער רעקארדירונג.",
     he: "אינו רשום במדריך הכיס משנת 2012; פרטיו נלקחו מההקלטה.",
   },
-  /** A section the catalog title anticipated (`catalogTopicIdx`). */
-  listedInGuide: { en: "listed in the guide", yi: "שטייט אינעם קאטאלאג", he: "רשום בקטלוג" },
 };
 
 function label<K extends string>(table: Labels<K>, key: K, lang: UiLang): string {

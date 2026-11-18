@@ -77,7 +77,7 @@ describe("canonicalFor", () => {
 
 describe("hreflangAlternates", () => {
   it("quiet shiur: every edition plus x-default to the root", () => {
-    expect(links.hreflangAlternates(`/en/shiur/${ID}/#s2`)).toEqual([
+    expect(links.hreflangAlternates(`/en/shiur/${ID}/#t=845`)).toEqual([
       { hreflang: "en", href: `${HOSTS.quiet}/en/shiur/${ID}/` },
       { hreflang: "yi", href: `${HOSTS.quiet}/yi/shiur/${ID}/` },
       { hreflang: "he", href: `${HOSTS.quiet}/he/shiur/${ID}/` },
@@ -125,8 +125,8 @@ describe("hreflangAlternates", () => {
 
 describe("withEdition", () => {
   it("switches edition keeping place", () => {
-    expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#s2`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`);
-    expect(links.withEdition(`${HOSTS.quiet}/yi/shiur/${ID}/#s2`, "he")).toBe(`${HOSTS.quiet}/he/shiur/${ID}/#s2`);
+    expect(links.withEdition(`${HOSTS.quiet}/en/shiur/${ID}/#t=845`, "yi")).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#t=845`);
+    expect(links.withEdition(`${HOSTS.quiet}/yi/shiur/${ID}/#t=845`, "he")).toBe(`${HOSTS.quiet}/he/shiur/${ID}/#t=845`);
     expect(links.withEdition(`${HOSTS.live}/he/s/${ID}?t=5`, "en")).toBe(`${HOSTS.live}/en/s/${ID}?t=5`);
     expect(links.withEdition(`${HOSTS.live}/en/s/${ID}?t=9&read=en`, "yi")).toBe(`${HOSTS.live}/yi/s/${ID}?t=9`);
     expect(links.withEdition(`${HOSTS.quiet}/`, "en")).toBe(`${HOSTS.quiet}/en/`);

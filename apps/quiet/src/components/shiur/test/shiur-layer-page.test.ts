@@ -5,9 +5,7 @@
  * - the ענינים line sits under the abstract, only on a page with notes, ≤ 5 topics at salience ≥ 0.6;
  * - every link into an index goes to an entry that has a Quiet page, or to the index anchor of an
  *   entry listed there, never to a page that is not built (and never by a legacy key);
- * - "told in N other shiurim" appears exactly for the stories with other visible tellings, with
- *   the layer's count;
- * - the order of the page is unchanged; the place in the catalog stays catalog-only.
+ * - the topic line is the only corpus line on the page; the previous/next line stays catalog-only.
  */
 import { spawnSync } from "node:child_process";
 import { existsSync, mkdtempSync, rmSync } from "node:fs";
@@ -15,15 +13,14 @@ import { tmpdir } from "node:os";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { corpusLabel } from "@emunas/i18n";
 import type { CorpusKind } from "@emunas/links";
 import type { PublicShiur } from "@emunas/corpus/public";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 import ShiurPage from "../ShiurPage.astro";
 import { loadShiurCorpus, type ShiurCorpus } from "../corpus.ts";
-import { mentionedView, sourceLinks, storyLines, topicLine, TOPIC_LINE_MAX, TOPIC_LINE_MIN_SALIENCE } from "../refs.ts";
-import { catalogPlace } from "../view.ts";
+import { topicLine, TOPIC_LINE_MAX, TOPIC_LINE_MIN_SALIENCE } from "../refs.ts";
+import { prevNext } from "../view.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, "../../../../../..");
@@ -57,9 +54,9 @@ afterAll(() => {
 });
 
 async function render(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur): Promise<string> {
-  const place = catalogPlace(ed, shiur, corpus.neighbours[shiur.id], corpus.rows, (id) => corpus.seriesTitle(id, ed));
+  const neighbours = prevNext(ed, shiur, corpus.neighbours[shiur.id], corpus.rows, (id) => corpus.seriesTitle(id, ed));
   return container.renderToString(ShiurPage, {
-    props: { ed, shiur, place, layer: corpus.layer, refs: shiur.status === "full" ? corpus.refs(shiur.id) : null },
+    props: { ed, shiur, prevNext: neighbours, layer: corpus.layer, refs: shiur.status === "full" ? corpus.refs(shiur.id) : null },
   });
 }
 
@@ -94,22 +91,15 @@ function checkEntryLinks(corpus: ShiurCorpus, ed: Ed, html: string): number {
   return n;
 }
 
-/** The ids of the page's parts in document order. */
-const PART_IDS = ["about", "outline", "writeup", "sources", "apparatus", "mentioned", "catalog"];
-function partOrder(html: string): string[] {
-  return [...html.matchAll(/\sid="([a-z-]+)"/g)].map((m) => m[1]!).filter((id) => PART_IDS.includes(id));
-}
-
-/** Checks one rendered page against its refs; returns the number of "told in" lines. */
-function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string): number {
+/** Checks one rendered page against its refs. */
+function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string): void {
   const refs = corpus.refs(shiur.id);
   if (shiur.status !== "full") {
     expect(html).not.toContain('class="topic-line"');
     expect(html).not.toContain("data-corpus=");
-    expect(html).not.toContain('id="mentioned"');
-    return 0;
+    return;
   }
-  // The ענינים line: under the abstract, inside "about", before the outline.
+  // The ענינים line: under the abstract, inside "about".
   const line = topicLine(ed, corpus.layer, refs);
   expect(line.length).toBeLessThanOrEqual(TOPIC_LINE_MAX);
   if (line.length > 0) {
@@ -121,47 +111,13 @@ function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string
   } else {
     expect(html).not.toContain('class="topic-line"');
   }
-  // The page order is unchanged.
-  const order = partOrder(html);
-  expect(order).toEqual(PART_IDS.filter((id) => order.includes(id)));
-  // The place in the catalog is catalog-only: no corpus entry link in it.
-  const place = /<section class="catalog-place"[\s\S]*?<\/section>/.exec(html)?.[0] ?? html.slice(html.indexOf('id="catalog"'));
-  expect(place).not.toMatch(/href="\/(en|yi|he)\/(inyanim|erachim|people|sources|stories)\//);
-  // "Told in N other shiurim": exactly the stories with other visible tellings, with the layer's count.
-  const lines = storyLines(ed, corpus.layer, shiur.id, refs);
-  const shown = [...html.matchAll(/<p class="story-elsewhere"[^>]*>([\s\S]*?)<\/p>/g)].map((m) => m[1]!);
-  const expected = (shiur.notes?.stories ?? []).map((s) => lines.get(s.id)).filter((l) => l !== undefined && l.otherShiurim > 0);
-  expect(shown).toHaveLength(expected.length);
-  expected.forEach((l, i) => {
-    const story = corpus.layer.story(l!.storyId)!;
-    const others = new Set(story.tellings.map((t) => t.shiurId).filter((id) => id !== shiur.id));
-    expect(l!.otherShiurim).toBe(others.size);
-    expect(shown[i]).toContain(corpusLabel("count.toldInOther", ed, { count: others.size }));
-  });
-  // Mentioned: exactly the layer's people and terms that are printed.
-  const m = mentionedView(ed, corpus.layer, refs);
-  if (m.people.length + m.concepts.length === 0) expect(html).not.toContain('id="mentioned"');
-  else expect(html).toContain('id="mentioned"');
-  // Names (F.1): every marked person is that corpus person's name; every story name is one of the
-  // merged stories' people from the layer. No other name is printed in a story.
-  const marked = [...html.matchAll(/<bdi[^>]*\sdata-person="([^"]+)"[^>]*>([^<]*)<\/bdi>/g)].map((x) => [x[1]!, unescapeHtml(x[2]!)] as const);
-  expect(marked.map(([id, name]) => [id, name])).toEqual(m.people.map((p) => [p.id, p.name]));
-  const storyNames = new Set([...lines.values()].flatMap((l) => l.people.map((p) => p.name)));
-  const printed = [...html.matchAll(/<bdi[^>]*\sdata-story-person[^>]*>([^<]*)<\/bdi>/g)].map((x) => unescapeHtml(x[1]!));
-  for (const n of printed) expect(storyNames.has(n), n).toBe(true);
-  const paragraphs = [...html.matchAll(/<p class="story-people"[^>]*>([\s\S]*?)<\/p>/g)].map((x) => x[1]!);
-  for (const para of paragraphs) {
-    // Only the label and the marked names: strip the marked names and the label, nothing else remains.
-    const rest = para.replace(/<a [^>]*>|<\/a>/g, "").replace(/<bdi[^>]*\sdata-story-person[^>]*>[^<]*<\/bdi>/g, "").replace(/[,\s]/g, "");
-    expect(rest.replace(/<!--[\s\S]*?-->/g, ""), para).toMatch(/^[^<>]*$/);
-  }
-  return expected.length;
+  // The topic line is the only corpus line: no people, terms, sources or stories on the page.
+  expect([...html.matchAll(/data-corpus="([a-z]+)"/g)].map((m) => m[1])).toEqual(line.length > 0 ? ["topics"] : []);
+  expect(html).not.toMatch(/data-person=|data-story-person|href="\/(en|yi|he)\/(erachim|people|sources|stories)\//);
+  // The previous/next line is catalog-only: no corpus entry link in it.
+  const nav = /<nav class="prev-next"[\s\S]*?<\/nav>/.exec(html)?.[0] ?? "";
+  expect(nav).not.toMatch(/href="\/(en|yi|he)\/(inyanim|erachim|people|sources|stories)\//);
 }
-
-/** Text of an element as the browser reads it (the entities Astro writes). */
-const unescapeHtml = (s: string): string =>
-  s.replace(/&#(\d+);/g, (_, n: string) => String.fromCodePoint(Number(n))).replace(/&#x([0-9a-f]+);/gi, (_, n: string) => String.fromCodePoint(parseInt(n, 16)))
-    .replace(/&quot;/g, '"').replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&amp;/g, "&");
 
 describe("the shiur page on the mini corpus layer", () => {
   let corpus: ShiurCorpus;
@@ -178,67 +134,19 @@ describe("the shiur page on the mini corpus layer", () => {
     expect(corpus.refs("no-such-shiur")).toBeNull();
   });
 
-  it.each(EDS)("every page (%s) keeps its order, links only built entries, and counts stories as the layer does", async (ed) => {
+  it.each(EDS)("every page (%s) prints only the topic line from the layer, linking built entries", async (ed) => {
     let links = 0;
-    let told = 0;
     let topicLines = 0;
     for (const row of corpus.index.shiurim) {
       const shiur = corpus.shiur(row.id);
       const html = await render(corpus, ed, shiur);
       links += checkEntryLinks(corpus, ed, html);
-      told += checkPage(corpus, ed, shiur, html);
+      checkPage(corpus, ed, shiur, html);
       if (html.includes('class="topic-line"')) topicLines++;
     }
-    expect(links).toBeGreaterThan(50);
+    expect(links).toBeGreaterThan(10);
     expect(topicLines).toBeGreaterThan(10);
-    // The fixture's two stories told twice: four story pages print the line.
-    expect(told).toBe(4);
   }, 120_000);
-
-  it("prints 'told in 1 other shiur' linking the story page", async () => {
-    const shiur = corpus.shiur("yi-zmanim-svkvs-08");
-    const en = await render(corpus, "en", shiur);
-    expect(en).toContain('<a href="/en/stories/chizkiyahu-sleeps-during-sanherivs-siege/">told in 1 other shiur →</a>');
-    const yi = await render(corpus, "yi", shiur);
-    expect(yi).toContain('<a href="/yi/stories/chizkiyahu-sleeps-during-sanherivs-siege/">דערציילט אין נאך 1 שיעור ←</a>');
-  });
-
-  it("links sources to the work entry by corpus work id", async () => {
-    const shiur = corpus.shiur("yi-zmanim-lvl-01");
-    const refs = corpus.refs(shiur.id)!;
-    const works = sourceLinks("en", corpus.layer, refs);
-    expect(works.size).toBeGreaterThan(0);
-    const html = await render(corpus, "en", shiur);
-    for (const s of shiur.notes!.sources) {
-      const w = works.get(s.id);
-      const item = new RegExp(`<li id="src${s.idx}">([\\s\\S]*?)</li>`).exec(html)?.[1] ?? "";
-      if (w?.href) expect(item, s.id).toContain(`href="${w.href}"`);
-      else expect(item, s.id).not.toMatch(/href="\/en\/sources\//);
-    }
-  });
-
-  it("names the Mashgiach's family nowhere and links a type-other person below the line threshold nowhere", async () => {
-    const family = corpus.layer.person("eliyahu-shalom-wolfson")!;
-    expect(family.excluded).toBe("family");
-    const shiur = corpus.shiur("en-miscellaneous-en-01");
-    expect(family.shiurIds).toContain(shiur.id);
-    const html = await render(corpus, "en", shiur);
-    const mentioned = /<section class="mentioned"[\s\S]*?<\/section>/.exec(html)?.[0] ?? "";
-    expect(mentioned).not.toContain(family.nameEn);
-    expect(html).not.toContain("eliyahu-shalom-wolfson");
-    const other = await render(corpus, "en", corpus.shiur("en-miscellaneous-en-02"));
-    expect(other).not.toContain("people/#syn-other-one-shiur");
-    expect(other).not.toContain("people/syn-other-one-shiur/");
-  });
-
-  it("links a glossary term merged into a topic to the topic", async () => {
-    const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
-    expect(corpus.refs(shiur.id)?.conceptIds).toContain("yiras-shamayim");
-    const html = await render(corpus, "en", shiur);
-    const mentioned = /<section class="mentioned"[\s\S]*?<\/section>/.exec(html)?.[0] ?? "";
-    expect(mentioned).toContain('href="/en/inyanim/yiras-shamayim/"');
-    expect(mentioned).not.toContain("/erachim/yiras-shamayim");
-  });
 });
 
 describe.runIf(hasRealData)("the shiur page on the real corpus layer", () => {
@@ -257,9 +165,8 @@ describe.runIf(hasRealData)("the shiur page on the real corpus layer", () => {
     expect(catalogOnly).toBeGreaterThan(0);
   });
 
-  it("links only built entries or listed index lines, and story counts match the layer (every visible shiur, models)", () => {
+  it("links only built topic pages on the topic line (every visible shiur, models)", () => {
     let topicLinks = 0;
-    let told = 0;
     for (const row of corpus.index.shiurim) {
       const shiur = corpus.shiur(row.id);
       const refs = corpus.refs(row.id);
@@ -269,33 +176,12 @@ describe.runIf(hasRealData)("the shiur page on the real corpus layer", () => {
         expect(line.length).toBeLessThanOrEqual(TOPIC_LINE_MAX);
         for (const tp of line) expect(corpus.layer.hasPage("topic", tp.id), tp.id).toBe(true);
         topicLinks += line.length;
-        const m = mentionedView(ed, corpus.layer, refs);
-        for (const p of m.people) {
-          const rec = corpus.layer.person(p.id)!;
-          expect(rec.excluded ?? null).toBeNull();
-          if (p.href?.endsWith(`/${p.id}/`)) expect(rec.pages.quiet, p.id).toBe(true);
-          if (p.href?.includes("#")) expect(rec.listed.quiet, p.id).toBe(true);
-          if (p.href === null) expect(rec.pages.quiet || rec.listed.quiet, p.id).toBe(false);
-        }
-        for (const [, w] of sourceLinks(ed, corpus.layer, refs)) {
-          if (w.href?.endsWith(`/${w.workId}/`)) expect(corpus.layer.hasPage("work", w.workId), w.workId).toBe(true);
-        }
-        for (const r of refs.stories) {
-          const l = storyLines(ed, corpus.layer, row.id, refs).get(r.momentId);
-          if (!l) continue;
-          const story = corpus.layer.story(r.storyId)!;
-          // the per-shiur ref and the story agree on the number of tellings
-          expect(r.tellings, r.storyId).toBe(story.tellings.length);
-          expect(l.otherShiurim).toBe(new Set(story.tellings.map((t) => t.shiurId).filter((id) => id !== row.id)).size);
-          if (ed === "en" && l.otherShiurim > 0) told++;
-        }
       }
     }
     expect(topicLinks).toBeGreaterThan(1000);
-    expect(told).toBeGreaterThan(100);
   });
 
-  it("renders a sample of pages in both editions with only built entry links", async () => {
+  it("renders a sample of pages in every edition with only built entry links", async () => {
     const rows = corpus.index.shiurim.filter((_, i) => i % 40 === 0);
     for (const row of rows) {
       const shiur = corpus.shiur(row.id);

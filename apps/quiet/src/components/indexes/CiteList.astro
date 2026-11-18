@@ -1,5 +1,8 @@
 ---
-/** Citations run on in one line, as in a printed index (`נח no. 5 תשמ"ג 12:34; …`). */
+/**
+ * Citations run on in one line, as in a printed index. `brief` (the index pages, where many entries
+ * list their shiurim inline) shows the titles only; an entry page adds when each was said.
+ */
 import type { Ed } from "../../lib/edition.ts";
 import CiteLink from "./CiteLink.astro";
 import type { Cite } from "./model.ts";
@@ -7,12 +10,13 @@ import type { Cite } from "./model.ts";
 interface Props {
   ed: Ed;
   cites: readonly Cite[];
+  brief?: boolean;
 }
 
-const { ed, cites } = Astro.props;
+const { ed, cites, brief = false } = Astro.props;
 ---
 {cites.length > 0 && (
   <ul class="cites" role="list">
-    {cites.map((cite) => <li><CiteLink ed={ed} cite={cite} /></li>)}
+    {cites.map((cite) => <li><CiteLink ed={ed} cite={cite} brief={brief} /></li>)}
   </ul>
 )}

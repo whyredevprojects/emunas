@@ -1,16 +1,15 @@
 ---
 /**
  * The head of a topic page (C4.1 parts 1, 2 and 6): the Hebrew headword (English beside it in the
- * English edition), the count, the place in the tree and the "see also" line (shared EntryHead);
+ * English edition), the count and the "see also" line (shared EntryHead; the place in the tree is
+ * the breadcrumb);
  * under it the glossary definition when a concept shares the topic's subject (one inyan, one main
  * entry), the generated description as notes (left out when there is none), and, for a topic
- * linked to the calendar, its days and the one-line rule.
+ * linked to the calendar, its days.
  */
 import { corpusLabel } from "@emunas/i18n";
 import EntryHead from "../corpus/EntryHead.astro";
 import type { Ed } from "../../lib/edition.ts";
-import CalendarRule from "./CalendarRule.astro";
-import TopicName from "./TopicName.astro";
 import type { TopicPage } from "./model.ts";
 import { useTopicsT } from "./strings.ts";
 import { langAttrsIn, occasionNameAttrs } from "../../lib/content.ts";
@@ -29,17 +28,7 @@ const { ed, page, meta, notes = true } = Astro.props;
 const t = useTopicsT(ed);
 const count = t("count.shiurim", { count: page.count });
 ---
-<EntryHead ed={ed} title={page.name.title} alt={page.name.alt} meta={meta ? `${meta} · ${count}` : count} seeAlso={notes ? page.seeAlso : []}>
-  {page.path.length > 0 && (
-    <p class="entry-meta topic-place">
-      {t("topic.place")}:{" "}
-      {page.path.map((a) => (
-        <>{a.href ? <a href={a.href}><TopicName name={a.name} /></a> : <TopicName name={a.name} />}<span aria-hidden="true"> › </span></>
-      ))}
-      <TopicName name={page.name} />
-    </p>
-  )}
-</EntryHead>
+<EntryHead ed={ed} title={page.name.title} alt={page.name.alt} meta={meta ? `${meta} · ${count}` : count} seeAlso={notes ? page.seeAlso : []} />
 {notes && (page.definition || page.description) && (
   <div class="voice-notes topic-notes">
     {page.definition && (
@@ -56,6 +45,5 @@ const count = t("count.shiurim", { count: page.count });
         <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={o.href}><bdi {...occasionNameAttrs(ed)}>{o.name}</bdi></a></>
       ))}
     </p>
-    <CalendarRule ed={ed} />
   </div>
 )}

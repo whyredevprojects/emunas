@@ -102,23 +102,30 @@ describe("the built home site", () => {
     expect(read("robots.txt")).toContain(`Sitemap: https://${DOMAIN}/sitemap.xml`);
   });
 
-  it("links Library and Listen on their own subdomains", () => {
+  it("links Library and Analyze on their own subdomains", () => {
     const html = read("index.html");
     expect(html).toContain(`href="https://library.${DOMAIN}/en/"`);
     expect(html).toContain(`href="https://listen.${DOMAIN}/en/"`);
   });
 
-  it("links every other edition of Library and Listen, and shows each aside in every language", () => {
+  it("links every other edition of Library and Analyze, and shows each aside in every language", () => {
     const html = read("index.html");
     for (const lang of ASIDE_LANGS) {
       expect(html).toContain(`href="https://library.${DOMAIN}/${lang}/"`);
       expect(html).toContain(`href="https://listen.${DOMAIN}/${lang}/"`);
     }
-    for (const a of [ASIDES.mashgiach, ASIDES.startHere, ASIDES.libraryName, ASIDES.listenName, ASIDES.archive]) {
+    for (const a of [ASIDES.mashgiach, ASIDES.startHere, ASIDES.libraryName, ASIDES.analyzeName, ASIDES.archive]) {
       for (const x of asideTexts(a)) expect(html).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
     }
     const about = read("about/index.html");
     for (const x of asideTexts(ASIDES.about)) expect(about).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
+  });
+
+  it("puts the Library first and emphasized, Analyze second", () => {
+    const html = read("index.html");
+    expect(html).toMatch(/<a class="pill pill--ink" href="https:\/\/library\.[^"]+">Library /);
+    expect(html).toMatch(/<a class="pill" href="https:\/\/listen\.[^"]+">Analyze /);
+    expect(html).toMatch(/class="door door--library door--primary"[\s\S]*class="door door--listen"/);
   });
 
   it("follows the naming rules and never mentions transcripts", () => {

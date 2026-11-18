@@ -2,14 +2,12 @@
 /**
  * The calendar's cross-line to the topic index (concept-quiet-corpus C4.1 "Topics and the
  * calendar"): on a parsha or zman page whose occasion is linked to a topic (occasion-topics.json),
- * one line, "Chanukah is also spoken about in 74 shiurim said at other times → Topics: חנוכה",
- * and the rule that keeps the two from competing. Nothing when the occasion has no topic, the topic
+ * one line, "Chanukah is also spoken about in 74 shiurim said at other times → Topics: חנוכה". Nothing when the occasion has no topic, the topic
  * has no page, or all its shiurim were said on its own days.
  */
 import { corpusLabel } from "@emunas/i18n";
 import { forwardArrow } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
-import CalendarRule from "../topics/CalendarRule.astro";
 import TopicName from "../topics/TopicName.astro";
 import { topicsSource } from "../topics/data.ts";
 import { calendarCrossLine } from "../topics/model.ts";
@@ -35,6 +33,5 @@ const t = useCalendarT(ed);
       <span aria-hidden="true">{forwardArrow(ed)}</span>{" "}
       <a href={line.href}>{corpusLabel("index.topics", ed)}: <TopicName name={line.topic} /></a>
     </p>
-    <CalendarRule ed={ed} />
   </div>
 )}

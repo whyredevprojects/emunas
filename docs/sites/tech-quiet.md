@@ -65,7 +65,7 @@ All slugs are ASCII and stable, built from ids that exist before any AI data. Tr
 
 **Entity pages only where they are worth a file.** A work, person or concept gets its own page when it occurs in **at least 2 shiurim** (concepts: at least 3 and not on the stop-list). Otherwise its line on the index page links straight to the shiur and time. This keeps the file count bounded (§9).
 
-Edition switch: every page links to the same path with `/yi/` ↔ `/en/` swapped, keeping the hash. Shiur-page anchors are language-neutral (`#s3`, `#p3-2`, `#src12`).
+Edition switch: every page links to the same path with `/yi/` ↔ `/en/` swapped, keeping the hash. The shiur page's one fragment, `#t=<seconds>`, is language-neutral.
 
 Time links: `href="/audio/{rec}.mp3#t={sec}"` (works without JS, using the media fragment), `data-rec`, `data-t` for the player script.
 
@@ -175,7 +175,7 @@ Recommendation: **Workers Paid** ($5/month) for headroom on the file count and f
 
 - `apps/quiet/config/transcript-eligibility.json` is owned by the site and **ships empty: `{}`**. The schema per entry: `{ recordingId: { model, mode, transcribedAt, approvedBy, approvedAt, allowSearch: false } }`. The identity fields must equal the top-level `model`/`mode`/`transcribedAt` of `data/transcripts/<recordingId>.json`. A changed transcript automatically voids the approval.
 - `packages/corpus/src/transcript-gate.ts` exports `readEligibleTranscript(recId)`. It returns `null` unless an entry exists and matches, and the build flag `QUIET_TRANSCRIPT_VIEW` is `"on"` (default off). It is the only file that may reference `data/transcripts`. A repo test greps for the string anywhere else.
-- `PublicRecording.transcriptView` is the literal type `false` today. Turning the feature on is a deliberate type change plus a `FollowText.astro` component in the reserved slot. That component doesn't exist yet; the slot is an empty conditional that renders nothing.
+- `PublicRecording.transcriptView` is the literal type `false` today. The Quiet shiur page has no place for a recording's text; an approved transcript would be shown by the listening app.
 - `allowSearch` stays false. Even once a transcript is approved, feeding search is a second, separate decision.
 
 ---
@@ -187,15 +187,12 @@ Recommendation: **Workers Paid** ($5/month) for headroom on the file count and f
 ```
 layouts/Base.astro          html lang/dir, nav line, edition switch, footer, skip link
 layouts/Print.css            print layer (kuntres)
-components/CatalogHeader.astro   title (dir=auto, lang by script), citation line, pathNotes
+components/CatalogHeader.astro   title (dir=auto, lang by script), one meta line, pathNotes
 components/Listen.astro          <audio controls preload="none"> per recording + download link
 components/NotesLabel.astro      single standing AI label (once per page)
-components/Outline.astro         sections with time links; kind styling; "listed in the guide"
-components/Writeup.astro         paragraphs, margin times, superscript source letters
-components/SourceList.astro      grouped and graded ("apparently", "place not identified")
-components/Apparatus.astro       key points, Q&A, stories, insights, takeaways (omit if empty)
-components/Mentioned.astro       people/concepts links
-components/Neighbours.astro      prev/next in section/series, same parsha/zman
+components/shiur/ShiurPage.astro the shiur page: header, Listen, about this shiur, prev/next, report
+components/shiur/TopicLine.astro the ענינים line under the abstract
+components/shiur/PrevNext.astro  ← previous · series or section · next → (series order first)
 components/TimeLink.astro        the one way to render a time (a11y label, bdi, href fallback)
 components/HebrewYear.astro      תשמ"ג (1982–83)
 components/Coverage.astro        "Compiled from N of 997" line for AI indexes
@@ -207,9 +204,8 @@ scripts/player.ts, scripts/search.ts
 Rules:
 - **Three voices.** The catalog header uses `.voice-catalog` and the notes area `.voice-notes`, under a rule and the standing label. No `<blockquote>`, `<q>` or quote styling anywhere (Stylelint/HTML lint bans `blockquote` in `src/`).
 - **Mixed direction.** Each catalog title is a `<bdi>` with `lang` from `lib/bidi.ts` (Hebrew letters dominate → `lang="he"` or `yi` by shiur language; Latin → `en`). Times, daf and pasuk numbers sit in `<bdi dir="ltr">`.
-- **Write-up margin times** are a CSS grid column on `inline-start` (they flip automatically in RTL; in the Yiddish edition they sit on the left edge of the column, per concept §8).
-- **Sources** use letters a, b, c… in en and א, ב, ג… in yi as superscripts linking to `#src{n}`. `sefariaRef` becomes an outbound link only for `resolved` (decision 5) as `https://www.sefaria.org/{encodeURIComponent(ref)}`, `rel="noopener"`, no prefetch.
-- **Pending page.** Only `CatalogHeader`, `Listen`, `Neighbours` and one sentence. No skeletons.
+- **A place in a shiur** is linked as `/{ed}/shiur/{id}/#t=<global seconds>`; the player seeks there on load. The shiur page has no section anchors.
+- **Pending page.** Only `CatalogHeader`, `Listen`, `PrevNext` and one sentence. No skeletons.
 - **No-recording rows** (the 3 "not on disk" + 8 "not in bucket" guide rows) appear greyed in section tables with "no recording" and get no page (decision 3). Purim seudos are not listed.
 
 ---

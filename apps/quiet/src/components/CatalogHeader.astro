@@ -3,33 +3,34 @@
  * Catalog header, the human voice (concept-quiet §5.4 part 1, tech-quiet §4):
  * - the title exactly as catalogued (`titleOriginal`), never translated, as a `<bdi>` with
  *   `lang`/`dir` from its dominant script (mixed titles keep their punctuation in place);
- * - a library-card citation line: section · parsha/zman · perek · no. · guide page · year ·
- *   spoken language · length;
- * - `pathNotes` as plain notes, and one sentence when the row is not a printed guide entry.
+ * - one meta line: parsha/zman · perek · year · spoken language · length (the section is in the
+ *   breadcrumb above, so it is not repeated here);
+ * - `pathNotes` as plain notes.
  */
 import { formatDuration, languageName } from "@emunas/i18n";
 import HebrewYear from "./HebrewYear.astro";
 import { runAttrs } from "../lib/bidi.ts";
-import { catalogNotice, type CatalogHeaderShiur } from "../lib/catalog.ts";
+import type { CatalogHeaderShiur } from "../lib/catalog.ts";
 import type { Ed } from "../lib/edition.ts";
 import { useT } from "../i18n/index.ts";
 
 interface Props {
   ed: Ed;
   shiur: CatalogHeaderShiur;
-  /** Link for the section name in the citation line (the section page). */
-  sectionHref?: string;
   /** Heading level of the title. Default 1 (the shiur page). */
   level?: 1 | 2 | 3;
 }
 
-const { ed, shiur, sectionHref, level = 1 } = Astro.props;
+const { ed, shiur, level = 1 } = Astro.props;
 const t = useT(ed);
 const c = shiur.catalog;
 const run = (text: string) => runAttrs(text, shiur.lang, ed);
 const occasion = shiur.parsha?.raw ?? shiur.zman?.raw ?? null;
-const derivedNotice = catalogNotice(c, ed);
 const duration = formatDuration(shiur.duration, ed);
+// A perek given as a Hebrew number (ב, י"ז, ו-ז, י"א וי"ב) is labelled; a word (הקדמה) stands alone.
+const perekNumber = /^ו?[א-ת]{1,2}(?:["”״'׳][א-ת])?(?:(?:\s*[-–]\s*|\s+)ו?[א-ת]{1,2}(?:["”״'׳][א-ת])?)*$/;
+const [perekBefore, perekAfter] =
+  shiur.perek && perekNumber.test(shiur.perek) ? t("citation.perek", { perek: "\u0000" }).split("\u0000") : ["", ""];
 const Title = `h${level}` as "h1" | "h2" | "h3";
 const titleId = `title-${shiur.id}`;
 ---
@@ -43,15 +44,8 @@ const titleId = `title-${shiur.id}`;
   )}
   <p class="citation">
     <span class="visually-hidden">{t("citation.label")}: </span>
-    <span class="cite-item">{sectionHref ? (
-      <a href={sectionHref}><bdi {...run(c.sectionTitle)}>{c.sectionTitle}</bdi></a>
-    ) : (
-      <bdi {...run(c.sectionTitle)}>{c.sectionTitle}</bdi>
-    )}</span>
     {occasion && <span class="cite-item"><bdi {...run(occasion)}>{occasion}</bdi></span>}
-    {shiur.perek && <span class="cite-item"><bdi {...run(shiur.perek)}>{shiur.perek}</bdi></span>}
-    {c.n && <span class="cite-item">{t("citation.number", { n: "⁨" + c.n + "⁩" })}</span>}
-    {c.page !== null && <span class="cite-item">{t("citation.guidePage", { page: c.page })}</span>}
+    {shiur.perek && <span class="cite-item">{perekBefore}<bdi {...run(shiur.perek)}>{shiur.perek}</bdi>{perekAfter}</span>}
     {shiur.years.length > 0 && <span class="cite-item"><HebrewYear year={shiur.years} /></span>}
     <span class="cite-item">{languageName(shiur.lang, ed)}</span>
     {duration && <span class="cite-item">{duration}</span>}
@@ -59,5 +53,4 @@ const titleId = `title-${shiur.id}`;
   {shiur.pathNotes.map((note) => (
     <p class="path-note"><bdi {...run(note)}>{note}</bdi></p>
   ))}
-  {derivedNotice && <p class="catalog-notice">{derivedNotice}</p>}
 </header>

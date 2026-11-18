@@ -68,7 +68,7 @@ export interface WorkLine {
   readonly depth: number;
   readonly count: number;
   readonly countText: string;
-  /** The work's page, or null (then `cites` lists its shiurim). */
+  /** The work's page, or null (then `cites` lists its shiurim, unless a generic label has many). */
   readonly href: string | null;
   readonly cites: readonly Cite[];
 }
@@ -80,6 +80,13 @@ export interface WorkBlock {
   readonly note: string | null;
   readonly works: readonly WorkLine[];
 }
+
+/**
+ * A generic label ("the Midrash says") lists its shiurim on its line only up to this many; above it
+ * the line gives the count alone. "Midrash" is cited in about half the shiurim, and listing them all
+ * made the index page too heavy to read or to load.
+ */
+export const GENERIC_LINE_MAX_SHIURIM = 10;
 
 /** The works index: the layer's shelf order in blocks by group, generic labels last. */
 export function worksIndex(d: EntryData, ed: Ed): WorkBlock[] {
@@ -100,7 +107,7 @@ export function worksIndex(d: EntryData, ed: Ed): WorkBlock[] {
       count,
       countText: t("count.shiurim", { count }),
       href: page ? entryHref(d, ed, "work", w.id) : null,
-      cites: page ? [] : citeShiurim(d, ed, w.shiurIds),
+      cites: page || (w.generic && count > GENERIC_LINE_MAX_SHIURIM) ? [] : citeShiurim(d, ed, w.shiurIds),
     });
     blocks.set(g, list);
   }

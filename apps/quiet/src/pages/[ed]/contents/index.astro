@@ -1,16 +1,14 @@
 ---
 /**
- * Contents (concept-quiet §5.2, tech-quiet §2 `/{ed}/contents/`): the Pocket Guide's sections in
- * the guide's own order, the Yiddish sections and the English sections each under their own
- * heading, then the sections of recordings the guide does not list, then the series. Each line:
- * the section title as printed, its count, its guide pages. Catalog-derived, so no coverage
- * caveat beyond one plain line.
+ * Contents (concept-quiet §5.2, tech-quiet §2 `/{ed}/contents/`): the sections in catalog order,
+ * the Yiddish sections and the English sections each under their own heading, then the sections of
+ * the other recordings ("More recordings"), then the series. Each line: the section title and its
+ * count.
  */
 import Base from "../../../layouts/Base.astro";
 import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
-import { contentsModel, corpusTotals, pocketGuideUrl, sectionHref, type SectionSummary, type SeriesSummary } from "../../../components/catalog/model.ts";
-import { catalogSlot, guidePages, useCatalogT } from "../../../components/catalog/strings.ts";
-import NewTabLink from "../../../components/NewTabLink.astro";
+import { contentsModel, sectionHref, type SectionSummary, type SeriesSummary } from "../../../components/catalog/model.ts";
+import { useCatalogT } from "../../../components/catalog/strings.ts";
 import { runAttrs } from "../../../lib/bidi.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 
@@ -20,15 +18,12 @@ export function getStaticPaths() {
 
 const ed = Astro.params.ed as Ed;
 const corpus = loadCatalogCorpus();
-const [leadBefore, leadAfter] = catalogSlot(ed, "contents.lead", "guide");
 const model = contentsModel(corpus, ed);
-const totals = corpusTotals(corpus);
 const c = useCatalogT(ed);
-const pagesOf = (s: SectionSummary) => guidePages(ed, s.pages, "contents");
-const groups: { id: string; title: string; lead?: string; sections: SectionSummary[] }[] = [
+const groups: { id: string; title: string; sections: SectionSummary[] }[] = [
   { id: "yiddish", title: c("contents.yiddish"), sections: model.yiddish },
   { id: "english", title: c("contents.english"), sections: model.english },
-  { id: "uncatalogued", title: c("contents.uncatalogued"), lead: c("contents.uncataloguedLead"), sections: model.uncatalogued },
+  { id: "more", title: c("contents.more"), sections: model.more },
 ].filter((g) => g.sections.length > 0);
 const series: { id: string; title: string; list: SeriesSummary[] }[] = [
   { id: "series-yi", title: c("contents.yiddish"), list: model.series.yi },
@@ -37,20 +32,16 @@ const series: { id: string; title: string; list: SeriesSummary[] }[] = [
 ---
 <Base ed={ed} title={c("contents.title")}>
   <h1>{c("contents.title")}</h1>
-  <p class="lead">{leadBefore}<NewTabLink ed={ed} href={pocketGuideUrl(corpus)}>{c("guide.link")}</NewTabLink>{leadAfter}</p>
-  <p class="coverage" data-coverage>{c("coverage.withNotes", { full: totals.full, total: totals.total })}</p>
 
   {groups.map((g) => (
     <section class="contents-group" aria-labelledby={g.id}>
       <h2 id={g.id}>{g.title}</h2>
-      {g.lead && <p class="lead">{g.lead}</p>}
       <ol role="list" class="toc" data-group={g.id}>
         {g.sections.map((s) => (
           <li data-section={s.key}>
             <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang, ed)}>{s.title}</bdi></a>
             <span class="toc-leader" aria-hidden="true"></span>
             <span class="toc-count">{c("count.shiurim", { count: s.count })}</span>
-            {pagesOf(s) && <span class="toc-pages">{pagesOf(s)}</span>}
           </li>
         ))}
       </ol>
@@ -99,8 +90,7 @@ const series: { id: string; title: string; list: SeriesSummary[] }[] = [
     flex: 1 1 auto;
   }
 
-  .toc-count,
-  .toc-pages {
+  .toc-count {
     flex: 0 0 auto;
     font-size: var(--step-0);
     color: var(--color-ink-muted);

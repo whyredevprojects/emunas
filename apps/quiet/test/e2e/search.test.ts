@@ -2,7 +2,7 @@
  * W3.5 acceptance in a real browser:
  * - the search page works without JS (sentence + index links, form hidden), both editions;
  * - with JS, 'לג בעומר' and 'lag baomer' return the same shiurim (non-empty), results show
- *   title/citation/one-liner from record meta only and link to `/{ed}/shiur/<id>/`;
+ *   title, occasion · year · language and one-liner from record meta only and link to `/{ed}/shiur/<id>/`;
  * - `?q=` runs on load and is kept in the address bar;
  * - the glue script is ≤ 3 KB brotli; axe finds no violations (with results shown);
  * - the Pagefind records pass the corpus-guard checker (build-search exits only when clean).
@@ -212,7 +212,7 @@ describe.each(EDS)("search page, %s edition", (ed) => {
     await page.context().close();
   });
 
-  it("renders title, citation and one-liner from meta only, and is axe-clean", async () => {
+  it("renders title, occasion · year · language and one-liner from meta only, and is axe-clean", async () => {
     const page = await open(`/${ed}/search/?q=${encodeURIComponent("bereishis")}`);
     await page.waitForSelector(".search-result", { timeout: 30_000 });
     expect(await page.inputValue("#search-q")).toBe("bereishis");
@@ -221,6 +221,9 @@ describe.each(EDS)("search page, %s edition", (ed) => {
     const kids = await first.evaluate((li) => [...li.children].map((c) => c.className));
     expect(kids[0]).toBe("catalog-title");
     for (const k of kids.slice(1)) expect(["citation", "search-oneliner", "search-pending"]).toContain(k);
+    const cite = await first.locator(".citation").innerText();
+    expect(cite).toMatch({ en: /(Yiddish|English)$/, yi: /(אידיש|ענגליש)$/, he: /(אידיש|אנגלית)$/ }[ed]);
+    expect(cite).not.toMatch(/no\. |נומ׳|מס׳/);
     // no Pagefind excerpt markup anywhere
     expect(await page.locator(".search-results mark").count()).toBe(0);
     expect(await axe(page)).toEqual([]);

@@ -126,27 +126,29 @@ describe("Listen", () => {
   it("offers a download link per recording", async () => {
     const html = await render(Listen, { ed: "en", recordings: single });
     expect(html).toMatch(/<a class="download" href="https:\/\/media\.example\.org\/Folder%20A\/rec%201\.mp3" download>\s*Download\s*<\/a>/);
-    expect(html).toContain("Length 1 hr 19 min");
+    // the length is in the meta line above, not repeated under the player
+    expect(html).not.toMatch(/Length|1 hr 19 min/);
   });
 });
 
 describe("CatalogHeader", () => {
-  it("isolates the mixed-script title and builds the citation line", async () => {
-    const html = await render(CatalogHeader, { ed: "en", shiur: sampleShiur, sectionHref: "/en/contents/" });
+  it("isolates the mixed-script title and builds the meta line", async () => {
+    const html = await render(CatalogHeader, { ed: "en", shiur: sampleShiur });
     expect(html).toMatch(/<h1 class="catalog-title"[^>]*><bdi lang="en" dir="ltr">The קדושה of צדיקים and the חשיבות of Learning תורה<\/bdi><\/h1>/);
+    expect(html).toContain('<span class="visually-hidden">Details: </span>');
     expect(html).toContain('<bdi lang="he" dir="rtl">נח</bdi>');
-    expect(html).toContain("Pocket Guide p. 3");
     expect(html).toContain('<bdi lang="he" dir="rtl">תשמ&quot;ג</bdi>');
     expect(html).toContain("English");
     expect(html).toContain("1 hr 6 min");
-    expect(html).not.toContain("catalog-notice");
+    // the section is in the breadcrumb; no catalog number, no guide page
+    expect(html).not.toMatch(/Pocket Guide|no\. |<a /);
   });
 
-  it("marks rows that are not printed guide entries and shows path notes", async () => {
+  it("shows path notes and no notice for rows that are not printed guide entries", async () => {
     const html = await render(CatalogHeader, { ed: "yi", shiur: sampleUncatalogued, level: 2 });
     expect(html).toContain("<h2");
-    expect(html).toContain('class="catalog-notice"');
-    expect(html).toContain("פאלדער");
+    expect(html).toContain('<span class="visually-hidden">פרטים: </span>');
+    expect(html).not.toMatch(/catalog-notice|פאלדער|פאקעט גייד/);
     expect(html).toContain('<p class="path-note"><bdi lang="en" dir="ltr">for children (per file name)</bdi></p>');
     expect(html).toContain("אידיש");
   });
@@ -234,7 +236,7 @@ describe("Base layout", () => {
 
   it("isolates a catalog title in <title> and preloads the edition's body font", async () => {
     const html = await page("yi", "/yi/shiur/x/");
-    expect(html).toContain("<title>⁨The קדושה of צדיקים⁩ · די שיעורים פון דעם משגיח</title>");
+    expect(html).toContain("<title>⁨The קדושה of צדיקים⁩ · ספריה — שיעורים</title>");
     expect(html).toContain('<link rel="preload" href="/fonts/frank-ruhl-libre-hebrew.woff2" as="font" type="font/woff2" crossorigin>');
   });
 });

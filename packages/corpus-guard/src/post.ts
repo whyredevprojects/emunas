@@ -217,16 +217,6 @@ export class LeakScanner {
   }
 
   /**
-   * The approved transcript view (Quiet's `data-follow-text` section) names what it shows: with the
-   * view on and an eligible recording, that section is left out of the remark check. Its words never
-   * sit in the page; the verbatim and key checks still read the whole page.
-   */
-  private withoutApprovedTranscriptView(html: string): string {
-    if (!this.transcripts.enabled || this.transcripts.versions.size === 0 || !html.includes("data-follow-text")) return html;
-    return html.replace(/<section\b[^>]*\bdata-follow-text\b[^>]*>[\s\S]*?<\/section\s*>/gi, " ");
-  }
-
-  /**
    * Every string value of a parsed value, except identifiers (see `isIdentifier`): bare paths and URLs (no spaces, with
    * `/` or `:`) and slugs (`yi-simchos-…-03`), which are not prose.
    */
@@ -704,7 +694,7 @@ export class LeakScanner {
       return;
     }
     if (HTML_EXT.has(ext)) {
-      this.checkMetaComments([{ text: htmlToText(withoutIdentifierAttributes(this.withoutApprovedTranscriptView(raw))) }], source);
+      this.checkMetaComments([{ text: htmlToText(withoutIdentifierAttributes(raw)) }], source);
       this.checkMarkedNames(raw, source);
       this.checkMarkedPersons(raw, source);
       this.scanText(raw, source, htmlProse(raw), hint);

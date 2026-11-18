@@ -2,8 +2,8 @@
  * Where the human-written About texts come from: `src/content/about/{ed}/{part}.md` (W5.3 owns
  * src/content/**). A part without a file in the edition's language falls back along
  * `CONTENT_FALLBACK` from `@emunas/i18n` (Hebrew → Yiddish → English), shown with the `lang`/`dir` of
- * the text actually used; a part with no file in any language renders a marked placeholder.
- * Nothing is generated or machine-translated.
+ * the text actually used; a part with no file in any language is left out of the page. Nothing is
+ * generated or machine-translated.
  *
  * Links in the texts are ordinary Markdown links. Pages of this site are written root-relative
  * (`/en/calendar/`) or as in-page anchors (`#report`); the two targets whose address depends on the
@@ -43,7 +43,7 @@ export interface AboutText {
 
 /**
  * The supplied text of a part for an edition: the edition's own file, else the first file along
- * `CONTENT_FALLBACK[ed]`; null when no language has one (placeholder).
+ * `CONTENT_FALLBACK[ed]`; null when no language has one (the part is not shown).
  */
 export function aboutText(ed: Ed, part: AboutPart, files: Readonly<Record<string, Md>> = FILES): AboutText | null {
   const byLang: Partial<Record<Ed, Md>> = {};

@@ -2,7 +2,6 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { cleanedUrl, defaultUrl, playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
 import { clock, runAttrs } from "../src/lib/bidi.ts";
-import { catalogNotice } from "../src/lib/catalog.ts";
 import { CHOOSER_ORDER, EDS, NAME_ORDER, dirOf, editionOfPath, otherEditions, pathInEdition, switchEdition } from "../src/lib/edition.ts";
 import { withPlace } from "../src/lib/edition-switch.client.ts";
 import { fontPreloads, quietFontsCss } from "../src/lib/fonts.ts";
@@ -177,15 +176,6 @@ describe("bidi", () => {
     expect(clock(754)).toBe("12:34");
     expect(clock(3723.9)).toBe("1:02:03");
     expect(clock(-5)).toBe("0:00");
-  });
-});
-
-describe("catalog notice", () => {
-  it("is null for printed guide rows and worded by derivation otherwise", () => {
-    expect(catalogNotice({ source: "pocket-guide-2012", derived: "catalog" }, "en")).toBeNull();
-    expect(catalogNotice({ source: "uncatalogued-guide", derived: "filename" }, "en")).toMatch(/file name/);
-    expect(catalogNotice({ source: "uncatalogued-guide", derived: "dir-prefix" }, "en")).toMatch(/folder/);
-    expect(catalogNotice({ source: "uncatalogued-guide", derived: "pocket-guide" }, "yi")).toMatch(/פאקעט גייד/);
   });
 });
 

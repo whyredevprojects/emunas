@@ -89,18 +89,6 @@ describe("quiet layer reader on the mini corpus", () => {
     if (merged) expect(layer.links.conceptTopic?.(merged.id)).toBe(merged.mergedIntoTopic);
   });
 
-  it("counts the indexes for the title page (names: listed on Quiet and not excluded)", () => {
-    expect(layer.counts).toEqual({
-      topics: layer.topics.length,
-      glossary: layer.concepts.length,
-      names: layer.people.filter((p) => p.listed.quiet && p.excluded === null).length,
-      sources: layer.works.length,
-      stories: layer.stories.length,
-    });
-    // The mini corpus has a person excluded by the family rule and type-other people below the line.
-    expect(layer.counts.names).toBeLessThan(layer.people.length);
-  });
-
   it("reads per-shiur refs and series lazily, and refuses ids that are not file names", () => {
     const id = layer.concepts[0]!.shiurIds[0]!;
     const refs = layer.shiurRefs(id);

@@ -123,13 +123,10 @@ A part without notes (`yi-tanya-2-17`, needs review) keeps its row and number wi
 
 ### C4.8 The shiur page
 
-Small additions only; the order of the page does not change.
+The shiur page keeps one line from the corpus layer (concept-quiet §5.4 has the whole page):
 
 - **Under the abstract, one line of ענינים**: the shiur's topics with salience of 0.6 or more, at most five, as links. For נח תשמ"ג ("המקוה והתיבה הם כמו embassy של שמים על הארץ") that is טומאה וטהרה, נח והמבול. The weaker tags (סוכות, חמץ, ליל הסדר on that shiur) are not shown here; they exist to put the shiur in the third grade of those topic pages. Section-level topics are not printed in the outline. They are too many and too fine to read.
-- **Sources** link to the work entry by id.
-- **Stories and insights** carry their "told in…" and "עיין" lines.
-- **"Mentioned in this shiur"** links by entity id, so "the Sanzer Rav" and "the Divrei Chaim" land on one page.
-- **Place in the catalog** stays catalog-only. The generated cross-references sit in their own short block above it, so the two kinds of neighbour are never mixed.
+- **Previous and next** stay catalog-only: no generated neighbour is mixed into them.
 
 ## C5. Navigation
 

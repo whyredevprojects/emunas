@@ -1,11 +1,12 @@
 ---
 /**
- * A section page (concept-quiet §5.2, tech-quiet §2 `/{ed}/section/{sectionId}/`): the catalog,
- * faithfully. A plain numbered table in catalog order; large sections are sub-grouped the way the
+ * A section page (concept-quiet §5.2, tech-quiet §2 `/{ed}/section/{sectionId}/`): a plain table
+ * of the shiurim in catalog order; large sections are sub-grouped the way the
  * guide groups them (פרשת השבוע by chumash and parsha, זמנים by zman in the order of the year)
  * under headings on one long page with a jump list at the top. Works without script.
  *
- * Data: `.corpus/` sections.json, index.json, occasions.json, series.json, audio-table.json.
+ * Data: `.corpus/` sections.json, index.json, occasions.json, series.json, audio-table.json. Catalog
+ * rows with no recording at all (`index.json` gaps) are not listed.
  */
 import type { GetStaticPaths } from "astro";
 import { formatNumber } from "@emunas/i18n";
@@ -15,14 +16,14 @@ import CatalogTable from "../../../components/catalog/CatalogTable.astro";
 import JumpList, { type JumpItem } from "../../../components/catalog/JumpList.astro";
 import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
 import { contentsHref, sectionModel, sectionSummaries, type CatalogRow, type RowGroup } from "../../../components/catalog/model.ts";
-import { guidePages, useCatalogT, type CatalogKey } from "../../../components/catalog/strings.ts";
+import { useCatalogT, type CatalogKey } from "../../../components/catalog/strings.ts";
 import { runAttrs } from "../../../lib/bidi.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 import { useT } from "../../../i18n/index.ts";
 
 export const getStaticPaths = (() => {
   const corpus = loadCatalogCorpus();
-  return EDS.flatMap((ed) => sectionSummaries(corpus).map((s) => ({ params: { ed, section: s.slug } })));
+  return EDS.flatMap((ed) => sectionSummaries(corpus, ed).map((s) => ({ params: { ed, section: s.slug } })));
 }) satisfies GetStaticPaths;
 
 const ed = Astro.params.ed as Ed;
@@ -33,7 +34,6 @@ const { section, layout } = model;
 const t = useT(ed);
 const c = useCatalogT(ed);
 const titleAttrs = runAttrs(section.title, section.lang, ed);
-const allUncatalogued = model.rows.every((r) => r.uncatalogued);
 const flatOccasion = layout.kind === "flat" && model.rows.some((r) => r.parsha !== null || r.zman !== null);
 const caption = (label: string) => c("table.caption", { name: label });
 const otherLabel = layout.kind === "parsha" ? c("section.otherParsha") : c("section.otherZman");
@@ -53,7 +53,6 @@ if (layout.kind === "parsha") {
   if (layout.other) jump.push({ id: layout.other.id, label: otherLabel, count: layout.other.rows.length });
 }
 const groupRows = (g: RowGroup): CatalogRow[] => g.rows;
-const pages = section.pages;
 ---
 <Base
   ed={ed}
@@ -65,16 +64,7 @@ const pages = section.pages;
 >
   <header class="section-head">
     <h1><bdi {...titleAttrs}>{section.title}</bdi></h1>
-    <p class="section-meta">
-      <span>{c("count.shiurim", { count: section.count })}</span>
-      {pages && (
-        <>
-          <span aria-hidden="true"> · </span>
-          <span>{guidePages(ed, pages, "section")}</span>
-        </>
-      )}
-    </p>
-    {allUncatalogued && <p class="section-lead">{c("section.uncataloguedLead", { mark: "*" })}</p>}
+    <p class="section-meta">{c("count.shiurim", { count: section.count })}</p>
     {model.series.length > 0 && (
       <p class="section-series">
         {c("section.alsoSeries")}{" "}
@@ -139,7 +129,6 @@ const pages = section.pages;
   }
 
   .section-meta,
-  .section-lead,
   .section-series {
     font-size: var(--step-0);
     color: var(--color-ink-muted);

@@ -272,14 +272,14 @@ describe("the three grades", () => {
     }
   });
 
-  it("touched rows link each tagged part at its section, with the part's title", () => {
+  it("touched rows link each tagged part at its time, with the part's title", () => {
     const t = src.topics.find((x) => layer.topicDetail(x.id)!.grades.touched.length > 0)!;
     const g = topicGrades("en", src, layer.topicDetail(t.id));
     const row = g.touched[0]!;
     const raw = layer.topicDetail(t.id)!.grades.touched.find((x) => x.shiurId === row.shiurId)!;
     expect(row.parts.map((p) => p.idx)).toEqual(raw.chapters.map((c) => c.idx));
     for (const p of row.parts) {
-      expect(p.href).toBe(`/en/shiur/${row.shiurId}/#s${p.idx}`);
+      expect(p.href).toBe(`/en/shiur/${row.shiurId}/#t=${Math.round(p.t * 1000) / 1000}`);
       expect(p.time).toMatch(/^\d+:\d\d(:\d\d)?$/);
       expect(p.title?.text ?? null).toBe(src.chapterTitle(row.shiurId, p.idx)?.en || null);
     }

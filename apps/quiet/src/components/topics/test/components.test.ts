@@ -8,7 +8,6 @@ import { corpusLabel } from "@emunas/i18n";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import { beforeAll, describe, expect, it } from "vitest";
 import { calendarEn, calendarYi } from "../../calendar/strings.ts";
-import CalendarRule from "../CalendarRule.astro";
 import TopicGrades from "../TopicGrades.astro";
 import TopicHead from "../TopicHead.astro";
 import TopicTree from "../TopicTree.astro";
@@ -87,9 +86,9 @@ describe("TopicTree", () => {
 
 const grades: Grades = {
   main: [
-    { shiurId: "a", href: "/en/shiur/a/", title: "The Lesson of the מגילה", lang: "en", years: [5749], occasion: "Purim", section: "ZMANIM", onOccasion: { kind: "zman", key: "purim", name: "Purim", he: "פורים", href: "/en/calendar/zman/purim/" } },
+    { shiurId: "a", href: "/en/shiur/a/", title: "The Lesson of the מגילה", lang: "en", years: [5749], occasion: "Purim", onOccasion: { kind: "zman", key: "purim", name: "Purim", he: "פורים", href: "/en/calendar/zman/purim/" } },
   ],
-  discussed: [{ shiurId: "b", href: "/en/shiur/b/", title: "ועזוז נוראותיך", lang: "yi", years: [], occasion: null, section: "תפילה", onOccasion: null }],
+  discussed: [{ shiurId: "b", href: "/en/shiur/b/", title: "ועזוז נוראותיך", lang: "yi", years: [], occasion: null, onOccasion: null }],
   touched: [
     {
       shiurId: "c",
@@ -98,11 +97,10 @@ const grades: Grades = {
       lang: "yi",
       years: [5743],
       occasion: "נח",
-      section: "פרשת השבוע",
       onOccasion: null,
       parts: [
-        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#s6", title: shown("Tehillim: Your right hand holds me") },
-        { idx: 8, t: 2880, time: "48:00", href: "/en/shiur/c/#s8", title: null },
+        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#t=1732.6", title: shown("Tehillim: Your right hand holds me") },
+        { idx: 8, t: 2880, time: "48:00", href: "/en/shiur/c/#t=2880", title: null },
       ],
     },
   ],
@@ -112,7 +110,8 @@ describe("TopicGrades", () => {
   it("names the grades in words, sets the principal rows in weight, and states language and year", async () => {
     const html = await render(TopicGrades, { ed: "en", grades });
     expect([...html.matchAll(/data-grade="(\w+)"/g)].map((m) => m[1])).toEqual(["main", "discussed", "touched"]);
-    expect(text(html)).toContain(`${corpusLabel("grade.main", "en")} (1)`);
+    expect(text(html)).toContain(corpusLabel("grade.main", "en"));
+    expect(text(html)).not.toContain(`${corpusLabel("grade.main", "en")} (1)`);
     expect(text(html)).toContain(corpusLabel("grade.discussed", "en"));
     expect(text(html)).toContain(corpusLabel("grade.touched", "en"));
     expect(html).toMatch(/class="topic-row principal" data-shiur="a"/);
@@ -128,9 +127,9 @@ describe("TopicGrades", () => {
     expect(html).toContain('data-on-occasion="zman:purim"');
     expect(html).toContain('<a href="/en/calendar/zman/purim/">said on Purim</a>');
     // touched: each part's title and time as the link to the section
-    expect(html).toContain('href="/en/shiur/c/#s6"');
+    expect(html).toContain('href="/en/shiur/c/#t=1732.6"');
     expect(text(html)).toContain("Tehillim: Your right hand holds me 28:52");
-    expect(html).toContain('href="/en/shiur/c/#s8"');
+    expect(html).toContain('href="/en/shiur/c/#t=2880"');
   });
 
   it("leaves out an empty grade", async () => {
@@ -157,26 +156,23 @@ const page: TopicPage = {
 };
 
 describe("TopicHead", () => {
-  it("prints the headword, count, place, see also, definition, description and the calendar line", async () => {
+  it("prints the headword, count, see also, definition, description and the calendar days", async () => {
     const html = await render(TopicHead, { ed: "en", page });
     expect(html.match(/<h1>/g)).toHaveLength(1);
     expect(text(html)).toContain("חנוכה Chanukah");
     expect(text(html)).toContain("130 shiurim");
-    expect(text(html)).toContain("In the index: ימים טובים וזמנים Yamim Tovim › חנוכה Chanukah");
+    expect(text(html)).not.toContain("In the index");
     expect(html).toContain('class="see-also"');
     expect(html).toContain("data-definition");
     expect(text(html)).toContain("The eight days of light.");
     expect(html).toContain("data-description");
     expect(html).toContain('href="/en/calendar/zman/chanukah/"');
-    expect(text(html)).toContain(topicsEn["rule.calendar"]);
   });
 
   it("leaves out what is missing, and the notes on a continuation page", async () => {
     const bare = { ...page, description: null, definition: null, occasions: [], path: [], seeAlso: [] };
     const html = await render(TopicHead, { ed: "yi", page: bare });
     expect(html).not.toContain("voice-notes");
-    expect(html).not.toContain("calendar-rule");
-    expect(html).not.toContain("topic-place");
     const all = await render(TopicHead, { ed: "en", page, meta: "all the shiurim", notes: false });
     expect(text(all)).toContain("all the shiurim · 130 shiurim");
     expect(all).not.toContain("data-description");
@@ -184,9 +180,3 @@ describe("TopicHead", () => {
   });
 });
 
-describe("CalendarRule", () => {
-  it("says in one line what the calendar lists and what the index lists", async () => {
-    expect(text(await render(CalendarRule, { ed: "en" }))).toBe(topicsEn["rule.calendar"]);
-    expect(text(await render(CalendarRule, { ed: "yi" }))).toBe(topicsYi["rule.calendar"]);
-  });
-});

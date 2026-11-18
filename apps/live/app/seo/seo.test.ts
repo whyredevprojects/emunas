@@ -170,7 +170,7 @@ describe("page text", () => {
     expect(text("/en/seforim/genesis/3")!.title).toBe("Genesis");
     expect(text("/en/p/achashverosh")!.description).toContain("5 shiurim");
     expect(text("/en/c/emunah-1")!.title).toBe("אמונה");
-    expect(text("/en/")!.title).toBe("Emunas — Listen");
+    expect(text("/en/")!.title).toBe("Analyze — Shiurim");
   });
 
   it("has nothing for unknown keys and app-only pages", () => {

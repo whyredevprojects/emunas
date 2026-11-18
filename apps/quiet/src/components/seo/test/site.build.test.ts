@@ -7,8 +7,8 @@
  *   the sitemap index and robots.txt name them;
  * - the About page exists in every edition with `#notes`, every page links to it, and it holds
  *   the approved texts from src/content/about/ (an edition without its own text of a part shows the
- *   text along `CONTENT_FALLBACK`, marked with its language) and a placeholder for every part with
- *   no text in any language;
+ *   text along `CONTENT_FALLBACK`, marked with its language) and no part without a text in any
+ *   language;
  * - link checker over every page: internal links and anchors resolve, cross-site links to the
  *   listening app match the Live route table (apps/live/app/routes.ts) and map back to a built
  *   Quiet page through @emunas/links; the only other external links are the media host, Sefaria
@@ -171,10 +171,11 @@ describe("sitemaps and robots.txt", () => {
 // ------------------------------------------------------------------ About
 
 describe("About", () => {
-  it("exists in every edition with the notes anchor and every part", () => {
+  it("exists in every edition with the notes anchor and every part with a text along CONTENT_FALLBACK", () => {
+    const content = join(app, "src/content/about");
     for (const ed of EDS) {
       const ids = idsOf(`/${ed}/about/`);
-      for (const p of ABOUT_PARTS) expect(ids.has(p), `${ed} #${p}`).toBe(true);
+      for (const p of ABOUT_PARTS) expect(ids.has(p), `${ed} #${p}`).toBe(CONTENT_FALLBACK[ed].some((l) => existsSync(join(content, l, `${p}.md`))));
       expect(ids.has("notes")).toBe(true);
     }
   });
@@ -189,20 +190,20 @@ describe("About", () => {
     expect(missing.slice(0, 20)).toEqual([]);
   });
 
-  it("shows the approved texts (or the next language's) and a placeholder for every part still unwritten", () => {
+  it("shows the approved texts (or the next language's) and leaves out every part still unwritten", () => {
     const content = join(app, "src/content/about");
     for (const ed of EDS) {
       const main = mainOf(html(`/${ed}/about/`));
       for (const part of ABOUT_PARTS) {
         const textLang = CONTENT_FALLBACK[ed].find((l) => existsSync(join(content, l, `${part}.md`)));
-        const approved = textLang !== undefined;
+        if (textLang === undefined) continue;
         const section = new RegExp(`<section[^>]*id="${part}"[\\s\\S]*?</section>`).exec(main)?.[0] ?? "";
-        expect(section, `${ed}/${part}`).toContain(approved ? 'class="about-text"' : `data-placeholder="${part}"`);
-        expect(section, `${ed}/${part}`).not.toContain(approved ? "data-placeholder=" : 'class="about-text"');
-        if (approved && textLang !== ed) expect(section, `${ed}/${part}`).toContain(`class="about-text" lang="${textLang}" dir="${UI_DIR[textLang]}"`);
+        expect(section, `${ed}/${part}`).toContain('class="about-text"');
+        if (textLang !== ed) expect(section, `${ed}/${part}`).toContain(`class="about-text" lang="${textLang}" dir="${UI_DIR[textLang]}"`);
       }
       expect(main).toContain(`href="mailto:${FEEDBACK}"`);
-      expect(main).toContain('data-placeholder="mashgiach"');
+      expect(main).not.toContain('id="mashgiach"');
+      expect(main).not.toContain("about-placeholder");
     }
   });
 });

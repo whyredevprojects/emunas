@@ -83,8 +83,9 @@ export function shiurHref(ed: Ed, shiurId: string): string {
   return formatQuiet({ kind: "shiur", ed, id: shiurId });
 }
 
-export function sectionHref(ed: Ed, shiurId: string, idx: number): string {
-  return formatQuiet({ kind: "shiur", ed, id: shiurId, moment: { kind: "s", index: idx } });
+/** A place in a shiur: `#t=<global seconds>`, which the shiur page's player seeks to. */
+export function momentHref(ed: Ed, shiurId: string, t: number): string {
+  return formatQuiet({ kind: "shiur", ed, id: shiurId, t });
 }
 
 export function occasionHref(ed: Ed, kind: "parsha" | "zman", key: string): string {
@@ -301,7 +302,6 @@ export interface TopicRow {
   readonly years: readonly number[];
   /** Parsha or zman as catalogued (null: none, or only a guess from a file name). */
   readonly occasion: string | null;
-  readonly section: string;
   /** The catalog places this shiur on one of the topic's occasions. */
   readonly onOccasion: OccasionRef | null;
 }
@@ -351,7 +351,6 @@ export function topicRow(ed: Ed, row: IndexRow, occasions: readonly OccasionRef[
     lang: row.lang,
     years: [...(Array.isArray(row.years) ? row.years : [])].sort((a, b) => a - b),
     occasion,
-    section: str(row.catalog?.sectionTitle),
     onOccasion: on,
   };
 }
@@ -395,7 +394,7 @@ export function topicGrades(ed: Ed, src: Pick<TopicsSource, "rows" | "occasions"
           idx: c.idx,
           t: c.t,
           time: clock(c.t),
-          href: sectionHref(ed, r.shiurId, c.idx),
+          href: momentHref(ed, r.shiurId, c.t),
           title: shownText(title, ed),
         };
       });

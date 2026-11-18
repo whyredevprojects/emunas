@@ -9,7 +9,7 @@ import type { UiKey } from "./en.ts";
  * (concept-quiet §8): סדר השיעור, מראי מקומות, מעשיות, מפתחות; "דער משגיח".
  */
 export const yi: MessageTable<UiKey> = {
-  "site.name": "די שיעורים פון דעם משגיח",
+  "site.name": "ספריה — שיעורים",
   "site.nameShort": "שיעורים",
   "site.description": "די רעקארדירטע שיעורים פון הרב משה וואלפסאן זצ\"ל.",
 
@@ -32,7 +32,7 @@ export const yi: MessageTable<UiKey> = {
 
   "breadcrumb.label": "דא זענט איר",
 
-  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען. די קעפלעך זענען ווי געדרוקט אינעם פאקעט גייד פון 2012.",
+  "footer.recordingIsSource": "דער מקור איז די רעקארדירונגען.",
   "footer.inLanguage": "דער בלאט אויף {language}",
   "footer.home": "אמונת",
 
@@ -46,15 +46,10 @@ export const yi: MessageTable<UiKey> = {
   "listen.unavailable": "די רעקארדירונג איז נאך נישט צוגעשטעלט אויפן אינטערנעט.",
   "listen.unavailablePart": "טייל {part}: נאך נישט צוגעשטעלט אויפן אינטערנעט.",
   "listen.noSupport": "דער בראוזער קען דא נישט שפילן די רעקארדירונג. נוצט דעם לינק צום אראפלאדן.",
-  "listen.duration": "לענג {duration}",
 
-  "citation.label": "קאטאלאג",
+  "citation.label": "פרטים",
   "citation.number": "נומ׳ {n}",
-  "citation.guidePage": "פאקעט גייד ז׳ {page}",
-  "citation.series": "סדרה",
-
-  "catalog.derived.filename": "שטייט נישט אינעם פאקעט גייד פון 2012; דער קעפל איז גענומען פונעם נאמען פונעם פייל.",
-  "catalog.derived.dirPrefix": "שטייט נישט אינעם פאקעט גייד פון 2012; דער קעפל איז גענומען פונעם פאלדער און פונעם נאמען פונעם פייל.",
+  "citation.perek": "פרק {perek}",
 
   "notes.label": "נאטיצן",
 

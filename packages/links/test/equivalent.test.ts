@@ -18,9 +18,6 @@ describe("equivalent(quiet → live → quiet) is identity", () => {
   for (const ed of EDS) {
     const cases: Record<string, string[]> = {
       shiur: [Q.shiur(ed, ID), Q.shiur(ed, EN_ID), Q.shiur(ed, "yi-tanya-1-01")],
-      section: [0, 1, 2, 3].map((i) => Q.shiur(ed, ID, { section: i })).concat(Q.shiur(ed, EN_ID, { section: 2 })),
-      // section without a known start still round-trips via the moment id
-      "section (start unknown)": [Q.shiur(ed, "yi-zmanim-tv-bb-04", { section: 5 })],
       time: [0, 1, 754, 3599, 86_399].map((t) => Q.shiur(ed, ID, { t })),
       series: [Q.series(ed, "tanya-1"), Q.series(ed, "parshas-hashavua-yi")],
       occasion: [Q.parsha(ed, "bereishis"), Q.parsha(ed, "noach"), Q.zman(ed, "lag-baomer"), Q.zman(ed, "shavuos")],
@@ -79,9 +76,10 @@ describe("live → quiet", () => {
     expect(links.equivalent(`${HOSTS.live}/en/explore?lens=luach&unit=moments`)).toBe(`${HOSTS.quiet}/en/inyanim/`);
   });
 
-  it("a section moment wins over t; other moments keep t", () => {
-    expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?t=900&m=${ID}~s2`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/#s2`);
+  it("keeps the time of a moment and drops the moment itself (Quiet links a place by its time)", () => {
+    expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?t=900&m=${ID}~s2`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/#t=900`);
     expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?t=900&m=${ID}~st1`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/#t=900`);
+    expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?m=${ID}~s2`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/`);
     expect(links.equivalent(`${HOSTS.live}/en/s/${ID}?m=${ID}~q0`)).toBe(`${HOSTS.quiet}/en/shiur/${ID}/`);
   });
 
@@ -124,8 +122,8 @@ describe("quiet → live", () => {
     expect(links.equivalent(`${HOSTS.quiet}/en/calendar/zman/`)).toBe(`${HOSTS.live}/en/`);
   });
 
-  it("section without a known start emits only the moment", () => {
-    expect(links.equivalent(`${HOSTS.quiet}/en/shiur/x-1/#s4`)).toBe(`${HOSTS.live}/en/s/x-1?m=x-1~s4`);
+  it("has no section anchor: `#s{i}` is the shiur itself", () => {
+    expect(links.equivalent(`${HOSTS.quiet}/en/shiur/x-1/#s4`)).toBe(`${HOSTS.live}/en/s/x-1`);
   });
 
   it("tolerates missing trailing slashes and percent-encoded keys", () => {
@@ -149,7 +147,7 @@ describe("site detection", () => {
 
 describe("Hebrew edition", () => {
   it("parses and formats /he/ like every other edition on both sites", () => {
-    expect(parseQuiet("/he/shiur/a/#s2")).toEqual({ kind: "shiur", ed: "he", id: "a", moment: { kind: "s", index: 2 } });
+    expect(parseQuiet("/he/shiur/a/#t=12.5")).toEqual({ kind: "shiur", ed: "he", id: "a", t: 12.5 });
     expect(parseLive("/he/s/a?t=3")).toEqual({ kind: "shiur", ed: "he", id: "a", t: 3 });
     expect(quietPaths().home("he")).toBe("/he/");
     expect(livePaths().search("he", "אמונה")).toBe(`/he/search?q=${encodeURIComponent("אמונה")}`);
@@ -169,7 +167,6 @@ describe("builders reject bad input", () => {
     expect(() => livePaths().home("de" as "en")).toThrow(/edition must be one of "en", "yi", "he"/);
     expect(() => quietPaths().shiur("en", "")).toThrow(TypeError);
     expect(() => quietPaths().shiur("en", "a/b")).toThrow(TypeError);
-    expect(() => quietPaths().shiur("en", "a", { section: -1 })).toThrow(TypeError);
     expect(() => livePaths().shiur("en", "a", { m: "b~s1" })).toThrow(TypeError);
   });
 

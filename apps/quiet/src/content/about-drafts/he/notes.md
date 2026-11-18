@@ -2,11 +2,11 @@
 status: DRAFT
 approvedBy: null
 approvedAt: null
-note: "Hebrew draft for the owner, translated from the approved English and Yiddish texts. Not published: until it is approved, the Hebrew edition shows the Yiddish text. Needs a named Hebrew reviewer."
+note: "Hebrew draft for the owner, translated from the English and Yiddish revisions after the simplification of the site (2026-11-17). Not published: until it is approved, the Hebrew edition shows the Yiddish text. Needs a named Hebrew reviewer."
 ---
 
-הרשימות שליד כל שיעור נכתבו בידי מודל AI מתוך השיעור: התקציר, סדר השיעור, השיעור בכתב, מראי
-המקומות, המעשיות ושאר הנקודות.
+הרשימות שבדף של כל שיעור, התיאור הקצר של מה שהשיעור עוסק בו והנושאים שלו, נכתבו בידי מודל AI
+מתוך השיעור. כך גם המפתחות של [הענינים](/he/inyanim/), [הערכים](/he/erachim/), [האישים](/he/people/), [מראי המקומות](/he/sources/) ו[המעשיות](/he/stories/).
 
 אף אדם לא עבר על הרשימות, וייתכנו בהן טעויות. שם, מקור או זמן עלולים להיות שגויים, ונקודה
 עלולה לצאת חזקה או חלשה יותר ממה שהמשגיח אמר.
@@ -14,13 +14,12 @@ note: "Hebrew draft for the owner, translated from the approved English and Yidd
 הרשימות אינן דברי המשגיח עצמם. הן מספרות מה שהוא אומר, ואינן מצטטות אותו. כאשר הרשימות
 וההקלטה אינן שוות, ההקלטה היא הנכונה.
 
-ה[חיפוש](/he/search/) הוא ב[קטלוג](/he/contents/) וברשימות.
+ה[חיפוש](/he/search/) הוא בכותרות וברשימות.
 
-דברים שהמודל עצמו סימן כלא ודאיים הושמטו. ליד מקור שהמודל רק שיער כתוב „לכאורה“; כאשר ידוע
-רק הספר ולא המקום שבו, כתוב „המקום לא זוהה“.
+דברים שהמודל עצמו סימן כלא ודאיים הושמטו. במפתח מראי המקומות, ליד מקור שהמודל רק שיער כתוב
+„לכאורה“; כאשר ידוע רק הספר ולא המקום שבו, כתוב „המקום לא זוהה“.
 
 הרשימות בעברית מתורגמות מן הרשימות באידיש ובאנגלית. רשימה שעדיין לא תורגמה מוצגת באידיש,
 ואם אין, באנגלית.
 
-רשימות מתווספות ככל שהן מוכנות. לשיעור שעדיין אין לו רשימות יש בכל זאת מקום בקטלוג
-והקלטה.
+רשימות מתווספות ככל שהן מוכנות. לשיעור שעדיין אין לו רשימות יש בכל זאת דף משלו והקלטה.

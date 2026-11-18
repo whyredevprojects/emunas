@@ -289,7 +289,7 @@ export interface Finding {
 /**
  * All cross-site links in both outputs that do not resolve:
  *  - Quiet → Live ("Open in the listening app" and friends) against the Live route table + data;
- *  - Live → Quiet (canonical, "Printable page" in prerendered HTML) against Quiet's built pages.
+ *  - Live → Quiet (canonical, "In the Library" in prerendered HTML) against Quiet's built pages.
  * `limitPerSite` caps the number of files read per site (0 = all).
  */
 export function scanCrossLinks(p: SitePaths, limitPerSite = 0): { checked: number; findings: Finding[] } {

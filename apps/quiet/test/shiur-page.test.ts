@@ -4,11 +4,12 @@
  * - generated text is shown in the edition's language, else the fallback along `CONTENT_FALLBACK`,
  *   with the lang/dir of the language shown (a Hebrew overlay is planted for one shiur; the others
  *   fall back to Yiddish in the Hebrew edition);
- * - items below confidence 0.6 are absent (one planted in a copy of the mini corpus);
- * - source letters link both ways; every time link works without script (`cleanedUrl#t=`, the
- *   AI-improved copy; downloads and the no-JS version link use the original `audioUrl`);
- * - unplayable recordings are shown as unavailable, their times as plain text;
- * - no transcript UI or field in the output; the reserved slot renders nothing;
+ * - the page holds the header, Listen, "about this shiur" and one previous/next line, nothing else
+ *   from the notes (items below confidence 0.6, planted in a copy of the mini corpus, are absent too);
+ * - the last crumb is the shiur title; the meta line has no catalog number or guide page;
+ * - unplayable recordings are shown as unavailable;
+ * - no transcript UI or field in the output;
+ * - each recording plays the AI-improved copy where there is one; downloads are the original;
  * - page ≤ 120 KB raw / ≤ 30 KB brotli.
  *
  * The corpus is built here from a copy of `packages/corpus/test/fixtures/mini` with the real
@@ -22,14 +23,15 @@ import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { brotliCompressSync } from "node:zlib";
 import { experimental_AstroContainer as AstroContainer } from "astro/container";
-import { round3, type PublicShiur } from "@emunas/corpus/public";
+import type { PublicShiur } from "@emunas/corpus/public";
 import { hashSlots, shiurSlots } from "@emunas/corpus/build";
-import { SOURCE_LANGS, UI_DIR, notice, pickText } from "@emunas/i18n";
+import { UI_DIR, notice, pickText } from "@emunas/i18n";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import ShiurPage from "../src/components/shiur/ShiurPage.astro";
-import TranscriptSlot from "../src/components/shiur/TranscriptSlot.astro";
 import { findCorpusDir, loadShiurCorpus, type ShiurCorpus } from "../src/components/shiur/corpus.ts";
-import { catalogPlace, shownWriteup } from "../src/components/shiur/view.ts";
+import { shiurEn } from "../src/components/shiur/strings.ts";
+import { prevNext } from "../src/components/shiur/view.ts";
+import { runAttrs } from "../src/lib/bidi.ts";
 import { EDS, type Ed } from "../src/lib/edition.ts";
 
 const escapeRe = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
@@ -73,7 +75,7 @@ beforeAll(async () => {
   planted.push(ex.takeaways[0].text.en, ex.takeaways[0].text.yi);
   writeFileSync(extractionPath, JSON.stringify(ex));
 
-  // A current Hebrew overlay for one shiur: every slot, so its Hebrew write-up is published too.
+  // A current Hebrew overlay for one shiur: every slot.
   const tdir = join(fixture, "data", "derived", "shiurim", TRANSLATED);
   const tx = JSON.parse(readFileSync(join(tdir, "extraction.json"), "utf8"));
   const tw = JSON.parse(readFileSync(join(tdir, "writeup.json"), "utf8"));
@@ -109,9 +111,9 @@ afterAll(() => {
 });
 
 async function renderPage(ed: Ed, shiur: PublicShiur, extra: Record<string, unknown> = {}): Promise<string> {
-  const place = catalogPlace(ed, shiur, corpus.neighbours[shiur.id], corpus.rows, (id) => corpus.seriesTitle(id, ed));
+  const neighbours = prevNext(ed, shiur, corpus.neighbours[shiur.id], corpus.rows, (id) => corpus.seriesTitle(id, ed));
   return container.renderToString(ShiurPage, {
-    props: { ed, shiur, place, layer: corpus.layer, refs: shiur.status === "full" ? corpus.refs(shiur.id) : null, ...extra },
+    props: { ed, shiur, prevNext: neighbours, layer: corpus.layer, refs: shiur.status === "full" ? corpus.refs(shiur.id) : null, ...extra },
   });
 }
 
@@ -136,7 +138,7 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
     expect(html).toContain(`<html lang="${ed}" dir="${UI_DIR[ed]}">`);
     expect(html.match(/<h1\b/g)?.length).toBe(1);
     expect(html).toContain('class="listen"');
-    expect(html).toContain('id="catalog"');
+    expect(html.match(/<nav class="prev-next"/g)?.length).toBe(1);
     expect(html).not.toMatch(/<blockquote|<q[\s>]/);
 
     // No transcript UI and no transcript-bearing field or path, in any form.
@@ -144,51 +146,52 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
 
     if (shiur.status === "full") {
       expect(html.match(/class="notes-label"/g)?.length).toBe(1);
-      expect(html).toContain('id="outline"');
+      expect(html).toContain('id="about"');
       expect(html).not.toContain("notes-pending");
-      // the write-up and summary the edition shows (its language, else the fallback), not another's
+      // the summary the edition shows (its language, else the fallback), not another's
       const notes = shiur.notes!;
-      const one = pickText(notes.summary.oneLiner, ed);
-      expect(html).toContain(escape(one.text));
-      const shown = shownWriteup(notes, ed);
-      const firstPara = shown?.value[0]?.paragraphs[0]?.text;
-      if (firstPara) expect(html).toContain(escape(firstPara));
-      for (const lang of [...SOURCE_LANGS, "he" as const]) {
-        if (lang === shown?.lang) continue;
-        const otherPara = notes.writeup[lang]?.[0]?.paragraphs[0]?.text;
-        if (otherPara && otherPara !== firstPara) expect(html, lang).not.toContain(escape(otherPara));
+      const abstract = pickText(notes.summary.abstract, ed);
+      expect(html).toContain(escape(abstract.text));
+      for (const lang of ["en", "yi"] as const) {
+        if (lang !== abstract.lang && notes.summary.abstract[lang] !== abstract.text) expect(html, lang).not.toContain(escape(notes.summary.abstract[lang]));
       }
       // A fallback text carries its own language: no Hebrew yet except in the planted overlay.
+      const one = pickText(notes.summary.oneLiner, ed);
       if (ed === "he") {
         if (id === TRANSLATED) {
           expect(one.lang).toBe("he");
-          expect(shown?.lang).toBe("he");
           expect(html).toContain(`<p class="one-liner">${escape(one.text)}</p>`);
         } else {
           expect(one.lang).toBe("yi");
           expect(html).toContain(`<p class="one-liner" lang="yi" dir="rtl">${escape(one.text)}</p>`);
         }
       }
+      // the write-up and the apparatus are not on the page
+      const firstPara = notes.writeup.yi[0]?.paragraphs[0]?.text;
+      if (firstPara) expect(html).not.toContain(escape(firstPara));
+      for (const k of notes.summary.keyPoints) expect(html).not.toContain(escape(k.text.yi));
     } else {
       expect(html).toContain(notice("notesPending", ed));
-      expect(html).not.toMatch(/class="voice-notes"|id="outline"|id="writeup"|id="sources"|notes-label|class="jump-list"/);
+      expect(html).not.toMatch(/class="voice-notes"|id="about"|notes-label/);
     }
+    // None of the removed parts, on any page.
+    expect(html).not.toMatch(/id="(?:outline|writeup|sources|apparatus|mentioned|catalog)"|class="jump-list"|data-follow-text|data-marks|class="time"/);
+    expect(html.match(/<audio\b/g)?.length).toBe(shiur.recordings.filter((r) => r.audioUrl).length);
 
     // Every in-page link has a target.
     const present = ids(html);
     for (const h of hrefs(html).filter((x) => x.startsWith("#"))) expect(present.has(h.slice(1)), h).toBe(true);
 
-    // Every time link works without script: the recording's media URL at the exact (fractional) second.
-    const times = [...html.matchAll(/<a class="time" dir="ltr" href="([^"]+)" data-g="([\d.]+)"/g)];
-    if (shiur.status === "full") expect(times.length).toBeGreaterThan(5);
-    for (const [, href, g] of times) {
-      const global = Number(g);
-      // the recording the global time falls in, and the exact time inside it (never floored)
-      const recording = [...shiur.recordings].reverse().find((r) => r.offset <= global)!;
-      expect(recording.cleanedUrl).toBeTruthy();
-      expect(href).toBe(`${recording.cleanedUrl}#t=${round3(global - recording.offset)}`);
-      expect(href!.startsWith(`${MEDIA}/`)).toBe(true);
-    }
+    // Breadcrumb: contents › section › the title (never "no. N").
+    const crumbs = /<nav class="breadcrumb"[\s\S]*?<\/nav>/.exec(html)![0];
+    const last = /<span aria-current="page"><bdi lang="(\w+)" dir="(rtl|ltr)">([^<]*)<\/bdi><\/span>/.exec(crumbs);
+    expect(last?.[3]).toBe(escape(shiur.catalog.titleOriginal));
+    // the same lang/dir as the title in the header (its dominant script)
+    expect(last?.slice(1, 3)).toEqual(Object.values(runAttrs(shiur.catalog.titleOriginal, shiur.lang, ed)));
+    // Each recording plays the AI-improved copy where there is one; downloads are the original.
+    const playable = shiur.recordings.filter((r) => r.audioUrl);
+    expect([...html.matchAll(/<audio\b[^>]*\ssrc="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.cleanedUrl ?? r.audioUrl));
+    expect([...html.matchAll(/<a class="download" href="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.audioUrl));
 
     // Size budget (tech-quiet §3.5): ≤ 120 KB raw, ≤ 30 KB brotli.
     const bytes = Buffer.byteLength(html);
@@ -212,47 +215,33 @@ describe("full page details", () => {
     expect(planted.length).toBe(6);
   });
 
-  it("links source letters both ways (write-up ↔ list) with outline anchors #s{idx}", async () => {
-    const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
+  it("keeps one meta line: no catalog number, no guide page, no section link, one length", async () => {
+    const shiur = corpus.shiur("yi-parshas-hashavua-brshys-01");
+    expect(shiur.catalog.n).not.toBeNull();
     const html = await renderPage("en", shiur);
-    const notes = shiur.notes!;
-    for (const c of notes.chapters) expect(html).toContain(`id="s${c.idx}"`);
-    const cites = [...html.matchAll(/<a href="#(src\d+)" aria-label="Source ([a-z]+)">([a-z]+)<\/a>/g)];
-    expect(cites.length).toBeGreaterThan(3);
-    for (const [, anchor, label, letter] of cites) {
-      expect(label).toBe(letter);
-      const item = new RegExp(`<li id="${anchor}">\\s*<span>${letter}</span>`);
-      expect(html, anchor).toMatch(item);
-    }
-    // Each source's back links go to paragraphs that cite that source, and every citing
-    // paragraph is linked back.
-    const items = [...html.matchAll(/<li id="(src\d+)">([\s\S]*?)<\/li>/g)];
-    expect(items.length).toBe(notes.sources.length);
-    const paragraphs = new Map(
-      [...html.matchAll(/<div class="para" id="(p\d+-\d+)" data-mark>([\s\S]*?)<\/div>/g)].map((m) => [m[1]!, m[2]!]),
-    );
-    let backLinks = 0;
-    for (const [, src, body] of items) {
-      const back = [...body!.matchAll(/<a href="#(p\d+-\d+)" dir="ltr">/g)].map((m) => m[1]!);
-      const citing = [...paragraphs].filter(([, text]) => text.includes(`href="#${src}"`)).map(([id]) => id);
-      expect(back, src).toEqual(citing);
-      backLinks += back.length;
-    }
-    expect(backLinks).toBeGreaterThan(3);
-    // resolved sources link out to Sefaria; nothing else does
-    const out = hrefs(html).filter((h) => h.startsWith("https://www.sefaria.org/"));
-    expect(out.length).toBe(notes.sources.filter((s) => s.resolution === "resolved" && s.sefariaRef).length);
+    const meta = /<p class="citation">([\s\S]*?)<\/p>/.exec(html)![1]!;
+    expect(meta).toContain('<span class="visually-hidden">Details: </span>');
+    expect(meta).not.toMatch(/no\.|Pocket Guide|href=/);
+    expect(meta).toContain(escape(shiur.parsha!.raw));
+    expect(html).not.toMatch(/catalog-notice|Length /);
+    const yi = await renderPage("yi", shiur);
+    expect(/<p class="citation">[\s\S]*?<\/p>/.exec(yi)![0]).toContain('<span class="visually-hidden">פרטים: </span>');
+    const he = await renderPage("he", shiur);
+    expect(/<p class="citation">[\s\S]*?<\/p>/.exec(he)![0]).toContain('<span class="visually-hidden">פרטים: </span>');
   });
 
-  it("puts multi-recording times on the right file", async () => {
+  it("labels a perek given as a number", async () => {
+    const shiur = corpus.shiur("yi-tanya-1-01");
+    const html = await renderPage("en", { ...shiur, perek: "ב" });
+    expect(html).toMatch(/<span class="cite-item">Perek <bdi lang="yi" dir="rtl">ב<\/bdi><\/span>/);
+    const yi = await renderPage("yi", { ...shiur, perek: "הקדמה" });
+    expect(yi).toMatch(/<span class="cite-item"><bdi lang="yi" dir="rtl">הקדמה<\/bdi><\/span>/);
+  });
+
+  it("plays each recording of a multi-recording shiur", async () => {
     const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
     expect(shiur.recordings.length).toBe(2);
     const html = await renderPage("yi", shiur);
-    const second = shiur.recordings[1]!;
-    const late = shiur.notes!.chapters.find((c) => c.t >= second.offset)!;
-    const local = round3(late.t - second.offset);
-    expect(html).toContain(`href="${second.cleanedUrl}#t=${local}" data-g="${late.t}"`);
-    expect(html).toContain("שפילן פון");
     expect(html.match(/<audio\b/g)?.length).toBe(2);
   });
 
@@ -265,7 +254,6 @@ describe("full page details", () => {
     const html = await renderPage("en", shiur);
     expect(html.match(/<audio\b/g)?.length).toBe(1);
     expect(html).toContain("Part 2: not yet available online.");
-    expect(html).toContain("time-unavailable");
     expect(html).not.toContain(`href="${base.recordings[1]!.audioUrl}`);
     expect(html).not.toContain(`href="${base.recordings[1]!.cleanedUrl}`);
   });
@@ -292,6 +280,9 @@ describe("full page details", () => {
     const yi = await renderPage("yi", shiur);
     expect(yi).toContain("הערט די מקורית");
     expect(yi).toContain("קלאנג אויסגעבעסערט דורך AI");
+    const he = await renderPage("he", shiur);
+    expect(he).toContain("מעבר להקלטה המקורית");
+    expect(he).toContain("הקול שופר על ידי AI");
   });
 
   it("marks a part without an improved copy and drops the line when no part has one", async () => {
@@ -317,40 +308,47 @@ describe("full page details", () => {
       liveHref: "https://listen.example.org/en/s/en-parsha-en-nch-01",
       reportHref: "mailto:e@example.org?subject=x",
     });
-    expect(html).toContain('<a href="https://listen.example.org/en/s/en-parsha-en-nch-01" hreflang="en">Open in the listening app</a>');
+    expect(html).toContain(`<a href="https://listen.example.org/en/s/en-parsha-en-nch-01" hreflang="en">${shiurEn["live.open"]}</a>`);
     expect(html).toContain('href="mailto:e@example.org?subject=x"');
   });
 
-  it("lists previous/next in the section and series on a catalog-only page", async () => {
+  it("has one previous/next line, in the series order on a catalog-only page", async () => {
     const shiur = corpus.shiur("yi-tanya-1-01");
+    expect(shiur.status).not.toBe("full");
     const html = await renderPage("en", shiur);
-    expect(html).toContain('data-place="section"');
-    expect(html).toContain('data-place="series"');
-    expect(html).toContain('href="/en/series/tanya-yi/"');
-    expect(html).toMatch(/rel="next"/);
+    const nav = /<nav class="prev-next"[\s\S]*?<\/nav>/.exec(html)![0];
+    expect(nav).toContain('data-of="series"');
+    expect(nav).toContain('href="/en/series/tanya-yi/"');
+    const n = corpus.neighbours[shiur.id]!.series!;
+    if (n.next) expect(nav).toContain(`href="/en/shiur/${n.next}/" rel="next"`);
+    if (n.prev) expect(nav).toContain(`href="/en/shiur/${n.prev}/" rel="prev"`);
+    else expect(nav).not.toContain('rel="prev"');
+    expect(nav).not.toMatch(/ of \d|no\. /);
+  });
+
+  it("follows the section order when the shiur is in no series", async () => {
+    const shiur = corpus.shiur("yi-parshas-hashavua-brshys-01");
+    expect(shiur.series).toBeNull();
+    const html = await renderPage("yi", shiur);
+    const nav = /<nav class="prev-next"[\s\S]*?<\/nav>/.exec(html)![0];
+    expect(nav).toContain('data-of="section"');
+    const n = corpus.neighbours[shiur.id]!.section;
+    expect(nav).toContain(`href="/yi/section/${shiur.catalog.sectionId}/"`);
+    if (n.next) expect(nav).toContain(`href="/yi/shiur/${n.next}/" rel="next"`);
   });
 
   it("shows the Hebrew edition its translation, and the Yiddish (marked as Yiddish) where there is none", async () => {
     const translated = corpus.shiur(TRANSLATED);
-    expect(translated.notes!.writeup.he?.length).toBeGreaterThan(0);
     const he = await renderPage("he", translated);
-    const firstHe = translated.notes!.writeup.he![0]!.paragraphs[0]!.text;
-    expect(he).toContain(`<p> ${escape(firstHe)}`);
-    expect(he).not.toMatch(/<p lang="yi"/);
+    expect(translated.notes!.summary.abstract.he).toBeTruthy();
+    expect(he).toContain(`<p class="abstract">${escape(translated.notes!.summary.abstract.he!)}</p>`);
 
     const other = corpus.shiur("yi-parshas-hashavua-brshys-01");
-    expect(other.notes!.writeup.he).toBeUndefined();
+    expect(other.notes!.summary.abstract.he).toBeUndefined();
     const fallback = await renderPage("he", other);
-    const firstYi = other.notes!.writeup.yi[0]!.paragraphs[0]!.text;
-    expect(fallback).toContain(`<p lang="yi" dir="rtl"> ${escape(firstYi)}`);
+    expect(fallback).toContain(`<p class="abstract" lang="yi" dir="rtl">${escape(other.notes!.summary.abstract.yi)}</p>`);
     // the Hebrew edition's own UI around it
     expect(fallback).toContain('<html lang="he" dir="rtl">');
-    expect(fallback).toContain("סדר השיעור");
-  });
-
-  it("renders nothing in the reserved transcript slot", async () => {
-    const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
-    const html = await container.renderToString(TranscriptSlot, { props: { recordings: shiur.recordings } });
-    expect(html.trim()).toBe("");
+    expect(fallback).toContain("על השיעור");
   });
 });

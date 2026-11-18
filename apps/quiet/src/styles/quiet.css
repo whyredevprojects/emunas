@@ -314,6 +314,16 @@
     color: var(--color-ink);
   }
 
+  /* A long last crumb (a shiur title) is cut short on screen only; the whole text stays in the DOM. */
+  .breadcrumb li:last-child bdi {
+    display: inline-block;
+    max-inline-size: min(32ch, 60vw);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: bottom;
+  }
+
   main {
     flex: 1 0 auto;
     padding-block: var(--space-xl) var(--space-3xl);

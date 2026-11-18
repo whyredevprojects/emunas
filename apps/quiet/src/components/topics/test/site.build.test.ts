@@ -134,13 +134,13 @@ describe("topic pages", () => {
     const index = readJson<CorpusIndex>(join(corpus, "index.json"));
     const status = new Map(index.shiurim.map((r) => [r.id, r.status]));
     const visible = new Set(readdirSync(join(corpus, "layer", "shiur")).map((f) => f.replace(/\.json$/, "")));
-    const kinds = new Map<string, Map<number, string>>();
-    const kindOf = (id: string, idx: number): string | undefined => {
-      let m = kinds.get(id);
+    const chapters = new Map<string, Map<number, { kind: string; t: number }>>();
+    const chapterOf = (id: string, idx: number): { kind: string; t: number } | undefined => {
+      let m = chapters.get(id);
       if (!m) {
         const s = readJson<PublicShiur>(join(corpus, "shiurim", `${id}.json`));
-        m = new Map((s.notes?.chapters ?? []).map((c) => [c.idx, c.kind]));
-        kinds.set(id, m);
+        m = new Map((s.notes?.chapters ?? []).map((c) => [c.idx, { kind: c.kind, t: c.t }]));
+        chapters.set(id, m);
       }
       return m.get(idx);
     };
@@ -149,17 +149,20 @@ describe("topic pages", () => {
       for (const dir of dirs(`${ed}/inyanim`)) {
         for (const path of [`${ed}/inyanim/${dir}`, `${ed}/inyanim/${dir}/all`]) {
           if (!exists(path)) continue;
-          for (const href of hrefsIn(mainOf(page(path)))) {
-            const m = /^\/(en|yi|he)\/shiur\/([^/]+)\/(?:#s(\d+))?$/.exec(href);
+          const html = mainOf(page(path));
+          for (const href of hrefsIn(html)) {
+            const m = /^\/(en|yi|he)\/shiur\/([^/]+)\/(?:#t=[\d.]+)?$/.exec(href);
             if (!m) continue;
             expect(visible.has(m[2]!), `${path} → ${href}`).toBe(true);
             expect(status.get(m[2]!), `${path} → ${href}`).toBe("full");
-            if (m[3] !== undefined) {
-              sections++;
-              const kind = kindOf(m[2]!, Number(m[3]));
-              expect(kind, `${path} → ${href}`).toBeDefined();
-              expect(kind, `${path} → ${href}`).not.toBe("other_speaker");
-            }
+          }
+          // a part link points at the start of its section, which is never another speaker's
+          for (const [, id, t, idx] of html.matchAll(/<a class="part-link" href="\/(?:en|yi|he)\/shiur\/([^/]+)\/#t=([\d.]+)" data-section="(\d+)"/g)) {
+            sections++;
+            const ch = chapterOf(id!, Number(idx));
+            expect(ch, `${path} → ${id} s${idx}`).toBeDefined();
+            expect(ch!.kind, `${path} → ${id} s${idx}`).not.toBe("other_speaker");
+            expect(Number(t), `${path} → ${id} s${idx}`).toBeCloseTo(ch!.t, 2);
           }
         }
       }
@@ -264,7 +267,6 @@ describe("the calendar cross-line", () => {
           expect(m, `${ed} ${kind}:${o.key}`).not.toBeNull();
           expect({ topic: m![1], count: Number(m![2]) }, `${ed} ${kind}:${o.key}`).toEqual(want);
           expect(hrefsIn(html), `${ed} ${kind}:${o.key}`).toContain(`/${ed}/inyanim/${want.topic}/`);
-          expect(html.match(/class="calendar-rule"/g) ?? [], `${ed} ${kind}:${o.key}`).toHaveLength(1);
         }
       }
     }
@@ -287,7 +289,6 @@ describe("the calendar cross-line", () => {
         expect(m[2] !== undefined, `${t.id} ${m[1]}`).toBe(on);
         if (on) marked++;
       }
-      expect(html.match(/class="calendar-rule"/g)?.length ?? 0, t.id).toBeLessThanOrEqual(1);
     }
     expect(marked).toBeGreaterThan(0);
   });

@@ -23,11 +23,6 @@ export const corpusEn = {
   "indexes.calendar.zman": "by zman",
   "indexes.years": "Years",
   "indexes.years.note": "the year each shiur was given, where it is known",
-  "count.topics": { one: "{count} topic", other: "{count} topics" },
-  "count.entries": { one: "{count} entry", other: "{count} entries" },
-  "count.names": { one: "{count} name", other: "{count} names" },
-  "count.works": { one: "{count} sefer", other: "{count} seforim" },
-  "count.stories": { one: "{count} story", other: "{count} stories" },
 
   // ---- entry head
   "entry.seeAlso": "See also",
@@ -50,11 +45,6 @@ export const corpusYi: MessageTable<CorpusKey> = {
   "indexes.calendar.zman": "לויט די זמנים",
   "indexes.years": "שנים",
   "indexes.years.note": "דאס יאר ווען יעדער שיעור איז געזאגט געווארן, וואו מען ווייסט",
-  "count.topics": { one: "{count} ענין", other: "{count} ענינים" },
-  "count.entries": { one: "{count} ערך", other: "{count} ערכים" },
-  "count.names": { one: "{count} נאמען", other: "{count} נעמען" },
-  "count.works": { one: "{count} ספר", other: "{count} ספרים" },
-  "count.stories": { one: "{count} מעשה", other: "{count} מעשיות" },
 
   "entry.seeAlso": "ראה גם",
 
@@ -73,11 +63,6 @@ export const corpusHe: MessageTable<CorpusKey> = {
   "indexes.calendar.zman": "לפי הזמנים",
   "indexes.years": "שנים",
   "indexes.years.note": "השנה שבה נאמר כל שיעור, היכן שהיא ידועה",
-  "count.topics": { one: "{count} נושא", other: "{count} נושאים" },
-  "count.entries": { one: "{count} ערך", other: "{count} ערכים" },
-  "count.names": { one: "{count} שם", other: "{count} שמות" },
-  "count.works": { one: "{count} ספר", other: "{count} ספרים" },
-  "count.stories": { one: "{count} מעשה", other: "{count} מעשיות" },
 
   "entry.seeAlso": "ראה גם",
 

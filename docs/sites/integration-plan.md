@@ -143,7 +143,7 @@ Edition/UI language is the first path segment on both sites (`yi` | `en`). Time 
 |---|---|---|
 | Home | `/{ed}/` | `/{ui}/` |
 | Shiur | `/{ed}/shiur/{shiurId}/` | `/{ui}/s/{shiurId}` |
-| Section i | `/{ed}/shiur/{id}/#s{i}` | `/{ui}/s/{id}?t={sectionStart}&m={id}~s{i}` |
+| Section i | `/{ed}/shiur/{id}/#t={sectionStart}` | `/{ui}/s/{id}?t={sectionStart}&m={id}~s{i}` |
 | Time t | `/{ed}/shiur/{id}/#t={t}` (player script seeks; without JS the page opens at the top) | `/{ui}/s/{id}?t={t}` |
 | Series | `/{ed}/series/{seriesId}/` | `/{ui}/series/{seriesId}` |
 | Parsha | `/{ed}/calendar/parsha/{parshaKey}/` | `/{ui}/o/{parshaKey}` |
@@ -159,7 +159,7 @@ Edition/UI language is the first path segment on both sites (`yi` | `en`). Time 
 
 Parsha and zman keys come from `@emunas/normalize`; they share one occasion namespace and are guaranteed disjoint by a test. Topics, concepts, people, works, stories and threads are addressed by their corpus id (corpus-wave-plan §3.5). Whether an entry has a page on a site is the corpus layer's page flag (`pageLookupFromLayer`); a Quiet entry without a page links to its index anchor (`/{ed}/people/#{id}`), a Live one has no link.
 
-Moving between sites: Quiet shiur page has "Open in the listening app" (`links.live.shiur(id, {t: currentTime})`; JS adds the live player time). Live listening room has "Printable page / catalog entry" (`links.quiet.shiur(id, {section})`). Live-only query params (`audio`, `read`, `lens`) are dropped when crossing.
+Moving between sites: Quiet shiur page has "Open in the listening app" (`links.live.shiur(id, {t: currentTime})`; JS adds the live player time). Live listening room has "In the Library" (`links.quiet.shiur(id)`). Live-only query params (`audio`, `read`, `lens`) are dropped when crossing.
 
 ### 2.3 SEO
 

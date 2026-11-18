@@ -2,15 +2,15 @@
 status: DRAFT
 approvedBy: null
 approvedAt: null
-note: "Hebrew draft for the owner, translated from the approved English and Yiddish texts. Not published: until it is approved, the Hebrew edition shows the Yiddish text. Needs a named Hebrew reviewer."
+note: "Hebrew draft for the owner, translated from the English and Yiddish revisions after the simplification of the site (2026-11-17). Not published: until it is approved, the Hebrew edition shows the Yiddish text. Needs a named Hebrew reviewer."
 ---
 
-ה[תוכן](/he/contents/) הולך לפי סדר [מדריך הכיס](guide:) משנת 2012: תחילה השיעורים באידיש, אחר כך השיעורים באנגלית, ולבסוף [ההקלטות שאינן רשומות
-במדריך](/he/contents/#uncatalogued).
+ב[תוכן](/he/contents/) השיעורים רשומים לפי מדורים: תחילה השיעורים באידיש, אחר כך השיעורים
+באנגלית, אחר כך [הקלטות נוספות](/he/contents/#more), ולבסוף השיעורים שנאמרו בסדרה, לפי הסדר.
 
-לכל שיעור יש דף משלו. בראשו השיעור כפי שהוא רשום בקטלוג, עם ההקלטה להאזנה או להורדה. מתחת
-לקו באות ה[רשימות](#notes): תקציר, סדר השיעור עם הזמנים, השיעור בכתב, מראי המקומות, והמעשיות,
-הקושיות והנקודות. כל זמן בדף הוא קישור שמשמיע את ההקלטה מאותו מקום.
+לכל שיעור יש דף משלו, עם ההקלטה להאזנה או להורדה, תיאור קצר של מה שהשיעור עוסק בו, והנושאים
+שלו. התיאור והנושאים הם [רשימות](#notes) שנכתבו על ידי AI, והדף אומר זאת. קישורים מובילים לשיעור
+שלפניו ולשיעור שאחריו.
 
 ב[לוח](/he/calendar/) נמצאים השיעורים לפי [פרשה](/he/calendar/parsha/), לפי [זמן](/he/calendar/zman/) ולפי [שנה](/he/years/). ה[מפתחות](/he/#indexes) שבסוף מראים את
 [מראי המקומות](/he/sources/), את [המעשיות](/he/stories/), את [האישים](/he/people/) ואת [הענינים](/he/inyanim/), כל אחד עם השיעורים והזמן שבו הוא

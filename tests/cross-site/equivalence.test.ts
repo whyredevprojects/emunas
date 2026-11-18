@@ -6,9 +6,9 @@
  *    `links.equivalent` maps each to the other. Every cross-site link in both outputs resolves
  *    (`scanCrossLinks`), and planted broken links are caught.
  * 2. Browser (Chrome via playwright-core; both test hosts routed to the build outputs): each pair of
- *    equivalent pages shows the same thing (same catalog title, same section heading, same time,
+ *    equivalent pages shows the same thing (same catalog title, same chapter start, same time,
  *    same series, and the same shiurim for occasions, works, people and concepts); "Open in the
- *    listening app" and "Printable page" land on the matching page of the other site.
+ *    listening app" and "In the Library" land on the matching page of the other site.
  */
 import { existsSync, readFileSync, statSync } from "node:fs";
 import { extname, join } from "node:path";
@@ -136,7 +136,7 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
     return [
       ["home", links.quiet.home(ed), links.live.home(ed)],
       ["shiur", links.quiet.shiur(ed, s.shiur.id), links.live.shiur(ed, s.shiur.id)],
-      ["section", links.quiet.shiur(ed, s.shiur.id, { section: ch.idx }), links.live.shiur(ed, s.shiur.id, { t: ch.t, m: `${s.shiur.id}~s${ch.idx}` })],
+      ["section", links.quiet.shiur(ed, s.shiur.id, { t: ch.t }), links.live.shiur(ed, s.shiur.id, { t: ch.t, m: `${s.shiur.id}~s${ch.idx}` })],
       ["time", links.quiet.shiur(ed, s.shiur.id, { t }), links.live.shiur(ed, s.shiur.id, { t })],
       ["series", links.quiet.series(ed, s.series.id), links.live.series(ed, s.series.id)],
       ["parsha", links.quiet.parsha(ed, s.parsha.key), links.live.occasion(ed, s.parsha.key)],
@@ -165,7 +165,7 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
         const toQuiet = links.equivalent(l);
         expect(toLive, `${ed} ${label}`).not.toBeNull();
         expect(toQuiet, `${ed} ${label}`).not.toBeNull();
-        // Paths must match exactly; the section row maps #s{i} to ?m= with or without t.
+        // Paths must match exactly; the section row is Quiet's #t={chapter start}, Live's ?t= plus ?m=.
         expect(new URL(toLive!).pathname, `${ed} ${label} quiet→live`).toBe(new URL(l).pathname);
         expect(new URL(toQuiet!).pathname, `${ed} ${label} live→quiet`).toBe(new URL(q).pathname);
         if (label === "time") {
@@ -174,7 +174,7 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
         }
         if (label === "section") {
           expect(new URL(toQuiet!).hash, `${ed} section live→quiet`).toBe(new URL(q).hash);
-          expect(new URL(toLive!).searchParams.get("m")).toBe(new URL(l).searchParams.get("m"));
+          expect(new URL(toLive!).searchParams.get("t")).toBe(new URL(l).searchParams.get("t"));
         }
         expect(checkLiveUrl(paths.liveClient, toLive!), `${ed} ${label}`).toBeNull();
         expect(checkQuietUrl(paths.quietDist, toQuiet!), `${ed} ${label}`).toBeNull();
@@ -200,14 +200,15 @@ describe.skipIf(missing !== null)("cross-site links (built outputs)", () => {
     for (const u of bad) expect(checkLiveUrl(paths.liveClient, u), u).not.toBeNull();
     const badQuiet = [
       `${QUIET}/en/shiur/no-such-shiur/`,
-      `${QUIET}/en/shiur/${s.shiur.id}/#s999`,
+      `${QUIET}/en/shiur/${s.shiur.id}/#no-such-anchor`,
       `${QUIET}/en/people/no-such-person/`,
       `${QUIET}/de/`,
     ];
     for (const u of badQuiet) expect(checkQuietUrl(paths.quietDist, u), u).not.toBeNull();
     // and the good twins pass
     expect(checkLiveUrl(paths.liveClient, `${LIVE}/en/s/${s.shiur.id}?t=12`)).toBeNull();
-    expect(checkQuietUrl(paths.quietDist, `${QUIET}/en/shiur/${s.shiur.id}/#s0`)).toBeNull();
+    expect(checkQuietUrl(paths.quietDist, `${QUIET}/en/shiur/${s.shiur.id}/#main`)).toBeNull();
+    expect(checkQuietUrl(paths.quietDist, `${QUIET}/en/shiur/${s.shiur.id}/#t=12`)).toBeNull();
   });
 });
 
@@ -363,19 +364,25 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
       await quiet.waitForURL(`${LIVE}/${ed}/s/${s.shiur.id}**`);
       await quiet.locator(`[data-room="${s.shiur.id}"]`).waitFor();
       expect(norm(await h1(quiet))).toContain(title);
-      // "Printable page" → back to the Quiet page
-      const printable = quiet.locator(`main a[href^="${QUIET}/${ed}/shiur/${s.shiur.id}/"]`).first();
-      await printable.click();
+      // "In the Library" → back to the Quiet page
+      const library = quiet.locator(`main a[href^="${QUIET}/${ed}/shiur/${s.shiur.id}/"]`).first();
+      await library.click();
       await quiet.waitForURL(`${QUIET}/${ed}/shiur/${s.shiur.id}/**`);
       expect(norm(await h1(quiet))).toContain(title);
       await quiet.close();
     });
 
-    it(`section: Quiet #s{i} and Live ?t&m= show the same chapter (${ed})`, async () => {
+    it(`section: Quiet #t={chapter start} and Live ?t&m= start at the same chapter (${ed})`, async () => {
       const ch = s.shiur.notes.chapters[2]!;
-      const quiet = await open(links.quiet.shiur(ed, s.shiur.id, { section: ch.idx }));
-      const qHeading = norm(await quiet.locator(`[id="s${ch.idx}"]`).innerText());
-      expect(qHeading).toContain(norm(pickText(ch.title, ed).text));
+      const quiet = await open(links.quiet.shiur(ed, s.shiur.id, { t: ch.t }));
+      await quiet.waitForFunction(
+        (want) => {
+          const a = document.querySelector<HTMLAudioElement>("audio.listen-audio") ?? document.querySelector("audio");
+          return a !== null && a.readyState >= 1 && Math.abs(Number(a.dataset["offset"] ?? 0) + a.currentTime - want) <= 1;
+        },
+        ch.t,
+        { timeout: 15_000 },
+      );
       await quiet.close();
       const live = await open(links.live.shiur(ed, s.shiur.id, { t: ch.t, m: `${s.shiur.id}~s${ch.idx}` }));
       const active = live.locator(`[data-chapter="${ch.idx}"]`).first();
@@ -398,8 +405,6 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
         t,
         { timeout: 15_000 },
       );
-      // the margin mark sits on the chapter that holds t
-      expect(await quiet.locator(`[id="s${ch.idx}"] a.time[aria-current="time"]`).count()).toBe(1);
       await quiet.close();
       const live = await open(links.live.shiur(ed, s.shiur.id, { t }));
       const dock = live.locator("[data-dock-slot] [data-player-status]");

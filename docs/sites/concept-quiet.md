@@ -20,7 +20,7 @@ Design decisions below lean on these facts, so they are stated once here.
 | Year known for 611 shiurim (5724–5780, densest 5749 and 5762–5773); unknown for all sets and simchos | `Shiur.hebrewYears` | A year index is real but partial; it must say so |
 | 518 shiurim have derived data; 479 pending | `data/derived/manifest.json` `entries[].status` | Pending is a normal page state, designed for, not an error |
 | What is done so far: parsha (195 of 199), zmanim (284 of 307), shonos (36 of 49), 3 English misc. **No set (Tanya, Emunah, Tefilah, …), no Current, no Simchos yet** | manifest × `Shiur.category` | Series pages launch as catalog-only and fill in later |
-| Per done shiur, on average: 10 sections, 30 sources, 6 insights, 4–5 questions, 3–4 takeaways, 2 stories; write-ups of roughly 900–1,700 words per language | `extraction.json`, `writeup.json`, manifest `validator.wordsEn/wordsYi` | The shiur page is a long reading page, not a card |
+| Per done shiur, on average: 10 sections, 30 sources, 6 insights, 4–5 questions, 3–4 takeaways, 2 stories; write-ups of roughly 900–1,700 words per language | `extraction.json`, `writeup.json`, manifest `validator.wordsEn/wordsYi` | Enough for a long reading page: the listening app shows it; the Library's shiur page stays short (§5.4) |
 | Sources: 15,525 mentions; a third `resolved` (with `sefariaRef`), a third `inferred`, a third `unresolved`; 1,687 have no `work` at all | `SourceMention.resolution`, `work`, `ref` | The sources index is the strongest AI-derived index, but needs honest grading |
 | People: 8,071 mentions, 1,285 distinct strings, with duplicates ("Dovid HaMelech" / "David HaMelech", "Ramban" / "the Ramban") | `Extraction.people[].name` | A people index needs a normalisation pass before it is trustworthy |
 | Topics: 5,021 `candidateTopics`, 3,873 distinct free-text phrases; the frozen taxonomy (P7/P8 in the plan) does not exist yet | `Extraction.candidateTopics` | No topic tree at launch. See §6.6 |
@@ -118,67 +118,34 @@ Gap: no series has derived data yet, and the plan's series synthesis (an overvie
 
 ### 5.4 The shiur page
 
-This is the page the whole site exists for. It is laid out like a page of a sefer with its apparatus: the main text in the centre, short references in the margin, sources at the foot. From top to bottom:
+This is the page the whole site exists for. It is kept short: what the shiur is, the recording, a few lines about it, and the way to the next one. The full notes (outline, write-up, sources, the apparatus) live in the listening app. From top to bottom:
+
+**Breadcrumb.** Contents › section › the shiur's title. The last crumb is always the title as catalogued (never "no. 5"), cut short with an ellipsis on screen only, so the whole title stays in the page for screen readers and in either direction.
 
 **1. Catalog header (the human voice).**
-- Title exactly as catalogued (`titleOriginal`), in its original script and mixture of languages. In the English edition, a Yiddish/Hebrew title stays in Hebrew letters and the one-liner beneath serves as the gloss; titles are not machine-translated.
-- A citation line in the manner of a library card: section, number, guide page, parsha or zman, year, spoken language, length. For example: "פרשת השבוע · נח · no. 5 · Pocket Guide p. 3 · תשמ"ג (1982–83) · Yiddish · 1 hr 19 min". Fields: `sectionTitle`, `parsha`, `n`, `page`, `hebrewYears`, `lang`, duration.
+- Title exactly as catalogued (`titleOriginal`), in its original script and mixture of languages. In the English edition, a Yiddish/Hebrew title stays in Hebrew letters; titles are not machine-translated.
+- One meta line: parsha or zman, perek (labelled "Perek ב" / "פרק ב" when it is a number), year, spoken language, length. For example: "בראשית · תשל"ז (1976–77) · Yiddish · 56 min". Fields: `parsha`/`zman`, `perek`, `hebrewYears`, `lang`, duration. The section is in the breadcrumb, so it is not repeated; the catalog number and the Pocket Guide page are not shown.
 - Any `pathNotes` ("imperfect sound quality", "for children") as a plain note.
 
-**2. Listen.**
+**2. Listen**, directly under the meta line.
 - A standard audio control and a download link for the file. With several recordings (`recordingIds`, 39 shiurim have more than one, one has 21) the tracks are listed in order, each with its own control.
-- The control sits at the top of the page and, with script, stays docked while reading. Without script it is the browser's own player and still works.
+- With script the playing control stays docked while reading, and `#t=<seconds>` in the address seeks there: the topic, story and index pages link a place in a shiur this way. Without script it is the browser's own player and still works.
+- "Open in the listening app": the same shiur in Live.
 
 **3. About this shiur (notes begin here, under a visible rule and label).**
+- A one-line standing label for the notes area: "Notes prepared by AI from the recording; not reviewed. The recording is the source." It links to the About page.
 - `summary.oneLiner`, then `summary.abstract`, in the edition's language.
-- A one-line standing label for the whole notes area: "Notes prepared by AI from the recording; not reviewed. The recording is the source." It links to the About page. It appears once per page, not on every item.
+- One line of ענינים: the shiur's main topics (salience ≥ 0.6, at most five), each linked to its topic page.
 
-**4. Order of the shiur (סדר השיעור).**
-- The table of contents from `sections[]`: start time, `title`, and the 1–3 sentence `summary`. Subsections indented where they exist.
-- Each time is a link. With script it moves the docked player; without script it opens the audio file at that second (browsers honour a time fragment on a media address), so the feature degrades to "opens the recording at 12:34".
-- `kind` shapes the list quietly: `story` sections get a small "מעשה" mark; `singing`, `other_speaker`, `noise` and `brachah` are listed in a lighter weight so a listener knows what the gap is and can skip it; they have no summary.
-- Sections the catalog title anticipated (`catalogTopicIdx`) are marked as "listed in the guide", which ties the AI's outline back to the human one.
+**4. Previous and next.** One line: `← previous title · series or section · next title →`. When the shiur is in a series the line follows the series order (a series can run past the end of its catalog section); otherwise it follows the section. The first and last shiur have one side only. Catalog fields only: the site does not show AI-invented "related shiurim".
 
-**5. The write-up (the main text).**
-- `writeup.<lang>` in full, in section order, with `heading` per block. This is the stand-in for the transcript the site does not show, and it gets the best typography on the site: a single measured column, generous leading, proper Hebrew and Yiddish type.
-- In the margin beside each paragraph, its time (from the first of `paragraph.evidence.segs` via `meta.starts`), as a link like the ones in the outline. This is the one moving part: with script, the paragraph currently being heard gets a quiet margin mark. No auto-scroll, no highlight sweeping the page.
-- Source citations inside a paragraph (`sourceIdx`) appear as small superscript letters pointing to the list at the foot, as footnotes do in a printed sefer.
-- The write-up is in reported speech by construction ("The Mashgiach explains…", "דער משגיח זאגט…"); the design keeps it that way by never using quotation styling, pull quotes or drop-quotes anywhere on the site.
-
-**6. Sources (מראי מקומות).**
-- `sources[]`, grouped by kind of work (Tanach, Chazal, Rishonim, sifrei Chassidus and so on) and listed with `ref`, each linking to the place in the shiur where it comes up and to its page in the sources index.
-- Grading, shown by wording rather than colour:
-  - `resolved`: the reference, with a link out to the text (`sefariaRef`).
-  - `inferred`: the reference preceded by "apparently" / "לכאורה", no link out.
-  - `unresolved` with a `work`: "Zohar (place not identified)".
-  - `unresolved` with no `work` (1,687 mentions): omitted.
-- `mention` (`quoted` / `paraphrased` / `alluded`) is not displayed; it is too fine a claim to stand behind with this ASR. It may order the list (quoted first).
-- `heardAs` is never displayed.
-
-**7. The apparatus that follows the text**, each a short titled list, each item with its time link, each omitted entirely when empty (empty lists are valid in the data):
-- **Key points** (`summary.keyPoints`, 3–7).
-- **Questions and answers** (`questions[]`, up to 6): the kushya, then the teretz, set as a pair.
-- **Stories** (`stories[]`): `title` and `retelling`, with the people named.
-- **Insights** (`insights[]`, 3–7).
-- **Takeaways** (`takeaways[]`, up to 5), headed in a way that makes clear these are things the Mashgiach said, not the site's advice.
-
-On a long page this is a lot. The order above is deliberate: the page front-loads what helps someone decide to listen (abstract, outline), then gives the full reading text, then the reference lists. A short jump list under the header names these parts.
-
-**8. Mentioned in this shiur.** A compact line of links into the indexes: people (`people[].name`), concepts (`concepts[].he`). No tag cloud; a comma-separated line.
-
-**9. Place in the catalog.** Previous and next in the section or series; "also on פרשת נח" (other shiurim with the same `parsha` or `zman`, both languages, with years). These neighbours come from catalog fields only. The site does not show AI-invented "related shiurim" (the plan cut those; teaching clusters do not exist yet).
-
-**10. Report an error.** A plain mail link that pre-fills the shiur id. For an unreviewed corpus this is the review process.
+**5. Report an error.** A plain mail link that pre-fills the shiur id. For an unreviewed corpus this is the review process.
 
 Hidden by default everywhere on this page: any item whose `confidence` is below 0.6 (the plan's own rule).
 
 #### The shiur page when notes are pending
 
-Parts 1, 2 and 9 render as usual: title, citation, audio, neighbours. In place of parts 3–8 there is one sentence: "Notes for this shiur have not been prepared yet." Nothing else changes, there is no placeholder skeleton, and the page is complete as a catalog entry with a recording. When the data lands and the site rebuilds, the page gains its notes at the same address.
-
-#### The reserved transcript slot
-
-Between the outline and the write-up there is a designed but switched-off place for "Follow the text", a view of the recording's words. It is gated per recording by an eligibility flag that the site owns (see §9) and that is false for every recording today. When off, nothing is rendered and nothing about a transcript is mentioned.
+Parts 1, 2, 4 and 5 render as usual. In place of part 3 there is one sentence: "Notes for this shiur have not been prepared yet." There is no placeholder skeleton, and the page is complete as a catalog entry with a recording. When the data lands and the site rebuilds, the page gains its notes at the same address.
 
 ### 5.5 Calendar index (לוח)
 
@@ -234,11 +201,11 @@ Three short sections: the Mashgiach and the collection (written by a person, to 
 
 ## 6. Listening and discovery flows
 
-**"Something for this Shabbos."** Title page → this week's parsha → a dated list of 6–16 shiurim in both languages → read a one-liner or two → shiur page → press play, or print the write-up before Shabbos.
+**"Something for this Shabbos."** Title page → this week's parsha → a dated list of 6–16 shiurim in both languages → read a one-liner or two → shiur page → press play.
 
-**"I have forty minutes and want the point of it."** Shiur page → abstract → outline → jump to the section that matters → the margin times in the write-up let reading and listening trade places at any paragraph.
+**"I have forty minutes and want the point of it."** Shiur page → abstract → open it in the listening app for the outline and the write-up.
 
-**"I don't understand Yiddish well."** English edition → any Yiddish shiur → English abstract, outline and full write-up beside the Yiddish audio. This is the main bridge between the two audiences and it works in the other direction too. The spoken language is always stated in the citation line so nobody is surprised by the audio.
+**"I don't understand Yiddish well."** English edition → any Yiddish shiur → English abstract beside the Yiddish audio. This is the main bridge between the two audiences and it works in the other direction too. The spoken language is always stated in the citation line so nobody is surprised by the audio.
 
 **"Learning Tanya with the shiurim."** Series page → perek → part → previous/next. A plain link list; the browser's visited-link colour is the only progress tracking, and it is enough.
 
@@ -246,7 +213,7 @@ Three short sections: the Mashgiach and the collection (written by a person, to 
 
 **"That story about the Slonimer chassid and the meat."** Stories index (under Slonim or by title), or search.
 
-**Printing.** Every shiur page prints as a clean kuntres: catalog header, abstract, outline, write-up with footnoted sources, apparatus. No player, no navigation. For an audience that will often want this on paper for Shabbos or for a chavrusa, print is a first-class output of the design, not an afterthought.
+**Printing.** A shiur page prints as a short catalog card: header, abstract and topics. No player, no navigation.
 
 ## 7. Search
 
@@ -284,7 +251,7 @@ What is treated as transcript and never shipped to a browser, in any file, index
 
 The site build reads only: `ingest.json` (shiurim, recordings, series), the manifest, and from each shiur directory `meta.json` (for segment times and `noise` marks, which contain no text), `extraction.json` and `writeup.json` with the fields above stripped. Because times come from `meta.json`, the build has no reason to open a transcript file at all, which makes the rule easy to check: the public output is produced from an allow-list of fields, not by removing a deny-list.
 
-The future door: each recording gets a site-owned eligibility setting, default "not eligible", keyed to the transcript's identity (`model`, `mode`, `transcribedAt` in the transcript file; `config/asr-policy.json` already distinguishes transcription runs the same way). If a better transcription is made and approved for a recording, flipping that setting turns on the reserved "Follow the text" slot on its shiur page (§5.4), and only then does the build read that recording's segments. Approval is per recording and by a person; a new model name alone does not flip it. The same setting would later decide whether that recording's text may enter the search index.
+The future door: each recording gets a site-owned eligibility setting, default "not eligible", keyed to the transcript's identity (`model`, `mode`, `transcribedAt` in the transcript file; `config/asr-policy.json` already distinguishes transcription runs the same way). If a better transcription is made and approved for a recording, flipping that setting lets the listening app show its text, and only then does the build read that recording's segments. Approval is per recording and by a person; a new model name alone does not flip it. The same setting would later decide whether that recording's text may enter the search index.
 
 ## 10. Growing while the data arrives
 

@@ -17,7 +17,7 @@
  *  2. One **shiur record** per SearchDoc: `url` is the edition-less `shiur/<id>/` (the page prefixes
  *     `/<ed>/`); `content` is search-core's folded `docSearchText`: the text fields, then the topic
  *     keywords (`SearchDoc.keywords`: the shiur's topic labels and topic aliases), in every language
- *     the doc has (one index serves every edition); `meta` is titleOriginal, citation, n, one
+ *     the doc has (one index serves every edition); `meta` is titleOriginal, occasion, year, one
  *     one-liner per interface language that has one (`oneLinerEn`, `oneLinerYi`, `oneLinerHe`: the
  *     page picks along `CONTENT_FALLBACK`), lang, status; `filters` are type (`shiur`), lang,
  *     category, status.
@@ -59,7 +59,7 @@ import {
 } from "@emunas/corpus-guard";
 import { formatQuiet, type LinkData } from "@emunas/links";
 import { fold } from "@emunas/normalize";
-import { UI_LANGS, byUiLang, type UiLang } from "@emunas/i18n";
+import { UI_LANGS, byUiLang, formatHebrewYears, type UiLang } from "@emunas/i18n";
 import { ENTITY_DOC_KINDS, docSearchText, type EntityDoc, type EntityDocKind, type EntityDocLabels, type SearchDoc } from "@emunas/search-core";
 import { writeSearchOutputs } from "@emunas/search-core/build";
 import { LABEL_KEYS, ONE_LINER_KEYS, labelKey, oneLinerKey } from "../src/lib/search-meta.ts";
@@ -70,7 +70,7 @@ import { LABEL_KEYS, ONE_LINER_KEYS, labelKey, oneLinerKey } from "../src/lib/se
 export const RECORD_LANGUAGE = "unknown";
 
 /** Exactly these meta keys may appear on a shiur record (results render from them, no excerpts). */
-export const RECORD_META_FIELDS = ["titleOriginal", "citation", "n", ...ONE_LINER_KEYS, "lang", "status"] as const;
+export const RECORD_META_FIELDS = ["titleOriginal", "occasion", "year", ...ONE_LINER_KEYS, "lang", "status"] as const;
 export type RecordMetaField = (typeof RECORD_META_FIELDS)[number];
 
 /** Exactly these filter keys may appear on a shiur record. */
@@ -110,7 +110,7 @@ export interface QuietEntityRecord {
 }
 
 /** Catalog citation fields for the meta line (from `.corpus/index.json`, public catalog data). */
-export type CitationRow = Pick<IndexRow, "id"> & { catalog: Pick<IndexRow["catalog"], "sectionTitle" | "n"> };
+export type CitationRow = Pick<IndexRow, "id" | "parsha" | "zman" | "years">;
 
 /** Edition-less record URL of a shiur; the search page prefixes `/<ed>/`. */
 export function recordUrl(id: string): string {
@@ -119,8 +119,8 @@ export function recordUrl(id: string): string {
 
 /**
  * One Pagefind record from one SearchDoc. Text comes only from search-core's `docSearchText`
- * (allow-listed SearchDoc fields, folded); the display meta copies the doc's title and one-liner and
- * the catalog section title/number.
+ * (allow-listed SearchDoc fields, folded); the display meta copies the doc's title and one-liner,
+ * and the parsha or zman as catalogued and the Hebrew year (the same text in both editions).
  */
 export function buildRecord(doc: SearchDoc, citation: CitationRow | undefined): QuietSearchRecord {
   const text = docSearchText(doc);
@@ -129,10 +129,9 @@ export function buildRecord(doc: SearchDoc, citation: CitationRow | undefined): 
     lang: doc.lang,
     status: doc.status,
   };
-  const sectionTitle = citation?.catalog.sectionTitle.trim() ?? "";
-  if (sectionTitle !== "") meta.citation = sectionTitle;
-  const n = citation?.catalog.n?.trim() ?? "";
-  if (n !== "") meta.n = n;
+  const occasion = (citation?.parsha?.raw ?? citation?.zman?.raw ?? "").trim();
+  if (occasion !== "" && occasion !== doc.titleOriginal.trim()) meta.occasion = occasion;
+  if (citation && citation.years.length > 0) meta.year = formatHebrewYears(citation.years, "en", { civil: false });
   if (doc.oneLiner !== null) {
     for (const lang of UI_LANGS) {
       const text = doc.oneLiner[lang];
