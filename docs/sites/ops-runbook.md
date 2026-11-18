@@ -14,7 +14,7 @@ host is derived from it (`@emunas/links` `productionHosts`), so the move is a co
 
 Nothing here has been run against a real account yet. The configs are validated with
 `wrangler deploy --dry-run` and the workflows with `actionlint`; the first real deploy is part
-of W6.1 and follows the checklist in §11. Every GitHub variable and secret is listed in §4.
+of W6.1 and follows the checklist in §12. Every GitHub variable and secret is listed in §4.
 
 ## 1. What runs where
 
@@ -192,7 +192,7 @@ Cutover to a new domain `<new>` (e.g. `emunas.com`), all config, no code:
 4. R2 → `emunas` → Custom Domains: add `media.<new>`. Add `https://library.<new>` and
    `https://listen.<new>` to the bucket CORS rule (§3 Audio).
 5. Turnstile widget: add `listen.<new>`. Access application: add `listen.<new>/admin/*`.
-6. Deploy production (§5). The deploy attaches the Custom Domains; check each host (§11
+6. Deploy production (§5). The deploy attaches the Custom Domains; check each host (§12
    production smoke).
 7. Keep the old hosts attached until the new ones are verified, then remove their routes. Once the
    old routes are gone, remove `media.<old>` from `emunas` and the old origins from CORS.
@@ -509,7 +509,56 @@ ffprobe (within 1 s), upload as `audio/mpeg`, then add the original key to
 `site-policy/audio-transcoded.json`. Commit that file by PR; the next corpus:build links the MP3
 (`playable: true`) for the listed keys only. Keys under `transcripts/` are never touched.
 
-## 11. First deploy checklist
+## 11. AI-improved audio: checking the copies and recording a rejection
+
+Every playable recording is linked with a second URL, `cleanedUrl`, pointing at its AI-improved
+copy at `fixed/sidon/<served key>` in the `emunas` bucket (the served key is the linked `.mp3`, so
+the transcode for the three `.WMA` recordings). The build does not look in R2: it assumes the copy
+exists unless the served key is listed in `site-policy/audio-cleaned.json` `rejected`. Design and
+owner decisions: `docs/sites/cleaned-audio-ux.md`. Downloads always use the original.
+
+**Before merging anything that relies on the copies** (and after the improved copies are
+re-generated), run from the repo root, with the R2 credentials in `.env` as for `transcode:wma`:
+
+```sh
+npm run cleaned:verify --workspace=@emunas/audio                         # listing only
+npm run cleaned:verify --workspace=@emunas/audio -- --verify-duration    # also download + ffprobe each copy
+```
+
+It reads `data/derived/ingest.json` (read-only) and `site-policy/audio-{transcoded,cleaned}.json`,
+lists `fixed/sidon/`, and prints:
+
+| Line | Meaning | Fails the run |
+|---|---|---|
+| `MISSING <key>` | An in-scope recording, not rejected, has no copy. The site would link a 404 (players fall back to the original once, but fix it). | yes |
+| `EMPTY <key>` | The copy is a 0-byte object. | yes |
+| `BAD <key>: …` | `--verify-duration` only: not `audio/mpeg`, unreadable, or the duration differs from the original by more than 0.5 s (chapter times would drift). | yes |
+| `stray <key>` | An object under the prefix that matches no recording (a typo'd key, an old upload). | no |
+| `rejected <key> (…)` | A listed rejection; the site does not link it whether or not the object exists. | no |
+
+Credentials are never printed. `--verify-duration` downloads every copy (and the original when
+the ingest has no duration), so it is slow; run it once per regeneration, not on every PR.
+
+**Recording a rejection.** When a listener's report or a review finds that a copy changed how a word
+sounds (or is otherwise wrong), the whole recording is rejected; there are no partial rejections.
+Add an entry by PR:
+
+```json
+{
+  "policyVersion": 1,
+  "rejected": [
+    { "key": "<served key, exactly as in the bucket, without fixed/sidon/>", "reason": "a word changed at 12:40", "reviewedBy": "<name>", "reviewedAt": "YYYY-MM-DD" }
+  ]
+}
+```
+
+The next corpus:build emits `cleanedUrl: null` for that recording (and its duplicates), so both
+sites play only the original and show no version line. The build fails on a key that is not the
+served `.mp3` key of a known recording, on a key listed twice, and on an empty `reason` or
+`reviewedBy`. The key is a bucket key: it stays in `site-policy/` and never reaches public output.
+To lift a rejection after the copy is regenerated, remove the entry and re-run `cleaned:verify`.
+
+## 12. First deploy checklist
 
 In order; each step names where it is described. Staging first, then production.
 

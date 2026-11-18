@@ -1,8 +1,41 @@
 # Cleaned-up audio: UX design (Quiet and Live)
 
-Status: design, nothing built. Date: 2026-11-18.
+Status: design, owner decisions taken (below); shared layer built (`packages/audio`,
+`packages/corpus`, `packages/i18n`, `site-policy/audio-cleaned.json`). Date: 2026-11-18.
 Scope: both sites. "Library" is **Quiet** (`apps/quiet`, the catalog as a sefer, works without
 JavaScript); "analyze" is **Live** (`apps/live`, the listening workspace with one app-wide player).
+
+## Decisions (owner, 2026-11-18)
+
+These override the rest of this document wherever they differ. The sections below are kept as the
+reasoning; read them through these decisions.
+
+1. **Wording: "improved", not "cleaned up".** English, state A: "Sound improved by AI · Switch to the
+   original". State B: "A version with the sound improved by AI is also available · Listen to it".
+   Announcements: "Now playing the version improved by AI." / "Now playing the original recording."
+   The About paragraph is wanted (reworded with "improved"). Yiddish keeps
+   "קלאנג אויסגעבעסערט דורך AI" and says **מקורית** for "the original" everywhere (not
+   אריגינאל / אריגינעלע): "הערט די מקורית", "יעצט שפילט די מקורית.", "טייל {part}: נאר די מקורית".
+   The strings live in `packages/i18n/src/vocab/audio-version.ts` (§5 keys, without the
+   `audioVersion.` prefix). Code identifiers keep the word `cleaned` (`cleanedUrl`, `"cleaned"`).
+2. **Every recording has an improved copy.** The branch does not merge until they all exist, so
+   there is no `cleaned` allow-list. `site-policy/audio-cleaned.json` is
+   `{ "policyVersion": 1, "rejected": [] }`, entries `{ key, reason, reviewedBy, reviewedAt }`.
+   Every playable recording gets `cleanedUrl` = media URL of `fixed/sidon/<served key>`, unless its
+   served key is in `rejected` (then `cleanedUrl: null`, state C). Duplicates follow their
+   canonical. A rejected key that is not the served `.mp3` key of a known recording, or is listed
+   twice, fails the build.
+3. **No sync script; a verification script instead.** `npm run cleaned:verify
+   --workspace=@emunas/audio [-- --verify-duration]` (`packages/audio/scripts/verify-cleaned.ts`)
+   lists `fixed/sidon/` in R2 and fails if any in-scope, non-rejected recording has no copy. It is a
+   pre-merge check, not part of the build (ops-runbook §11).
+4. **Downloads always use the original file**, on both sites, whatever version plays. `cleanedUrl`
+   is for playback only. (This replaces the "Downloads" rows of §6 and resolves open question 6.)
+   Live offline copies are downloads too, so they store the original.
+5. **Preference:** one global per-listener choice, `localStorage` key `emunas.audioVersion`
+   (`AUDIO_VERSION_KEY`), values `"cleaned" | "original"` (`AudioVersion`), default `"cleaned"`
+   (`parseAudioVersion`). Live also mirrors it into its personal store `prefs`, so export/transfer
+   carries it; the synchronous localStorage read stays the source for the first load.
 
 ## 1. Summary
 
@@ -405,11 +438,11 @@ cleaned objects to meet these conditions:
 Shared:
 
 - `packages/audio/src/{media.ts,table.ts,index.ts}`, plus tests in `packages/audio/test/`
-- `packages/audio/scripts/sync-cleaned.ts` (new), `packages/audio/package.json` (`cleaned:sync`)
+- `packages/audio/scripts/verify-cleaned.ts` (new), `packages/audio/package.json` (`cleaned:verify`); see Decision 3
 - `packages/corpus/src/build/{policy.ts,build.ts,project.ts}`, `packages/corpus/src/public/{types.ts,index.ts}`
 - `packages/i18n/src/vocab/audio-version.ts` (new), and export it from `packages/i18n/src/index.ts`
 - `site-policy/audio-cleaned.json` (new), `site-policy/README.md`
-- `docs/sites/copy-review.md` (new entry), `docs/sites/ops-runbook.md` (new section after §10: running `cleaned:sync` and reviewing a rejection)
+- `docs/sites/copy-review.md` (new entry), `docs/sites/ops-runbook.md` (§11: running `cleaned:verify` and recording a rejection)
 
 Quiet:
 
@@ -452,7 +485,23 @@ Live:
 
 `workers/api` needs no changes.
 
-## 9. Open questions
+## 9. Open questions (resolved)
+
+All resolved by the owner decisions at the top of this document:
+
+1. Wording: "improved" (Decision 1); Yiddish uses מקורית and keeps the Latin "AI". The Yiddish
+   still needs a named reviewer's sign-off (`docs/sites/copy-review.md` §7).
+2. Global preference: yes; the About paragraph: yes (Decisions 1 and 5).
+3. Live storage: localStorage, mirrored into the personal store's `prefs` (Decision 5).
+4. Offline switching in Live: moot, since offline copies are always the original (Decision 4).
+   Offline, the engine plays the stored original and the line shows state B.
+5. Narrow Live dock height: left to the Live implementation (fit check on 320 px in Yiddish).
+6. Downloads: always the original (Decision 4).
+7. Rejections: per recording only, recorded in `site-policy/audio-cleaned.json` `rejected`
+   (Decision 2).
+8. Rollout: no empty-list rollout; the branch merges once every copy exists (Decision 2).
+
+The original questions, for the record:
 
 1. **Wording sign-off.** Is "cleaned up" right, or would "Sound improved by AI" read better? The
    Yiddish needs a named reviewer (the "אריגינאל" / "אריגינעלע" spelling, and whether to keep the

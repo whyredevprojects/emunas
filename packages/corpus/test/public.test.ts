@@ -53,6 +53,11 @@ describe("public types", () => {
       `https://${string}` | `http://${string}`
     >();
     expectTypeOf<Extract<PublicRecording, { playable: false }>["audioUrl"]>().toEqualTypeOf<null>();
+    // The AI-improved copy: a media URL or null (rejected after review); always null when unplayable.
+    expectTypeOf<Extract<PublicRecording, { playable: true }>["cleanedUrl"]>().toEqualTypeOf<
+      `https://${string}` | `http://${string}` | null
+    >();
+    expectTypeOf<Extract<PublicRecording, { playable: false }>["cleanedUrl"]>().toEqualTypeOf<null>();
     expectTypeOf<Extract<keyof PublicRecording, "audio">>().toEqualTypeOf<never>();
   });
 });
