@@ -256,7 +256,7 @@ export const roomYi: MessageTable<RoomKey> = {
   "dock.unavailable": "די רעקארדירונג קען מען דא נישט שפילן.",
   "dock.error": "מ׳האט נישט געקענט שפילן די רעקארדירונג.",
   "dock.chapterNow": "יעצט: {title}",
-  "dock.versionFallback": "די ווערסיע אויסגעבעסערט דורך AI האט זיך נישט געלאדנט, דעריבער שפילט די מקורית.",
+  "dock.versionFallback": "די ווערסיע אויסגעבעסערט דורך AI האט זיך נישט געלאדט, דעריבער שפילט די מקורית.",
 };
 
 export type RoomT = TFunction<RoomKey>;

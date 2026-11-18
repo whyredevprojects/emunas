@@ -339,12 +339,38 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
     const name = (e as { name?: string } | null)?.name;
     // AbortError: a newer load/pause interrupted play(); not a failure.
     if (name === "AbortError") return;
+    // The improved copy could not load (play() rejects before or instead of the `error` event).
+    if (name === "NotSupportedError" && fallBackToOriginal(true)) {
+      commit();
+      return;
+    }
     if (name === "NotAllowedError") {
       wantPlaying = false;
       commit();
       return;
     }
     fail(e instanceof Error ? e.message : "play failed");
+  }
+
+  /**
+   * Rule 8: the improved file of the current recording failed (removed, offline, decode error): play
+   * its original from the same second, keeping play/pause and speed. The preference stays as it is.
+   * Returns false when the failing source was not an improved copy (a real error). `fromPlay`: a
+   * `play()` rejection, which the browser delivers after the `error` event of the same failure, so
+   * one that arrives once the swap to the original has happened is that same failure, already handled.
+   */
+  function fallBackToOriginal(fromPlay = false): boolean {
+    const rec = shiur?.recordings[recIndex];
+    if (!shiur || !rec?.cleanedUrl || !rec.audioUrl || rec.cleanedUrl === rec.audioUrl) return false;
+    if (currentSrc !== rec.cleanedUrl) return fromPlay && swapping && currentSrc === rec.audioUrl && fellBack.has(rec.id);
+    const t = currentT();
+    fellBack.add(rec.id);
+    askedCleaned.delete(rec.id);
+    if (switchPending) showFallback();
+    switchPending = false;
+    goTo(t);
+    updatePosition();
+    return true;
   }
 
   function fail(message: string): void {
@@ -554,23 +580,10 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
         }
         break;
       }
-      case "error": {
-        const rec = shiur.recordings[recIndex];
-        if (rec?.cleanedUrl && rec.audioUrl && currentSrc === rec.cleanedUrl && rec.cleanedUrl !== rec.audioUrl) {
-          // Rule 8: the improved file failed (removed, offline, decode error): play the original of
-          // this recording from the same second. The preference stays as it is.
-          const t = currentT();
-          fellBack.add(rec.id);
-          askedCleaned.delete(rec.id);
-          if (switchPending) showFallback();
-          switchPending = false;
-          goTo(t);
-          updatePosition();
-          break;
-        }
+      case "error":
+        if (fallBackToOriginal()) break;
         fail("media error");
         return;
-      }
     }
     commit();
   }

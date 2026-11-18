@@ -178,4 +178,15 @@ test("a downloaded shiur opens and plays with seeking offline", async ({ page, c
     expect(at, `after seeking to ${to}`).toBeLessThan(to + 5);
   }
   expect(media.hitsWhileOffline).toBe(0);
+
+  // Downloads store the original (cleaned-audio-ux Decision 4): offline it plays, and the line
+  // offers the improved copy. Asking for it cannot load offline: the stored original keeps playing
+  // and the dock says so briefly.
+  const line = page.locator("[data-room-version]");
+  await expect(line).toContainText("A version with the sound improved by AI is also available");
+  await line.getByRole("button", { name: "Listen to it" }).click();
+  await expect(page.locator("[data-dock-slot] [data-dock-notice]")).toHaveAttribute("data-dock-notice", "fallback", {
+    timeout: 10_000,
+  });
+  await expect(dock).toHaveAttribute("data-player-status", "playing", { timeout: 10_000 });
 });

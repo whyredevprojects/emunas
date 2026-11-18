@@ -752,4 +752,31 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
     clock.tick(9000);
     expect(engine.getState().versionFallback).toBe(false);
   });
+
+  it("a play() rejected with NotSupportedError on the improved file also falls back (no error state)", async () => {
+    const gone = "https://media.example.org/fixed/sidon/gone.mp3";
+    const shiur = withCleaned({
+      recordings: [
+        { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: gone },
+        { id: "b", offset: 100, duration: 60, audioUrl: B, cleanedUrl: CB },
+      ],
+    });
+    const { clock, audio, engine, events } = setup(shiur, { skip: { enabled: false } });
+    const realPlay = audio.play.bind(audio);
+    audio.play = () => {
+      const p = realPlay();
+      if (audio.src !== gone) return p;
+      const e = new Error("no supported sources");
+      e.name = "NotSupportedError";
+      return Promise.reject(e);
+    };
+    engine.load(shiur, { start: 20, autoplay: true });
+    await Promise.resolve();
+    await Promise.resolve();
+    clock.flush();
+    clock.flush();
+    expect(audio.src).toBe(A);
+    expect(events.error).toHaveLength(0);
+    expect(engine.getState()).toMatchObject({ status: "playing", playingVersion: "original" });
+  });
 });
