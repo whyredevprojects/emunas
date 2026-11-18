@@ -30,7 +30,7 @@ function attrs(html: string, tag: string): Record<string, string>[] {
 }
 
 const single: AudioRecording[] = [
-  { id: "rec-1", offset: 0, duration: 4745, audioUrl: "https://media.example.org/Folder%20A/rec%201.mp3" },
+  { id: "rec-1", offset: 0, duration: 4745, audioUrl: "https://media.example.org/Folder%20A/rec%201.mp3", cleanedUrl: null },
 ];
 
 describe("TimeLink", () => {
@@ -82,6 +82,32 @@ describe("Listen", () => {
     expect(html).toContain("Part 3: not yet available online.");
     expect(html).toContain("Part 1 of 3");
     expect(html).not.toContain("/audio/");
+  });
+
+  it("plays the improved copy, downloads the original and marks the part that has only the original", async () => {
+    const html = await render(Listen, { ed: "en", recordings: sampleRecordings });
+    const [one, two] = attrs(html, "audio");
+    const p1 = sampleRecordings[0]!;
+    const p2 = sampleRecordings[1]!;
+    expect(one).toMatchObject({ src: p1.cleanedUrl, "data-original": p1.audioUrl, "data-cleaned": p1.cleanedUrl });
+    expect(two).toMatchObject({ src: p2.audioUrl, "data-original": p2.audioUrl });
+    expect(two).not.toHaveProperty("data-cleaned");
+    const downloads = attrs(html, "a").filter((a) => a["class"] === "download");
+    expect(downloads.map((a) => a["href"])).toEqual([p1.audioUrl, p2.audioUrl]);
+    expect(html).toContain("Part 2: original recording only");
+    const [link] = attrs(html, "a").filter((a) => a["class"] === "listen-version-switch");
+    expect(link).toMatchObject({ href: p1.audioUrl, "aria-describedby": "listen-version-text" });
+    expect(html).toContain("Sound improved by AI");
+    expect(html).toContain('role="status"');
+    const yi = await render(Listen, { ed: "yi", recordings: sampleRecordings });
+    expect(yi).toContain("טייל 2: נאר די מקורית");
+    expect(yi).toContain("הערט די מקורית");
+  });
+
+  it("has no version line when no recording has an improved copy", async () => {
+    const html = await render(Listen, { ed: "en", recordings: single });
+    expect(html).not.toContain("listen-version");
+    expect(html).not.toContain("original recording only");
   });
 
   it("says the recording is not available when there is no URL", async () => {

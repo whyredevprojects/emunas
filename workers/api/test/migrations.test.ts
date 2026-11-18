@@ -46,7 +46,7 @@ describe("D1 migrations on a fresh local database", () => {
     expect(await names(env.DB_FEEDBACK)).toContain("feedback");
     const { results } = await env.DB_FEEDBACK.prepare("SELECT name FROM pragma_table_info('feedback') ORDER BY cid").all<{ name: string }>();
     expect(results.map((r) => r.name)).toEqual([
-      "id", "created_at", "shiur_id", "moment_id", "field", "reason", "text", "ui", "rev", "ua_hash", "status",
+      "id", "created_at", "shiur_id", "moment_id", "field", "reason", "text", "ui", "rev", "ua_hash", "status", "audio",
     ]);
   });
 

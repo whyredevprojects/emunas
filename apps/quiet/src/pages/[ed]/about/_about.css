@@ -2,3 +2,8 @@
 .about > section + section {
   margin-block-start: var(--space-l);
 }
+
+/* The shared paragraph on the AI-improved sound, after "How this site is arranged". */
+.about-audio {
+  margin-block-start: var(--space-s);
+}

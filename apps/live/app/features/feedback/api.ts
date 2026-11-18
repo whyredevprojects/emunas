@@ -5,7 +5,7 @@
  * (`api.test.ts` holds the two lists and limits equal, so a change on one side fails the build).
  * The response is reduced to an outcome the dialog can word; nothing from the server is shown.
  */
-import type { UiLang } from "@emunas/i18n";
+import type { AudioVersion, UiLang } from "@emunas/i18n";
 
 export const FEEDBACK_ENDPOINT = "/api/feedback";
 
@@ -31,6 +31,8 @@ export interface FeedbackBody {
   text?: string;
   ui: UiLang;
   rev: string;
+  /** Which recording was playing for this shiur when the report was sent; left out when none. */
+  audio?: AudioVersion;
   turnstile: string;
 }
 
@@ -60,6 +62,7 @@ export function buildBody(input: {
   ui: UiLang;
   rev: string;
   turnstile: string;
+  audio?: AudioVersion | null;
 }): FeedbackBody {
   const target: FeedbackBody["target"] = { shiurId: input.target.shiurId };
   if (input.target.momentId) target.momentId = input.target.momentId;
@@ -68,6 +71,7 @@ export function buildBody(input: {
   const body: FeedbackBody = { target, reason: input.reason, ui: input.ui, rev: input.rev, turnstile: input.turnstile };
   const text = input.text.normalize("NFC").trim();
   if (text.length > 0) body.text = text;
+  if (input.audio) body.audio = input.audio;
   return body;
 }
 

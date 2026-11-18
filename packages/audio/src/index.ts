@@ -14,6 +14,7 @@ export {
   type MediaTimeUrl,
   type MediaUrl,
 } from "./media.ts";
+export { CLEANED_PREFIX, cleanedKey } from "./cleaned.ts";
 export { isPlayableKey, mp3SiblingKey, servedKey, unplayableReason, type UnplayableReason } from "./playable.ts";
 export {
   buildAudioTable,

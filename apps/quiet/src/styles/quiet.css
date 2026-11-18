@@ -465,6 +465,33 @@
     margin-block-start: var(--space-3xs);
   }
 
+  /* The improved-audio line (docs/sites/cleaned-audio-ux.md §4): muted, one line, stays visible
+     when docked. Its action is a link without script and a text button with it (≥ 24px target). */
+  .listen-version {
+    font-size: var(--step-0);
+    color: var(--color-ink-muted);
+  }
+
+  .listen-version-switch {
+    display: inline-block;
+    min-block-size: 24px;
+    padding-block: 2px;
+    padding-inline: 0;
+    border: 0;
+    background: none;
+    color: var(--color-accent);
+    font: inherit;
+    text-decoration-line: underline;
+    text-decoration-thickness: var(--rule-hairline);
+    text-underline-offset: 0.2em;
+    cursor: pointer;
+  }
+
+  button.listen-version-switch:hover {
+    color: var(--color-accent-hover);
+    text-decoration-thickness: var(--rule-thick);
+  }
+
   /* Times: the one way a time is shown. Ordinary digits, aligned in lists. */
   .time {
     font-variant-numeric: tabular-nums lining-nums;

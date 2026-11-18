@@ -8,6 +8,10 @@
  * Public times are global seconds over the shiur's recordings; a no-JS time link must open the
  * right file at the recording-local second, so it is computed with `toLocal` from
  * `@emunas/corpus/public`.
+ *
+ * Every playable recording may also carry `cleanedUrl`, its copy with the sound improved by AI
+ * (docs/sites/cleaned-audio-ux.md). That copy is what plays by default (`defaultUrl`): the `<audio
+ * src>` and the no-JS time links use it. Downloads always use the original (`playableUrl`).
  */
 import { toLocal } from "@emunas/corpus/public";
 
@@ -20,6 +24,8 @@ export interface AudioRecording {
   readonly duration: number;
   /** Absolute URL on the media host, or null when the recording cannot be played. */
   readonly audioUrl: string | null;
+  /** The AI-improved copy on the media host, or null when there is none (state C). */
+  readonly cleanedUrl: string | null;
 }
 
 /**
@@ -27,7 +33,23 @@ export interface AudioRecording {
  * else (missing, `.WMA`, a relative or odd URL) is shown as unavailable rather than linked.
  */
 export function playableUrl(rec: Pick<AudioRecording, "audioUrl">): string | null {
-  const raw = rec.audioUrl;
+  return checkUrl(rec.audioUrl);
+}
+
+/**
+ * The improved copy's URL under the same rule, and only for a playable recording: null when the
+ * recording has none or cannot be played at all.
+ */
+export function cleanedUrl(rec: Pick<AudioRecording, "audioUrl" | "cleanedUrl">): string | null {
+  return playableUrl(rec) === null ? null : checkUrl(rec.cleanedUrl);
+}
+
+/** What plays by default: the improved copy when there is one, else the original; null if neither. */
+export function defaultUrl(rec: Pick<AudioRecording, "audioUrl" | "cleanedUrl">): string | null {
+  return cleanedUrl(rec) ?? playableUrl(rec);
+}
+
+function checkUrl(raw: string | null): string | null {
   if (typeof raw !== "string" || raw === "") return null;
   let url: URL;
   try {
@@ -66,12 +88,12 @@ export interface TimeTarget {
   readonly local: number;
   /** Global seconds (what the page shows and what `#t=` page URLs carry). */
   readonly global: number;
-  /** `${audioUrl}#t=${local}`; null when the recording is not playable. */
+  /** `${defaultUrl}#t=${local}`; null when the recording is not playable. */
   readonly href: string | null;
 }
 
 /**
- * Resolves a global time to its recording and the no-JS link (`audioUrl#t=local`, fractional).
+ * Resolves a global time to its recording and the no-JS link (`defaultUrl#t=local`, fractional).
  * Null for a shiur without recordings or a time that is not a finite number.
  */
 export function timeTarget(recordings: readonly AudioRecording[], t: number): TimeTarget | null {
@@ -81,7 +103,7 @@ export function timeTarget(recordings: readonly AudioRecording[], t: number): Ti
   const index = recordings.findIndex((r) => r.id === local.recordingId);
   const rec = recordings[index];
   if (!rec) return null;
-  const url = playableUrl(rec);
+  const url = defaultUrl(rec);
   const seconds = fragmentSeconds(local.t);
   const fragment = formatFragment(seconds);
   return {

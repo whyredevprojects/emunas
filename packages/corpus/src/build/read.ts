@@ -62,6 +62,7 @@ export const POLICY_ALLOW_LIST: readonly RegExp[] = [
   /^publish-policy\.json$/,
   /^verbatim-allow\.json$/,
   /^audio-transcoded\.json$/,
+  /^audio-cleaned\.json$/,
   /^corpus-policy\.json$/,
 ];
 

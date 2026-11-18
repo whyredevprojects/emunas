@@ -24,7 +24,7 @@ import { TEST_SITE_KEY_PASS, resolveSiteKey, turnstileLanguage } from "./turnsti
  */
 interface WorkerFeedback {
   MAX_TEXT_LENGTH: number;
-  parseFeedback(raw: unknown): { ok: true; value: { shiurId: string; momentId: string | null; reason: string; text: string | null } } | { ok: false; param: string };
+  parseFeedback(raw: unknown): { ok: true; value: { shiurId: string; momentId: string | null; reason: string; text: string | null; audio: string | null } } | { ok: false; param: string };
 }
 const workerFeedbackPath = new URL("../../../../../workers/api/src/feedback.ts", import.meta.url).href;
 const { MAX_TEXT_LENGTH: WORKER_MAX_TEXT, parseFeedback } = (await import(/* @vite-ignore */ workerFeedbackPath)) as WorkerFeedback;
@@ -58,6 +58,19 @@ describe("contract parity with workers/api", () => {
         }
       }
     }
+  });
+
+  it("sends the version that was playing, which the Worker stores, and leaves it out when none", () => {
+    for (const audio of ["cleaned", "original"] as const) {
+      const body = buildBody({ ...base, target: { shiurId: "a-1" }, reason: "other", text: "", audio });
+      expect(body.audio).toBe(audio);
+      const parsed = parseFeedback(JSON.parse(JSON.stringify(body)));
+      expect(parsed.ok && parsed.value.audio).toBe(audio);
+    }
+    const none = buildBody({ ...base, target: { shiurId: "a-1" }, reason: "other", text: "", audio: null });
+    expect("audio" in none).toBe(false);
+    const parsed = parseFeedback(none);
+    expect(parsed.ok && parsed.value.audio).toBeNull();
   });
 
   it("accepts a note of exactly the cap and the Worker refuses one over it", () => {

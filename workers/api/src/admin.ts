@@ -2,7 +2,7 @@
 import { error, json, UNKNOWN_PARAMETER } from "./http.ts";
 import type { Env } from "./env.ts";
 import { verifyAccess } from "./access.ts";
-import { FEEDBACK_STATUSES, type FeedbackField, type FeedbackReason, type FeedbackRow, type FeedbackStatus, type Lang } from "./contract.ts";
+import { FEEDBACK_STATUSES, type FeedbackAudio, type FeedbackField, type FeedbackReason, type FeedbackRow, type FeedbackStatus, type Lang } from "./contract.ts";
 
 export const DEFAULT_ADMIN_LIMIT = 500;
 export const MAX_ADMIN_LIMIT = 5000;
@@ -17,10 +17,11 @@ interface DbRow {
   text: string | null;
   ui: string;
   rev: string;
+  audio: string | null;
   status: string;
 }
 
-const CSV_COLUMNS = ["id", "createdAt", "shiurId", "momentId", "field", "reason", "text", "ui", "rev", "status"] as const satisfies readonly (keyof FeedbackRow)[];
+const CSV_COLUMNS = ["id", "createdAt", "shiurId", "momentId", "field", "reason", "text", "ui", "rev", "audio", "status"] as const satisfies readonly (keyof FeedbackRow)[];
 
 /** RFC 4180 quoting, plus a leading apostrophe on cells a spreadsheet would run as a formula. */
 export function csvCell(v: string | null): string {
@@ -51,7 +52,7 @@ export async function handleAdminFeedback(request: Request, env: Env): Promise<R
 
   const where = status === "all" ? "" : "WHERE status = ?";
   const stmt = env.DB_FEEDBACK.prepare(
-    `SELECT id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, status FROM feedback ${where} ORDER BY created_at DESC, id LIMIT ?`,
+    `SELECT id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, audio, status FROM feedback ${where} ORDER BY created_at DESC, id LIMIT ?`,
   );
   const { results } = await (status === "all" ? stmt.bind(limit) : stmt.bind(status, limit)).all<DbRow>();
   const rows: FeedbackRow[] = results.map((r) => ({
@@ -64,6 +65,7 @@ export async function handleAdminFeedback(request: Request, env: Env): Promise<R
     text: r.text,
     ui: r.ui as Lang,
     rev: r.rev,
+    audio: r.audio as FeedbackAudio | null,
     status: r.status as FeedbackStatus,
   }));
 

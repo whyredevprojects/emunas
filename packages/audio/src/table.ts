@@ -6,10 +6,16 @@
  * and `url: null`, unless the key is in `mp3Siblings` (site-policy/audio-transcoded.json): then the
  * URL points at the MP3 transcode next to it and `size` is 0 (unknown).
  *
+ * Every playable entry also gets `cleanedUrl`, the URL of the AI-improved copy at
+ * `fixed/sidon/<served key>` (`cleanedKey`), unless its served key is in `rejected`
+ * (`site-policy/audio-cleaned.json`): then `cleanedUrl` is null. A duplicate shares its canonical's
+ * `cleanedUrl`, as it does `url`.
+ *
  * The bucket key (`audioKey`) is read to build the URL and is never copied into the table.
  *
  * Pure and browser/Workers-safe.
  */
+import { cleanedKey } from "./cleaned.ts";
 import { mediaUrl, normalizeMediaOrigin, type MediaUrl } from "./media.ts";
 import { servedKey, unplayableReason, type UnplayableReason } from "./playable.ts";
 
@@ -21,8 +27,8 @@ interface AudioTableEntryBase {
 }
 
 export type AudioTableEntry =
-  | (AudioTableEntryBase & { playable: true; url: MediaUrl })
-  | (AudioTableEntryBase & { playable: false; url: null });
+  | (AudioTableEntryBase & { playable: true; url: MediaUrl; cleanedUrl: MediaUrl | null })
+  | (AudioTableEntryBase & { playable: false; url: null; cleanedUrl: null });
 
 export type AudioTable = Readonly<Record<string, AudioTableEntry>>;
 
@@ -58,6 +64,12 @@ export interface BuildAudioTableOptions {
    * (`site-policy/audio-transcoded.json` `mp3Siblings`). Default: none.
    */
   mp3Siblings?: Iterable<string>;
+  /**
+   * Served keys whose AI-improved copy was rejected after review (`site-policy/audio-cleaned.json`
+   * `rejected[].key`): those entries get `cleanedUrl: null`. Default: none (every playable
+   * recording links its improved copy).
+   */
+  rejected?: Iterable<string>;
 }
 
 const MAX_DUP_CHAIN = 16;
@@ -71,6 +83,7 @@ export function buildAudioTable(recordings: readonly AudioTableInput[], options:
   const origin = normalizeMediaOrigin(options.origin);
   const report = options.onIssue ?? (() => {});
   const transcoded: ReadonlySet<string> = new Set(options.mp3Siblings ?? []);
+  const rejected: ReadonlySet<string> = new Set(options.rejected ?? []);
   const byId = new Map<string, AudioTableInput>();
   for (const rec of recordings) {
     if (byId.has(rec.id)) {
@@ -99,7 +112,7 @@ export function buildAudioTable(recordings: readonly AudioTableInput[], options:
     const canonical = resolveCanonical(rec);
     if ("kind" in canonical) {
       report(canonical);
-      out[id] = { canonicalId: id, size: 0, playable: false, url: null };
+      out[id] = { canonicalId: id, size: 0, playable: false, url: null, cleanedUrl: null };
       continue;
     }
     let size = canonical.sizeBytes;
@@ -110,12 +123,13 @@ export function buildAudioTable(recordings: readonly AudioTableInput[], options:
     const key = servedKey(canonical.audioKey, transcoded);
     if (key === null) {
       report({ kind: "unplayable", id, reason: unplayableReason(canonical.audioKey) ?? "not-mp3" });
-      out[id] = { canonicalId: canonical.id, size, playable: false, url: null };
+      out[id] = { canonicalId: canonical.id, size, playable: false, url: null, cleanedUrl: null };
       continue;
     }
     // The transcode's byte size is not in the ingest: 0 means unknown.
     if (key !== canonical.audioKey) size = 0;
-    out[id] = { canonicalId: canonical.id, size, playable: true, url: mediaUrl(key, origin) };
+    const cleanedUrl = rejected.has(key) ? null : mediaUrl(cleanedKey(key), origin);
+    out[id] = { canonicalId: canonical.id, size, playable: true, url: mediaUrl(key, origin), cleanedUrl };
   }
   return out;
 }

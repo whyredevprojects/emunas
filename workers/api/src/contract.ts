@@ -93,6 +93,9 @@ export const FEEDBACK_FIELDS = ["source", "person", "time", "summary", "other"] 
 export type FeedbackField = (typeof FEEDBACK_FIELDS)[number];
 export const FEEDBACK_REASONS = ["wrong-source", "wrong-name", "wrong-time", "misrepresents", "other"] as const;
 export type FeedbackReason = (typeof FEEDBACK_REASONS)[number];
+/** Which recording was playing when the report was sent: the AI-improved copy or the original. */
+export const FEEDBACK_AUDIO = ["cleaned", "original"] as const;
+export type FeedbackAudio = (typeof FEEDBACK_AUDIO)[number];
 export const FEEDBACK_STATUSES = ["open", "done", "rejected"] as const;
 export type FeedbackStatus = (typeof FEEDBACK_STATUSES)[number];
 
@@ -107,6 +110,8 @@ export interface FeedbackRow {
   text: string | null;
   ui: Lang;
   rev: string;
+  /** null when no recording was playing or the client did not say. */
+  audio: FeedbackAudio | null;
   status: FeedbackStatus;
 }
 
@@ -122,7 +127,7 @@ export const ALLOWED_KEYS = {
   health: ["d1", "rev", "vectorize"],
   feedbackAccepted: ["id"],
   adminList: ["items"],
-  feedbackRow: ["createdAt", "field", "id", "momentId", "reason", "rev", "shiurId", "status", "text", "ui"],
+  feedbackRow: ["audio", "createdAt", "field", "id", "momentId", "reason", "rev", "shiurId", "status", "text", "ui"],
   error: ["error", "param"],
 } as const satisfies Record<string, readonly string[]>;
 

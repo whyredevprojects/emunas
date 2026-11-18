@@ -59,6 +59,18 @@ added by `npm run transcode:wma --workspace=@emunas/audio` after a verified uplo
 other non-mp3 recording stays unplayable. An `.mp3` key, a key without an extension or a key that
 may not become a URL is fatal.
 
+## audio-cleaned.json
+
+`{ "policyVersion": 1, "rejected": [{ "key": "<served key>", "reason": "…", "reviewedBy": "…", "reviewedAt": "YYYY-MM-DD" }, …] }`.
+Ships with an empty list. Every playable recording has an AI-improved copy at
+`fixed/sidon/<served key>` in the bucket, and the corpus build links it as `cleanedUrl`, unless its
+served key (the `.mp3` that is linked: the key itself, or the transcode of a listed `.WMA`) is
+rejected here; then `cleanedUrl` is `null` and the sites play only the original. Duplicates follow
+their canonical. A key that is not the served `.mp3` key of a known recording, a key listed twice,
+an unknown field or an empty `reason`/`reviewedBy` is fatal. Rejections are whole-recording only.
+Check that the copies exist with `npm run cleaned:verify --workspace=@emunas/audio`
+(`docs/sites/ops-runbook.md` §11; design in `docs/sites/cleaned-audio-ux.md`).
+
 ## corpus-policy.json
 
 The owner's decisions for the corpus-wide layer (`docs/sites/corpus-wave-plan.md` §2),

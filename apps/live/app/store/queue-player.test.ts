@@ -21,7 +21,7 @@ function shiur(id: string, duration: number, playable = true): PlayerShiur {
     lang: "yi",
     duration,
     catalog: { titleOriginal: id },
-    recordings: [{ id: `${id}-r`, offset: 0, duration, audioUrl: playable ? url(id) : null }],
+    recordings: [{ id: `${id}-r`, offset: 0, duration, audioUrl: playable ? url(id) : null, cleanedUrl: null }],
     notes: {
       chapters: [
         { idx: 0, t: 0, end: duration / 2, title: { en: "one", yi: "איינס" } },
