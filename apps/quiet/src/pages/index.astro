@@ -2,12 +2,15 @@
 /**
  * The root: every edition side by side, the right-to-left editions (Yiddish, Hebrew) on the right
  * and English on the left (concept-quiet §8, integration-plan C20; `CHOOSER_ORDER`). Static, no
- * redirect, remembers nothing.
+ * redirect, remembers nothing. Each section's accessible name starts with its language's own name:
+ * editions may share a site name (Yiddish and Hebrew are both "ספריה — שיעורים"), and landmarks
+ * must stay distinguishable.
  */
 import "../styles/fonts.css";
 import "@emunas/tokens/tokens.css";
 import "../styles/quiet.css";
 import "../styles/print.css";
+import { UI_ENDONYM } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
 import { useT } from "../i18n/index.ts";
 import { CHOOSER_ORDER, dirOf } from "../lib/edition.ts";
@@ -34,7 +37,8 @@ const editions = CHOOSER_ORDER.map((ed) => ({ ed, dir: dirOf(ed), t: useT(ed), h
       <h1 class="visually-hidden">{en("chooser.title")}</h1>
       <div class="chooser" dir="rtl">
         {editions.map(({ ed, dir, t, home, about }) => (
-          <section lang={ed} dir={dir} aria-labelledby={`chooser-${ed}`}>
+          <section lang={ed} dir={dir} aria-labelledby={`chooser-lang-${ed} chooser-${ed}`}>
+            <span id={`chooser-lang-${ed}`} class="visually-hidden">{UI_ENDONYM[ed]}</span>
             <h2 id={`chooser-${ed}`}><a href={home}>{t("site.name")}</a></h2>
             <p>{t("site.description")}</p>
             <p><a href={home}>{t("chooser.enter")}</a> · {t("chooser.enterNote")}</p>
