@@ -63,8 +63,8 @@ const RULES: Record<TranslationLang, LangRules> = {
     ],
     warnings: [
       [/תמלול|תמליל|טרנסקריפ|משובש|שיבוש|לא ברור|לא מובן|קשה להבין|\bASR\b/, "mentions the transcript or judges the shiur's clarity; say only what the Mashgiach teaches (a remark on the sound or the recording is fine)"],
-      [/(^|[\s"'(])הרב (אומר|מסביר|מביא|מספר|שואל|מוסיף|מדגיש|מבאר|מתרץ|מתחיל|ממשיך|מסיים|אמר|הסביר|הביא|סיפר)/, 'the Mashgiach is "המשגיח", never "הרב" as a stand-in'],
-      [/(^|[\s(])(נישט|וואס|איז|אזוי|ווייל|דאס|פון|מיט|האט|זיין|ער)(?=[\s.,;:!?)]|$)/, "looks like Yiddish, not Hebrew"],
+      [/(^|[\s"'(])הרב (אומר|מסביר|מביא|מספר|שואל|מוסיף|מדגיש|מבאר|מתרץ|מתחיל|ממשיך|מסיים|אמר|הסביר|הביא|סיפר)(?=[\s.,;:!?)]|$)/, 'the Mashgiach is "המשגיח", never "הרב" as a stand-in'],
+      [/(^|[\s(])(נישט|וואס|איז|אזוי|ווייל|דאס|מיט|האט)(?=[\s.,;:!?)]|$)/, "looks like Yiddish, not Hebrew"],
     ],
   },
 };
@@ -100,7 +100,8 @@ function checkTexts(lang: TranslationLang, slots: readonly Slot[], text: Record<
     }
     const src = words(slot.yi);
     const out = words(v);
-    if (src >= 25 && (out < src * 0.55 || out > src * 1.5)) r.warnings.push(`${slot.k}: ${out} words for ${src} Yiddish words; translate in full, add nothing`);
+    // Hebrew runs ~0.7x the Yiddish word count (prefixed articles and prepositions).
+    if (src >= 25 && (out < src * 0.45 || out > src * 1.5)) r.warnings.push(`${slot.k}: ${out} words for ${src} Yiddish words; translate in full, add nothing`);
   }
 }
 
