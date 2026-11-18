@@ -444,6 +444,8 @@ describe("improved audio", () => {
     expect(await button.textContent()).toBe("Switch to the original");
     expect(await page.locator("a.listen-version-switch").count()).toBe(0);
     expect(await page.locator(".listen-version > span").first().textContent()).toBe("Sound improved by AI");
+    const reportBody = async () => new URL((await page.locator(".report-error a").getAttribute("href"))!).searchParams.get("body") ?? "";
+    expect(await reportBody()).toMatch(/\n\nNow playing the version improved by AI\.$/);
 
     await page.locator("#s0 a.time").click();
     await playingFirst(page);
@@ -470,6 +472,7 @@ describe("improved audio", () => {
     expect(await page.locator(".listen-version > span").first().textContent()).toBe("A version with the sound improved by AI is also available");
     expect(await page.evaluate(() => document.activeElement?.className)).toBe("listen-version-switch");
     await page.waitForFunction(() => document.querySelector(".listen-version [role=status]")?.textContent === "Now playing the original recording.");
+    expect(await reportBody()).toMatch(/\n\nNow playing the original recording\.$/);
     expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("original");
     // downloads never change
     expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);

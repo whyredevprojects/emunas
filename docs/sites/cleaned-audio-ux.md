@@ -348,7 +348,7 @@ Copy rules:
 | Live offline download | The version selected when the listener presses Download. Only one copy is stored (no doubled storage). `DownloadRecord` records which version it holds. A switch while offline is refused with the existing "cannot be played here" handling, or, better, the button is disabled offline when the other version is not cached (open question 4). |
 | Live lists, search, Today, chapters, topics ("listen" anywhere) | Automatically the selected version, through the engine resolver. No per-list work. |
 | Media Session metadata | Unchanged in both versions. Do not add "(AI)" to lock-screen titles. |
-| Share links, feedback "Report" | Version-neutral links. The Live/Quiet Report form should attach the version that was playing (`cleaned` / `original`), so that a report of a wrong-sounding word can be checked. |
+| Share links, feedback "Report" | Version-neutral links. Reports record the version that was playing, so a report of a wrong-sounding word can be checked. Live sends `audio: "cleaned" \| "original"` to `POST /api/feedback` (left out when the reported shiur is not the one loaded); the Worker stores it in the nullable `feedback.audio` column (migration `feedback/0002_audio.sql`) and the admin export shows it. Quiet's Report is a mail link, so its player appends the "Now playing …" sentence to the mail body. |
 
 ### Accessibility
 

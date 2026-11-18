@@ -9,6 +9,7 @@ export {
   getEngine,
   installEngine,
   playAt,
+  playingVersionFor,
   playShiur,
   playingInfo,
   registerShiur,

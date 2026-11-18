@@ -125,6 +125,13 @@ function snapshot(): PlayerState {
   return canPlay() ? getEngine().getState() : IDLE_STATE;
 }
 
+/** The version playing for `shiurId` right now, or null when that shiur is not the one loaded. */
+export function playingVersionFor(shiurId: string): AudioVersion | null {
+  if (!canPlay()) return null;
+  const st = getEngine().getState();
+  return st.shiurId === shiurId ? st.playingVersion : null;
+}
+
 export function usePlayerState(): PlayerState {
   return useSyncExternalStore(subscribe, snapshot, () => IDLE_STATE);
 }

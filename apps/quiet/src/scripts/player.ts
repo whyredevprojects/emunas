@@ -169,9 +169,16 @@ export function initPlayer(doc: Document, win: Window): Player | null {
   /** Whether `a` plays (or would play) its improved copy; null when it has none. */
   const improved = (a: HTMLAudioElement) => (a.dataset["cleaned"] ? urlOf(a) === a.dataset["cleaned"] : null);
 
+  // The Report mail link names the version playing, so a report of a wrong word can be checked.
+  const report = doc.querySelector<HTMLAnchorElement>(".report-error a[href^='mailto:']");
+  const reportBase = report?.getAttribute("href") ?? "";
+
   function render(): void {
     if (!line || !button || !lineText) return;
     const on = improved(current);
+    if (report && on !== null) {
+      report.href = reportBase + encodeURIComponent(`\n\n${line.dataset[on ? "announceCleaned" : "announceOriginal"] ?? ""}`);
+    }
     const state = (on ?? version === "cleaned") ? "Cleaned" : "Original";
     lineText.textContent = line.dataset[`text${state}`] ?? "";
     button.textContent = line.dataset[`action${state}`] ?? "";
