@@ -316,7 +316,11 @@ open pull requests.
   the sites; the URLs land in the job summary. Without Cloudflare secrets it logs a notice and passes.
 
 `node_modules` and Playwright browsers come from the Actions cache (`.github/actions/setup`,
-`.github/actions/playwright`), saved from `main` only.
+`.github/actions/playwright`), saved from `main` only. The browsers' system libraries are apt
+packages: `.github/actions/playwright` also caches the downloaded `.deb` files (any branch, keyed by
+Playwright version, browser set and a hash of the file list) and seeds apt's cache with them, so apt
+only downloads packages whose version changed. Without it a slow Ubuntu mirror once made the WebKit
+download (~126 MB) outlast the 30-minute job timeout.
 
 **deploy.yml** (push to main touching `data/derived`, `data/catalog`, `apps`, `packages`,
 `workers`, `site-policy`; manual dispatch with `target: production|staging`):
