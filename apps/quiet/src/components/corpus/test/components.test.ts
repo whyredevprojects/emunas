@@ -118,8 +118,8 @@ describe("ReportEntry", () => {
 const cite = (shiurId: string): Cite => ({
   shiurId,
   href: `/en/shiur/${shiurId}/`,
+  title: { text: `Title of ${shiurId}`, lang: "en", dir: "ltr" },
   occasion: { text: `Occasion of ${shiurId}`, lang: "en", dir: "ltr" },
-  n: null,
   years: [5770],
   lang: "en",
   t: null,
@@ -139,8 +139,8 @@ describe("GradeList", () => {
     expect(m.discussed.map((c) => c.shiurId)).toEqual(["b"]);
     expect(m.touched).toHaveLength(1);
     expect(m.touched[0]!.parts).toEqual([
-      { idx: 2, t: 754, href: "/en/shiur/c/#s2", time: "12:34" },
-      { idx: 5, t: 3723, href: "/en/shiur/c/#s5", time: "1:02:03" },
+      { idx: 2, t: 754, href: "/en/shiur/c/#t=754", time: "12:34" },
+      { idx: 5, t: 3723, href: "/en/shiur/c/#t=3723", time: "1:02:03" },
     ]);
   });
 
@@ -159,7 +159,7 @@ describe("GradeList", () => {
     expect(html).toContain("Touched on in one part");
     expect(html).toMatch(/<li class="grade-row principal" data-shiur="a"><strong><a class="cite" href="\/en\/shiur\/a\/">/);
     expect(html).toMatch(/<li class="grade-row" data-shiur="b"><a class="cite"/);
-    expect(html).toMatch(/<li class="grade-row touched" data-shiur="c">.*href="\/en\/shiur\/c\/#s2".*12:34.*href="\/en\/shiur\/c\/#s5".*1:02:03/s);
+    expect(html).toMatch(/<li class="grade-row touched" data-shiur="c">.*href="\/en\/shiur\/c\/#t=754".*12:34.*href="\/en\/shiur\/c\/#t=3723".*1:02:03/s);
     expect(html).not.toContain("gone-1");
   });
 
@@ -201,11 +201,9 @@ describe("EntryHead", () => {
 });
 
 describe("indexes block (title page)", () => {
-  const counts = { topics: 207, glossary: 759, names: 600, sources: 360, stories: 1107 };
-
-  it("lists the indexes in the order of Quiet C5 with counts from the layer", () => {
+  it("lists the indexes in the order of Quiet C5, without counts", () => {
     expect(INDEX_LINE_ORDER).toEqual(["topics", "glossary", "names", "sources", "stories", "calendar", "years"]);
-    const lines = indexesBlock("yi", counts);
+    const lines = indexesBlock("yi");
     expect(lines.map((l) => l.label)).toEqual(["ענינים", "ערכים", "שמות", "מראי מקומות", "מעשיות", "לוח", "שנים"]);
     expect(lines.map((l) => l.href)).toEqual([
       "/yi/inyanim/",
@@ -216,24 +214,23 @@ describe("indexes block (title page)", () => {
       "/yi/calendar/",
       "/yi/years/",
     ]);
-    const en = indexesBlock("en", counts);
-    expect(en.slice(0, 5).map((l) => l.count)).toEqual(["207 topics", "759 entries", "600 names", "360 seforim", "1,107 stories"]);
-    expect(en.slice(5).map((l) => l.count)).toEqual([null, null]);
+    const en = indexesBlock("en");
     expect(en.filter((l) => l.generated).map((l) => l.id)).toEqual(["topics", "glossary", "names", "sources", "stories"]);
     expect(en.find((l) => l.id === "calendar")!.sub.map((s) => s.href)).toEqual(["/en/calendar/parsha/", "/en/calendar/zman/"]);
   });
 
   it("leaves out pages that are not built", () => {
-    const lines = indexesBlock("en", counts, (href) => href !== "/en/erachim/");
+    const lines = indexesBlock("en", (href) => href !== "/en/erachim/");
     expect(lines.map((l) => l.id)).toEqual(["topics", "names", "sources", "stories", "calendar", "years"]);
   });
 
   it("renders #indexes with one AI label and one line per index", async () => {
-    const html = await render(IndexesBlock, { ed: "en", heading: "Indexes", lines: indexesBlock("en", counts), visibleShiurim: 993 });
+    const html = await render(IndexesBlock, { ed: "en", heading: "Indexes", lines: indexesBlock("en"), visibleShiurim: 993 });
     expect(html).toContain('id="indexes"');
     expect([...html.matchAll(/data-index="(\w+)"/g)].map((m) => m[1])).toEqual([...INDEX_LINE_ORDER]);
     expect(html.match(/corpus-label-index/g)).toHaveLength(1);
     expect(html).toContain("Compiled by AI from the notes on 993 shiurim.");
+    expect(html).not.toContain('class="count"');
   });
 });
 

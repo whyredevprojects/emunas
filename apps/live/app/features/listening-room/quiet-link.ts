@@ -1,5 +1,5 @@
 /**
- * The "Printable page" link: the same shiur on the Quiet site (integration-plan §2.2), built with
+ * The "In the Library" link: the same shiur on the Quiet site (integration-plan §2.2), built with
  * `@emunas/links`. The Quiet origin comes from build config (`VITE_EMUNAS_QUIET_ORIGIN`, or
  * `VITE_EMUNAS_DOMAIN` → `library.<domain>`) and otherwise from the Live host itself, using the host scheme
  * of `@emunas/links` (`listen.<domain>` ↔ `library.<domain>`, `emunas-live[-staging].<sub>.workers.dev` ↔
@@ -48,7 +48,7 @@ export function quietOrigin(env: QuietOriginEnv, here: { protocol: string; host:
 }
 
 /** Absolute URL of the shiur's Quiet page in edition `ed`, at `t` when given; null without an origin. */
-export function printableUrl(origin: string | null, ed: Ed, shiurId: string, t?: number): string | null {
+export function libraryUrl(origin: string | null, ed: Ed, shiurId: string, t?: number): string | null {
   if (origin === null) return null;
   try {
     return origin + quietPaths().shiur(ed, shiurId, t === undefined ? {} : { t });

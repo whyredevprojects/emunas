@@ -1,6 +1,6 @@
 /**
  * Where the human-written About texts come from: `src/content/about/{ed}/{part}.md` (W5.3 owns
- * src/content/**). A part without its file renders a marked placeholder. Nothing is generated.
+ * src/content/**). A part without its file is left out of the page. Nothing is generated.
  *
  * Links in the texts are ordinary Markdown links. Pages of this site are written root-relative
  * (`/en/calendar/`) or as in-page anchors (`#report`); the two targets whose address depends on the
@@ -28,7 +28,7 @@ export function aboutFileKey(path: string): { ed: Ed; part: AboutPart } | null {
   return ABOUT_PARTS.includes(part) ? { ed: m[1] as Ed, part } : null;
 }
 
-/** The supplied text of a part in an edition, or null (placeholder). */
+/** The supplied text of a part in an edition, or null (the part is not shown). */
 export function aboutText(ed: Ed, part: AboutPart, files: Readonly<Record<string, Md>> = FILES): Md | null {
   for (const [path, mod] of Object.entries(files)) {
     const key = aboutFileKey(path);

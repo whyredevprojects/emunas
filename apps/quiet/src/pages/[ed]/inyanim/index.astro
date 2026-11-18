@@ -9,7 +9,6 @@ import type { GetStaticPaths } from "astro";
 import { corpusLabel } from "@emunas/i18n";
 import Base from "../../../layouts/Base.astro";
 import EntityLabel from "../../../components/corpus/EntityLabel.astro";
-import CalendarRule from "../../../components/topics/CalendarRule.astro";
 import TopicTree from "../../../components/topics/TopicTree.astro";
 import { topicsLayer, topicsSource } from "../../../components/topics/data.ts";
 import { topicTree } from "../../../components/topics/model.ts";
@@ -38,7 +37,6 @@ const gates = topicTree(ed, src);
     <h1>{title}</h1>
     <EntityLabel ed={ed} variant="index" count={layer.visibleShiurim} />
     <p class="index-intro">{t("tree.intro")}</p>
-    <CalendarRule ed={ed} />
   </header>
   <TopicTree ed={ed} gates={gates} />
 </Base>

@@ -6,7 +6,7 @@
  * - each occasion page lists exactly the aggregate's shiurim (Yiddish and English together, by
  *   year), seudah shiurim under a sub-heading, and no uncatalogued file-name guesses;
  * - the year pages list exactly years.json; "year not recorded" holds exactly the shiurim with no
- *   year and explains the gap;
+ *   year and says so;
  * - everything is in the HTML (no JS needed): plain links, no islands, internal links resolve;
  * - no transcript material reaches these pages (the CI guard post-pass scans all of dist/ too).
  */
@@ -154,7 +154,7 @@ describe("year pages", () => {
     }
   });
 
-  it("'year not recorded' holds exactly the shiurim without a year and explains the gap", () => {
+  it("'year not recorded' holds exactly the shiurim without a year and says so", () => {
     const noYear = data.index.shiurim.filter((r) => r.years.length === 0).map((r) => r.id);
     expect(data.years.unknown.count).toBe(noYear.length);
     for (const ed of EDS) {
@@ -165,7 +165,8 @@ describe("year pages", () => {
       expect(html).toContain(`data-count="${noYear.length}"`);
       expect(page(`${ed}/years`)).toContain(`href="/${ed}/years/unknown/"`);
     }
-    expect(page("en/years/unknown")).toContain("were not dated in the 2012 Pocket Guide");
+    expect(page("en/years/unknown")).toContain(`The year of these ${noYear.length} shiurim is not known.`);
+    expect(page("en/years/unknown")).not.toContain("Pocket Guide");
     expect(page("en/years")).toContain(
       `The year is recorded for ${(data.index.shiurim.length - noYear.length).toLocaleString("en")} of the ${data.index.shiurim.length.toLocaleString("en")} shiurim.`,
     );

@@ -30,5 +30,5 @@ export {
   type ThreadThrough,
   type WorkGroup,
 } from "./corpus.ts";
-export { printableUrl, quietOrigin } from "./quiet-link.ts";
+export { libraryUrl, quietOrigin } from "./quiet-link.ts";
 export { roomT, type RoomKey, type RoomT } from "./strings.ts";

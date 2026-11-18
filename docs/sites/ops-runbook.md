@@ -493,6 +493,17 @@ debugging from scratch.
   (`npm run -s writeup:budget -- <shiurId>`). If the shiur is long, raise the target to the new
   largest file plus ~20% and update the comment. If not, fix the write-up in the pipeline.
 
+**Quiet Lighthouse: LCP over 1.8 s on `/en/sources/`** (ci.yml `lighthouse`)
+- *Why it fails:* the works index is one long page, and its LCP follows its HTML size. Works with
+  no page list their shiurim inline, by title. It went over twice on 2026-11-17/18: once when the
+  citations gained titles and dates, and again when the 37 Purim seudos added citations.
+- *How to tell:* compare the size of `apps/quiet/dist/en/sources/index.html` with the last green
+  run. Find the largest blocks: one `<section class="index-block">` per group, then count
+  `class="cite"` in each.
+- *Fix:* keep the inline lists short. Generic labels give a count only above
+  `GENERIC_LINE_MAX_SHIURIM` (`components/indexes/works.ts`), and index pages show titles only
+  (`CiteList` `brief`). Don't raise the 1.8 s budget.
+
 ## 9. Contracts for later packages
 
 - `workers/api/wrangler.jsonc` (W2.6): `name: "emunas-api"`, `workers_dev: false`,
@@ -626,7 +637,7 @@ In order; each step names where it is described. Staging first, then production.
       `/` (Live redirects to `/yi/` or `/en/`), a shiur page in both editions, audio plays and
       seeks (Range), the response carries `X-Robots-Tag: noindex`, page `<link rel="canonical">`
       points at the staging Quiet host, Quiet → "Open in the listening app" and Live →
-      "Printable page" stay on staging, search returns results, "report a problem" submits (or is
+      "In the Library" stay on staging, search returns results, "report a problem" submits (or is
       hidden when no site key is set), an offline download completes (CORS).
 
 **Production run**

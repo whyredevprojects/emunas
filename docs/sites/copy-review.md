@@ -136,9 +136,11 @@ and on any change of keys or `{placeholders}` against English.
   style guide use ' (משגיח'ס, ס'איז). Pick one; the papers mostly use the plain apostrophe.
 - **Q7. AI in Yiddish.** Kept the Latin "AI". Alternatives: "קינסטליכע אינטעליגענץ" (Daytshmerish
   feel), or "א קאמפיוטער פראגראם".
-- **Q8. Site name in Live.** `site.name` is "אמונת — הערן" and `site.short` "אמונת". The
-  collection's public name in Yiddish (and whether Quiet's "די שיעורים פון דעם משגיח" should match)
-  is the owner's call.
+- **Q8. Site names.** Quiet is branded Library and Live is branded Analyze (עיון). Quiet's
+  `site.name` is "ספריה — שיעורים" and Live's is "עיון — שיעורים"
+  (`site.short` "עיון"). "ספריה" was chosen by the owner. "אין עיון" (in
+  `live.open` and the About report text) can also read as "in depth"; the owner may want the name
+  set off, for example „עיון“.
 - **Q9. About in Live.** Live has no About page. Should its label or menu link to Quiet's About?
 - **Q10. About drafts.** Everything marked `[[OWNER: …]]`: the Mashgiach's titles and biography, who
   recorded and kept the shiurim and with whose permission they are published, what happens to a
@@ -244,7 +246,7 @@ removed.
 | `catalog.noTitle` | אן א קעפּל | אן א קעפל | orthography |
 | `sources.inNotes` | אינעם טעקסט: | אינעם אויסשרייב: | terminology: write-up = אויסשרייב (was טעקסט, ambiguous with the Sefaria link) |
 | `catalog.seriesFallback` | סעריע | סדרה | terminology |
-| `live.open` | עפענען אין דער הער־אפּליקאציע | עפענען אין דער אפליקאציע צום הערן | orthography; phrasing |
+| `live.open` | עפענען אין דער הער־אפּליקאציע | עפענען אין עיון | orthography; names Live by its brand, עיון |
 | `insights.heading` | חידושים | געדאנקען | terminology: insight = געדאנק / געדאנקען in both sites (was חידושים here) |
 
 #### `apps/quiet/src/components/indexes/strings.ts`

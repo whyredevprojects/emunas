@@ -9,6 +9,13 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - This applies to UI copy, labels, meta and SEO text, docs, prompts, and generated write-ups.
 - Other people who are titled Rav keep their titles ("the Rav of Sanz", "Rav Chaim").
 
+## Site names
+
+- `apps/quiet` is branded **Library**. `apps/live` is branded **Analyze**, with the Hebrew name **עיון**. Analyze is the advanced app with more data.
+- The rename is branding only: UI copy, titles and meta. Folder names, package names, internal code names (`formatQuiet` and so on), docs file names, CI and Worker names stay `quiet`/`live`.
+- Analyze keeps the `listen.` subdomain for now. It may still be renamed.
+- Planned: the second edition switches from Yiddish to Hebrew. The owner will do this later, so don't start it unasked.
+
 ## Transcripts are never published
 
 - The transcripts, and anything derived from them verbatim, must never reach any public output. That covers ASR text, `heardAs`, `asrNotes`, `asrVariants`, segment text, `data/derived/corpus/raw/`, and unresolved raw extraction names.

@@ -80,7 +80,6 @@ const versionTextId = `${id}-version-text`;
                 <a class="download" href={url} download>
                   {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
                 </a>
-                {count === 1 && duration && <> · <span>{t("listen.duration", { duration })}</span></>}
                 {switchTo && !cleaned && <> · <span>{v("partOriginal", { part })}</span></>}
               </p>
             </>

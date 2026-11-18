@@ -1,14 +1,12 @@
 ---
 /**
- * A numbered catalog table (concept-quiet §5.2, tech-quiet §4): one row per shiur, in catalog
- * order. Columns: number as printed (or the part in a series), the title exactly as catalogued
- * (with `catalog.heading` above it where there is one), optionally parsha/zman, year, length, and
- * the one-line notes in the edition's language when the shiur has notes.
+ * A table of shiurim (concept-quiet §5.2, tech-quiet §4): one row per shiur, in catalog order.
+ * Columns: the part number on a series page, the title (with `catalog.heading` above it where there
+ * is one), optionally parsha/zman, year, length, and the one-line notes in the edition's language
+ * when the shiur has notes.
  *
  * - Every catalog string is its own `<bdi>` run with lang/dir from its dominant script.
- * - Rows of the uncatalogued guide carry a small mark with a spoken explanation.
  * - Rows whose recordings cannot be played from the media host are greyed and say so in words.
- * - Guide rows with no audio at all (catalog gaps) are greyed the same way and have no link (no page).
  * - Catalog-only rows show no AI text (the notes cell stays empty). On a series page with an
  *   introduction, the line is the part's arc one-liner, and a part without notes says "notes not
  *   prepared yet" (Quiet C4.7).
@@ -27,14 +25,12 @@ interface Props {
   /** Table caption (a group heading usually precedes it, so it is hidden visually by default). */
   caption: string;
   captionVisible?: boolean;
-  /** First column: catalog number as printed, or the part number in a series. */
-  number?: "n" | "part";
+  /** First column: the part number in a series (no number column otherwise). */
+  number?: "part";
   /** Show the parsha/zman column. */
   occasion?: boolean;
   /** Show the notes column (only when at least one row has notes). */
   notes?: boolean;
-  /** Mark uncatalogued rows (off on pages where every row is uncatalogued and the lead says so). */
-  markUncatalogued?: boolean;
   /** Total parts of the series (with `number="part"`). */
   partsOf?: number;
 }
@@ -44,25 +40,21 @@ const {
   rows,
   caption,
   captionVisible = false,
-  number = "n",
+  number,
   occasion = false,
   notes = false,
-  markUncatalogued = true,
   partsOf,
 } = Astro.props;
 const c = useCatalogT(ed);
 const run = (text: string, lang: Ed) => runAttrs(text, lang);
 const anyYear = rows.some((r) => r.years.length > 0);
-const numberOf = (r: CatalogRow | SeriesRow): string => {
-  if (number === "part") return "part" in r ? String(r.part) : "";
-  return r.n ?? "";
-};
+const numberOf = (r: CatalogRow | SeriesRow): string => ("part" in r ? String(r.part) : "");
 ---
 <table class="catalog-table">
   <caption class:list={[{ "visually-hidden": !captionVisible }]}>{caption}</caption>
   <thead>
     <tr>
-      <th scope="col" class="col-num">{number === "part" ? c("table.part") : c("table.no")}</th>
+      {number === "part" && <th scope="col" class="col-num">{c("table.part")}</th>}
       <th scope="col" class="col-title">{c("table.title")}</th>
       {occasion && <th scope="col" class="col-occasion">{c("table.occasion")}</th>}
       {anyYear && <th scope="col" class="col-year">{c("table.year")}</th>}
@@ -78,29 +70,21 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
       return (
         <tr
           id={`row-${r.id}`}
-          class:list={["catalog-row", { "no-recording": !r.playable, uncatalogued: r.uncatalogued }]}
+          class:list={["catalog-row", { "no-recording": !r.playable }]}
           data-status={r.status}
-          data-gap={r.gap ? "" : undefined}
         >
-          <td class="col-num">
-            {num !== "" && (
-              <bdi {...NUMERIC_RUN} title={number === "part" && partsOf ? c("row.part", { part: num, count: partsOf }) : undefined}>{num}</bdi>
-            )}
-          </td>
+          {number === "part" && (
+            <td class="col-num">
+              {num !== "" && <bdi {...NUMERIC_RUN} title={partsOf ? c("row.part", { part: num, count: partsOf }) : undefined}>{num}</bdi>}
+            </td>
+          )}
           <th scope="row" class="col-title">
             {r.heading && (
               <span class="row-heading"><bdi {...run(r.heading, r.lang)}>{r.heading}</bdi></span>
             )}
-            {r.gap ? (
-              <bdi {...run(r.title, r.lang)}>{r.title}</bdi>
-            ) : (
-              <a href={r.href}><bdi {...run(r.title, r.lang)}>{r.title}</bdi></a>
-            )}
+            <a href={r.href}><bdi {...run(r.title, r.lang)}>{r.title}</bdi></a>
             {r.subTitle && (
               <span class="row-subtitle"><bdi {...run(r.subTitle, r.lang)}>{r.subTitle}</bdi></span>
-            )}
-            {markUncatalogued && r.uncatalogued && (
-              <span class="unc-mark"><span aria-hidden="true">*</span><span class="visually-hidden"> ({c("row.uncatalogued")})</span></span>
             )}
             {!r.playable && <span class="no-recording-note">{c("row.noRecording")}</span>}
           </th>
@@ -153,11 +137,6 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
     color: var(--color-ink-muted);
   }
 
-  .catalog-table .unc-mark {
-    margin-inline-start: var(--space-3xs);
-    color: var(--color-ink-muted);
-  }
-
   /* The catalog title is the main column; the notes line sits beside it, smaller. */
   .catalog-table .col-title {
     min-inline-size: 12em;
@@ -199,7 +178,7 @@ const numberOf = (r: CatalogRow | SeriesRow): string => {
     font-style: normal;
   }
 
-  /* Phones: number, title, year, length. The notes line and the parsha/zman column (both on the
+  /* Phones: part, title, year, length. The notes line and the parsha/zman column (both on the
      shiur page) give way so the table fits the column without sideways scrolling. */
   @media (max-width: 40rem) {
     .catalog-table .col-notes,

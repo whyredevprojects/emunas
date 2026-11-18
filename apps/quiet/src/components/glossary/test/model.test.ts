@@ -91,7 +91,7 @@ describe("glossary entry pages", () => {
     expect(page.examples.length).toBe(new Set(c.exampleRefs.map((r) => `${r.shiurId}~s${r.sectionIndex}`)).size);
     for (const [i, x] of page.examples.entries()) {
       const r = c.exampleRefs[i]!;
-      expect(x.href).toBe(`/en/shiur/${r.shiurId}/#s${r.sectionIndex}`);
+      expect(x.href).toMatch(new RegExp(`^/en/shiur/${r.shiurId}/#t=\\d+(?:\\.\\d+)?$`));
       expect(x.time).toMatch(/^\d+:\d\d(?::\d\d)?$/);
       expect(x.title.text).not.toBe("");
     }

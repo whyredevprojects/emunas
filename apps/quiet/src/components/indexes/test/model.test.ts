@@ -4,7 +4,7 @@
  */
 import type { IndexRow } from "@emunas/corpus/public";
 import { describe, expect, it } from "vitest";
-import { byLetter, citeFromRow, compareNames, letterOf, run, sectionHref, sefariaHref, sortForm } from "../model.ts";
+import { byLetter, citeFromRow, compareNames, letterOf, run, sefariaHref, shiurHref, sortForm } from "../model.ts";
 
 describe("helpers", () => {
   it("sortForm drops articles, marks and leading quote marks", () => {
@@ -35,11 +35,11 @@ describe("helpers", () => {
     ]);
   });
 
-  it("citeFromRow cites the catalog's occasion, number and years, at the moment", () => {
+  it("citeFromRow cites the shiur's title, its occasion and years, at the moment, never the catalog number", () => {
     const row = {
       id: "yi-a-01",
       lang: "yi",
-      catalog: { sectionTitle: "פרשת השבוע", n: "5" },
+      catalog: { sectionTitle: "פרשת השבוע", n: "5", titleOriginal: "עבודת יעקב" },
       parsha: { raw: "נח", key: "noach" },
       zman: null,
       years: [5743],
@@ -47,14 +47,18 @@ describe("helpers", () => {
     expect(citeFromRow(row, "en", 90)).toEqual({
       shiurId: "yi-a-01",
       href: "/en/shiur/yi-a-01/#t=90",
+      title: { text: "עבודת יעקב", lang: "yi", dir: "rtl" },
       occasion: { text: "נח", lang: "yi", dir: "rtl" },
-      n: "5",
       years: [5743],
       lang: "yi",
       t: 90,
     });
     expect(citeFromRow(row, "yi", null, "/yi/x/").href).toBe("/yi/x/");
-    expect(sectionHref("yi", "yi-a-01", 3)).toBe("/yi/shiur/yi-a-01/#s3");
+    // no parsha or zman: no occasion (never the section title); an occasion equal to the title is not repeated
+    expect(citeFromRow({ ...row, parsha: null } as IndexRow, "en", null).occasion).toBeNull();
+    expect(citeFromRow({ ...row, catalog: { ...row.catalog, titleOriginal: "נח" } } as IndexRow, "en", null).occasion).toBeNull();
+    expect(shiurHref("yi", "yi-a-01", 61.5)).toBe("/yi/shiur/yi-a-01/#t=61.5");
+    expect(shiurHref("yi", "yi-a-01", null)).toBe("/yi/shiur/yi-a-01/");
   });
 
   it("sefariaHref encodes the ref as one path segment", () => {

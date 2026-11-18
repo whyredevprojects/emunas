@@ -6,7 +6,7 @@
  * "content" vocabulary (concept-quiet §11): shiurim, recordings, notes.
  */
 export const en = {
-  "site.name": "The Shiurim of the Mashgiach",
+  "site.name": "Library — Shiurim",
   "site.nameShort": "Shiurim",
   "site.description": "The recorded shiurim of Harav Moshe Wolfson zt\"l.",
 
@@ -32,7 +32,7 @@ export const en = {
 
   "breadcrumb.label": "You are here",
 
-  "footer.recordingIsSource": "The recordings are the source. Titles are as printed in the 2012 Pocket Guide.",
+  "footer.recordingIsSource": "The recordings are the source.",
   "footer.otherEdition": "This page in Yiddish",
   "footer.home": "Emunas home",
 
@@ -46,15 +46,10 @@ export const en = {
   "listen.unavailable": "The recording is not yet available online.",
   "listen.unavailablePart": "Part {part}: not yet available online.",
   "listen.noSupport": "This browser cannot play the recording here. Use the download link.",
-  "listen.duration": "Length {duration}",
 
-  "citation.label": "Catalog entry",
+  "citation.label": "Details",
   "citation.number": "no. {n}",
-  "citation.guidePage": "Pocket Guide p. {page}",
-  "citation.series": "series",
-
-  "catalog.derived.filename": "Not in the 2012 Pocket Guide; the title is taken from the file name.",
-  "catalog.derived.dirPrefix": "Not in the 2012 Pocket Guide; the title is taken from the folder and file name.",
+  "citation.perek": "Perek {perek}",
 
   "notes.label": "Notes",
 

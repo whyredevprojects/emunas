@@ -3,18 +3,6 @@
   margin-block-start: var(--space-l);
 }
 
-/* A part whose human-written text has not arrived: plainly marked, never mistaken for text. */
-.about-placeholder {
-  border: var(--rule-hairline) dashed var(--color-rule-strong);
-  padding-block: var(--space-xs);
-  padding-inline: var(--space-s);
-  color: var(--color-ink-muted);
-}
-
-.about-placeholder-label {
-  font-weight: var(--weight-semibold);
-}
-
 /* The shared paragraph on the AI-improved sound, after "How this site is arranged". */
 .about-audio {
   margin-block-start: var(--space-s);

@@ -100,10 +100,17 @@ describe("the built home site", () => {
     expect(read("robots.txt")).toContain(`Sitemap: https://${DOMAIN}/sitemap.xml`);
   });
 
-  it("links Library and Listen on their own subdomains", () => {
+  it("links Library and Analyze on their own subdomains", () => {
     const html = read("index.html");
     expect(html).toContain(`href="https://library.${DOMAIN}/en/"`);
     expect(html).toContain(`href="https://listen.${DOMAIN}/en/"`);
+  });
+
+  it("puts the Library first and emphasized, Analyze second", () => {
+    const html = read("index.html");
+    expect(html).toMatch(/<a class="pill pill--ink" href="https:\/\/library\.[^"]+">Library /);
+    expect(html).toMatch(/<a class="pill" href="https:\/\/listen\.[^"]+">Analyze /);
+    expect(html).toMatch(/class="door door--library door--primary"[\s\S]*class="door door--listen"/);
   });
 
   it("follows the naming rules and never mentions transcripts", () => {

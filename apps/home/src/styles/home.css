@@ -152,6 +152,7 @@ a:hover {
   font-size: 0.85rem;
   font-weight: 500;
   text-transform: none;
+  white-space: nowrap;
 }
 
 /* ---------- masthead ---------- */
@@ -779,24 +780,29 @@ a:hover {
 .door--library .door-art i:nth-child(9) { height: 74%; }
 .door--library .door-art i:nth-child(10) { height: 90%; }
 
-.door--listen {
+/* The emphasized doorway: the Library, the simple default way in. */
+.door--primary {
   background: var(--panel);
   color: var(--on-panel);
   border-color: var(--panel);
 }
 
-.door--listen .label,
-.door--listen .yi-name,
-.door--listen .host {
+.door--primary .label,
+.door--primary .yi-name,
+.door--primary .host {
   color: var(--on-panel-muted);
 }
 
-.door--listen .foot {
+.door--primary .foot {
   border-top-color: rgb(255 255 255 / 18%);
 }
 
-.door--listen .cta {
+.door--primary .cta {
   color: var(--on-panel-accent);
+}
+
+.door--primary .door-art {
+  border-bottom-color: var(--on-panel-muted);
 }
 
 .door--listen .door-art {

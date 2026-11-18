@@ -45,7 +45,7 @@ const throughout = corpusLabel("throughout", ed);
             <span class="entry-count">{c.countText}</span>
             {c.toTopic && c.href && <> <span class="see-line">(<a href={c.href}>{t("glossary.topic")}</a>)</span></>}
             {c.throughout && !c.toTopic && <> <span class="entry-count">{throughout}</span></>}
-            <CiteList ed={ed} cites={c.cites} />
+            <CiteList ed={ed} cites={c.cites} brief />
             {c.definition && <p class="entry-definition"><bdi lang={c.definition.lang} dir={c.definition.dir}>{c.definition.text}</bdi></p>}
           </li>
         ))}

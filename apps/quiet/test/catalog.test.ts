@@ -19,8 +19,9 @@ import {
   buildDate,
   catalogRow,
   contentsModel,
-  gapRow,
   corpusTotals,
+  SECTION_DISPLAY_NAMES,
+  sectionDisplayTitle,
   perekIsNumeral,
   sectionHref,
   sectionModel,
@@ -95,6 +96,16 @@ describe("addresses and helpers", () => {
     expect(sectionHref("yi", { source: "uncatalogued-guide", id: "simchos" })).toBe("/yi/section/unc-simchos/");
   });
 
+  it("shows clean names for the catalog's file-system and all-caps section labels", () => {
+    expect(sectionDisplayTitle("pocket-guide-2012:tanya-en", "TANYA ENGLISH", "en")).toBe("Tanya (English)");
+    expect(sectionDisplayTitle("uncatalogued-guide:current", "Y 05 Current", "en")).toBe("Shiurim 5769–5773");
+    expect(sectionDisplayTitle("pocket-guide-2012:zmanim", "זמנים", "en")).toBe("זמנים");
+    for (const [key, name] of Object.entries(SECTION_DISPLAY_NAMES)) {
+      expect(name.en, key).not.toMatch(/[א-ת]/);
+      expect(name.yi, key).toMatch(/[א-ת]/);
+    }
+  });
+
   it("reads perek numerals as printed", () => {
     for (const p of ["א", "י\"ב", "כ”ח", "ו-ז", "י\"א וי\"ב", "כ\"ג וכ\"ד"]) expect(perekIsNumeral(p), p).toBe(true);
     expect(perekIsNumeral("הקדמה")).toBe(false);
@@ -132,26 +143,25 @@ describe("catalog models on the mini corpus", () => {
     corpus = buildInto(MINI_DATA, MINI_POLICY);
   });
 
-  it("lists sections in catalog order, Yiddish, then English, then uncatalogued, skipping empty ones", () => {
+  it("lists sections in catalog order, Yiddish, then English, then the other recordings, skipping empty ones", () => {
     const m = contentsModel(corpus, "en");
-    const listed = [...m.yiddish, ...m.english, ...m.uncatalogued];
+    const listed = [...m.yiddish, ...m.english, ...m.more];
     const expected = corpus.sections.sections.filter((s) => s.count > 0).map((s) => s.key);
     // Yiddish guide sections come before English ones in the guide itself
     expect(listed.map((s) => s.key)).toEqual(expected);
     expect(m.yiddish.every((s) => s.lang === "yi" && !s.uncatalogued)).toBe(true);
     expect(m.english.every((s) => s.lang === "en" && !s.uncatalogued)).toBe(true);
-    expect(m.uncatalogued.every((s) => s.uncatalogued)).toBe(true);
+    expect(m.more.every((s) => s.uncatalogued)).toBe(true);
     expect(listed.some((s) => s.count === 0)).toBe(false);
   });
 
   it("puts every shiur on exactly one section page", () => {
     const seen = new Map<string, number>();
-    for (const s of sectionSummaries(corpus)) {
+    for (const s of sectionSummaries(corpus, "yi")) {
       const page = sectionModel(corpus, s.slug, "yi");
       expect(page, s.slug).not.toBeNull();
-      const shiurRows = page!.rows.filter((r) => !r.gap);
-      for (const r of shiurRows) seen.set(r.id, (seen.get(r.id) ?? 0) + 1);
-      expect(shiurRows.map((r) => r.id)).toEqual(s.shiurIds);
+      for (const r of page!.rows) seen.set(r.id, (seen.get(r.id) ?? 0) + 1);
+      expect(page!.rows.map((r) => r.id)).toEqual(s.shiurIds);
     }
     expect([...seen.keys()].sort()).toEqual(corpus.index.shiurim.map((r) => r.id).sort());
     expect([...seen.values()].every((n) => n === 1)).toBe(true);
@@ -176,26 +186,15 @@ describe("catalog models on the mini corpus", () => {
     const order = new Map(corpus.occasions.zmanim.map((z) => [`z-${z.key}`, z.order]));
     const orders = m.layout.zmanim.map((g) => order.get(g.id)!);
     expect(orders).toEqual([...orders].sort((a, b) => a - b));
-    const grouped = [...m.layout.zmanim.flatMap((g) => g.rows), ...(m.layout.other?.rows ?? [])].filter((r) => !r.gap);
+    const grouped = [...m.layout.zmanim.flatMap((g) => g.rows), ...(m.layout.other?.rows ?? [])];
     expect(grouped.map((r) => r.id).sort()).toEqual([...m.section.shiurIds].sort());
   });
 
-  it("shows guide rows without audio greyed in their section, where the guide prints them (W4.9)", () => {
+  it("leaves catalog rows without any recording out of their section", () => {
     expect(corpus.index.gaps!.map((g) => g.id)).toEqual(["yi-zmanim-tv-bshbt-02", "en-zmanim-en-chnvkh-01"]);
     for (const g of corpus.index.gaps!) {
-      const section = sectionSummaries(corpus).find((s) => s.key === g.sectionKey)!;
-      const m = sectionModel(corpus, section.slug, "en")!;
-      const i = m.rows.findIndex((r) => r.id === g.id);
-      expect(i, g.id).toBeGreaterThanOrEqual(0);
-      const row = m.rows[i]!;
-      expect(row).toMatchObject({ gap: true, playable: false, oneLiner: null, status: "catalog-only" });
-      if (g.after !== null) expect(m.rows[i - 1]!.id).toBe(g.after);
-      else expect(i).toBe(0);
-      // grouped by zman like the shiurim around it
-      if (m.layout.kind === "zman") {
-        const inGroup = m.layout.zmanim.find((z) => z.rows.some((r) => r.id === g.id));
-        expect(inGroup?.id, g.id).toBe(g.zman ? `z-${g.zman.key}` : undefined);
-      }
+      const section = sectionSummaries(corpus, "en").find((s) => s.key === g.sectionKey)!;
+      expect(sectionModel(corpus, section.slug, "en")!.rows.some((r) => r.id === g.id), g.id).toBe(false);
     }
   });
 
@@ -209,7 +208,7 @@ describe("catalog models on the mini corpus", () => {
     expect(tanya.groups!.map((g) => g.perek)).toEqual(["א", "ב", "י\"ב", "י\"ח"]);
     // Yiddish and English shiurim are separate shiurim, never translations (C1.8 pairing removal).
     expect("sibling" in tanya).toBe(false);
-    expect(tanya.sections.map((s) => s.key)).toEqual(["pocket-guide-2012:tanya-1", "pocket-guide-2012:tanya-2"]);
+    expect("sections" in tanya).toBe(false);
     expect(seriesModel(corpus, "emunah-yi", "en")!.groups).toBeNull();
     expect(seriesModel(corpus, "no-such-series", "en")).toBeNull();
   });
@@ -222,7 +221,6 @@ describe("catalog models on the mini corpus", () => {
   it("reports totals from build.json", () => {
     const t = corpusTotals(corpus);
     expect(t.total).toBe(corpus.build.counts.total);
-    expect(t.full).toBe(corpus.build.counts.full);
   });
 });
 
@@ -327,13 +325,13 @@ describe("catalog models on today's data", () => {
       const key = `${s.catalog.source}:${s.catalog.sectionId}`;
       want.set(key, (want.get(key) ?? 0) + 1);
     }
-    // Sections made only of guide rows without audio are listed with no shiurim (W4.9).
-    for (const g of corpus.index.gaps!) if (!want.has(g.sectionKey)) want.set(g.sectionKey, 0);
-    const got = new Map(sectionSummaries(corpus).map((s) => [s.key, s.count]));
+    // Sections made only of catalog rows without audio are not listed at all.
+    const got = new Map(sectionSummaries(corpus, "en").map((s) => [s.key, s.count]));
     expect(got).toEqual(want);
+    for (const g of corpus.index.gaps!) if (!want.has(g.sectionKey)) expect(got.has(g.sectionKey), g.sectionKey).toBe(false);
     // and the per-category totals of the ingest stats
     const byCategory = new Map<string, number>();
-    for (const s of sectionSummaries(corpus)) {
+    for (const s of sectionSummaries(corpus, "en")) {
       for (const id of s.shiurIds) {
         const cat = corpus.index.shiurim.find((r) => r.id === id)!.category;
         byCategory.set(cat, (byCategory.get(cat) ?? 0) + 1);
@@ -361,7 +359,7 @@ describe("catalog models on today's data", () => {
   it("catalog-only rows carry no AI text on any section or series page", () => {
     for (const ed of ["yi", "en"] as const) {
       const rows: CatalogRow[] = [
-        ...sectionSummaries(corpus).flatMap((s) => sectionModel(corpus, s.slug, ed)!.rows),
+        ...sectionSummaries(corpus, ed).flatMap((s) => sectionModel(corpus, s.slug, ed)!.rows),
         ...seriesSummaries(corpus, ed).flatMap((s) => seriesModel(corpus, s.id, ed)!.rows),
       ];
       expect(rows.length).toBeGreaterThan(997);
@@ -369,16 +367,17 @@ describe("catalog models on today's data", () => {
     }
   });
 
-  it("greys rows that have no recording that can be played", () => {
-    const rows = sectionSummaries(corpus).flatMap((s) => sectionModel(corpus, s.slug, "en")!.rows);
+  it("greys rows that have no recording that can be played, and lists no catalog row without audio", () => {
+    const rows = sectionSummaries(corpus, "en").flatMap((s) => sectionModel(corpus, s.slug, "en")!.rows);
     const unplayable = rows.filter((r) => !r.playable).map((r) => r.id);
     const expected = corpus.index.shiurim
       .filter((r) => !r.recordingIds.some((id) => corpus.audio[id]?.playable))
       .map((r) => r.id);
-    // plus the guide rows that have no audio at all (11 today)
-    expected.push(...corpus.index.gaps!.map((g) => g.id));
-    expect(corpus.index.gaps!.length).toBeGreaterThanOrEqual(11);
     expect(unplayable.sort()).toEqual(expected.sort());
+    // the catalog rows that have no audio at all (11 today) are on no page
+    expect(corpus.index.gaps!.length).toBeGreaterThanOrEqual(11);
+    const ids = new Set(rows.map((r) => r.id));
+    for (const g of corpus.index.gaps!) expect(ids.has(g.id), g.id).toBe(false);
   });
 
   it("sub-groups the parsha sections by chumash and parsha, the zmanim sections by zman", () => {
@@ -408,9 +407,6 @@ describe("CatalogTable", () => {
     title: "זמן התחלת התנוצצות",
     heading: null,
     subTitle: null,
-    n: "12",
-    uncatalogued: false,
-    derived: "catalog",
     parsha: null,
     zman: { key: "chanukah", raw: "חנוכה" },
     perek: null,
@@ -422,10 +418,11 @@ describe("CatalogTable", () => {
 
   it("renders a captioned table with scoped headers, the title as a bdi run, and the notes cell", async () => {
     const html = await container.renderToString(CatalogTable, {
-      props: { ed: "en", rows: [base], caption: "Chanukah: the shiurim in catalog order", occasion: true, notes: true },
+      props: { ed: "en", rows: [base], caption: "Chanukah: the shiurim in order", occasion: true, notes: true },
     });
     expect(html).toContain("<caption");
-    expect(html).toMatch(/<th scope="col"[^>]*>No\.<\/th>/);
+    expect(html).toMatch(/<th scope="col"[^>]*>Title<\/th>/);
+    expect(html).not.toContain("col-num");
     expect(html).toMatch(/<th scope="row"/);
     expect(html).toContain('<a href="/en/shiur/yi-x-01/"><bdi lang="yi" dir="rtl">זמן התחלת התנוצצות</bdi></a>');
     expect(html).toContain("The Mashgiach explains the lights.");
@@ -433,41 +430,15 @@ describe("CatalogTable", () => {
     expect(html).not.toContain("no-recording");
   });
 
-  it("leaves the notes cell empty for a catalog-only row, greys a row without a playable recording, marks uncatalogued rows", async () => {
-    const row: CatalogRow = { ...base, status: "catalog-only", oneLiner: null, playable: false, uncatalogued: true, derived: "filename" };
+  it("leaves the notes cell empty for a catalog-only row and greys a row without a playable recording", async () => {
+    const row: CatalogRow = { ...base, status: "catalog-only", oneLiner: null, playable: false };
     const html = await container.renderToString(CatalogTable, {
       props: { ed: "yi", rows: [row], caption: "x", notes: true },
     });
     expect(html).toMatch(/<td class="col-notes" lang="yi"><\/td>/);
     expect(html).toContain("no-recording");
     expect(html).toContain("קיין רעקארדירונג אויפן אינטערנעט");
-    expect(html).toContain('class="unc-mark"');
-    expect(html).toContain("נישט אינעם גייד פון 2012");
-  });
-
-  it("greys a guide row with no audio and gives it no link (W4.9)", async () => {
-    const gap = gapRow({
-      id: "yi-zmanim-tv-bshbt-02",
-      lang: "yi",
-      category: "zman",
-      catalog: { source: "pocket-guide-2012", sectionId: "zmanim", sectionTitle: "זמנים", n: "2", page: 21, titleOriginal: "זמן התחלת התנוצצות", subTitle: null, derived: "catalog" },
-      sectionKey: "pocket-guide-2012:zmanim",
-      after: null,
-      reason: "not-on-disk",
-      parsha: null,
-      zman: { raw: 'ט"ו בשבט', key: "tu-bishvat" },
-      perek: null,
-      years: [5768],
-      series: null,
-    });
-    const html = await container.renderToString(CatalogTable, {
-      props: { ed: "en", rows: [base, gap], caption: "x", occasion: true, notes: true },
-    });
-    const row = html.slice(html.indexOf('id="row-yi-zmanim-tv-bshbt-02"'));
-    expect(row).toContain("no-recording");
-    expect(row).toContain("data-gap");
-    expect(row.slice(0, row.indexOf("</tr>"))).not.toContain("<a ");
-    expect(html).toContain('<a href="/en/shiur/yi-x-01/">');
+    expect(html).toMatch(/<th scope="col"[^>]*>קעפל<\/th>/);
   });
 
   it("numbers series parts", async () => {

@@ -41,7 +41,7 @@ const blocks = worksIndex(data, ed);
             )}
             {w.alt && <> <span class="alt-name"><bdi lang={w.alt.lang} dir={w.alt.dir}>{w.alt.text}</bdi></span></>}
             <span class="entry-count">{w.countText}</span>
-            <CiteList ed={ed} cites={w.cites} />
+            <CiteList ed={ed} cites={w.cites} brief />
           </li>
         ))}
       </ul>

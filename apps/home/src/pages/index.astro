@@ -1,6 +1,6 @@
 ---
 /**
- * Home: a framed title page, "Start here", the Library and Listen doorways with the offline ways
+ * Home: a framed title page, "Start here", the Library and Analyze doorways with the offline ways
  * to hear the shiurim, a few covers from the archive, About + Sefarim, and supporting the sefarim.
  */
 import Base from "../layouts/Base.astro";
@@ -38,8 +38,8 @@ const bars = Array.from({ length: 19 });
           <ol>
             <li><a href="/about/"><span class="t">Who was the Mashgiach</span><span class="d">A short introduction, and two magazine features to read next.</span></a></li>
             <li><a href={firstEssay.path}><span class="t">Read one essay</span><span class="d">{firstEssay.title} (PDF)</span></a></li>
-            <li><a href={links.listen}><span class="t">Hear a shiur</span><span class="d">The shiurim in your browser, by parsha, Yom Tov and series.</span></a></li>
-            <li><a href={links.library}><span class="t">Find a topic in the Library</span><span class="d">Search by parsha, Yom Tov, sefer or idea.</span></a></li>
+            <li><a href={links.library}><span class="t">Find a shiur in the Library</span><span class="d">Hear it and read its summary. Search by parsha, Yom Tov, sefer or idea.</span></a></li>
+            <li><a href={links.listen}><span class="t">Go deeper in Analyze</span><span class="d">More data: the seforim, people, maasios and ideas across all the shiurim.</span></a></li>
           </ol>
         </nav>
       </div>
@@ -49,31 +49,31 @@ const bars = Array.from({ length: 19 });
   <section class="doors" aria-label="The two shiur sites">
     <div class="wrap">
       <div class="grid">
-        <article class="door door--library">
+        <article class="door door--library door--primary">
           <div class="door-head">
             <div>
-              <span class="label">Read &amp; study &middot; <span lang="yi" dir="rtl">לערנען</span></span>
+              <span class="label">Read &amp; listen &middot; <span lang="yi" dir="rtl">לייענען און הערן</span></span>
               <h2><a href={links.library}>Library</a></h2>
-              <p class="yi-name" lang="yi" dir="rtl">די שיעורים פון דעם משגיח</p>
+              <p class="yi-name" lang="yi" dir="rtl">ספריה</p>
             </div>
             <div class="door-art" aria-hidden="true">{spines.map(() => <i />)}</div>
           </div>
-          <p class="blurb">The recorded shiurim, each with a written summary in English and Yiddish, the sources he
-          brought, and the topics he returned to. Arranged by parsha, Yom Tov and series.</p>
+          <p class="blurb">The simple way in, and the place to start. The recorded shiurim, each with a written summary
+          in English and Yiddish and its topics. Arranged by parsha, Yom Tov and series.</p>
           <div class="foot"><span class="cta">Open the Library &rarr;</span><span class="host">{bareHost(env.hosts.quiet)}</span></div>
         </article>
         <article class="door door--listen">
           <div class="door-head">
             <div>
-              <span class="label">Listen &middot; <span lang="yi" dir="rtl">הערן</span></span>
-              <h2><a href={links.listen}>Listen</a></h2>
-              <p class="yi-name" lang="yi" dir="rtl">אמונת &mdash; הערן</p>
+              <span class="label">Study in depth &middot; <span lang="yi" dir="rtl">לערנען בעיון</span></span>
+              <h2><a href={links.listen}>Analyze</a></h2>
+              <p class="yi-name" lang="yi" dir="rtl">עיון</p>
             </div>
             <div class="door-art" aria-hidden="true">{bars.map(() => <i />)}</div>
           </div>
-          <p class="blurb">Play the shiurim in your browser, in the Mashgiach&rsquo;s own voice. Browse by parsha and
-          Yom Tov, and follow a series from beginning to end.</p>
-          <div class="foot"><span class="cta">Start listening &rarr;</span><span class="host">{bareHost(env.hosts.live)}</span></div>
+          <p class="blurb">The advanced app, with more data and more to learn. Play the shiurim in the Mashgiach&rsquo;s
+          own voice, and explore the seforim, people, maasios and ideas across all of them.</p>
+          <div class="foot"><span class="cta">Open Analyze &rarr;</span><span class="host">{bareHost(env.hosts.live)}</span></div>
         </article>
       </div>
       <p class="door-note">No internet at home? Hear the shiurim by phone at

@@ -28,12 +28,6 @@ function rows(ed: Ed): Row[] {
       built: { quiet: Q.shiur(ed, ID), live: L.shiur(ed, ID) },
     },
     {
-      name: "section",
-      quiet: `/${ed}/shiur/${ID}/#s2`,
-      live: `/${ed}/s/${ID}?t=845&m=${ID}~s2`,
-      built: { quiet: Q.shiur(ed, ID, { section: 2 }), live: L.shiur(ed, ID, { t: 845, m: `${ID}~s2` }) },
-    },
-    {
       name: "time",
       quiet: `/${ed}/shiur/${ID}/#t=754`,
       live: `/${ed}/s/${ID}?t=754`,
@@ -141,7 +135,7 @@ describe.each(EDS)("§2.2 table, edition %s", (ed) => {
 describe("absolute builders", () => {
   it("cross-site links carry the other host", () => {
     expect(links.live.shiur("en", ID, { t: 754.4 })).toBe(`${HOSTS.live}/en/s/${ID}?t=754.4`);
-    expect(links.quiet.shiur("yi", ID, { section: 3 })).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#s3`);
+    expect(links.quiet.shiur("yi", ID, { t: 845 })).toBe(`${HOSTS.quiet}/yi/shiur/${ID}/#t=845`);
   });
 });
 

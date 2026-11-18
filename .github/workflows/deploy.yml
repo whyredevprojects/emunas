@@ -131,6 +131,16 @@ jobs:
         run: npm run site:lint
       - name: Unit tests (sites, site Workers, eval suite)
         if: steps.ci.outputs.passed != 'true'
+        # As in ci.yml: the tests set their own hosts. Left as the job sets them, a staging
+        # deploy's workers.dev hosts leak into the tests that build or resolve hosts.
+        env:
+          EMUNAS_DOMAIN: ""
+          EMUNAS_WORKERS_SUBDOMAIN: ""
+          EMUNAS_STAGE: ""
+          EMUNAS_DEPLOY: ""
+          EMUNAS_MEDIA_ORIGIN: ""
+          EMUNAS_FEEDBACK_EMAIL: ""
+          VITE_TURNSTILE_SITE_KEY: ""
         run: npm run site:test
       - name: Check emunas-api resources are provisioned
         # wrangler.jsonc ships placeholder D1 ids (00000000-0000-4000-8000-…) until the resources

@@ -1,0 +1,44 @@
+---
+/**
+ * Previous and next (concept-quiet §5.4): one line at the foot of the shiur page,
+ * `← previous title · series or section · next title →`, in the series order when the shiur is in a
+ * series, else in the section order (`view.ts` `prevNext`). The first and the last shiur have one
+ * side only. Long titles are cut short with an ellipsis on screen (shiur.css); the full title stays in
+ * the DOM and in the link's title attribute. Rendered on every shiur page, with or without notes.
+ */
+import { runAttrs } from "../../lib/bidi.ts";
+import type { Ed } from "../../lib/edition.ts";
+import { useShiurT } from "./strings.ts";
+import type { PrevNextView, RowRef } from "./view.ts";
+
+interface Props {
+  ed: Ed;
+  view: PrevNextView;
+  /** Spoken language of the shiur: the section and series names are catalog text in it. */
+  shiurLang: Ed;
+}
+
+const { ed, view, shiurLang } = Astro.props;
+const t = useShiurT(ed);
+const title = (r: RowRef) => r.title || t("prevNext.noTitle");
+const name = view.label || (view.of === "series" ? t("prevNext.seriesFallback") : "");
+// The arrows point the way the line reads: "back" is on the inline-start side.
+const [back, forward] = ed === "yi" ? ["→", "←"] : ["←", "→"];
+---
+<nav class="prev-next" aria-label={t("prevNext.label")} data-of={view.of}>
+  <p>
+    {view.prev && (
+      <>
+        <a href={view.prev.href} rel="prev" title={title(view.prev)}><span aria-hidden="true">{back}</span> <span class="visually-hidden">{t("prevNext.prev")} </span><bdi class="prev-next-title" {...runAttrs(title(view.prev), view.prev.lang)}>{title(view.prev)}</bdi></a>
+        <span class="sep" aria-hidden="true">·</span>
+      </>
+    )}
+    <a class="prev-next-of" href={view.href}><bdi {...runAttrs(name, shiurLang)}>{name}</bdi></a>
+    {view.next && (
+      <>
+        <span class="sep" aria-hidden="true">·</span>
+        <a href={view.next.href} rel="next" title={title(view.next)}><span class="visually-hidden">{t("prevNext.next")} </span><bdi class="prev-next-title" {...runAttrs(title(view.next), view.next.lang)}>{title(view.next)}</bdi> <span aria-hidden="true">{forward}</span></a>
+      </>
+    )}
+  </p>
+</nav>
