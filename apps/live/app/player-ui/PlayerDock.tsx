@@ -6,8 +6,14 @@
  * Accessibility (tech-live §10): the scrubber is a native range input (an ARIA slider) with
  * `aria-valuetext` like "12:03 of 43:10, chapter 3: …"; chapter changes go to a polite live region,
  * at most one per 10 s; all buttons have names; 44 px targets.
+ *
+ * The notice row shows one thing, by priority: unavailable > error > moment ended > "the improved
+ * version could not load" > skipped/undo > the version line ("Sound improved by AI · Switch to the
+ * original", cleaned-audio-ux §4). On a narrow dock the version line shows only its button (the
+ * listening room carries the full sentence). A switch is announced in its own polite region, not
+ * the throttled chapter one.
  */
-import { formatClock, pickText, sectionKindLabel, type UiLang } from "@emunas/i18n";
+import { audioVersionLabel, formatClock, pickText, sectionKindLabel, type AudioVersion, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useRef, useState, type ChangeEvent, type JSX } from "react";
 import { Link } from "react-router";
@@ -15,9 +21,11 @@ import { Text } from "../components/Text.tsx";
 import { useT, useUi } from "../i18n/index.ts";
 import { roomT, type RoomT } from "../features/listening-room/strings.ts";
 import type { PlayerState, SkipKind, SleepSpec } from "../player-engine/index.ts";
+import { announceVersion, useVersionAnnouncement, type VersionAnnouncement } from "./audio-version.ts";
 import { getEngine, playingInfo, usePlayerState, useRegistryVersion } from "./engine.ts";
 import { Icon } from "./Icon.tsx";
 import { dockStyles as s } from "./styles.ts";
+import { VersionLine, versionLineState } from "./VersionLine.tsx";
 
 export const SPEEDS = [1, 1.25, 1.5, 1.75, 2, 0.75] as const;
 const ANNOUNCE_EVERY_MS = 10_000;
@@ -81,6 +89,36 @@ function useChapterAnnouncement(title: string | null, chapterIndex: number, play
   return text;
 }
 
+export type DockNotice = "unavailable" | "error" | "moment" | "fallback" | "skip" | "version" | null;
+
+/** Which notice the dock's one notice row shows (highest priority first). */
+export function noticeKind(state: PlayerState, version: AudioVersion | null): DockNotice {
+  if (state.status === "unavailable") return "unavailable";
+  if (state.status === "error") return "error";
+  if (state.momentEnded) return "moment";
+  if (state.versionFallback) return "fallback";
+  if (state.lastSkip) return "skip";
+  if (version !== null) return "version";
+  return null;
+}
+
+function announcementText(a: VersionAnnouncement | null, ui: UiLang, rt: RoomT): string {
+  if (!a) return "";
+  if (a.version === "fallback") return rt("dock.versionFallback");
+  return audioVersionLabel(a.version === "cleaned" ? "announce.cleaned" : "announce.original", ui);
+}
+
+/** The polite region for version switches (separate from the throttled chapter announcer). */
+function VersionStatus({ ui, rt }: { ui: UiLang; rt: RoomT }): JSX.Element {
+  const a = useVersionAnnouncement();
+  return (
+    <div className={s.visuallyHidden} role="status" aria-live="polite" data-version-status="">
+      {/* The key re-mounts the text so the same sentence twice is announced again. */}
+      <span key={a?.n ?? 0}>{announcementText(a, ui, rt)}</span>
+    </div>
+  );
+}
+
 export function PlayerDock(): JSX.Element {
   const ui = useUi();
   const t = useT();
@@ -95,11 +133,15 @@ export function PlayerDock(): JSX.Element {
   const chapterTitle = picked ? picked.text : null;
   const playing = state.status === "playing" || state.status === "loading";
   const announcement = useChapterAnnouncement(chapterTitle, state.chapterIndex, playing);
+  useEffect(() => {
+    if (state.versionFallback) announceVersion("fallback");
+  }, [state.versionFallback]);
 
   if (!info || state.shiurId === null) {
     return (
       <div className={s.root} data-player-status={state.status}>
         <p className={s.idle}>{t("shell.dockIdle")}</p>
+        <VersionStatus ui={ui} rt={rt} />
       </div>
     );
   }
@@ -113,10 +155,12 @@ export function PlayerDock(): JSX.Element {
     if (choice !== "running") engine.setSleepTimer(sleepSpec(choice));
   };
 
+  const version = versionLineState(state.playingVersion, state.cleanedAvailable);
+  const kind = noticeKind(state, version);
   let notice: JSX.Element | null = null;
-  if (state.status === "unavailable") notice = <span>{rt("dock.unavailable")}</span>;
-  else if (state.status === "error") notice = <span>{rt("dock.error")}</span>;
-  else if (state.momentEnded) {
+  if (kind === "unavailable") notice = <span>{rt("dock.unavailable")}</span>;
+  else if (kind === "error") notice = <span>{rt("dock.error")}</span>;
+  else if (kind === "moment") {
     notice = (
       <>
         <span>{rt("dock.momentEnded")}</span>
@@ -125,7 +169,9 @@ export function PlayerDock(): JSX.Element {
         </button>
       </>
     );
-  } else if (state.lastSkip) {
+  } else if (kind === "fallback") {
+    notice = <span className={s.noticeText}>{rt("dock.versionFallback")}</span>;
+  } else if (kind === "skip" && state.lastSkip) {
     notice = (
       <>
         <span>
@@ -135,6 +181,16 @@ export function PlayerDock(): JSX.Element {
           {rt("dock.undo")}
         </button>
       </>
+    );
+  } else if (kind === "version" && version !== null) {
+    notice = (
+      <VersionLine
+        version={version}
+        ui={ui}
+        textClassName={`${s.noticeText} ${s.versionText}`}
+        separatorClassName={s.versionText}
+        buttonClassName={s.textButton}
+      />
     );
   }
 
@@ -204,10 +260,15 @@ export function PlayerDock(): JSX.Element {
             disabled={disabled}
           />
         </div>
-        {notice ? <div className={s.notice}>{notice}</div> : null}
+        {notice ? (
+          <div className={s.notice} data-dock-notice={kind}>
+            {notice}
+          </div>
+        ) : null}
         <div className={s.visuallyHidden} role="status" aria-live="polite">
           {announcement ? rt("dock.chapterNow", { title: announcement }) : ""}
         </div>
+        <VersionStatus ui={ui} rt={rt} />
       </div>
 
       <div className={s.extras}>

@@ -23,6 +23,7 @@
  */
 import type { PublicRecording } from "@emunas/corpus/public";
 import { readPublishedTranscripts } from "@emunas/corpus/transcript-gate";
+import { defaultUrl } from "../../lib/audio.ts";
 import { findCorpusDir } from "./corpus.ts";
 import { FOLLOW_TEXT } from "./follow-text-strings.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -45,7 +46,7 @@ const c = FOLLOW_TEXT[ed];
     <h2 id="follow-text-heading">{c.heading}</h2>
     <p class="follow-text-note">{c.note}</p>
     {shown.map((r) => (
-      <div class="follow-text-rec" data-follow-src={`/transcript/${r.id}.json`} data-rec={r.id} data-offset={r.offset} data-audio={r.audioUrl ?? ""} lang={published.get(r.id)?.lang ?? undefined}>
+      <div class="follow-text-rec" data-follow-src={`/transcript/${r.id}.json`} data-rec={r.id} data-offset={r.offset} data-audio={defaultUrl(r) ?? ""} lang={published.get(r.id)?.lang ?? undefined}>
         {multi && <h3>{c.part(r.order + 1)}</h3>}
         <p><a href={`/transcript/${r.id}.json`}>{c.open}</a></p>
       </div>

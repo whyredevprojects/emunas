@@ -113,6 +113,7 @@ describe("report control in the listening room", () => {
       reason: "wrong-source",
       ui: "en",
       rev: tvbb.rev,
+      audio: "cleaned",
       turnstile: "token-1",
     });
   });

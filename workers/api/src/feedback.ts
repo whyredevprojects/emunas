@@ -8,7 +8,15 @@ import type { Env } from "./env.ts";
 import { verifyTurnstile } from "./turnstile.ts";
 import { isMomentId } from "./params.ts";
 import { isUiLang, type UiLang } from "@emunas/i18n";
-import { FEEDBACK_FIELDS, FEEDBACK_REASONS, type FeedbackAccepted, type FeedbackField, type FeedbackReason } from "./contract.ts";
+import {
+  FEEDBACK_AUDIO,
+  FEEDBACK_FIELDS,
+  FEEDBACK_REASONS,
+  type FeedbackAccepted,
+  type FeedbackAudio,
+  type FeedbackField,
+  type FeedbackReason,
+} from "./contract.ts";
 
 export const MAX_BODY_BYTES = 8 * 1024;
 export const MAX_TEXT_LENGTH = 1000;
@@ -25,6 +33,7 @@ export interface FeedbackInput {
   /** Interface language the report was sent from (any `UI_LANGS` language). */
   ui: UiLang;
   rev: string;
+  audio: FeedbackAudio | null;
   turnstile: string;
 }
 
@@ -46,7 +55,7 @@ function isRecord(v: unknown): v is Record<string, unknown> {
 /** Validates the body field by field; unknown keys are rejected. */
 export function parseFeedback(raw: unknown): Parsed {
   if (!isRecord(raw)) return { ok: false, param: "body" };
-  const allowed = new Set(["target", "reason", "text", "ui", "rev", "turnstile"]);
+  const allowed = new Set(["target", "reason", "text", "ui", "rev", "audio", "turnstile"]);
   for (const k of Object.keys(raw)) if (!allowed.has(k)) return { ok: false, param: UNKNOWN_PARAMETER };
 
   const target = raw["target"];
@@ -82,6 +91,10 @@ export function parseFeedback(raw: unknown): Parsed {
   if (typeof rev !== "string" || rev.length === 0 || rev.length > MAX_REV_LENGTH || !/^[\x21-\x7E]+$/.test(rev)) {
     return { ok: false, param: "rev" };
   }
+  const audio = raw["audio"] ?? null;
+  if (audio !== null && (typeof audio !== "string" || !(FEEDBACK_AUDIO as readonly string[]).includes(audio))) {
+    return { ok: false, param: "audio" };
+  }
   const turnstile = raw["turnstile"];
   if (typeof turnstile !== "string" || turnstile.length === 0 || turnstile.length > MAX_TURNSTILE_LENGTH) {
     return { ok: false, param: "turnstile" };
@@ -97,6 +110,7 @@ export function parseFeedback(raw: unknown): Parsed {
       text: text as string | null,
       ui,
       rev,
+      audio: audio as FeedbackAudio | null,
       turnstile,
     },
   };
@@ -137,10 +151,10 @@ export async function handleFeedback(request: Request, env: Env): Promise<Respon
   const id = crypto.randomUUID();
   const uaHash = await sha256Hex(`${env.FEEDBACK_HASH_SALT}\u0000${request.headers.get("user-agent") ?? ""}`);
   await env.DB_FEEDBACK.prepare(
-    "INSERT INTO feedback (id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, ua_hash, status) " +
-      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'open')",
+    "INSERT INTO feedback (id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, audio, ua_hash, status) " +
+      "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'open')",
   )
-    .bind(id, new Date().toISOString(), input.shiurId, input.momentId, input.field, input.reason, input.text, input.ui, input.rev, uaHash)
+    .bind(id, new Date().toISOString(), input.shiurId, input.momentId, input.field, input.reason, input.text, input.ui, input.rev, input.audio, uaHash)
     .run();
   return json({ id } satisfies FeedbackAccepted, 202);
 }

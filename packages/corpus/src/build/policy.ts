@@ -4,7 +4,7 @@
  * one is fatal (it is a reviewed, human-edited file).
  */
 import { readFileSync } from "node:fs";
-import { mp3SiblingKey } from "@emunas/audio";
+import { isPlayableKey, mp3SiblingKey } from "@emunas/audio";
 import * as v from "valibot";
 import { issueSummary } from "./schemas.ts";
 import { readPolicyText } from "./read.ts";
@@ -63,6 +63,47 @@ export function loadAudioTranscoded(policyDir: string): string[] {
     }
   });
   return [...new Set(r.output.mp3Siblings)];
+}
+
+const Day = v.pipe(v.string(), v.regex(/^\d{4}-\d{2}-\d{2}$/));
+const NonEmpty = v.pipe(v.string(), v.trim(), v.minLength(1));
+
+const AudioCleanedSchema = v.strictObject({
+  policyVersion: v.literal(1),
+  rejected: v.array(v.strictObject({ key: v.string(), reason: NonEmpty, reviewedBy: NonEmpty, reviewedAt: Day })),
+});
+
+export interface AudioCleanedRejection {
+  /** Served key (`servedKey()`, the `.mp3` key that is linked) whose improved copy was rejected. */
+  key: string;
+  reason: string;
+  reviewedBy: string;
+  reviewedAt: string;
+}
+
+export interface AudioCleanedPolicy {
+  rejected: AudioCleanedRejection[];
+}
+
+/**
+ * `site-policy/audio-cleaned.json`: the served keys whose AI-improved copy (`fixed/sidon/<key>`) was
+ * rejected after a person listened to it. Every other playable recording links its improved copy.
+ * Missing → no rejections. Invalid, an incomplete entry, a key that is not a playable `.mp3` key or
+ * a key listed twice → fatal (reviewed file). That each key belongs to a known recording is checked
+ * by the build, which has the ingest.
+ */
+export function loadAudioCleaned(policyDir: string): AudioCleanedPolicy {
+  const text = readPolicyText(policyDir, "audio-cleaned.json");
+  if (text === null) return { rejected: [] };
+  const r = v.safeParse(AudioCleanedSchema, JSON.parse(text));
+  if (!r.success) throw new Error(`site-policy/audio-cleaned.json invalid: ${issueSummary(r.issues).join("; ")}`);
+  const seen = new Set<string>();
+  r.output.rejected.forEach((e, i) => {
+    if (!isPlayableKey(e.key)) throw new Error(`site-policy/audio-cleaned.json: rejected[${i}].key is not a playable .mp3 key`);
+    if (seen.has(e.key)) throw new Error(`site-policy/audio-cleaned.json: rejected[${i}].key is listed twice`);
+    seen.add(e.key);
+  });
+  return { rejected: r.output.rejected.map((e) => ({ ...e })) };
 }
 
 const SuppressFileSchema = v.union([

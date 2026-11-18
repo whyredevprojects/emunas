@@ -73,6 +73,20 @@ describe("POST /api/feedback", () => {
     expect(siteverify.calls[0]?.form.get("remoteip")).toBe("198.51.100.7");
   });
 
+  it("stores which recording was playing, and NULL when the client does not say", async () => {
+    for (const audio of ["cleaned", "original"] as const) {
+      const res = await post({ ...valid, audio });
+      expect(res.status).toBe(202);
+      const { id } = (await res.json()) as { id: string };
+      const row = await env.DB_FEEDBACK.prepare("SELECT audio FROM feedback WHERE id = ?").bind(id).first<{ audio: string | null }>();
+      expect(row?.audio).toBe(audio);
+    }
+    const res = await post(valid);
+    const { id } = (await res.json()) as { id: string };
+    const row = await env.DB_FEEDBACK.prepare("SELECT audio FROM feedback WHERE id = ?").bind(id).first<{ audio: string | null }>();
+    expect(row?.audio).toBeNull();
+  });
+
   it("accepts a minimal report (no moment, field or text)", async () => {
     const res = await post({ target: { shiurId: "en-misc-01" }, reason: "other", ui: "yi", rev: "r", turnstile: "t" });
     expect(res.status).toBe(202);
@@ -118,6 +132,8 @@ describe("POST /api/feedback", () => {
       [{ ...valid, ui: "HE" }, "ui"],
       [{ ...valid, rev: "" }, "rev"],
       [{ ...valid, rev: "r".repeat(65) }, "rev"],
+      [{ ...valid, audio: "remastered" }, "audio"],
+      [{ ...valid, audio: 1 }, "audio"],
       [{ ...valid, turnstile: "" }, "turnstile"],
       [{ ...valid, turnstile: "t".repeat(2049) }, "turnstile"],
       [{ ...valid, target: { ...valid.target, shiurId: "../etc" } }, "target.shiurId"],

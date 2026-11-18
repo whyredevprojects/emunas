@@ -52,8 +52,8 @@ describe("timeline and chapters", () => {
     duration: 30,
     catalog: { titleOriginal: "x" },
     recordings: [
-      { id: "r1", offset: 0, duration: 10, audioUrl: "u1" },
-      { id: "r2", offset: 10, duration: 20, audioUrl: "u2" },
+      { id: "r1", offset: 0, duration: 10, audioUrl: "u1", cleanedUrl: null },
+      { id: "r2", offset: 10, duration: 20, audioUrl: "u2", cleanedUrl: null },
     ],
   };
 
@@ -105,8 +105,15 @@ describe("misc", () => {
   });
 
   it("uses audioUrl (A1); null or empty means unavailable", () => {
-    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "https://m/a.mp3" })).toBe("https://m/a.mp3");
-    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: null })).toBeNull();
-    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "" })).toBeNull();
+    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "https://m/a.mp3", cleanedUrl: null })).toBe("https://m/a.mp3");
+    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: null, cleanedUrl: null })).toBeNull();
+    expect(recordingAudioUrl({ id: "a", offset: 0, duration: 1, audioUrl: "", cleanedUrl: null })).toBeNull();
+  });
+
+  it("picks the improved copy for the cleaned version when there is one", () => {
+    const rec = { id: "a", offset: 0, duration: 1, audioUrl: "https://m/a.mp3", cleanedUrl: "https://m/fixed/sidon/a.mp3" };
+    expect(recordingAudioUrl(rec, "cleaned")).toBe("https://m/fixed/sidon/a.mp3");
+    expect(recordingAudioUrl(rec, "original")).toBe("https://m/a.mp3");
+    expect(recordingAudioUrl({ ...rec, cleanedUrl: null }, "cleaned")).toBe("https://m/a.mp3");
   });
 });

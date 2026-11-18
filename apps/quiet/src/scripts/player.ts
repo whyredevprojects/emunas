@@ -14,10 +14,18 @@
  *   `aria-current="time"` on its time. No auto-scroll, no sweeping highlight;
  * - Media Session metadata and actions (play/pause, ±seek, seek-to, previous/next chapter);
  * - multi-recording shiurim: when one recording ends the next playable one starts;
- * - keyboard (Space/K play-pause, ←/→ ±10 s) only while the dock itself has focus, never global.
+ * - keyboard (Space/K play-pause, ←/→ ±10 s) only while the dock itself has focus, never global;
+ * - improved audio (docs/sites/cleaned-audio-ux.md §6): the line under the tracks
+ *   (`p.listen-version`) gets a real button that switches every `<audio>` between the copy with the
+ *   sound improved by AI (`data-cleaned`, the default) and the original (`data-original`), keeping
+ *   position, play/pause and speed, and announces the switch politely. The choice is one global
+ *   preference in localStorage (`AUDIO_VERSION_KEY`, written only on a click). An `error` on an
+ *   improved file falls back once to the original for that recording. Downloads stay the original.
  *
- * No dependencies, no storage, no network of its own. Budget ≤ 6 KB brotli (checked in tests).
+ * No dependencies beyond the shared vocabulary, no network of its own; its only storage is that one
+ * preference. Budget ≤ 6 KB brotli (checked in tests).
  */
+import { AUDIO_VERSION_KEY, parseAudioVersion, type AudioVersion } from "@emunas/i18n";
 
 /** Seconds from a page hash `#t=754` / `#t=754.5`; null for anything else. */
 export function parseTimeHash(hash: string): number | null {
@@ -130,13 +138,95 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     if (a !== current && !current.paused) current.pause();
     current = a;
     for (const x of audios) x.closest(".track")?.toggleAttribute("data-current", x === a);
+    render();
   }
 
   function docked(): void {
     if (!dock || dock.hasAttribute("data-docked")) return;
     dock.setAttribute("data-docked", "");
     dock.tabIndex = 0;
+    render();
   }
+
+  // Improved audio. `failed`: recordings whose improved file would not load (rule 8).
+  let version: AudioVersion;
+  try {
+    version = parseAudioVersion(win.localStorage.getItem(AUDIO_VERSION_KEY));
+  } catch {
+    version = parseAudioVersion(null);
+  }
+  const failed = new Set<HTMLAudioElement>();
+  // Recordings asked to play: a failed load leaves them paused, but the fallback should still play.
+  const wants = new Set<HTMLAudioElement>();
+  const line = dock?.querySelector<HTMLElement>(".listen-version") ?? null;
+  const status = line?.querySelector<HTMLElement>("[role=status]");
+  const lineText = line?.querySelector("span");
+  let button: HTMLButtonElement | undefined;
+  const urlOf = (a: HTMLAudioElement) => {
+    const d = a.dataset;
+    return (version === "cleaned" && !failed.has(a) && d["cleaned"]) || d["original"] || "";
+  };
+  /** Whether `a` plays (or would play) its improved copy; null when it has none. */
+  const improved = (a: HTMLAudioElement) => (a.dataset["cleaned"] ? urlOf(a) === a.dataset["cleaned"] : null);
+
+  // The Report mail link names the version playing, so a report of a wrong word can be checked.
+  const report = doc.querySelector<HTMLAnchorElement>(".report-error a[href^='mailto:']");
+  const reportBase = report?.getAttribute("href") ?? "";
+
+  function render(): void {
+    if (!line || !button || !lineText) return;
+    const on = improved(current);
+    if (report && on !== null) {
+      report.href = reportBase + encodeURIComponent(`\n\n${line.dataset[on ? "announceCleaned" : "announceOriginal"] ?? ""}`);
+    }
+    const state = (on ?? version === "cleaned") ? "Cleaned" : "Original";
+    lineText.textContent = line.dataset[`text${state}`] ?? "";
+    button.textContent = line.dataset[`action${state}`] ?? "";
+    // Docked, the line describes the current part: hidden while it has no improved copy.
+    line.hidden = on === null && dock?.hasAttribute("data-docked") === true;
+  }
+
+  /** Points `a` at the version it should play, carrying position, play state and speed. */
+  function apply(a: HTMLAudioElement, playing = !a.paused): void {
+    const url = urlOf(a);
+    if (a.getAttribute("src") === url) return;
+    const idle = a.readyState === 0 && !playing && !pending.has(a);
+    const local = pending.get(a) ?? (a.currentTime || 0);
+    const rate = a.playbackRate;
+    a.defaultPlaybackRate = rate;
+    a.src = url;
+    if (idle || a !== current) return;
+    seek(a, local, playing);
+    a.playbackRate = rate;
+  }
+
+  const link = line?.querySelector<HTMLAnchorElement>("a.listen-version-switch");
+  if (line && link) {
+    button = doc.createElement("button");
+    button.type = "button";
+    button.className = link.className;
+    button.setAttribute("aria-describedby", link.getAttribute("aria-describedby") ?? "");
+    link.replaceWith(button);
+    button.addEventListener("click", () => {
+      const next: AudioVersion = (improved(current) ?? version === "cleaned") ? "original" : "cleaned";
+      version = next;
+      if (next === "cleaned") failed.clear();
+      try {
+        win.localStorage.setItem(AUDIO_VERSION_KEY, next);
+      } catch {
+        /* storage blocked: the choice lasts for this page */
+      }
+      audios.forEach((a) => apply(a));
+      render();
+      if (status) {
+        status.textContent = "";
+        const say = line.dataset[next === "cleaned" ? "announceCleaned" : "announceOriginal"] ?? "";
+        win.setTimeout(() => (status.textContent = say), 50);
+      }
+    });
+  }
+  audios.forEach((a) => apply(a));
+  render();
 
   function seek(a: HTMLAudioElement, local: number, play: boolean): void {
     setCurrent(a);
@@ -226,6 +316,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
 
   audios.forEach((a, i) => {
     a.addEventListener("play", () => {
+      wants.add(a);
       setCurrent(a);
       docked();
       mark(now());
@@ -243,6 +334,7 @@ export function initPlayer(doc: Document, win: Window): Player | null {
       }
     });
     a.addEventListener("pause", () => {
+      if (!a.error) wants.delete(a);
       if (session && a === current) session.playbackState = "paused";
     });
     a.addEventListener("timeupdate", () => {
@@ -255,6 +347,13 @@ export function initPlayer(doc: Document, win: Window): Player | null {
     });
     a.addEventListener("seeked", () => {
       if (a === current) mark(now());
+    });
+    a.addEventListener("error", () => {
+      const d = a.dataset["cleaned"];
+      if (!d || failed.has(a) || a.getAttribute("src") !== d) return;
+      failed.add(a);
+      apply(a, wants.has(a));
+      render();
     });
     a.addEventListener("ended", () => {
       const next = audios[i + 1];

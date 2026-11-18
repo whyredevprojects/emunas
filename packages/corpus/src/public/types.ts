@@ -14,7 +14,7 @@ import type { CatalogSource, DerivedFrom, SectionKind, Shiur } from "../../../..
 
 export type { CatalogSource, DerivedFrom, SectionKind };
 export type { Localized, LocalizedText };
-/** `.corpus/audio-table.json`: recordingId → { url, canonicalId, playable, size } (built by `@emunas/audio`). */
+/** `.corpus/audio-table.json`: recordingId → { url, cleanedUrl, canonicalId, playable, size } (built by `@emunas/audio`). */
 export type { AudioTable, AudioTableEntry, MediaUrl };
 export type Ed = "yi" | "en";
 export type Category = Shiur["category"];
@@ -45,9 +45,17 @@ interface PublicRecordingBase {
  * `${EMUNAS_MEDIA_ORIGIN}/<per-segment-encoded bucket key>` (a duplicate gets its canonical's URL).
  * Recordings whose object is not an mp3 (3 `.WMA` today) are `playable: false` with `audioUrl: null`
  * and are shown as unavailable. The bucket key itself is never published.
+ *
+ * `cleanedUrl` is the AI-improved copy of the same recording (`fixed/sidon/<served key>` on the
+ * media host, same length as the original). The sites play it by default and keep `audioUrl` one
+ * click away; downloads always use `audioUrl`. It is `null` when the improved copy was rejected
+ * after review (`site-policy/audio-cleaned.json`) and always `null` on an unplayable recording.
  */
 export type PublicRecording = PublicRecordingBase &
-  ({ audioUrl: MediaUrl; playable: true } | { audioUrl: null; playable: false });
+  (
+    | { audioUrl: MediaUrl; cleanedUrl: MediaUrl | null; playable: true }
+    | { audioUrl: null; cleanedUrl: null; playable: false }
+  );
 
 /**
  * A timed item. `t`/`end` are global seconds. They are `null` only when the item's evidence could

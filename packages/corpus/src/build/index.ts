@@ -10,8 +10,8 @@ export { identitySlugKeyer, foldForKey, slugKey } from "./keyer.ts";
 export type { KeyKind, KeyResult, Keyer } from "./keyer.ts";
 export { FatalDataError, loadCatalogs, loadIngest, loadManifest, loadShiurFiles } from "./load.ts";
 export type { Catalogs, ShiurFiles } from "./load.ts";
-export { DEFAULT_POLICY, loadAudioTranscoded, loadPublishPolicy, loadSuppressFile } from "./policy.ts";
-export type { PublishPolicy } from "./policy.ts";
+export { DEFAULT_POLICY, loadAudioCleaned, loadAudioTranscoded, loadPublishPolicy, loadSuppressFile } from "./policy.ts";
+export type { AudioCleanedPolicy, AudioCleanedRejection, PublishPolicy } from "./policy.ts";
 export { PROJECTOR_VERSION, localizedText, projectShiur, splitCatalogTopics, translatedWriteup } from "./project.ts";
 export type { ProjectContext, ProjectInput } from "./project.ts";
 export {

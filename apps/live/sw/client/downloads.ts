@@ -6,7 +6,9 @@
  * `audio-v1` under that exact URL; the shiur JSON and its write-up JSON files are pinned in
  * `pinned-v1`. The service worker then answers the player's requests for those URLs from the cache,
  * with `206` for `Range` requests. Recordings with `playable: false` have no URL and are never
- * downloaded; a shiur with no playable recording cannot be downloaded at all.
+ * downloaded; a shiur with no playable recording cannot be downloaded at all. A download always
+ * stores the original recording, never the AI-improved `cleanedUrl` (cleaned-audio-ux Decision 4):
+ * offline, the engine plays that stored original and the version line offers the improved one.
  *
  * The fetch runs in the page rather than in the worker: a worker event is killed after a few minutes
  * (Chrome) or sooner (iOS), which a 60 MB mp3 on a slow line outlives; the page lives as long as the

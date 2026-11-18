@@ -48,7 +48,7 @@ describe("D1 migrations on a fresh local database", () => {
     expect(await names(env.DB_FEEDBACK)).toContain("feedback");
     const { results } = await env.DB_FEEDBACK.prepare("SELECT name FROM pragma_table_info('feedback') ORDER BY cid").all<{ name: string }>();
     expect(results.map((r) => r.name)).toEqual([
-      "id", "created_at", "shiur_id", "moment_id", "field", "reason", "text", "ui", "rev", "ua_hash", "status",
+      "id", "created_at", "shiur_id", "moment_id", "field", "reason", "text", "ui", "rev", "ua_hash", "status", "audio",
     ]);
   });
 
@@ -90,23 +90,32 @@ describe("D1 migrations on a fresh local database", () => {
     await db.batch([db.prepare("DELETE FROM moment_text WHERE id = 'mig~s0'"), db.prepare("DELETE FROM moments WHERE shiur_id = 'mig'")]);
   });
 
-  it("feedback 0002 keeps every report and lets ui take every interface language", async () => {
+  it("feedback 0002 and 0003 keep every report (with its audio) and let ui take every interface language", async () => {
     // Replay the feedback migrations on a scratch copy (in the search database, where no feedback
-    // table exists): a report stored under 0001 survives 0002 unchanged.
+    // table exists): a report stored under 0001 survives 0002 (audio column) and 0003 (ui CHECK)
+    // unchanged, and the audio value stored between them survives 0003.
     const db = env.DB_SEARCH;
-    const [first, second] = env.TEST_FEEDBACK_MIGRATIONS;
+    const [first, second, third] = env.TEST_FEEDBACK_MIGRATIONS;
     expect(first?.name).toMatch(/^0001_/);
-    expect(second?.name).toMatch(/^0002_/);
+    expect(second?.name).toBe("0002_audio.sql");
+    expect(third?.name).toBe("0003_languages.sql");
     for (const q of first!.queries) await db.prepare(q).run();
     await db
       .prepare("INSERT INTO feedback (id, created_at, shiur_id, moment_id, field, reason, text, ui, rev, ua_hash, status) VALUES ('old', '2026-01-01T00:00:00Z', 's', 's~s0', 'source', 'other', 'טעקסט', 'yi', 'r', 'h', 'done')")
       .run();
     for (const q of second!.queries) await db.prepare(q).run();
-    expect(await db.prepare("SELECT * FROM feedback").all()).toMatchObject({
-      results: [{ id: "old", created_at: "2026-01-01T00:00:00Z", shiur_id: "s", moment_id: "s~s0", field: "source", reason: "other", text: "טעקסט", ui: "yi", rev: "r", ua_hash: "h", status: "done" }],
+    await db
+      .prepare("INSERT INTO feedback (id, created_at, shiur_id, reason, ui, rev, ua_hash, audio) VALUES ('mid', '2026-02-01T00:00:00Z', 's', 'other', 'en', 'r', 'h', 'original')")
+      .run();
+    for (const q of third!.queries) await db.prepare(q).run();
+    expect(await db.prepare("SELECT * FROM feedback ORDER BY id DESC").all()).toMatchObject({
+      results: [
+        { id: "old", created_at: "2026-01-01T00:00:00Z", shiur_id: "s", moment_id: "s~s0", field: "source", reason: "other", text: "טעקסט", ui: "yi", rev: "r", ua_hash: "h", status: "done", audio: null },
+        { id: "mid", ui: "en", status: "open", audio: "original" },
+      ],
     });
     await db.prepare("DROP TABLE feedback").run();
-    // The real feedback database is on 0002.
+    // The real feedback database is on 0003.
     const insert = (ui: string) =>
       env.DB_FEEDBACK.prepare("INSERT INTO feedback (id, created_at, shiur_id, reason, ui, rev, ua_hash) VALUES (?, '2026-01-01T00:00:00Z', 's', 'other', ?, 'r', 'h')")
         .bind(crypto.randomUUID(), ui)

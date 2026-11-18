@@ -35,7 +35,7 @@ import type { UiLang } from "@emunas/i18n";
 export type { Ed, LocalizedText, Moment, ShiurStatus };
 export type { UiLang };
 
-export const LIVE_DATA_SCHEMA_VERSION = 8;
+export const LIVE_DATA_SCHEMA_VERSION = 9;
 
 // ---------------------------------------------------------------------------------------------
 // Shared pieces
@@ -276,8 +276,10 @@ export interface TodayFile {
 // /data/shiur/<id>.json — the listening room, without the write-up
 
 /**
- * A recording with its media-host URL (Amendment A1): exactly the corpus `PublicRecording`, i.e.
- * `{ audioUrl: MediaUrl, playable: true }` or `{ audioUrl: null, playable: false }` (shown as unavailable).
+ * A recording with its media-host URLs (Amendment A1): exactly the corpus `PublicRecording`, i.e.
+ * `{ audioUrl: MediaUrl, cleanedUrl: MediaUrl | null, playable: true }` or
+ * `{ audioUrl: null, cleanedUrl: null, playable: false }` (shown as unavailable). `cleanedUrl` is the
+ * AI-improved copy, played by default (docs/sites/cleaned-audio-ux.md); `null` means none.
  */
 export type LiveRecording = PublicRecording;
 

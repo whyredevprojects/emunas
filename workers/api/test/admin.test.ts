@@ -121,10 +121,10 @@ describe("GET /admin/feedback (Cloudflare Access)", () => {
     expect(res.headers.get("content-type")).toContain("text/csv");
     expect(res.headers.get("content-disposition")).toContain("attachment");
     const lines = (await res.text()).trimEnd().split("\r\n");
-    expect(lines[0]).toBe("id,createdAt,shiurId,momentId,field,reason,text,ui,rev,status");
+    expect(lines[0]).toBe("id,createdAt,shiurId,momentId,field,reason,text,ui,rev,audio,status");
     expect(lines).toHaveLength(4);
-    expect(lines).toContain('f1,2026-11-01T10:00:00.000Z,yi-parsha-noach-01,yi-parsha-noach-01~s0,source,wrong-source,"Wrong pasuk, ""6:8""",en,rev-1,open');
-    expect(lines).toContain(`f2,2026-11-02T10:00:00.000Z,en-misc-01,,,other,"'=HYPERLINK(""x"")",yi,rev-1,open`);
+    expect(lines).toContain('f1,2026-11-01T10:00:00.000Z,yi-parsha-noach-01,yi-parsha-noach-01~s0,source,wrong-source,"Wrong pasuk, ""6:8""",en,rev-1,,open');
+    expect(lines).toContain(`f2,2026-11-02T10:00:00.000Z,en-misc-01,,,other,"'=HYPERLINK(""x"")",yi,rev-1,,open`);
     expect(csvCell("@cmd")).toBe("'@cmd");
     expect(csvCell(null)).toBe("");
   });

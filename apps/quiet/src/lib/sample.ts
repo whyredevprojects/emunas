@@ -11,9 +11,17 @@ import type { Ed } from "./edition.ts";
 export const SAMPLE_MEDIA_ORIGIN = "https://media.example.org";
 
 export const sampleRecordings: readonly AudioRecording[] = [
-  { id: "sample-part-1", offset: 0, duration: 1830.5, audioUrl: `${SAMPLE_MEDIA_ORIGIN}/Sample%20Folder/Part%201.mp3` },
-  { id: "sample-part-2", offset: 1830.5, duration: 1500, audioUrl: `${SAMPLE_MEDIA_ORIGIN}/Sample%20Folder/Part%202.mp3` },
-  { id: "sample-part-3", offset: 3330.5, duration: 600, audioUrl: null },
+  // Part 1 has an AI-improved copy (state A by default), part 2 only the original (state C), part 3
+  // cannot be played.
+  {
+    id: "sample-part-1",
+    offset: 0,
+    duration: 1830.5,
+    audioUrl: `${SAMPLE_MEDIA_ORIGIN}/Sample%20Folder/Part%201.mp3`,
+    cleanedUrl: `${SAMPLE_MEDIA_ORIGIN}/fixed/sidon/Sample%20Folder/Part%201.mp3`,
+  },
+  { id: "sample-part-2", offset: 1830.5, duration: 1500, audioUrl: `${SAMPLE_MEDIA_ORIGIN}/Sample%20Folder/Part%202.mp3`, cleanedUrl: null },
+  { id: "sample-part-3", offset: 3330.5, duration: 600, audioUrl: null, cleanedUrl: null },
 ];
 
 export const sampleShiur: CatalogHeaderShiur = {

@@ -110,11 +110,16 @@ describe("planDownload", () => {
     expect(planDownload(CATALOG_ONLY)!.pins).toEqual([`/data/shiur/${CATALOG_ONLY.id}.json`]);
   });
 
+  it("always stores the original recording, never the AI-improved copy (cleaned-audio-ux Decision 4)", () => {
+    expect(TWO.recordings.every((r) => r.cleanedUrl !== null && r.cleanedUrl !== r.audioUrl)).toBe(true);
+    expect(planDownload(TWO)!.audio.map((x) => x.url)).toEqual(TWO.recordings.map((r) => r.audioUrl));
+  });
+
   it("leaves out playable:false recordings; nothing playable → no plan", () => {
     const [a, b] = TWO.recordings;
-    const partly: ShiurFile = { ...TWO, recordings: [a!, { ...b!, playable: false, audioUrl: null }] };
+    const partly: ShiurFile = { ...TWO, recordings: [a!, { ...b!, playable: false, audioUrl: null, cleanedUrl: null }] };
     expect(planDownload(partly)!.audio.map((x) => x.recordingId)).toEqual([a!.id]);
-    const none: ShiurFile = { ...TWO, recordings: TWO.recordings.map((r) => ({ ...r, playable: false, audioUrl: null })) };
+    const none: ShiurFile = { ...TWO, recordings: TWO.recordings.map((r) => ({ ...r, playable: false, audioUrl: null, cleanedUrl: null })) };
     expect(planDownload(none)).toBeNull();
   });
 });
@@ -152,7 +157,7 @@ describe("downloadShiur", () => {
   });
 
   it("refuses a shiur without playable recordings and records nothing", async () => {
-    const none: ShiurFile = { ...TWO, recordings: TWO.recordings.map((r) => ({ ...r, playable: false, audioUrl: null })) };
+    const none: ShiurFile = { ...TWO, recordings: TWO.recordings.map((r) => ({ ...r, playable: false, audioUrl: null, cleanedUrl: null })) };
     await expect(downloadShiur(none)).rejects.toMatchObject({ code: "unplayable" });
     expect(personal.store.getState().downloads).toEqual({});
     expect(calls).toEqual([]);

@@ -5,7 +5,8 @@
  *   with the lang/dir of the language shown (a Hebrew overlay is planted for one shiur; the others
  *   fall back to Yiddish in the Hebrew edition);
  * - items below confidence 0.6 are absent (one planted in a copy of the mini corpus);
- * - source letters link both ways; every time link works without script (`audioUrl#t=`);
+ * - source letters link both ways; every time link works without script (`cleanedUrl#t=`, the
+ *   AI-improved copy; downloads and the no-JS version link use the original `audioUrl`);
  * - unplayable recordings are shown as unavailable, their times as plain text;
  * - no transcript UI or field in the output; the reserved slot renders nothing;
  * - page ≤ 120 KB raw / ≤ 30 KB brotli.
@@ -30,6 +31,8 @@ import TranscriptSlot from "../src/components/shiur/TranscriptSlot.astro";
 import { findCorpusDir, loadShiurCorpus, type ShiurCorpus } from "../src/components/shiur/corpus.ts";
 import { catalogPlace, shownWriteup } from "../src/components/shiur/view.ts";
 import { EDS, type Ed } from "../src/lib/edition.ts";
+
+const escapeRe = (x: string) => x.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 
 const app = fileURLToPath(new URL("..", import.meta.url));
 const repo = join(app, "..", "..");
@@ -182,8 +185,8 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
       const global = Number(g);
       // the recording the global time falls in, and the exact time inside it (never floored)
       const recording = [...shiur.recordings].reverse().find((r) => r.offset <= global)!;
-      expect(recording.audioUrl).toBeTruthy();
-      expect(href).toBe(`${recording.audioUrl}#t=${round3(global - recording.offset)}`);
+      expect(recording.cleanedUrl).toBeTruthy();
+      expect(href).toBe(`${recording.cleanedUrl}#t=${round3(global - recording.offset)}`);
       expect(href!.startsWith(`${MEDIA}/`)).toBe(true);
     }
 
@@ -248,7 +251,7 @@ describe("full page details", () => {
     const second = shiur.recordings[1]!;
     const late = shiur.notes!.chapters.find((c) => c.t >= second.offset)!;
     const local = round3(late.t - second.offset);
-    expect(html).toContain(`href="${second.audioUrl}#t=${local}" data-g="${late.t}"`);
+    expect(html).toContain(`href="${second.cleanedUrl}#t=${local}" data-g="${late.t}"`);
     expect(html).toContain("שפילן פון");
     expect(html.match(/<audio\b/g)?.length).toBe(2);
   });
@@ -257,13 +260,52 @@ describe("full page details", () => {
     const base = corpus.shiur("yi-zmanim-tv-bb-04");
     const shiur: PublicShiur = {
       ...base,
-      recordings: base.recordings.map((r, i) => (i === 1 ? { ...r, audioUrl: null, playable: false } : r)),
+      recordings: base.recordings.map((r, i) => (i === 1 ? { ...r, audioUrl: null, cleanedUrl: null, playable: false } : r)),
     };
     const html = await renderPage("en", shiur);
     expect(html.match(/<audio\b/g)?.length).toBe(1);
     expect(html).toContain("Part 2: not yet available online.");
     expect(html).toContain("time-unavailable");
     expect(html).not.toContain(`href="${base.recordings[1]!.audioUrl}`);
+    expect(html).not.toContain(`href="${base.recordings[1]!.cleanedUrl}`);
+  });
+
+  it("plays the AI-improved copy, downloads the original and offers the original under the player", async () => {
+    const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
+    const [one, two] = shiur.recordings;
+    const html = await renderPage("en", shiur);
+    for (const r of [one!, two!]) {
+      expect(r.cleanedUrl).toContain("/fixed/sidon/");
+      expect(html).toContain(`src="${r.cleanedUrl}"`);
+      expect(html).toContain(`data-original="${r.audioUrl}"`);
+      expect(html).toContain(`data-cleaned="${r.cleanedUrl}"`);
+      expect(html).toMatch(new RegExp(`<a class="download" href="${escapeRe(r.audioUrl!)}" download>`));
+      expect(html).not.toMatch(new RegExp(`class="download" href="${escapeRe(r.cleanedUrl!)}"`));
+    }
+    // The line, its no-JS link to the original file, and an empty polite status region.
+    expect(html).toContain('<p class="listen-version"');
+    expect(html).toMatch(new RegExp(`<a class="listen-version-switch" href="${escapeRe(one!.audioUrl!)}" aria-describedby="listen-version-text">Switch to the original</a>`));
+    expect(html).toContain('<span id="listen-version-text">Sound improved by AI</span>');
+    expect(html).toContain('data-action-original="Listen to it"');
+    expect(html).toMatch(/<span class="visually-hidden" role="status"><\/span>/);
+    expect(html).not.toContain("original recording only");
+    const yi = await renderPage("yi", shiur);
+    expect(yi).toContain("הערט די מקורית");
+    expect(yi).toContain("קלאנג אויסגעבעסערט דורך AI");
+  });
+
+  it("marks a part without an improved copy and drops the line when no part has one", async () => {
+    const base = corpus.shiur("yi-zmanim-tv-bb-04");
+    const partly: PublicShiur = { ...base, recordings: base.recordings.map((r, i) => (i === 1 ? { ...r, cleanedUrl: null } : r)) };
+    const html = await renderPage("en", partly);
+    expect(html).toContain("Part 2: original recording only");
+    expect(html).toContain(`src="${base.recordings[1]!.audioUrl}"`);
+    expect(html).toContain('<p class="listen-version"');
+    const none: PublicShiur = { ...base, recordings: base.recordings.map((r) => ({ ...r, cleanedUrl: null })) };
+    const plain = await renderPage("en", none);
+    expect(plain).not.toContain("listen-version");
+    expect(plain).not.toContain("original recording only");
+    expect(plain).not.toContain("/fixed/sidon/");
   });
 
   it("adds the listening-app and report links only when configured", async () => {

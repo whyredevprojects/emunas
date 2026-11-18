@@ -1,7 +1,9 @@
 name: Playwright browsers
 description: >-
   Installs the named Playwright browsers, cached per Playwright version and browser set (saved from
-  main only). The system libraries are apt packages, so install-deps runs on a cache hit too.
+  main only). The system libraries are apt packages, so install-deps runs on a cache hit too; their
+  downloaded .deb files are cached as well (any branch), so apt only fetches packages whose version
+  changed. A slow Ubuntu mirror once made the ~126 MB WebKit download outlast the job timeout.
   Needs node_modules (run ./.github/actions/setup first).
 
 inputs:
@@ -26,6 +28,24 @@ runs:
       with:
         path: ~/.cache/ms-playwright
         key: pw-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-${{ steps.pw.outputs.slug }}
+    # apt downloads: seed apt's own cache from the last saved set, so unchanged packages are not
+    # downloaded again. The key ends in a hash of the file list; a new list is saved under a new key.
+    - name: Restore apt packages
+      id: apt
+      uses: actions/cache/restore@v4
+      with:
+        path: ~/.cache/pw-apt
+        key: pw-apt-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-${{ steps.pw.outputs.slug }}-none
+        restore-keys: pw-apt-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-${{ steps.pw.outputs.slug }}-
+    - name: Seed apt's package cache
+      shell: bash
+      run: |
+        echo 'APT::Keep-Downloaded-Packages "true";' | sudo tee /etc/apt/apt.conf.d/99-keep-debs > /dev/null
+        sudo rm -f /etc/apt/apt.conf.d/docker-clean
+        if compgen -G "$HOME/.cache/pw-apt/*.deb" > /dev/null; then
+          sudo cp "$HOME"/.cache/pw-apt/*.deb /var/cache/apt/archives/
+          echo "seeded $(ls "$HOME"/.cache/pw-apt/*.deb | wc -l) cached packages"
+        fi
     - name: Install Playwright browsers
       if: steps.cache.outputs.cache-hit != 'true'
       shell: bash
@@ -34,6 +54,23 @@ runs:
       if: steps.cache.outputs.cache-hit == 'true'
       shell: bash
       run: npx playwright install-deps ${{ inputs.browsers }}
+    - name: Collect apt packages
+      id: debs
+      shell: bash
+      env:
+        PREFIX: pw-apt-${{ runner.os }}-${{ runner.arch }}-${{ steps.pw.outputs.version }}-${{ steps.pw.outputs.slug }}-
+      run: |
+        mkdir -p "$HOME/.cache/pw-apt"
+        if compgen -G "/var/cache/apt/archives/*.deb" > /dev/null; then
+          cp /var/cache/apt/archives/*.deb "$HOME/.cache/pw-apt/"
+        fi
+        echo "key=${PREFIX}$(ls "$HOME/.cache/pw-apt" | sort | sha256sum | cut -c1-16)" >> "$GITHUB_OUTPUT"
+    - name: Save apt packages
+      if: steps.debs.outputs.key != steps.apt.outputs.cache-matched-key
+      uses: actions/cache/save@v4
+      with:
+        path: ~/.cache/pw-apt
+        key: ${{ steps.debs.outputs.key }}
     - name: Save Playwright browsers
       if: steps.cache.outputs.cache-hit != 'true' && github.ref == 'refs/heads/main'
       uses: actions/cache/save@v4

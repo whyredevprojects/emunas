@@ -141,7 +141,7 @@ describe("printable page link (Quiet)", () => {
 describe("misc", () => {
   it("knows when a shiur has playable audio", () => {
     expect(hasPlayableAudio(full)).toBe(true);
-    expect(hasPlayableAudio({ recordings: [{ ...full.recordings[0]!, audioUrl: null, playable: false }] })).toBe(false);
+    expect(hasPlayableAudio({ recordings: [{ ...full.recordings[0]!, audioUrl: null, cleanedUrl: null, playable: false }] })).toBe(false);
   });
 
   it("keeps the transcript view off", () => {

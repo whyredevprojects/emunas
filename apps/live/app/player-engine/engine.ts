@@ -6,7 +6,13 @@
  * recording boundaries. Skip ranges, moment ends and the "end of chapter" sleep timer are scheduled
  * with timers computed from `currentTime` and `playbackRate`, re-armed on play/seek/ratechange, with
  * `timeupdate` only as a backstop.
+ *
+ * Versions (docs/sites/cleaned-audio-ux.md §6): a recording with `cleanedUrl` plays its AI-improved
+ * copy unless the listener chose the original. A switch re-runs `goTo(t)`: the URL differs, so the
+ * element swaps `src` at the same local second, keeping play/pause and speed. If the improved file
+ * fails to load, that recording falls back once to the original (the preference is not changed).
  */
+import { DEFAULT_AUDIO_VERSION } from "@emunas/i18n";
 import { MediaSessionBridge, defaultDescribe, getDefaultMediaSession } from "./media-session.ts";
 import {
   DEFAULT_SKIP,
@@ -25,6 +31,7 @@ import {
 } from "./plan.ts";
 import type { UiLang } from "@emunas/i18n";
 import type {
+  AudioVersion,
   Clock,
   LoadOptions,
   MediaElementLike,
@@ -32,6 +39,7 @@ import type {
   PlayerEngineOptions,
   PlayerEventName,
   PlayerEvents,
+  PlayerRecording,
   PlayerShiur,
   PlayerState,
   PlayerStatus,
@@ -43,6 +51,8 @@ import type {
 } from "./types.ts";
 
 const MIN_TIMER_MS = 10;
+/** How long the "improved version could not load" notice stays. */
+export const VERSION_FALLBACK_NOTICE_MS = 8000;
 const HAVE_METADATA = 1;
 
 const MEDIA_EVENTS = [
@@ -85,7 +95,8 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
   const clock = options.clock ?? defaultClock();
   const msEnv = options.mediaSession === undefined ? getDefaultMediaSession() : options.mediaSession;
   const lifecycle = options.lifecycle === undefined ? defaultLifecycle() : options.lifecycle;
-  const resolveUrl = options.resolveAudioUrl ?? ((rec) => recordingAudioUrl(rec));
+  const resolveVersionUrl = options.resolveAudioUrl ?? ((rec, _shiur, version) => recordingAudioUrl(rec, version));
+  const canTryCleaned = options.canTryCleaned ?? (() => true);
   const describe = options.describe ?? defaultDescribe;
   const progressMs = options.progressIntervalMs ?? 5000;
   const seekStep = options.seekStep ?? 15;
@@ -122,6 +133,15 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
   let sleep: SleepState | null = null;
   let readingLang: UiLang = options.readingLang ?? "yi";
   let readingLangExplicit = options.readingLang !== undefined;
+  let audioVersion: AudioVersion = options.audioVersion ?? DEFAULT_AUDIO_VERSION;
+  /** Recordings (of the loaded shiur) whose improved copy failed to load: they play the original. */
+  const fellBack = new Set<string>();
+  /** Recordings the listener explicitly switched to the improved copy (bypasses `canTryCleaned`). */
+  const askedCleaned = new Set<string>();
+  /** The current src is the improved copy the listener just asked for, not yet loaded. */
+  let switchPending = false;
+  let versionFallback = false;
+  let fallbackTimer: unknown = null;
 
   let boundaryTimer: unknown = null;
   let skipTimer: unknown = null;
@@ -130,6 +150,17 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
 
   const listeners = new Set<() => void>();
   const handlers: { [K in PlayerEventName]?: Set<(ev: PlayerEvents[K]) => void> } = {};
+
+  /** Which version `rec` plays now. */
+  function versionOf(rec: PlayerRecording): AudioVersion {
+    if (!shiur || !rec.cleanedUrl || audioVersion !== "cleaned" || fellBack.has(rec.id)) return "original";
+    if (!askedCleaned.has(rec.id) && !canTryCleaned(rec, shiur)) return "original";
+    return "cleaned";
+  }
+
+  function resolveUrl(rec: PlayerRecording, sh: PlayerShiur): string | null {
+    return resolveVersionUrl(rec, sh, versionOf(rec));
+  }
 
   let state: PlayerState = snapshot();
 
@@ -182,6 +213,10 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
       skip: skipSettings,
       readingLang,
       error: errorMsg,
+      audioVersion,
+      playingVersion: rec ? versionOf(rec) : "original",
+      cleanedAvailable: !!rec?.audioUrl && !!rec.cleanedUrl,
+      versionFallback,
     };
   }
 
@@ -304,12 +339,38 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
     const name = (e as { name?: string } | null)?.name;
     // AbortError: a newer load/pause interrupted play(); not a failure.
     if (name === "AbortError") return;
+    // The improved copy could not load (play() rejects before or instead of the `error` event).
+    if (name === "NotSupportedError" && fallBackToOriginal(true)) {
+      commit();
+      return;
+    }
     if (name === "NotAllowedError") {
       wantPlaying = false;
       commit();
       return;
     }
     fail(e instanceof Error ? e.message : "play failed");
+  }
+
+  /**
+   * Rule 8: the improved file of the current recording failed (removed, offline, decode error): play
+   * its original from the same second, keeping play/pause and speed. The preference stays as it is.
+   * Returns false when the failing source was not an improved copy (a real error). `fromPlay`: a
+   * `play()` rejection, which the browser delivers after the `error` event of the same failure, so
+   * one that arrives once the swap to the original has happened is that same failure, already handled.
+   */
+  function fallBackToOriginal(fromPlay = false): boolean {
+    const rec = shiur?.recordings[recIndex];
+    if (!shiur || !rec?.cleanedUrl || !rec.audioUrl || rec.cleanedUrl === rec.audioUrl) return false;
+    if (currentSrc !== rec.cleanedUrl) return fromPlay && swapping && currentSrc === rec.audioUrl && fellBack.has(rec.id);
+    const t = currentT();
+    fellBack.add(rec.id);
+    askedCleaned.delete(rec.id);
+    if (switchPending) showFallback();
+    switchPending = false;
+    goTo(t);
+    updatePosition();
+    return true;
   }
 
   function fail(message: string): void {
@@ -459,6 +520,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
           seekElement(local);
         }
         swapping = false;
+        switchPending = false;
         el.playbackRate = rate;
         if (wantPlaying && el.paused) startElement();
         rearm();
@@ -519,6 +581,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
         break;
       }
       case "error":
+        if (fallBackToOriginal()) break;
         fail("media error");
         return;
     }
@@ -574,6 +637,21 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
     commit();
   }
 
+  function showFallback(): void {
+    versionFallback = true;
+    fallbackTimer = clearTimer(fallbackTimer);
+    fallbackTimer = clock.setTimeout(() => {
+      fallbackTimer = null;
+      versionFallback = false;
+      commit();
+    }, VERSION_FALLBACK_NOTICE_MS);
+  }
+
+  function clearFallback(): void {
+    fallbackTimer = clearTimer(fallbackTimer);
+    versionFallback = false;
+  }
+
   function pause(): void {
     if (!shiur) return;
     wantPlaying = false;
@@ -616,6 +694,10 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
       errorMsg = null;
       lastSkip = null;
       suppressed.clear();
+      fellBack.clear();
+      askedCleaned.clear();
+      switchPending = false;
+      clearFallback();
       plan = planSkips(next.notes?.skip ?? [], skipSettings, next.duration);
       momentEnd = opts.end !== undefined && Number.isFinite(opts.end) ? opts.end : null;
       momentEnded = false;
@@ -726,12 +808,40 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
       updateMetadata();
       commit();
     },
+    setAudioVersion(version) {
+      audioVersion = version;
+      clearFallback();
+      if (!shiur) {
+        commit();
+        return;
+      }
+      const rec = shiur.recordings[recIndex];
+      if (rec && version === "cleaned") {
+        fellBack.delete(rec.id);
+        askedCleaned.add(rec.id);
+      }
+      // Other recordings of the shiur follow the new choice at their next swap.
+      for (const r of shiur.recordings) if (r !== rec) fellBack.delete(r.id);
+      if (finished || unavailable) {
+        commit();
+        return;
+      }
+      const before = currentSrc;
+      const t = currentT();
+      clearSchedules();
+      goTo(t);
+      switchPending = version === "cleaned" && currentSrc !== before;
+      updatePosition();
+      rearm();
+      commit();
+    },
     flushProgress(reason = "pagehide") {
       emitProgress(reason);
     },
     destroy() {
       clearSchedules();
       sleepTimer = clearTimer(sleepTimer);
+      fallbackTimer = clearTimer(fallbackTimer);
       stopProgressInterval();
       for (const type of MEDIA_EVENTS) el.removeEventListener(type, onMedia);
       lifecycle?.removeEventListener("pagehide", onPageHide);

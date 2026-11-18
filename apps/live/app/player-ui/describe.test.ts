@@ -8,7 +8,7 @@ const shiur: PlayerShiur = {
   lang: "yi",
   duration: 100,
   catalog: { titleOriginal: "הקדמה; ביאור קושיא" },
-  recordings: [{ id: "r", offset: 0, duration: 100, audioUrl: "https://m.example/r.mp3" }],
+  recordings: [{ id: "r", offset: 0, duration: 100, audioUrl: "https://m.example/r.mp3", cleanedUrl: null }],
   notes: { chapters: [{ t: 0, end: 100, title: { en: "Opening", yi: "הקדמה" } }], skip: [] },
 };
 

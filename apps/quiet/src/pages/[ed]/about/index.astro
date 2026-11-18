@@ -10,7 +10,11 @@
  * at all shows a clearly marked placeholder. The only non-heading content is the report address from `EMUNAS_FEEDBACK_EMAIL`
  * (a dev placeholder outside deploy builds, ../../../components/seo/site-env.ts). The texts' links
  * to the listening app and the Pocket Guide are resolved here (`resolveAboutLinks`).
+ *
+ * "How this site is arranged" ends with the shared paragraph on the AI-improved sound
+ * (`audioVersionLabel("about")`, docs/sites/cleaned-audio-ux.md Decision 1), anchor `#audio`.
  */
+import { audioVersionLabel } from "@emunas/i18n";
 import type { GetStaticPaths } from "astro";
 import Base from "../../../layouts/Base.astro";
 import { currentSiteEnv } from "../../../components/seo/site-env.ts";
@@ -51,6 +55,7 @@ const parts = await Promise.all(
               <strong class="about-placeholder-label">{s.placeholderLabel}:</strong> {s.placeholder}
             </p>
           )}
+          {part === "arrangement" && <p class="about-audio" id="audio">{audioVersionLabel("about", ed)}</p>}
           {part === "report" && (
             <p class="about-report">
               {s.reportAddress}{" "}

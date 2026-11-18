@@ -1,11 +1,15 @@
 /**
  * W3.2 acceptance in a real browser (headless Chrome via playwright-core):
  * - the 7 sample shiurim build and render in both editions, axe-clean (light and dark);
- * - with JS off, time links are `audioUrl#t=<local>` links on the media host;
+ * - with JS off, time links are `cleanedUrl#t=<local>` links on the media host (the AI-improved copy)
+ *   and the version line is a plain link to the original file;
  * - with JS on: a time link seeks the docked player (sticky), the margin mark follows, the address
  *   gets `#t=<global>`, a time in part 2 switches tracks, `#t=` on load seeks without playing,
  *   the end of part 1 continues into part 2, keyboard works only on the focused dock, Media
  *   Session metadata is set;
+ * - improved audio: the version line's button switches every part between the improved copy and
+ *   the original keeping position, play state and speed, announces it, remembers it across pages,
+ *   and a failing improved file falls back once to the original; downloads stay the original;
  * - player script ≤ 6 KB brotli; every shiur page ≤ 120 KB raw / ≤ 30 KB brotli; no transcript
  *   UI in any built file; print hides the player and the jump list.
  *
@@ -53,6 +57,8 @@ let mediaOrigin = "";
 let browser: Browser;
 /** media path → generated mp3 file */
 const audioFiles = new Map<string, string>();
+/** media paths that answer 404 (a removed improved copy, for the fallback test) */
+const missing = new Set<string>();
 
 const TYPES: Record<string, string> = {
   ".html": "text/html; charset=utf-8",
@@ -98,7 +104,7 @@ beforeAll(async () => {
   // Media host: Range-capable static server for the generated mp3s (cross-origin to the site).
   media = createServer((req, res) => {
     const path = decodeURIComponent(new URL(req.url ?? "/", "http://x").pathname);
-    const file = audioFiles.get(path);
+    const file = missing.has(path) ? undefined : audioFiles.get(path);
     if (!file) return void res.writeHead(404).end();
     const size = statSync(file).size;
     const headers = { "content-type": "audio/mpeg", "accept-ranges": "bytes", "access-control-allow-origin": "*" };
@@ -137,6 +143,7 @@ beforeAll(async () => {
       const file = join(work, "media", `${rec.id}.mp3`);
       run("ffmpeg", ["-loglevel", "error", "-y", "-f", "lavfi", "-i", "anullsrc=r=8000:cl=mono", "-t", String(rec.duration), "-c:a", "libmp3lame", "-b:a", "8k", file]);
       audioFiles.set(decodeURIComponent(new URL(rec.audioUrl).pathname), file);
+      if (rec.cleanedUrl) audioFiles.set(decodeURIComponent(new URL(rec.cleanedUrl).pathname), file);
     }
   }
 
@@ -284,10 +291,13 @@ describe("without script", () => {
     const page = await open(`/en/shiur/${MULTI}/`, { js: false });
     const shiur = shiurJson(MULTI);
     const [p1, p2] = shiur.recordings;
-    expect(await page.locator("#s0 a.time").getAttribute("href")).toBe(`${p1!.audioUrl}#t=0`);
+    expect(await page.locator("#s0 a.time").getAttribute("href")).toBe(`${p1!.cleanedUrl}#t=0`);
     const late = shiur.notes!.chapters.find((c) => c.t >= p2!.offset)!;
-    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.audioUrl}#t=${round3(late.t - p2!.offset)}`);
+    expect(await page.locator(`#s${late.idx} a.time`).getAttribute("href")).toBe(`${p2!.cleanedUrl}#t=${round3(late.t - p2!.offset)}`);
     expect(await page.locator("audio[preload=none]").count()).toBe(2);
+    // the version line: a plain link to the original file; downloads are the original
+    expect(await page.locator("a.listen-version-switch").getAttribute("href")).toBe(p1!.audioUrl);
+    expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);
     expect(await page.locator(".listen[data-docked]").count()).toBe(0);
     await page.context().close();
   });
@@ -420,5 +430,101 @@ describe("player", () => {
     }
     expect(await page.$eval("#writeup", (el) => getComputedStyle(el).display)).toBe("block");
     await page.context().close();
+  });
+});
+
+describe("improved audio", () => {
+  const srcs = (page: Page) => page.$$eval("audio.listen-audio", (els) => els.map((a) => a.getAttribute("src")));
+
+  it("switches every part to the original and back, keeping position, play state and speed", async () => {
+    const page = await open(`/en/shiur/${MULTI}/`);
+    const shiur = shiurJson(MULTI);
+    const [p1, p2] = shiur.recordings;
+    expect(await srcs(page)).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
+    const button = page.locator("button.listen-version-switch");
+    expect(await button.textContent()).toBe("Switch to the original");
+    expect(await page.locator("a.listen-version-switch").count()).toBe(0);
+    expect(await page.locator(".listen-version > span").first().textContent()).toBe("Sound improved by AI");
+    const reportBody = async () => new URL((await page.locator(".report-error a").getAttribute("href"))!).searchParams.get("body") ?? "";
+    expect(await reportBody()).toMatch(/\n\nNow playing the version improved by AI\.$/);
+
+    await page.locator("#s0 a.time").click();
+    await playingFirst(page);
+    await page.evaluate(() => {
+      const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
+      a.playbackRate = 1.5;
+      a.currentTime = 120;
+    });
+    await page.waitForFunction(() => document.querySelector<HTMLAudioElement>("audio.listen-audio")!.currentTime >= 120);
+
+    // docked, the line stays visible; the button keeps focus and its place
+    expect(await page.locator(".listen[data-docked] .listen-version").isVisible()).toBe(true);
+    await button.focus();
+    await page.keyboard.press("Enter");
+    await page.waitForFunction(() => {
+      const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
+      return !a.paused && a.readyState >= 1 && a.currentTime >= 119;
+    });
+    expect(await srcs(page)).toEqual([p1!.audioUrl, p2!.audioUrl]);
+    const [one] = await audioState(page);
+    expect(one!.t).toBeLessThan(126);
+    expect(await page.$eval("audio.listen-audio", (a) => (a as HTMLAudioElement).playbackRate)).toBe(1.5);
+    expect(await button.textContent()).toBe("Listen to it");
+    expect(await page.locator(".listen-version > span").first().textContent()).toBe("A version with the sound improved by AI is also available");
+    expect(await page.evaluate(() => document.activeElement?.className)).toBe("listen-version-switch");
+    await page.waitForFunction(() => document.querySelector(".listen-version [role=status]")?.textContent === "Now playing the original recording.");
+    expect(await reportBody()).toMatch(/\n\nNow playing the original recording\.$/);
+    expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("original");
+    // downloads never change
+    expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);
+    await page.screenshot({ path: join(shotDir, "shiur-version-original.png") });
+
+    // paused stays paused across a switch back
+    await page.evaluate(() => document.querySelector<HTMLAudioElement>("audio.listen-audio")!.pause());
+    await button.click();
+    await page.waitForFunction(() => document.querySelector<HTMLAudioElement>("audio.listen-audio")!.readyState >= 1);
+    expect(await srcs(page)).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
+    const [back] = await audioState(page);
+    expect(back!.paused).toBe(true);
+    expect(back!.t).toBeGreaterThanOrEqual(119);
+    await page.waitForFunction(() => document.querySelector(".listen-version [role=status]")?.textContent === "Now playing the version improved by AI.");
+    expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("cleaned");
+    const violations = await axe(page);
+    expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);
+    expect(errors.get(page)).toEqual([]);
+    await page.context().close();
+  });
+
+  it("remembers the choice on the next page, in the Yiddish wording", async () => {
+    const page = await open(`/yi/shiur/${MULTI}/`);
+    await page.locator("button.listen-version-switch").click();
+    await page.goto(`${origin}/yi/shiur/en-parsha-en-nch-01/`, { waitUntil: "load" });
+    const rec = shiurJson("en-parsha-en-nch-01").recordings[0]!;
+    await page.waitForFunction(() => document.querySelector("button.listen-version-switch") !== null);
+    expect(await srcs(page)).toEqual([rec.audioUrl]);
+    expect(await page.locator("button.listen-version-switch").textContent()).toBe("הערט זי");
+    // the swap on load fetches nothing (preload=none)
+    expect(await page.$eval("audio.listen-audio", (a) => (a as HTMLAudioElement).readyState)).toBe(0);
+    await page.context().close();
+  });
+
+  it("falls back once to the original when the improved file fails, without changing the choice", async () => {
+    const rec = shiurJson("en-parsha-en-nch-01").recordings[0]!;
+    const path = decodeURIComponent(new URL(rec.cleanedUrl!).pathname);
+    missing.add(path);
+    try {
+      const page = await open(`/en/shiur/en-parsha-en-nch-01/`);
+      await page.locator("#s0 a.time").click();
+      await page.waitForFunction(() => {
+        const a = document.querySelector<HTMLAudioElement>("audio.listen-audio")!;
+        return !a.paused && a.readyState >= 1;
+      });
+      expect(await srcs(page)).toEqual([rec.audioUrl]);
+      expect(await page.locator("button.listen-version-switch").textContent()).toBe("Listen to it");
+      expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBeNull();
+      await page.context().close();
+    } finally {
+      missing.delete(path);
+    }
   });
 });

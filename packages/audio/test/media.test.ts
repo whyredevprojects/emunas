@@ -1,8 +1,10 @@
 import { describe, expect, expectTypeOf, it } from "vitest";
 import type { Recording } from "../../../src/types.ts";
 import {
+  CLEANED_PREFIX,
   DEFAULT_MEDIA_ORIGIN,
   buildAudioTable,
+  cleanedKey,
   encodeKeyPath,
   isPlayableKey,
   lookupAudio,
@@ -158,11 +160,25 @@ describe("mp3 siblings (site-policy/audio-transcoded.json)", () => {
       onIssue: (i) => issues.push(i),
     });
     const url = `${ORIGIN}/Dir%20W/02-11%20Purim%20Katan.mp3`;
-    expect(table["w1"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url });
-    expect(table["w1-dup"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url });
-    expect(table["w2"]).toEqual({ canonicalId: "w2", size: 7, playable: false, url: null });
+    const cleanedUrl = `${ORIGIN}/fixed/sidon/Dir%20W/02-11%20Purim%20Katan.mp3`;
+    expect(table["w1"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url, cleanedUrl });
+    expect(table["w1-dup"]).toEqual({ canonicalId: "w1", size: 0, playable: true, url, cleanedUrl });
+    expect(table["w2"]).toEqual({ canonicalId: "w2", size: 7, playable: false, url: null, cleanedUrl: null });
     expect(issues).toEqual([{ kind: "unplayable", id: "w2", reason: "not-mp3" }]);
     expect(JSON.stringify(table)).not.toContain("WMA");
+  });
+});
+
+describe("cleanedKey", () => {
+  it("puts the served key, unchanged, under fixed/sidon/", () => {
+    expect(CLEANED_PREFIX).toBe("fixed/sidon/");
+    expect(cleanedKey("Dir A/a 1.MP3")).toBe("fixed/sidon/Dir A/a 1.MP3");
+  });
+
+  it("refuses unsafe and non-mp3 keys", () => {
+    expect(() => cleanedKey("transcripts/a.mp3")).toThrow();
+    expect(() => cleanedKey("a/../b.mp3")).toThrow();
+    expect(() => cleanedKey("a/b.WMA")).toThrow();
   });
 });
 
@@ -181,13 +197,20 @@ describe("buildAudioTable", () => {
     const table = buildAudioTable(recs, { origin: `${ORIGIN}/`, onIssue: (i) => issues.push(i) });
     expect(Object.keys(table)).toEqual(["a", "a-copy", "a-copy-2", "b", "wma", "wma-dup"]);
     const aUrl = `${ORIGIN}/Dir%20A/a.MP3`;
-    expect(table["a"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl });
-    expect(table["a-copy"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl });
-    expect(table["a-copy-2"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl });
-    expect(table["b"]).toEqual({ canonicalId: "b", size: 20, playable: true, url: `${ORIGIN}/Dir%20B/b%201.mp3` });
-    expect(table["wma"]).toEqual({ canonicalId: "wma", size: 5, playable: false, url: null });
+    const aClean = `${ORIGIN}/fixed/sidon/Dir%20A/a.MP3`;
+    expect(table["a"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl, cleanedUrl: aClean });
+    expect(table["a-copy"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl, cleanedUrl: aClean });
+    expect(table["a-copy-2"]).toEqual({ canonicalId: "a", size: 10, playable: true, url: aUrl, cleanedUrl: aClean });
+    expect(table["b"]).toEqual({
+      canonicalId: "b",
+      size: 20,
+      playable: true,
+      url: `${ORIGIN}/Dir%20B/b%201.mp3`,
+      cleanedUrl: `${ORIGIN}/fixed/sidon/Dir%20B/b%201.mp3`,
+    });
+    expect(table["wma"]).toEqual({ canonicalId: "wma", size: 5, playable: false, url: null, cleanedUrl: null });
     // A duplicate of an unplayable recording is unplayable even if its own key is .mp3.
-    expect(table["wma-dup"]).toEqual({ canonicalId: "wma", size: 5, playable: false, url: null });
+    expect(table["wma-dup"]).toEqual({ canonicalId: "wma", size: 5, playable: false, url: null, cleanedUrl: null });
     expect(issues).toEqual([
       { kind: "unplayable", id: "wma", reason: "not-mp3" },
       { kind: "unplayable", id: "wma-dup", reason: "not-mp3" },
@@ -222,13 +245,29 @@ describe("buildAudioTable", () => {
       ],
       { origin: ORIGIN, onIssue: (i) => issues.push(i) },
     );
-    expect(table["ok"]).toEqual({ canonicalId: "ok", size: 1, playable: true, url: `${ORIGIN}/a.mp3` });
+    expect(table["ok"]).toEqual({ canonicalId: "ok", size: 1, playable: true, url: `${ORIGIN}/a.mp3`, cleanedUrl: `${ORIGIN}/fixed/sidon/a.mp3` });
     for (const id of ["orphan", "cyc-a", "cyc-b", "tx"]) expect(table[id]?.playable, id).toBe(false);
-    expect(table["neg"]).toEqual({ canonicalId: "neg", size: 0, playable: true, url: `${ORIGIN}/g.mp3` });
+    expect(table["neg"]).toEqual({ canonicalId: "neg", size: 0, playable: true, url: `${ORIGIN}/g.mp3`, cleanedUrl: `${ORIGIN}/fixed/sidon/g.mp3` });
     expect(issues.map((i) => i.kind).sort()).toEqual(
       ["duplicate-cycle", "duplicate-cycle", "duplicate-id", "invalid-size", "missing-canonical", "unplayable"].sort(),
     );
     expect(JSON.stringify(table)).not.toContain("transcripts/");
+  });
+
+  it("`rejected` served keys get cleanedUrl null; duplicates follow their canonical", () => {
+    const table = buildAudioTable(recs, { origin: ORIGIN, rejected: ["Dir A/a.MP3", "Dir A/copy of a.mp3"] });
+    expect(table["a"]).toMatchObject({ playable: true, url: `${ORIGIN}/Dir%20A/a.MP3`, cleanedUrl: null });
+    expect(table["a-copy"]?.cleanedUrl).toBeNull();
+    expect(table["a-copy-2"]?.cleanedUrl).toBeNull();
+    expect(table["b"]?.cleanedUrl).toBe(`${ORIGIN}/fixed/sidon/Dir%20B/b%201.mp3`);
+  });
+
+  it("a rejected transcode is matched by its served (.mp3) key", () => {
+    const wma: AudioTableInput[] = [{ id: "w", audioKey: "W/x.WMA", sizeBytes: 1, duplicateOf: null }];
+    const keep = buildAudioTable(wma, { origin: ORIGIN, mp3Siblings: ["W/x.WMA"], rejected: ["W/x.WMA"] });
+    expect(keep["w"]?.cleanedUrl).toBe(`${ORIGIN}/fixed/sidon/W/x.mp3`);
+    const drop = buildAudioTable(wma, { origin: ORIGIN, mp3Siblings: ["W/x.WMA"], rejected: ["W/x.mp3"] });
+    expect(drop["w"]?.cleanedUrl).toBeNull();
   });
 
   it("throws on an invalid origin", () => {

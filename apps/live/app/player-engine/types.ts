@@ -14,17 +14,20 @@ import type {
   SkipRange,
 } from "@emunas/corpus/public";
 
-import type { UiLang } from "@emunas/i18n";
+import type { AudioVersion, UiLang } from "@emunas/i18n";
 
-export type { Ed, LocalizedText, SkipKind, SkipRange };
+export type { AudioVersion, Ed, LocalizedText, SkipKind, SkipRange };
 
 /**
  * A recording as the engine needs it. Amendment A1: the corpus build emits `audioUrl` (absolute URL
  * on the media host, CORS enabled), `null` for a recording that is not playable (non-mp3). There is
- * no same-origin `/audio/` fallback: a recording without a URL is unavailable.
+ * no same-origin `/audio/` fallback: a recording without a URL is unavailable. `cleanedUrl` is the
+ * AI-improved copy of the same recording (same length), played by default; `null` when there is none
+ * (docs/sites/cleaned-audio-ux.md).
  */
 export interface PlayerRecording extends Pick<PublicRecording, "id" | "offset" | "duration"> {
   audioUrl: string | null;
+  cleanedUrl: string | null;
 }
 
 export type PlayerChapter = Pick<PublicChapter, "t" | "end" | "title"> & Partial<Pick<PublicChapter, "idx" | "id">>;
@@ -119,6 +122,18 @@ export interface PlayerState {
   skip: SkipSettings;
   readingLang: UiLang;
   error: string | null;
+  /** The listener's one global choice of version (cleaned-audio-ux §6). */
+  audioVersion: AudioVersion;
+  /** The version the current recording plays: "original" when it has no improved copy or fell back. */
+  playingVersion: AudioVersion;
+  /** The current recording has an improved copy (states A/B); false is state C (no line). */
+  cleanedAvailable: boolean;
+  /**
+   * The listener asked for the improved copy and it could not load (offline, or the file failed), so
+   * the original (e.g. the downloaded copy) plays instead. Cleared by the next switch, load or after
+   * a few seconds; the dock shows a brief notice while it is set.
+   */
+  versionFallback: boolean;
 }
 
 export interface PlayerEvents {
@@ -198,8 +213,16 @@ export interface PlayerEngineOptions {
   mediaSession?: MediaSessionEnv | null;
   /** Where `pagehide` is listened for. Default: `window` when present; `null` disables. */
   lifecycle?: LifecycleTarget | null;
-  /** Recording → playable URL, or null when unavailable. Default: `recordingAudioUrl`. */
-  resolveAudioUrl?: (rec: PlayerRecording, shiur: PlayerShiur) => string | null;
+  /** Recording + version → playable URL, or null when unavailable. Default: `recordingAudioUrl`. */
+  resolveAudioUrl?: (rec: PlayerRecording, shiur: PlayerShiur, version: AudioVersion) => string | null;
+  /** The listener's stored choice, read synchronously before the first load (default "cleaned"). */
+  audioVersion?: AudioVersion;
+  /**
+   * Whether the improved copy may be tried for this recording without the listener asking (default:
+   * always). The app answers false while offline, so a downloaded shiur plays its stored original at
+   * once; an explicit switch still tries the improved copy and falls back if it cannot load.
+   */
+  canTryCleaned?: (rec: PlayerRecording, shiur: PlayerShiur) => boolean;
   /** Media Session metadata. Default: chapter title / Rav / catalog title (tech-live §4.1). */
   describe?: (ctx: DescribeContext) => MediaMetadataInit;
   skip?: Partial<SkipSettings>;
@@ -233,6 +256,11 @@ export interface PlayerEngine {
   keepListening(): void;
   setSleepTimer(spec: SleepSpec | null): void;
   setReadingLanguage(lang: UiLang): void;
+  /**
+   * Switch the version (the listener's click, or an imported preference). Keeps the position, the
+   * play/pause state and the speed: the current recording swaps `src` through the normal path.
+   */
+  setAudioVersion(version: AudioVersion): void;
   /** Emit a progress event now (e.g. before navigating away from the app). */
   flushProgress(reason?: ProgressReason): void;
   destroy(): void;
