@@ -488,7 +488,7 @@ English and the use of מקורית / הקלטה המקורית.
 | `announce.cleaned` | Now playing the version improved by AI. | יעצט שפילט די ווערסיע אויסגעבעסערט דורך AI. | כעת מתנגנת הגרסה שהקול בה שופר על ידי AI. |
 | `announce.original` | Now playing the original recording. | יעצט שפילט די מקורית. | כעת מתנגנת ההקלטה המקורית. |
 | `partOriginal` | Part {part}: original recording only | טייל {part}: נאר די מקורית | חלק {part}: ההקלטה המקורית בלבד |
-| `about` | The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. Downloads are always the original recording. | די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. אראפלאדן גיט שטענדיג די מקורית. | ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן. ההורדות הן תמיד של ההקלטה המקורית. |
+| `about` | The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. | די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. | ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן. |
 
 Rules the wording keeps: it speaks of the sound and the recording only, never of the shiur or its
 content; it never names the model; it never mentions transcription or speech recognition. The
@@ -499,4 +499,4 @@ file.
 Questions for the Yiddish reviewer:
 
 - **Q12.** "הערט זי" refers back to "ווערסיע" (feminine). Natural, or prefer "הערט עס" / "הערט די ווערסיע"?
-- **Q13.** "אראפלאדן גיט שטענדיג די מקורית" for "Downloads are always the original recording".
+- **Q13.** Withdrawn: the "downloads are always the original" sentence was removed (downloads now follow the version being played).

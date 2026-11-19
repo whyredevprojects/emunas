@@ -20,7 +20,8 @@
  *   sound improved by AI (`data-cleaned`, the default) and the original (`data-original`), keeping
  *   position, play/pause and speed, and announces the switch politely. The choice is one global
  *   preference in localStorage (`AUDIO_VERSION_KEY`, written only on a click). An `error` on an
- *   improved file falls back once to the original for that recording. Downloads stay the original.
+ *   improved file falls back once to the original for that recording. Each part's download link
+ *   (`a.download`) follows the version that part plays.
  *
  * No dependencies beyond the shared vocabulary, no network of its own; its only storage is that one
  * preference. Budget ≤ 6 KB brotli (checked in tests).
@@ -189,6 +190,8 @@ export function initPlayer(doc: Document, win: Window): Player | null {
   /** Points `a` at the version it should play, carrying position, play state and speed. */
   function apply(a: HTMLAudioElement, playing = !a.paused): void {
     const url = urlOf(a);
+    const download = a.closest(".track")?.querySelector<HTMLAnchorElement>("a.download");
+    if (download) download.href = url;
     if (a.getAttribute("src") === url) return;
     const idle = a.readyState === 0 && !playing && !pending.has(a);
     const local = pending.get(a) ?? (a.currentTime || 0);

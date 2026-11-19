@@ -29,10 +29,11 @@ reasoning; read them through these decisions.
    --workspace=@emunas/audio [-- --verify-duration]` (`packages/audio/scripts/verify-cleaned.ts`)
    lists `fixed/sidon/` in R2 and fails if any in-scope, non-rejected recording has no copy. It is a
    pre-merge check, not part of the build (ops-runbook §11).
-4. **Downloads always use the original file**, on both sites, whatever version plays. `cleanedUrl`
-   is for playback only. (This replaces the "Downloads" rows of §6 and resolves open question 6.)
-   **Live update (2026-11-19):** Live has no offline copies and no service worker any more; its
-   Download is a plain link to the media URL of the version being played.
+4. **Downloads follow the version being played**, on both sites (owner, 2026-11-19; this reverses
+   the earlier "downloads always use the original"). Download is a plain link to the media URL of
+   the version that plays: the improved copy by default, the original when the listener chose it,
+   the recording has no improved copy or the improved file failed. Library's script rewrites the
+   link's `href` on a switch or a fallback; Analyze has no service worker or offline copies.
 5. **Preference:** one global per-listener choice, `localStorage` key `emunas.audioVersion`
    (`AUDIO_VERSION_KEY`), values `"cleaned" | "original"` (`AudioVersion`), default `"cleaned"`
    (`parseAudioVersion`). Live also mirrors it into its personal store `prefs`, so export/transfer
@@ -126,8 +127,8 @@ Recommendation in one paragraph:
 - Every list or inline "play" (Today, mixes, search results, chapters, topics) goes through
   `player-ui/engine.ts:77-123` (`playShiur` / `playAt`) into the same engine, so it follows the
   resolver automatically.
-- Downloads (since 2026-11-19): a plain link to the media URL of the version being played. Live
-  has no service worker, offline copies or download bookkeeping.
+- Downloads: a plain link to the media URL of the version being played (Decision 4). Live has no
+  service worker, offline copies or download bookkeeping.
 - The data contract is a strict schema: `apps/live/data-build/schemas.ts:80-81`, plus the comment
   type at `app/data/types.ts:261`.
 - Media Session: `player-engine/media-session.ts:11-19` sets the title to the chapter, the artist to

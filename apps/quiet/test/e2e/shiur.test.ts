@@ -9,7 +9,7 @@
  *   focused dock;
  * - improved audio: the version line's button switches every part between the improved copy and
  *   the original keeping position, play state and speed, announces it, remembers it across pages,
- *   and a failing improved file falls back once to the original; downloads stay the original;
+ *   and a failing improved file falls back once to the original; downloads follow the version that plays;
  * - player script ≤ 6 KB brotli; every shiur page ≤ 120 KB raw / ≤ 30 KB brotli; no transcript
  *   UI in any built file; print hides the player and the links, keeps the notes.
  *
@@ -306,7 +306,7 @@ describe("without script", () => {
     const srcs = await page.$$eval("audio[preload=none]", (els) => els.map((a) => a.getAttribute("src")));
     expect(srcs).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
     expect(await page.locator("a.listen-version-switch").getAttribute("href")).toBe(p1!.audioUrl);
-    expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);
+    expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
     expect(await page.locator(".listen[data-docked]").count()).toBe(0);
     await page.context().close();
   });
@@ -461,7 +461,7 @@ describe("improved audio", () => {
     await page.waitForFunction(() => document.querySelector(".listen-version [role=status]")?.textContent === "Now playing the original recording.");
     expect(await reportBody()).toMatch(/\n\nNow playing the original recording\.$/);
     expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("original");
-    // downloads never change
+    // downloads follow the switch
     expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.audioUrl, p2!.audioUrl]);
     await page.screenshot({ path: join(shotDir, "shiur-version-original.png") });
 
@@ -470,6 +470,7 @@ describe("improved audio", () => {
     await button.click();
     await page.waitForFunction(() => document.querySelector<HTMLAudioElement>("audio.listen-audio")!.readyState >= 1);
     expect(await srcs(page)).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
+    expect(await page.locator("a.download").evaluateAll((els) => els.map((e) => e.getAttribute("href")))).toEqual([p1!.cleanedUrl, p2!.cleanedUrl]);
     const [back] = await audioState(page);
     expect(back!.paused).toBe(true);
     expect(back!.t).toBeGreaterThanOrEqual(119);
@@ -488,6 +489,7 @@ describe("improved audio", () => {
     const rec = shiurJson("en-parsha-en-nch-01").recordings[0]!;
     await page.waitForFunction(() => document.querySelector("button.listen-version-switch") !== null);
     expect(await srcs(page)).toEqual([rec.audioUrl]);
+    expect(await page.locator("a.download").getAttribute("href")).toBe(rec.audioUrl);
     expect(await page.locator("button.listen-version-switch").textContent()).toBe("הערט זי");
     // the swap on load fetches nothing (preload=none)
     expect(await page.$eval("audio.listen-audio", (a) => (a as HTMLAudioElement).readyState)).toBe(0);
@@ -506,6 +508,7 @@ describe("improved audio", () => {
         return !a.paused && a.readyState >= 1;
       });
       expect(await srcs(page)).toEqual([rec.audioUrl]);
+      expect(await page.locator("a.download").getAttribute("href")).toBe(rec.audioUrl);
       expect(await page.locator("button.listen-version-switch").textContent()).toBe("Listen to it");
       expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBeNull();
       await page.context().close();

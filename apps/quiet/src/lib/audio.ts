@@ -11,7 +11,7 @@
  *
  * Every playable recording may also carry `cleanedUrl`, its copy with the sound improved by AI
  * (docs/sites/cleaned-audio-ux.md). That copy is what plays by default (`defaultUrl`): the `<audio
- * src>` and the no-JS time links use it. Downloads always use the original (`playableUrl`).
+ * src>`, the no-JS time links and the download links use it.
  */
 import { toLocal } from "@emunas/corpus/public";
 
