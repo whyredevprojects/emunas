@@ -18,6 +18,7 @@
  * Only catalog and generated fields are ever matched or shown; nothing here can reach a transcript.
  */
 import type { Ed } from "@emunas/corpus/public";
+import { byUiLang, UI_LANGS, type UiLang } from "@emunas/i18n";
 import { parseHebrewNumeral, parseHebrewYear } from "@emunas/normalize";
 import { buildSynonymTable, foldForIndex, normalizeQuery, type NormalizedQuery, type SynonymTable } from "@emunas/search-core";
 import MiniSearch, { type Query, type SearchResult } from "minisearch";
@@ -55,7 +56,7 @@ export interface SeriesTarget {
 }
 
 export interface QuickSearch {
-  readonly ui: Ed;
+  readonly ui: UiLang;
   suggest(q: string, limit?: number): Suggestion[];
   shiurs(q: string, limit?: number): ShiurHit[];
   /** Series a "<series> <number>" query names, the interface language's own first. */
@@ -67,7 +68,7 @@ export interface QuickSearch {
 }
 
 export interface QuickInputs {
-  ui: Ed;
+  ui: UiLang;
   quick: QuickIndexFile;
   facets: FacetsFile | null;
 }
@@ -152,10 +153,11 @@ function nameScore(name: readonly string[], terms: readonly string[]): number {
 }
 
 function labelNames(l: FacetLabel | undefined): string[] {
-  return l ? [l.en, l.yi, l.he].filter((x): x is string => typeof x === "string") : [];
+  return l ? UI_LANGS.map((lang) => l[lang]).filter((x): x is string => typeof x === "string") : [];
 }
 
-const entityLabelNames = (l: QuickEntity["labels"]): string[] => [l.en, l.yi, l.he].filter((x): x is string => typeof x === "string" && x !== "");
+const entityLabelNames = (l: QuickEntity["labels"]): string[] =>
+  UI_LANGS.map((lang) => l[lang]).filter((x): x is string => typeof x === "string" && x !== "");
 
 // ---------------------------------------------------------------------------------------------
 // Dictionary
@@ -191,8 +193,8 @@ export function readEntities(file: QuickIndexFile): QuickEntity[] {
     const id = r["id"];
     const labels = (typeof r["labels"] === "object" && r["labels"] !== null ? r["labels"] : {}) as Record<string, unknown>;
     if (typeof kind !== "string" || !(KINDS as readonly string[]).includes(kind) || typeof id !== "string" || id === "") continue;
-    const l = { he: str(labels["he"]), en: str(labels["en"]), yi: str(labels["yi"]) };
-    if (l.he === null && l.en === null && l.yi === null) continue;
+    const l = byUiLang((lang) => str(labels[lang]));
+    if (UI_LANGS.every((lang) => l[lang] === null)) continue;
     const synonyms = Array.isArray(r["synonyms"]) ? (r["synonyms"] as unknown[]).filter((s): s is string => typeof s === "string") : [];
     const count = typeof r["count"] === "number" && Number.isFinite(r["count"]) ? r["count"] : 0;
     if (count <= 0) continue;

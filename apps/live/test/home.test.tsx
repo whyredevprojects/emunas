@@ -20,7 +20,9 @@ describe("live root page", () => {
 
   it("picks the stored language, then the browser's", () => {
     expect(preferredUi("yi", ["en-US"])).toBe("yi");
-    expect(preferredUi(null, ["he-IL", "en"])).toBe("yi");
+    expect(preferredUi(null, ["he-IL", "en"])).toBe("he");
+    expect(preferredUi(null, ["iw"])).toBe("he");
+    expect(preferredUi(null, ["ji"])).toBe("yi");
     expect(preferredUi(null, ["yi"])).toBe("yi");
     expect(preferredUi(null, ["en-GB", "he"])).toBe("en");
     expect(preferredUi(null, ["fr"])).toBe("en");

@@ -3,7 +3,7 @@
  *
  * Static assets (build/client) are served by the platform without running this code.
  * `run_worker_first` in wrangler.jsonc sends only these paths here:
- *   "/"          → 302 to /yi/ or /en/ (cookie `emunas_ui`, then Accept-Language)
+ *   "/"          → 302 to /<ui>/ for a `UI_LANGS` language (cookie `emunas_ui`, then Accept-Language)
  *   "/api/*"     → service binding API (emunas-api)
  *   "/admin/*"   → service binding API (Access protects the hostname path)
  * There is no audio route: audio is served from the media host (Amendment A1).
@@ -11,6 +11,8 @@
  * Responses produced here do not get `_headers` rules, so the Worker adds
  * `X-Robots-Tag: noindex` itself on workers.dev hosts (§2.1).
  */
+
+import { isUiLang, UI_LANGS, type UiLang } from "@emunas/i18n";
 
 /** The parts of a Fetcher (assets / service binding) this Worker uses. */
 export interface FetcherLike {
@@ -22,23 +24,30 @@ export interface Env {
   API: FetcherLike;
 }
 
-export type Ui = "yi" | "en";
+export type Ui = UiLang;
 
 /** Cookie the Live app writes when the reader picks an interface language (apps/live ui-preference). */
 export const UI_COOKIE = "emunas_ui";
-/** Used when neither the cookie nor Accept-Language names Yiddish, Hebrew or English. */
+/** Used when neither the cookie nor Accept-Language names an interface language. */
 export const DEFAULT_UI: Ui = "en";
 
-const UI_COOKIE_RE = new RegExp(`(?:^|;)\\s*${UI_COOKIE}=(yi|en)\\s*(?:;|$)`);
+const UI_COOKIE_RE = new RegExp(`(?:^|;)\\s*${UI_COOKIE}=(${UI_LANGS.join("|")})\\s*(?:;|$)`);
 
 export function uiFromCookie(cookie: string | null): Ui | null {
   if (!cookie) return null;
   const m = UI_COOKIE_RE.exec(cookie);
-  return m ? (m[1] as Ui) : null;
+  return m && isUiLang(m[1]) ? m[1] : null;
 }
 
-/** Primary language subtag → interface. Hebrew readers get the Hebrew-script (Yiddish) interface. */
-const LANG_TO_UI: Readonly<Record<string, Ui>> = { yi: "yi", ji: "yi", he: "yi", iw: "yi", en: "en" };
+/**
+ * Primary language subtag → interface: every interface language by its own code, plus the
+ * deprecated codes browsers still send (`ji` for Yiddish, `iw` for Hebrew).
+ */
+const LANG_TO_UI: Readonly<Record<string, Ui>> = {
+  ...Object.fromEntries(UI_LANGS.map((l) => [l, l])),
+  ji: "yi",
+  iw: "he",
+};
 
 /**
  * Picks the interface from an Accept-Language header: highest q first (ties keep header

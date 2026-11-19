@@ -3,14 +3,20 @@
  * move by chapter; seek backward/forward by 15 s; seekto. Every call is guarded: browsers throw for
  * actions they do not support and for out-of-range position states.
  */
+import { pickText, type UiLang } from "@emunas/i18n";
 import type { DescribeContext, MediaSessionEnv, MetadataInit, PlayerChapter, PlayerShiur } from "./types.ts";
 
-export const RAV_NAME = { en: 'Harav Moshe Wolfson zt"l', yi: 'הרב משה וואלפסאן זצ"ל' } as const;
+/** The Mashgiach's name as the Media Session artist, per interface language. */
+export const RAV_NAME: Readonly<Record<UiLang, string>> = {
+  en: 'Harav Moshe Wolfson zt"l',
+  yi: 'הרב משה וואלפסאן זצ"ל',
+  he: 'הגה"צ רבי משה וולפסון זצ"ל',
+};
 
 /** Default metadata: title = chapter title in the reading language, artist = the Mashgiach, album = catalog title. */
 export function defaultDescribe({ shiur, chapter, readingLang }: DescribeContext): MediaMetadataInit {
   const album = shiur.catalog.heading ?? shiur.catalog.titleOriginal;
-  const chapterTitle = chapter ? chapter.title[readingLang] || chapter.title[readingLang === "en" ? "yi" : "en"] : "";
+  const chapterTitle = chapter ? pickText(chapter.title, readingLang).text : "";
   return {
     title: chapterTitle || album,
     artist: RAV_NAME[readingLang],
@@ -77,10 +83,10 @@ export class MediaSessionBridge {
     }
   }
 
-  setMetadata(init: MediaMetadataInit, shiur: PlayerShiur, chapters: readonly PlayerChapter[], readingLang: "en" | "yi"): void {
+  setMetadata(init: MediaMetadataInit, shiur: PlayerShiur, chapters: readonly PlayerChapter[], readingLang: UiLang): void {
     const full: MetadataInit = { ...init };
     if (chapters.length > 0) {
-      full.chapterInfo = chapters.map((c) => ({ title: c.title[readingLang], startTime: c.t }));
+      full.chapterInfo = chapters.map((c) => ({ title: pickText(c.title, readingLang).text, startTime: c.t }));
     }
     const key = JSON.stringify([shiur.id, init.title, init.artist, init.album, readingLang]);
     if (key === this.lastMetadataKey) return;

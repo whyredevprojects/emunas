@@ -1,12 +1,12 @@
 /**
  * UI strings of the catalog pages (W3.1): title page, contents, sections, series. Kept next to the
  * pages that use them (integration-plan §1.3: UI strings stay in each app); typed with `createT`
- * like `src/i18n/`, so a missing Yiddish key fails `tsc`.
+ * like `src/i18n/`, so a missing Yiddish or Hebrew key fails `tsc`.
  *
  * Wording status: unreviewed; the Yiddish needs a native reader (W5.3). Plain voice, no "content"
  * vocabulary (concept-quiet §8, §11).
  */
-import { createT, type MessageTable, type TFunction } from "@emunas/i18n";
+import { byUiLang, createT, type MessageTable, type MessageTables, type TFunction } from "@emunas/i18n";
 import type { Ed } from "../../lib/edition.ts";
 
 export const catalogEn = {
@@ -132,25 +132,82 @@ export const catalogYi: MessageTable<CatalogKey> = {
   "chumash.devarim": "ספר דברים",
 };
 
-const cache = new Map<Ed, TFunction<CatalogKey>>();
+export const catalogHe: MessageTable<CatalogKey> = {
+  "home.lead": "השיעורים המוקלטים של הגה\"צ רבי משה וולפסון זצ\"ל.",
+  "home.standing": "{total} שיעורים, כ־{hours} שעות.",
+  "home.thisWeek": "השבוע",
+  "home.thisWeekLead": "פרשת השבוע והזמן הקרוב, נכון ל־{date}.",
+  "home.parsha": "פרשת {name}",
+  "home.zmanNow": "עכשיו: {name}",
+  "home.zmanSoon": "בקרוב: {name}",
+  "home.allOn": { one: "השיעור על {name}", other: "כל {count} השיעורים על {name}" },
+  "home.liveLead": "לנתונים נוספים ולדרך האזנה אינטראקטיבית יותר, השתמשו ב{link}.",
+  "home.liveLink": "עיון",
+  "home.contents": "התוכן בקצרה",
+  "home.contentsAll": "התוכן המלא",
+  "home.indexes": "מפתחות",
 
-/** The typed `t()` of the catalog pages for an edition. */
+  "count.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+
+  "contents.title": "תוכן",
+  "contents.yiddish": "שיעורים באידיש",
+  "contents.english": "שיעורים באנגלית",
+  "contents.more": "הקלטות נוספות",
+  "contents.series": "סדרות",
+  "contents.seriesLead": "סדרות של שיעורים שנאמרו ברצף, לשמיעה על הסדר.",
+  "contents.sectionsLabel": "מדורים",
+
+  "section.alsoSeries": "מסודר גם כסדרה:",
+  "section.jump": "במדור זה",
+  "section.other": "אחרים",
+  "section.otherZman": "זמנים אחרים",
+  "section.otherParsha": "בלי פרשה",
+
+  "table.caption": "{name}: השיעורים לפי הסדר",
+  "table.part": "חלק",
+  "table.title": "כותרת",
+  "table.parsha": "פרשה",
+  "table.zman": "זמן",
+  "table.occasion": "פרשה / זמן",
+  "table.year": "שנה",
+  "table.length": "אורך",
+  "table.notes": "בקצרה (רשימות)",
+  "table.scroll": "{name} (אפשר לגלול את הטבלה לצדדים)",
+  "row.noRecording": "אין הקלטה באינטרנט",
+  "row.part": "חלק {part} מתוך {count}",
+
+  "series.lead": "{count} לפי הסדר.",
+  "series.perek": "פרק {perek}",
+  "series.noPerek": "בלי פרק",
+  "series.jump": "פרקים",
+  "series.empty": "אף אחד מן השיעורים של סדרה זו אינו באוסף שבאינטרנט.",
+  "series.intro": "על הסדרה",
+  "series.keyThemes": "הנושאים העיקריים",
+
+  "chumash.bereishis": "ספר בראשית",
+  "chumash.shemos": "ספר שמות",
+  "chumash.vayikra": "ספר ויקרא",
+  "chumash.bamidbar": "ספר במדבר",
+  "chumash.devarim": "ספר דברים",
+};
+
+/** Every edition's table (`tsc` reports a missing edition). */
+export const catalogTables: MessageTables<CatalogKey> = { en: catalogEn, yi: catalogYi, he: catalogHe };
+
+const ts = byUiLang((ed) => createT<CatalogKey>(catalogTables, ed));
+
 /**
  * A message with one `{slot}` placeholder, split around it so a page can put a link in the slot:
  * `[before, after]`. The raw table is read because `t()` would fill the placeholder with text.
  */
 export function catalogSlot(ed: Ed, key: CatalogKey, slot: string): readonly [string, string] {
-  const msg = (ed === "yi" ? catalogYi : catalogEn)[key];
+  const msg = catalogTables[ed][key];
   if (typeof msg !== "string" || !msg.includes(`{${slot}}`)) throw new Error(`catalog string ${key} has no {${slot}}`);
   const [before = "", after = ""] = msg.split(`{${slot}}`);
   return [before, after];
 }
 
+/** The typed `t()` of the catalog pages for an edition. */
 export function useCatalogT(ed: Ed): TFunction<CatalogKey> {
-  let t = cache.get(ed);
-  if (!t) {
-    t = createT<CatalogKey>({ en: catalogEn, yi: catalogYi }, ed);
-    cache.set(ed, t);
-  }
-  return t;
+  return ts[ed];
 }

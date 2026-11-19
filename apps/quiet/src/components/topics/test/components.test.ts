@@ -24,6 +24,8 @@ const render = (component: Parameters<AstroContainer["renderToString"]>[0], prop
 const text = (html: string) => html.replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
 const he = (t: string) => ({ text: t, lang: "he" as const, dir: "rtl" as const });
 const en = (t: string) => ({ text: t, lang: "en" as const, dir: "ltr" as const });
+/** A generated text as picked for the English edition (no fallback). */
+const shown = (t: string) => ({ ...en(t), fallback: false });
 
 const placeholders = (m: unknown) =>
   [...new Set((typeof m === "string" ? [m] : Object.values(m as Record<string, string>)).flatMap((f) => [...f.matchAll(/\{(\w+)\}/g)].map((x) => x[1])))].sort();
@@ -97,7 +99,7 @@ const grades: Grades = {
       occasion: "נח",
       onOccasion: null,
       parts: [
-        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#t=1732.6", title: "Tehillim: Your right hand holds me" },
+        { idx: 6, t: 1732.6, time: "28:52", href: "/en/shiur/c/#t=1732.6", title: shown("Tehillim: Your right hand holds me") },
         { idx: 8, t: 2880, time: "48:00", href: "/en/shiur/c/#t=2880", title: null },
       ],
     },
@@ -144,8 +146,8 @@ const page: TopicPage = {
   count: 130,
   path: [{ id: "zmanim", name: { title: he("ימים טובים וזמנים"), alt: en("Yamim Tovim") }, href: "/en/inyanim/zmanim/" }],
   seeAlso: [{ label: he("ימים טובים וזמנים"), href: "/en/inyanim/zmanim/", rel: "parent" }],
-  description: "The Mashgiach teaches about the lights.",
-  definition: "The eight days of light.",
+  description: shown("The Mashgiach teaches about the lights."),
+  definition: shown("The eight days of light."),
   occasions: [{ kind: "zman", key: "chanukah", name: "Chanukah", he: "חנוכה", href: "/en/calendar/zman/chanukah/" }],
   hubs: [],
   gateway: false,

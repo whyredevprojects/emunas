@@ -1,7 +1,7 @@
 /**
  * Hosts for the home site's absolute URLs (canonical, Open Graph, sitemap, robots.txt) and its
- * links into Library (Quiet) and Listen (Live). Read from the build environment the way
- * `@emunas/links` `hostsFromEnv` reads it: `EMUNAS_DOMAIN` (home on the apex, Library on
+ * links into Library (Quiet) and Listen (Live) (`siteLinks` in lib/langs.ts). Read from the
+ * build environment the way `@emunas/links` `hostsFromEnv` reads it: `EMUNAS_DOMAIN` (home on the apex, Library on
  * `library.`, Listen on `listen.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`), or
  * explicit `EMUNAS_HOME_ORIGIN` + `EMUNAS_QUIET_ORIGIN` + `EMUNAS_LIVE_ORIGIN`.
  *
@@ -54,11 +54,6 @@ export function currentSiteEnv(): SiteEnv {
   cached = siteEnv(process.env);
   if (cached.placeholder) console.warn(`[home] no site hosts configured; using ${PLACEHOLDER_DOMAIN} placeholders and noindex`);
   return cached;
-}
-
-/** Where the doorways, pills and footer send readers: the English editions of the two shiur sites. */
-export function siteLinks(hosts: Hosts): { readonly library: string; readonly listen: string } {
-  return { library: `${hosts.quiet}/en/`, listen: `${hosts.live}/en/` };
 }
 
 /** `https://library.example.org` → `library.example.org`, shown under each doorway. */

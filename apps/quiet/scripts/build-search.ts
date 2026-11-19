@@ -16,16 +16,18 @@
  *     step when docs.ndjson is missing or older than `.corpus/index.json`).
  *  2. One **shiur record** per SearchDoc: `url` is the edition-less `shiur/<id>/` (the page prefixes
  *     `/<ed>/`); `content` is search-core's folded `docSearchText`: the text fields, then the topic
- *     keywords (`SearchDoc.keywords`: the shiur's topic labels and topic aliases); `meta` is
- *     titleOriginal, occasion, year, oneLinerEn, oneLinerYi, lang, status; `filters` are type (`shiur`),
- *     lang, category, status.
+ *     keywords (`SearchDoc.keywords`: the shiur's topic labels and topic aliases), in every language
+ *     the doc has (one index serves every edition); `meta` is titleOriginal, occasion, year, one
+ *     one-liner per interface language that has one (`oneLinerEn`, `oneLinerYi`, `oneLinerHe`: the
+ *     page picks along `CONTENT_FALLBACK`), lang, status; `filters` are type (`shiur`), lang,
+ *     category, status.
  *  3. One **entity record** (headword result, concept-quiet-corpus C5 "Search") per Quiet address of
  *     the EntityDocs listed on Quiet: `url` is the entity's Quiet page, or its index anchor when it
  *     has none (`@emunas/links`). Pagefind keeps one record per URL, so a concept merged into a topic
  *     shares the topic's record, which shows the topic. `content` is the members' folded labels and
  *     clean synonyms, one per line (display fields only, from the layer's synonyms.json: never ASR
  *     variants or alias-map keys); `meta` is entity (the members' `kind:id`, space-separated), kind,
- *     labelHe, labelEn, labelYi, count; `filters` are type (`entry`) and kind. No synonym is in meta: they are searched,
+ *     one label per interface language (`labelEn`, `labelYi`, `labelHe`), count; `filters` are type (`entry`) and kind. No synonym is in meta: they are searched,
  *     never shown. All entities are AI-generated and unreviewed: the search page says so above them.
  *  4. Every record goes through the corpus-guard Pagefind checker (forbidden keys and substrings,
  *     verbatim runs against the shiur's transcripts). Entity records also go through the alias
@@ -55,11 +57,12 @@ import {
   type Finding,
   type LeakScanner,
 } from "@emunas/corpus-guard";
-import { formatHebrewYears } from "@emunas/i18n";
 import { formatQuiet, type LinkData } from "@emunas/links";
 import { fold } from "@emunas/normalize";
-import { ENTITY_DOC_KINDS, docSearchText, type EntityDoc, type EntityDocKind, type SearchDoc } from "@emunas/search-core";
+import { UI_LANGS, byUiLang, formatHebrewYears, type UiLang } from "@emunas/i18n";
+import { ENTITY_DOC_KINDS, docSearchText, type EntityDoc, type EntityDocKind, type EntityDocLabels, type SearchDoc } from "@emunas/search-core";
 import { writeSearchOutputs } from "@emunas/search-core/build";
+import { LABEL_KEYS, ONE_LINER_KEYS, labelKey, oneLinerKey } from "../src/lib/search-meta.ts";
 
 // ---------------------------------------------------------------- record shape
 
@@ -67,7 +70,7 @@ import { writeSearchOutputs } from "@emunas/search-core/build";
 export const RECORD_LANGUAGE = "unknown";
 
 /** Exactly these meta keys may appear on a shiur record (results render from them, no excerpts). */
-export const RECORD_META_FIELDS = ["titleOriginal", "occasion", "year", "oneLinerEn", "oneLinerYi", "lang", "status"] as const;
+export const RECORD_META_FIELDS = ["titleOriginal", "occasion", "year", ...ONE_LINER_KEYS, "lang", "status"] as const;
 export type RecordMetaField = (typeof RECORD_META_FIELDS)[number];
 
 /** Exactly these filter keys may appear on a shiur record. */
@@ -75,7 +78,7 @@ export const RECORD_FILTER_FIELDS = ["type", "lang", "category", "status"] as co
 export type RecordFilterField = (typeof RECORD_FILTER_FIELDS)[number];
 
 /** Exactly these meta keys may appear on an entity record. No synonyms: they are searched, never shown. */
-export const ENTITY_META_FIELDS = ["entity", "kind", "labelHe", "labelEn", "labelYi", "count"] as const;
+export const ENTITY_META_FIELDS = ["entity", "kind", ...LABEL_KEYS, "count"] as const;
 export type EntityMetaField = (typeof ENTITY_META_FIELDS)[number];
 
 /** Exactly these filter keys may appear on an entity record. */
@@ -130,8 +133,10 @@ export function buildRecord(doc: SearchDoc, citation: CitationRow | undefined): 
   if (occasion !== "" && occasion !== doc.titleOriginal.trim()) meta.occasion = occasion;
   if (citation && citation.years.length > 0) meta.year = formatHebrewYears(citation.years, "en", { civil: false });
   if (doc.oneLiner !== null) {
-    if (doc.oneLiner.en.trim() !== "") meta.oneLinerEn = doc.oneLiner.en;
-    if (doc.oneLiner.yi.trim() !== "") meta.oneLinerYi = doc.oneLiner.yi;
+    for (const lang of UI_LANGS) {
+      const text = doc.oneLiner[lang];
+      if (text !== undefined && text.trim() !== "") meta[oneLinerKey(lang)] = text;
+    }
   }
   return {
     url: recordUrl(doc.id),
@@ -188,7 +193,7 @@ export function entityUrl(e: Pick<EntityDoc, "kind" | "id">, lookup: EntityLooku
 /** Folded, deduplicated searchable terms of an entity: its labels, then its clean synonyms. */
 export function entityTerms(e: Pick<EntityDoc, "labels" | "synonyms">): string[] {
   const out: string[] = [];
-  for (const t of [e.labels.he, e.labels.en, e.labels.yi, ...e.synonyms]) {
+  for (const t of [...UI_LANGS.map((l) => e.labels[l]), ...e.synonyms]) {
     const f = t === null ? "" : fold(t);
     if (f !== "" && !out.includes(f)) out.push(f);
   }
@@ -216,12 +221,10 @@ export function buildEntityRecord(members: readonly EntityDoc[], lookup: EntityL
     kind: shown.kind,
     count: String(shown.count),
   };
-  const he = shown.labels.he?.trim() ?? "";
-  const en = shown.labels.en?.trim() ?? "";
-  const yi = shown.labels.yi?.trim() ?? "";
-  if (he !== "") meta.labelHe = he;
-  if (en !== "") meta.labelEn = en;
-  if (yi !== "") meta.labelYi = yi;
+  for (const lang of UI_LANGS) {
+    const label = shown.labels[lang]?.trim() ?? "";
+    if (label !== "") meta[labelKey(lang)] = label;
+  }
   const terms: string[] = [];
   for (const m of members) for (const t of entityTerms(m)) if (!terms.includes(t)) terms.push(t);
   return {
@@ -254,15 +257,15 @@ export function entityGroups(entities: readonly EntityDoc[], lookup: EntityLooku
 export interface SynonymTableRow {
   kind: EntityDocKind;
   id: string;
-  labels: { he: string | null; en: string | null; yi: string | null };
+  labels: EntityDocLabels;
   /** Folded synonyms, minus the folded labels (the table folds those itself). */
   synonyms: string[];
   count: number;
 }
 
 export function synonymRow(e: EntityDoc): SynonymTableRow {
-  const labels = { he: e.labels.he, en: e.labels.en, yi: e.labels.yi };
-  const own = new Set([labels.he, labels.en, labels.yi].map((l) => (l === null ? "" : fold(l))));
+  const labels: EntityDocLabels = byUiLang((l) => e.labels[l]);
+  const own = new Set(UI_LANGS.map((l) => labels[l]).map((l) => (l === null ? "" : fold(l))));
   const synonyms: string[] = [];
   for (const s of e.synonyms) {
     const f = fold(s);
@@ -312,7 +315,7 @@ export function readEntities(file: string): EntityDoc[] {
       {
         kind: kind as EntityDocKind,
         id,
-        labels: { he: str(l["he"]), en: str(l["en"]), yi: str(l["yi"]) },
+        labels: byUiLang((lang: UiLang) => str(l[lang])),
         synonyms: Array.isArray(syn) ? syn.filter((s): s is string => typeof s === "string") : [],
         count: typeof count === "number" && Number.isFinite(count) ? count : 0,
         listed: flags(e["listed"]),

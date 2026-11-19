@@ -127,7 +127,7 @@ export function Years({ counts, ui, year, onYear }: YearsProps): JSX.Element {
                 <tr key={b.year}>
                   <th scope="row">
                     <button type="button" className={s.textButton} aria-pressed={inRange(b.year)} onClick={() => chooseYear(b.year)}>
-                      <Text value={yearText(b.year, ui)} shiurLang={ui} />
+                      <Text value={yearText(b.year, ui)} shiurLang={null} />
                     </button>
                   </th>
                   <td>{formatNumber(b.count, ui)}</td>

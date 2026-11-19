@@ -5,9 +5,12 @@ import {
   formatDuration,
   formatHebrewYear,
   formatHebrewYears,
+  formatNumber,
   hebrewNumeral,
   hebrewYearParts,
   numeralValue,
+  pluralCategory,
+  selectPlural,
   UI_LANGS,
 } from "../src/index.ts";
 
@@ -36,7 +39,7 @@ describe("gematria", () => {
 });
 
 describe("formatHebrewYear", () => {
-  it("formats 5743 as in the brief, in both languages", () => {
+  it("formats 5743 as in the brief, in every language", () => {
     const snapshot = Object.fromEntries(
       UI_LANGS.map((lang) => [
         lang,
@@ -46,6 +49,18 @@ describe("formatHebrewYear", () => {
     expect(snapshot).toMatchInlineSnapshot(`
       {
         "en": [
+          "תשכ"ד (1963–64)",
+          "תשל"ו (1975–76)",
+          "תשמ"ג (1982–83)",
+          "תשמ"ד (1983–84)",
+          "תש"ס (1999–2000)",
+          "תשס"א (2000–01)",
+          "תשע"ה (2014–15)",
+          "תשע"ו (2015–16)",
+          "תשפ"ז (2026–27)",
+          "ת"ת (2039–40)",
+        ],
+        "he": [
           "תשכ"ד (1963–64)",
           "תשל"ו (1975–76)",
           "תשמ"ג (1982–83)",
@@ -98,7 +113,7 @@ describe("formatHebrewYear", () => {
 describe("formatDuration", () => {
   const samples = [0, 7, 45, 59.4, 59.6, 60, 61, 89, 90, 600, 3599, 3600, 3660, 4745, 7200, 10_000];
 
-  it("snapshots short and long in both languages", () => {
+  it("snapshots short and long in every language", () => {
     const snapshot = Object.fromEntries(
       UI_LANGS.flatMap((lang) =>
         (["short", "long"] as const).map((style) => [
@@ -145,6 +160,42 @@ describe("formatDuration", () => {
           "7200 → 2 hr",
           "10000 → 2 hr 47 min",
         ],
+        "he/long": [
+          "0 → 0 שניות",
+          "7 → 7 שניות",
+          "45 → 45 שניות",
+          "59.4 → 59 שניות",
+          "59.6 → 1 דקה",
+          "60 → 1 דקה",
+          "61 → 1 דקה",
+          "89 → 1 דקה",
+          "90 → 2 דקות",
+          "600 → 10 דקות",
+          "3599 → 1 שעה",
+          "3600 → 1 שעה",
+          "3660 → 1 שעה 1 דקה",
+          "4745 → 1 שעה 19 דקות",
+          "7200 → שעתיים",
+          "10000 → שעתיים 47 דקות",
+        ],
+        "he/short": [
+          "0 → 0 שנ׳",
+          "7 → 7 שנ׳",
+          "45 → 45 שנ׳",
+          "59.4 → 59 שנ׳",
+          "59.6 → 1 דק׳",
+          "60 → 1 דק׳",
+          "61 → 1 דק׳",
+          "89 → 1 דק׳",
+          "90 → 2 דק׳",
+          "600 → 10 דק׳",
+          "3599 → 1 שע׳",
+          "3600 → 1 שע׳",
+          "3660 → 1 שע׳ 1 דק׳",
+          "4745 → 1 שע׳ 19 דק׳",
+          "7200 → 2 שע׳",
+          "10000 → 2 שע׳ 47 דק׳",
+        ],
         "yi/long": [
           "0 → 0 סעקונדעס",
           "7 → 7 סעקונדעס",
@@ -185,7 +236,7 @@ describe("formatDuration", () => {
     `);
   });
 
-  it("formats clock times identically in both languages", () => {
+  it("formats clock times identically in every language", () => {
     for (const lang of UI_LANGS) {
       expect(formatDuration(4745, lang, "clock")).toBe("1:19:05");
       expect(formatDuration(79.9, lang, "clock")).toBe("1:19");
@@ -198,5 +249,19 @@ describe("formatDuration", () => {
     expect(formatDuration(-1, "en")).toBe("");
     expect(formatDuration(Number.NaN, "yi", "long")).toBe("");
     expect(formatClock(Number.POSITIVE_INFINITY)).toBe("");
+  });
+});
+
+describe("plurals and numbers in Hebrew", () => {
+  it("uses one/two/other for Hebrew and one/other for English and Yiddish", () => {
+    expect([0, 1, 2, 3, 10, 20].map((n) => pluralCategory("he", n))).toEqual(["other", "one", "two", "other", "other", "other"]);
+    expect([0, 1, 2, 3].map((n) => pluralCategory("yi", n))).toEqual(["other", "one", "other", "other"]);
+    expect(selectPlural("he", 2, { one: "שעה", two: "שעתיים", other: "{n} שעות" })).toBe("שעתיים");
+    expect(selectPlural("he", 2, { one: "שעה", other: "{n} שעות" })).toBe("{n} שעות");
+    expect(selectPlural("en", 2, { one: "hour", two: "unused", other: "hours" })).toBe("hours");
+  });
+
+  it("writes Western digits and grouping in every language", () => {
+    for (const lang of UI_LANGS) expect(formatNumber(1997, lang)).toBe("1,997");
   });
 });

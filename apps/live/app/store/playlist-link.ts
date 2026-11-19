@@ -7,6 +7,7 @@
  * for any list whose times are already on that grid. A decoded link is untrusted: malformed input
  * yields `null`, never a partial list.
  */
+import type { UiLang } from "@emunas/i18n";
 import { LIMITS, type MomentRef } from "./schema.ts";
 import { momentRef } from "./validate.ts";
 
@@ -73,6 +74,6 @@ export function decodePlaylist(hash: string): MomentRef[] | null {
 }
 
 /** Path plus fragment for the shared playlist page in interface language `ui`. */
-export function playlistPath(ui: "en" | "yi", items: readonly Pick<MomentRef, "shiurId" | "start" | "end">[]): string {
+export function playlistPath(ui: UiLang, items: readonly Pick<MomentRef, "shiurId" | "start" | "end">[]): string {
   return `/${ui}/pl#${encodePlaylist(items)}`;
 }

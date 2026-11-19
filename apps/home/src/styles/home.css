@@ -146,7 +146,7 @@ a:hover {
   color: var(--ink-muted);
 }
 
-.label [lang="yi"] {
+.label [lang]:not([lang="en"]) {
   font-family: var(--sans-hebrew);
   letter-spacing: 0;
   font-size: 0.85rem;
@@ -216,7 +216,7 @@ a:hover {
   letter-spacing: 0.01em;
 }
 
-.brand-yi {
+.brand-he {
   font-family: var(--hebrew);
   font-size: 1.85rem;
   font-weight: 700;
@@ -370,7 +370,7 @@ a:hover {
     font-size: 1.25rem;
   }
 
-  .brand-yi {
+  .brand-he {
     font-size: 1.35rem;
   }
 
@@ -416,7 +416,7 @@ a:hover {
   letter-spacing: -0.01em;
 }
 
-.yi-aside {
+.sec-aside {
   display: inline-block;
   margin-inline-start: 0.5em;
   font-size: 0.72em;
@@ -473,13 +473,21 @@ a:hover {
   font-weight: 400;
 }
 
-.tp-yi {
+.tp-aside {
   display: block;
   font-family: var(--hebrew);
   font-weight: 700;
   font-size: var(--d5);
   color: var(--accent);
   line-height: 1.05;
+}
+
+/* The second and later languages: a smaller line under the first. */
+.tp-aside + .tp-aside {
+  margin-top: 6px;
+  font-size: var(--d3);
+  font-weight: 500;
+  color: var(--ink-muted);
 }
 
 .tp-en {
@@ -688,11 +696,29 @@ a:hover {
   outline-offset: 3px;
 }
 
-.door .yi-name {
+.door .door-aside {
   margin: 8px 0 0;
   font-size: 1.35rem;
   color: var(--ink-muted);
   text-align: end;
+}
+
+.door .door-aside + .door-aside {
+  margin-top: 2px;
+  font-size: 1.1rem;
+}
+
+/* The other editions: links above the doorway's stretched link. */
+.door .door-eds {
+  position: relative;
+  z-index: 2;
+  margin: 10px 0 0;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+}
+
+.door .door-eds [lang]:not([lang="en"]) {
+  font-family: var(--sans-hebrew);
 }
 
 .door .blurb {
@@ -788,9 +814,13 @@ a:hover {
 }
 
 .door--primary .label,
-.door--primary .yi-name,
+.door--primary .door-aside,
 .door--primary .host {
   color: var(--on-panel-muted);
+}
+
+.door--primary .door-eds a {
+  color: var(--on-panel);
 }
 
 .door--primary .foot {
@@ -872,7 +902,7 @@ a:hover {
     gap: 2px;
   }
 
-  .door .yi-name {
+  .door .door-aside {
     font-size: 1.1rem;
   }
 }
@@ -1310,7 +1340,7 @@ a:hover {
     font-size: 1.1rem;
   }
 
-  .brand-yi {
+  .brand-he {
     font-size: 1.2rem;
   }
 
@@ -1365,13 +1395,20 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
-.page-head .yi-title {
+.page-head .title-aside {
   /* rtl text, aligned with the English title on the left */
   text-align: end;
   margin: 10px 0 0;
   font-size: var(--d2);
   color: var(--accent);
   font-weight: 700;
+}
+
+.page-head .title-aside + .title-aside {
+  margin-top: 4px;
+  font-size: var(--d1);
+  font-weight: 500;
+  color: var(--ink-muted);
 }
 
 .page-head .intro {

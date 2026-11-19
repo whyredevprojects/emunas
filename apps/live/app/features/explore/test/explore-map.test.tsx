@@ -9,6 +9,7 @@
  */
 import { act, cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import axe from "axe-core";
+import type { UiLang } from "@emunas/i18n";
 import { RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import hischadshus from "../../../data/fixtures/data/topic/hischadshus.json" with { type: "json" };
@@ -35,15 +36,15 @@ function serve(): DataFetch {
     if (path === "/data/corpus.json") return json(corpusFile(rows));
     if (path === "/data/facets.json") return json(facets);
     if (path === "/data/topics.json") return json(topicsFile(rows));
-    if (path === "/data/build.json") return json(buildFile(rows, { en: 1, yi: 1 }));
+    if (path === "/data/build.json") return json(buildFile(rows, { en: 1, yi: 1, he: 1 }));
     if (path === "/data/explore/entities.json") {
       // The entity file names a person of type `other`; facets.json (Live-listed only) does not.
       const f = exploreEntitiesFile(rows);
       for (const id of Object.keys(f.shiurim).slice(0, 40)) f.shiurim[id]!.people.push(OTHER_PERSON);
       return json(f);
     }
-    const m = /^\/data\/moments\/(en|yi)-0\.json$/u.exec(path);
-    if (m) return json(momentShards(rows, m[1] as "en" | "yi")[0]);
+    const m = /^\/data\/moments\/([a-z]+)-0\.json$/u.exec(path);
+    if (m) return json(momentShards(rows, m[1] as UiLang)[0]);
     const t = /^\/data\/topic\/([^/]+)\.json$/u.exec(path);
     if (t) {
       const f = structuredClone(hischadshus) as TopicFile;

@@ -39,8 +39,24 @@ export const offlineYi: MessageTable<OfflineKey> = {
   "offline.error.unplayable": "דער שיעור האט נישט קיין רעקארדירונג וואס מען קען אראפלאדן.",
 };
 
+export const offlineHe: MessageTable<OfflineKey> = {
+  "offline.download": "הורדה להאזנה ללא חיבור",
+  "offline.resume": "השלמת ההורדה",
+  "offline.downloading": "מוריד… {percent}%",
+  "offline.downloadingUnknown": "מוריד… {mb} MB",
+  "offline.cancel": "ביטול ההורדה",
+  "offline.downloaded": "הורד",
+  "offline.remove": "הסרת ההורדה",
+  "offline.partial": "הורד בחלקו",
+  "offline.error.network": "ההורדה נעצרה. בדקו את החיבור ונסו שוב.",
+  "offline.error.quota": "אין מספיק מקום במכשיר זה.",
+  "offline.error.unavailable": "דפדפן זה אינו יכול לשמור שיעורים להאזנה ללא חיבור.",
+  "offline.error.aborted": "ההורדה בוטלה.",
+  "offline.error.unplayable": "לשיעור זה אין הקלטה שניתן להוריד.",
+};
+
 const cache: Partial<Record<UiLang, TFunction<OfflineKey>>> = {};
 
 export function offlineT(ui: UiLang): TFunction<OfflineKey> {
-  return (cache[ui] ??= createT<OfflineKey>({ en: offlineEn, yi: offlineYi }, ui));
+  return (cache[ui] ??= createT<OfflineKey>({ en: offlineEn, yi: offlineYi, he: offlineHe }, ui));
 }

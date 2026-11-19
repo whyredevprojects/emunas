@@ -146,5 +146,6 @@ describe("Turnstile configuration", () => {
   it("asks Turnstile for English or the browser's language", () => {
     expect(turnstileLanguage("en")).toBe("en");
     expect(turnstileLanguage("yi")).toBe("auto");
+    expect(turnstileLanguage("he")).toBe("he");
   });
 });

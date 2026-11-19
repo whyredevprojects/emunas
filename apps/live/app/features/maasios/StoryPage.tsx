@@ -9,7 +9,6 @@
  * page's play button starts with. An id with no story file (a retired or merged-away id, a story told
  * once) is a 404.
  */
-import type { Ed } from "@emunas/corpus/public";
 import { corpusLabel, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX } from "react";
@@ -90,11 +89,11 @@ function StoryBody({ file, ui }: { file: StoryFile; ui: UiLang }): JSX.Element {
           {file.people.map((p, i) =>
             "id" in p && p.page ? (
               <Link key={p.id} to={paths.person(ui, p.id)} data-entity={`p:${p.id}`}>
-                <Text value={p.label[ui]} lang={ui} />
+                <Text value={p.label} lang={ui} />
               </Link>
             ) : (
               <span key={"id" in p ? p.id : `n${i}`} data-name="">
-                <Text value={"id" in p ? p.label[ui] : p.name} shiurLang={ui} />
+                {"id" in p ? <Text value={p.label} lang={ui} /> : <Text value={p.name} shiurLang={null} />}
               </span>
             ),
           )}
@@ -140,7 +139,7 @@ function TellingRow({
 }: {
   telling: CorpusMember;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   current: boolean;
   onPlay: () => void;
 }): JSX.Element {

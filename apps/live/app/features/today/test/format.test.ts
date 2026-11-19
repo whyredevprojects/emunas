@@ -35,7 +35,7 @@ describe("format helpers", () => {
     expect(occasionLabel("lech-lecha", facets, "en")).toBe("Lech Lecha");
     expect(occasionLabel("lag-baomer", null, "yi")).toMatch(/בעומר/);
     expect(occasionLabel("brand-new-key", null, "en")).toBe("Brand New Key");
-    // today.json states a label only where it differs from the shared tables.
+    // The Today file states a label only where it differs from the shared tables.
     const today = { occasions: { other: { label: { en: "Other occasions", yi: "אנדערע" }, shiurIds: [], total: 0, moments: [], mix: null }, noach: { shiurIds: [], total: 0, moments: [], mix: null } } };
     expect(occasionLabel("other", today, "en")).toBe("Other occasions");
     expect(occasionLabel("noach", today, "en")).toBe("Noach");

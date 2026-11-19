@@ -10,11 +10,12 @@ import type { UiLang } from "../lang.ts";
  * reviewed it, it is not the Mashgiach's own words, and the recording is the source.
  *
  * Status: PROPOSED wording (W5.3 copy pass), not yet signed off by the owner or a named Yiddish
- * reviewer. See docs/sites/copy-review.md, "Standing AI label".
+ * reviewer (nor a Hebrew reader for `he`). See docs/sites/copy-review.md, "Standing AI label".
  */
 export const AI_LABEL: Readonly<Record<UiLang, string>> = {
   en: "Notes prepared by AI from the recording; not reviewed, and not the Mashgiach's words. The recording is the source.",
   yi: "נאטיצן צוגעגרייט דורך AI פון דער רעקארדירונג; נישט איבערגעקוקט, און נישט דעם משגיח׳ס ווערטער. דער מקור איז די רעקארדירונג.",
+  he: "רשימות שהוכנו על ידי AI מתוך ההקלטה; לא נבדקו, ואינן דברי המשגיח. המקור הוא ההקלטה.",
 };
 
 /** Review status of the label wording; becomes "approved" only when the owner signs it off. */

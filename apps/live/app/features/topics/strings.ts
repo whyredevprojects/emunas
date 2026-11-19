@@ -63,10 +63,38 @@ export const topicsYi: MessageTable<TopicsKey> = {
   "topic.coTopics.sections": { one: "{count} חלק", other: "{count} חלקים" },
 };
 
+export const topicsHe: MessageTable<TopicsKey> = {
+  "topic.loading": "טוען…",
+  "topic.error": "לא ניתן היה לטעון נושא זה. בדקו את החיבור וטענו מחדש.",
+  "topic.count": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "topic.term": "המושג",
+  "topic.person": "דף האישיות: {name}",
+  "topic.work": "דף הספר: {name}",
+  "topic.startHere": "התחילו כאן",
+  "topic.threads": "חוטים בנושא זה",
+  "topic.threads.count": { one: "ב־{count} שיעור", other: "ב־{count} שיעורים" },
+  "topic.threads.more": { one: "ועוד {count}", other: "ועוד {count}" },
+  "topic.stories": "מעשיות שסופרו כאן",
+  "topic.stories.told": { one: "סופר פעם אחת", other: "סופר {count} פעמים" },
+  "topic.stories.more": { one: "ועוד {count}", other: "ועוד {count}" },
+  "topic.shiurim": "כל השיעורים",
+  "topic.shiurim.lead": "לפי מידת מרכזיות הנושא בשיעור, ואחר כך לפי שנה.",
+  "topic.touched": "נזכר ב",
+  "topic.touched.at": "ב־{time}: ",
+  "topic.touched.more": { one: "ועוד {count} קטע", other: "ועוד {count} קטעים" },
+  "topic.shiurim.more": "הצגת שיעורים נוספים",
+  "topic.shiurim.loading": "טוען עוד…",
+  "topic.shiurim.error": "לא ניתן היה לטעון שיעורים נוספים.",
+  "topic.undated": "ללא תאריך",
+  "topic.children": "תת־נושאים",
+  "topic.coTopics": "מופיע הרבה יחד עם",
+  "topic.coTopics.sections": { one: "{count} קטע", other: "{count} קטעים" },
+};
+
 export type TopicsT = TFunction<TopicsKey>;
 
 const cache: Partial<Record<UiLang, TopicsT>> = {};
 
 export function topicsT(ui: UiLang): TopicsT {
-  return (cache[ui] ??= createT<TopicsKey>({ en: topicsEn, yi: topicsYi }, ui));
+  return (cache[ui] ??= createT<TopicsKey>({ en: topicsEn, yi: topicsYi, he: topicsHe }, ui));
 }

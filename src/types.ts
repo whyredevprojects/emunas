@@ -155,3 +155,55 @@ export interface WriteupBlock {
   heading: string | null;
   paragraphs: { text: string; sourceIdx: number[]; evidence: Evidence }[];
 }
+
+// ---------- P4c: translations into further languages ----------
+//
+// P4/P4b write `en` and `yi` directly from the transcript. Every further content language comes from
+// P4c, which translates the already-validated `en`/`yi` text (never the transcript) into one target
+// language. Translations are overlays: the P4/P4b files are never edited, and a translation is keyed
+// by the path of the text it translates, so any number of languages can be added side by side.
+// `scripts/translate.ts` builds the source, validates and reports status; prompts/p4c-translate.md
+// is the agent contract.
+
+/** Languages produced by P4c translation. Add a language here, plus its style guide in prompts/. */
+export type TranslationLang = "he";
+export const TRANSLATION_LANGS: readonly TranslationLang[] = ["he"];
+
+/**
+ * `data/derived/shiurim/<shiurId>/i18n/<lang>.json`.
+ *
+ * Keys of `text`:
+ * - `x.<path>`: the `Localized` object at that path in extraction.json, e.g. `x.summary.oneLiner`,
+ *   `x.sections.2.title`, `x.sections.2.subsections.0.summary`, `x.summary.keyPoints.3.text`,
+ *   `x.stories.1.retelling`, `x.questions.0.answer`.
+ * - `w.<block>.heading`, `w.<block>.paragraphs.<p>.text`: the write-up, mirroring writeup.json's `yi`
+ *   blocks one-to-one (same block and paragraph indices, so `sectionIndex`, `sourceIdx` and `evidence`
+ *   are taken from the `yi` paragraph). A `yi` heading that is null has no key.
+ */
+export interface ShiurTranslation {
+  shiurId: string;
+  lang: TranslationLang;
+  model: string;
+  promptVersion: string;
+  /** Hash of the en/yi source text it was made from; a mismatch means the translation is stale. */
+  sourceHash: string;
+  text: Record<string, string>;
+}
+
+/**
+ * `data/derived/corpus/i18n/<lang>/<part>.json`: translations of corpus-level text. Any number of
+ * part files; a reader merges all of them. An entry key is `<collection>:<id>`; a text key is
+ * `<entryKey>.<field path>`:
+ * - `concepts:<id>.label|definition`, `stories:<id>.title|retelling`, `topics:<id>.label|description`,
+ *   `teaching-clusters:<id>.label|summary`, `people:<id>.description`
+ * - `series:<seriesId>.title|overview`, `series:<seriesId>.keyThemes.<i>`,
+ *   `series:<seriesId>.arc.<shiurId>.oneLiner`
+ */
+export interface CorpusTranslation {
+  lang: TranslationLang;
+  model: string;
+  promptVersion: string;
+  /** Per entry key, the hash of that entry's en/yi source text. */
+  sourceHashes: Record<string, string>;
+  text: Record<string, string>;
+}

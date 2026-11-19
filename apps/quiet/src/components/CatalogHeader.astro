@@ -24,7 +24,7 @@ interface Props {
 const { ed, shiur, level = 1 } = Astro.props;
 const t = useT(ed);
 const c = shiur.catalog;
-const run = (text: string) => runAttrs(text, shiur.lang);
+const run = (text: string) => runAttrs(text, shiur.lang, ed);
 const occasion = shiur.parsha?.raw ?? shiur.zman?.raw ?? null;
 const duration = formatDuration(shiur.duration, ed);
 // A perek given as a Hebrew number (ב, י"ז, ו-ז, י"א וי"ב) is labelled; a word (הקדמה) stands alone.

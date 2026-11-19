@@ -2,7 +2,8 @@
 /**
  * A table of shiurim (concept-quiet §5.2, tech-quiet §4): one row per shiur, in catalog order.
  * Columns: the part number on a series page, the title (with `catalog.heading` above it where there
- * is one), optionally parsha/zman, year, length, and the one-line notes in the edition's language
+ * is one), optionally parsha/zman, year, length, and the one-line notes for the edition (its
+ * language, else the fallback, marked with its own lang/dir)
  * when the shiur has notes.
  *
  * - Every catalog string is its own `<bdi>` run with lang/dir from its dominant script.
@@ -12,9 +13,10 @@
  *   prepared yet" (Quiet C4.7).
  * - `<caption>` and `<th scope>` throughout; no script.
  */
-import { corpusLabel, formatDuration } from "@emunas/i18n";
+import { corpusLabel, formatDuration, type AudioLang } from "@emunas/i18n";
 import HebrewYear from "../HebrewYear.astro";
 import { NUMERIC_RUN, runAttrs } from "../../lib/bidi.ts";
+import { langAttrsIn } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { CatalogRow, SeriesRow } from "./model.ts";
 import { useCatalogT } from "./strings.ts";
@@ -46,7 +48,7 @@ const {
   partsOf,
 } = Astro.props;
 const c = useCatalogT(ed);
-const run = (text: string, lang: Ed) => runAttrs(text, lang);
+const run = (text: string, lang: AudioLang) => runAttrs(text, lang, ed);
 const anyYear = rows.some((r) => r.years.length > 0);
 const numberOf = (r: CatalogRow | SeriesRow): string => ("part" in r ? String(r.part) : "");
 ---
@@ -91,9 +93,11 @@ const numberOf = (r: CatalogRow | SeriesRow): string => ("part" in r ? String(r.
           {occasion && <td class="col-occasion">{occ && <bdi {...run(occ, r.lang)}>{occ}</bdi>}</td>}
           {anyYear && <td class="col-year">{r.years.length > 0 && <HebrewYear year={r.years} />}</td>}
           <td class="col-length">{length && <bdi {...NUMERIC_RUN}>{length}</bdi>}</td>
-          {notes && (
-            <td class="col-notes" lang={ed}>{"notPrepared" in r && r.notPrepared ? <span class="not-prepared">{corpusLabel("notesNotPrepared", ed)}</span> : r.oneLiner}</td>
-          )}
+          {notes && ("notPrepared" in r && r.notPrepared ? (
+            <td class="col-notes"><span class="not-prepared">{corpusLabel("notesNotPrepared", ed)}</span></td>
+          ) : (
+            <td class="col-notes" {...(r.oneLiner ? langAttrsIn(r.oneLiner, ed) : {})}>{r.oneLiner?.text}</td>
+          ))}
         </tr>
       );
     })}
@@ -161,7 +165,8 @@ const numberOf = (r: CatalogRow | SeriesRow): string => ("part" in r ? String(r.
     font-style: italic;
   }
 
-  .catalog-table .not-prepared:lang(yi) {
+  .catalog-table .not-prepared:lang(yi),
+  .catalog-table .not-prepared:lang(he) {
     font-style: normal;
   }
 
@@ -174,7 +179,8 @@ const numberOf = (r: CatalogRow | SeriesRow): string => ("part" in r ? String(r.
     font-style: italic;
   }
 
-  .catalog-table .no-recording .no-recording-note:lang(yi) {
+  .catalog-table .no-recording .no-recording-note:lang(yi),
+  .catalog-table .no-recording .no-recording-note:lang(he) {
     font-style: normal;
   }
 

@@ -1,6 +1,7 @@
 /** Strict parsing of /api/search and /api/similar query strings. Unknown parameters are rejected. */
 import { BadRequest, UNKNOWN_PARAMETER } from "./http.ts";
-import { ENTITY_TYPES, isKind, isLang, MODES, type EntityType, type Kind, type Lang, type Mode } from "./contract.ts";
+import { UI_LANGS, isUiLang, type AudioLang, type UiLang } from "@emunas/i18n";
+import { ENTITY_TYPES, isAudioLang, isKind, MODES, type EntityType, type Kind, type Mode } from "./contract.ts";
 
 export const MAX_Q_LENGTH = 200;
 export const DEFAULT_LIMIT = 20;
@@ -9,14 +10,15 @@ export const MAX_LIST_VALUES = 10;
 
 /** Keys from @emunas/normalize are ASCII slugs; series and category ids follow the same shape. */
 const KEY_RE = /^[a-z0-9][a-z0-9-]{0,119}$/;
-/** Moment ids: <shiurId>~<kind><idx>[.<n>...][.<lang>] */
-const MOMENT_RE = /^[a-z0-9][a-z0-9-]{0,119}~[a-z]{1,3}[0-9]{1,5}(\.[0-9]{1,5}){0,3}(\.(en|yi))?$/;
+/** Moment ids: <shiurId>~<kind><idx>[.<n>...][.<lang>], `<lang>` any interface language. */
+const MOMENT_RE = new RegExp(`^[a-z0-9][a-z0-9-]{0,119}~[a-z]{1,3}[0-9]{1,5}(\\.[0-9]{1,5}){0,3}(\\.(${UI_LANGS.join("|")}))?$`);
 
 /** One list of corpus ids per entity type (`work`, `person`, `concept`, `topic`). */
 export type EntityFilters = Record<EntityType, string[]>;
 
 export interface SearchFilters extends EntityFilters {
-  audio: Lang[];
+  /** Recording languages (`AUDIO_LANGS`). */
+  audio: AudioLang[];
   kind: Kind[];
   category: string[];
   occasion: string[];
@@ -27,7 +29,8 @@ export interface SearchFilters extends EntityFilters {
 
 export interface SearchParams {
   q: string;
-  ui: Lang;
+  /** Interface language: snippets prefer it, then follow its `CONTENT_FALLBACK` chain. */
+  ui: UiLang;
   mode: Mode;
   limit: number;
   cursor: string | null;
@@ -76,7 +79,7 @@ export function parseSearchParams(sp: URLSearchParams): SearchParams {
   if (q.length === 0 || q.length > MAX_Q_LENGTH || /\p{Cc}/u.test(q)) throw new BadRequest("q");
 
   const ui = single(sp, "ui") ?? "en";
-  if (!isLang(ui)) throw new BadRequest("ui");
+  if (!isUiLang(ui)) throw new BadRequest("ui");
 
   const mode = single(sp, "mode") ?? "hybrid";
   if (!(MODES as readonly string[]).includes(mode)) throw new BadRequest("mode");
@@ -96,7 +99,7 @@ export function parseSearchParams(sp: URLSearchParams): SearchParams {
     limit,
     cursor,
     filters: {
-      audio: list(sp, "audio", isLang) as Lang[],
+      audio: list(sp, "audio", isAudioLang) as AudioLang[],
       kind: list(sp, "kind", isKind) as Kind[],
       category: list(sp, "category", isKey),
       occasion: list(sp, "occasion", isKey),

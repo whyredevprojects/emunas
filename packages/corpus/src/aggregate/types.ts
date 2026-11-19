@@ -9,7 +9,7 @@
  * These files carry ids, keys, catalog text, AI-derived titles and times only. Story retellings,
  * write-up text and anything from transcripts are not here.
  */
-import type { Ed, L, MentionKind, Resolution, ShiurStatus } from "../public/types.ts";
+import type { Ed, LocalizedText, MentionKind, Resolution, ShiurStatus } from "../public/types.ts";
 
 // ---------------------------------------------------------------- sections.json
 
@@ -66,7 +66,7 @@ export interface SeriesPart {
 
 export interface SeriesEntry {
   id: string;
-  title: L;
+  title: LocalizedText;
   lang: Ed;
   catalogSectionIds: string[];
   count: number;

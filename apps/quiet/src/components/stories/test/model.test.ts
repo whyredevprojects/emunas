@@ -168,7 +168,7 @@ describe("story page", () => {
       ["Moshiach", null],
     ]);
     expect(m.attributionVaries).toBe(true);
-    expect(m.retelling).toBe("Retelling of the-poretz-and-the-sled.");
+    expect(m.retelling).toEqual({ text: "Retelling of the-poretz-and-the-sled.", lang: "en", dir: "ltr", fallback: false });
     expect(m.rows).toHaveLength(5);
     expect(m.reviewed).toBe(false);
   });
@@ -176,8 +176,19 @@ describe("story page", () => {
   it("uses the Yiddish texts in the Yiddish edition and links an unpaged listed person to its index line", () => {
     const m = storyPageModel("yi", STORIES[2]!, source(), ROWS);
     expect(m.title.text).toBe("מעשה the-chofetz-chaim-and-the-wagon");
-    expect(m.retelling).toBe("די מעשה the-chofetz-chaim-and-the-wagon.");
+    expect(m.retelling?.text).toBe("די מעשה the-chofetz-chaim-and-the-wagon.");
     expect(m.people.map((p) => [p.name.text, p.href])).toEqual([["החפץ חיים", "/yi/people/#chofetz-chaim"]]);
+  });
+
+  it("shows the Hebrew edition the Yiddish texts, marked as Yiddish, where there is no Hebrew translation", () => {
+    const m = storyPageModel("he", STORIES[2]!, source(), ROWS);
+    expect(m.title).toEqual({ text: "מעשה the-chofetz-chaim-and-the-wagon", lang: "yi", dir: "rtl" });
+    expect(m.retelling).toMatchObject({ text: "די מעשה the-chofetz-chaim-and-the-wagon.", lang: "yi", fallback: true });
+    expect(m.people.map((p) => p.href)).toEqual(["/he/people/#chofetz-chaim"]);
+    const translated = { ...STORIES[2]!, title: { ...STORIES[2]!.title, he: "מעשה בעברית" }, retelling: { ...STORIES[2]!.retelling, he: "המעשה בעברית." } };
+    const t = storyPageModel("he", translated, source(), ROWS);
+    expect(t.title).toEqual({ text: "מעשה בעברית", lang: "he", dir: "rtl" });
+    expect(t.retelling).toMatchObject({ text: "המעשה בעברית.", lang: "he", fallback: false });
   });
 
   it("prints unlisted and excluded people as plain names, never linked", () => {
@@ -194,7 +205,7 @@ describe("story page", () => {
     expect(storyPageModel("en", blank, source([blank]), ROWS).retelling).toBeNull();
     const m = storyPageModel("yi", STORIES[4]!, source(), ROWS);
     expect(m.title.text).toBe("A boy at the Kosel");
-    expect(m.retelling).toBe("די מעשה a-boy-at-the-kosel.");
+    expect(m.retelling?.text).toBe("די מעשה a-boy-at-the-kosel.");
   });
 
   it("breadcrumbs: Indexes › Stories › the story", () => {

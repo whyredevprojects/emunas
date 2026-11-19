@@ -4,8 +4,8 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 ## How to refer to him
 
-- In English: "the Mashgiach", "Rav Wolfson", "Rabbi Wolfson" or `Harav Moshe Wolfson zt"l`. In Yiddish: "דער משגיח". Possessive: "the Mashgiach's".
-- Never "the Rav" or "the Rov" (or "דער רב") as a stand-in for him, and never `shlit"a`: he has passed away, so `zt"l`.
+- In English: "the Mashgiach", "Rav Wolfson", "Rabbi Wolfson" or `Harav Moshe Wolfson zt"l`. In Yiddish: "דער משגיח". In Hebrew: "המשגיח" (formal: `הגה"צ רבי משה וולפסון זצ"ל`). Possessive: "the Mashgiach's".
+- Never "the Rav" or "the Rov" (or "דער רב", "הרב") as a stand-in for him, and never `shlit"a` (`שליט"א`): he has passed away, so `zt"l` (`זצ"ל`).
 - This applies to UI copy, labels, meta and SEO text, docs, prompts, and generated write-ups.
 - Other people who are titled Rav keep their titles ("the Rav of Sanz", "Rav Chaim").
 
@@ -14,7 +14,6 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - `apps/quiet` is branded **Library**. `apps/live` is branded **Analyze**, with the Hebrew name **עיון**. Analyze is the advanced app with more data.
 - The rename is branding only: UI copy, titles and meta. Folder names, package names, internal code names (`formatQuiet` and so on), docs file names, CI and Worker names stay `quiet`/`live`.
 - Analyze keeps the `listen.` subdomain for now. It may still be renamed.
-- Planned: the second edition switches from Yiddish to Hebrew. The owner will do this later, so don't start it unasked.
 
 ## Transcripts are never published
 
@@ -22,6 +21,12 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 - Only `packages/corpus/src/transcript-gate.ts` and `packages/corpus-guard` may read `data/transcripts`.
 - The guard post-pass over every build output must report 0 findings.
 - Published text never mentions the transcript (or ASR) and never judges the shiur itself ("the shiur is garbled/unclear", "a garbled stretch"). Remarks on the sound or the recording are fine ("poor sound quality", "the recording cuts off").
+
+## Languages
+
+- Three languages: English (`en`), Yiddish (`yi`) and Hebrew (`he`). This is the owner's current decision: Yiddish stays alongside Hebrew. Whether Yiddish is ever dropped is the owner's call later; don't start it unasked. Both sites and all generated content support all three, and nothing hardcodes the set: code iterates `UI_LANGS` from `@emunas/i18n`, so adding a language means adding it there, its message tables, and its translation run.
+- The pipeline writes `en` and `yi` from the transcript. Every other language is a P4c translation overlay of that published text (`docs/translation-runbook.md`); text with no current translation falls back to Yiddish.
+- UI Yiddish: when a Yiddish UI word is hard to translate (no natural Chassidish Yiddish word, or only a Daytshmerish or English-sounding one), just use the Hebrew word.
 
 ## No backwards compatibility
 
@@ -47,4 +52,4 @@ Every page of both sites ends with the line `לעילוי נשמת אשר בן �
 
 ## Known CI failures
 
-Some CI gates fail as the data grows, not because of a bug: the search eval baseline, the Live axe timeouts and the `today.json` budget. Before debugging one, read "Known CI failures that can come back" in `docs/sites/ops-runbook.md` §8. It explains how to tell data growth from a regression, and what to do about each. Add new cases there.
+Some CI gates fail as the data grows, not because of a bug: the search eval baseline, the Live axe timeouts and the Today file budget (one `today.<lang>.json` per UI language). Before debugging one, read "Known CI failures that can come back" in `docs/sites/ops-runbook.md` §8. It explains how to tell data growth from a regression, and what to do about each. Add new cases there.

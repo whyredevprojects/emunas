@@ -1,17 +1,17 @@
 /**
  * Per-edition sitemaps and robots.txt (integration-plan §2.3, W4.6). Pure functions; the page
  * list itself comes from the site's own routes (./pages.ts), so a sitemap lists exactly the pages
- * the build writes: every shiur, section, series, calendar, year and index page in both editions,
+ * the build writes: every shiur, section, series, calendar, year and index page in every edition,
  * each read from `.corpus/` by the page that builds it.
  */
-import { EDS, editionOfPath, switchEdition, type Ed } from "../../lib/edition.ts";
+import { EDS, editionOfPath, pathInEdition, switchEdition, type Ed } from "../../lib/edition.ts";
 
 /** One sitemap file may hold at most 50,000 URLs (sitemaps.org). */
 export const SITEMAP_URL_LIMIT = 50_000;
 export const SITEMAP_INDEX_PATH = "/sitemap-index.xml";
 
 /** Pages that exist only for checks and carry `noindex`: never listed. */
-const NOT_LISTED: readonly RegExp[] = [/^\/(?:yi|en)\/shell-sample\//];
+const NOT_LISTED: readonly RegExp[] = [/^\/shell-sample\//];
 
 export type Params = Readonly<Record<string, string | number | undefined>>;
 export type StaticPaths = () => readonly { readonly params: Params }[] | Promise<readonly { readonly params: Params }[]>;
@@ -60,7 +60,7 @@ export async function pagePaths(pages: Readonly<Record<string, StaticPaths | und
 
 /** The listed paths of one edition, sorted. */
 export function editionPaths(paths: readonly string[], ed: Ed): string[] {
-  return paths.filter((p) => editionOfPath(p) === ed && !NOT_LISTED.some((re) => re.test(p))).sort();
+  return paths.filter((p) => editionOfPath(p) === ed && !NOT_LISTED.some((re) => re.test(pathInEdition(p) ?? ""))).sort();
 }
 
 export function xmlEscape(s: string): string {

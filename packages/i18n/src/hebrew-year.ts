@@ -52,8 +52,8 @@ export function hebrewYearParts(year: number, options: HebrewYearOptions = {}): 
 /**
  * formatHebrewYear(5743) → `תשמ"ג (1982–83)`.
  *
- * Both editions show the Hebrew year first with the civil pair in parentheses
- * (concept-quiet §8, concept-live §7), so the text is the same for `en` and `yi`;
+ * Every edition shows the Hebrew year first with the civil pair in parentheses
+ * (concept-quiet §8, concept-live §7), so the text is the same in every language;
  * `lang` is accepted so callers stay uniform and the rule can diverge later.
  * Callers render the result inside a direction-isolated element (`<bdi>`), see
  * `langFor`. A year that cannot be written (not an integer in 1001–9999) is

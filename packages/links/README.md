@@ -2,7 +2,7 @@
 
 URL builders for both sites, cross-site equivalents, canonical and hreflang helpers, host
 config. Implements integration-plan §2 (W1.8). Pure and browser-safe: no Node APIs, no DOM,
-no globals (`test/purity.test.ts` checks this).
+no globals, no imports but `@emunas/i18n` (`test/purity.test.ts` checks this).
 
 Audio URLs are not built here: they come from `recordings[].audioUrl` in the corpus, on
 the media host (Amendment A1). There is no `/audio/*` route on either site.
@@ -70,9 +70,16 @@ links.live.shiur("en", id, { t: player.currentTime }); // "Open in the listening
 links.equivalent(url);       // the same page on the other site (Live-only params dropped)
 links.canonicalFor(liveUrl); // the Quiet origin, never a fragment; null for threads and no-Quiet-page entries
 links.noindexFor(liveUrl);   // true exactly when a Live entry page has no canonical
-links.hreflangPair(path);    // yi + en + x-default (site root)
-links.withEdition(url, "yi"); // edition switch that keeps the place
+links.hreflangAlternates(path); // every edition (en, yi, he) + x-default (site root)
+links.withEdition(url, "he"); // edition switch that keeps the place
 ```
+
+### Editions
+
+The editions (`{ed}` on Quiet, `{ui}` on Live) are `UI_LANGS` of `@emunas/i18n` (en, yi, he),
+its one runtime import (`test/purity.test.ts` allows only that). `Ed` is `UiLang`, `EDS` is
+`UI_LANGS` and `isEd` is `isUiLang`: parsing, the builders' checks, `hreflangAlternates` and
+`withEdition` all follow that list, so a language added there is an edition here with no change.
 
 ### Lookups (`LinkData`)
 

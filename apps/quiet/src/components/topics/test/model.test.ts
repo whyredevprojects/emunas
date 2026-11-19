@@ -34,6 +34,7 @@ import {
   topicTree,
   type TopicsSource,
 } from "../model.ts";
+import { EDS } from "../../../lib/edition.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const repo = resolve(here, "../../../../../..");
@@ -91,7 +92,7 @@ const descendants = (id: string): Set<string> => {
 
 describe("the tree", () => {
   it("has every listed gate as a heading, its topics beneath, deeper topics run in", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const gates = topicTree(ed, src);
       const roots = src.topics.filter((t) => t.parentId === null && t.count > 0);
       expect(gates.map((g) => g.id).sort()).toEqual(roots.map((r) => r.id).sort());
@@ -154,8 +155,15 @@ describe("topic pages", () => {
     const p = topicPage("en", src, "hashgacha-pratis")!;
     expect(p.path.map((a) => a.id)).toEqual(["emunah"]);
     expect(p.path[0]!.href).toBe("/en/inyanim/emunah/");
-    expect(p.description).toBe(layer.topicDetail("hashgacha-pratis")!.description!.en);
-    expect(topicPage("yi", src, "hashgacha-pratis")!.description).toBe(layer.topicDetail("hashgacha-pratis")!.description!.yi);
+    expect(p.description).toEqual({ text: layer.topicDetail("hashgacha-pratis")!.description!.en, lang: "en", dir: "ltr", fallback: false });
+    expect(topicPage("yi", src, "hashgacha-pratis")!.description?.text).toBe(layer.topicDetail("hashgacha-pratis")!.description!.yi);
+    // No Hebrew translation in the fixture: the Hebrew edition shows the Yiddish, marked as Yiddish.
+    expect(topicPage("he", src, "hashgacha-pratis")!.description).toEqual({
+      text: layer.topicDetail("hashgacha-pratis")!.description!.yi,
+      lang: "yi",
+      dir: "rtl",
+      fallback: true,
+    });
     const rels = p.seeAlso.map((s) => s.rel);
     expect(rels[0]).toBe("parent");
     expect(p.seeAlso[0]!.href).toBe("/en/inyanim/emunah/");
@@ -175,8 +183,9 @@ describe("topic pages", () => {
   it("print the glossary definition when a concept shares the topic (sameAs.conceptId)", () => {
     const t = src.topics.find((x) => x.sameAs?.conceptId && layer.concept(x.sameAs.conceptId) && x.pages.quiet)!;
     const c = layer.concept(t.sameAs!.conceptId!)!;
-    expect(topicPage("en", src, t.id)!.definition).toBe(c.definition.en);
-    expect(topicPage("yi", src, t.id)!.definition).toBe(c.definition.yi);
+    expect(topicPage("en", src, t.id)!.definition?.text).toBe(c.definition.en);
+    expect(topicPage("yi", src, t.id)!.definition?.text).toBe(c.definition.yi);
+    expect(topicPage("he", src, t.id)!.definition).toMatchObject({ text: c.definition.yi, lang: "yi" });
     const plain = src.topics.find((x) => x.sameAs === null && x.pages.quiet)!;
     expect(topicPage("en", src, plain.id)!.definition).toBeNull();
   });
@@ -207,7 +216,7 @@ describe("topic pages", () => {
     expect(p.gateway).toBe(true);
     const kids = family(src.topics).children.get("emunah")!.filter((t) => t.count > 0);
     expect(p.children.map((c) => c.id).sort()).toEqual(kids.map((k) => k.id).sort());
-    for (const c of p.children) expect(c.description).toBe(layer.topicDetail(c.id)!.description?.en ?? null);
+    for (const c of p.children) expect(c.description?.text ?? null).toBe(layer.topicDetail(c.id)!.description?.en || null);
     expect(p.seeAlso.some((s) => s.rel === "child")).toBe(false);
     // a non-gateway topic lists its children in see-also
     const withKids = src.topics.find((t) => !t.gateway && t.pages.quiet && (family(src.topics).children.get(t.id) ?? []).some((k) => k.count > 0))!;
@@ -272,7 +281,7 @@ describe("the three grades", () => {
     for (const p of row.parts) {
       expect(p.href).toBe(`/en/shiur/${row.shiurId}/#t=${Math.round(p.t * 1000) / 1000}`);
       expect(p.time).toMatch(/^\d+:\d\d(:\d\d)?$/);
-      expect(p.title).toBe(src.chapterTitle(row.shiurId, p.idx)?.en ?? null);
+      expect(p.title?.text ?? null).toBe(src.chapterTitle(row.shiurId, p.idx)?.en || null);
     }
     expect(row.parts.some((p) => p.title !== null)).toBe(true);
   });

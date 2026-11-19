@@ -17,7 +17,7 @@
  * counts are the visible recounts the build wrote (never `shiurCount` of the raw corpus).
  */
 import type { PublicSource } from "@emunas/corpus/public";
-import type { Ed, EntityChip, L, ShiurCorpus, ShiurFile, StoryPerson } from "./data.ts";
+import type { Ed, EntityChip, LocalizedText, ShiurCorpus, ShiurFile, StoryPerson } from "./data.ts";
 
 /** Salience a shiur-level topic needs for the header line and "more on this". */
 export const MAIN_TOPIC_SALIENCE = 0.5;
@@ -194,7 +194,7 @@ export function groupSourcesByWork(shiur: Pick<ShiurFile, "corpus" | "notes">): 
 }
 
 /** The generated text of an insight-like moment of this shiur (insight, key point, takeaway). */
-export function momentText(shiur: Pick<ShiurFile, "notes">, momentId: string): L | null {
+export function momentText(shiur: Pick<ShiurFile, "notes">, momentId: string): LocalizedText | null {
   const n = shiur.notes;
   if (!n) return null;
   const m = arr(n.insights).find((x) => x.id === momentId) ?? arr(n.summary?.keyPoints).find((x) => x.id === momentId) ?? arr(n.takeaways).find((x) => x.id === momentId);
@@ -205,7 +205,7 @@ export interface ThreadThrough {
   threadId: string;
   /** The insight of this shiur that sits in the thread. */
   momentId: string;
-  text: L | null;
+  text: LocalizedText | null;
   t: number | null;
   others: number;
   years: [number, number] | null;

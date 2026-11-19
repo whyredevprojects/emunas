@@ -204,7 +204,7 @@ export function CommandBar({ ui }: { ui: UiLang }): JSX.Element {
       case "shiur":
         return (
           <li key={o.id} {...common} data-kind="shiur">
-            <Text value={o.hit.title} shiurLang={o.hit.lang ?? ui} />
+            <Text value={o.hit.title} shiurLang={o.hit.lang ?? null} />
           </li>
         );
       case "all":

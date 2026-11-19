@@ -7,13 +7,14 @@
  * the build checks the synonyms against the display fields before using them.
  */
 import type { LayerShiurRefs } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 import type { EntityDocKind } from "./types.ts";
 
-export interface SearchLayerTopic {
-  en: string;
-  yi: string;
-  he: string | null;
-}
+/**
+ * A topic's labels per interface language (layer `label`; `he` is the topic's own
+ * loshon-hakodesh name or its current translation). Null when it has none in that language.
+ */
+export type SearchLayerTopic = { readonly [L in UiLang]: string | null };
 
 export interface SearchLayer {
   /** Topics with at least one visible shiur: id → labels. */
@@ -30,7 +31,7 @@ export interface SearchLayer {
    * may be ASR mishearings) are never indexed (F.1).
    */
   personNames: ReadonlyMap<string, readonly string[]>;
-  /** Concept id → its display names (canonicalHe, label en/yi), for concepts with a visible shiur. */
+  /** Concept id → its display names (canonicalHe, label in every language), for concepts with a visible shiur. */
   conceptNames: ReadonlyMap<string, readonly string[]>;
   /**
    * Story id → the names of the merged story's people: a linked person's display names, or a plain

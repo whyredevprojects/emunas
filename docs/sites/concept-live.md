@@ -60,7 +60,7 @@ Counts are for the 519 extractions present today; expect roughly double at compl
 | `writeup.en / .yi` (paragraphs with `evidence`, `sourceIdx`) | every done shiur, ~1,000–1,400 words per language | Reader mode synced to the player. |
 | `evidence.confidence` on every item | — | Hide below 0.6; soften wording between 0.6 and 0.75. |
 
-Everything generated is `{ en, yi }`. The data names him the same way in both languages: English "the Mashgiach", Yiddish "דער משגיח". The UI follows the data.
+Everything generated is written in `{ en, yi }`; Hebrew (`he`) comes from translation overlays and is present only where a current translation exists (integration-plan §2.4, `docs/translation-runbook.md`). The data names him the same way in every language: English "the Mashgiach", Yiddish "דער משגיח", Hebrew "המשגיח". The UI follows the data.
 
 ### Gaps that limit the concept today
 
@@ -193,13 +193,13 @@ Every moment has a URL (`shiur + t`). Sharing from the player sends a link that 
 
 All of this is **local-first**: stored on the device, working with no account. Optional sync across devices (phone to car to desk) needs a backend: sign-in by emailed link, a D1 database or one Durable Object per user holding progress, queue, saves and notes. This is the only feature that requires user accounts, and it can ship later without changing anything else.
 
-## 7. Two languages, two scripts
+## 7. Languages and scripts
 
 Three separate things are kept separate:
 
-1. **Interface language**: English or Yiddish. Yiddish and Hebrew render right-to-left; in Yiddish mode the whole shell mirrors (rail, dock, progress direction of lists). The audio progress bar is the one judgement call: recommended to run right-to-left in Yiddish mode, consistent with reading, with the choice tested on real users.
-2. **Shiur language filter**: Yiddish, English, or both. Default is both, because the summaries make every shiur approachable in either language.
-3. **Reading language** for generated text, defaulting to the interface language and switchable per pane.
+1. **Interface language**: any of `UI_LANGS` (English, Yiddish, Hebrew). Yiddish and Hebrew render right-to-left; in those modes the whole shell mirrors (rail, dock, progress direction of lists). The audio progress bar is the one judgement call: recommended to run right-to-left in the right-to-left modes, consistent with reading, with the choice tested on real users.
+2. **Shiur language filter**: Yiddish, English, or both. Default is both, because the summaries make every shiur approachable in either language. Hebrew is not a shiur language.
+3. **Reading language** for generated text, defaulting to the interface language and switchable per pane. Text with no current translation in the reading language falls back along `CONTENT_FALLBACK` (Hebrew → Yiddish → English) and is marked with the language actually shown.
 
 The bridge is the main product claim for half the audience: an English speaker can search, read about and navigate 730 Yiddish shiurim through English summaries and then decide to listen, with the chapter list as a guide while the Yiddish plays. Every card marks the *audio* language clearly so nobody is surprised.
 
@@ -209,7 +209,7 @@ Hebrew years are shown as Hebrew years (תשל"ו) with the numeric form seconda
 
 ## 8. Search and "same idea"
 
-**What is indexed** (generated and catalog text only): catalog titles and headings; one-liners, abstracts, key points; section titles and summaries; insights, questions and answers, takeaways, story titles and retellings; write-up paragraphs; source `work`/`ref`; `people.name`; `concepts.he`. All in both languages where they exist.
+**What is indexed** (generated and catalog text only): catalog titles and headings; one-liners, abstracts, key points; section titles and summaries; insights, questions and answers, takeaways, story titles and retellings; write-up paragraphs; source `work`/`ref`; `people.name`; `concepts.he`. In every language where they exist (Hebrew where a current translation exists).
 
 **Why it needs a backend.** A client-side index is feasible for shiur-level metadata (and is used for instant facet counts, shipped as a compact static file). The full moment-level corpus with write-ups, in two languages, is tens of megabytes of text at completion, and semantic search needs vectors. So:
 

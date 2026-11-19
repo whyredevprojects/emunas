@@ -1,11 +1,11 @@
 ---
 name: emunas-pipeline
-description: Run, resume or redo the emunas shiurim data pipeline (Harav Moshe Wolfson shiurim) - sync transcripts from R2, ingest the catalogs, and process every shiur with Opus subagents into extractions and bilingual write-ups via scheduled batch runs. Use when the user wants to (re)run processing, add or replace transcripts (e.g. a new, better transcription), check progress, or fix a stuck batch.
+description: Run, resume or redo the emunas shiurim data pipeline (Harav Moshe Wolfson shiurim) - sync transcripts from R2, ingest the catalogs, and process every shiur with Opus subagents into extractions and bilingual write-ups via scheduled batch runs, then translate the published text into further languages (Hebrew) as overlays. Use when the user wants to (re)run processing, add or replace transcripts (e.g. a new, better transcription), translate (P4c), check progress, or fix a stuck batch.
 ---
 
 # Emunas pipeline
 
-Turns transcripts of ~1,000 shiurim into structured data (sections with timestamps, summaries, sources, insights, stories, Q&A, takeaways) and a long-form write-up, in English and Yiddish, using Claude Opus subagents. Everything lives on branch `claude/vibrant-curie-ioreux` (or whatever branch the user names); progress survives in git.
+Turns transcripts of ~1,000 shiurim into structured data (sections with timestamps, summaries, sources, insights, stories, Q&A, takeaways) and a long-form write-up, in English and Yiddish, using Claude Opus subagents; P4c then translates the published text into further languages (today Hebrew) as overlay files. Everything lives on branch `claude/vibrant-curie-ioreux` (or whatever branch the user names); progress survives in git.
 
 Read these before acting: `docs/data-generation-plan.md` (what and why), `docs/pilot-results.md` (model choice: Opus for everything, no cleanup pass), `docs/batch-runbook.md` (the exact per-batch procedure the runner follows).
 
@@ -19,7 +19,8 @@ Read these before acting: `docs/data-generation-plan.md` (what and why), `docs/p
 | Work queue, one entry per in-scope shiur | `data/derived/manifest.json` (`npm run batch:*`) |
 | Outputs | `data/derived/shiurim/<shiurId>/{input.txt,meta.json,extraction.json,writeup.json}` |
 | Audits, usage log | `data/derived/audits/`, `data/derived/usage.tsv` |
-| Prompts | `prompts/run-shiur.md` (per-shiur agent), `p4-extract.md`, `p4b-writeup.md`, `yiddish-style.md`, `audit.md`, `judge.md` |
+| Prompts | `prompts/run-shiur.md` (per-shiur agent), `p4-extract.md`, `p4b-writeup.md`, `yiddish-style.md`, `p4c-translate.md`, `hebrew-style.md`, `audit.md`, `judge.md` |
+| Translations (P4c): further content languages (`TRANSLATION_LANGS` in `src/types.ts`, today `he`) as overlays keyed by text path and pinned to a hash of the en/yi source | `data/derived/shiurim/<shiurId>/i18n/<lang>.json`, `data/derived/corpus/i18n/<lang>/<part>.json` (`npm run translate`, `scripts/translate.ts`; procedure in `docs/translation-runbook.md`) |
 | Which transcripts may be processed | `config/asr-policy.json` |
 
 R2 access (bucket `emunas`, transcripts under `transcripts/`) needs `.env` with `R2_ENDPOINT`, `R2_BUCKET`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`. It is gitignored: ask the user for the keys (never commit them, never print them). Only the sync step needs them; batches run from the repo alone.
@@ -52,6 +53,20 @@ Batches are run by a dedicated **runner session** that has the repo attached, wo
 - Schedule: `create_trigger` with `persistent_session_id` = the runner, cron every 5 hours, prompt "Run a batch: git pull first, then follow docs/batch-runbook.md exactly with N = <size> ...". A trigger's prompt can only be edited from the session it posts into, so to change it from elsewhere, create a new trigger and delete the old one.
 - Batch size: one shiur costs ~155–190k subagent tokens (Opus, extraction + write-up in one agent). Ask the user what share of their session limit a batch may use and calibrate from the first batch: on Max 5x a 60-shiur batch used ~80% of a 5-hour window; on Max 10x use ~135. Set N in the runbook and in the trigger prompt.
 - Starting one now: `fire_trigger`, or `send_message` to the runner with explicit instructions (include "git pull / reset to origin first" when you've pushed changes it doesn't have).
+
+### Translate into Hebrew (P4c)
+Follow `docs/translation-runbook.md`; the agent contract is `prompts/p4c-translate.md`, the wording rules `prompts/hebrew-style.md`. Translation reads only the published en/yi text, never transcripts, `input.txt` or `heardAs`/`asrNotes`.
+```
+npm run -s translate -- status he                          # done / stale / missing
+npm run -s translate -- status he --missing --shard 2/5    # shiur ids still to do in shard 2 of 5
+npm run -s translate -- source he <shiurId...>             # sources into out/translate/he/shiurim/
+npm run -s translate -- corpus-source he                   # corpus parts into out/translate/he/corpus/
+npm run -s translate -- validate <file...>                 # check outputs before committing
+```
+- One session per shard (`--shard k/N`), each launching Opus subagents on groups of 3–4 shiurim or 1–2 corpus parts with the runbook's prompt template. Run one group alone first and read it against `hebrew-style.md`.
+- Validate every output yourself, commit only `data/derived/**/i18n/**` (never `out/`), push every few groups.
+- A shiur reprocessed after translation shows as **stale** in `status`: translate it again. The sites skip stale overlays and fall back to Yiddish meanwhile.
+- Another language: "Adding another language" in the runbook.
 
 ### Change prompts
 Edit the prompt and bump its version constant (`scripts/lib/versions.ts`); `batch:next` refuses to run if prompt headers and versions disagree. Re-run already-done shiurim only if the change matters: `npm run -s batch:mark -- <id> pending`.

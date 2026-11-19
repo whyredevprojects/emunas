@@ -15,6 +15,9 @@
     "./manifest.json": "./fonts/manifest.json",
     "./package.json": "./package.json"
   },
+  "dependencies": {
+    "@emunas/i18n": "0.0.0"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run",

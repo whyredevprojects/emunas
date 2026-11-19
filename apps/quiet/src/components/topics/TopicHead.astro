@@ -12,6 +12,7 @@ import EntryHead from "../corpus/EntryHead.astro";
 import type { Ed } from "../../lib/edition.ts";
 import type { TopicPage } from "./model.ts";
 import { useTopicsT } from "./strings.ts";
+import { langAttrsIn, occasionNameAttrs } from "../../lib/content.ts";
 import "./topics.css";
 
 interface Props {
@@ -31,9 +32,9 @@ const count = t("count.shiurim", { count: page.count });
 {notes && (page.definition || page.description) && (
   <div class="voice-notes topic-notes">
     {page.definition && (
-      <p class="topic-definition" data-definition><span class="visually-hidden">{corpusLabel("glossary.asUsed", ed)}: </span>{page.definition}</p>
+      <p class="topic-definition" data-definition><span class="visually-hidden">{corpusLabel("glossary.asUsed", ed)}: </span><span {...langAttrsIn(page.definition, ed)}>{page.definition.text}</span></p>
     )}
-    {page.description && <p class="topic-description" data-description>{page.description}</p>}
+    {page.description && <p class="topic-description" data-description {...langAttrsIn(page.description, ed)}>{page.description.text}</p>}
   </div>
 )}
 {notes && page.occasions.length > 0 && (
@@ -41,7 +42,7 @@ const count = t("count.shiurim", { count: page.count });
     <p class="topic-occasions">
       {t("topic.calendar")}:{" "}
       {page.occasions.map((o, i) => (
-        <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={o.href}><bdi lang={ed === "yi" ? "he" : "en"}>{o.name}</bdi></a></>
+        <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={o.href}><bdi {...occasionNameAttrs(ed)}>{o.name}</bdi></a></>
       ))}
     </p>
   </div>

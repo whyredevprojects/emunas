@@ -35,23 +35,23 @@ export const corpusFixture: SeoCorpus = {
   ],
   series: [{ id: "tanya-yi", title: { en: "Tanya (Yiddish)", yi: "תניא" }, count: 12 }],
   occasions: [
-    { key: "bereishis", kind: "parsha", label: { en: "Bereishis", yi: "בראשית" }, count: 4 },
-    { key: "chanukah", kind: "zman", label: { en: "Chanukah", yi: "חנוכה" }, count: 2 },
-    { key: "adar", kind: "zman", label: { en: "Adar", yi: "אדר" }, count: 1 },
-    { key: "a-wedding", kind: null, label: { en: "חתונה", yi: "חתונה" }, count: 3 },
+    { key: "bereishis", kind: "parsha", label: { en: "Bereishis", yi: "בראשית", he: "בראשית" }, count: 4 },
+    { key: "chanukah", kind: "zman", label: { en: "Chanukah", yi: "חנוכה", he: "חנוכה" }, count: 2 },
+    { key: "adar", kind: "zman", label: { en: "Adar", yi: "אדר", he: "אדר" }, count: 1 },
+    { key: "a-wedding", kind: null, label: { en: "חתונה", yi: "חתונה", he: "חתונה" }, count: 3 },
   ],
   works: [
-    { key: "genesis", label: { en: "Genesis", yi: "בראשית" }, count: 40, prerender: true, quietPage: true },
-    { key: "midrash", label: { en: "Midrash", yi: "מדרש" }, count: 30, prerender: false, quietPage: false },
-    { key: "abudraham", label: { en: "Abudraham", yi: "אבודרהם" }, count: 2, prerender: false, quietPage: true },
+    { key: "genesis", label: { en: "Genesis", yi: "בראשית", he: "בראשית" }, count: 40, prerender: true, quietPage: true },
+    { key: "midrash", label: { en: "Midrash", yi: "מדרש", he: "מדרש" }, count: 30, prerender: false, quietPage: false },
+    { key: "abudraham", label: { en: "Abudraham", yi: "אבודרהם", he: "אבודרהם" }, count: 2, prerender: false, quietPage: true },
   ],
   people: [
-    { key: "achashverosh", label: { en: "Achashverosh", yi: "אחשורוש" }, count: 5, prerender: true, quietPage: true },
-    { key: "rabbi-x", label: { en: "Rabbi X", yi: "Rabbi X" }, count: 1, prerender: false, quietPage: false },
+    { key: "achashverosh", label: { en: "Achashverosh", yi: "אחשורוש", he: "אחשורוש" }, count: 5, prerender: true, quietPage: true },
+    { key: "rabbi-x", label: { en: "Rabbi X", yi: "Rabbi X", he: "Rabbi X" }, count: 1, prerender: false, quietPage: false },
   ],
   concepts: [
-    { key: "emunah-1", label: { en: "אמונה", yi: "אמונה" }, count: 9, prerender: true, quietPage: true, topicId: null },
-    { key: "bitachon-2", label: { en: "בטחון", yi: "בטחון" }, count: 2, prerender: false, quietPage: false, topicId: null },
+    { key: "emunah-1", label: { en: "אמונה", yi: "אמונה", he: "אמונה" }, count: 9, prerender: true, quietPage: true, topicId: null },
+    { key: "bitachon-2", label: { en: "בטחון", yi: "בטחון", he: "בטחון" }, count: 2, prerender: false, quietPage: false, topicId: null },
   ],
   topics: [],
   stories: [],
@@ -64,26 +64,26 @@ export const corpusFixture: SeoCorpus = {
  */
 export const layerCorpusFixture: SeoCorpus = {
   ...corpusFixture,
-  works: [{ key: "bereishis", label: { en: "Bereishis", yi: "בראשית" }, count: 40, prerender: true, quietPage: true }],
+  works: [{ key: "bereishis", label: { en: "Bereishis", yi: "בראשית", he: "בראשית" }, count: 40, prerender: true, quietPage: true }],
   people: [
-    { key: "moshe-rabbeinu", label: { en: "Moshe Rabbeinu", yi: "משה רבינו" }, count: 30, prerender: true, quietPage: true },
-    { key: "a-local", label: { en: "A local", yi: "A local" }, count: 1, prerender: false, quietPage: false },
+    { key: "moshe-rabbeinu", label: { en: "Moshe Rabbeinu", yi: "משה רבינו", he: "משה רבינו" }, count: 30, prerender: true, quietPage: true },
+    { key: "a-local", label: { en: "A local", yi: "A local", he: "A local" }, count: 1, prerender: false, quietPage: false },
   ],
   concepts: [
-    { key: "tzimtzum", label: { en: "Tzimtzum", yi: "צמצום" }, count: 9, prerender: true, quietPage: true, topicId: null },
-    { key: "hester-panim", label: { en: "Hester panim", yi: "הסתר פנים" }, count: 50, prerender: false, quietPage: false, topicId: "hester-panim" },
+    { key: "tzimtzum", label: { en: "Tzimtzum", yi: "צמצום", he: "צמצום" }, count: 9, prerender: true, quietPage: true, topicId: null },
+    { key: "hester-panim", label: { en: "Hester panim", yi: "הסתר פנים", he: "הסתר פנים" }, count: 50, prerender: false, quietPage: false, topicId: "hester-panim" },
   ],
   topics: [
-    { key: "hester-panim", label: { en: "Hester Panim", yi: "הסתר פנים" }, count: 112, prerender: true, quietPage: true },
-    { key: "rare-topic", label: { en: "Rare", yi: "זעלטן" }, count: 8, prerender: true, quietPage: false },
+    { key: "hester-panim", label: { en: "Hester Panim", yi: "הסתר פנים", he: "הסתר פנים" }, count: 112, prerender: true, quietPage: true },
+    { key: "rare-topic", label: { en: "Rare", yi: "זעלטן", he: "זעלטן" }, count: 8, prerender: true, quietPage: false },
   ],
   stories: [
-    { key: "sugar-sled", label: { en: "The sugar sled", yi: "דער צוקער שליטן" }, count: 14, prerender: true, quietPage: true },
-    { key: "told-once", label: { en: "Once", yi: "איינמאל" }, count: 1, prerender: false, quietPage: false },
+    { key: "sugar-sled", label: { en: "The sugar sled", yi: "דער צוקער שליטן", he: "דער צוקער שליטן" }, count: 14, prerender: true, quietPage: true },
+    { key: "told-once", label: { en: "Once", yi: "איינמאל", he: "איינמאל" }, count: 1, prerender: false, quietPage: false },
   ],
   threads: [
-    { key: "akeidah-last-generation", label: { en: "At the Akeidah", yi: "ביי דער עקידה" }, count: 8, prerender: true, quietPage: false },
-    { key: "two-member", label: { en: "Two", yi: "צוויי" }, count: 2, prerender: false, quietPage: false },
+    { key: "akeidah-last-generation", label: { en: "At the Akeidah", yi: "ביי דער עקידה", he: "ביי דער עקידה" }, count: 8, prerender: true, quietPage: false },
+    { key: "two-member", label: { en: "Two", yi: "צוויי", he: "צוויי" }, count: 2, prerender: false, quietPage: false },
   ],
 };
 

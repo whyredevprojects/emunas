@@ -4,7 +4,8 @@
  * renders <mark> itself and nothing in the data can inject markup.
  */
 import { foldWord, type NormalizedQuery } from "./query.ts";
-import type { Lang, Snippet } from "./contract.ts";
+import type { UiLang } from "@emunas/i18n";
+import type { Snippet } from "./contract.ts";
 
 export const SNIPPET_LENGTH = 200;
 const LEAD = 60;
@@ -50,7 +51,7 @@ function isSpace(ch: string | undefined): boolean {
 }
 
 /** Cut a window around the first highlight (or the start) and shift the offsets into it. */
-export function makeSnippet(text: string, lang: Lang, tokens: readonly string[]): Snippet {
+export function makeSnippet(text: string, lang: UiLang, tokens: readonly string[]): Snippet {
   const marks = findMarks(text, tokens);
   if (text.length <= SNIPPET_LENGTH) return { text, lang, marks };
 

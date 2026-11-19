@@ -6,8 +6,8 @@
  * (`oneLiner`, entity names); integration-plan §0. Browser-safe: the Node reader is
  * `corpus.server.ts`.
  */
-import type { Ed, L } from "@emunas/corpus/public";
-import { formatHebrewYears, type UiLang } from "@emunas/i18n";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
+import { formatHebrewYears, langFor, pickText, UI_LANGS, type UiLang } from "@emunas/i18n";
 import type { CorpusKind, LinkData, OccasionKind, Site } from "@emunas/links";
 import { tFor } from "../i18n/index.ts";
 import { classifyLivePath, normalizeLivePath, type LivePageKind } from "./policy.ts";
@@ -20,17 +20,15 @@ export interface SeoShiur {
   subTitle: string | null;
   sectionTitle: string;
   years: number[];
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
 }
 
-export interface SeoLabel {
-  en: string;
-  yi: string;
-}
+/** An entity's display name in every interface language (the corpus reader fills each one). */
+export type SeoLabel = { [L in UiLang]: string };
 
 export interface SeoSeries {
   id: string;
-  title: L;
+  title: LocalizedText;
   count: number;
 }
 
@@ -83,7 +81,7 @@ export const EMPTY_CORPUS: SeoCorpus = {
 /** Live entity data files exist from this many shiurim on (W3.6 `EMIT_LIMITS.entityFileMin`). */
 export const OCCASION_PRERENDER_MIN = 2;
 
-export const UIS: readonly UiLang[] = ["en", "yi"];
+export const UIS: readonly UiLang[] = UI_LANGS;
 
 /** Optional filter: the emitted `/data/` file set (relative paths, e.g. `shiur/x.json`). */
 export type DataFileSet = ReadonlySet<string> | null;
@@ -168,7 +166,7 @@ export interface PageText {
   title: string;
   description: string;
   /** Language of `title` when it is data in another language (a Yiddish title on the English UI). */
-  titleLang: Ed | null;
+  titleLang: UiLang | null;
   /** A corpus entry without a Quiet page: no canonical, noindex (C1.7). */
   noindex?: boolean;
 }
@@ -208,14 +206,16 @@ export function createPageText(corpus: SeoCorpus): (pathname: string) => PageTex
         const title = s.subTitle ? `${s.titleOriginal} — ${s.subTitle}` : s.titleOriginal;
         const years = s.years.length ? formatHebrewYears(s.years, ui) : null;
         const fallback = str.shiurFallback(s.lang, s.sectionTitle, years);
-        const description = s.oneLiner?.[ui]?.trim() || fallback;
-        return { kind: page.kind, title, description, titleLang: s.lang === ui ? null : s.lang };
+        const description = (s.oneLiner ? pickText(s.oneLiner, ui).text.trim() : "") || fallback;
+        const lang = langFor(title, s.lang, ui).lang;
+        return { kind: page.kind, title, description, titleLang: lang === ui ? null : lang };
       }
       case "series": {
         const s = series.get(key);
         if (!s) return null;
-        const title = s.title[ui];
-        return { kind: page.kind, title, description: str.series(title, count(ui, s.count)), titleLang: null };
+        const picked = pickText(s.title, ui);
+        const title = picked.text;
+        return { kind: page.kind, title, description: str.series(title, count(ui, s.count)), titleLang: picked.lang === ui ? null : picked.lang };
       }
       case "occasion": {
         const o = occasions.get(key);

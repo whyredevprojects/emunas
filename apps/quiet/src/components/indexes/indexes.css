@@ -111,8 +111,8 @@
     color: var(--color-ink-muted);
   }
 
-  :lang(yi) .qualifier,
-  .qualifier:lang(yi) {
+  .qualifier:lang(yi),
+  .qualifier:lang(he) {
     font-style: normal;
   }
 

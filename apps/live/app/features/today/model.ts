@@ -3,7 +3,7 @@
  * on fixed dates without a DOM:
  *
  * - **This week**: the parsha from `@emunas/calendar` `thisWeek()` (table-driven, no hebcal in the
- *   bundle, C16) joined by key to `today.json` occasions; a combined parsha also lists shiurim
+ *   bundle, C16) joined by key to the Today file's occasions; a combined parsha also lists shiurim
  *   catalogued under either part. Occasions active or starting within the lookahead are joined the
  *   same way; only those with shiurim are shown.
  * - **A moment for today**: one insight, question or story, chosen deterministically per date
@@ -13,18 +13,18 @@
  * - **Continue**: unfinished shiurim, then the next part of each series in progress (rows from the
  *   heard shiurim's own files, `continue.ts`).
  * - **The occasion mix** (concept-live-corpus C.3, C3.4): one per week, for the most specific occasion
- *   whose `today.json` entry has a mix, in the same priority as the moment of the day. Its head (the
+ *   whose Today file entry has a mix, in the same priority as the moment of the day. Its head (the
  *   first sections, inline) plays without another request; `mix/occasion.ts` holds the rules.
- * - **Newly summarized** and the corpus counter come from `today.json`.
+ * - **Newly summarized** and the corpus counter come from the Today file.
  *
- * Today renders from `today.json` alone (corpus-wave-plan §4, C1.7): its cards carry every shiur it
- * names. No corpus-wide file (`corpus.json`, `facets.json`, the corpus layer) is read here.
+ * Today renders from its Today file (`today.<reading lang>.json`) alone (corpus-wave-plan §4, C1.7):
+ * its cards carry every shiur it names. No corpus-wide file (`corpus.json`, `facets.json`, the corpus layer) is read here.
  *
  * Everything respects the audio-language filter (settings store), except the counter.
  */
 import { calendar as defaultCalendar, type Calendar, type HebrewDate, type ThisWeek } from "@emunas/calendar";
-import type { BuildCounts, Ed, L, ShiurStatus } from "@emunas/corpus/public";
-import type { FacetLabel, TodayFile } from "./live-data.ts";
+import type { BuildCounts, Ed, LocalizedText, ShiurStatus } from "@emunas/corpus/public";
+import type { FacetLabel, ReaderText, TodayFile } from "./live-data.ts";
 import { MIX_SIZE, type MixSource } from "../mix/model.ts";
 import { headSources, occasionCatalog, occasionMix, skipSet } from "../mix/occasion.ts";
 import { audioAllows, type AudioFilter } from "../../shell/settings.ts";
@@ -50,12 +50,13 @@ export interface TodayInputs {
   calendar?: Calendar;
 }
 
-/** A shiur as Today shows it: a card from `today.json`. */
+/** A shiur as Today shows it: a card from the Today file. */
 export interface TodayRow {
   id: string;
   lang: Ed;
   title: string;
-  oneLiner: L | null;
+  /** Picked for the reader (`ReaderText`) on a Today card; the shiur file's `LocalizedText` in Continue. */
+  oneLiner: LocalizedText | ReaderText | null;
   duration: number;
   years: number[];
   status: ShiurStatus;
@@ -122,7 +123,7 @@ export interface WeekMix {
   shiurim: number;
   /** Eligible inline sections in the listener's audio language, in order. */
   head: MixSource[];
-  /** The occasion's catalog shiurim as today.json knows them. */
+  /** The occasion's catalog shiurim as the Today file knows them. */
   catalog: string[];
   /** Shiur and section ids that may not be featured (D7). */
   skip: string[];

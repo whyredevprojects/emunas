@@ -6,7 +6,7 @@
 import { describe, expect, it } from "vitest";
 import { MIX_SIZE, type MixSource } from "./model.ts";
 import { headSources, isFeatured, occasionCatalog, occasionMix, shiurOf, skipSet } from "./occasion.ts";
-import todayFixture from "../../data/fixtures/data/today.json" with { type: "json" };
+import todayFixture from "../../data/fixtures/data/today.en.json" with { type: "json" };
 import type { TodayFile } from "../../data/index.ts";
 
 const today = todayFixture as unknown as TodayFile;
@@ -108,7 +108,7 @@ describe("occasion mix: determinism", () => {
   });
 });
 
-describe("today.json inputs", () => {
+describe("Today file inputs", () => {
   it("shiurOf takes the moment id's prefix", () => {
     expect(shiurOf("yi-zmanim-pvrym-07~s1")).toBe("yi-zmanim-pvrym-07");
     expect(shiurOf("plain")).toBe("plain");

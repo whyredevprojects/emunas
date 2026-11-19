@@ -3,7 +3,8 @@
  * (never spread or strip), so nothing reaches the index unless it is mapped here on purpose.
  * Keywords, facet ids and moment entities come from the corpus layer (`SearchLayer`).
  */
-import type { L, LayerShiurRefs, PublicShiur } from "@emunas/corpus/public";
+import type { LayerShiurRefs, PublicShiur } from "@emunas/corpus/public";
+import { SOURCE_LANGS, UI_LANGS, type LocalizedText, type SourceLang, type UiLang } from "@emunas/i18n";
 import { fold } from "@emunas/normalize";
 import { synonymKey, type SearchLayer } from "../layer-types.ts";
 import { parshaLabels, yearLabels, zmanLabels } from "../text.ts";
@@ -13,10 +14,12 @@ import type {
   MomentFacets,
   MomentRow,
   MomentRowKind,
+  MomentRowTexts,
   SearchDoc,
   SearchDocSource,
   SearchInput,
 } from "../types.ts";
+import { MOMENT_ROW_TEXT_FIELDS, momentRowTextField } from "../types.ts";
 import { contentHash } from "./hash.ts";
 
 const nz = (s: string | null | undefined): string | null => {
@@ -25,13 +28,27 @@ const nz = (s: string | null | undefined): string | null => {
   return t.length === 0 ? null : t;
 };
 
-/** A copy of an `L` with only `en`/`yi`, or null when both are empty (e.g. suppressed). */
-function lcopy(l: L | null | undefined): L | null {
+const isSource = (l: UiLang): l is SourceLang => (SOURCE_LANGS as readonly UiLang[]).includes(l);
+
+/**
+ * A copy of a `LocalizedText`, language by language in `UI_LANGS` order (trimmed): the source
+ * languages always (blank as ""), a translated language only when non-blank. Null when every
+ * language is blank (e.g. suppressed). Unknown keys are not copied.
+ */
+export function lcopy(l: Partial<Record<UiLang, string | null | undefined>> | null | undefined): LocalizedText | null {
   if (!l) return null;
-  const en = nz(l.en) ?? "";
-  const yi = nz(l.yi) ?? "";
-  return en === "" && yi === "" ? null : { en, yi };
+  const out: Partial<Record<UiLang, string>> = {};
+  let any = false;
+  for (const lang of UI_LANGS) {
+    const v = nz(l[lang]);
+    if (v !== null) any = true;
+    if (v !== null || isSource(lang)) out[lang] = v ?? "";
+  }
+  return any ? (out as LocalizedText) : null;
 }
+
+/** An all-blank `LocalizedText` (a section with only a title or only a summary). */
+const BLANK: LocalizedText = { en: "", yi: "" };
 
 const present = <T>(x: T | null): x is T => x !== null;
 
@@ -65,7 +82,7 @@ function shiurTopicIds(refs: LayerShiurRefs, layer: SearchLayer): string[] {
   return uniq(ids).filter((id) => layer.topics.has(id));
 }
 
-/** Topic labels (he/en/yi) and the topics' own aliases, deduplicated after folding. */
+/** Topic labels (every language) and the topics' own aliases, deduplicated after folding. */
 export function topicKeywords(topicIds: readonly string[], layer: SearchLayer): string[] {
   const out: string[] = [];
   const seen = new Set<string>();
@@ -80,9 +97,7 @@ export function topicKeywords(topicIds: readonly string[], layer: SearchLayer): 
   for (const id of topicIds) {
     const t = layer.topics.get(id);
     if (!t) continue;
-    push(t.he);
-    push(t.en);
-    push(t.yi);
+    for (const l of UI_LANGS) push(t[l]);
   }
   for (const id of topicIds) for (const a of layer.synonyms.get(synonymKey("topic", id)) ?? []) push(a);
   return out;
@@ -145,7 +160,7 @@ export function buildSearchDoc(input: SearchInput): SearchDoc {
         const summary = lcopy(c.summary);
         return title === null && summary === null
           ? null
-          : { title: title ?? { en: "", yi: "" }, summary: summary ?? { en: "", yi: "" } };
+          : { title: title ?? BLANK, summary: summary ?? BLANK };
       })
       .filter(present),
     storyTitles: (n?.stories ?? []).map((st) => lcopy(st.title)).filter(present),
@@ -165,6 +180,9 @@ export function buildSearchDoc(input: SearchInput): SearchDoc {
 function joinLines(xs: (string | null)[]): string | null {
   return nz(xs.filter((x): x is string => x !== null && x.trim() !== "").join("\n"));
 }
+
+/** Text per language as the row builder takes it (missing or null: none in that language). */
+type Text = Partial<Record<UiLang, string | null>>;
 
 /** Moment rows of one shiur (none for catalog-only shiurim). Entities need the layer. */
 export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null): MomentRow[] {
@@ -205,17 +223,17 @@ export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null):
     kind: MomentRowKind;
     t: number | null;
     end: number | null;
-    title: L | null;
-    body: L | null;
+    title: Text | null;
+    body: Text | null;
     entities?: MomentEntities;
     soft?: true | undefined;
   }): void {
     if (p.t === null) return;
-    const title_en = nz(p.title?.en);
-    const title_yi = nz(p.title?.yi);
-    const body_en = nz(p.body?.en);
-    const body_yi = nz(p.body?.yi);
-    if (title_en === null && title_yi === null && body_en === null && body_yi === null) return;
+    const texts = {} as MomentRowTexts;
+    // In MOMENT_ROW_TEXT_FIELDS order: every title, then every body.
+    for (const l of UI_LANGS) texts[momentRowTextField("title", l)] = nz(p.title?.[l]);
+    for (const l of UI_LANGS) texts[momentRowTextField("body", l)] = nz(p.body?.[l]);
+    if (MOMENT_ROW_TEXT_FIELDS.every((f) => texts[f] === null)) return;
     const facets: MomentFacets = { ...base, soft: p.soft === true };
     const row: Omit<MomentRow, "hash"> = {
       id: p.id,
@@ -224,10 +242,7 @@ export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null):
       t: p.t,
       end: p.end,
       lang: shiur.lang,
-      title_en,
-      title_yi,
-      body_en,
-      body_yi,
+      ...texts,
       entities: p.entities ?? noEntities(),
       facets,
     };
@@ -237,19 +252,21 @@ export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null):
   const inRange = (t: number | null, from: number, to: number) => t !== null && t >= from && t < to;
 
   for (const c of n.chapters) {
-    const subs = (ed: "en" | "yi") =>
+    const subs = (l: UiLang) =>
       c.sub.map((x) => {
-        const title = nz(x.title[ed]);
-        const summary = nz(x.summary[ed]);
+        const title = nz(x.title[l]);
+        const summary = nz(x.summary[l]);
         return title && summary ? `${title}: ${summary}` : (title ?? summary);
       });
+    const body: Text = {};
+    for (const l of UI_LANGS) body[l] = joinLines([c.summary[l] ?? null, ...subs(l)]);
     add({
       id: c.id,
       kind: "section",
       t: c.t,
       end: c.end,
       title: c.title,
-      body: { en: joinLines([c.summary.en, ...subs("en")]) ?? "", yi: joinLines([c.summary.yi, ...subs("yi")]) ?? "" },
+      body,
       entities: {
         works: sortedUniq(n.sources.filter((x) => inRange(x.t, c.t, c.end)).map((x) => workOf.get(x.id))),
         people: sortedUniq(n.stories.filter((st) => inRange(st.t, c.t, c.end)).flatMap((st) => storyPeople(st.id))),
@@ -275,11 +292,15 @@ export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null):
     });
   }
   const chapterByIdx = new Map(n.chapters.map((c) => [c.idx, c]));
-  for (const ed of ["en", "yi"] as const) {
-    for (const b of n.writeup[ed]) {
+  // One write-up per language the shiur has one in (`en`, `yi`, and a current translation such as
+  // `he`); a paragraph's body is only in its own language, its title is the chapter's title in
+  // every language with the block's heading in its own.
+  for (const ed of UI_LANGS) {
+    for (const b of n.writeup[ed] ?? []) {
       const c = chapterByIdx.get(b.sectionIndex);
       const heading = nz(b.heading);
-      const title: L = { en: c?.title.en ?? "", yi: c?.title.yi ?? "" };
+      const title: Text = {};
+      for (const l of UI_LANGS) title[l] = c?.title[l] ?? null;
       if (heading !== null) title[ed] = heading;
       for (const p of b.paragraphs) {
         add({
@@ -288,7 +309,7 @@ export function buildMomentRows(shiur: PublicShiur, layer?: SearchLayer | null):
           t: p.t,
           end: p.end,
           title,
-          body: ed === "en" ? { en: p.text, yi: "" } : { en: "", yi: p.text },
+          body: { [ed]: p.text },
           entities: {
             works: sortedUniq(p.src.map((k) => {
               const id = n.sources[k]?.id;

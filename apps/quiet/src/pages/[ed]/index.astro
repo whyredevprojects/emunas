@@ -64,7 +64,7 @@ const indexLines = indexesBlock(ed, (href) => builtDirs.has(href.split("/")[2] ?
     <ul role="list" class="brief-list">
       {sections.map((s) => (
         <li data-section={s.key}>
-          <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang)}>{s.title}</bdi></a>
+          <a href={sectionHref(ed, s)}><bdi {...runAttrs(s.title, s.lang, ed)}>{s.title}</bdi></a>
           <span class="sep" aria-hidden="true"> · </span>
           <span class="count">{c("count.shiurim", { count: s.count })}</span>
         </li>

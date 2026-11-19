@@ -4,13 +4,14 @@
  * The response is **copied field by field** from an allow-list (never spread or stripped), so a key
  * the API might add later, or a planted field such as `heardAs`, can never reach the page: the UI only
  * ever sees what `parseSearchResponse` returns. Text the UI can show from a response is limited to
- * `title.{en,yi}` and `snippet.text`, both generated text from D1 (integration-plan §0.1). Highlights
+ * `title.<lang>` (one key per `UI_LANGS` language) and `snippet.text`, both generated text from D1 (integration-plan §0.1). Highlights
  * come as `[start, end)` offsets and are rendered client-side (`highlight.ts`); no HTML is accepted.
  *
  * `API_RESPONSE_KEYS` must equal the Worker's `ALLOWED_KEYS` (`workers/api/src/contract.ts`); a test
  * holds them together.
  */
 import type { Ed } from "@emunas/corpus/public";
+import { isUiLang, UI_LANGS, type UiLang } from "@emunas/i18n";
 
 export const API_KINDS = ["shiur", "section", "insight", "question", "takeaway", "story", "keypoint", "writeup"] as const;
 export type ApiKind = (typeof API_KINDS)[number];
@@ -18,9 +19,12 @@ export type ApiMatched = "title" | "text" | "semantic";
 
 export interface ApiSnippet {
   text: string;
-  lang: Ed;
+  /** Language of `text` (the text actually shown): the element takes its `lang`/`dir` from it. */
+  lang: UiLang;
   marks: [number, number][];
 }
+
+export type ApiTitle = { [L in UiLang]: string | null };
 
 export interface ApiResult {
   momentId: string;
@@ -28,7 +32,8 @@ export interface ApiResult {
   kind: ApiKind;
   t: number;
   end: number | null;
-  title: { en: string | null; yi: string | null };
+  /** Generated display title per interface language; null where the moment has none in that language. */
+  title: ApiTitle;
   matched: ApiMatched;
   snippet: ApiSnippet | null;
   score: number;
@@ -46,7 +51,7 @@ export interface ApiResponse {
 export const API_RESPONSE_KEYS = {
   search: ["groups", "next", "results", "rev", "tookMs"],
   searchResult: ["end", "kind", "matched", "momentId", "score", "shiurId", "snippet", "t", "title"],
-  title: ["en", "yi"],
+  title: [...UI_LANGS].sort(),
   snippet: ["lang", "marks", "text"],
   group: ["count", "shiurId"],
 } as const;
@@ -69,7 +74,7 @@ export function isCorpusId(v: string): boolean {
 
 export interface SearchRequest {
   q: string;
-  ui: Ed;
+  ui: UiLang;
   /** Audio-language filter; omitted when both languages are allowed. */
   audio?: Ed[];
   /** Corpus-id entity filters (C3.6). Invalid ids are dropped, not sent. */
@@ -216,10 +221,22 @@ function parseSnippet(v: unknown): ApiSnippet | null | undefined {
   if (!isObj(v)) return undefined;
   const text = v["text"];
   const lang = v["lang"];
-  if (!isStr(text) || (lang !== "en" && lang !== "yi")) return undefined;
+  if (!isStr(text) || !isUiLang(lang)) return undefined;
   const marks = parseMarks(v["marks"], text.length);
   if (!marks) return undefined;
   return { text, lang, marks };
+}
+
+/** One string-or-null per interface language, copied key by key; null when any is missing or not a string. */
+function parseTitle(v: unknown): ApiTitle | null {
+  if (!isObj(v)) return null;
+  const out: Partial<ApiTitle> = {};
+  for (const l of UI_LANGS) {
+    const x = strOrNull(v[l]);
+    if (x === undefined) return null;
+    out[l] = x;
+  }
+  return out as ApiTitle;
 }
 
 function parseResult(v: unknown): ApiResult | null {
@@ -235,13 +252,11 @@ function parseResult(v: unknown): ApiResult | null {
   if (!isStr(momentId) || !isStr(shiurId) || !isStr(kind) || !(API_KINDS as readonly string[]).includes(kind)) return null;
   if (!isNum(t) || !(end === null || isNum(end)) || !isNum(score)) return null;
   if (matched !== "title" && matched !== "text" && matched !== "semantic") return null;
-  if (!isObj(title)) return null;
-  const en = strOrNull(title["en"]);
-  const yi = strOrNull(title["yi"]);
-  if (en === undefined || yi === undefined) return null;
+  const titles = parseTitle(title);
+  if (!titles) return null;
   const snippet = parseSnippet(v["snippet"]);
   if (snippet === undefined) return null;
-  return { momentId, shiurId, kind: kind as ApiKind, t, end, title: { en, yi }, matched, snippet, score };
+  return { momentId, shiurId, kind: kind as ApiKind, t, end, title: titles, matched, snippet, score };
 }
 
 /** Copies a `/api/search` body through the allow-list. `null` when the body does not fit the contract. */

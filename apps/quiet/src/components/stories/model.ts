@@ -31,7 +31,7 @@ import {
   type LayerPersonGroup,
   type LayerStory,
 } from "@emunas/corpus/public";
-import { corpusLabel, languageName, type CorpusLabelKey } from "@emunas/i18n";
+import { corpusLabel, languageName, pickLocalized, type AudioLang, type CorpusLabelKey, type PickedText } from "@emunas/i18n";
 import { formatQuiet, type LinkData } from "@emunas/links";
 import { clock } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -58,17 +58,25 @@ export type CatalogRows = ReadonlyMap<string, IndexRow>;
 
 // ------------------------------------------------------------------ text
 
-type Texts = { readonly en?: unknown; readonly yi?: unknown } | null | undefined;
+/** A generated text per language, read defensively (a `LocalizedText` when well formed). */
+type Texts = { readonly [L in Ed]?: unknown } | null | undefined;
 
-function textOf(t: Texts, ed: Ed): string {
-  const v = t?.[ed];
-  return typeof v === "string" ? v.trim() : "";
+/** The text for the edition along `CONTENT_FALLBACK`, trimmed, with its language; null when blank in every language. */
+function textOf(t: Texts, ed: Ed): PickedText | null {
+  const picked = pickLocalized<unknown>(t, ed, (v) => typeof v === "string" && v.trim() !== "");
+  return picked && typeof picked.value === "string"
+    ? { text: picked.value.trim(), lang: picked.lang, dir: picked.dir, fallback: picked.fallback }
+    : null;
 }
 
-/** The story's title in the edition's language, else the other one (a title is never blank on a page). */
+/**
+ * The story's title for the edition: its language, else the fallback along `CONTENT_FALLBACK`, with
+ * the `lang`/`dir` of the language shown; the story id when every language is blank (a title is
+ * never blank on a page).
+ */
 export function storyTitle(story: Pick<LayerStory, "title" | "id">, ed: Ed): Run {
-  const other: Ed = ed === "yi" ? "en" : "yi";
-  return run(textOf(story.title, ed) || textOf(story.title, other) || story.id, ed);
+  const t = textOf(story.title, ed);
+  return t ? { text: t.text, lang: t.lang, dir: t.dir } : run(story.id, ed);
 }
 
 // ------------------------------------------------------------------ addresses
@@ -113,7 +121,7 @@ export interface TellingRow {
   /** Year of the shiur (the layer's year, else the catalog's years); empty when undated. */
   readonly years: readonly number[];
   /** Spoken language of this shiur. */
-  readonly lang: Ed;
+  readonly lang: AudioLang;
   readonly langName: string;
   readonly t: number | null;
   /** The time as printed (`12:34`), or null. */
@@ -148,15 +156,15 @@ export function tellingRows(ed: Ed, tellings: readonly LayerMomentRef[] | null |
   return kept.map(({ ref, row }) => {
     const t = typeof ref.t === "number" && Number.isFinite(ref.t) && ref.t >= 0 ? ref.t : null;
     const y = yearOf(ref);
-    const lang: Ed = row.lang;
+    const lang: AudioLang = row.lang;
     const title = row.catalog.titleOriginal;
     const occasion = (row.parsha?.raw ?? row.zman?.raw ?? "").trim();
     return {
       momentId: typeof ref.momentId === "string" ? ref.momentId : "",
       shiurId: row.id,
       href: tellingHref(ed, ref),
-      title: run(title, lang),
-      occasion: occasion !== "" && occasion !== title.trim() ? run(occasion, lang) : null,
+      title: run(title, ed, lang),
+      occasion: occasion !== "" && occasion !== title.trim() ? run(occasion, ed, lang) : null,
       years: y !== null ? [y] : row.years,
       lang,
       langName: languageName(lang, ed),
@@ -223,8 +231,8 @@ export interface StoryPageModel {
   readonly people: readonly StoryPersonRef[];
   /** The tellings credit the story to different people (the page says so). */
   readonly attributionVaries: boolean;
-  /** The merged retelling in the edition's language; null when blank (the label stays). */
-  readonly retelling: string | null;
+  /** The merged retelling for the edition (its language, else the fallback); null when blank (the label stays). */
+  readonly retelling: PickedText | null;
   /** Where he tells it. */
   readonly rows: readonly TellingRow[];
   readonly reviewed: boolean;
@@ -236,7 +244,7 @@ export function storyPageModel(ed: Ed, story: LayerStory, src: Pick<StoriesSourc
     title: storyTitle(story, ed),
     people: storyPeople(ed, story, src),
     attributionVaries: story.attributionVaries === true,
-    retelling: textOf(story.retelling, ed) || null,
+    retelling: textOf(story.retelling, ed),
     rows: tellingRows(ed, story.tellings, rows),
     reviewed: story.reviewed === true,
   };

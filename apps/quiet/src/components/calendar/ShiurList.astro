@@ -9,6 +9,7 @@ import { languageName } from "@emunas/i18n";
 import HebrewYear from "../HebrewYear.astro";
 import OccasionName from "./OccasionName.astro";
 import { runAttrs } from "../../lib/bidi.ts";
+import { langAttrs } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { AUDIENCE_KEYS, type ShiurEntry } from "./model.ts";
 import { useCalendarT } from "./strings.ts";
@@ -28,13 +29,13 @@ const t = useCalendarT(ed);
 <ol role="list" class="cal-list" aria-label={label}>
   {entries.map((e) => (
     <li class="cal-entry" data-shiur={e.id}>
-      <p class="cal-title"><a href={e.href}><bdi {...runAttrs(e.title, e.lang)}>{e.title}</bdi></a></p>
+      <p class="cal-title"><a href={e.href}><bdi {...runAttrs(e.title, e.lang, ed)}>{e.title}</bdi></a></p>
       <p class="citation cal-cite">
         {e.occasions.map((o) => (
           <span class="cite-item">{o.href ? (
             <a href={o.href}><OccasionName ed={ed} name={o.name} /></a>
           ) : (
-            <bdi {...runAttrs(o.raw ?? o.name.name, e.lang)}>{o.raw ?? o.name.name}</bdi>
+            <bdi {...runAttrs(o.raw ?? o.name.name, e.lang, ed)}>{o.raw ?? o.name.name}</bdi>
           )}</span>
         ))}
         {showYear && (
@@ -43,7 +44,7 @@ const t = useCalendarT(ed);
         <span class="cite-item" data-lang={e.lang}>{languageName(e.lang, ed)}</span>
         {e.audience && <span class="cite-item">{t(AUDIENCE_KEYS[e.audience])}</span>}
       </p>
-      {e.oneLiner && <p class="cal-oneliner" lang={ed}>{e.oneLiner}</p>}
+      {e.oneLiner && <p class="cal-oneliner" {...langAttrs(e.oneLiner)}>{e.oneLiner.text}</p>}
     </li>
   ))}
 </ol>

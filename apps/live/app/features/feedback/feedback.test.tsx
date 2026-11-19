@@ -10,6 +10,7 @@ import axe from "axe-core";
 import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { UI_LANGS, type UiLang } from "@emunas/i18n";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { ReportButton, configureFeedback, resetFeedbackConfig } from "./index.ts";
 import { feedbackEn, feedbackT, feedbackYi } from "./strings.ts";
@@ -46,7 +47,7 @@ async function settle(): Promise<void> {
 
 const TARGET = { shiurId: "yi-zmanim-tv-bb-04", momentId: "yi-zmanim-tv-bb-04~src14", field: "source" as const };
 
-async function mount(ui: "en" | "yi" = "en", target: Parameters<typeof ReportButton>[0]["target"] = TARGET) {
+async function mount(ui: UiLang = "en", target: Parameters<typeof ReportButton>[0]["target"] = TARGET) {
   const utils = render(
     <div lang={ui} dir={ui === "yi" ? "rtl" : "ltr"}>
       <button type="button">before</button>
@@ -57,7 +58,7 @@ async function mount(ui: "en" | "yi" = "en", target: Parameters<typeof ReportBut
   return utils;
 }
 
-async function open(ui: "en" | "yi" = "en") {
+async function open(ui: UiLang = "en") {
   fireEvent.click(screen.getByRole("button", { name: feedbackT(ui)("report.open") }));
   await settle();
   return screen.getByRole("dialog");
@@ -263,7 +264,7 @@ describe("both UI languages", () => {
     for (const v of Object.values(feedbackYi)) expect(String(v)).toMatch(/[א-ת]/);
   });
 
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`axe finds no violations with the dialog open (${ui})`, async () => {
       await mount(ui);
       await open(ui);

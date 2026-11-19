@@ -6,7 +6,7 @@
 import { livePaths } from "@emunas/links";
 import type { JSX } from "react";
 import { Link } from "react-router";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import type { RoomContext } from "./context.ts";
 import { endOfShiur } from "./corpus.ts";
 import { roomStyles as s } from "./styles.ts";
@@ -49,7 +49,7 @@ export function EndOfShiur({ room }: { room: RoomContext }): JSX.Element {
       {offer?.kind === "topic" ? (
         <p>
           <Link to={paths.topic(ui, offer.topic.id)} className={s.relatedLink} data-end-topic={offer.topic.id}>
-            {rt("end.topic", { topic: offer.topic.label[ui] })}
+            {aroundText(rt("end.topic", { topic: TEXT_SLOT }), <Text value={offer.topic.label} lang={ui} />)}
           </Link>
         </p>
       ) : null}

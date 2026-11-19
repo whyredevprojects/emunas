@@ -29,10 +29,10 @@ import {
   recordingAudioUrl,
   skipContaining,
 } from "./plan.ts";
+import type { UiLang } from "@emunas/i18n";
 import type {
   AudioVersion,
   Clock,
-  Ed,
   LoadOptions,
   MediaElementLike,
   PlayerEngine,
@@ -131,7 +131,7 @@ export function createPlayerEngine(options: PlayerEngineOptions = {}): PlayerEng
   let momentEnd: number | null = null;
   let momentEnded = false;
   let sleep: SleepState | null = null;
-  let readingLang: Ed = options.readingLang ?? "yi";
+  let readingLang: UiLang = options.readingLang ?? "yi";
   let readingLangExplicit = options.readingLang !== undefined;
   let audioVersion: AudioVersion = options.audioVersion ?? DEFAULT_AUDIO_VERSION;
   /** Recordings (of the loaded shiur) whose improved copy failed to load: they play the original. */

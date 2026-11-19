@@ -10,7 +10,10 @@ import { fontPreloads, homeFontsCss } from "../src/lib/fonts.ts";
 import { ARTICLES, ESSAYS, ESSAY_GROUP_LISTS, LEGACY_FILES, fileAt } from "../src/lib/legacy-files.ts";
 import { formatSize, parseLegacyFiles, slugOf, splitTitle } from "../src/lib/legacy-schema.ts";
 import { headTags, robotsTxt, sitemapXml } from "../src/lib/seo.ts";
-import { siteEnv, siteLinks } from "../src/lib/site-env.ts";
+import { ASIDES } from "../src/lib/content.ts";
+import { ASIDE_LANGS, asideTexts, siteLinks } from "../src/lib/langs.ts";
+import { siteEnv } from "../src/lib/site-env.ts";
+import { UI_LANGS } from "@emunas/i18n";
 
 const APP = join(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -93,7 +96,14 @@ describe("site env and SEO", () => {
     const e = siteEnv({ EMUNAS_DOMAIN: "example.org" });
     expect(e.placeholder).toBe(false);
     expect(e.hosts).toEqual({ home: "https://example.org", quiet: "https://library.example.org", live: "https://listen.example.org" });
-    expect(siteLinks(e.hosts)).toEqual({ library: "https://library.example.org/en/", listen: "https://listen.example.org/en/" });
+    const l = siteLinks(e.hosts);
+    expect(l.library).toBe("https://library.example.org/en/");
+    expect(l.listen).toBe("https://listen.example.org/en/");
+    expect(l.libraryEditions).toEqual([
+      { lang: "yi", dir: "rtl", name: "אידיש", href: "https://library.example.org/yi/" },
+      { lang: "he", dir: "rtl", name: "עברית", href: "https://library.example.org/he/" },
+    ]);
+    expect(l.listenEditions.map((x) => x.href)).toEqual(["https://listen.example.org/yi/", "https://listen.example.org/he/"]);
   });
   it("uses noindex placeholders outside a deploy build and fails in one", () => {
     expect(siteEnv({}).placeholder).toBe(true);
@@ -111,6 +121,28 @@ describe("site env and SEO", () => {
     expect(sitemapXml("https://example.org", ["/", "/a/"])).toContain("<loc>https://example.org/a/</loc>");
     expect(robotsTxt("https://example.org")).toContain("Sitemap: https://example.org/sitemap.xml");
     expect(robotsTxt("https://example.org", { placeholder: true })).toContain("Disallow: /");
+  });
+});
+
+describe("languages", () => {
+  it("has an aside in every interface language but English", () => {
+    expect(ASIDE_LANGS).toEqual(UI_LANGS.filter((l) => l !== "en"));
+    for (const [place, a] of Object.entries(ASIDES)) {
+      expect(Object.keys(a).sort(), place).toEqual([...ASIDE_LANGS].sort());
+      for (const l of ASIDE_LANGS) expect(a[l], `${place}.${l}`).toMatch(/^[\u05D0-\u05EA][\u05D0-\u05EA\u05F0-\u05F4"׳״ —]*$/u);
+    }
+  });
+  it("writes Hebrew without nikud, and the Mashgiach never as הרב or with שליט\"א", () => {
+    for (const [place, a] of Object.entries(ASIDES)) {
+      expect(a.he, place).not.toMatch(/[\u0591-\u05C7]/u);
+      expect(a.he, place).not.toMatch(/הרב|שליט/u);
+    }
+    expect(ASIDES.mashgiach.he).toBe("המשגיח");
+  });
+  it("shows a phrase that is the same in two languages once, under the first", () => {
+    expect(asideTexts(ASIDES.sefarim)).toEqual([{ text: "ספרים", lang: "yi", dir: "rtl" }]);
+    expect(asideTexts(ASIDES.contact).map((x) => x.lang)).toEqual(["yi", "he"]);
+    expect(asideTexts({ yi: " ", he: "עברית" })).toEqual([{ text: "עברית", lang: "he", dir: "rtl" }]);
   });
 });
 

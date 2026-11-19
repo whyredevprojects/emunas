@@ -29,7 +29,6 @@
 import type { OccasionsFile } from "@emunas/corpus/aggregate";
 import type {
   IndexRow,
-  L,
   LayerConcept,
   LayerOccasionTopic,
   LayerPerson,
@@ -37,24 +36,18 @@ import type {
   LayerTopicNode,
   LayerWork,
 } from "@emunas/corpus/public";
-import { langFor, type ContentLang, type Dir } from "@emunas/i18n";
+import type { AudioLang, LocalizedText } from "@emunas/i18n";
 import { formatQuiet } from "@emunas/links";
+import { LANG_SCRIPT } from "@emunas/tokens";
 import { clock } from "../../lib/bidi.ts";
+import { shownText, type PickedText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
+import { headword } from "../corpus/model.ts";
+import { run, termRun, type Run } from "../indexes/model.ts";
+
+export { run, termRun, type Run };
 
 // ------------------------------------------------------------------ inputs
-
-/** A data string with the `lang`/`dir` of its script. */
-export interface Run {
-  readonly text: string;
-  readonly lang: ContentLang;
-  readonly dir: Dir;
-}
-
-export function run(text: string, ed: Ed): Run {
-  const { lang, dir } = langFor(text, ed);
-  return { text, lang, dir };
-}
 
 /** What the topic models read. Built once per build by `data.ts`; tests build it from fixtures. */
 export interface TopicsSource {
@@ -71,7 +64,7 @@ export interface TopicsSource {
   /** The calendar's occasions (null: no calendar, so no occasion marks or lines). */
   readonly occasions: OccasionsFile | null;
   /** A chapter's title (`.corpus/shiurim/<id>.json` notes), or null. */
-  chapterTitle(shiurId: string, idx: number): L | null;
+  chapterTitle(shiurId: string, idx: number): LocalizedText | null;
 }
 
 const str = (v: unknown): string => (typeof v === "string" ? v.trim() : "");
@@ -107,18 +100,20 @@ export function hebrewLabel(node: Pick<LayerTopicNode, "label">): string {
 }
 
 export interface TopicName {
-  /** The Hebrew headword (both editions). */
+  /** The Hebrew headword (every edition). */
   readonly title: Run;
-  /** The English edition: the English label beside it (null when missing or the same). */
+  /** A Latin-script edition: the English label beside it (null when missing or the same). */
   readonly alt: Run | null;
 }
+
+const latin = (ed: Ed): boolean => LANG_SCRIPT[ed] === "latin";
 
 export function topicName(ed: Ed, node: Pick<LayerTopicNode, "label">): TopicName {
   const he = hebrewLabel(node);
   const en = str(node.label?.en);
-  const alt = ed === "en" && en !== "" && en !== he ? run(en, "en") : null;
-  // The headword is a Hebrew term in both editions (lang "he", not the Yiddish edition's "yi").
-  return { title: run(he, "en"), alt };
+  const alt = latin(ed) && en !== "" && en !== he ? termRun(en) : null;
+  // The headword is a Hebrew term in every edition (lang "he", not the Yiddish edition's "yi").
+  return { title: termRun(he), alt };
 }
 
 const collators = {
@@ -126,12 +121,12 @@ const collators = {
   en: new Intl.Collator("en", { sensitivity: "base", numeric: true }),
 };
 
-/** Sort order of an edition: English label in the English edition, the Hebrew in the Yiddish. */
+/** Sort order of an edition: English label in the English edition, the Hebrew in the Yiddish and Hebrew. */
 export function compareTopics(ed: Ed) {
   return (a: LayerTopicNode, b: LayerTopicNode): number => {
-    const ka = ed === "en" ? str(a.label?.en) || hebrewLabel(a) : hebrewLabel(a);
-    const kb = ed === "en" ? str(b.label?.en) || hebrewLabel(b) : hebrewLabel(b);
-    const c = (ed === "en" ? collators.en : collators.he).compare(ka, kb);
+    const ka = latin(ed) ? str(a.label?.en) || hebrewLabel(a) : hebrewLabel(a);
+    const kb = latin(ed) ? str(b.label?.en) || hebrewLabel(b) : hebrewLabel(b);
+    const c = (latin(ed) ? collators.en : collators.he).compare(ka, kb);
     return c !== 0 ? c : a.id < b.id ? -1 : a.id > b.id ? 1 : 0;
   };
 }
@@ -238,7 +233,7 @@ export function topicTree(ed: Ed, src: Pick<TopicsSource, "topics" | "hasPage">)
 export interface OccasionRef {
   readonly kind: "parsha" | "zman";
   readonly key: string;
-  /** The edition's name for it (Yiddish: the Hebrew name; English: the English name). */
+  /** The edition's name for it (from occasions.json, which names every occasion in every language). */
   readonly name: string;
   readonly he: string;
   readonly href: string;
@@ -267,7 +262,7 @@ function placed(occ: OccasionsFile | null): Map<string, Set<string>> {
   return hit;
 }
 
-function occasionInfo(occ: OccasionsFile | null, kind: "parsha" | "zman", key: string): { he: string; yi: string; en: string } | null {
+function occasionInfo(occ: OccasionsFile | null, kind: "parsha" | "zman", key: string): Readonly<Record<Ed, string>> | null {
   if (!occ) return null;
   const list = kind === "parsha" ? occ.parshiyos : occ.zmanim;
   return (Array.isArray(list) ? list : []).find((o) => o.key === key) ?? null;
@@ -289,7 +284,7 @@ export function topicOccasions(ed: Ed, src: Pick<TopicsSource, "occasionTopics" 
     const info = occasionInfo(occ, o.kind, o.key);
     if (!info) continue;
     seen.add(k);
-    out.push({ kind: o.kind, key: o.key, name: ed === "yi" ? info.yi : info.en, he: info.he, href: occasionHref(ed, o.kind, o.key) });
+    out.push({ kind: o.kind, key: o.key, name: info[ed], he: info.he, href: occasionHref(ed, o.kind, o.key) });
   }
   return out.sort((a, b) => (order.get(`${a.kind}:${a.key}`) ?? 0) - (order.get(`${b.kind}:${b.key}`) ?? 0));
 }
@@ -303,7 +298,7 @@ export interface TopicRow {
   /** `titleOriginal`, exactly as catalogued. */
   readonly title: string;
   /** Spoken language of the shiur (stated on every row). */
-  readonly lang: Ed;
+  readonly lang: AudioLang;
   readonly years: readonly number[];
   /** Parsha or zman as catalogued (null: none, or only a guess from a file name). */
   readonly occasion: string | null;
@@ -316,8 +311,8 @@ export interface TouchedPart {
   readonly t: number;
   readonly time: string;
   readonly href: string;
-  /** The chapter's title in the edition's language (null: unknown). */
-  readonly title: string | null;
+  /** The chapter's title for the edition (its language, else the fallback; null: unknown). */
+  readonly title: PickedText | null;
 }
 
 export interface TouchedRow extends TopicRow {
@@ -400,7 +395,7 @@ export function topicGrades(ed: Ed, src: Pick<TopicsSource, "rows" | "occasions"
           t: c.t,
           time: clock(c.t),
           href: momentHref(ed, r.shiurId, c.t),
-          title: title ? str(title[ed]) || null : null,
+          title: shownText(title, ed),
         };
       });
     touched.push({ ...topicRow(ed, row, occasions, placedMap), parts });
@@ -426,7 +421,7 @@ export interface ChildEntry {
   readonly name: TopicName;
   readonly count: number;
   readonly href: string | null;
-  readonly description: string | null;
+  readonly description: PickedText | null;
 }
 
 export interface TopicPage {
@@ -436,10 +431,10 @@ export interface TopicPage {
   /** Gate first, this topic excluded. */
   readonly path: readonly { readonly id: string; readonly name: TopicName; readonly href: string | null }[];
   readonly seeAlso: readonly SeeAlsoLink[];
-  /** Generated description in the edition's language (null: none). */
-  readonly description: string | null;
+  /** Generated description for the edition (its language, else the fallback; null: none). */
+  readonly description: PickedText | null;
   /** The glossary definition of the concept with the same subject (`sameAs.conceptId`), or null. */
-  readonly definition: string | null;
+  readonly definition: PickedText | null;
   readonly occasions: readonly OccasionRef[];
   /** "Begin here": hub shiur ids the catalog knows, at most ten, in the layer's order. */
   readonly hubs: readonly string[];
@@ -450,10 +445,11 @@ export interface TopicPage {
 
 export const MAX_HUBS = 10;
 
-function textOf(l: L | null | undefined, ed: Ed): string | null {
+/** A generated text for the edition, trimmed; null when blank in every language. */
+function textOf(l: LocalizedText | null | undefined, ed: Ed): PickedText | null {
   if (!l || typeof l !== "object") return null;
-  const s = str((l as unknown as Record<string, unknown>)[ed]);
-  return s === "" ? null : s;
+  const p = shownText(l, ed);
+  return p ? { ...p, text: p.text.trim() } : null;
 }
 
 export function topicPage(ed: Ed, src: TopicsSource, id: string): TopicPage | null {
@@ -471,7 +467,7 @@ export function topicPage(ed: Ed, src: TopicsSource, id: string): TopicPage | nu
   const seeAlso: SeeAlsoLink[] = [];
   const add = (n: LayerTopicNode, rel: SeeAlsoLink["rel"]) => {
     const href = link(n);
-    if (href) seeAlso.push({ label: run(hebrewLabel(n), "en"), href, rel });
+    if (href) seeAlso.push({ label: termRun(hebrewLabel(n)), href, rel });
   };
   if (parent) add(parent, "parent");
   // On a gateway the children are listed with their descriptions; "see also" does not repeat them.
@@ -481,8 +477,8 @@ export function topicPage(ed: Ed, src: TopicsSource, id: string): TopicPage | nu
   if (typeof personId === "string" && src.hasPage("person", personId)) {
     const p = src.person(personId);
     if (p) {
-      const name = ed === "en" ? str(p.nameEn) || str(p.nameHe) : str(p.nameYi) || str(p.nameHe);
-      if (name) seeAlso.push({ label: run(name, ed), href: formatQuiet({ kind: "entry", ed, entry: "person", id: personId }), rel: "person" });
+      const name = headword(ed, { en: p.nameEn, yi: p.nameYi, he: p.nameHe }).title;
+      if (name.text) seeAlso.push({ label: name, href: formatQuiet({ kind: "entry", ed, entry: "person", id: personId }), rel: "person" });
     }
   }
   const workId = node.sameAs?.workId;

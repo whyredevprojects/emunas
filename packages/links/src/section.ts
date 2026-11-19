@@ -7,7 +7,7 @@
  * other catalog source (the uncatalogued guide, whose ids repeat the guide's) are always prefixed
  * (`/yi/section/unc-zmanim/`). A Quiet test checks the two agree on every section of the corpus.
  */
-import { isEd, type Ed } from "./types.ts";
+import { badEdition, isEd, type Ed } from "./types.ts";
 import { seg } from "./url.ts";
 
 /** The catalog source whose section ids are used as they are. */
@@ -31,6 +31,6 @@ export function sectionSlug(section: SectionRef): string {
 
 /** `/{ed}/section/{slug}/`. */
 export function quietSectionPath(ed: Ed, section: SectionRef): string {
-  if (!isEd(ed)) throw new TypeError(`@emunas/links: edition must be "yi" or "en", got ${JSON.stringify(ed)}`);
+  if (!isEd(ed)) throw new TypeError(badEdition(ed));
   return `/${ed}/section/${seg(sectionSlug(section))}/`;
 }

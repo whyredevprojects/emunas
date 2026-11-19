@@ -6,6 +6,7 @@
  */
 import { act, cleanup, fireEvent, render, waitFor } from "@testing-library/react";
 import axe from "axe-core";
+import { byUiLang, type UiLang } from "@emunas/i18n";
 import { RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { settingsStore } from "../../../shell/settings.ts";
@@ -27,15 +28,15 @@ function serve(): DataFetch {
   return async (input) => {
     const path = decodeURIComponent(new URL(input, "http://x.invalid").pathname);
     requests.push(path);
-    const shards = { en: momentShards(rows, "en"), yi: momentShards(rows, "yi") };
+    const shards = byUiLang((l) => momentShards(rows, l));
     if (path === "/data/corpus.json") return json(corpusFile(rows));
     if (path === "/data/facets.json") return json(facetsFile(rows));
     if (path === "/data/topics.json") return json(topicsFile(rows));
     if (path === "/data/explore/entities.json") return json(exploreEntitiesFile(rows));
-    if (path === "/data/build.json") return json(buildFile(rows, { en: shards.en.length, yi: shards.yi.length }));
-    const m = /^\/data\/moments\/(en|yi)-(\d+)\.json$/u.exec(path);
+    if (path === "/data/build.json") return json(buildFile(rows, byUiLang((l) => shards[l].length)));
+    const m = /^\/data\/moments\/([a-z]+)-(\d+)\.json$/u.exec(path);
     if (m) {
-      const shard = shards[m[1] as "en" | "yi"][Number(m[2])];
+      const shard = shards[m[1] as UiLang][Number(m[2])];
       return shard ? json(shard) : new Response("", { status: 404 });
     }
     const e = /^\/data\/entity\/([pco])\/(.+)\.json$/u.exec(path);

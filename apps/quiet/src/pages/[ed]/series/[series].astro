@@ -22,6 +22,7 @@ import { loadCatalogCorpus } from "../../../components/catalog/corpus.ts";
 import { contentsHref, perekIsNumeral, seriesModel, seriesSummaries } from "../../../components/catalog/model.ts";
 import { useCatalogT } from "../../../components/catalog/strings.ts";
 import { runAttrs } from "../../../lib/bidi.ts";
+import { langAttrs, langAttrsIn } from "../../../lib/content.ts";
 import { EDS, type Ed } from "../../../lib/edition.ts";
 import { useT } from "../../../i18n/index.ts";
 
@@ -45,23 +46,24 @@ const isWord = (perek: string | null) => perek !== null && !perekIsNumeral(perek
 const jump: JumpItem[] = (model.groups ?? []).map((g) => ({
   id: g.id,
   label: perekLabel(g.perek),
-  lang: isWord(g.perek) ? runAttrs(g.perek ?? "", lang).lang : undefined,
+  lang: isWord(g.perek) ? runAttrs(g.perek ?? "", lang, ed).lang : undefined,
   count: g.rows.length,
 }));
 const caption = (label: string) => c("table.caption", { name: label });
+const titleAttrs = langAttrsIn(model.title, ed);
 ---
 <Base
   ed={ed}
-  title={model.title}
+  title={model.title.text}
   crumbs={[
     { label: t("nav.contents"), href: contentsHref(ed) },
-    { label: model.title },
+    { label: model.title.text, ...titleAttrs },
   ]}
 >
   <header class="series-head">
-    <h1>{model.title}</h1>
-    {model.otherTitle !== model.title && (
-      <p class="series-other-title" lang={ed === "yi" ? "en" : "yi"} dir={ed === "yi" ? "ltr" : "rtl"}>{model.otherTitle}</p>
+    <h1 {...titleAttrs}>{model.title.text}</h1>
+    {model.otherTitle && (
+      <p class="series-other-title" {...langAttrs(model.otherTitle)}>{model.otherTitle.text}</p>
     )}
     <p class="series-meta">
       <span>{audioLanguageLabel(lang, ed)}</span>
@@ -79,12 +81,12 @@ const caption = (label: string) => c("table.caption", { name: label });
   {model.groups ? (
     model.groups.map((g) => (
       <section class="group" aria-labelledby={g.id}>
-        <h2 id={g.id}>{isWord(g.perek) ? <bdi {...runAttrs(g.perek ?? "", lang)}>{g.perek}</bdi> : perekLabel(g.perek)}</h2>
+        <h2 id={g.id}>{isWord(g.perek) ? <bdi {...runAttrs(g.perek ?? "", lang, ed)}>{g.perek}</bdi> : perekLabel(g.perek)}</h2>
         <CatalogTable ed={ed} rows={g.rows} caption={caption(perekLabel(g.perek))} number="part" partsOf={model.count} notes={model.anyNotes} />
       </section>
     ))
   ) : (
-    <CatalogTable ed={ed} rows={model.rows} caption={caption(model.title)} number="part" partsOf={model.count} notes={model.anyNotes} />
+    <CatalogTable ed={ed} rows={model.rows} caption={caption(model.title.text)} number="part" partsOf={model.count} notes={model.anyNotes} />
   )}
 </Base>
 

@@ -61,7 +61,7 @@ const get = <T,>(f: string): T => files.get(f) as T;
 
 // ---------------------------------------------------------------------------------- link checking
 
-const ENTITY_LINK = /^\/(en|yi)\/(seforim|p|c|o)\/([^/?#]+)(?:\/([^/?#]+))?$/u;
+const ENTITY_LINK = /^\/(en|yi|he)\/(seforim|p|c|o)\/([^/?#]+)(?:\/([^/?#]+))?$/u;
 
 /** Why a link on a page does not resolve to data, or null when it does. */
 function unresolved(href: string): string | null {

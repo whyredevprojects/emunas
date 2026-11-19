@@ -1,4 +1,5 @@
 import { createLinks, type SiteHosts } from "@emunas/links";
+import { UI_LANGS } from "@emunas/i18n";
 import { describe, expect, it } from "vitest";
 import { buildSeoPage, clip, headTags, type HeadTag, type RootSeoData } from "./head.ts";
 import { createPageText, linkDataFor, prerenderPaths, todayPaths } from "./model.ts";
@@ -81,7 +82,7 @@ describe("prerender list", () => {
   const { paths, skipped } = prerenderPaths(corpusFixture);
 
   it("lists Today, shiur, series, occasion (≥2), work and person/concept (livePrerender) per UI", () => {
-    for (const ui of ["en", "yi"]) {
+    for (const ui of UI_LANGS) {
       expect(paths).toContain(`/${ui}`);
       expect(paths).toContain(`/${ui}/s/${SHIUR_FULL}`);
       expect(paths).toContain(`/${ui}/s/${SHIUR_CATALOG}`);
@@ -98,7 +99,7 @@ describe("prerender list", () => {
       expect(paths).not.toContain(`/${ui}/p/rabbi-x`);
       expect(paths).not.toContain(`/${ui}/c/bitachon-2`);
     }
-    expect(paths).toHaveLength(2 * 10);
+    expect(paths).toHaveLength(UI_LANGS.length * 10);
     expect(new Set(paths).size).toBe(paths.length);
     expect(skipped).toEqual([]);
   });
@@ -109,7 +110,7 @@ describe("prerender list", () => {
       const kind = classifyLivePath(p).kind;
       expect(kind === "today" || isIndexable(kind), p).toBe(true);
     }
-    expect(todayPaths()).toEqual(["/en", "/yi"]);
+    expect(todayPaths()).toEqual(["/en", "/yi", "/he"]);
   });
 
   it("skips routes whose data file was not emitted", () => {
@@ -123,7 +124,7 @@ describe("prerender list", () => {
   });
 
   it("encodes keys as one path segment", () => {
-    const c = { ...corpusFixture, people: [{ key: "a b", label: { en: "A", yi: "A" }, count: 3, prerender: true }] };
+    const c = { ...corpusFixture, people: [{ key: "a b", label: { en: "A", yi: "A", he: "A" }, count: 3, prerender: true }] };
     expect(prerenderPaths(c).paths).toContain("/en/p/a%20b");
   });
 });
@@ -141,6 +142,17 @@ describe("page text", () => {
     expect(cat.description).toContain("in English");
     const yiCat = text(`/yi/s/${SHIUR_FULL}`)!;
     expect(yiCat.titleLang).toBeNull();
+  });
+
+  it("Hebrew pages: the Hebrew oneLiner when translated, else Yiddish, and Hebrew-script titles read as he", () => {
+    const he = text(`/he/s/${SHIUR_FULL}`)!;
+    expect(he.description).toBe("דער משגיח ערקלערט.");
+    expect(he.titleLang).toBeNull();
+    const [first, ...rest] = corpusFixture.shiurim;
+    const translated = { ...corpusFixture, shiurim: [{ ...first!, oneLiner: { ...first!.oneLiner!, he: "המשגיח מבאר." } }, ...rest] };
+    expect(createPageText(translated)(`/he/s/${SHIUR_FULL}`)!.description).toBe("המשגיח מבאר.");
+    expect(createPageText(translated)(`/yi/s/${SHIUR_FULL}`)!.description).toBe("דער משגיח ערקלערט.");
+    expect(text("/he/series/tanya-yi")!.description).toContain('הגה"צ רבי משה וולפסון זצ"ל');
   });
 
   it("formats years for catalog-only descriptions", () => {
@@ -207,12 +219,13 @@ describe("head tags", () => {
     }
   });
 
-  it("hreflang alternates for both UI languages and x-default on content pages only", () => {
+  it("hreflang alternates for every UI language and x-default on content pages only", () => {
     const tags = headTags(`/en/s/${SHIUR_FULL}`, seoFor(`/en/s/${SHIUR_FULL}`));
     const alts = tags.filter((t) => t.tag === "link" && t.rel === "alternate");
     expect(alts).toEqual([
-      { tag: "link", rel: "alternate", hrefLang: "yi", href: `https://listen.example.org/yi/s/${SHIUR_FULL}` },
       { tag: "link", rel: "alternate", hrefLang: "en", href: `https://listen.example.org/en/s/${SHIUR_FULL}` },
+      { tag: "link", rel: "alternate", hrefLang: "yi", href: `https://listen.example.org/yi/s/${SHIUR_FULL}` },
+      { tag: "link", rel: "alternate", hrefLang: "he", href: `https://listen.example.org/he/s/${SHIUR_FULL}` },
       { tag: "link", rel: "alternate", hrefLang: "x-default", href: "https://listen.example.org/" },
     ]);
     expect(headTags("/en/search", seoFor("/en/search")).some((t) => t.tag === "link" && t.rel === "alternate")).toBe(false);
@@ -223,6 +236,10 @@ describe("head tags", () => {
     expect(meta(tags, "og:url")?.content).toBe(`https://listen.example.org/yi/s/${SHIUR_FULL}`);
     expect(meta(tags, "og:locale")?.content).toBe("yi");
     expect(meta(tags, "og:type")?.content).toBe("article");
+    const he = headTags(`/he/s/${SHIUR_FULL}`, seoFor(`/he/s/${SHIUR_FULL}`));
+    expect(meta(he, "og:locale")?.content).toBe("he_IL");
+    const alternates = he.filter((t) => t.tag === "meta" && "property" in t && t.property === "og:locale:alternate");
+    expect(alternates.map((t) => (t as { content: string }).content)).toEqual(["en_US", "yi"]);
   });
 
   it("on client navigation (page data for another path) keeps robots and canonical, drops OG", () => {

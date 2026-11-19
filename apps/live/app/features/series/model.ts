@@ -10,8 +10,8 @@
  * - the series synthesis (concept-live-corpus C.6): generated title, overview, key themes and the
  *   position-aware arc line of each visible part, which replaces the part's own one-liner.
  */
-import { numeralValue } from "@emunas/i18n";
-import type { Ed, L } from "@emunas/corpus/public";
+import { numeralValue, pickText, type PickedText, type UiLang } from "@emunas/i18n";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
 import type { FacetsFile, SeriesFacetValue, SeriesFile, SeriesPart } from "../today/live-data.ts";
 import type { ProgressRecord } from "../today/personal.ts";
 
@@ -174,18 +174,30 @@ export function viewFromQuery(search: string | URLSearchParams, opts: { hasPerek
 // ---------------------------------------------------------------------------------------------
 // Synthesis (concept-live-corpus C.6)
 
-/** The generated introduction of a series in one reading language; blank fields are left out. */
+/**
+ * The generated introduction of a series for one reading language; blank fields are left out. Each
+ * text is in the reading language where it has one, else along `CONTENT_FALLBACK`, and carries the
+ * language it is actually in.
+ */
 export interface SeriesIntro {
-  title: string | null;
-  overview: string | null;
+  title: PickedText | null;
+  overview: PickedText | null;
   /** Plain text: these are not topic ids and are never linked. */
-  keyThemes: string[];
+  keyThemes: PickedText[];
   reviewed: boolean;
 }
 
-function clean(l: L | null | undefined, lang: Ed): string | null {
+function clean(l: LocalizedText | null | undefined, lang: Ed): string | null {
   const v: unknown = l?.[lang];
   return typeof v === "string" && v.trim() !== "" ? v.trim() : null;
+}
+
+/** The reader's text of `l` (falling back along `CONTENT_FALLBACK`), trimmed; null when every language is blank. */
+function picked(l: LocalizedText | null | undefined, read: UiLang): PickedText | null {
+  if (!l || typeof l !== "object") return null;
+  const p = pickText(l, read);
+  const text = typeof p.text === "string" ? p.text.trim() : "";
+  return text === "" ? null : { ...p, text };
 }
 
 /**
@@ -193,14 +205,14 @@ function clean(l: L | null | undefined, lang: Ed): string | null {
  * then shows no synthesis UI at all). A field the guard suppressed arrives blank and is left out;
  * the synthesis itself, and so its label, stays.
  */
-export function seriesIntro(series: Pick<SeriesFile, "synthesis">, read: Ed): SeriesIntro | null {
+export function seriesIntro(series: Pick<SeriesFile, "synthesis">, read: UiLang): SeriesIntro | null {
   const x = series.synthesis;
   if (!x) return null;
   return {
-    title: clean(x.title, read),
-    overview: clean(x.overview, read),
+    title: picked(x.title, read),
+    overview: picked(x.overview, read),
     keyThemes: (Array.isArray(x.keyThemes) ? x.keyThemes : []).flatMap((k) => {
-      const v = clean(k, read);
+      const v = picked(k, read);
       return v === null ? [] : [v];
     }),
     reviewed: x.reviewed === true,
@@ -218,7 +230,7 @@ export function partVisible(part: Pick<SeriesPart, "status">): boolean {
 /** What a part row shows under its title. */
 export type PartLine =
   /** A generated line: the arc line (with a synthesis) or the part's own one-liner. */
-  | { kind: "line"; text: L; source: "arc" | "part" }
+  | { kind: "line"; text: LocalizedText; source: "arc" | "part" }
   /** No synthesis and no notes yet: the card says notes are pending, as every shiur card does. */
   | { kind: "pending" }
   /** A part of a synthesized series that is not visible (catalog-only): the row, with no line. */
@@ -233,7 +245,7 @@ export type PartLine =
 export function partLines(series: Pick<SeriesFile, "parts" | "synthesis">): Map<string, PartLine> {
   const out = new Map<string, PartLine>();
   const x = series.synthesis;
-  const arc = new Map<string, L>();
+  const arc = new Map<string, LocalizedText>();
   for (const a of x && Array.isArray(x.arc) ? x.arc : []) {
     if (!arc.has(a.shiurId) && (clean(a.oneLiner, "en") !== null || clean(a.oneLiner, "yi") !== null)) arc.set(a.shiurId, a.oneLiner);
   }

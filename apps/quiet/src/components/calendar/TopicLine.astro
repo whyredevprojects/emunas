@@ -6,6 +6,7 @@
  * has no page, or all its shiurim were said on its own days.
  */
 import { corpusLabel } from "@emunas/i18n";
+import { forwardArrow } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import TopicName from "../topics/TopicName.astro";
 import { topicsSource } from "../topics/data.ts";
@@ -29,7 +30,7 @@ const t = useCalendarT(ed);
   <div class="cal-topic" data-topic-line={line.topicId} data-count={line.count}>
     <p class="cal-topic-line">
       {t("cal.topicLine", { occasion: name, count: line.count })}{" "}
-      <span aria-hidden="true">{ed === "yi" ? "←" : "→"}</span>{" "}
+      <span aria-hidden="true">{forwardArrow(ed)}</span>{" "}
       <a href={line.href}>{corpusLabel("index.topics", ed)}: <TopicName name={line.topic} /></a>
     </p>
   </div>

@@ -19,7 +19,7 @@ export interface PageStubProps {
 }
 
 /** Splits a template on `{name}` placeholders so each value can be wrapped in `<Text>`. */
-function withIsolatedParams(template: string, params: Readonly<Record<string, string>>, ui: UiLang): ReactNode[] {
+function withIsolatedParams(template: string, params: Readonly<Record<string, string>>): ReactNode[] {
   const out: ReactNode[] = [];
   const re = /\{([A-Za-z_][A-Za-z0-9_]*)\}/g;
   let last = 0;
@@ -28,7 +28,7 @@ function withIsolatedParams(template: string, params: Readonly<Record<string, st
     const value = params[name];
     if (value === undefined) continue;
     out.push(template.slice(last, m.index));
-    out.push(<Text key={`${name}-${m.index}`} value={value} shiurLang={ui} />);
+    out.push(<Text key={`${name}-${m.index}`} value={value} shiurLang={null} />);
     last = m.index + m[0].length;
   }
   out.push(template.slice(last));
@@ -42,7 +42,7 @@ export function PageStub({ title, lead, params, children }: PageStubProps): JSX.
   return (
     <article className={styles.page}>
       <h1 className={styles.pageTitle}>{t(title)}</h1>
-      <p className={styles.lead}>{params ? withIsolatedParams(raw, params, t.lang) : raw}</p>
+      <p className={styles.lead}>{params ? withIsolatedParams(raw, params) : raw}</p>
       {children}
       <p className={styles.stubNote}>{t("stub.note")}</p>
     </article>

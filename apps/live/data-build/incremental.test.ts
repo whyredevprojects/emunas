@@ -4,6 +4,7 @@
  * mid-flight), emitted and written; then the manifest flips it to "done", and the whole chain
  * (corpus:build → emit → write) runs again over the same output directories.
  */
+import { UI_LANGS } from "@emunas/i18n";
 import { statSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
@@ -40,11 +41,11 @@ function expectedFiles(s: PublicShiur, occasionKeys: string[], input: CorpusInpu
     "build.json",
     "corpus.json",
     "facets.json",
-    "today.json",
     "works.json",
-    "quick-index.en.json",
-    "quick-index.yi.json",
+    ...UI_LANGS.map((l) => `quick-index.${l}.json`),
+    ...UI_LANGS.map((l) => `today.${l}.json`),
     `shiur/${s.id}.json`,
+    // A write-up per language the shiur has one in (no Hebrew translation in the mini corpus).
     `writeup/${s.id}.en.json`,
     `writeup/${s.id}.yi.json`,
     "topics.json",
@@ -139,7 +140,7 @@ describe("a new done shiur", () => {
       `writeup/${NEW_ID}.yi.json`,
       "corpus.json",
       "build.json",
-      "today.json",
+      ...UI_LANGS.map((l) => `today.${l}.json`),
     ]) {
       expect(r.written, f).toContain(f);
     }
@@ -155,8 +156,10 @@ describe("a new done shiur", () => {
     const afterRows = rows(after.files);
     expect(afterRows.filter((x) => !x.includes(`"shiurId":"${NEW_ID}"`))).toEqual(rows(before.files));
     expect(afterRows.length).toBeGreaterThan(rows(before.files).length);
-    const today = after.files.get("today.json") as { newlySummarized: { shiurId: string }[] };
-    expect(today.newlySummarized[0]?.shiurId).toBe(NEW_ID);
+    for (const l of UI_LANGS) {
+      const today = after.files.get(`today.${l}.json`) as { newlySummarized: { shiurId: string }[] };
+      expect(today.newlySummarized[0]?.shiurId, l).toBe(NEW_ID);
+    }
 
     // Everything else kept its bytes and its mtime.
     const untouched = [...before.files.keys()].filter((f) => !r.written.includes(f) && !r.removed.includes(f));

@@ -3,8 +3,8 @@
  * fused with reciprocal-rank fusion and grouped by shiur.
  *
  * What can reach a response: moment ids, shiur ids, kind, times, the generated display
- * titles (moments.title_en/title_yi), a snippet cut from moment_text (generated text), and
- * scores. Nothing else is selected from D1, and nothing from Vectorize metadata is passed on.
+ * titles (moments.titles, one per interface language), a snippet cut from moment_text (generated
+ * text), and scores. Nothing else is selected from D1, and nothing from Vectorize metadata is passed on.
  */
 import { BadRequest, error, json } from "./http.ts";
 import type { Env } from "./env.ts";
@@ -15,7 +15,8 @@ import { filterClause, vectorFilter } from "./filters.ts";
 import { adjust, groupByShiur, roundScore, rrf, type Scored } from "./rank.ts";
 import { decodeCursor, encodeCursor } from "./cursor.ts";
 import { makeSnippet, findMarks, queryTokenSet } from "./snippet.ts";
-import { fnv1a32Hex, isKind, isLang, parseVectorId, type Kind, type Lang, type Matched, type SearchResponse, type SearchResult, type Snippet } from "./contract.ts";
+import { CONTENT_FALLBACK, UI_LANGS, byUiLang, isUiLang, type AudioLang, type UiLang } from "@emunas/i18n";
+import { fnv1a32Hex, isAudioLang, isKind, parseVectorId, type Kind, type Matched, type SearchResponse, type SearchResult, type Snippet, type Title } from "./contract.ts";
 
 export const LEXICAL_TOP_K = 100;
 export const VECTOR_TOP_K = 50;
@@ -31,11 +32,10 @@ export interface MomentFacts {
   kind: Kind;
   t: number;
   end: number | null;
-  titleEn: string | null;
-  titleYi: string | null;
+  titles: Title;
   catalogued: boolean;
   confidence: number | null;
-  audioLang: Lang;
+  audioLang: AudioLang;
 }
 
 interface MomentDbRow {
@@ -44,26 +44,44 @@ interface MomentDbRow {
   kind: string;
   t: number;
   end_t: number | null;
-  title_en: string | null;
-  title_yi: string | null;
+  /** JSON object: interface language → generated display title. */
+  titles: string;
   catalogued: number;
   confidence: number | null;
   audio_lang: string;
 }
 
 /** The only column list ever selected from `moments` for a response. */
-export const MOMENT_COLUMNS = "m.id, m.shiur_id, m.kind, m.t, m.end_t, m.title_en, m.title_yi, m.catalogued, m.confidence, m.audio_lang";
+export const MOMENT_COLUMNS = "m.id, m.shiur_id, m.kind, m.t, m.end_t, m.titles, m.catalogued, m.confidence, m.audio_lang";
+
+/**
+ * The `titles` column read field by field: a string title per interface language, null for a
+ * language without one, unknown keys and non-string values dropped (so nothing else in the column
+ * can reach a client), and every title null when the column is not a JSON object.
+ */
+export function parseTitles(raw: string | null): Title {
+  let v: unknown;
+  try {
+    v = raw === null ? null : JSON.parse(raw);
+  } catch {
+    v = null;
+  }
+  const o = typeof v === "object" && v !== null && !Array.isArray(v) ? (v as Record<string, unknown>) : {};
+  return byUiLang((lang) => {
+    const t = o[lang];
+    return typeof t === "string" && t !== "" ? t : null;
+  });
+}
 
 export function toFacts(r: MomentDbRow): MomentFacts | null {
-  if (!isKind(r.kind) || !isLang(r.audio_lang)) return null;
+  if (!isKind(r.kind) || !isAudioLang(r.audio_lang)) return null;
   return {
     id: r.id,
     shiurId: r.shiur_id,
     kind: r.kind,
     t: r.t,
     end: r.end_t,
-    titleEn: r.title_en,
-    titleYi: r.title_yi,
+    titles: parseTitles(r.titles),
     catalogued: r.catalogued === 1,
     confidence: r.confidence,
     audioLang: r.audio_lang,
@@ -176,29 +194,37 @@ interface TextRow {
   body: string;
 }
 
-async function displayTexts(db: D1Database, ids: readonly string[]): Promise<Map<string, Map<Lang, TextRow>>> {
-  const out = new Map<string, Map<Lang, TextRow>>();
+async function displayTexts(db: D1Database, ids: readonly string[]): Promise<Map<string, Map<UiLang, TextRow>>> {
+  const out = new Map<string, Map<UiLang, TextRow>>();
   if (ids.length === 0) return out;
   const { results } = await db
     .prepare("SELECT id, lang, title, body FROM moment_text WHERE id IN (SELECT value FROM json_each(?))")
     .bind(JSON.stringify(ids))
     .all<TextRow>();
   for (const r of results) {
-    if (!isLang(r.lang)) continue;
-    const byLang = out.get(r.id) ?? new Map<Lang, TextRow>();
+    if (!isUiLang(r.lang)) continue;
+    const byLang = out.get(r.id) ?? new Map<UiLang, TextRow>();
     byLang.set(r.lang, r);
     out.set(r.id, byLang);
   }
   return out;
 }
 
-function pickSnippet(texts: Map<Lang, TextRow> | undefined, ui: Lang, lexLang: Lang | undefined, tokens: readonly string[]): Snippet | null {
+/**
+ * Languages to cut a snippet from, in order: the reader's own, the language the lexical hit was
+ * in, then the reader's `CONTENT_FALLBACK` chain (he → yi → en), then any other language.
+ */
+export function snippetOrder(ui: UiLang, lexLang: UiLang | undefined): UiLang[] {
+  return [...new Set<UiLang>([ui, ...(lexLang ? [lexLang] : []), ...CONTENT_FALLBACK[ui], ...UI_LANGS])];
+}
+
+function pickSnippet(texts: Map<UiLang, TextRow> | undefined, ui: UiLang, lexLang: UiLang | undefined, tokens: readonly string[]): Snippet | null {
   if (!texts || texts.size === 0) return null;
-  const order: Lang[] = [ui, ...(lexLang && lexLang !== ui ? [lexLang] : []), ui === "en" ? "yi" : "en"];
-  const candidates = [...new Set(order)].map((l) => texts.get(l)).filter((t): t is TextRow => t !== undefined);
+  const candidates = snippetOrder(ui, lexLang)
+    .map((l) => [l, texts.get(l)] as const)
+    .filter((e): e is readonly [UiLang, TextRow] => e[1] !== undefined);
   let fallback: Snippet | null = null;
-  for (const row of candidates) {
-    const lang = row.lang as Lang;
+  for (const [lang, row] of candidates) {
     const s = makeSnippet(row.body, lang, tokens);
     if (s.marks.length > 0) return s;
     fallback ??= s;
@@ -206,8 +232,8 @@ function pickSnippet(texts: Map<Lang, TextRow> | undefined, ui: Lang, lexLang: L
   return fallback;
 }
 
-function titleMatches(f: MomentFacts, texts: Map<Lang, TextRow> | undefined, tokens: readonly string[]): boolean {
-  const titles = [f.titleEn, f.titleYi, texts?.get("en")?.title ?? null, texts?.get("yi")?.title ?? null];
+function titleMatches(f: MomentFacts, texts: Map<UiLang, TextRow> | undefined, tokens: readonly string[]): boolean {
+  const titles = UI_LANGS.flatMap((l) => [f.titles[l], texts?.get(l)?.title ?? null]);
   return titles.some((t) => t !== null && findMarks(t, tokens).length > 0);
 }
 
@@ -244,8 +270,8 @@ export async function runSearch(env: Env, p: SearchParams, rev: string, started:
       : Promise.resolve([] as string[]),
   ]);
 
-  const lexLang = new Map<string, Lang>();
-  for (const h of [...words, ...tri]) if (!lexLang.has(h.id) && isLang(h.lang)) lexLang.set(h.id, h.lang);
+  const lexLang = new Map<string, UiLang>();
+  for (const h of [...words, ...tri]) if (!lexLang.has(h.id) && isUiLang(h.lang)) lexLang.set(h.id, h.lang);
   const wordIds = words.map((h) => h.id);
   const triIds = tri.map((h) => h.id);
   const vecIds = vec ?? [];
@@ -277,7 +303,7 @@ export async function runSearch(env: Env, p: SearchParams, rev: string, started:
       kind: f.kind,
       t: f.t,
       end: f.end,
-      title: { en: f.titleEn, yi: f.titleYi },
+      title: { ...f.titles },
       matched,
       snippet: pickSnippet(t, p.ui, lexLang.get(s.id), tokens),
       score: roundScore(s.score),

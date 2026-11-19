@@ -48,7 +48,8 @@ function apiBody(rows: readonly Row[]): unknown {
     kind: "section",
     t: 60 + i,
     end: 120 + i,
-    title: { en: `Stand-in chapter ${i}`, yi: `שטעל-אין קאפיטל ${i}` },
+    // Every interface language, as the Worker sends it (a string or null each).
+    title: { en: `Stand-in chapter ${i}`, yi: `שטעל-אין קאפיטל ${i}`, he: `פרק לדוגמה ${i}` },
     matched: "text",
     snippet: { text: `Stand-in snippet ${i} about the matched words`, lang: "en", marks: [[0, 8]] },
     score: 1 - i / 10,
@@ -138,15 +139,19 @@ test.describe("@data command bar", () => {
     await page.goto("/en/");
     await ready(page);
     const bar = page.getByRole("combobox", { name: "Search or go to" });
-    await bar.fill("בראשית");
-    expect(await bar.evaluate((el) => getComputedStyle(el).direction)).toBe("rtl");
-    await bar.fill("bereishis");
-    expect(await bar.evaluate((el) => getComputedStyle(el).direction)).toBe("ltr");
+    // `ready` waits for the prerendered h1, so a fill can land before hydration and be reset by it:
+    // fill and read again until the direction follows the text.
+    const dirAfter = async (l: typeof bar, text: string, want: string) =>
+      expect(async () => {
+        await l.fill(text);
+        expect(await l.evaluate((el) => getComputedStyle(el).direction)).toBe(want);
+      }).toPass();
+    await dirAfter(bar, "בראשית", "rtl");
+    await dirAfter(bar, "bereishis", "ltr");
     await page.goto("/en/search");
     await ready(page);
     const input = page.locator("#search-q");
-    await input.fill("תשובה");
-    expect(await input.evaluate((el) => getComputedStyle(el).direction)).toBe("rtl");
+    await dirAfter(input, "תשובה", "rtl");
   });
 });
 

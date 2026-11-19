@@ -2,8 +2,9 @@
  * ערכים, the glossary (Quiet C4.2, C6; corpus-wave-plan C2.1), on the merged concepts of the
  * corpus layer.
  *
- * - One long page, aleph to tav by the Hebrew headword (`canonicalHe`, in both editions): the
- *   gloss from `label` in the edition's language, the generated definition, and a count.
+ * - One long page, aleph to tav by the Hebrew headword (`canonicalHe`, in every edition): the
+ *   gloss from `label` in the edition's own language, the generated definition (the edition's
+ *   language, else the fallback along `CONTENT_FALLBACK`), and a count.
  * - A term with a page (five or more shiurim, by the layer's flags) links to it. A term in fewer
  *   shiurim carries its shiurim on the line. A passim term (above about one shiur in seven) says
  *   "throughout" in place of a list.
@@ -17,7 +18,7 @@ import type { LayerConcept } from "@emunas/corpus/public";
 import { clock } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
 import type { EntryData } from "../indexes/entries.ts";
-import { citeShiur, citeShiurim, entryHref, hasEntryPage, hebrewRun, nameSortForm, ownTextOf, run, str, strings, textOf } from "../indexes/entry-model.ts";
+import { citeShiur, citeShiurim, entryHref, hasEntryPage, hebrewRun, nameSortForm, ownTextOf, run, str, strings, textRun } from "../indexes/entry-model.ts";
 import { byLetter, letterOf, shiurHref, type Cite, type LetterBlock, type Run } from "../indexes/model.ts";
 import { useIndexesT } from "../indexes/strings.ts";
 
@@ -46,9 +47,9 @@ function glossOf(c: LayerConcept, ed: Ed, he: string): Run | null {
   return g === "" || g === he ? null : run(g, ed);
 }
 
+/** The generated definition for the edition (its language, else the fallback, with its lang/dir). */
 function definitionOf(c: LayerConcept, ed: Ed): Run | null {
-  const text = textOf(c.definition, ed);
-  return text === "" ? null : run(text, ed);
+  return textRun(c.definition, ed);
 }
 
 /** The glossary, aleph to tav, in blocks by letter. */
@@ -124,8 +125,8 @@ export function conceptPage(d: EntryData, ed: Ed, c: LayerConcept): ConceptPage 
     const cite = citeShiur(d, ed, r.shiurId, null, href);
     if (!cite) continue;
     seen.add(key);
-    const title = ch ? textOf(ch.title, ed) : "";
-    examples.push({ shiurId: r.shiurId, title: title === "" ? cite.title : run(title, ed), time: clock(at), href, cite });
+    const title = ch ? textRun(ch.title, ed) : null;
+    examples.push({ shiurId: r.shiurId, title: title ?? cite.title, time: clock(at), href, cite });
   }
   const throughout = c.passim === true;
   const gloss = glossOf(c, ed, he);

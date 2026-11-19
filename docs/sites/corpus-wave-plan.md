@@ -116,7 +116,7 @@ The corpus layer adds nothing to first load. Today and the listening room stop w
 
 | Moment | Loads | Budget (brotli, tested in `data-build/budgets.ts` and the C3.8 e2e gate) |
 |---|---|---|
-| First paint of Today | shell + `today.json` (now with inline cards and the occasion mix's first items) | `today.json` ≤ 30 KiB; **no** `corpus.json`, `facets.json` or corpus-layer file |
+| First paint of Today | shell + `today.<reading lang>.json` (one per UI language; with inline cards and the occasion mix's first items) | each Today file ≤ 30 KiB; **no** `corpus.json`, `facets.json` or corpus-layer file |
 | First paint of a shiur | `shiur/<id>.json` (with topic chips, thread marks, story counts, term labels, series title, related titles) | growth ≤ 2 KiB at the median, max 40 KiB; **no** `corpus.json`/`facets.json` |
 | Opening Explore / idle | `topics.json` tree, `explore/entities.json` | tree ≤ 8 KiB |
 | Opening a topic | `topic/<id>.json`, moments in pages | ≤ 24 KiB per file |

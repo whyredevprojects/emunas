@@ -17,6 +17,7 @@
 import { formatQuiet, type CorpusKind, type LinkData } from "@emunas/links";
 import type { LayerConcept, LayerPerson, LayerShiurRefs, LayerStory, LayerTopicNode, LayerWork } from "@emunas/corpus/public";
 import type { Ed } from "../../lib/edition.ts";
+import { editionName } from "../corpus/model.ts";
 import { iri } from "./view.ts";
 
 /** Shiur-level salience at which a topic is what the shiur is about (Quiet C4.1 grade 1, C4.8). */
@@ -98,13 +99,13 @@ export function entryHref(ed: Ed, layer: ShiurLayer, kind: CorpusKind, id: strin
 
 // ---------------------------------------------------------------- names in the edition
 
-/** A topic's label in the edition: English in the English edition; Yiddish (else Hebrew) in the Yiddish. */
+/**
+ * A topic's label in the edition: English in the English edition; Yiddish (else Hebrew) in the
+ * Yiddish; Hebrew (else Yiddish) in the Hebrew (`editionName`).
+ */
 export function topicName(ed: Ed, node: Pick<LayerTopicNode, "label">): string {
-  const l = node.label ?? { en: "", yi: "" };
-  const en = str(l.en);
-  const yi = str(l.yi);
-  const he = str(l.he);
-  return ed === "en" ? en || he || yi : yi || he || en;
+  const l = node.label;
+  return editionName(ed, { en: str(l?.en), yi: str(l?.yi), he: str(l?.he) });
 }
 
 // ---------------------------------------------------------------- the ענינים line

@@ -1,14 +1,15 @@
 // @vitest-environment jsdom
 /**
- * Today in the real route tree, over the W2.4 fixture files. The fixture `today.json` carries the
+ * Today in the real route tree, over the W2.4 fixture files. The fixture Today files carry the
  * normalize occasion keys the W3.6 emitter writes, so the calendar join is exercised end to end.
  */
 import { act, cleanup, render, screen, waitFor } from "@testing-library/react";
 import axe from "axe-core";
 import { RouterProvider } from "react-router";
+import { UI_DIR, UI_LANGS } from "@emunas/i18n";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
-import { configureData, resetDataConfig, type DataFetch, type ShiurFile } from "../live-data.ts";
-import { buildFixture, fixtureFetch, shiurNoachFixture as shiurNoach, todayFixture } from "./fixtures.ts";
+import { configureData, resetDataConfig, type DataFetch, type ShiurFile, type TodayFile } from "../live-data.ts";
+import { buildFixture, fixtureFetch, shiurNoachFixture as shiurNoach, todayFixture, todayHeFixture } from "./fixtures.ts";
 import { MAX_NEWLY } from "../model.ts";
 import { settingsStore } from "../../../shell/settings.ts";
 import { createTestRouter } from "../../../shell/test-router.tsx";
@@ -125,6 +126,23 @@ describe("Today page", () => {
     expect(container.textContent).toContain("פרשת נח");
   });
 
+  it("shows each one-liner in the language its Today file picked, with that lang and dir", async () => {
+    const heToday = todayHeFixture as unknown as TodayFile;
+    const { container } = await renderAt(`/he/?date=${NOACH_WEEK}`);
+    const newly = container.querySelector("#today-newly")!.parentElement!;
+    const lines = [...newly.querySelectorAll("a[data-shiur]")].flatMap((a) => {
+      const ol = heToday.cards[a.getAttribute("data-shiur")!]!.oneLiner;
+      return ol ? [{ a, ol }] : [];
+    });
+    expect(lines.length).toBeGreaterThan(0);
+    for (const { a, ol } of lines) {
+      const el = [...a.querySelectorAll("[lang]")].find((x) => x.textContent === ol.text)!;
+      expect(el, ol.text).toBeDefined();
+      expect(el.getAttribute("lang")).toBe(ol.lang);
+      expect(el.getAttribute("dir")).toBe(UI_DIR[ol.lang]);
+    }
+  });
+
   it("toggles the Israel schedule and remembers it", async () => {
     // Monday 14 Jun 2027: diaspora still Nasso, Israel already Behaaloscha (no shiurim in fixtures)
     const { container } = await renderAt("/en/?date=2027-06-14");
@@ -147,7 +165,7 @@ describe("Today page", () => {
     expect(container.querySelectorAll("main h1")).toHaveLength(1);
   });
 
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`has no axe violations (${ui})`, async () => {
       await renderAt(`/${ui}/?date=${NOACH_WEEK}`);
       await waitFor(() => expect(document.querySelector("[data-moment] [lang]")).not.toBeNull());

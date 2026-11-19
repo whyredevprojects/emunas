@@ -1,9 +1,10 @@
 ---
 /**
- * A parsha or zman name in the edition's language: the Hebrew name in the Yiddish edition; in the
- * English edition the transliterated name with the Hebrew beside it as its own RTL isolate.
+ * A parsha or zman name in the edition's language: the Hebrew-script name in the Yiddish and Hebrew
+ * editions; in the English edition the transliterated name with the Hebrew beside it as its own RTL
+ * isolate.
  */
-import type { Ed } from "../../lib/edition.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 import type { OccasionName } from "./model.ts";
 
 interface Props {
@@ -13,7 +14,7 @@ interface Props {
 
 const { ed, name } = Astro.props;
 ---
-{ed === "yi" ? (
+{isHebrewScriptEdition(ed) ? (
   <bdi lang="he" dir="rtl" class="occasion-name">{name.name}</bdi>
 ) : (
   <span class="occasion-name"><bdi lang="en" dir="ltr">{name.name}</bdi>{name.he && <>{" "}<bdi lang="he" dir="rtl" class="occasion-he">{name.he}</bdi></>}</span>

@@ -66,7 +66,7 @@ export function Report({ room, id, field }: { room: RoomContext; id: string | nu
 
 /** A topic of this shiur as a chip: opens the topic beside the shiur (side pane or sheet). */
 export function TopicChipButton({ room, topic }: { room: RoomContext; topic: EntityChip }): JSX.Element {
-  const label = <Text value={topic.label[room.ui]} lang={room.ui} />;
+  const label = <Text value={topic.label} lang={room.ui} />;
   const open = room.openTopic;
   if (!open) {
     return (

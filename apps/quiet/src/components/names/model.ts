@@ -25,15 +25,14 @@ import {
   entryHref,
   hasEntryPage,
   nameLetter,
-  ownTextOf,
   run,
   str,
   strings,
-  textOf,
+  textRun,
 } from "../indexes/entry-model.ts";
 import type { Cite, Run } from "../indexes/model.ts";
 import { useIndexesT } from "../indexes/strings.ts";
-import type { Ed } from "../../lib/edition.ts";
+import { isHebrewScriptEdition, type Ed } from "../../lib/edition.ts";
 
 /** A "see also" link (the shape EntryHead takes). */
 export interface SeeAlso {
@@ -134,7 +133,7 @@ export function namesIndex(d: EntryData, ed: Ed): NameGroup[] {
     });
     // "ראה" lines: aliases in the edition's script (a Latin alias would not be looked up under א-ת).
     for (const a of also) {
-      if (isHebrewScript(a.text) !== (ed === "yi")) continue;
+      if (isHebrewScript(a.text) !== isHebrewScriptEdition(ed)) continue;
       lines.push({
         kind: "see",
         key: `see-${p.id}-${lines.length}`,
@@ -172,7 +171,8 @@ export interface PersonPage {
   readonly head: Headword;
   readonly also: readonly Run[];
   /** Generated note on who this is (shown under the AI label at the foot). */
-  readonly description: string | null;
+  /** Generated description for the edition (its language, else the fallback, with its lang/dir). */
+  readonly description: Run | null;
   readonly countText: string;
   readonly seforim: readonly LinkLine[];
   readonly stories: readonly LinkLine[];
@@ -193,8 +193,7 @@ function workTitle(ed: Ed, w: { titleEn?: unknown; titleHe?: unknown }): Run {
 function topicLabel(d: EntryData, ed: Ed, id: string): Run | null {
   const topic = d.layer.topic(id);
   if (!topic) return null;
-  const text = textOf(topic.label, ed);
-  return text === "" ? null : run(text, ed);
+  return textRun(topic.label, ed);
 }
 
 /**
@@ -217,10 +216,10 @@ export function personPage(d: EntryData, ed: Ed, p: LayerPerson, all = false): P
   for (const sid of strings(p.storyIds)) {
     const s = d.layer.story(sid);
     if (!s) continue;
-    const title = ownTextOf(s.title, ed) || textOf(s.title, ed);
-    if (title === "") continue;
+    const title = textRun(s.title, ed);
+    if (title === null) continue;
     const tellings = new Set((Array.isArray(s.tellings) ? s.tellings : []).map((x) => x?.shiurId).filter((x) => typeof x === "string" && d.visible(x))).size;
-    stories.push({ id: s.id, label: run(title, ed), href: entryHref(d, ed, "story", s.id), note: tellings > 1 ? t("count.shiurim", { count: tellings }) : null });
+    stories.push({ id: s.id, label: title, href: entryHref(d, ed, "story", s.id), note: tellings > 1 ? t("count.shiurim", { count: tellings }) : null });
   }
   // Same subject, by explicit links only (sameAs through a topic), never by a matching slug.
   const seeAlso: SeeAlso[] = [];
@@ -240,7 +239,7 @@ export function personPage(d: EntryData, ed: Ed, p: LayerPerson, all = false): P
     id: p.id,
     head,
     also: otherNames(ed, p, head),
-    description: p.description ? textOf(p.description, ed) || null : null,
+    description: textRun(p.description, ed),
     countText: t("count.shiurim", { count }),
     seforim,
     stories,

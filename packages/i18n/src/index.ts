@@ -1,4 +1,20 @@
-export { UI_DIR, UI_LANGS, UI_LOCALE, isUiLang, type UiLang } from "./lang.ts";
+export { UI_DIR, UI_ENDONYM, UI_LANGS, UI_LOCALE, byUiLang, isUiLang, otherUiLangs, type UiLang } from "./lang.ts";
+export {
+  CONTENT_FALLBACK,
+  SOURCE_LANGS,
+  TRANSLATED_LANGS,
+  isSourceLang,
+  hasContent,
+  pickLocalized,
+  pickText,
+  type ContentChain,
+  type Localized,
+  type LocalizedText,
+  type Picked,
+  type PickedText,
+  type SourceLang,
+  type TranslatedLang,
+} from "./content.ts";
 export {
   createT,
   type Message,
@@ -22,11 +38,12 @@ export {
 } from "./hebrew-year.ts";
 export {
   firstStrongDir,
+  hebrewScriptLang,
   isolate,
   langFor,
   scriptOf,
   stripBidiControls,
-  type ContentLang,
+  type AudioLang,
   type Dir,
   type LangAttrs,
   type Script,
@@ -47,7 +64,6 @@ export {
   notice,
   sectionKindLabel,
   sourceRefParts,
-  type AudioLang,
   type Category,
   type NoticeKey,
   type Resolution,
@@ -63,8 +79,6 @@ export {
   TOPIC_GRADES,
   corpusEntryLabel,
   corpusLabel,
-  corpusLabelsEn,
-  corpusLabelsYi,
   personGroupLabel,
   topicGradeLabel,
   type CorpusLabelKey,
@@ -78,8 +92,6 @@ export {
   AUDIO_VERSION_LABEL_STATUS,
   DEFAULT_AUDIO_VERSION,
   audioVersionLabel,
-  audioVersionLabelsEn,
-  audioVersionLabelsYi,
   parseAudioVersion,
   type AudioVersion,
   type AudioVersionLabelKey,

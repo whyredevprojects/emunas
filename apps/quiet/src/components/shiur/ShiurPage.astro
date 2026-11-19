@@ -27,6 +27,7 @@ import NotesLabel from "../NotesLabel.astro";
 import { formatQuiet } from "@emunas/links";
 import { runAttrs } from "../../lib/bidi.ts";
 import type { Crumb } from "../../lib/nav.ts";
+import { langAttrsIn, shownText } from "../../lib/content.ts";
 import type { Ed } from "../../lib/edition.ts";
 import { useT } from "../../i18n/index.ts";
 import PrevNext from "./PrevNext.astro";
@@ -64,10 +65,13 @@ const sectionName = sectionTitle(ed, c);
 // The last crumb is always the title (cut short by CSS only, so the full text stays readable).
 const crumbs: Crumb[] = [
   { label: ui("nav.contents"), href: formatQuiet({ kind: "index", ed, index: "contents" }) },
-  { label: sectionName, href: section, ...runAttrs(sectionName, shiur.lang) },
-  { label: c.titleOriginal, ...runAttrs(c.titleOriginal, shiur.lang) },
+  { label: sectionName, href: section, ...runAttrs(sectionName, shiur.lang, ed) },
+  { label: c.titleOriginal, ...runAttrs(c.titleOriginal, shiur.lang, ed) },
 ];
-const description = notes?.summary.oneLiner[ed] || undefined;
+// Generated text: the edition's language, else the fallback, each with its own lang/dir.
+const oneLiner = shownText(notes?.summary.oneLiner, ed);
+const abstract = shownText(notes?.summary.abstract, ed);
+const description = oneLiner?.text;
 const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true });
 ---
 <Base ed={ed} title={c.titleOriginal} path={path} crumbs={crumbs} {...(description ? { description } : {})}>
@@ -88,8 +92,8 @@ const path = formatQuiet({ kind: "shiur", ed, id: shiur.id }, {}, { bare: true }
         <NotesLabel ed={ed} />
         <section class="about-shiur" id="about" aria-labelledby="about-heading">
           <h2 id="about-heading">{t("about.heading")}</h2>
-          {notes.summary.oneLiner[ed] !== "" && <p class="one-liner">{notes.summary.oneLiner[ed]}</p>}
-          {notes.summary.abstract[ed] !== "" && <p class="abstract">{notes.summary.abstract[ed]}</p>}
+          {oneLiner && <p class="one-liner" {...langAttrsIn(oneLiner, ed)}>{oneLiner.text}</p>}
+          {abstract && <p class="abstract" {...langAttrsIn(abstract, ed)}>{abstract.text}</p>}
           <TopicLine ed={ed} topics={topics} />
         </section>
       </div>

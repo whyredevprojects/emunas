@@ -7,7 +7,6 @@
  * pressing play, save or share loads the topic's moment pages (ids and times only) first, so opening
  * the page loads nothing beyond the topic file.
  */
-import type { Ed } from "@emunas/corpus/public";
 import { formatClock, formatNumber, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useMemo, useState, type JSX } from "react";
@@ -19,6 +18,7 @@ import { mixLink, playMix, saveMix } from "./actions.ts";
 import { aboutMinutes, MIX_SIZE, topicMix, type AudioFilter, type Mix, type MixSource } from "./model.ts";
 import { mixT } from "./strings.ts";
 import { mixStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -26,7 +26,7 @@ export interface TopicMixProps {
   file: TopicFile;
   ui: UiLang;
   /** Reading language for section titles. */
-  read: Ed;
+  read: UiLang;
   /** Loads a moment page (tests pass a stub; default: the data client). */
   loadPage?: (topicId: string, page: number) => Promise<TopicMomentsFile>;
 }
@@ -49,7 +49,7 @@ export function TopicMix({ file, ui, read, loadPage = (id, n) => loadTopicMoment
   const pool: MixSource[] = useMemo(() => [...file.moments, ...(extra ?? [])], [file.moments, extra]);
   const mix = useMemo(() => topicMix(pool, { audio }), [pool, audio]);
   const totals = poolTotals(file, audio, mix);
-  const label = file.label[ui];
+  const label = labelText(file.label, ui);
 
   /** The mix over the whole pool: loads the moment pages when the first items cannot fill it. */
   async function fullMix(): Promise<Mix> {
@@ -78,7 +78,7 @@ export function TopicMix({ file, ui, read, loadPage = (id, n) => loadTopicMoment
         {t("mix.title")}
       </h2>
       <p className={s.header} data-testid="mix-header" data-sections={totals.sections} data-shiurim={totals.shiurim}>
-        <Text value={label} lang={ui} />
+        <Text value={file.label} lang={ui} />
         {`: ${t("mix.header", {
           sections: t("mix.sections", { count: totals.sections }),
           shiurim: t("mix.shiurim", { count: totals.shiurim }),

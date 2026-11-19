@@ -11,6 +11,7 @@
  * input record. Counts and flags come from the visible set only.
  */
 import { createDataReader } from "../build/read.ts";
+import { loadCorpusOverlays, type CorpusOverlayFiles } from "../build/translations.ts";
 import { LAYER_FILES, LAYER_SCHEMA_VERSION } from "../public/corpus-layer.ts";
 import type { LayerCounts, LayerInfo, LayerSiteCounts, LayerWorksFile } from "../public/corpus-layer.ts";
 import type { CorpusIndex, PublicShiur } from "../public/types.ts";
@@ -41,13 +42,16 @@ export interface LayerSources {
   corpus: CorpusInputResult;
   policy: CorpusPolicy;
   categoryVisibility: CategoryVisibility;
+  /** Corpus translation overlays (`derived/corpus/i18n/<lang>/*.json`); applied where current. */
+  overlays: CorpusOverlayFiles;
 }
 
-/** Read the corpus input (allow-listed reader), the corpus policy and the category visibility. */
+/** Read the corpus input and its translation overlays (allow-listed reader), the corpus policy and the category visibility. */
 export function loadLayerInput(opts: { dataDir: string; policyDir: string }): LayerSources {
   const policy = loadCorpusPolicy(opts.policyDir);
-  const corpus = readCorpusInput(createDataReader(opts.dataDir), { policy });
-  return { corpus, policy, categoryVisibility: loadCategoryVisibility(opts.policyDir) };
+  const reader = createDataReader(opts.dataDir);
+  const corpus = readCorpusInput(reader, { policy });
+  return { corpus, policy, categoryVisibility: loadCategoryVisibility(opts.policyDir), overlays: loadCorpusOverlays(reader) };
 }
 
 export interface PreparedLayer {
@@ -71,7 +75,14 @@ export function prepareLayer(sources: LayerSources, projected: { shiurim: readon
     categoryVisibility: sources.categoryVisibility,
     policy: sources.policy,
   });
-  const ctx = new LayerContext({ input, policy: sources.policy, visible, shiurim: projected.shiurim, index: projected.index });
+  const ctx = new LayerContext({
+    input,
+    policy: sources.policy,
+    visible,
+    shiurim: projected.shiurim,
+    index: projected.index,
+    overlays: sources.overlays,
+  });
   const tags = buildTagIndex(ctx);
   const links = sameAsLinks(ctx);
   const people = peopleBase(ctx);
@@ -110,6 +121,9 @@ function baseInfo(p: PreparedLayer): LayerInfo {
   if (r.untagged.length > 0) warnings.push(`${r.untagged.length} corpus shiurim without usable shiur-tags`);
   if (r.coercedPersonTypes.length > 0) warnings.push(`${r.coercedPersonTypes.length} people with an unknown type read as other`);
   if (r.coercedWorkKinds.length > 0) warnings.push(`${r.coercedWorkKinds.length} works with an unknown kind read as sefer`);
+  for (const [lang, t] of Object.entries(p.sources.overlays)) {
+    if (t.invalidFiles.length > 0) warnings.push(`${t.invalidFiles.length} corpus translation part(s) for ${lang} are not valid (not used)`);
+  }
   if (r.notReadDenied > 0) warnings.push(`${r.notReadDenied} index.json files entries on the deny list (not read)`);
   return {
     layerSchemaVersion: LAYER_SCHEMA_VERSION,
@@ -138,6 +152,7 @@ function baseInfo(p: PreparedLayer): LayerInfo {
     ),
     droppedRecords: r.droppedRecords.length,
     lint: { clusterCounts: [] },
+    translations: p.state.ctx.translationCounts,
   };
 }
 

@@ -3,7 +3,7 @@
  * moment of the day is stable per date, and Continue / newly-summarized behave.
  *
  * The expected keys are the hand-worked dates of @emunas/calendar's own tests; here they check the
- * join from calendar keys to `today.json`, the ordering of rows, combined parshiyos and the moment
+ * join from calendar keys to the Today file, the ordering of rows, combined parshiyos and the moment
  * pool priority.
  */
 import { describe, expect, it } from "vitest";

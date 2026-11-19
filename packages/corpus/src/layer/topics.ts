@@ -169,8 +169,7 @@ export function buildTopics(ctx: LayerContext, x: TopicsInput): TopicsResult {
     }
 
     const count = members.length;
-    const label: LayerTopicNode["label"] = { en: t.label.en, yi: t.label.yi };
-    if (t.label.he !== undefined) label.he = t.label.he;
+    const label = ctx.text("topics", t.id, "label", t.label);
     tree.push({
       id: t.id,
       parentId: parentOf.get(t.id) ?? null,
@@ -184,7 +183,7 @@ export function buildTopics(ctx: LayerContext, x: TopicsInput): TopicsResult {
     });
     detail.push({
       id: t.id,
-      description: t.description === null ? null : { en: t.description.en, yi: t.description.yi },
+      description: t.description === null ? null : ctx.text("topics", t.id, "description", t.description),
       hubs,
       grades: { main, discussed, touched },
       children: [...(children.get(t.id) ?? [])],

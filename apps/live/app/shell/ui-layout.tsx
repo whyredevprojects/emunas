@@ -1,6 +1,6 @@
 /**
  * Route module for `/:ui/*` (tech-live §1 routing): the app shell. Stays mounted for every page under
- * `/en/` and `/yi/`, including a switch between the two, so the dock and anything in it persist
+ * every `/<ui>/` edition, including a switch between them, so the dock and anything in it persist
  * (concept-live §4: "navigation never interrupts audio").
  *
  * Layout: header (site name, command bar, language control, dark-colours toggle) · rail · main · dock slot. Logical CSS only; the

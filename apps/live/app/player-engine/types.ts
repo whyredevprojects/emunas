@@ -4,10 +4,9 @@
  * The engine is framework-free: nothing here (or anywhere in this folder) imports React. The UI reads
  * it through `getState()` / `subscribe()` (made for `useSyncExternalStore`) and `on(event, fn)`.
  */
-import type { AudioVersion } from "@emunas/i18n";
 import type {
   Ed,
-  L,
+  LocalizedText,
   PublicChapter,
   PublicRecording,
   PublicShiur,
@@ -15,7 +14,9 @@ import type {
   SkipRange,
 } from "@emunas/corpus/public";
 
-export type { AudioVersion, Ed, L, SkipKind, SkipRange };
+import type { AudioVersion, UiLang } from "@emunas/i18n";
+
+export type { AudioVersion, Ed, LocalizedText, SkipKind, SkipRange };
 
 /**
  * A recording as the engine needs it. Amendment A1: the corpus build emits `audioUrl` (absolute URL
@@ -119,7 +120,7 @@ export interface PlayerState {
   /** The most recent automatic skip, for the dock's "skipped … / undo"; null after undo or load. */
   lastSkip: SkipEvent | null;
   skip: SkipSettings;
-  readingLang: Ed;
+  readingLang: UiLang;
   error: string | null;
   /** The listener's one global choice of version (cleaned-audio-ux §6). */
   audioVersion: AudioVersion;
@@ -201,7 +202,7 @@ export interface LifecycleTarget {
 export interface DescribeContext {
   shiur: PlayerShiur;
   chapter: PlayerChapter | null;
-  readingLang: Ed;
+  readingLang: UiLang;
 }
 
 export interface PlayerEngineOptions {
@@ -226,7 +227,7 @@ export interface PlayerEngineOptions {
   describe?: (ctx: DescribeContext) => MediaMetadataInit;
   skip?: Partial<SkipSettings>;
   rate?: number;
-  readingLang?: Ed;
+  readingLang?: UiLang;
   /** Default 5000 ms. */
   progressIntervalMs?: number;
   /** Seek step for Media Session seekbackward/seekforward without an offset (default 15 s). */
@@ -254,7 +255,7 @@ export interface PlayerEngine {
   /** After a moment end: clear it and continue playing the shiur. */
   keepListening(): void;
   setSleepTimer(spec: SleepSpec | null): void;
-  setReadingLanguage(lang: Ed): void;
+  setReadingLanguage(lang: UiLang): void;
   /**
    * Switch the version (the listener's click, or an imported preference). Keeps the position, the
    * play/pause state and the speed: the current recording swaps `src` through the normal path.

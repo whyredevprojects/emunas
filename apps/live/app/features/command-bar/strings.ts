@@ -127,10 +127,70 @@ export const searchYi: MessageTable<SearchKey> = {
   "search.filter.remove": "אראפנעמען דעם פילטער {name}",
 };
 
+export const searchHe: MessageTable<SearchKey> = {
+  "cb.label": "חיפוש או מעבר אל",
+  "cb.placeholder": "נושא, פרשה, ספר, „תניא 12”, שנה…",
+  "cb.hint": "הקישו / כדי לחפש מכל מקום.",
+  "cb.goTo": "מעבר אל",
+  "cb.moments": "נקודות",
+  "cb.shiurim": "שיעורים",
+  "cb.all": "כל התוצאות עבור „{q}”",
+  "cb.searching": "מחפש…",
+  "cb.loadingIndex": "טוען…",
+  "cb.nothing": "לא נמצא דבר עבור „{q}”.",
+  "cb.count": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "cb.type.occasion": "פרשה או זמן",
+  "cb.type.topic": "נושא",
+  "cb.type.work": "ספר",
+  "cb.type.person": "אישיות",
+  "cb.type.concept": "ערך במילון המושגים",
+  "cb.type.series": "סדרה",
+  "cb.type.year": "שנה",
+  "cb.seriesPerek": "פרק {n}",
+  "cb.seriesPart": "חלק {n}",
+  "cb.fallback": "מוצגות תוצאות ברמת השיעור",
+  "cb.fallback.offline": "אין חיבור, ולכן החיפוש הוא רק בכותרות השיעורים ובסיכומיהם.",
+  "cb.fallback.failed": "החיפוש המלא אינו זמין כרגע, ולכן החיפוש הוא רק בכותרות השיעורים ובסיכומיהם.",
+
+  "search.lead": "חיפוש בשיעורים לפי הרשימות וכותרות הקטלוג.",
+  "search.input": "חיפוש",
+  "search.form": "חיפוש ברשימות",
+  "search.submit": "חיפוש",
+  "search.empty": "הקלידו מילה, שם או מקום בספר. כתיב עברי, אידיש ואנגלי — הכול עובד.",
+  "search.summary": { one: "{count} נקודה ב{shiurim}", other: "{count} נקודות ב{shiurim}" },
+  "search.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "search.groupMore": { one: "ועוד {count} בשיעור זה", other: "ועוד {count} בשיעור זה" },
+  "search.more": "תוצאות נוספות",
+  "search.restart": "הרשימות עודכנו בזמן החיפוש. חפשו שוב כדי לראות תוצאות עדכניות.",
+  "search.matched": "נמצא ב: {what}",
+  "search.matched.title": "{kind} (כותרת)",
+  "search.matched.text": "{kind} (תוכן)",
+  "search.matched.semantic": "{kind}, דומה בתוכן",
+  "search.kind.shiur": "סיכום השיעור",
+  "search.kind.section": "פרק",
+  "search.kind.insight": "תובנה",
+  "search.kind.question": "שאלה",
+  "search.kind.takeaway": "לקח",
+  "search.kind.story": "מעשה",
+  "search.kind.keypoint": "נקודה עיקרית",
+  "search.kind.writeup": "סיכום מורחב",
+  "search.field.title": "כותרת בקטלוג",
+  "search.field.occasion": "פרשה או זמן",
+  "search.field.oneLiner": "סיכום",
+  "search.field.sections": "כותרות הפרקים",
+  "search.field.entities": "מקורות ואישים",
+  "search.play": "השמעה מ־{time}",
+  "search.open": "פתיחת השיעור",
+  "search.noResults": "אין תוצאות עבור „{q}”.",
+  "search.filters": "רק שיעורים עם",
+  "search.filter.add": "חיפוש בתוך {name}",
+  "search.filter.remove": "הסרת הסינון {name}",
+};
+
 export type SearchT = TFunction<SearchKey>;
 
 const cache: Partial<Record<UiLang, SearchT>> = {};
 
 export function searchT(ui: UiLang): SearchT {
-  return (cache[ui] ??= createT<SearchKey>({ en: searchEn, yi: searchYi }, ui));
+  return (cache[ui] ??= createT<SearchKey>({ en: searchEn, yi: searchYi, he: searchHe }, ui));
 }

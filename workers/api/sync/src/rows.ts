@@ -1,14 +1,18 @@
 /**
  * From `.corpus/search/moments.ndjson` (search-core MomentRows) to what the index holds:
  *
- * - one D1 record per moment (`moments` row, `moment_entities`, per-language `moment_text`
- *   display text and per-language FTS text from search-core `momentSearchText`);
+ * - one D1 record per moment (`moments` row with its titles, `moment_entities`, per-language
+ *   `moment_text` display text and per-language FTS text from search-core `momentSearchText`);
  * - one embedding unit per (moment, language) for every kind except `writeup` (write-up
  *   paragraphs are lexical only, tech-live §5.3).
  *
  * Input rows are checked field by field against search-core's allow-list: a row with an
  * unknown or forbidden key is rejected, so nothing outside the allow-list can be copied into
  * D1 or Vectorize even if the NDJSON were tampered with.
+ *
+ * Languages: every interface language (`UI_LANGS`, @emunas/i18n) for which search-core's row
+ * allow-list carries a `title_<lang>` and a `body_<lang>` field (`ROW_LANGS`). Nothing here lists
+ * languages, so a language search-core adds to MomentRow is indexed with no change in this file.
  */
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
@@ -22,9 +26,7 @@ import {
   type MomentRow,
 } from "@emunas/search-core";
 import { normalizeHe } from "@emunas/normalize/fold";
-
-export type Lang = "en" | "yi";
-export const LANGS: readonly Lang[] = ["en", "yi"];
+import { UI_LANGS, type AudioLang, type UiLang } from "@emunas/i18n";
 
 /** `moment_entities.type`; mirrors `ENTITY_TYPES` in src/contract.ts (sync/test/rows.test.ts checks). */
 export const ENTITY_TYPES = ["work", "person", "concept", "topic"] as const;
@@ -57,7 +59,7 @@ export function fnv1a32Hex(s: string): string {
  * resolves against D1 (mirrors `vectorIdFor` in src/contract.ts; sync/test/rows.test.ts checks
  * that both agree).
  */
-export function vectorIdFor(momentId: string, lang: Lang): string {
+export function vectorIdFor(momentId: string, lang: UiLang): string {
   const plain = `${momentId}@${lang}`;
   const cut = momentId.indexOf("~");
   if (utf8Bytes(plain) <= VECTOR_ID_MAX_BYTES || cut <= 0) return plain;
@@ -81,30 +83,30 @@ export interface MomentRecord {
     kind: string;
     t: number;
     end_t: number | null;
-    audio_lang: Lang;
+    audio_lang: AudioLang;
     category: string;
     occasion: string | null;
     series: string | null;
     year: number | null;
     catalogued: 0 | 1;
     confidence: number | null;
-    title_en: string | null;
-    title_yi: string | null;
+    /** JSON object of language → generated display title (`moments.titles`), only languages that have one. */
+    titles: string;
     hash: string;
   };
   /** `moment_entities` rows: corpus ids per type. */
   entities: { type: EntityType; entityId: string }[];
   /** Display text per language (moment_text). */
-  texts: { lang: Lang; title: string | null; body: string }[];
+  texts: { lang: RowLang; title: string | null; body: string }[];
   /** Search-form text per language (fts_words, fts_tri). */
-  fts: { lang: Lang; title: string; body: string }[];
+  fts: { lang: RowLang; title: string; body: string }[];
 }
 
 export interface VectorUnit {
   /** `vectorIdFor(momentId, lang)`: `<momentId>@<lang>`, or its alias when that is over 64 bytes. */
   vectorId: string;
   momentId: string;
-  lang: Lang;
+  lang: RowLang;
   /** Display text that is embedded (title and body, normalizeHe). */
   text: string;
   /** Sync diff key: the moment's content hash. */
@@ -117,7 +119,7 @@ export interface VectorMetadata {
   shiurId: string;
   t: number;
   hash: string;
-  audio_lang: Lang;
+  audio_lang: AudioLang;
   kind: string;
   category: string;
   year?: number;
@@ -132,6 +134,27 @@ const ENTITY_KEYS = new Set<string>(MOMENT_ENTITY_FIELDS);
 const FACET_KEYS = new Set<string>(MOMENT_FACET_FIELDS);
 const FORBIDDEN = new Set<string>(FORBIDDEN_SEARCH_KEYS);
 const KINDS = new Set<string>(MOMENT_ROW_KINDS);
+
+/** The language parameter of search-core's `momentSearchText`. */
+type CoreLang = Parameters<typeof momentSearchText>[1];
+/** A language a MomentRow carries text in. */
+export type RowLang = UiLang & CoreLang;
+
+/**
+ * Interface languages a MomentRow carries (`title_<lang>` and `body_<lang>` in search-core's
+ * allow-list), in `UI_LANGS` order.
+ */
+export const ROW_LANGS: readonly RowLang[] = UI_LANGS.filter(
+  (l): l is RowLang => ROW_KEYS.has(`title_${l}`) && ROW_KEYS.has(`body_${l}`),
+);
+
+/** A row's `title_<lang>` or `body_<lang>` (checked to be a string or null by `parseMomentRow`). */
+export function rowText(row: MomentRow, part: "title" | "body", lang: RowLang): string | null {
+  const v = (row as unknown as Record<string, unknown>)[`${part}_${lang}`];
+  return typeof v === "string" ? v : null;
+}
+
+const AUDIO = new Set<string>(["en", "yi"] satisfies AudioLang[]);
 
 export class RowError extends Error {}
 
@@ -158,8 +181,8 @@ export function parseMomentRow(x: unknown, where = "row"): MomentRow {
   if (typeof x["kind"] !== "string" || !KINDS.has(x["kind"])) throw new RowError(`${w}: bad kind`);
   if (typeof x["t"] !== "number" || !Number.isFinite(x["t"])) throw new RowError(`${w}: bad t`);
   if (x["end"] !== null && (typeof x["end"] !== "number" || !Number.isFinite(x["end"]))) throw new RowError(`${w}: bad end`);
-  if (x["lang"] !== "en" && x["lang"] !== "yi") throw new RowError(`${w}: bad lang`);
-  for (const k of ["title_en", "title_yi", "body_en", "body_yi"]) if (!isStrOrNull(x[k])) throw new RowError(`${w}: bad ${k}`);
+  if (typeof x["lang"] !== "string" || !AUDIO.has(x["lang"])) throw new RowError(`${w}: bad lang`);
+  for (const l of ROW_LANGS) for (const k of [`title_${l}`, `body_${l}`]) if (!isStrOrNull(x[k])) throw new RowError(`${w}: bad ${k}`);
   if (typeof x["hash"] !== "string" || !/^[0-9a-f]{16,128}$/.test(x["hash"])) throw new RowError(`${w}: bad hash`);
   const e = x["entities"];
   if (!isObj(e)) throw new RowError(`${w}: bad entities`);
@@ -208,13 +231,19 @@ const display = (s: string | null): string | null => (s === null ? null : normal
  * languages but a body only in its own, so a title without a body counts only when the row
  * has no body at all (insights, key points, takeaways: the title is the text).
  */
-export function rowLangs(row: MomentRow): Lang[] {
-  const noBody = row.body_en === null && row.body_yi === null;
-  return LANGS.filter((l) => {
-    const title = l === "en" ? row.title_en : row.title_yi;
-    const body = l === "en" ? row.body_en : row.body_yi;
-    return body !== null || (noBody && title !== null);
-  });
+export function rowLangs(row: MomentRow): RowLang[] {
+  const noBody = ROW_LANGS.every((l) => rowText(row, "body", l) === null);
+  return ROW_LANGS.filter((l) => rowText(row, "body", l) !== null || (noBody && rowText(row, "title", l) !== null));
+}
+
+/** `moments.titles`: the display title of every language that has one, as a JSON object. */
+export function titlesJson(row: MomentRow): string {
+  const out: Partial<Record<RowLang, string>> = {};
+  for (const l of ROW_LANGS) {
+    const t = display(rowText(row, "title", l));
+    if (t !== null && t !== "") out[l] = t;
+  }
+  return JSON.stringify(out);
 }
 
 export function toMomentRecord(row: MomentRow): MomentRecord {
@@ -222,8 +251,8 @@ export function toMomentRecord(row: MomentRow): MomentRecord {
   const texts: MomentRecord["texts"] = [];
   const fts: MomentRecord["fts"] = [];
   for (const lang of langs) {
-    const title = display(lang === "en" ? row.title_en : row.title_yi);
-    const body = display(lang === "en" ? row.body_en : row.body_yi);
+    const title = display(rowText(row, "title", lang));
+    const body = display(rowText(row, "body", lang));
     texts.push(body === null ? { lang, title: null, body: title ?? "" } : { lang, title, body });
     const s = momentSearchText(row, lang);
     if (s !== null) fts.push({ lang, title: s.title, body: s.body });
@@ -256,8 +285,7 @@ export function toMomentRecord(row: MomentRow): MomentRecord {
       year: row.facets.year,
       catalogued: row.facets.catalogued ? 1 : 0,
       confidence: row.facets.soft ? SOFT_CONFIDENCE : null,
-      title_en: display(row.title_en),
-      title_yi: display(row.title_yi),
+      titles: titlesJson(row),
       hash: row.hash,
     },
     entities: uniqueEntities,
@@ -274,8 +302,8 @@ export function hasVectors(row: MomentRow): boolean {
 export function toVectorUnits(row: MomentRow): VectorUnit[] {
   if (!hasVectors(row)) return [];
   return rowLangs(row).map((lang) => {
-    const title = display(lang === "en" ? row.title_en : row.title_yi);
-    const body = display(lang === "en" ? row.body_en : row.body_yi);
+    const title = display(rowText(row, "title", lang));
+    const body = display(rowText(row, "body", lang));
     const metadata: VectorMetadata = {
       shiurId: row.shiurId,
       t: row.t,
@@ -316,7 +344,7 @@ export function corpusRevOf(rows: readonly { id: string; hash: string }[]): stri
  * 48 bits of sha256: a collision among ~70k keys is about 1e-5 likely, and one would fail
  * the insert loudly (rowid constraint) rather than corrupt the index.
  */
-export function ftsRowid(momentId: string, lang: Lang): number {
+export function ftsRowid(momentId: string, lang: UiLang): number {
   const d = createHash("sha256").update(`${momentId}@${lang}`).digest();
   // +1 so 0 is never used.
   return d.readUIntBE(0, 6) + 1;

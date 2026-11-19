@@ -13,6 +13,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { RouterProvider } from "react-router";
+import { UI_LANGS } from "@emunas/i18n";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig } from "./data.ts";
 import { brshys, fixtureFetch, tvbb, tvbbWriteupEn as writeupEn } from "./test-fixtures.ts";
@@ -239,6 +240,22 @@ describe("engine binding and deep links", () => {
     expect(engine.getState().readingLang).toBe("yi");
   });
 
+  it("a Hebrew reader with no Hebrew write-up gets the Yiddish one, says so, and every block carries yi", async () => {
+    const { container } = await openAt("/he/s/yi-zmanim-tv-bb-04");
+    expect(document.documentElement.lang).toBe("he");
+    await waitFor(() => expect(container.querySelector("[data-section-index]")).not.toBeNull());
+    for (const b of container.querySelectorAll("[data-section-index]")) {
+      expect(b.getAttribute("lang")).toBe("yi");
+      expect(b.getAttribute("dir")).toBe("rtl");
+    }
+    expect(container.querySelector("[data-writeup-fallback]")?.textContent).toBe("סיכום זה עדיין אינו זמין בעברית. הוא מוצג באידיש.");
+    expect(screen.getByRole("button", { name: "עברית" }).getAttribute("aria-pressed")).toBe("true");
+    fireEvent.click(screen.getByRole("button", { name: "English" }));
+    await settle();
+    await waitFor(() => expect(container.querySelector("[data-section-index]")?.getAttribute("lang")).toBe("en"));
+    expect(container.querySelector("[data-writeup-fallback]")).toBeNull();
+  });
+
   it("does not interrupt another shiur that is playing", async () => {
     engine.load(brshys, { start: 100, autoplay: true });
     clock.flush();
@@ -253,7 +270,10 @@ describe("engine binding and deep links", () => {
   it("uses the series title as the Media Session album", async () => {
     await openAt("/en/s/yi-tanya-1-01");
     expect(media.metadata()?.album).toBe("Tanya (Yiddish)");
-    expect(screen.getByText(/Tanya \(Yiddish\), part 2 of 4/)).toBeTruthy();
+    // The series title is its own element (it carries the lang/dir of the text shown) inside the line.
+    const line = screen.getAllByText("Tanya (Yiddish)", { selector: "bdi" }).find((el) => /, part 2 of 4/.test(el.parentElement?.textContent ?? ""));
+    expect(line?.getAttribute("lang")).toBe("en");
+    expect(line?.parentElement?.textContent).toMatch(/^Tanya \(Yiddish\), part 2 of 4/);
   });
 });
 
@@ -410,7 +430,7 @@ describe("the improved-audio line (cleaned-audio-ux)", () => {
 });
 
 describe("accessibility and styles", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`axe finds no violations in the room (${ui})`, async () => {
       const { container } = await openAt(`/${ui}/s/yi-zmanim-tv-bb-04?t=300`);
       const result = await axe.run(container, {

@@ -9,19 +9,22 @@
  * answerSegs, segments, transcriptKey, audioKey, asrModel, model, variant, noise types.
  */
 import type { AudioTable, AudioTableEntry, MediaUrl } from "@emunas/audio";
+import type { Localized, LocalizedText } from "@emunas/i18n";
 import type { CatalogSource, DerivedFrom, SectionKind, Shiur } from "../../../../src/types.ts";
 
 export type { CatalogSource, DerivedFrom, SectionKind };
+export type { Localized, LocalizedText };
 /** `.corpus/audio-table.json`: recordingId → { url, cleanedUrl, canonicalId, playable, size } (built by `@emunas/audio`). */
 export type { AudioTable, AudioTableEntry, MediaUrl };
 export type Ed = "yi" | "en";
 export type Category = Shiur["category"];
 
-/** Two-language text. (`he` from the raw `Localized` is not published.) */
-export interface L {
-  en: string;
-  yi: string;
-}
+/*
+ * Every generated text is a `LocalizedText` of `@emunas/i18n`: `en` and `yi` always (the pipeline
+ * writes them), plus each further language (`he`) only when a current translation overlay exists
+ * (src/build/translations.ts). Sites pick with `pickText(text, reader)`, which falls back along
+ * `CONTENT_FALLBACK` and reports the language actually shown. Catalog strings are not localized.
+ */
 
 export type ShiurStatus = "full" | "catalog-only";
 
@@ -61,7 +64,7 @@ export type PublicRecording = PublicRecordingBase &
  */
 export interface Moment {
   id: string;
-  text: L;
+  text: LocalizedText;
   t: number | null;
   end: number | null;
   soft?: true;
@@ -74,11 +77,11 @@ export interface PublicChapter {
   recordingId: string;
   t: number;
   end: number;
-  title: L;
-  summary: L;
+  title: LocalizedText;
+  summary: LocalizedText;
   kind: SectionKind;
   catalogTopicIdx: number[];
-  sub: { title: L; summary: L; t: number }[];
+  sub: { title: LocalizedText; summary: LocalizedText; t: number }[];
 }
 
 export type SkipKind = SectionKind | "pause";
@@ -104,8 +107,8 @@ export interface PublicSource {
 
 export interface PublicQuestion {
   id: string;
-  q: L;
-  a: L;
+  q: LocalizedText;
+  a: LocalizedText;
   tq: number | null;
   ta: number | null;
   soft?: true;
@@ -117,14 +120,15 @@ export interface PublicQuestion {
  */
 export interface PublicStory {
   id: string;
-  title: L;
-  retelling: L;
+  title: LocalizedText;
+  retelling: LocalizedText;
   t: number | null;
   end: number | null;
   soft?: true;
 }
 
 export interface PublicWriteupParagraph {
+  /** `<shiur>~w<lang><block>.<paragraph>` (`wen`, `wyi`, `whe`). */
   id: string;
   text: string;
   /** Indexes into `notes.sources` (already remapped to the filtered list). */
@@ -140,7 +144,7 @@ export interface PublicWriteupBlock {
 }
 
 export interface PublicNotes {
-  summary: { oneLiner: L; abstract: L; keyPoints: Moment[] };
+  summary: { oneLiner: LocalizedText; abstract: LocalizedText; keyPoints: Moment[] };
   /** In playback order; they tile [0, duration] exactly. */
   chapters: PublicChapter[];
   skip: SkipRange[];
@@ -153,7 +157,13 @@ export interface PublicNotes {
    * No people or concept names: raw extraction names may be ASR mishearings. People, terms and
    * their names come from the corpus layer refs (`layer/shiur/<id>.json`) and entity files.
    */
-  writeup: Record<Ed, PublicWriteupBlock[]>;
+  /**
+   * The write-up per language. `en` and `yi` always; a translated language (`he`) only when its
+   * overlay is current and covers every paragraph and heading of the Yiddish write-up. A translated
+   * write-up mirrors the `yi` blocks one to one: the same `sectionIndex`, `src`, `t` and `end`, with
+   * its own paragraph ids (`whe<b>.<p>`). Pick with `pickLocalized(notes.writeup, reader)`.
+   */
+  writeup: Localized<PublicWriteupBlock[]>;
 }
 
 export interface PublicCatalog {
@@ -212,7 +222,7 @@ export interface IndexRow {
   series: { id: string; order: number | null; count: number } | null;
   duration: number;
   recordingIds: string[];
-  oneLiner: L | null;
+  oneLiner: LocalizedText | null;
   counts: { chapters: number; sources: number; stories: number; questions: number; insights: number };
 }
 
@@ -230,7 +240,7 @@ export interface IndexSection {
 
 export interface PublicSeries {
   id: string;
-  title: L;
+  title: LocalizedText;
   lang: Ed;
   catalogSectionIds: string[];
   /** In-scope shiurim, ordered. */

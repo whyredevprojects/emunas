@@ -1,4 +1,4 @@
-import type { UiLang } from "../lang.ts";
+import { byUiLang, type UiLang } from "../lang.ts";
 import { createT, type MessageTable, type MessageTables, type Params, type TFunction } from "../t.ts";
 
 /**
@@ -14,9 +14,9 @@ import { createT, type MessageTable, type MessageTables, type Params, type TFunc
  *
  * Copy rules: speak of the sound or the recording only, never of the shiur or its content; never
  * name the model; never mention transcription or speech recognition. Yiddish says "מקורית" for
- * "the original".
+ * "the original", Hebrew "ההקלטה המקורית".
  *
- * Status: owner-approved English wording; Yiddish awaits a named reviewer. See
+ * Status: owner-approved English wording; Yiddish and Hebrew await a named reviewer. See
  * docs/sites/copy-review.md, "Improved audio".
  */
 export const AUDIO_VERSION_LABEL_STATUS = "proposed" as const;
@@ -42,7 +42,7 @@ export function parseAudioVersion(value: unknown): AudioVersion {
   return value === "original" ? "original" : DEFAULT_AUDIO_VERSION;
 }
 
-export const audioVersionLabelsEn = {
+const en = {
   "cleaned.text": "Sound improved by AI",
   "cleaned.action": "Switch to the original",
   "original.text": "A version with the sound improved by AI is also available",
@@ -54,9 +54,9 @@ export const audioVersionLabelsEn = {
     "The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. Downloads are always the original recording.",
 } as const;
 
-export type AudioVersionLabelKey = keyof typeof audioVersionLabelsEn;
+export type AudioVersionLabelKey = keyof typeof en;
 
-export const audioVersionLabelsYi: MessageTable<AudioVersionLabelKey> = {
+const yi: MessageTable<AudioVersionLabelKey> = {
   "cleaned.text": "קלאנג אויסגעבעסערט דורך AI",
   "cleaned.action": "הערט די מקורית",
   "original.text": "א ווערסיע מיט קלאנג אויסגעבעסערט דורך AI איז אויך דא",
@@ -68,15 +68,24 @@ export const audioVersionLabelsYi: MessageTable<AudioVersionLabelKey> = {
     "די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. אראפלאדן גיט שטענדיג די מקורית.",
 };
 
-export const AUDIO_VERSION_LABELS: MessageTables<AudioVersionLabelKey> = {
-  en: audioVersionLabelsEn,
-  yi: audioVersionLabelsYi,
+const he: MessageTable<AudioVersionLabelKey> = {
+  "cleaned.text": "הקול שופר על ידי AI",
+  "cleaned.action": "מעבר להקלטה המקורית",
+  "original.text": "יש גם גרסה שהקול בה שופר על ידי AI",
+  "original.action": "שמעו אותה",
+  "announce.cleaned": "כעת מתנגנת הגרסה שהקול בה שופר על ידי AI.",
+  "announce.original": "כעת מתנגנת ההקלטה המקורית.",
+  partOriginal: "חלק {part}: ההקלטה המקורית בלבד",
+  about:
+    "ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן. ההורדות הן תמיד של ההקלטה המקורית.",
 };
 
-const T: Readonly<Record<UiLang, TFunction<AudioVersionLabelKey>>> = {
-  en: createT<AudioVersionLabelKey>(AUDIO_VERSION_LABELS, "en"),
-  yi: createT<AudioVersionLabelKey>(AUDIO_VERSION_LABELS, "yi"),
-};
+/** Every language's table, over one key union; the one accessor for a table (`AUDIO_VERSION_LABELS[lang]`). */
+export const AUDIO_VERSION_LABELS: MessageTables<AudioVersionLabelKey> = { en, yi, he };
+
+const T: Readonly<Record<UiLang, TFunction<AudioVersionLabelKey>>> = byUiLang((lang) =>
+  createT<AudioVersionLabelKey>(AUDIO_VERSION_LABELS, lang),
+);
 
 /** One improved-audio string, e.g. `audioVersionLabel("partOriginal", "yi", { part: 2 })`. */
 export function audioVersionLabel(key: AudioVersionLabelKey, lang: UiLang, params?: Params): string {

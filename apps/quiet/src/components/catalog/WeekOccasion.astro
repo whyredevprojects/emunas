@@ -27,7 +27,7 @@ const heading =
   <h3 id={`week-${p.kind}`}><a href={p.href}>{heading}</a></h3>
   <ul role="list">
     {p.rows.map((r) => (
-      <li><a href={r.href}><bdi {...runAttrs(r.title, r.lang)}>{r.title}</bdi></a></li>
+      <li><a href={r.href}><bdi {...runAttrs(r.title, r.lang, ed)}>{r.title}</bdi></a></li>
     ))}
   </ul>
   <p class="occasion-all"><a href={p.href}>{c("home.allOn", { count: p.count, name: p.label })}</a></p>

@@ -1,4 +1,4 @@
-import type { UiLang } from "../lang.ts";
+import { byUiLang, type UiLang } from "../lang.ts";
 import { createT, type MessageTable, type MessageTables, type Params, type TFunction } from "../t.ts";
 
 /**
@@ -14,12 +14,14 @@ import { createT, type MessageTable, type MessageTables, type Params, type TFunc
  * - Live (concept-live-corpus E.3): the standing AI label (`AI_LABEL`) plus `label.grouped` once
  *   under the title of an entity page; a reviewed entity shows `label.grouped.reviewed` instead.
  *
- * Yiddish speaks of the Mashgiach as "דער משגיח" (the upstream voice); English says "the Mashgiach".
- * Wording status: PROPOSED, not yet signed off by the owner or a Yiddish reader (like AI_LABEL).
+ * Yiddish speaks of the Mashgiach as "דער משגיח" (the upstream voice), Hebrew as "המשגיח"; English
+ * says "the Mashgiach". Hebrew plurals may add a `two` form ("שני שיעורים"); without one, 2 takes
+ * `other`. Wording status: PROPOSED, not yet signed off by the owner or a Yiddish or Hebrew reader
+ * (like AI_LABEL).
  */
 export const CORPUS_LABEL_STATUS = "proposed" as const;
 
-export const corpusLabelsEn = {
+const en = {
   // ---- AI labels (Quiet C6)
   "label.index": {
     one: "Compiled by AI from the notes on {count} shiur. Not reviewed by a person; entries may be wrongly joined or split.",
@@ -95,9 +97,9 @@ export const corpusLabelsEn = {
   "report.wrongDetails": "Wrong name, wrong type or wrong definition",
 } as const;
 
-export type CorpusLabelKey = keyof typeof corpusLabelsEn;
+export type CorpusLabelKey = keyof typeof en;
 
-export const corpusLabelsYi: MessageTable<CorpusLabelKey> = {
+const yi: MessageTable<CorpusLabelKey> = {
   "label.index": {
     one: "צוזאמגעשטעלט דורך AI פון די נאטיצן אויף {count} שיעור. נישט איבערגעקוקט דורך א מענטש; ערכים קענען זיין פאלש צוזאמגעשטעלט אדער צעטיילט.",
     other: "צוזאמגעשטעלט דורך AI פון די נאטיצן אויף {count} שיעורים. נישט איבערגעקוקט דורך א מענטש; ערכים קענען זיין פאלש צוזאמגעשטעלט אדער צעטיילט.",
@@ -164,12 +166,81 @@ export const corpusLabelsYi: MessageTable<CorpusLabelKey> = {
   "report.wrongDetails": "א פאלשער נאמען, א פאלשער סוג אדער א פאלשער פירוש",
 };
 
-export const CORPUS_LABELS: MessageTables<CorpusLabelKey> = { en: corpusLabelsEn, yi: corpusLabelsYi };
+const he: MessageTable<CorpusLabelKey> = {
+  "label.index": {
+    one: "לוקט על ידי AI מהרשימות על שיעור אחד. לא נבדק על ידי אדם; ייתכן שערכים אוחדו או פוצלו בטעות.",
+    other: "לוקט על ידי AI מהרשימות על {count} שיעורים. לא נבדק על ידי אדם; ייתכן שערכים אוחדו או פוצלו בטעות.",
+  },
+  "label.entry": "רשימות שהוכנו על ידי AI; לא נבדקו. המקור הוא ההקלטות.",
+  "label.entry.reviewed": "רשימות שהוכנו על ידי AI. המקור הוא ההקלטות.",
+  "label.story": {
+    one: "מסופר כאן על פי הפעם האחת שהמשגיח סיפר את המעשה. שמעו אותו בשיעור.",
+    two: "מסופר כאן על פי שתי הפעמים שהמשגיח סיפר את המעשה; הפרטים משתנים מפעם לפעם. שמעו אותו בשיעור.",
+    other: "מסופר כאן על פי {count} הפעמים שהמשגיח סיפר את המעשה; הפרטים משתנים מפעם לפעם. שמעו אותו בשיעור.",
+  },
+  "story.attributionVaries": "בפעמים השונות מיוחס המעשה לאנשים שונים.",
+  "label.grouped": "קובץ ונקבע שמו על ידי AI מתוך כל השיעורים. לא נבדק על ידי אדם.",
+  "label.grouped.reviewed": "נבדק",
+  "thread.heading": "לימוד שהמשגיח חוזר אליו",
+  "glossary.asUsed": "כפי שהמונח משמש בשיעורים אלו",
 
-const translators: Readonly<Record<UiLang, TFunction<CorpusLabelKey>>> = {
-  en: createT<CorpusLabelKey>(CORPUS_LABELS, "en"),
-  yi: createT<CorpusLabelKey>(CORPUS_LABELS, "yi"),
+  "index.topics": "נושאים",
+  "index.glossary": "מונחים",
+  "index.names": "שמות",
+  "index.sources": "מראי מקומות",
+  "index.stories": "מעשיות",
+  "index.threads": "לימודים שהמשגיח חזר אליהם",
+
+  "kind.topic": "נושא",
+  "kind.concept": "מונח",
+  "kind.person": "אישיות",
+  "kind.work": "ספר",
+  "kind.story": "מעשה",
+  "kind.thread": "לימוד",
+
+  "personGroup.tanach": "תנ\"ך",
+  "personGroup.malach": "מלאכים",
+  "personGroup.chazal": "חז\"ל",
+  "personGroup.rishon": "ראשונים",
+  "personGroup.acharon": "אחרונים",
+  "personGroup.chassidic_rebbe": "צדיקי החסידות",
+  "personGroup.ruler": "מלכים ושליטים",
+  "personGroup.other": "אחרים",
+
+  "grade.main": "השיעור עוסק בזה",
+  "grade.discussed": "נידון בשיעור",
+  "grade.touched": "הוזכר בחלק אחד",
+
+  "count.retoldFrom": { one: "מסופר מתוך פעם אחת", two: "מסופר מתוך שתי פעמים", other: "מסופר מתוך {count} פעמים" },
+  "count.toldInOther": { one: "סופר בעוד שיעור אחד", two: "סופר בעוד שני שיעורים", other: "סופר בעוד {count} שיעורים" },
+  "count.taughtInOther": { one: "נלמד בעוד שיעור אחד", two: "נלמד בעוד שני שיעורים", other: "נלמד בעוד {count} שיעורים" },
+  "count.taughtInOtherYears": {
+    one: "נלמד בעוד שיעור אחד, בשנים {from} עד {to}",
+    two: "נלמד בעוד שני שיעורים, בשנים {from} עד {to}",
+    other: "נלמד בעוד {count} שיעורים, בשנים {from} עד {to}",
+  },
+  "alsoTaughtIn": "נלמד גם בשיעור {shiur}, {year}",
+  "alsoTaughtIn.undated": "נלמד גם בשיעור {shiur}",
+  "throughout": "לאורך כל השיעור",
+  "notesNotPrepared": "הרשימות עדיין לא הוכנו",
+
+  "report.entry": "דיווח על טעות בערך זה",
+  "report.subject": "טעות ב{kind} {id}",
+  "report.twoDifferent": "אלו שני אנשים או שני מעשים שונים",
+  "report.sameAsOther": "זהו אותו ערך כמו ערך אחר",
+  "report.doesNotBelong": "השיעור הזה אינו שייך לכאן",
+  "report.notHere": "זה אינו שייך לכאן",
+  "report.same": "אלו אותו הדבר",
+  "report.merged": "שני דברים שונים אוחדו",
+  "report.wrongDetails": "שם שגוי, סוג שגוי או הגדרה שגויה",
 };
+
+/** Every language's table, over one key union; the one accessor for a corpus table (`CORPUS_LABELS[lang]`). */
+export const CORPUS_LABELS: MessageTables<CorpusLabelKey> = { en, yi, he };
+
+const translators: Readonly<Record<UiLang, TFunction<CorpusLabelKey>>> = byUiLang((lang) =>
+  createT<CorpusLabelKey>(CORPUS_LABELS, lang),
+);
 
 /** A corpus label in `lang`; `params.count` picks the plural form. */
 export function corpusLabel(key: CorpusLabelKey, lang: UiLang, params?: Params): string {

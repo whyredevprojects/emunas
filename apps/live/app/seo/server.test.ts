@@ -352,14 +352,14 @@ describe("react-router config hooks", () => {
     writeFileSync(join(app, "public", "data", "build.json"), "{}");
     writeFileSync(join(app, "public", "data", "shiur", `${SHIUR_FULL}.json`), "{}");
     const filtered = livePrerenderPaths({ env: {}, appDir: app, log: (m) => logs.push(m) });
-    expect(filtered).toEqual(["/en", `/en/s/${SHIUR_FULL}`, "/yi", `/yi/s/${SHIUR_FULL}`]);
+    expect(filtered).toEqual(["/en", `/en/s/${SHIUR_FULL}`, "/yi", `/yi/s/${SHIUR_FULL}`, "/he", `/he/s/${SHIUR_FULL}`]);
     expect(logs.join()).toMatch(/routes skipped/u);
   });
 
   it("without a corpus: Today only, and a deploy build fails", () => {
     const app = tmp();
     const none = { EMUNAS_CORPUS_DIR: join(app, "none") };
-    expect(livePrerenderPaths({ env: none, appDir: app, log: () => {} })).toEqual(["/en", "/yi"]);
+    expect(livePrerenderPaths({ env: none, appDir: app, log: () => {} })).toEqual(["/en", "/yi", "/he"]);
     expect(() => livePrerenderPaths({ env: { ...none, EMUNAS_DEPLOY: "1" }, appDir: app, log: () => {} })).toThrow(/no \.corpus/u);
   });
 

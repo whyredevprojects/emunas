@@ -1,7 +1,6 @@
 /**
- * W3.3 acceptance on built pages: runs `corpus:build` (the repo's `data/` when present, else the
- * corpus package's mini fixture) into a temporary `.corpus/`, builds the Quiet site against it and
- * checks the static HTML:
+ * W3.3 acceptance on built pages: the repo's `data/` through `corpus:build` and the Quiet site build
+ * (the shared build of test/site-builds.ts); checks the static HTML:
  * - every parsha and zman key has a page in both editions, and the indexes link to all of them;
  * - each occasion page lists exactly the aggregate's shiurim (Yiddish and English together, by
  *   year), seudah shiurim under a sub-heading, and no uncatalogued file-name guesses;
@@ -10,55 +9,16 @@
  * - everything is in the HTML (no JS needed): plain links, no islands, internal links resolve;
  * - no transcript material reaches these pages (the CI guard post-pass scans all of dist/ too).
  */
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync } from "node:fs";
-import { createRequire } from "node:module";
-import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
+import { join } from "node:path";
 import type { OccasionShiurRef } from "@emunas/corpus/aggregate";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { astroBuild } from "../../../test/astro-build.ts";
+import { describe, expect, inject, it } from "vitest";
 import { readCalendarData } from "./data.ts";
 import { isGuessedRow, type CalendarData } from "./model.ts";
+import { EDS } from "../../lib/edition.ts";
 
-const require = createRequire(import.meta.url);
-const here = dirname(fileURLToPath(import.meta.url));
-const app = join(here, "..", "..", "..");
-const repo = join(app, "..", "..");
-const EDS = ["yi", "en"] as const;
-
-let work = "";
-let dist = "";
-let data: CalendarData;
-
-beforeAll(() => {
-  work = mkdtempSync(join(tmpdir(), "quiet-calendar-"));
-  const corpus = join(work, ".corpus");
-  dist = join(work, "dist");
-  const realData = join(repo, "data");
-  const mini = join(repo, "packages", "corpus", "test", "fixtures", "mini");
-  const useReal = existsSync(join(realData, "derived", "ingest.json"));
-  const args = [
-    require.resolve("tsx/cli"),
-    join(repo, "packages", "corpus", "src", "cli.ts"),
-    "--data-dir",
-    useReal ? realData : join(mini, "data"),
-    "--out",
-    corpus,
-    ...(useReal ? [] : ["--policy-dir", join(mini, "site-policy")]),
-  ];
-  const c = spawnSync(process.execPath, args, { cwd: repo, encoding: "utf8", env: { ...process.env, INIT_CWD: repo } });
-  if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
-  data = readCalendarData(corpus);
-
-  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
-  if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout}\n${b.stderr}`);
-}, 300_000);
-
-afterAll(() => {
-  if (work) rmSync(work, { recursive: true, force: true });
-});
+const { corpus, dist } = inject("quietSite");
+const data: CalendarData = readCalendarData(corpus);
 
 const page = (path: string): string => readFileSync(join(dist, path, "index.html"), "utf8");
 const exists = (path: string): boolean => existsSync(join(dist, path, "index.html"));
@@ -178,20 +138,20 @@ describe("all calendar and year pages", () => {
     const pages = calendarPages();
     // per edition: /calendar/ (W4.9), the parsha and zman indexes, every occasion, the year index,
     // the unknown-year page and every year
-    expect(pages.length).toBe(2 * (3 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
+    expect(pages.length).toBe(EDS.length * (3 + data.occasions.parshiyos.length + data.occasions.zmanim.length + 2 + data.years.years.length));
     for (const p of pages) {
       const html = page(p);
       expect(html, p).not.toContain("astro-island");
       expect(html, p).not.toMatch(/\son(click|load)=/);
       expect(html, p).toMatch(/<h1>/);
       for (const href of hrefsIn(html)) {
-        if (/^\/(yi|en)\/(calendar|years)\//.test(href)) expect(exists(href.replace(/#.*$/, "")), `${p} → ${href}`).toBe(true);
+        if (/^\/(en|yi|he)\/(calendar|years)\//.test(href)) expect(exists(href.replace(/#.*$/, "")), `${p} → ${href}`).toBe(true);
       }
     }
   });
 
   it("/{ed}/calendar/ leads to the three ways in (W4.9)", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const html = page(`${ed}/calendar`);
       const hrefs = hrefsIn(html);
       for (const want of [`/${ed}/calendar/parsha/`, `/${ed}/calendar/zman/`, `/${ed}/years/`]) expect(hrefs, ed).toContain(want);
@@ -199,7 +159,7 @@ describe("all calendar and year pages", () => {
   });
 
   it("nav and breadcrumbs lead to /{ed}/calendar/ (W5.5)", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const home = `/${ed}/calendar/`;
       const nav = (html: string): string => html.match(/<nav[^>]*class="site-nav[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";
       const crumbs = (html: string): string => html.match(/<nav[^>]*class="breadcrumb[^"]*"[\s\S]*?<\/nav>/)?.[0] ?? "";

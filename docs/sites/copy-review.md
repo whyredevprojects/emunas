@@ -8,11 +8,14 @@ needed before launch (integration-plan §8 W5.3 acceptance, W6.1):
 | Standing AI label (en + yi) | owner | proposed, unsigned |
 | About texts, all five parts (en + yi) | owner; Yiddish by a named reviewer | drafts only, not published |
 | Yiddish UI strings, both sites | a named Yiddish reader | reviewed by the W5.3 copy pass (AI); human sign-off pending |
-| Improved-audio line and About paragraph (§7) | English: owner; Yiddish: a named reviewer | English approved by the owner 2026-11-18; Yiddish proposed, unsigned |
+| Hebrew UI strings, both sites and the home asides (`apps/home/src/lib/content.ts` `ASIDES`) | a named Hebrew reader | written by AI, unreviewed |
+| Hebrew translations of the notes (overlays, `docs/translation-runbook.md`) | a named Hebrew reader, by sample | generated, unreviewed |
+| Improved-audio line and About paragraph (§7) | English: owner; Yiddish: a named reviewer; Hebrew: a named Hebrew reader | English approved by the owner 2026-11-18; Yiddish proposed, unsigned; Hebrew written by AI, unreviewed |
 
 Reviewer sign-off (fill in):
 
 - Yiddish UI reviewed by: ________________ on ____________ (Quiet / Live / both)
+- Hebrew UI reviewed by: ________________ on ____________ (Quiet / Live / Home)
 - AI label approved by: ________________ on ____________
 - About texts approved by: ________________ on ____________ (parts: rav / arrangement / notes / report / excluded)
 - Improved-audio Yiddish (§7) reviewed by: ________________ on ____________
@@ -474,22 +477,22 @@ removed.
 ## 7. Improved audio (version line under the player)
 
 One wording for both sites, in `packages/i18n/src/vocab/audio-version.ts` (`AUDIO_VERSION_LABELS`,
-`audioVersionLabel()`, `AUDIO_VERSION_LABEL_STATUS = "proposed"` until the Yiddish is signed).
+`audioVersionLabel()`, `AUDIO_VERSION_LABEL_STATUS = "proposed"` until the Yiddish and Hebrew are signed).
 Design: `docs/sites/cleaned-audio-ux.md` §3 to §5 and its owner decisions. The owner chose
 "improved" over the proposed "cleaned up" and the Hebrew מקורית over אריגינאל / אריגינעלע for "the
-original". A test (`packages/i18n/test/audio-version.test.ts`) pins the English and the use of
-מקורית.
+original". Hebrew says ההקלטה המקורית. A test (`packages/i18n/test/audio-version.test.ts`) pins the
+English and the use of מקורית / הקלטה המקורית.
 
-| Key | English (owner-approved) | Yiddish (proposed) |
-|---|---|---|
-| `cleaned.text` | Sound improved by AI | קלאנג אויסגעבעסערט דורך AI |
-| `cleaned.action` | Switch to the original | הערט די מקורית |
-| `original.text` | A version with the sound improved by AI is also available | א ווערסיע מיט קלאנג אויסגעבעסערט דורך AI איז אויך דא |
-| `original.action` | Listen to it | הערט זי |
-| `announce.cleaned` | Now playing the version improved by AI. | יעצט שפילט די ווערסיע אויסגעבעסערט דורך AI. |
-| `announce.original` | Now playing the original recording. | יעצט שפילט די מקורית. |
-| `partOriginal` | Part {part}: original recording only | טייל {part}: נאר די מקורית |
-| `about` | The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. Downloads are always the original recording. | די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. אראפלאדן גיט שטענדיג די מקורית. |
+| Key | English (owner-approved) | Yiddish (proposed) | Hebrew (AI, unreviewed) |
+|---|---|---|---|
+| `cleaned.text` | Sound improved by AI | קלאנג אויסגעבעסערט דורך AI | הקול שופר על ידי AI |
+| `cleaned.action` | Switch to the original | הערט די מקורית | מעבר להקלטה המקורית |
+| `original.text` | A version with the sound improved by AI is also available | א ווערסיע מיט קלאנג אויסגעבעסערט דורך AI איז אויך דא | יש גם גרסה שהקול בה שופר על ידי AI |
+| `original.action` | Listen to it | הערט זי | שמעו אותה |
+| `announce.cleaned` | Now playing the version improved by AI. | יעצט שפילט די ווערסיע אויסגעבעסערט דורך AI. | כעת מתנגנת הגרסה שהקול בה שופר על ידי AI. |
+| `announce.original` | Now playing the original recording. | יעצט שפילט די מקורית. | כעת מתנגנת ההקלטה המקורית. |
+| `partOriginal` | Part {part}: original recording only | טייל {part}: נאר די מקורית | חלק {part}: ההקלטה המקורית בלבד |
+| `about` | The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. Downloads are always the original recording. | די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. אראפלאדן גיט שטענדיג די מקורית. | ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן. ההורדות הן תמיד של ההקלטה המקורית. |
 
 Rules the wording keeps: it speaks of the sound and the recording only, never of the shiur or its
 content; it never names the model; it never mentions transcription or speech recognition. The

@@ -3,13 +3,14 @@
  * per interface language); the date-dependent parts are computed on the client after mount from the
  * visitor's own day, so the page stays current without a rebuild and hydration never mismatches.
  *
- * Loading (corpus-wave-plan §4, C1.7): the page renders from `today.json` alone. The moment of the
- * day then loads its one shiur file for the text, and Continue loads the heard shiurim's files only
- * when the personal store has progress. `corpus.json`, `facets.json` and the corpus layer's
+ * Loading (corpus-wave-plan §4, C1.7): the page renders from its Today file alone, the one for the
+ * reading language (`today.<lang>.json`, whose generated texts are already picked for that reader);
+ * switching the language loads that language's file. The moment of the day then loads its one
+ * shiur file for the text, and Continue loads the heard shiurim's files only when the personal
+ * store has progress. `corpus.json`, `facets.json` and the corpus layer's
  * corpus-wide files are never requested here. The occasion mix button plays its inline head at once
  * and only then loads the occasion topic's file for the rest (`occasion-mix.ts`).
  */
-import type { Ed } from "@emunas/corpus/public";
 import { formatClock, formatNumber, notice, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { Fragment, useEffect, useMemo, useState, type JSX, type ReactNode } from "react";
@@ -39,13 +40,14 @@ import { ShiurCard, type CardData } from "./ShiurCard.tsx";
 import { todayT, type TodayKey } from "./strings.ts";
 import { todayStyles as s } from "./styles.ts";
 import { useLoad } from "./use-data.ts";
+import { hebrewFormLang } from "../../i18n/content.ts";
 
 interface TodayData {
   today: TodayFile;
 }
 
-async function loadTodayData(): Promise<TodayData> {
-  return { today: await loadToday() };
+async function loadTodayData(read: UiLang): Promise<TodayData> {
+  return { today: await loadToday(read) };
 }
 
 export function cardOf(r: TodayRow): CardData {
@@ -76,7 +78,7 @@ export function TodayPage(): JSX.Element {
     setDate(dateFromQuery(location.search) ?? localIsoDay());
   }, [location.search]);
 
-  const data = useLoad(loadTodayData, []);
+  const data = useLoad(() => loadTodayData(read), [read]);
   const view = useMemo<TodayView | null>(() => {
     if (date === null || data.status !== "ok") return null;
     return buildToday({ date, israel, audio, today: data.data.today });
@@ -89,7 +91,7 @@ export function TodayPage(): JSX.Element {
           <h1 className={s.title}>{tFor(ui)("page.today")}</h1>
           {view?.hebrewDate ? (
             <p className={s.date}>
-              <Text value={formatHebrewDate(view.hebrewDate, ui)} lang={ui === "en" ? "en" : "he"} />
+              <Text value={formatHebrewDate(view.hebrewDate, ui)} lang={hebrewFormLang(ui)} />
             </p>
           ) : null}
         </div>
@@ -128,7 +130,7 @@ export function TodayPage(): JSX.Element {
   );
 }
 
-function CardRow({ rows, ui, read }: { rows: readonly TodayRow[]; ui: UiLang; read: Ed }): JSX.Element {
+function CardRow({ rows, ui, read }: { rows: readonly TodayRow[]; ui: UiLang; read: UiLang }): JSX.Element {
   return (
     <ul className={s.row}>
       {rows.map((r) => (
@@ -140,7 +142,7 @@ function CardRow({ rows, ui, read }: { rows: readonly TodayRow[]; ui: UiLang; re
   );
 }
 
-function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile; ui: UiLang; read: Ed }): JSX.Element {
+function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile; ui: UiLang; read: UiLang }): JSX.Element {
   const tt = todayT(ui);
   if (!view.week) {
     return (
@@ -176,7 +178,7 @@ function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile
         <div key={o.key} className={s.section} data-occasion={o.key}>
           <h3 className={s.occasionTitle}>
             <Link to={paths.occasion(ui, o.key)}>
-              <Text value={occasionLabel(o.key, today, ui)} shiurLang={ui} />
+              <Text value={occasionLabel(o.key, today, ui)} shiurLang={null} />
             </Link>
             <span className={s.badge}>{o.active ? tt("today.occasion.active") : tt("today.occasion.soon", { count: o.daysUntil })}</span>
           </h3>
@@ -213,7 +215,7 @@ function OccasionMix({ mix, ui }: { mix: WeekMix; ui: UiLang }): JSX.Element {
       <button type="button" className={s.mixPlay} data-testid="occasion-mix-play" disabled={status === "loading"} onClick={() => void play()}>
         {status === "loading" && mix.head.length === 0
           ? mt("mix.preparing")
-          : <span>{withSlot(tt("today.mix.play"), "name", <Text value={mix.label[ui]} lang={ui} />)}</span>}
+          : <span>{withSlot(tt("today.mix.play"), "name", <Text value={mix.label} lang={ui} />)}</span>}
       </button>
       <p className={s.sectionLead}>
         {tt("today.mix.lead")}
@@ -233,10 +235,10 @@ function OccasionMix({ mix, ui }: { mix: WeekMix; ui: UiLang }): JSX.Element {
 
 function ParshaName({ parshaKey, today, ui }: { parshaKey: string; today: TodayFile; ui: UiLang }): JSX.Element {
   const tt = todayT(ui);
-  return <>{withSlot(tt("today.parsha"), "name", <Text value={occasionLabel(parshaKey, today, ui)} shiurLang={ui} />)}</>;
+  return <>{withSlot(tt("today.parsha"), "name", <Text value={occasionLabel(parshaKey, today, ui)} shiurLang={null} />)}</>;
 }
 
-function MomentOfTheDay({ moment, today, ui, read }: { moment: DayMoment | null; today: TodayFile; ui: UiLang; read: Ed }): JSX.Element | null {
+function MomentOfTheDay({ moment, today, ui, read }: { moment: DayMoment | null; today: TodayFile; ui: UiLang; read: UiLang }): JSX.Element | null {
   const tt = todayT(ui);
   const shiur = useLoad(() => (moment ? loadShiur(moment.shiurId) : Promise.resolve(null)), [moment?.shiurId]);
   if (!moment || moment.t === null) return null;
@@ -278,7 +280,7 @@ async function loadContinue(): Promise<{ progress: Awaited<ReturnType<typeof rea
   return { progress, rows: progress.length > 0 ? await loadContinueRows(progress) : new Map() };
 }
 
-function Continue({ ui, read }: { ui: UiLang; read: Ed }): JSX.Element {
+function Continue({ ui, read }: { ui: UiLang; read: UiLang }): JSX.Element {
   const tt = todayT(ui);
   const audio = useSettings((st) => st.audio);
   const version = useProgressSourceVersion();

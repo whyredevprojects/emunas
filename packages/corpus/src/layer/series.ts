@@ -16,7 +16,7 @@ export function buildSeries(ctx: LayerContext): Map<string, LayerSeries> {
     for (const a of [...s.arc].sort((x, y) => x.part - y.part)) {
       if (!ctx.V.has(a.shiurId) || seen.has(a.shiurId)) continue;
       seen.add(a.shiurId);
-      arc.push({ shiurId: a.shiurId, part: a.part, oneLiner: { en: a.oneLiner.en, yi: a.oneLiner.yi } });
+      arc.push({ shiurId: a.shiurId, part: a.part, oneLiner: ctx.text("series", id, `arc.${a.shiurId}.oneLiner`, a.oneLiner) });
     }
     if (arc.length === 0) continue;
     const partOf = new Map(s.arc.map((a) => [a.shiurId, a.part]));
@@ -28,9 +28,9 @@ export function buildSeries(ctx: LayerContext): Map<string, LayerSeries> {
     missing.sort((a, b) => a - b);
     out.set(id, {
       seriesId: id,
-      title: { en: s.title.en, yi: s.title.yi },
-      overview: { en: s.overview.en, yi: s.overview.yi },
-      keyThemes: s.keyThemes.map((k) => ({ en: k.en, yi: k.yi })),
+      title: ctx.text("series", id, "title", s.title),
+      overview: ctx.text("series", id, "overview", s.overview),
+      keyThemes: s.keyThemes.map((k, i) => ctx.text("series", id, `keyThemes.${i}`, k)),
       arc,
       missing,
       reviewed: s.reviewStatus === "reviewed",

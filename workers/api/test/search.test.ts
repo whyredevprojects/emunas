@@ -118,6 +118,30 @@ describe("GET /api/search: matching", () => {
     expect(en.results[0]?.snippet?.lang).toBe("en");
   });
 
+  it("Hebrew: ui=he prefers the Hebrew snippet, titles carry every interface language", async () => {
+    const r = await search(`q=${encodeURIComponent("בטחון")}&mode=lexical&ui=he`);
+    expect(ids(r)).toEqual(["yi-parsha-noach-01~s0"]);
+    expectAllowedKeys(r);
+    const x = r.results[0]!;
+    expect(x.title).toEqual({ en: "The Flood and trust", yi: "דער מבול און בטחון", he: "המבול והבטחון" });
+    expect(x.snippet?.lang).toBe("he");
+    expect(x.snippet?.marks.map(([a, b]) => x.snippet!.text.slice(a, b))).toEqual(["בבטחון"]);
+    // The same query from the Yiddish edition gets the Yiddish text.
+    const yi = await search(`q=${encodeURIComponent("בטחון")}&mode=lexical&ui=yi`);
+    expect(yi.results[0]?.snippet?.lang).toBe("yi");
+  });
+
+  it("Hebrew: a moment without Hebrew text falls back (snippet from the matched language), its he title is null", async () => {
+    const r = await search(`q=${encodeURIComponent("תורה")}&mode=lexical&ui=he`);
+    expect(ids(r)).toEqual(["yi-parsha-noach-01~i0"]);
+    expect(r.results[0]?.title).toEqual({ en: "Learning Torah in a flood", yi: "לערנען אין א מבול", he: null });
+    expect(r.results[0]?.snippet?.lang).toBe("yi");
+    // Only the English text holds the word: its snippet, not the Hebrew text without it.
+    const en = await search("q=laughed&mode=lexical&ui=he");
+    expect(ids(en)).toEqual(["yi-parsha-noach-01~s0"]);
+    expect(en.results[0]?.snippet?.lang).toBe("en");
+  });
+
   it("returns no results for a word that is nowhere", async () => {
     const r = await search("q=xylophone&mode=lexical");
     expect(r.results).toEqual([]);
@@ -198,6 +222,8 @@ describe("GET /api/search: filters", () => {
       "q=",
       `q=${"x".repeat(201)}`,
       "q=a&audio=fr",
+      // Recordings are only en or yi: he is an interface language, not an audio language.
+      "q=a&audio=he",
       "q=a&kind=transcript",
       "q=a&ui=de",
       "q=a&mode=magic",

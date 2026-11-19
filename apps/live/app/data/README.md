@@ -9,9 +9,9 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/build.json` | `BuildFile` (counts, moment shard counts) | `loadBuild()` (memoized) |
 | `/data/corpus.json` | `CorpusFile`: one `CorpusRow` per shiur | `loadCorpus()` (memoized) |
 | `/data/facets.json` | `FacetsFile`: id → labels + count per facet | `loadFacets()` (memoized) |
-| `/data/today.json` | `TodayFile`: occasion → shiurim + moment pool; newly summarized | `loadToday()` (memoized) |
+| `/data/today.<lang>.json` | `TodayFile`, one per reading language (`UI_LANGS`): occasion → shiurim + moment pool; newly summarized; each generated text a `ReaderText` (`{lang, text}`) picked along `CONTENT_FALLBACK[lang]` | `loadToday(lang)` (memoized) |
 | `/data/shiur/<id>.json` | `ShiurFile`: `PublicShiur` without the write-up, recordings with `audioUrl` | `loadShiur(id)` |
-| `/data/writeup/<id>.<en\|yi>.json` | `WriteupFile` (one language, lazy) | `loadWriteup(id, lang)` |
+| `/data/writeup/<id>.<lang>.json` | `WriteupFile` (one language, lazy): en and yi; he only when the shiur has a complete, current Hebrew translation (`notes.writeupLangs`) | `loadWriteup(id, lang)` |
 | `/data/series/<id>.json` | `SeriesFile` (ordered parts, perek groups) | `loadSeries(id)` |
 | `/data/works.json`, `/data/work/<key>.json` | `WorksFile`, `WorkFile` (locations, unlocated) | `loadWorks()`, `loadWork(key)` |
 | `/data/entity/{p,c,o}/<key>.json` | `EntityFile` | `loadEntity(kind, key)` |
@@ -26,14 +26,15 @@ contract in `@emunas/corpus/public` (integration-plan §5.2). W3.6 emits files t
 | `/data/glossary/<prefix>.json` | `GlossaryShardFile` (`glossaryShardFor(id, build.glossaryShards)`) | `loadGlossaryShard(prefix)` (memoized) |
 | `/data/explore/entities.json` | `ExploreEntitiesFile` (corpus ids per shiur, for Explore) | `loadExploreEntities()` (memoized) |
 
-**Loading rules (corpus-wave-plan §4, C1.7).** Today renders from `today.json` alone and the
-listening room from `shiur/<id>.json` alone: neither loads `corpus.json`, `facets.json` or any
+**Loading rules (corpus-wave-plan §4, C1.7).** Today renders from the Today file of its reading
+language (`today.<lang>.json`) alone, and loads the other language's file when the reading language
+changes; the listening room renders from `shiur/<id>.json` alone: neither loads `corpus.json`, `facets.json` or any
 corpus-layer file other than its own (`loading.test.tsx` spies on the fetches). `corpus.json` is for
 Explore, search and the shelf. Every corpus entity is AI-generated and unreviewed: an entity page
 shows `<CorpusLabel>` (app/components) once. Entity ids are corpus ids; which entities have a Live
 page is `live-pages.ts`, shared by the emit and the prerender list.
 
-Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION` (7 since recordings carry `cleanedUrl`; 5 since F.1: no raw extraction names in shiur files, story refs carry `otherShiurim` and the merged story's people; 4 since C3.1: no `stories.json`, no entity ids in `corpus.json`); the client rejects anything else.
+Every file has `schemaVersion === LIVE_DATA_SCHEMA_VERSION` (9 since recordings carry `cleanedUrl`; 8 since Today is one `today.<lang>.json` per interface language; 7 since generated text is `LocalizedText` in every interface language; 5 since F.1: no raw extraction names in shiur files, story refs carry `otherShiurim` and the merged story's people; 4 since C3.1: no `stories.json`, no entity ids in `corpus.json`); the client rejects anything else.
 Errors are `DataError` (`status` 404 for a missing file; `notFoundToNull()` maps that to `null`).
 
 **Audio (Amendment A1).** `ShiurFile.recordings[].audioUrl` is the media-host URL

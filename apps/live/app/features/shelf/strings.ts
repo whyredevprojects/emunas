@@ -201,12 +201,110 @@ export const shelfYi: MessageTable<ShelfKey> = {
   "pl.sharedName": "א צוגעשיקטע ליסטע",
 };
 
+export const shelfHe: MessageTable<ShelfKey> = {
+  "shelf.title": "המדף שלי",
+  "shelf.lead": "מה שאתם שומעים, התור שלכם, רשימות השמעה, נקודות שמורות והערות. נשמר במכשיר זה בלבד.",
+  "shelf.loading": "פותח את המדף שלכם…",
+  "shelf.memoryNotice":
+    "דפדפן זה אינו מאפשר לאתר לשמור נתונים, ולכן המדף שלכם נשמר רק עד שהכרטיסייה תיסגר. ייצאו אותו למטה כדי לשמור עותק.",
+  "shelf.back": "המדף שלי",
+  "shelf.seeAll": { one: "הצגת הכול ({count})", other: "הצגת הכול ({count})" },
+  "shelf.unknownSection": "אין חלק כזה במדף שלי.",
+
+  "section.continue": "להמשיך לשמוע",
+  "section.queue": "תור",
+  "section.playlists": "רשימות השמעה",
+  "section.saved": "נקודות שמורות",
+  "section.notes": "הערות",
+  "section.history": "היסטוריה",
+  "section.downloads": "הורדות",
+
+  "empty.continue": "אין דבר באמצע. שיעורים שתתחילו לשמוע יופיעו כאן.",
+  "empty.queue": "התור ריק. הוסיפו שיעור או כל נקודה ממנו בעזרת „הוספה לתור”.",
+  "empty.playlists": "עדיין אין רשימות השמעה. שמרו את התור כרשימה, או שמרו רשימה שמישהו שיתף אתכם.",
+  "empty.saved": "עדיין אין נקודות שמורות.",
+  "empty.notes": "עדיין אין הערות. בחדר ההאזנה אפשר להוסיף הערה פרטית בזמן הנוכחי.",
+  "empty.history": "עדיין לא נשמע דבר.",
+  "empty.downloads": "לא הורד דבר להאזנה ללא חיבור.",
+
+  "item.from": "מ־{start}",
+  "item.range": "{start}–{end}",
+  "item.at": "ב־{t}",
+  "item.progress": "{t} מתוך {duration}",
+  "item.chapters": { one: "{count} פרק הסתיים", other: "{count} פרקים הסתיימו" },
+  "item.count": { one: "{count} פריט", other: "{count} פריטים" },
+  "item.open": "פתיחה בחדר ההאזנה",
+  "item.size": "{mb} MB",
+  "item.partial": "הורד בחלקו",
+
+  "action.play": "השמעה",
+  "action.playAll": "השמעת הכול",
+  "action.resume": "המשך",
+  "action.addToQueue": "הוספה לתור",
+  "action.remove": "הסרה",
+  "action.moveUp": "הזזה למעלה",
+  "action.moveDown": "הזזה למטה",
+  "action.next": "הבא",
+  "action.prev": "הקודם",
+  "action.clearQueue": "ניקוי התור",
+  "action.saveAsPlaylist": "שמירה כרשימת השמעה",
+  "action.save": "שמירה",
+  "action.cancel": "ביטול",
+  "action.share": "שיתוף קישור",
+  "action.rename": "שינוי שם",
+  "action.delete": "מחיקה",
+  "action.edit": "עריכה",
+  "action.clearHistory": "ניקוי ההיסטוריה",
+  "action.open": "פתיחה",
+
+  "queue.nowPlaying": "מתנגן כעת",
+  "queue.failed": "לא זמין, דולג",
+  "queue.finished": "התור הסתיים.",
+  "queue.label": "פריט {n}",
+
+  "playlist.name": "שם הרשימה",
+  "playlist.defaultName": "רשימה {date}",
+  "playlist.linkLabel": "קישור לרשימה זו",
+  "playlist.copied": "הקישור הועתק.",
+  "playlist.deleteConfirm": "למחוק את הרשימה „{name}”?",
+  "playlist.notFound": "רשימה זו אינה נמצאת במכשיר זה.",
+
+  "note.label": "הערה",
+
+  "transfer.title": "שמירת עותק",
+  "transfer.lead":
+    "המדף שלכם שמור במכשיר זה בלבד. ייצאו אותו לקובץ כדי לשמור עותק או להעביר אותו למכשיר אחר, ושם ייבאו אותו.",
+  "transfer.export": "ייצוא לקובץ",
+  "transfer.import": "ייבוא מקובץ",
+  "transfer.mode": "בעת הייבוא",
+  "transfer.merge": "מיזוג עם מה שכבר כאן (החדש גובר)",
+  "transfer.replace": "החלפת מה שכאן",
+  "transfer.done": { one: "יובא {count} פריט.", other: "יובאו {count} פריטים." },
+  "transfer.skipped": {
+    one: "לא ניתן היה לקרוא {count} רשומה, והיא דולגה.",
+    other: "לא ניתן היה לקרוא {count} רשומות, והן דולגו.",
+  },
+  "transfer.error.not-json": "קובץ זה אינו ייצוא של המדף שלי.",
+  "transfer.error.wrong-format": "קובץ זה אינו ייצוא של המדף שלי.",
+  "transfer.error.too-large": "קובץ זה גדול מכדי להיות ייצוא של המדף שלי.",
+  "transfer.error.newer-version": "קובץ זה נוצר בגרסה חדשה יותר של האתר. טענו את הדף מחדש ונסו שוב.",
+  "transfer.error.read": "לא ניתן היה לקרוא את הקובץ.",
+  "transfer.erase": "מחיקת המדף שלי במכשיר זה",
+  "transfer.eraseConfirm": "למחוק את כל מה שבמדף שלי במכשיר זה? אי אפשר לבטל זאת.",
+
+  "pl.title": "רשימה ששותפה",
+  "pl.lead": "רשימת נקודות שמישהו שיתף אתכם. דבר אינו נשמר עד שתשמרו אותה.",
+  "pl.invalid": "קישור זה אינו מכיל רשימה. ייתכן שנקטע בעת ההעתקה.",
+  "pl.saved": "נשמר ברשימות שלכם.",
+  "pl.sharedName": "רשימה ששותפה",
+};
+
 export type ShelfT = TFunction<ShelfKey>;
 
 const cache: Partial<Record<UiLang, ShelfT>> = {};
 
 export function shelfT(ui: UiLang): ShelfT {
-  return (cache[ui] ??= createT<ShelfKey>({ en: shelfEn, yi: shelfYi }, ui));
+  return (cache[ui] ??= createT<ShelfKey>({ en: shelfEn, yi: shelfYi, he: shelfHe }, ui));
 }
 
 export function useShelfT(): ShelfT {

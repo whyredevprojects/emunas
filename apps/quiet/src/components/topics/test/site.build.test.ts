@@ -1,7 +1,7 @@
 /**
- * C2.2 acceptance on built pages: runs `corpus:build` (the repo's `data/` when present, else the
- * corpus package's mini fixture) into a temporary `.corpus/`, builds the Quiet site against it and
- * checks the static HTML of the topic index and the calendar's cross-line:
+ * C2.2 acceptance on built pages: the repo's `data/` through `corpus:build` and the Quiet site build
+ * (the shared build of test/site-builds.ts); checks the static HTML of the topic index and the
+ * calendar's cross-line:
  *
  * - one topic page per edition for every topic the layer gives a Quiet page (207 at full corpus,
  *   or the layer's count), an `all/` page for each gateway, and the tree page;
@@ -16,12 +16,8 @@
  *   internal link resolves (names and sources links: to an entry the layer gives a Quiet page);
  *   nothing from transcripts.
  */
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
-import { createRequire } from "node:module";
-import { tmpdir } from "node:os";
-import { dirname, join } from "node:path";
-import { fileURLToPath } from "node:url";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { join } from "node:path";
 import type { OccasionsFile } from "@emunas/corpus/aggregate";
 import type {
   CorpusIndex,
@@ -34,48 +30,12 @@ import type {
   LayerWork,
   PublicShiur,
 } from "@emunas/corpus/public";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { astroBuild } from "../../../../test/astro-build.ts";
+import { describe, expect, inject, it } from "vitest";
+import { EDS } from "../../../lib/edition.ts";
 
-const require = createRequire(import.meta.url);
-const here = dirname(fileURLToPath(import.meta.url));
-const app = join(here, "..", "..", "..", "..");
-const repo = join(app, "..", "..");
-const EDS = ["yi", "en"] as const;
-
-let work = "";
-let corpus = "";
-let dist = "";
-let useReal = false;
+const { corpus, dist } = inject("quietSite");
 
 const readJson = <T,>(p: string): T => JSON.parse(readFileSync(p, "utf8")) as T;
-
-beforeAll(() => {
-  work = mkdtempSync(join(tmpdir(), "quiet-topics-site-"));
-  corpus = join(work, ".corpus");
-  dist = join(work, "dist");
-  const realData = join(repo, "data");
-  const mini = join(repo, "packages", "corpus", "test", "fixtures", "mini");
-  useReal = existsSync(join(realData, "derived", "corpus", "topics.json")) && existsSync(join(realData, "derived", "ingest.json"));
-  const args = [
-    require.resolve("tsx/cli"),
-    join(repo, "packages", "corpus", "src", "cli.ts"),
-    "--data-dir",
-    useReal ? realData : join(mini, "data"),
-    "--out",
-    corpus,
-    ...(useReal ? [] : ["--policy-dir", join(mini, "site-policy")]),
-  ];
-  const c = spawnSync(process.execPath, args, { cwd: repo, encoding: "utf8", env: { ...process.env, INIT_CWD: repo, EMUNAS_DEPLOY: "" } });
-  if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
-  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
-  if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout.slice(-4000)}\n${b.stderr.slice(-4000)}`);
-}, 300_000);
-
-afterAll(() => {
-  if (work) rmSync(work, { recursive: true, force: true });
-});
-
 const layerFile = <T,>(name: string): T => readJson<T>(join(corpus, "layer", name));
 const page = (path: string): string => readFileSync(join(dist, path, "index.html"), "utf8");
 const exists = (path: string): boolean => existsSync(join(dist, path, "index.html"));
@@ -119,7 +79,7 @@ describe("topic pages", () => {
     const info = layerFile<LayerInfo>("layer.json");
     const want = topics.filter((t) => t.pages.quiet).map((t) => t.id).sort();
     expect(want.length).toBe(info.counts.pages.quiet.topics);
-    if (useReal) expect(want.length).toBeGreaterThanOrEqual(200);
+    expect(want.length).toBeGreaterThanOrEqual(200);
     for (const ed of EDS) {
       expect(exists(`${ed}/inyanim`), `${ed} tree`).toBe(true);
       expect(dirs(`${ed}/inyanim`)).toEqual(want);
@@ -191,13 +151,13 @@ describe("topic pages", () => {
           if (!exists(path)) continue;
           const html = mainOf(page(path));
           for (const href of hrefsIn(html)) {
-            const m = /^\/(yi|en)\/shiur\/([^/]+)\/(?:#t=[\d.]+)?$/.exec(href);
+            const m = /^\/(en|yi|he)\/shiur\/([^/]+)\/(?:#t=[\d.]+)?$/.exec(href);
             if (!m) continue;
             expect(visible.has(m[2]!), `${path} → ${href}`).toBe(true);
             expect(status.get(m[2]!), `${path} → ${href}`).toBe("full");
           }
           // a part link points at the start of its section, which is never another speaker's
-          for (const [, id, t, idx] of html.matchAll(/<a class="part-link" href="\/(?:yi|en)\/shiur\/([^/]+)\/#t=([\d.]+)" data-section="(\d+)"/g)) {
+          for (const [, id, t, idx] of html.matchAll(/<a class="part-link" href="\/(?:en|yi|he)\/shiur\/([^/]+)\/#t=([\d.]+)" data-section="(\d+)"/g)) {
             sections++;
             const ch = chapterOf(id!, Number(idx));
             expect(ch, `${path} → ${id} s${idx}`).toBeDefined();
@@ -260,7 +220,7 @@ describe("topic pages", () => {
             const p = href.replace(/#.*$/, "");
             // Names and sources pages are built by their own package (C2.1) from the same layer page
             // flags: a link there must name an entry the layer gives a Quiet page.
-            const entry = /^\/(?:yi|en)\/(people|sources)\/([^/]+)\/$/.exec(p);
+            const entry = /^\/(?:en|yi|he)\/(people|sources)\/([^/]+)\/$/.exec(p);
             if (entry) {
               if (!(entry[1] === "people" ? peoplePages : workPages).has(entry[2]!)) broken.push(`${path} → ${href}`);
               continue;

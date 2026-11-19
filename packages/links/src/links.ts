@@ -60,11 +60,11 @@ export interface Links {
   /** Absolute link to `route` on `site`, or null when it is a corpus entry without a Live page. */
   hrefFor(site: Site, route: Route): string | null;
   /**
-   * `<link rel="alternate" hreflang>` set for a page: both editions plus `x-default`
-   * (the site root). Empty for paths that are not pages.
+   * `<link rel="alternate" hreflang>` set for a page: every edition (`EDS`, in `UI_LANGS` order)
+   * plus `x-default` (the site root). Empty for paths that are not pages.
    */
-  hreflangPair(path: string, site?: Site): HreflangLink[];
-  /** The same page in the other edition / UI language, keeping the time or moment where possible. */
+  hreflangAlternates(path: string, site?: Site): HreflangLink[];
+  /** The same page in edition / UI language `ed`, keeping the time or moment where possible. */
   withEdition(url: string, ed: Ed, site?: Site): string | null;
 }
 
@@ -158,7 +158,7 @@ export function createLinks(options: { readonly hosts: SiteHosts; readonly data?
       const href = hrefFor(site, route, data);
       return href === null ? null : origin(site) + href;
     },
-    hreflangPair(path, site = "quiet") {
+    hreflangAlternates(path, site = "quiet") {
       const route = parse(path, site)?.route;
       if (!route) return [];
       const out: HreflangLink[] = EDS.map((e) => ({

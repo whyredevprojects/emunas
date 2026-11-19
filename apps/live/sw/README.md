@@ -13,15 +13,15 @@ tech-live §4.5 and integration-plan §8 W4.8, as amended by A1 (audio lives on 
 | `build.ts` | `tsx sw/build.ts`: precache list + version hash, Vite bundle into `build/client/sw.js` (runs in `npm run build`) |
 | `client/register.ts` | registers `/sw.js` (production only), reconciles downloads on load |
 | `client/downloads.ts` | download / remove / reconcile a shiur; records through the personal store's `putDownload` |
-| `client/DownloadButton.tsx` | the room's "Download for offline" control (en/yi strings in `client/strings.ts`) |
-| `../public/manifest.webmanifest` | web app manifest (en, with a `translations.yi` block) |
+| `client/DownloadButton.tsx` | the room's "Download for offline" control (en/yi/he strings in `client/strings.ts`) |
+| `../public/manifest.webmanifest` | web app manifest (en, with `translations.yi` and `translations.he` blocks) |
 
 ## Caching
 
 | Request | Strategy | Cache |
 |---|---|---|
 | navigation | network; offline → precached page for the path, else the SPA fallback (`/__spa-fallback`, a build-time copy of `index.html`) | `shell-<hash>` |
-| shell files (`/assets/*`, icons, manifest, `/en/`, `/yi/`, SPA fallback) | precached, cache first | `shell-<hash>` |
+| shell files (`/assets/*`, icons, manifest, `/<ui>/` for every UI language, SPA fallback) | precached, cache first | `shell-<hash>` |
 | `/data/*` | stale-while-revalidate, capped at 300 entries (oldest out); pinned copy as last resort | `data-v1`, `pinned-v1` |
 | media-host audio, not downloaded | **not intercepted** (no `respondWith`): network-only, CDN Range as usual | — |
 | media-host audio, downloaded | from cache; `Range` → `206`, none → `200`, out of range → `416` | `audio-v1` |

@@ -42,7 +42,14 @@ describe("createT under tsc", () => {
   it("a table missing a key fails tsc", () => {
     const result = compile("incomplete-table");
     expect(result.ok).toBe(false);
-    expect(result.output).toMatch(/main\.ts\(5,\d+\): error TS2741/);
+    expect(result.output).toMatch(/main\.ts\(6,\d+\): error TS2741/);
     expect(result.output).toContain('"nav.search"');
+  });
+
+  it("a missing language table fails tsc", () => {
+    const result = compile("missing-language");
+    expect(result.ok).toBe(false);
+    expect(result.output).toMatch(/main\.ts\(7,\d+\): error TS2741/);
+    expect(result.output).toContain("'he'");
   });
 });

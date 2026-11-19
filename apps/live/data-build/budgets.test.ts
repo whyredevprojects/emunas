@@ -2,6 +2,7 @@
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { randomBytes } from "node:crypto";
 import { join } from "node:path";
+import { UI_LANGS } from "@emunas/i18n";
 import { describe, expect, it, vi } from "vitest";
 import {
   APP_BUILD_FILES,
@@ -34,6 +35,8 @@ describe("checkLiveBudgets", () => {
       "shiur/b.json": "{}",
       "writeup/a.en.json": noise(BR_TARGETS.writeup! + 4096),
       "notes.txt": "x",
+      // One Today file per reading language; a single today.json is no contract path.
+      "today.json": "{}",
     });
     const r = checkLiveBudgets({ dataDir: data, clientDir: null, maxFileBytes: 60_000 });
     const kinds = r.findings.map((f) => `${f.kind}:${"file" in f ? f.file : ""}`).sort();
@@ -42,12 +45,13 @@ describe("checkLiveBudgets", () => {
       "br-size:writeup/a.en.json",
       "file-size:shiur/a.json",
       "unknown-file:notes.txt",
+      "unknown-file:today.json",
     ]);
     expect(r.byKind.shiur?.files).toBe(2);
-    expect(r.dataFiles).toBe(4);
+    expect(r.dataFiles).toBe(5);
   });
 
-  it("fires for each corpus-layer budget (plan §4) and for today.json", () => {
+  it("fires for each corpus-layer budget (plan §4) and for each Today file", () => {
     const targets = {
       "topics.json": "topics",
       "topic/hester-panim.json": "topic",
@@ -57,7 +61,9 @@ describe("checkLiveBudgets", () => {
       "story/sugar-sled.json": "story",
       "stories-index.json": "storiesIndex",
       "glossary/ha.json": "glossary",
-      "today.json": "today",
+      "today.en.json": "today",
+      "today.yi.json": "today",
+      "today.he.json": "today",
     } as const;
     const expected = { topics: 8, topic: 24, topicMoments: 24, topicShiurim: 24, thread: 6, story: 6, storiesIndex: 120, glossary: 8, today: 30 };
     for (const [kind, kib] of Object.entries(expected)) expect(BR_TARGETS[kind as keyof typeof BR_TARGETS], kind).toBe(kib * 1024);
@@ -83,7 +89,7 @@ describe("checkLiveBudgets", () => {
     writeFileSync(join(root, "robots.txt"), "");
     const r = checkLiveBudgets({ dataDir: data, publicDir: root, clientDir: join(root, "missing"), maxFiles: 100 });
     // Today + 2 shiurim + 1 person (no entities.json: every entity file counts), per UI language.
-    expect(r.projectedFiles).toBe(3 + 1 + 2 * (1 + 2 + 1) + APP_BUILD_FILES);
+    expect(r.projectedFiles).toBe(3 + 1 + UI_LANGS.length * (1 + 2 + 1) + APP_BUILD_FILES);
     expect(r.findings).toMatchObject([{ kind: "file-count", projected: true, files: r.projectedFiles, limit: 100 }]);
 
     const client = join(tmp(), "client");
@@ -112,7 +118,7 @@ describe("checkLiveBudgets", () => {
       "entity/o/once.json",
       "moments/en-0.json",
     ];
-    expect(projectedPrerender(files)).toBe(2 * (1 + 2 + 1 + 2 + 2 + 1 + 2));
+    expect(projectedPrerender(files)).toBe(UI_LANGS.length * (1 + 2 + 1 + 2 + 2 + 1 + 2));
     const sets: PrerenderSets = {
       works: new Set(["genesis"]),
       people: new Set(["x"]),
@@ -120,7 +126,7 @@ describe("checkLiveBudgets", () => {
       occasions: new Set(["noach", "no-file"]),
     };
     // Today + shiurim a, b + series + genesis + x + noach, per UI language.
-    expect(projectedPrerender(files, sets)).toBe(2 * (1 + 2 + 1 + 1 + 1 + 1));
+    expect(projectedPrerender(files, sets)).toBe(UI_LANGS.length * (1 + 2 + 1 + 1 + 1 + 1));
   });
 
   it("projects the corpus-layer routes: topics, threads, stories with a page; moment pages are data", () => {
@@ -137,7 +143,7 @@ describe("checkLiveBudgets", () => {
       "explore/entities.json",
     ];
     // Today + 2 topics + 1 thread + 2 stories, per UI language.
-    expect(projectedPrerender(files)).toBe(2 * (1 + 2 + 1 + 2));
+    expect(projectedPrerender(files)).toBe(UI_LANGS.length * (1 + 2 + 1 + 2));
     const sets = {
       works: new Set<string>(),
       people: new Set<string>(),
@@ -147,7 +153,7 @@ describe("checkLiveBudgets", () => {
       threads: new Set<string>(),
       stories: new Set(["s"]),
     };
-    expect(projectedPrerender(files, sets)).toBe(2 * (1 + 1 + 0 + 1));
+    expect(projectedPrerender(files, sets)).toBe(UI_LANGS.length * (1 + 1 + 0 + 1));
   });
 });
 

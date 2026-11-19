@@ -4,8 +4,10 @@ import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
 import DocCard from "../components/DocCard.astro";
 import { ARTICLES, fileAt } from "../lib/legacy-files.ts";
-import { CONTACT, EXTERNAL } from "../lib/content.ts";
-import { currentSiteEnv, siteLinks } from "../lib/site-env.ts";
+import Aside from "../components/Aside.astro";
+import { ASIDES, CONTACT, EXTERNAL } from "../lib/content.ts";
+import { siteLinks } from "../lib/langs.ts";
+import { currentSiteEnv } from "../lib/site-env.ts";
 
 const portrait = fileAt("/files/images/portrait.jpg");
 const links = siteLinks(currentSiteEnv().hosts);
@@ -15,8 +17,8 @@ const links = siteLinks(currentSiteEnv().hosts);
   description={'Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath: a short introduction, and two magazine features on his life and impact.'}
 >
   <div class="wrap">
-    <PageHead title="About the Mashgiach" label="About" labelYi="וועגן">
-      <p class="yi-title" lang="yi" dir="rtl">דער משגיח</p>
+    <PageHead title="About the Mashgiach" label="About" labelAside={ASIDES.about}>
+      <Aside text={ASIDES.mashgiach} layout="block" as="p" class="title-aside" />
     </PageHead>
     <div class="page-body page-grid">
       <div class="prose">

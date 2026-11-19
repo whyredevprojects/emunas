@@ -16,7 +16,7 @@ import { experimental_AstroContainer as AstroContainer } from "astro/container";
 import type { CorpusKind } from "@emunas/links";
 import type { PublicShiur } from "@emunas/corpus/public";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import type { Ed } from "../../../lib/edition.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
 import ShiurPage from "../ShiurPage.astro";
 import { loadShiurCorpus, type ShiurCorpus } from "../corpus.ts";
 import { topicLine, TOPIC_LINE_MAX, TOPIC_LINE_MIN_SALIENCE } from "../refs.ts";
@@ -27,7 +27,6 @@ const repo = resolve(here, "../../../../../..");
 const corpusPkg = join(repo, "packages/corpus");
 const realData = join(repo, "data");
 const hasRealData = existsSync(join(realData, "derived", "corpus", "index.json"));
-const EDS: readonly Ed[] = ["en", "yi"];
 
 let work = "";
 let container: AstroContainer;
@@ -114,10 +113,10 @@ function checkPage(corpus: ShiurCorpus, ed: Ed, shiur: PublicShiur, html: string
   }
   // The topic line is the only corpus line: no people, terms, sources or stories on the page.
   expect([...html.matchAll(/data-corpus="([a-z]+)"/g)].map((m) => m[1])).toEqual(line.length > 0 ? ["topics"] : []);
-  expect(html).not.toMatch(/data-person=|data-story-person|href="\/(en|yi)\/(erachim|people|sources|stories)\//);
+  expect(html).not.toMatch(/data-person=|data-story-person|href="\/(en|yi|he)\/(erachim|people|sources|stories)\//);
   // The previous/next line is catalog-only: no corpus entry link in it.
   const nav = /<nav class="prev-next"[\s\S]*?<\/nav>/.exec(html)?.[0] ?? "";
-  expect(nav).not.toMatch(/href="\/(en|yi)\/(inyanim|erachim|people|sources|stories)\//);
+  expect(nav).not.toMatch(/href="\/(en|yi|he)\/(inyanim|erachim|people|sources|stories)\//);
 }
 
 describe("the shiur page on the mini corpus layer", () => {
@@ -182,7 +181,7 @@ describe.runIf(hasRealData)("the shiur page on the real corpus layer", () => {
     expect(topicLinks).toBeGreaterThan(1000);
   });
 
-  it("renders a sample of pages in both editions with only built entry links", async () => {
+  it("renders a sample of pages in every edition with only built entry links", async () => {
     const rows = corpus.index.shiurim.filter((_, i) => i % 40 === 0);
     for (const row of rows) {
       const shiur = corpus.shiur(row.id);

@@ -6,7 +6,10 @@ import {
   ENTITY_TYPES,
   parseMomentsNdjson,
   RowError,
+  ROW_LANGS,
   rowLangs,
+  rowText,
+  titlesJson,
   toMomentRecord,
   toVectorUnits,
   utf8Bytes,
@@ -16,6 +19,8 @@ import {
 } from "../src/rows.ts";
 import { ENTITY_TYPES as WORKER_ENTITY_TYPES, parseVectorId, vectorIdFor as workerVectorIdFor } from "../../src/contract.ts";
 import { splitSql } from "../src/sql.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { normalizeHe } from "@emunas/normalize/fold";
 import { miniMoments } from "./helpers.ts";
 
 const line = (o: object) => JSON.stringify(o);
@@ -67,6 +72,31 @@ describe("row mapping", () => {
       if (r.kind === "writeup") expect(langs).toEqual([r.body_en !== null ? "en" : "yi"]);
       else expect(langs.length).toBeGreaterThan(0);
     }
+  });
+
+  it("languages come from UI_LANGS and search-core's row fields, never a list of their own", () => {
+    expect(ROW_LANGS.length).toBeGreaterThanOrEqual(2);
+    expect(ROW_LANGS).toEqual(UI_LANGS.filter((l) => (MOMENT_ROW_FIELDS as readonly string[]).includes(`title_${l}`) && (MOMENT_ROW_FIELDS as readonly string[]).includes(`body_${l}`)));
+    const r = rows.find((x) => x.kind === "section")!;
+    for (const l of ROW_LANGS) {
+      const raw = r as unknown as Record<string, unknown>;
+      expect(rowText(r, "title", l)).toBe(raw[`title_${l}`]);
+      expect(rowText(r, "body", l)).toBe(raw[`body_${l}`]);
+    }
+  });
+
+  it("moments.titles: a JSON object with the display title of every language that has one", () => {
+    const r = rows.find((x) => x.kind === "section")!;
+    const titles = JSON.parse(toMomentRecord(r).moment.titles) as Record<string, string>;
+    expect(Object.keys(titles).every((k) => (UI_LANGS as readonly string[]).includes(k))).toBe(true);
+    for (const l of ROW_LANGS) {
+      const t = rowText(r, "title", l);
+      expect(titles[l]).toBe(t ? normalizeHe(t) : undefined);
+    }
+    expect(Object.keys(titles).length).toBeGreaterThan(0);
+    const noTitles = { ...r } as unknown as Record<string, unknown>;
+    for (const l of ROW_LANGS) noTitles[`title_${l}`] = null;
+    expect(titlesJson(noTitles as unknown as typeof r)).toBe("{}");
   });
 
   it("FTS text is search-core momentSearchText; display text keeps the original spelling", () => {

@@ -21,6 +21,7 @@ import { fileURLToPath } from "node:url";
 import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { EDS, dirOf, type Ed } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = resolve(app, "../..");
@@ -151,7 +152,7 @@ async function open(path: string, opts: OpenOpts = {}): Promise<Page> {
   return page;
 }
 
-const pages = (ed: "yi" | "en") => [
+const pages = (ed: Ed) => [
   `/${ed}/`,
   `/${ed}/contents/`,
   `/${ed}/section/zmanim/`,
@@ -162,12 +163,12 @@ const pages = (ed: "yi" | "en") => [
   `/${ed}/series/emunah-en/`,
 ];
 
-describe.each(["yi", "en"] as const)("%s edition", (ed) => {
+describe.each(EDS)("%s edition", (ed) => {
   it("renders every catalog page with JavaScript off: lang/dir, one h1, a main", async () => {
     for (const path of pages(ed)) {
       const page = await open(path, { js: false });
       expect(await page.getAttribute("html", "lang"), path).toBe(ed);
-      expect(await page.getAttribute("html", "dir"), path).toBe(ed === "yi" ? "rtl" : "ltr");
+      expect(await page.getAttribute("html", "dir"), path).toBe(dirOf(ed));
       expect(await page.locator("h1").count(), path).toBe(1);
       expect(await page.locator("main#main").count(), path).toBe(1);
       await page.context().close();
@@ -315,7 +316,7 @@ describe("built output", () => {
     expect(html.length).toBeGreaterThan(60);
     const missing: string[] = [];
     for (const f of html) {
-      for (const m of readFileSync(f, "utf8").matchAll(/href="(\/(?:yi|en)\/(?:contents|section|series)\/[^"#?]*)/g)) {
+      for (const m of readFileSync(f, "utf8").matchAll(/href="(\/(?:en|yi|he)\/(?:contents|section|series)\/[^"#?]*)/g)) {
         const target = join(outDir, m[1]!, "index.html");
         if (!existsSync(target)) missing.push(`${f.slice(outDir.length)} → ${m[1]}`);
       }

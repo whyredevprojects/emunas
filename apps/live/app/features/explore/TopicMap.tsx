@@ -19,6 +19,7 @@ import { topicChildren } from "./FacetPanel.tsx";
 import type { TopicNode } from "./live-data.ts";
 import { exploreT } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -67,7 +68,7 @@ export function TopicMap({ tree, ui, browseHref, filterHref }: TopicMapProps): J
       <CorpusLabel ui={ui} reviewed={false} className={s.aiNote} />
       <ul className={s.tiles}>
         {roots.map((n) => {
-          const name = n.label[ui];
+          const name = labelText(n.label, ui);
           const he = hebrewName(n.label, ui);
           const kids = byCount(children.get(n.id) ?? []);
           const expanded = open.has(n.id);
@@ -75,7 +76,7 @@ export function TopicMap({ tree, ui, browseHref, filterHref }: TopicMapProps): J
           return (
             <li key={n.id} className={s.tile} data-tile={n.id} data-count={n.count} data-open={expanded ? "true" : "false"}>
               <button type="button" className={s.tileButton} aria-expanded={expanded} aria-controls={panelId} onClick={() => toggle(n.id)}>
-                <Text as="span" className={s.tileName} value={name} lang={ui} />
+                <Text as="span" className={s.tileName} value={n.label} lang={ui} />
                 {he ? <Text as="span" className={s.tileHe} value={he} lang="he" /> : null}
                 <span className={s.tileCount}>{formatNumber(n.count, ui)}</span>
               </button>
@@ -88,7 +89,7 @@ export function TopicMap({ tree, ui, browseHref, filterHref }: TopicMapProps): J
                         return (
                           <li key={c.id} data-child={c.id} data-count={c.count}>
                             <Link className={s.tileChild} to={paths.topic(ui, c.id)}>
-                              <Text value={c.label[ui]} lang={ui} />
+                              <Text value={c.label} lang={ui} />
                               {che ? (
                                 <>
                                   {" "}

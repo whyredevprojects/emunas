@@ -1,24 +1,30 @@
 /**
- * The About texts (W5.3): a part is an approved file under `content/about/{ed}/` in both editions,
- * or a draft under `content/about-drafts/{ed}/` in both editions, or both: an approved part may
- * have a revision waiting for the owner. Drafts stay marked DRAFT and are never in the folder the
- * About page reads, so an unapproved part is left off the page and an approved one keeps its
+ * The About texts (W5.3): a part is an approved file under `content/about/{ed}/` in both source
+ * editions (en, yi), or a draft under `content/about-drafts/{ed}/` in both, or both: an approved
+ * part may have a revision waiting for the owner. A translated edition (he) has every part either
+ * approved or drafted in its own folder, never both; until a part is approved there, the page shows
+ * the next language along `CONTENT_FALLBACK`. Drafts stay marked DRAFT and are never in the folder
+ * the About page reads, so an unapproved part is left off the page and an approved one keeps its
  * approved text (integration-plan §8 W5.3, "No generated text in About").
  */
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { findMetaComments } from "@emunas/corpus-guard";
+import { SOURCE_LANGS, TRANSLATED_LANGS } from "@emunas/i18n";
 import { describe, expect, it } from "vitest";
 import { ABOUT_PARTS } from "../pages/[ed]/about/_strings.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const drafts = join(here, "about-drafts");
 const published = join(here, "about");
-const EDS = ["en", "yi"] as const;
+const EDS = SOURCE_LANGS;
+/** Translated editions: their About texts are translations of the source editions' texts. */
+const TRANSLATED = TRANSLATED_LANGS;
 const PUBLISHED = ABOUT_PARTS.filter((p) => existsSync(join(published, "en", `${p}.md`)));
 /** Parts with a draft: every unpublished part, and revisions of published ones. */
 const DRAFTED = ABOUT_PARTS.filter((p) => existsSync(join(drafts, "en", `${p}.md`)));
+const filesIn = (dir: string): string[] => (existsSync(dir) ? readdirSync(dir).sort() : []);
 const POINTED = /[\u05B0-\u05BD\u05BF\u05C1\u05C2\u05C4\u05C5\u05C7\u05F0-\u05F2]/u;
 
 function frontMatter(text: string): Record<string, string> {
@@ -51,6 +57,29 @@ describe("About drafts", () => {
     for (const ed of EDS) {
       expect(readdirSync(join(drafts, ed)).sort(), ed).toEqual(DRAFTED.map((p) => `${p}.md`).sort());
       expect(readdirSync(join(published, ed)).sort(), ed).toEqual(PUBLISHED.map((p) => `${p}.md`).sort());
+    }
+  });
+
+  it("cover every part in each translated edition, approved or drafted, never both", () => {
+    for (const ed of TRANSLATED) {
+      const done = filesIn(join(published, ed));
+      const draft = filesIn(join(drafts, ed));
+      expect([...done, ...draft].sort(), ed).toEqual(ABOUT_PARTS.map((p) => `${p}.md`).sort());
+      expect(done.filter((f) => draft.includes(f)), ed).toEqual([]);
+      for (const f of draft) {
+        const text = readFileSync(join(drafts, ed, f), "utf8");
+        const fm = frontMatter(text);
+        expect(fm["status"], `${ed}/${f}`).toBe("DRAFT");
+        expect(fm["approvedBy"], `${ed}/${f}`).toBe("null");
+        expect(body(text), `${ed}/${f}`).toMatch(/[\u05D0-\u05EA]/u);
+        expect(body(text), `${ed}/${f}`).not.toMatch(POINTED);
+        expect(findMetaComments(body(text)).map((h) => h.term), `${ed}/${f}`).toEqual([]);
+        const owner = (t: string) => (body(t).match(/\[\[OWNER:/g) ?? []).length;
+        const part = f.replace(/\.md$/, "") as (typeof ABOUT_PARTS)[number];
+        // A translated draft follows the English draft (a revision, where there is one), else the approved text.
+        const enText = readFileSync(join(DRAFTED.includes(part) ? drafts : published, "en", f), "utf8");
+        expect(owner(text), `${ed}/${f}`).toBe(owner(enText));
+      }
     }
   });
 

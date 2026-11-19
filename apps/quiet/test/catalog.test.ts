@@ -37,6 +37,8 @@ import {
   type CatalogRow,
 } from "../src/components/catalog/model.ts";
 import { catalogEn, catalogYi } from "../src/components/catalog/strings.ts";
+import { EDS } from "../src/lib/edition.ts";
+import { pickText } from "@emunas/i18n";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
 const repo = resolve(app, "../..");
@@ -103,7 +105,10 @@ describe("addresses and helpers", () => {
     for (const [key, name] of Object.entries(SECTION_DISPLAY_NAMES)) {
       expect(name.en, key).not.toMatch(/[א-ת]/);
       expect(name.yi, key).toMatch(/[א-ת]/);
+      expect(name.he, key).toMatch(/[א-ת]/);
+      expect(name.he, key).not.toMatch(/ענגליש/);
     }
+    expect(sectionDisplayTitle("pocket-guide-2012:tanya-en", "TANYA ENGLISH", "he")).toBe("ספר התניא (אנגלית)");
   });
 
   it("reads perek numerals as printed", () => {
@@ -167,14 +172,17 @@ describe("catalog models on the mini corpus", () => {
     expect([...seen.values()].every((n) => n === 1)).toBe(true);
   });
 
-  it("shows no AI text on catalog-only rows, and the edition's one-liner on rows with notes", () => {
-    for (const ed of ["yi", "en"] as const) {
+  it("shows no AI text on catalog-only rows, and the edition's one-liner (else the fallback's) on rows with notes", () => {
+    for (const ed of EDS) {
       for (const r of corpus.index.shiurim) {
         const row = catalogRow(r, ed, corpus.audio);
         if (r.status !== "full") expect(row.oneLiner, r.id).toBeNull();
-        else expect(row.oneLiner, r.id).toBe(r.oneLiner![ed]);
+        else expect(row.oneLiner, r.id).toEqual(pickText(r.oneLiner!, ed));
       }
     }
+    // No Hebrew translation in the mini corpus: the Hebrew edition shows the Yiddish, marked as Yiddish.
+    const full = corpus.index.shiurim.find((r) => r.status === "full")!;
+    expect(catalogRow(full, "he", corpus.audio).oneLiner).toMatchObject({ lang: "yi", dir: "rtl", fallback: true });
     expect(corpus.index.shiurim.some((r) => r.status === "catalog-only")).toBe(true);
     expect(corpus.index.shiurim.some((r) => r.status === "full")).toBe(true);
   });
@@ -270,7 +278,7 @@ describe("this week", () => {
     expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:chanukah:soon"]);
     expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:soon"]);
     for (const d of w.days) for (const k of d.blocks) expect(w.blocks.has(k), `${d.date} ${k}`).toBe(true);
-    for (const ed of ["en", "yi"] as const) {
+    for (const ed of EDS) {
       const labels = thisWeekWindow(corpus, ed, "2026-11-19").days.map((d) => d.hebrewDate);
       expect(new Set(labels).size, ed).toBe(labels.length);
     }
@@ -357,7 +365,7 @@ describe("catalog models on today's data", () => {
   });
 
   it("catalog-only rows carry no AI text on any section or series page", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const rows: CatalogRow[] = [
         ...sectionSummaries(corpus, ed).flatMap((s) => sectionModel(corpus, s.slug, ed)!.rows),
         ...seriesSummaries(corpus, ed).flatMap((s) => seriesModel(corpus, s.id, ed)!.rows),
@@ -413,7 +421,7 @@ describe("CatalogTable", () => {
     years: [5743],
     duration: 2700,
     playable: true,
-    oneLiner: "The Mashgiach explains the lights.",
+    oneLiner: { text: "The Mashgiach explains the lights.", lang: "en", dir: "ltr", fallback: false },
   };
 
   it("renders a captioned table with scoped headers, the title as a bdi run, and the notes cell", async () => {
@@ -425,7 +433,11 @@ describe("CatalogTable", () => {
     expect(html).not.toContain("col-num");
     expect(html).toMatch(/<th scope="row"/);
     expect(html).toContain('<a href="/en/shiur/yi-x-01/"><bdi lang="yi" dir="rtl">זמן התחלת התנוצצות</bdi></a>');
-    expect(html).toContain("The Mashgiach explains the lights.");
+    expect(html).toContain('<td class="col-notes">The Mashgiach explains the lights.</td>');
+    // a fallback one-liner carries its own language
+    const yiLine: CatalogRow = { ...base, oneLiner: { text: "א שורה.", lang: "yi", dir: "rtl", fallback: true } };
+    const he = await container.renderToString(CatalogTable, { props: { ed: "he", rows: [yiLine], caption: "x", notes: true } });
+    expect(he).toContain('<td class="col-notes" lang="yi" dir="rtl">א שורה.</td>');
     expect(html).toContain('data-year="5743"');
     expect(html).not.toContain("no-recording");
   });
@@ -435,7 +447,7 @@ describe("CatalogTable", () => {
     const html = await container.renderToString(CatalogTable, {
       props: { ed: "yi", rows: [row], caption: "x", notes: true },
     });
-    expect(html).toMatch(/<td class="col-notes" lang="yi"><\/td>/);
+    expect(html).toMatch(/<td class="col-notes"><\/td>/);
     expect(html).toContain("no-recording");
     expect(html).toContain("קיין רעקארדירונג אויפן אינטערנעט");
     expect(html).toMatch(/<th scope="col"[^>]*>קעפל<\/th>/);

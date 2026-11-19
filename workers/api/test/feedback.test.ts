@@ -1,5 +1,6 @@
 import { env } from "cloudflare:workers";
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from "vitest";
+import { UI_LANGS } from "@emunas/i18n";
 import { ALLOWED_KEYS } from "../src/contract.ts";
 import { SITEVERIFY_URL } from "../src/turnstile.ts";
 import { sha256Hex } from "../src/feedback.ts";
@@ -91,6 +92,16 @@ describe("POST /api/feedback", () => {
     expect(res.status).toBe(202);
   });
 
+  it("accepts a report from every interface language (UI_LANGS) and stores its ui", async () => {
+    for (const ui of UI_LANGS) {
+      const res = await post({ target: { shiurId: "en-misc-01" }, reason: "other", ui, rev: "r", turnstile: "t" }, {}, `198.51.100.${40 + UI_LANGS.indexOf(ui)}`);
+      expect(res.status, ui).toBe(202);
+      const { id } = (await res.json()) as { id: string };
+      const row = await env.DB_FEEDBACK.prepare("SELECT ui FROM feedback WHERE id = ?").bind(id).first<{ ui: string }>();
+      expect(row?.ui).toBe(ui);
+    }
+  });
+
   it("answers 403 when Turnstile rejects the token and stores nothing", async () => {
     siteverify.reply = () => Response.json({ success: false, "error-codes": ["invalid-input-response"] });
     const { status, body } = await getJson(e, "/api/feedback", {
@@ -118,6 +129,7 @@ describe("POST /api/feedback", () => {
       [{ ...valid, text: "bell\u0007" }, "text"],
       [{ ...valid, reason: "spam" }, "reason"],
       [{ ...valid, ui: "fr" }, "ui"],
+      [{ ...valid, ui: "HE" }, "ui"],
       [{ ...valid, rev: "" }, "rev"],
       [{ ...valid, rev: "r".repeat(65) }, "rev"],
       [{ ...valid, audio: "remastered" }, "audio"],
@@ -160,6 +172,11 @@ describe("rate limiting (real RATE binding, 30 requests / 10 s per client)", () 
   it("answers 429 after 30 requests from one address, while others still pass", async () => {
     const limited = makeEnv({ rate: env.RATE });
     const ip = `192.0.2.${Math.floor(Math.random() * 200) + 1}`;
+    // The binding's windows are aligned to the wall clock (miniflare: epoch = floor(now / period)),
+    // so a burst that straddles a boundary gets its count reset and request 31 passes. Start the
+    // burst at the beginning of a window so all 31 requests fall in the same one.
+    const msLeft = 10_000 - (Date.now() % 10_000);
+    if (msLeft < 6_000) await new Promise((resolve) => setTimeout(resolve, msLeft + 50));
     const statuses: number[] = [];
     for (let i = 0; i < 31; i++) {
       const res = await call(limited, "/api/feedback", {
@@ -177,7 +194,7 @@ describe("rate limiting (real RATE binding, 30 requests / 10 s per client)", () 
       body: JSON.stringify(valid),
     });
     expect(other.status).toBe(202);
-  });
+  }, 20_000);
 
   it("search is rate limited too, with Retry-After", async () => {
     let n = 0;

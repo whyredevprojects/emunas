@@ -10,7 +10,7 @@ self-hosted, subset woff2 fonts. Theme, components and layout stay in each app.
 
 ```ts
 import { preloadFonts, fontManifest, colors } from "@emunas/tokens";
-preloadFonts("serif", "yi"); // ["frank-ruhl-libre-hebrew.woff2"]: only the edition's body face
+preloadFonts("serif", "he"); // ["frank-ruhl-libre-hebrew.woff2"]: only the edition's body face
 ```
 
 ## Tokens (`src/tokens.ts` → `css/tokens.css`)
@@ -18,7 +18,10 @@ preloadFonts("serif", "yi"); // ["frank-ruhl-libre-hebrew.woff2"]: only the edit
 `--step--2 … --step-6` (type scale, rem), `--leading-*`, `--weight-*`, `--measure-*`,
 `--space-0 … --space-4xl`, `--radius-*`, `--rule-*`, `--duration-*`, `--ease-standard`,
 `--font-serif-latin|serif-hebrew|sans-latin|sans-hebrew`, and `--font-text` / `--font-ui` /
-`--leading-text`, which switch to the Hebrew stacks under `:lang(yi)` / `:lang(he)`.
+`--leading-text`, which switch to the Hebrew stacks under `:lang(yi)` / `:lang(he)`. Which
+languages those are comes from `LANG_SCRIPT` (one script per `UiLang` of `@emunas/i18n`; Yiddish
+and Hebrew are `hebrew`), which also picks the face `preloadFonts` returns; a new interface
+language must be given its script there (tsc reports it).
 
 Colour roles `--color-{paper, paper-sunk, surface, ink, ink-muted, ink-faint, rule, rule-strong,
 accent, accent-hover, on-accent, focus, highlight, now-playing, danger, success}` for light and dark:

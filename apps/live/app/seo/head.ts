@@ -1,13 +1,13 @@
 /**
  * The SEO `<head>` tags of a Live page (integration-plan §2.3, W4.5): `robots` noindex on app-only
  * pages, `<link rel="canonical">` to the Quiet equivalent (never a `listen.*` URL), `hreflang`
- * alternates for the two UI languages, description and OpenGraph/Twitter tags for share previews.
+ * alternates for every UI language (`UI_LANGS`) and `x-default`, description and OpenGraph/Twitter tags for share previews.
  *
  * Pure and browser-safe. At build time the root loader computes `SeoPage` (with the `.corpus`
  * lookups); on the client, pages without one (client navigation, SPA fallback) get robots,
  * canonical and hreflang from the path alone.
  */
-import type { UiLang } from "@emunas/i18n";
+import { otherUiLangs, type UiLang } from "@emunas/i18n";
 import { createLinks, type HreflangLink, type SiteHosts, type Links } from "@emunas/links";
 import { tFor } from "../i18n/index.ts";
 import type { PageText } from "./model.ts";
@@ -22,7 +22,7 @@ export interface SeoPage {
   ui: UiLang;
   title: string;
   description: string;
-  titleLang: "en" | "yi" | null;
+  titleLang: UiLang | null;
   /** Absolute Quiet URL, or null without configured hosts. */
   canonical: string | null;
   alternates: HreflangLink[];
@@ -83,7 +83,7 @@ export function buildSeoPage(pathname: string, text: PageText, links: Links | nu
     titleLang: text.titleLang,
     // No canonical for a corpus entry without a Quiet page, nor for a thread (D8).
     canonical: links && text.noindex !== true && page.kind !== "thread" ? links.canonicalFor(links.hosts.live + path) : null,
-    alternates: links && indexable ? links.hreflangPair(path, "live") : [],
+    alternates: links && indexable ? links.hreflangAlternates(path, "live") : [],
     url: links ? links.hosts.live + path : null,
     noindex,
   };
@@ -116,12 +116,11 @@ export function headTags(pathname: string, data: RootSeoData["seo"] | null | und
   const canonical = page ? page.canonical : links && info.kind !== "thread" ? links.canonicalFor(links.hosts.live + path) : null;
   if (canonical) tags.push({ tag: "link", rel: "canonical", href: canonical });
 
-  const alternates = indexable ? (page ? page.alternates : links ? links.hreflangPair(path, "live") : []) : [];
+  const alternates = indexable ? (page ? page.alternates : links ? links.hreflangAlternates(path, "live") : []) : [];
   for (const a of alternates) tags.push({ tag: "link", rel: "alternate", hrefLang: a.hreflang, href: a.href });
 
   if (page) {
     const description = clip(page.description);
-    const other: UiLang = ui === "en" ? "yi" : "en";
     tags.push({ tag: "meta", name: "description", content: description });
     tags.push({ tag: "meta", property: "og:site_name", content: tFor(ui)("site.name") });
     tags.push({ tag: "meta", property: "og:type", content: page.kind === "shiur" ? "article" : "website" });
@@ -129,7 +128,7 @@ export function headTags(pathname: string, data: RootSeoData["seo"] | null | und
     tags.push({ tag: "meta", property: "og:description", content: description });
     if (page.url) tags.push({ tag: "meta", property: "og:url", content: page.url });
     tags.push({ tag: "meta", property: "og:locale", content: seoStrings[ui].locale });
-    tags.push({ tag: "meta", property: "og:locale:alternate", content: seoStrings[other].locale });
+    for (const other of otherUiLangs(ui)) tags.push({ tag: "meta", property: "og:locale:alternate", content: seoStrings[other].locale });
     tags.push({ tag: "meta", name: "twitter:card", content: "summary" });
     tags.push({ tag: "meta", name: "twitter:title", content: clip(page.title, 120) });
     tags.push({ tag: "meta", name: "twitter:description", content: description });

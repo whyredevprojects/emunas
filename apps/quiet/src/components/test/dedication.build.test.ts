@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../../../test/astro-build.ts";
 import { DEDICATION } from "../dedication.ts";
+import { EDS } from "../../lib/edition.ts";
 
 const require = createRequire(import.meta.url);
 const here = dirname(fileURLToPath(import.meta.url));
@@ -73,7 +74,7 @@ describe("the dedication on every built Quiet page", () => {
     const files = htmlFiles();
     expect(files).toContain("index.html");
     expect(files).toContain("404.html");
-    for (const ed of ["yi", "en"]) {
+    for (const ed of EDS) {
       expect(files).toContain(`${ed}/index.html`);
       expect(files.some((f) => f.startsWith(`${ed}/shiur/`))).toBe(true);
     }

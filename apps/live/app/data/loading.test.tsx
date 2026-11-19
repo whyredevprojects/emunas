@@ -2,8 +2,9 @@
 /**
  * Loading rules (corpus-wave-plan §4, concept-live-corpus G, C1.7), through the real route tree over
  * the committed fixtures with a fetch spy:
- * - Today renders from `today.json` alone: no `corpus.json`, `facets.json`, topic tree, stories
- *   index, glossary shard or Explore file is requested (also with progress in the store);
+ * - Today renders from its reading language's Today file (`today.<lang>.json`) alone: no
+ *   `corpus.json`, `facets.json`, topic tree, stories index, glossary shard or Explore file is
+ *   requested (also with progress in the store), and no other language's Today file;
  * - the listening room renders from its shiur file alone, and its Related tab has no "counterpart in
  *   the other language" item (F.1);
  * - the corpus-entry route stubs load one file each and carry the AI label once; an unknown id is
@@ -91,17 +92,29 @@ async function renderAt(path: string) {
   return { router, ...utils };
 }
 
-describe("Today loads from today.json alone", () => {
-  it("first paint requests today.json and the moment's shiur file, nothing corpus-wide", async () => {
+describe("Today loads from its language's Today file alone", () => {
+  it.each(["en", "yi", "he"] as const)(
+    "first paint (%s) requests that language's Today file and the moment's shiur file, nothing corpus-wide",
+    async (ui) => {
+      const { container } = await renderAt(`/${ui}/?date=2026-10-14`);
+      await waitFor(() => expect(container.querySelector("[data-testid=corpus-counter]")).not.toBeNull());
+      await waitFor(() => expect(container.querySelector("[data-moment] [lang]")).not.toBeNull());
+      await settle();
+      expect(forbidden()).toEqual([]);
+      expect(requested.filter((p) => !p.startsWith("/data/shiur/"))).toEqual([`/data/today.${ui}.json`]);
+      // The parsha row renders from the cards in the Today file.
+      expect(container.querySelector('[data-parsha="noach"] a[data-shiur]')).not.toBeNull();
+    },
+  );
+
+  it("a reading-language switch loads that language's Today file", async () => {
     const { container } = await renderAt("/en/?date=2026-10-14");
     await waitFor(() => expect(container.querySelector("[data-testid=corpus-counter]")).not.toBeNull());
-    await waitFor(() => expect(container.querySelector("[data-moment] [lang]")).not.toBeNull());
+    expect(requested).not.toContain("/data/today.he.json");
+    act(() => settingsStore.getState().setRead("he"));
     await settle();
-    expect(requested).toContain("/data/today.json");
-    expect(forbidden()).toEqual([]);
-    expect(requested.filter((p) => !p.startsWith("/data/shiur/") && p !== "/data/today.json")).toEqual([]);
-    // The parsha row renders from the cards in today.json.
-    expect(container.querySelector('[data-parsha="noach"] a[data-shiur]')).not.toBeNull();
+    await waitFor(() => expect(container.querySelector("[data-testid=corpus-counter]")).not.toBeNull());
+    expect(requested.filter((p) => p.startsWith("/data/today."))).toEqual(["/data/today.en.json", "/data/today.he.json"]);
   });
 
   it("Continue loads only the heard shiurim's files", async () => {

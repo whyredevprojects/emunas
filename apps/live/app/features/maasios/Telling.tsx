@@ -4,7 +4,7 @@
  * in that shiur's file and is loaded only when the listener opens it: the library and the story page
  * never fetch a retelling on their own.
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
 import { formatHebrewYear, languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useId, useState, type JSX } from "react";
@@ -27,9 +27,9 @@ export interface TellingFromShiur {
   title: string;
   lang: Ed;
   year: number | null;
-  chapterTitle: L | null;
+  chapterTitle: LocalizedText | null;
   /** The shiur's own retelling (null when the shiur has none for this moment). */
-  retelling: L | null;
+  retelling: LocalizedText | null;
 }
 
 export function tellingFromShiur(file: Pick<ShiurFile, "catalog" | "lang" | "years" | "notes">, ref: TellingRef): TellingFromShiur {
@@ -74,7 +74,7 @@ export function TellingLine({
   at,
 }: {
   ui: UiLang;
-  telling: { year: number | null; lang: Ed; title: string; chapterTitle: L | null };
+  telling: { year: number | null; lang: Ed; title: string; chapterTitle: LocalizedText | null };
   at: TellingRef;
 }): JSX.Element {
   const mt = maasiosT(ui);
@@ -90,7 +90,7 @@ export function TellingLine({
   );
 }
 
-function Retelling({ state, read, ui }: { state: Loaded; read: Ed; ui: UiLang }): JSX.Element | null {
+function Retelling({ state, read, ui }: { state: Loaded; read: UiLang; ui: UiLang }): JSX.Element | null {
   const mt = maasiosT(ui);
   if (state.status === "loading") return <p className={s.status}>{mt("telling.loading")}</p>;
   if (state.status === "error") return <p className={s.status}>{mt("telling.error")}</p>;
@@ -100,7 +100,7 @@ function Retelling({ state, read, ui }: { state: Loaded; read: Ed; ui: UiLang })
 }
 
 /** "As told in this shiur": the telling's own retelling, collapsed until asked for. */
-export function OwnRetelling({ at, ui, read }: { at: TellingRef; ui: UiLang; read: Ed }): JSX.Element {
+export function OwnRetelling({ at, ui, read }: { at: TellingRef; ui: UiLang; read: UiLang }): JSX.Element {
   const mt = maasiosT(ui);
   const [open, setOpen] = useState(false);
   const state = useTelling(at, open);
@@ -121,7 +121,7 @@ export function OwnRetelling({ at, ui, read }: { at: TellingRef; ui: UiLang; rea
  * A story told once, opened in place on its card: the telling's line, its retelling and a link to
  * the moment (the story has no page of its own; its address is the moment in the shiur).
  */
-export function SingleTelling({ at, ui, read }: { at: TellingRef; ui: UiLang; read: Ed }): JSX.Element {
+export function SingleTelling({ at, ui, read }: { at: TellingRef; ui: UiLang; read: UiLang }): JSX.Element {
   const mt = maasiosT(ui);
   const [open, setOpen] = useState(false);
   const state = useTelling(at, open);

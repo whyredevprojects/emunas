@@ -6,6 +6,7 @@
  */
 import type { AudioRecording } from "./audio.ts";
 import type { CatalogHeaderShiur } from "./catalog.ts";
+import type { Ed } from "./edition.ts";
 
 export const SAMPLE_MEDIA_ORIGIN = "https://media.example.org";
 
@@ -87,4 +88,12 @@ export const sampleNotes = {
       { t: 2100, title: "דער תירוץ, אינעם צווייטן טייל" },
     ],
   },
-} as const;
+  he: {
+    oneLiner: "דוגמה: המשגיח מבאר כיצד למקום תורה יש קדושה משלו.",
+    outline: [
+      { t: 0, title: "פתיחה" },
+      { t: 754, title: "הקושיא מן הפרשה" },
+      { t: 2100, title: "התירוץ, בחלק השני" },
+    ],
+  },
+} as const satisfies Record<Ed, { readonly oneLiner: string; readonly outline: readonly { readonly t: number; readonly title: string }[] }>;

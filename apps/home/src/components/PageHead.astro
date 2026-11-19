@@ -1,20 +1,23 @@
 ---
 /** Breadcrumb and title block of an interior page. */
+import Aside from "./Aside.astro";
+import type { Asides } from "../lib/langs.ts";
+
 interface Props {
   title: string;
   label: string;
-  /** Short Yiddish label next to the English one. */
-  labelYi?: string;
+  /** The short label in the other languages, beside the English one. */
+  labelAside?: Asides;
   intro?: string;
 }
 
-const { title, label, labelYi, intro } = Astro.props;
+const { title, label, labelAside, intro } = Astro.props;
 ---
 <nav class="crumbs" aria-label="Breadcrumb">
   <ol><li><a href="/">Home</a></li><li aria-current="page">{title}</li></ol>
 </nav>
 <div class="page-head">
-  <span class="label">{label}{labelYi && <> &middot; <span lang="yi" dir="rtl">{labelYi}</span></>}</span>
+  <span class="label">{label}{labelAside && <> &middot; <Aside text={labelAside} /></>}</span>
   <h1>{title}</h1>
   {intro && <p class="intro">{intro}</p>}
   <slot />

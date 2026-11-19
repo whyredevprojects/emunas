@@ -3,7 +3,7 @@
  * moments grouped by shiur (with their text loaded on request from the shiur file), queue buttons,
  * the year histogram and the "often together with" list.
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { LocalizedText } from "@emunas/corpus/public";
 import { formatClock, formatNumber, languageName, notice, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useState, type JSX, type ReactNode } from "react";
@@ -19,6 +19,7 @@ import { addToQueue, playBackToBack } from "./queue.ts";
 import type { EntityResolver } from "./resolve.ts";
 import { browseT } from "./strings.ts";
 import { browseStyles as s } from "./styles.ts";
+import { latinEdition } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -73,7 +74,7 @@ export function ShiurRows({
 }: {
   rows: readonly CorpusRow[];
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   label: string;
   step?: number;
 }): JSX.Element {
@@ -147,7 +148,7 @@ export function TimeLink({
   );
 }
 
-type Titles = { status: "idle" } | { status: "loading" } | { status: "error" } | { status: "ok"; text: Map<string, L> };
+type Titles = { status: "idle" } | { status: "loading" } | { status: "error" } | { status: "ok"; text: Map<string, LocalizedText> };
 
 /**
  * One shiur and its moments. Moment text (chapter titles, insights, questions) is in the shiur file,
@@ -163,8 +164,8 @@ export function ShiurMomentGroup({
   group: ShiurMoments;
   row: CorpusRow | undefined;
   ui: UiLang;
-  read: Ed;
-  known?: ReadonlyMap<string, L>;
+  read: UiLang;
+  known?: ReadonlyMap<string, LocalizedText>;
 }): JSX.Element {
   const bt = browseT(ui);
   const [titles, setTitles] = useState<Titles>({ status: "idle" });
@@ -173,7 +174,7 @@ export function ShiurMomentGroup({
     setTitles({ status: "loading" });
     try {
       const shiur = await loadShiur(group.shiurId);
-      const text = new Map<string, L>();
+      const text = new Map<string, LocalizedText>();
       for (const m of group.moments) {
         const c = momentContent(shiur, m.id);
         if (c) text.set(m.id, c.text);
@@ -183,7 +184,7 @@ export function ShiurMomentGroup({
       setTitles({ status: "error" });
     }
   };
-  const textOf = (id: string): L | undefined => known?.get(id) ?? (titles.status === "ok" ? titles.text.get(id) : undefined);
+  const textOf = (id: string): LocalizedText | undefined => known?.get(id) ?? (titles.status === "ok" ? titles.text.get(id) : undefined);
   return (
     <div className={s.shiur} data-group={group.shiurId}>
       {row ? <ShiurLine row={row} ui={ui} /> : null}
@@ -225,8 +226,8 @@ export function MomentGroups({
   groups: readonly ShiurMoments[];
   rows: ReadonlyMap<string, CorpusRow>;
   ui: UiLang;
-  read: Ed;
-  known?: ReadonlyMap<string, L>;
+  read: UiLang;
+  known?: ReadonlyMap<string, LocalizedText>;
   label: string;
   step?: number;
 }): JSX.Element {
@@ -341,7 +342,7 @@ export function YearSpark({ years, ui, total }: { years: EntityFile["years"]; ui
 export function EntityName({ label, kind, ui }: { label: { en: string; yi: string; he?: string }; kind: "p" | "c" | "o" | "w"; ui: UiLang }): JSX.Element {
   // Concepts are headed by the Hebrew term (concept-live §5.7); others in the interface language.
   if (kind === "c") return <Text value={label.he ?? label.yi} lang="he" />;
-  return ui === "en" ? <Text value={label.en} lang="en" /> : <Text value={label.he ?? label.yi} shiurLang="yi" />;
+  return latinEdition(ui) ? <Text value={label.en} lang="en" /> : <Text value={label.he ?? label.yi} shiurLang="yi" />;
 }
 
 export function RelatedEntities({

@@ -101,7 +101,7 @@ describe("over-long moment ids (vector id alias)", () => {
     t: 10,
     audioLang: "yi",
     category: "zman",
-    titleEn: "Kislev light",
+    titles: { en: "Kislev light" },
     text: { en: { title: "Kislev light", body } },
   });
   const extra = [

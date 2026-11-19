@@ -19,6 +19,7 @@ import { useRoving } from "./roving.ts";
 import { exploreT } from "./strings.ts";
 import { exploreStyles as s } from "./styles.ts";
 import type { ConnectionsCenter } from "./url.ts";
+import { labelText } from "../../i18n/content.ts";
 
 const paths = livePaths();
 const SIZE = 420;
@@ -47,7 +48,8 @@ export function Connections(props: ConnectionsProps): JSX.Element {
 }
 
 function nameOf(facets: FacetsFile, kind: EntityKind, key: string, ui: UiLang): string {
-  return entityLabel(facets, kind, key)?.[ui] ?? key;
+  const label = entityLabel(facets, kind, key);
+  return label ? labelText(label, ui) : key;
 }
 
 function Picker({ facets, counts, selected, ui, centerHref }: ConnectionsProps): JSX.Element {
@@ -84,7 +86,7 @@ function Picker({ facets, counts, selected, ui, centerHref }: ConnectionsProps):
             {options.map((o) => (
               <li key={`${o.kind}:${o.key}`}>
                 <Link className={s.chip} to={centerHref(o)} data-center={`${o.kind}:${o.key}`}>
-                  <Text value={nameOf(facets, o.kind, o.key, ui)} shiurLang={ui} />
+                  <Text value={nameOf(facets, o.kind, o.key, ui)} shiurLang={null} />
                 </Link>
               </li>
             ))}
@@ -112,10 +114,10 @@ function Graph({ center, rows, facets, ui, centerHref }: ConnectionsProps & { ce
   return (
     <section className={s.lens} aria-labelledby={titleId} data-lens="connections" data-center={`${center.kind}:${center.key}`}>
       <h2 id={titleId} className={s.lensTitle}>
-        {withName(et("explore.connections.title"), name, ui)}
+        {withName(et("explore.connections.title"), name)}
       </h2>
       <p className={s.muted}>
-        <Link to={entityHref(ui, center.kind, center.key)}>{withName(et("explore.connections.page"), name, ui)}</Link>
+        <Link to={entityHref(ui, center.kind, center.key)}>{withName(et("explore.connections.page"), name)}</Link>
       </p>
       {entity.status === "loading" ? <p className={s.muted}>{et("explore.loading")}</p> : null}
       {entity.status === "error" ? (
@@ -126,10 +128,10 @@ function Graph({ center, rows, facets, ui, centerHref }: ConnectionsProps & { ce
       {entity.status === "ok" && entity.data === null ? <p className={s.muted}>{et("explore.connections.missing")}</p> : null}
       {entity.status === "ok" && entity.data !== null ? (
         <>
-          <p className={s.muted}>{withName(et("explore.connections.lead", { min: MIN_SHARED }), name, ui)}</p>
+          <p className={s.muted}>{withName(et("explore.connections.lead", { min: MIN_SHARED }), name)}</p>
           {edges.length === 0 ? (
             <p className={s.muted} data-testid="connections-none">
-              {withName(et("explore.connections.none", { min: MIN_SHARED }), name, ui)}
+              {withName(et("explore.connections.none", { min: MIN_SHARED }), name)}
             </p>
           ) : (
             <svg className={s.chart} viewBox={`0 0 ${SIZE} ${SIZE}`} role="group" aria-labelledby={titleId}>
@@ -163,14 +165,14 @@ function Graph({ center, rows, facets, ui, centerHref }: ConnectionsProps & { ce
                     className={active === e ? `${s.node} ${s.on}` : s.node}
                     role="button"
                     aria-pressed={active === e}
-                    aria-label={et("explore.connections.edge", { name: e.label[ui], count: formatNumber(e.shared, ui) })}
+                    aria-label={et("explore.connections.edge", { name: labelText(e.label, ui), count: formatNumber(e.shared, ui) })}
                     data-edge={edgeId(e)}
                     data-shared={e.shared}
                     {...props}
                   >
                     <circle cx={p.x} cy={p.y} r={8 + 8 * (e.shared / maxShared)} />
                     <text x={p.x} y={p.y + 30} textAnchor="middle" aria-hidden="true">
-                      {short(e.label[ui])}
+                      {short(labelText(e.label, ui))}
                     </text>
                   </g>
                 );
@@ -185,10 +187,10 @@ function Graph({ center, rows, facets, ui, centerHref }: ConnectionsProps & { ce
                 {edges.map((e) => (
                   <li key={edgeId(e)} data-edge={edgeId(e)}>
                     <button type="button" className={s.textButton} aria-pressed={active === e} onClick={() => toggle(e)}>
-                      <Text value={e.label[ui]} shiurLang={ui} />
+                      <Text value={e.label} lang={ui} />
                     </button>{" "}
                     <span className={s.count}>{et("explore.connections.shared", { count: e.shared })}</span>{" "}
-                    <Link to={centerHref({ kind: e.kind, key: e.key })}>{withName(et("explore.connections.recentre"), e.label[ui], ui)}</Link>
+                    <Link to={centerHref({ kind: e.kind, key: e.key })}>{withName(et("explore.connections.recentre"), labelText(e.label, ui))}</Link>
                   </li>
                 ))}
               </ul>
@@ -220,7 +222,7 @@ function EdgeShiurim({
   return (
     <div className={s.edgeShiurim} aria-labelledby={headingId} role="region" data-testid="edge-shiurim">
       <h3 id={headingId} className={s.subTitle}>
-        {fill(along, { a: <Text key="a" value={name} shiurLang={ui} />, b: <Text key="b" value={edge.label[ui]} shiurLang={ui} /> })}
+        {fill(along, { a: <Text key="a" value={name} shiurLang={null} />, b: <Text key="b" value={edge.label} lang={ui} /> })}
       </h3>
       <ul className={s.edgeList}>
         {list.map((r) => (
@@ -232,7 +234,7 @@ function EdgeShiurim({
         ))}
       </ul>
       <p className={s.muted}>
-        <Link to={entityHref(ui, edge.kind, edge.key)}>{withName(et("explore.connections.page"), edge.label[ui], ui)}</Link>
+        <Link to={entityHref(ui, edge.kind, edge.key)}>{withName(et("explore.connections.page"), labelText(edge.label, ui))}</Link>
       </p>
     </div>
   );
@@ -258,6 +260,6 @@ function fill(template: string, parts: Readonly<Record<string, JSX.Element>>): (
 }
 
 /** A template with `{name}` replaced by a direction-isolated data string. */
-function withName(template: string, name: string, ui: UiLang): (string | JSX.Element)[] {
-  return fill(template, { name: <Text key="name" value={name} shiurLang={ui} /> });
+function withName(template: string, name: string): (string | JSX.Element)[] {
+  return fill(template, { name: <Text key="name" value={name} shiurLang={null} /> });
 }

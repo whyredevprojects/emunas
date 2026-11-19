@@ -17,7 +17,6 @@
  * Only then do `corpus.json` (shiur rows) and `facets.json` (related labels) load. Links go only to
  * pages that exist (`resolve.ts`, `chips.tsx`).
  */
-import type { Ed } from "@emunas/corpus/public";
 import { corpusLabel, formatClock, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useMemo, useState, type JSX } from "react";
@@ -57,6 +56,7 @@ import { playBackToBack } from "./queue.ts";
 import { createResolver, type EntityResolver } from "./resolve.ts";
 import { browseT } from "./strings.ts";
 import { browseStyles as s } from "./styles.ts";
+import { labelText, latinEdition } from "../../i18n/content.ts";
 
 const paths = livePaths();
 
@@ -100,7 +100,7 @@ export function EntityPage({ kind }: { kind: EntityKind }): JSX.Element {
   );
 }
 
-function EntityBody({ data, kind, ui, read }: { data: Loaded; kind: EntityKind; ui: UiLang; read: Ed }): JSX.Element {
+function EntityBody({ data, kind, ui, read }: { data: Loaded; kind: EntityKind; ui: UiLang; read: UiLang }): JSX.Element {
   const bt = browseT(ui);
   const { entity, corpus, resolver } = data;
   const rows = rowsById(corpus);
@@ -176,12 +176,12 @@ function PersonHead({ person, ui }: { person: PersonDetail; ui: UiLang }): JSX.E
           {aliases.map((a, i) => (
             <span key={a}>
               {i > 0 ? ", " : null}
-              <Text value={a} shiurLang={ui} />
+              <Text value={a} shiurLang={null} />
             </span>
           ))}
         </p>
       ) : null}
-      {person.description ? <Text as="p" className={s.lead} value={person.description[ui]} lang={ui} /> : null}
+      {person.description ? <Text as="p" className={s.lead} value={person.description} lang={ui} /> : null}
       {person.works.length > 0 ? (
         <section className={s.section} aria-labelledby="works-title" data-testid="his-seforim">
           <h2 id="works-title" className={s.groupTitle}>
@@ -220,11 +220,11 @@ export function storyHref(ui: UiLang, st: PersonStory): string {
   }
 }
 
-function PersonSections({ data, ui, read }: { data: Loaded; ui: UiLang; read: Ed }): JSX.Element {
+function PersonSections({ data, ui, read }: { data: Loaded; ui: UiLang; read: UiLang }): JSX.Element {
   const bt = browseT(ui);
   const { entity, corpus } = data;
   const groups = useMemo(() => personGroups(entity, corpus), [entity, corpus]);
-  const name = ui === "en" ? entity.label.en : (entity.label.he ?? entity.label.yi);
+  const name = latinEdition(ui) ? entity.label.en : (entity.label.he ?? entity.label.yi);
 
   return (
     <>
@@ -281,8 +281,8 @@ function ConceptHead({ entity, ui }: { entity: EntityFile; ui: UiLang }): JSX.El
       <h2 id="definition-title" className={s.groupTitle}>
         {corpusLabel("glossary.asUsed", ui)}
       </h2>
-      {c.label[ui] ? <Text as="p" className={s.muted} value={c.label[ui]} lang={ui} /> : null}
-      {c.definition[ui] ? <Text as="p" className={s.definition} value={c.definition[ui]} lang={ui} /> : null}
+      {labelText(c.label, ui) ? <Text as="p" className={s.muted} value={c.label} lang={ui} /> : null}
+      {labelText(c.definition, ui) ? <Text as="p" className={s.definition} value={c.definition} lang={ui} /> : null}
     </section>
   );
 }

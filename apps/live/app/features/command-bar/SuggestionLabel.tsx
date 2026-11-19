@@ -9,17 +9,29 @@ import type { FacetLabel, QuickEntity } from "./live-data.ts";
 import type { Suggestion } from "./engine.ts";
 import { searchT } from "./strings.ts";
 import { searchStyles as s } from "./styles.ts";
+import { labelText } from "../../i18n/content.ts";
 
 function labelIn(label: FacetLabel, ui: UiLang): string {
-  return label[ui] || label.he || label.en;
+  return labelText(label, ui) || label.he || label.en;
 }
 
 /**
- * An entity's name in the interface language: Yiddish falls back to the Hebrew label (works have no
- * Yiddish title), English to the Hebrew, then the other language.
+ * Which entity label to show per interface language, in order: Yiddish falls back to the Hebrew label
+ * (works have no Yiddish title), English to the Hebrew, Hebrew to the Yiddish, then the other one.
  */
+const ENTITY_LABEL_ORDER: Readonly<Record<UiLang, readonly UiLang[]>> = {
+  en: ["en", "he", "yi"],
+  yi: ["yi", "he", "en"],
+  he: ["he", "yi", "en"],
+};
+
+/** An entity's name in the interface language (`ENTITY_LABEL_ORDER`). */
 export function entityName(labels: QuickEntity["labels"], ui: UiLang): string {
-  return (ui === "yi" ? (labels.yi ?? labels.he ?? labels.en) : (labels.en ?? labels.he ?? labels.yi)) ?? "";
+  for (const l of ENTITY_LABEL_ORDER[ui]) {
+    const v = labels[l];
+    if (v) return v;
+  }
+  return "";
 }
 
 export function suggestionMeta(sg: Suggestion, ui: UiLang): string {
@@ -57,7 +69,7 @@ export function SuggestionLabel({ sg, ui }: { sg: Suggestion; ui: UiLang }): JSX
   if (sg.type === "series-part") {
     name = (
       <span>
-        <Text value={labelIn(sg.label, ui)} shiurLang={ui} />
+        <Text value={labelIn(sg.label, ui)} shiurLang={null} />
         {", "}
         {t(sg.how === "perek" ? "cb.seriesPerek" : "cb.seriesPart", { n: sg.n })}
       </span>
@@ -65,7 +77,7 @@ export function SuggestionLabel({ sg, ui }: { sg: Suggestion; ui: UiLang }): JSX
   } else if (sg.type === "year") {
     name = <span>{formatHebrewYear(sg.year, ui)}</span>;
   } else {
-    name = <Text value={suggestionName(sg, ui)} shiurLang={ui} />;
+    name = <Text value={suggestionName(sg, ui)} shiurLang={null} />;
   }
   return (
     <>

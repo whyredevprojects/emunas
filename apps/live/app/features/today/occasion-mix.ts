@@ -1,7 +1,7 @@
 /**
  * Playing the week's occasion mix (concept-live-corpus C.3, corpus-wave-plan C3.4).
  *
- * The head comes inline from `today.json`, so pressing the button starts playing without a request.
+ * The head comes inline from the Today file, so pressing the button starts playing without a request.
  * The rest is assembled once the head is queued: the occasion topic's file (its moment list, the
  * first sections with times) and, only when that still cannot fill the mix, one moments page. A
  * failure there leaves the head playing. Nothing corpus-wide is requested.

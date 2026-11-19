@@ -13,7 +13,7 @@ import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@
 import type { JSX } from "react";
 import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import type { AudioVersion } from "@emunas/i18n";
 import { getEngine, usePlayerState, VersionLine, versionLineState } from "../../player-ui/index.ts";
 import { locate, type PlayerState } from "../../player-engine/index.ts";
@@ -105,9 +105,12 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
           <div>
             <dt className={s.visuallyHidden}>{rt("related.series")}</dt>
             <dd>
-              {shiur.series.order !== null
-                ? rt("room.seriesPart", { series: series[ui], n: shiur.series.order, count: shiur.series.count })
-                : rt("room.seriesPartNoOrder", { series: series[ui] })}
+              {aroundText(
+                shiur.series.order !== null
+                  ? rt("room.seriesPart", { series: TEXT_SLOT, n: shiur.series.order, count: shiur.series.count })
+                  : rt("room.seriesPartNoOrder", { series: TEXT_SLOT }),
+                <Text value={series} lang={ui} />,
+              )}
               {shiur.perek ? <> · {rt("room.perek", { perek: shiur.perek })}</> : null}
             </dd>
           </div>

@@ -16,6 +16,7 @@ import { languageName, topicGradeLabel, TOPIC_GRADES } from "@emunas/i18n";
 import HebrewYear from "../HebrewYear.astro";
 import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
+import { langAttrs } from "../../lib/content.ts";
 import type { TopicGrades, TopicRow, TouchedPart, TouchedRow } from "./model.ts";
 import { useTopicsT } from "./strings.ts";
 import "./topics.css";
@@ -37,9 +38,9 @@ const partsOf = (r: TopicRow): readonly TouchedPart[] => ("parts" in r ? (r as T
     <ol role="list" class="topic-rows">
       {rowsOf(g).map((r) => (
         <li class={`topic-row${g === "main" ? " principal" : ""}`} data-shiur={r.shiurId} data-on-occasion={r.onOccasion ? `${r.onOccasion.kind}:${r.onOccasion.key}` : undefined}>
-          <a class="topic-row-title" href={r.href}><bdi {...runAttrs(r.title, r.lang)}>{r.title}</bdi></a>
+          <a class="topic-row-title" href={r.href}><bdi {...runAttrs(r.title, r.lang, ed)}>{r.title}</bdi></a>
           <span class="citation topic-row-cite">
-            {r.occasion && <span class="cite-item"><bdi {...runAttrs(r.occasion, r.lang)}>{r.occasion}</bdi></span>}
+            {r.occasion && <span class="cite-item"><bdi {...runAttrs(r.occasion, r.lang, ed)}>{r.occasion}</bdi></span>}
             <span class="cite-item">{r.years.length > 0 ? <HebrewYear year={r.years} civil={false} /> : t("row.yearUnknown")}</span>
             <span class="cite-item" data-lang={r.lang}>{languageName(r.lang, ed)}</span>
             {r.onOccasion && (
@@ -49,7 +50,7 @@ const partsOf = (r: TopicRow): readonly TouchedPart[] => ("parts" in r ? (r as T
           {partsOf(r).length > 0 && (
             <span class="topic-parts">
               {partsOf(r).map((p) => (
-                <a class="part-link" href={p.href} data-section={p.idx}>{p.title && <><bdi lang={ed}>{p.title}</bdi>{" "}</>}<span class="time"><bdi dir="ltr">{p.time}</bdi></span></a>
+                <a class="part-link" href={p.href} data-section={p.idx}>{p.title && <><bdi {...langAttrs(p.title)}>{p.title.text}</bdi>{" "}</>}<span class="time"><bdi dir="ltr">{p.time}</bdi></span></a>
               ))}
             </span>
           )}

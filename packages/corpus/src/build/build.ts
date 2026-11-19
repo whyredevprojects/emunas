@@ -54,6 +54,7 @@ import { loadAudioCleaned, loadAudioTranscoded, loadPublishPolicy, loadSuppressF
 import { PROJECTOR_VERSION, projectShiur, type ProjectContext } from "./project.ts";
 import { createDataReader, defaultDataDir, defaultPolicyDir, REPO_ROOT } from "./read.ts";
 import { emitEligibleTranscripts } from "../transcript-gate.ts";
+import { TRANSLATED_LANGS, currentShiurOverlays, loadShiurOverlays, type ShiurOverlayFile } from "./translations.ts";
 import { isCorpusItemId } from "../layer/suppress.ts";
 import { ReportCollector, type BuildReport } from "./report.ts";
 
@@ -208,6 +209,8 @@ function fingerprintOf(parts: {
   seriesCount: number | null;
   entry: unknown;
   files: ShiurFiles | null;
+  /** Translation overlay files of the shiur (raw text per language). */
+  overlays: Partial<Record<string, ShiurOverlayFile>>;
   keyer: Keyer;
   policy: PublishPolicy;
   suppress: string[];
@@ -227,6 +230,7 @@ function fingerprintOf(parts: {
   add("meta", parts.files?.texts.meta ?? "");
   add("extraction", parts.files?.texts.extraction ?? "");
   add("writeup", parts.files?.texts.writeup ?? "");
+  for (const lang of TRANSLATED_LANGS) add(`i18n:${lang}`, parts.overlays[lang]?.text ?? "");
   return h.digest("hex");
 }
 
@@ -309,6 +313,8 @@ export function projectCorpus(
   const entries = new Map(manifest.entries.map((e) => [e.shiurId, e]));
   const series: PublicSeries[] = ingest.series.map((x) => ({
     id: x.id,
+    // The catalog series name from ingest has no translation overlay (the corpus layer's
+    // `series/<id>.json` carries the translated synthesis title).
     title: { en: x.title.en, yi: x.title.yi },
     lang: x.lang,
     catalogSectionIds: [...x.catalogSectionIds],
@@ -356,6 +362,10 @@ export function projectCorpus(
     const files = loadShiurFiles(reader, s.id);
     if (entry?.status !== "done" && files.anyFile) report.notDoneWithFiles.push(s.id);
     const g = gate(s, entry, entry?.status === "done" ? files : null);
+    const overlayFiles = loadShiurOverlays(reader, s.id);
+    const overlays = g.full
+      ? currentShiurOverlays(overlayFiles, g, (lang, why) => report.translation(lang, s.id, why))
+      : {};
     const fp = fingerprintOf({
       shiur: s,
       recordings: s.recordingIds.map((id) => recordingsById.get(id)),
@@ -363,18 +373,20 @@ export function projectCorpus(
       seriesCount: s.seriesId !== null ? (seriesCount.get(s.seriesId) ?? 0) : null,
       entry,
       files: entry?.status === "done" ? files : null,
+      overlays: g.full ? overlayFiles : {},
       keyer,
       policy,
       suppress: [...(suppressByShiur.get(s.id) ?? [])].sort(),
     });
     fingerprints[s.id] = fp;
     const rev = fp.slice(0, 12);
-    const r = projectShiur({ shiur: s, rev, full: g.full ? g : null }, ctx);
+    const r = projectShiur({ shiur: s, rev, full: g.full ? g : null, overlays }, ctx);
     if (!g.full && g.downgrade) {
       report.downgraded.push({ id: s.id, manifestStatus: entry?.status ?? null, reasons: g.reasons });
     } else if (r.notesError !== null) {
       report.downgraded.push({ id: s.id, manifestStatus: entry?.status ?? null, reasons: [r.notesError] });
     }
+    if (r.shiur.status === "full") for (const lang of TRANSLATED_LANGS) if (overlays[lang] !== undefined) report.translation(lang, s.id, "applied");
     shiurim.push(r.shiur);
     if (r.shiur.status === "full" && typeof entry?.updatedAt === "string") updatedAt[s.id] = entry.updatedAt;
   }

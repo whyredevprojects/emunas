@@ -6,7 +6,7 @@
  * Moment-level entity facets: the shards carry no per-moment entity links (W2.4 contract), so a
  * work/person/concept facet narrows moments through their shiur's entity arrays only.
  */
-import type { Ed } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 import { useEffect, useState } from "react";
 import { loadBuild, loadMomentShard, type MomentKind, type MomentRow } from "./live-data.ts";
 
@@ -18,9 +18,9 @@ interface LangCache {
   listeners: Set<() => void>;
 }
 
-const caches = new Map<Ed, LangCache>();
+const caches = new Map<UiLang, LangCache>();
 
-function cacheFor(lang: Ed): LangCache {
+function cacheFor(lang: UiLang): LangCache {
   let c = caches.get(lang);
   if (!c) caches.set(lang, (c = { shards: [], total: null, loading: null, error: null, listeners: new Set() }));
   return c;
@@ -31,7 +31,7 @@ export function clearMomentCache(): void {
   caches.clear();
 }
 
-function startLoading(lang: Ed, c: LangCache): void {
+function startLoading(lang: UiLang, c: LangCache): void {
   if (c.loading || (c.total !== null && c.shards.length >= c.total)) return;
   const notify = () => c.listeners.forEach((l) => l());
   c.error = null;
@@ -63,7 +63,7 @@ export interface MomentStream {
 }
 
 /** All moments of a reading language, growing as shards arrive. Inactive (no requests) when `enabled` is false. */
-export function useMomentStream(lang: Ed, enabled: boolean): MomentStream {
+export function useMomentStream(lang: UiLang, enabled: boolean): MomentStream {
   const [, bump] = useState(0);
   useEffect(() => {
     if (!enabled) return;

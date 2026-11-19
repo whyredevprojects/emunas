@@ -7,6 +7,7 @@ import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { loadEntryDataFrom, type EntryData } from "../../indexes/entries.ts";
 import { buildMiniCorpus, type MiniCorpus } from "../../indexes/test/mini.ts";
 import { conceptPage, conceptPageIds, glossaryIndex } from "../model.ts";
+import { EDS, type Ed } from "../../../lib/edition.ts";
 
 let mini: MiniCorpus;
 let d: EntryData;
@@ -18,11 +19,11 @@ beforeAll(() => {
 
 afterAll(() => mini?.dispose());
 
-const lines = (ed: "yi" | "en") => glossaryIndex(d, ed).flatMap((b) => b.items);
+const lines = (ed: Ed) => glossaryIndex(d, ed).flatMap((b) => b.items);
 
 describe("glossary (ערכים)", () => {
   it("is one list aleph to tav of every concept, by the Hebrew headword in both editions", () => {
-    for (const ed of ["yi", "en"] as const) {
+    for (const ed of EDS) {
       const all = lines(ed);
       expect(all.map((l) => l.id).sort()).toEqual(d.layer.concepts.map((c) => c.id).sort());
       const letters = glossaryIndex(d, ed).map((b) => b.letter);

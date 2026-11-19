@@ -26,7 +26,7 @@ export interface PartCardProps {
   line: PartLine;
   ui: UiLang;
   /** Reading language for the line. */
-  read: Ed;
+  read: UiLang;
   /** Start position for the link (`?t=`). */
   t?: number;
   kicker?: ReactNode;

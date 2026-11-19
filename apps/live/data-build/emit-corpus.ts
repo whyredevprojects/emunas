@@ -18,7 +18,7 @@
 import { brotliCompressSync, constants } from "node:zlib";
 import type {
   Ed,
-  L,
+  LocalizedText,
   LayerConcept,
   LayerPerson,
   LayerShiurRefs,
@@ -29,6 +29,7 @@ import type {
   PublicShiur,
 } from "@emunas/corpus/public";
 import { dataPaths } from "../app/data/paths.ts";
+import { UI_LANGS, isSourceLang, type UiLang } from "@emunas/i18n";
 import {
   liveConceptPage,
   livePersonPage,
@@ -75,7 +76,7 @@ export interface FeaturedPolicy {
 export const DEFAULT_FEATURED: FeaturedPolicy = { maxOtherSpeakerShare: 0.5, excludeTopicIds: [] };
 
 export const CORPUS_LIMITS = {
-  /** Sections in today.json's occasion mix. */
+  /** Sections in the Today files' occasion mix. */
   mixFirst: 12,
   /** Rows in a topic file's thread and story lists (the totals say how many there are). */
   topicThreads: 20,
@@ -93,7 +94,19 @@ const MIX_KINDS = new Set(["main", "story"]);
 const cmp = (a: string, b: string): number => (a < b ? -1 : a > b ? 1 : 0);
 const nz = (s: unknown): string => (typeof s === "string" ? s : "");
 const arr = <T>(x: readonly T[] | null | undefined): readonly T[] => (Array.isArray(x) ? x : []);
-const lcopy = (l: L | null | undefined): L => ({ en: nz(l?.en), yi: nz(l?.yi) });
+/**
+ * A generated text copied for Live: every source language (blank when absent), then each translated
+ * language (`he`) only when the corpus carries a non-blank current translation, in `UI_LANGS` order.
+ * The client falls back along `CONTENT_FALLBACK` for a language left out.
+ */
+export function lcopy(l: LocalizedText | null | undefined): LocalizedText {
+  const out: Partial<Record<UiLang, string>> = {};
+  for (const lang of UI_LANGS) {
+    const v = nz(l?.[lang]);
+    if (isSourceLang(lang) || v.trim() !== "") out[lang] = v;
+  }
+  return out as LocalizedText;
+}
 
 /** A label whose `he` is set only when it differs from the Yiddish form. */
 export function facetLabel(en: string, yi: string, he: string | null | undefined): FacetLabel {
@@ -209,7 +222,7 @@ export interface CorpusEmitContext {
   featured: FeaturedPolicy;
 }
 
-/** A topic's featured mix (today.json compacts it). */
+/** A topic's featured mix (the Today files compact it). */
 export interface FeaturedMix {
   topicId: string;
   label: FacetLabel;
@@ -226,7 +239,7 @@ export interface FeaturedMix {
 
 export interface CorpusEmitResult {
   glossaryShards: string[];
-  /** Topic id → the featured mix (D7 filters applied), for today.json. */
+  /** Topic id → the featured mix (D7 filters applied), for the Today files. */
   featuredMix(topicId: string): FeaturedMix | null;
   /** Occasion key → topic id (occasion-topics of the layer). */
   occasionTopic: Map<string, string>;
@@ -487,7 +500,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
     }
   }
 
-  // ------------------------------------------------------------------ featured mixes (today.json)
+  // ------------------------------------------------------------------ featured mixes (Today files)
   const excluded = new Set(ctx.featured.excludeTopicIds);
   const otherSpeaker = (shiurId: string): boolean => {
     const share = layer.refs.get(shiurId)?.otherSpeakerShare;
@@ -517,7 +530,7 @@ export function emitCorpusFiles(view: CorpusView, ctx: CorpusEmitContext): Corpu
   for (const o of layer.occasionTopics) if (view.topics.has(o.topicId) && !occasionTopic.has(o.key)) occasionTopic.set(o.key, o.topicId);
 
   // ------------------------------------------------------------------ thread/<id>.json
-  const insightText = (shiurId: string, momentId: string): L | null => {
+  const insightText = (shiurId: string, momentId: string): LocalizedText | null => {
     const i = byId.get(shiurId)?.notes?.insights.find((x) => x.id === momentId);
     return i ? lcopy(i.text) : null;
   };

@@ -12,7 +12,7 @@ export type Message = string | PluralMessage;
  */
 export type MessageTable<K extends string> = { readonly [P in K]: Message };
 
-/** Both languages' tables for one key union. */
+/** One table per interface language for one key union; a missing language fails `tsc`. */
 export type MessageTables<K extends string> = { readonly [L in UiLang]: MessageTable<K> };
 
 /** Interpolation values. `count` also selects the plural form. */
@@ -44,10 +44,11 @@ function interpolate(template: string, lang: UiLang, params: Params | undefined)
  * // apps/<site>/.../i18n/en.ts
  * export const en = { "nav.home": "Home", "list.count": { one: "{count} shiur", other: "{count} shiurim" } } as const;
  * export type UiKey = keyof typeof en;
- * // yi.ts
+ * // yi.ts, he.ts
  * export const yi: MessageTable<UiKey> = { ... };   // a missing key is a type error
+ * export const he: MessageTable<UiKey> = { ... };   // so is a missing language in createT
  * // use
- * const t = createT<UiKey>({ en, yi }, "yi");
+ * const t = createT<UiKey>({ en, yi, he }, "he");
  * t("list.count", { count: 3 });
  * t("missing");                                     // type error
  * ```

@@ -1,8 +1,9 @@
 /**
  * Language settings (concept-live §7): three separate things.
- *  1. Interface language: the `:ui` path segment (`/en/…`, `/yi/…`). Not stored here.
+ *  1. Interface language: the `:ui` path segment (`/en/…`, `/yi/…`, `/he/…`). Not stored here.
  *  2. Shiur (audio) language filter: Yiddish, English or both. Default both.
- *  3. Reading language for generated text: defaults to the interface language.
+ *  3. Reading language for generated text: any interface language, defaulting to the interface
+ *     language. A text with no current translation in it falls back along `CONTENT_FALLBACK`.
  *
  * (2) and (3) live in a Zustand store and in the query string (`?audio=yi&read=en`), never in the
  * path, so the number of prerendered pages does not multiply (tech-live §1). Defaults are omitted
@@ -10,6 +11,7 @@
  * otherwise the store keeps the last choice across navigation.
  */
 import type { Ed } from "@emunas/corpus/public";
+import { isUiLang, type UiLang } from "@emunas/i18n";
 import { createStore, useStore } from "zustand";
 
 export type AudioFilter = "both" | Ed;
@@ -17,12 +19,12 @@ export type AudioFilter = "both" | Ed;
 export interface LanguageSettings {
   audio: AudioFilter;
   /** `null` = follow the interface language. */
-  read: Ed | null;
+  read: UiLang | null;
 }
 
 export interface SettingsState extends LanguageSettings {
   setAudio(audio: AudioFilter): void;
-  setRead(read: Ed | null): void;
+  setRead(read: UiLang | null): void;
   apply(partial: Partial<LanguageSettings>): void;
   reset(): void;
 }
@@ -64,7 +66,7 @@ export function parseSettingsQuery(search: string | URLSearchParams): Partial<La
     else if (langs.size === 1) out.audio = [...langs][0]!;
   }
   const read = q.get("read");
-  if (read !== null && isEd(read)) out.read = read;
+  if (read !== null && isUiLang(read)) out.read = read;
   return out;
 }
 
@@ -82,7 +84,7 @@ export function settingsToQuery(
 }
 
 /** The effective reading language. */
-export function readingLang(settings: Pick<LanguageSettings, "read">, ui: Ed): Ed {
+export function readingLang(settings: Pick<LanguageSettings, "read">, ui: UiLang): UiLang {
   return settings.read ?? ui;
 }
 

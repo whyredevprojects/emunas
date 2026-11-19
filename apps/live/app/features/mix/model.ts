@@ -13,7 +13,8 @@
  * Deterministic: the same input gives the same mix. Language is a property of each item; nothing
  * pairs a Yiddish and an English section.
  */
-import type { Ed, L } from "@emunas/corpus/public";
+import type { Ed, LocalizedText } from "@emunas/corpus/public";
+import type { ReaderText } from "../../data/types.ts";
 
 export const MIX_SIZE = 12;
 
@@ -30,8 +31,11 @@ export interface MixSource {
   t: number;
   end: number;
   lang: Ed;
-  /** Present on the topic file's first moments; the later pages carry ids and times only. */
-  title?: L | null;
+  /**
+   * Present on the topic file's first moments (and as a `ReaderText` on a Today mix head); the later
+   * pages carry ids and times only.
+   */
+  title?: LocalizedText | ReaderText | null;
   year?: number | null;
   /** The chapter kind, when the source states it. */
   kind?: string;

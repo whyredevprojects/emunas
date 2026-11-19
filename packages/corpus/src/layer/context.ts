@@ -2,8 +2,10 @@
  * Shared state for the layer projection: the visible set, the projected shiurim, catalog order,
  * chapter lookup by time, and corpus id resolution through the retired-id redirects. Pure.
  */
+import type { LocalizedText, TranslatedLang } from "@emunas/i18n";
 import type { CorpusIndex, PublicChapter, PublicShiur } from "../public/types.ts";
-import type { LayerMomentRef } from "../public/corpus-layer.ts";
+import type { LayerMomentRef, LayerTranslationCounts } from "../public/corpus-layer.ts";
+import { TRANSLATED_LANGS, currentCorpusOverlays, type CorpusOverlayFiles } from "../build/translations.ts";
 import type { CorpusInput } from "./input/load.ts";
 import type { ShiurTagsIn } from "./input/schemas.ts";
 import type { VisibleSet } from "./input/visible.ts";
@@ -18,7 +20,12 @@ export interface LayerContextInput {
   visible: VisibleSet;
   shiurim: readonly PublicShiur[];
   index: CorpusIndex;
+  /** Corpus translation overlay files (none: no translated text). */
+  overlays?: CorpusOverlayFiles;
 }
+
+/** A corpus collection as named in overlay entry keys (`<collection>:<id>`). */
+export type OverlayCollection = "concepts" | "stories" | "topics" | "teaching-clusters" | "people" | "series";
 
 export class LayerContext {
   readonly input: CorpusInput;
@@ -29,6 +36,10 @@ export class LayerContext {
   /** Visible shiurim in catalog order. */
   readonly visibleIds: readonly string[];
   readonly warnings: string[] = [];
+  /** Corpus overlay counts per translated language (all languages, zero when none). */
+  readonly translationCounts: Record<TranslatedLang, LayerTranslationCounts>;
+  /** Current corpus translations: language → entry key → field path → text. */
+  private readonly translated: Partial<Record<TranslatedLang, ReadonlyMap<string, ReadonlyMap<string, string>>>>;
   private readonly byId: Map<string, PublicShiur>;
   private readonly pos: Map<string, number>;
   /** Live (not retired) ids per kind. */
@@ -54,6 +65,31 @@ export class LayerContext {
       stories: liveOf("stories", (i.stories ?? []).map((r) => r.id)),
       threads: liveOf("threads", (i.teachingClusters ?? []).map((r) => r.id)),
     };
+    const tr = currentCorpusOverlays(x.overlays ?? {}, {
+      concepts: i.concepts,
+      stories: i.stories ?? [],
+      topics: i.topics,
+      teachingClusters: i.teachingClusters ?? [],
+      people: i.people,
+      series: i.series.values(),
+    });
+    this.translated = tr.current;
+    this.translationCounts = tr.counts;
+  }
+
+  /**
+   * A generated corpus text as published: `en` and `yi` from the record, plus every translated
+   * language with a current, non-blank translation of `<collection>:<id>.<field>`. A `he` the record
+   * itself carries (topic labels) is kept and wins over a translation.
+   */
+  text(collection: OverlayCollection, id: string, field: string, v: { en: string; yi: string; he?: string }): LocalizedText {
+    const out: { -readonly [K in keyof LocalizedText]: LocalizedText[K] } = { en: v.en, yi: v.yi };
+    for (const lang of TRANSLATED_LANGS) {
+      const own = v[lang];
+      const t = own !== undefined && own.trim() !== "" ? own : this.translated[lang]?.get(`${collection}:${id}`)?.get(field);
+      if (t !== undefined && t.trim() !== "") out[lang] = t;
+    }
+    return out;
   }
 
   shiur(id: string): PublicShiur | undefined {

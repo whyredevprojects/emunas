@@ -1,5 +1,8 @@
 import type { UiLang } from "./lang.ts";
 
+/** Spoken language of a recording (`Shiur["lang"]` in src/types.ts). */
+export type AudioLang = "yi" | "en";
+
 /**
  * Script and direction helpers for data strings. Catalog titles mix scripts within
  * a line ("The קדושה of צדיקים", "המקוה והתיבה הם כמו embassy של שמים על הארץ"),
@@ -49,31 +52,48 @@ export function firstStrongDir(text: string): Dir | null {
   return null;
 }
 
-/** `lang` attribute values used for data strings. */
-export type ContentLang = "en" | "yi" | "he";
-
+/** `lang`/`dir` of a data string. `lang` is one of the interface languages (`en`, `yi`, `he`, …). */
 export interface LangAttrs {
-  readonly lang: ContentLang;
+  readonly lang: UiLang;
   readonly dir: Dir;
   readonly script: Script;
 }
 
 /**
- * `lang`/`dir` for a catalog or data string, given the language of the shiur it
- * belongs to:
- * - Latin-only text → `en`, `ltr`.
- * - Hebrew-script text → `yi` in a Yiddish shiur, `he` in an English shiur (where
- *   Hebrew-script words are loshn koydesh terms), `rtl`.
- * - Mixed text → direction of the first strong character; the language follows
- *   that direction by the same rule. Render it isolated (`<bdi>` or `dir` on its
- *   own element) so the embedded run does not reorder its neighbours.
- *
- * Generated text whose language is known (`writeup.en`, `oneLiner.yi`) does not
- * need this: it is `lang="en"` or `lang="yi"` by construction.
+ * The language of Hebrew-script text in a data string (catalog titles, names, sefer titles), which
+ * carries no language tag of its own:
+ * - In the Hebrew edition it is `he`. Most Hebrew-script data is loshn koydesh (names, seforim,
+ *   catalog phrases such as "ענין חנוכה"), and reading it as Hebrew keeps it consistent with the
+ *   surrounding page for screen readers, fonts and hyphenation; a Yiddish catalog title inside a
+ *   Hebrew page is read by Hebrew rules rather than switching to a `yi` voice most readers lack.
+ * - Otherwise it is `yi` when the string belongs to a Yiddish shiur (`shiurLang === "yi"`), or, for
+ *   a string that belongs to no one shiur (`shiurLang === null`: corpus names, index entries), when
+ *   the edition is Yiddish.
+ * - Otherwise `he`: Hebrew-script words in an English shiur or an English page are loshn koydesh
+ *   terms.
+ * The rule depends only on "is the edition Hebrew" and "is the context Yiddish", so a further
+ * Latin-script language follows the English case without change.
  */
-export function langFor(text: string, shiurLang: UiLang): LangAttrs {
+export function hebrewScriptLang(shiurLang: AudioLang | null, edition: UiLang): "yi" | "he" {
+  if (edition === "he") return "he";
+  return (shiurLang ?? edition) === "yi" ? "yi" : "he";
+}
+
+/**
+ * `lang`/`dir` for a catalog or data string shown in `edition`, given the language of the shiur it
+ * belongs to (`null` when it belongs to no one shiur):
+ * - Latin-only text → `en`, `ltr`.
+ * - Hebrew-script text → `hebrewScriptLang(shiurLang, edition)`, `rtl`.
+ * - Mixed text → direction of the first strong character; the language follows that direction by
+ *   the same rule. Render it isolated (`<bdi>` or `dir` on its own element) so the embedded run does
+ *   not reorder its neighbours.
+ *
+ * Generated text whose language is known (`writeup.en`, `oneLiner.yi`, a translation overlay) does
+ * not need this: use the `lang`/`dir` from `pickText` / `pickLocalized` (./content.ts).
+ */
+export function langFor(text: string, shiurLang: AudioLang | null, edition: UiLang): LangAttrs {
   const script = scriptOf(text);
-  const hebrewLang: ContentLang = shiurLang === "yi" ? "yi" : "he";
+  const hebrewLang = hebrewScriptLang(shiurLang, edition);
   if (script === "latin") return { lang: "en", dir: "ltr", script };
   if (script === "he") return { lang: hebrewLang, dir: "rtl", script };
   const dir = firstStrongDir(text) ?? "ltr";

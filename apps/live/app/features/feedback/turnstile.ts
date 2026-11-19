@@ -56,9 +56,11 @@ export function resolveSiteKey(env: SiteKeyEnv, hostname: string | null): string
   return null;
 }
 
-/** Turnstile has no Yiddish; "auto" follows the browser. */
+/** Turnstile's widget language per interface language. It has no Yiddish; "auto" follows the browser. */
+const TURNSTILE_LANGUAGE: Readonly<Record<UiLang, string>> = { en: "en", yi: "auto", he: "he" };
+
 export function turnstileLanguage(ui: UiLang): string {
-  return ui === "en" ? "en" : "auto";
+  return TURNSTILE_LANGUAGE[ui];
 }
 
 let pending: Promise<TurnstileApi> | null = null;

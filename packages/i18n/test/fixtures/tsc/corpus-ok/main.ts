@@ -1,5 +1,5 @@
-import { corpusLabelsEn, corpusLabelsYi, type CorpusLabelKey, type MessageTable } from "../../../../src/index.ts";
+import { CORPUS_LABELS, UI_LANGS, type CorpusLabelKey, type MessageTable } from "../../../../src/index.ts";
 
-// Both shipped tables are complete tables of the one key union.
-export const en: MessageTable<CorpusLabelKey> = corpusLabelsEn;
-export const yi: MessageTable<CorpusLabelKey> = corpusLabelsYi;
+// Every shipped table is a complete table of the one key union.
+export const tables: MessageTable<CorpusLabelKey>[] = UI_LANGS.map((lang) => CORPUS_LABELS[lang]);
+export const he: MessageTable<CorpusLabelKey> = CORPUS_LABELS.he;

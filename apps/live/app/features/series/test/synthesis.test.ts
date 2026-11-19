@@ -6,6 +6,7 @@
  */
 import { describe, expect, it } from "vitest";
 import { LIVE_DATA_SCHEMA_VERSION, type SeriesFile, type SeriesPart, type SeriesSynthesis } from "../../today/live-data.ts";
+import { UI_LANGS } from "@emunas/i18n";
 import { orderParts, partLines, seriesIntro } from "../model.ts";
 import realTanya from "./real-tanya-yi.json" with { type: "json" };
 
@@ -78,21 +79,30 @@ describe("seriesIntro", () => {
     expect(seriesIntro(series(), "en")).toBeNull();
   });
 
-  it("picks the reading language and drops blank themes; themes are plain strings", () => {
+  it("picks the reading language and drops blank themes; themes are plain strings with their language", () => {
+    const en = (text: string) => ({ text, lang: "en", dir: "ltr", fallback: false });
     expect(seriesIntro(series(SYNTHESIS), "en")).toEqual({
-      title: "A course",
-      overview: "It goes from here to there.",
-      keyThemes: ["First theme", "Second theme"],
+      title: en("A course"),
+      overview: en("It goes from here to there."),
+      keyThemes: [en("First theme"), en("Second theme")],
       reviewed: false,
     });
-    expect(seriesIntro(series(SYNTHESIS), "yi")!.keyThemes).toEqual(["ערשטער ענין", "צווייטער ענין"]);
+    expect(seriesIntro(series(SYNTHESIS), "yi")!.keyThemes.map((k) => k.text)).toEqual(["ערשטער ענין", "צווייטער ענין"]);
+  });
+
+  it("a Hebrew reader gets the Hebrew translation where there is one, else Yiddish, marked with its language", () => {
+    const translated: SeriesSynthesis = { ...SYNTHESIS, title: { ...SYNTHESIS.title, he: "קורס" } };
+    const intro = seriesIntro(series(translated), "he")!;
+    expect(intro.title).toEqual({ text: "קורס", lang: "he", dir: "rtl", fallback: false });
+    expect(intro.overview).toEqual({ text: "עס גייט פון דא ביז דארט.", lang: "yi", dir: "rtl", fallback: true });
+    expect(intro.keyThemes.map((k) => k.lang)).toEqual(["yi", "yi"]);
   });
 
   it("a suppressed (blank) overview is left out; the synthesis, and so its label, stays", () => {
     const intro = seriesIntro(series({ ...SYNTHESIS, overview: { en: "", yi: "" } }), "en");
     expect(intro).not.toBeNull();
     expect(intro!.overview).toBeNull();
-    expect(intro!.title).toBe("A course");
+    expect(intro!.title?.text).toBe("A course");
   });
 
   it("reads reviewed only when it is exactly true", () => {
@@ -105,12 +115,12 @@ describe("the real tanya-yi file", () => {
   const ordered = orderParts(REAL.parts);
 
   it("has a synthesis with an overview and plain key themes in both languages", () => {
-    for (const lang of ["en", "yi"] as const) {
+    for (const lang of UI_LANGS) {
       const intro = seriesIntro(REAL, lang)!;
       expect(intro.title).not.toBeNull();
       expect(intro.overview).not.toBeNull();
       expect(intro.keyThemes.length).toBeGreaterThan(0);
-      expect(intro.keyThemes.every((k) => typeof k === "string")).toBe(true);
+      expect(intro.keyThemes.every((k) => typeof k.text === "string")).toBe(true);
     }
   });
 

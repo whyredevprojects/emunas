@@ -1,6 +1,6 @@
 /**
  * C2.1 acceptance on the real corpus, end to end:
- *   corpus:build (repo data, into a temp dir) → astro build (EMUNAS_CORPUS_DIR) → checks on dist,
+ *   corpus:build (repo data) → astro build → checks on dist (the shared build of test/site-builds.ts),
  * for the three corpus-entry indexes this package owns: שמות (`people/`), מראי מקומות
  * (`sources/`) and ערכים (`erachim/`).
  *
@@ -13,60 +13,29 @@
  * - links inside these pages resolve (pages of these three indexes, their anchors, shiur
  *   moments); the only external links go to Sefaria;
  * - file count and page weight within budget; nothing from transcripts reaches these pages.
- *
- * Slow-ish (one full corpus build and one site build, about 30 s); it reads the repository's data
- * folder only through the corpus CLI, like CI does.
  */
-import { spawnSync } from "node:child_process";
-import { existsSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync } from "node:fs";
-import { tmpdir } from "node:os";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, join, relative, sep } from "node:path";
-import { fileURLToPath } from "node:url";
 import { gzipSync } from "node:zlib";
 import type { CorpusIndex, LayerConceptsFile, LayerPeopleFile, LayerWorksFile, PublicShiur } from "@emunas/corpus/public";
 import { corpusLabel } from "@emunas/i18n";
-import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { astroBuild } from "../../../../test/astro-build.ts";
-
-const here = dirname(fileURLToPath(import.meta.url));
-const app = join(here, "..", "..", "..", "..");
-const repo = join(app, "..", "..");
+import { describe, expect, inject, it } from "vitest";
+import { EDS, dirOf, type Ed } from "../../../lib/edition.ts";
 
 /**
- * Measured 2026-11-15 on the real corpus: 444 person pages (with `all/`), 384 work pages and 533
- * glossary pages per edition, about 2,750 pages in all. The budget leaves room for growth; the
+ * Measured 2026-11-18 on the real corpus with three editions (en, yi, he): 470 person pages (with
+ * `all/`), 386 work pages and 534 glossary pages per edition, 4,170 pages in all. A fourth edition
+ * would pass the budget, so raise it deliberately then. The budget leaves room for growth; the
  * site-wide 18,000-file cap is enforced by the build's budget check.
  */
 const PAGE_BUDGET = 5_000;
 /** No page heavier than this, gzip (the largest, /en/erachim/, is about 92 KB). */
 const PAGE_GZIP_BUDGET = 150 * 1024;
 
-let tmp = "";
-let corpus = "";
-let dist = "";
+const { corpus, dist } = inject("quietSite");
 
 const readJson = <T,>(p: string): T => JSON.parse(readFileSync(p, "utf8")) as T;
 
-beforeAll(() => {
-  tmp = mkdtempSync(join(tmpdir(), "quiet-entries-site-"));
-  corpus = join(tmp, "corpus");
-  dist = join(tmp, "dist");
-  const tsx = join(repo, "node_modules", ".bin", "tsx");
-  const c = spawnSync(tsx, [join(repo, "packages", "corpus", "src", "cli.ts"), "--out", corpus], {
-    cwd: repo,
-    env: { ...process.env, INIT_CWD: repo },
-    encoding: "utf8",
-  });
-  if (c.status !== 0) throw new Error(`corpus:build failed:\n${c.stdout}\n${c.stderr}`);
-  const b = astroBuild(app, dist, { EMUNAS_CORPUS_DIR: corpus });
-  if (b.status !== 0) throw new Error(`astro build failed:\n${b.stdout.slice(-4000)}\n${b.stderr.slice(-4000)}`);
-}, 300_000);
-
-afterAll(() => {
-  if (tmp) rmSync(tmp, { recursive: true, force: true });
-});
-
-const EDS = ["yi", "en"] as const;
 const DIRS = ["people", "sources", "erachim"] as const;
 
 function walk(dir: string): string[] {
@@ -199,7 +168,7 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
           continue;
         }
         const [p, frag] = href.split("#") as [string, string | undefined];
-        const shiur = /^\/(yi|en)\/shiur\/([^/]+)\/$/.exec(p);
+        const shiur = /^\/(en|yi|he)\/shiur\/([^/]+)\/$/.exec(p);
         if (shiur) {
           shiurLinks++;
           if (shiur[1] !== path.split("/")[1]) bad("crosses editions");
@@ -221,8 +190,8 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
           continue;
         }
         // Topic and story entries belong to other indexes (C2.2, C2.3): well-formed addresses only.
-        if (/^\/(yi|en)\/(inyanim|stories)\/(?:[a-z0-9-]+\/)?$/.test(p)) continue;
-        if (/^\/(yi|en)\/(about|)\/?$/.test(p)) continue; // edition home (#indexes) and About
+        if (/^\/(en|yi|he)\/(inyanim|stories)\/(?:[a-z0-9-]+\/)?$/.test(p)) continue;
+        if (/^\/(en|yi|he)\/(about|)\/?$/.test(p)) continue; // edition home (#indexes) and About
         if (!pages.has(p)) {
           bad("no such page");
           continue;
@@ -237,10 +206,10 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
 
   it("carries the AI label once on every page and one report link on every entry page", () => {
     for (const [path, file] of entryPages()) {
-      const ed = path.split("/")[1] as "yi" | "en";
+      const ed = path.split("/")[1] as Ed;
       const html = readFileSync(file, "utf8");
       const main = mainOf(html);
-      const isIndex = /^\/(yi|en)\/[a-z]+\/$/.test(path);
+      const isIndex = /^\/(en|yi|he)\/[a-z]+\/$/.test(path);
       expect(count(main, 'class="corpus-label'), `${path} label`).toBe(1 + (isIndex ? 0 : 1)); // entry: the footer wraps the label
       expect(count(main, '<p class="corpus-label'), `${path} label text`).toBe(1);
       expect(count(main, 'class="report-entry"'), `${path} report`).toBe(isIndex ? 0 : 1);
@@ -250,7 +219,7 @@ describe("C2.1 names, works and glossary on the real corpus", () => {
         expect(/href="mailto:[^"]*subject=/.test(main), `${path} mailto`).toBe(true);
       }
       expect((main.match(/<h1\b/g) ?? []).length, `${path} h1`).toBe(1);
-      expect(html).toContain(`<html lang="${ed}" dir="${ed === "yi" ? "rtl" : "ltr"}"`);
+      expect(html).toContain(`<html lang="${ed}" dir="${dirOf(ed)}"`);
     }
   });
 

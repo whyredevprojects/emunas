@@ -7,11 +7,26 @@
  * Kinds:
  *  kp key point · s section/chapter · i insight · tk takeaway · q question · st story · src source
  *  ol one-liner · ab abstract (index always 0)
- *  wen / wyi write-up paragraph: `<kind><blockIndex>.<paragraphIndex>` (e.g. `~wen3.1`)
+ *  w<lang> write-up paragraph, one kind per `UI_LANGS` language (`wen`, `wyi`, `whe`):
+ *    `<kind><blockIndex>.<paragraphIndex>` (e.g. `~wen3.1`). A translated write-up mirrors the
+ *    `yi` blocks, so `~whe3.1` is the translation of `~wyi3.1`.
  */
+import { UI_LANGS, type UiLang } from "@emunas/i18n";
 
-export const MOMENT_KINDS = ["kp", "s", "i", "tk", "q", "st", "src", "ol", "ab", "wen", "wyi"] as const;
-export type MomentKind = (typeof MOMENT_KINDS)[number];
+export type WriteupMomentKind = `w${UiLang}`;
+export const ITEM_MOMENT_KINDS = ["kp", "s", "i", "tk", "q", "st", "src", "ol", "ab"] as const;
+export const WRITEUP_MOMENT_KINDS: readonly WriteupMomentKind[] = UI_LANGS.map((l) => writeupMomentKind(l));
+export const MOMENT_KINDS: readonly MomentKind[] = [...ITEM_MOMENT_KINDS, ...WRITEUP_MOMENT_KINDS];
+export type MomentKind = (typeof ITEM_MOMENT_KINDS)[number] | WriteupMomentKind;
+
+/** The moment kind of a write-up paragraph in `lang`. */
+export function writeupMomentKind(lang: UiLang): WriteupMomentKind {
+  return `w${lang}`;
+}
+
+function isWriteupKind(kind: string): kind is WriteupMomentKind {
+  return (WRITEUP_MOMENT_KINDS as readonly string[]).includes(kind);
+}
 
 export interface ParsedMomentId {
   shiurId: string;
@@ -22,12 +37,14 @@ export interface ParsedMomentId {
 }
 
 const SHIUR_ID = /^[a-z0-9][a-z0-9-]*$/;
-const MOMENT_RE = /^([a-z0-9][a-z0-9-]*)~(kp|src|st|s|i|tk|q|ol|ab|wen|wyi)(\d+)(?:\.(\d+))?$/;
+// Longest kinds first, so `src` is not read as `s` + garbage.
+const KIND_ALT = [...MOMENT_KINDS].sort((a, b) => b.length - a.length).join("|");
+const MOMENT_RE = new RegExp(`^([a-z0-9][a-z0-9-]*)~(${KIND_ALT})(\\d+)(?:\\.(\\d+))?$`);
 
 export function momentId(shiurId: string, kind: MomentKind, index: number, sub?: number): string {
   if (!SHIUR_ID.test(shiurId)) throw new Error(`invalid shiur id for a moment id: ${JSON.stringify(shiurId)}`);
   if (!Number.isInteger(index) || index < 0) throw new Error(`invalid moment index ${index}`);
-  const isWriteup = kind === "wen" || kind === "wyi";
+  const isWriteup = isWriteupKind(kind);
   if (isWriteup !== (sub !== undefined)) throw new Error(`moment kind ${kind} ${isWriteup ? "needs" : "takes no"} sub index`);
   if (sub !== undefined && (!Number.isInteger(sub) || sub < 0)) throw new Error(`invalid moment sub index ${sub}`);
   return sub === undefined ? `${shiurId}~${kind}${index}` : `${shiurId}~${kind}${index}.${sub}`;
@@ -37,7 +54,7 @@ export function parseMomentId(id: string): ParsedMomentId | null {
   const m = MOMENT_RE.exec(id);
   if (!m) return null;
   const kind = m[2] as MomentKind;
-  const isWriteup = kind === "wen" || kind === "wyi";
+  const isWriteup = isWriteupKind(kind);
   if (isWriteup !== (m[4] !== undefined)) return null;
   const out: ParsedMomentId = { shiurId: m[1]!, kind, index: Number(m[3]) };
   if (m[4] !== undefined) out.sub = Number(m[4]);

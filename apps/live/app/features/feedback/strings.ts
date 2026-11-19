@@ -57,10 +57,35 @@ export const feedbackYi: MessageTable<FeedbackKey> = {
   "error.invalid": "מ׳האט נישט געקענט שיקן די מעלדונג. מאכט קירצער די הערה און קלייבט נאכאמאל.",
 };
 
+export const feedbackHe: MessageTable<FeedbackKey> = {
+  "report.open": "משהו לא תקין כאן",
+  "report.title": "משהו לא תקין כאן?",
+  "report.lead": "הדיווחים מגיעים לאחראי על הרשימות. הם אינם משנים את האתר.",
+  "report.note": "הוסיפו הערה (לא חובה, לפני הבחירה)",
+  "report.noteCount": "{n} מתוך {max} תווים",
+  "report.reasons": "מה לא תקין?",
+  "reason.wrong-source": "מקור שגוי",
+  "reason.wrong-name": "שם שגוי",
+  "reason.wrong-time": "זמן שגוי",
+  "reason.misrepresents": "לא משקף נכון את השיעור",
+  "reason.other": "משהו אחר",
+  "report.verifying": "בודק שאתם אדם…",
+  "report.sending": "שולח…",
+  "report.sent": "תודה. הדיווח שלכם נשלח.",
+  "report.close": "סגירה",
+  "report.retry": "נסו שוב",
+  "error.verify": "לא הצלחנו לוודא שהדיווח בא מאדם. אנא בחרו שוב.",
+  "error.verifyLoad": "הבדיקה שמונעת דיווחים אוטומטיים לא נטענה. אנא נסו שוב.",
+  "error.rate": "יותר מדי דיווחים מכאן ממש עכשיו. אנא נסו שוב בעוד זמן קצר.",
+  "error.unavailable": "לא ניתן לשלוח דיווחים כרגע. אנא נסו שוב מאוחר יותר.",
+  "error.network": "לא ניתן היה לשלוח את הדיווח. אנא בדקו את החיבור ובחרו שוב.",
+  "error.invalid": "לא ניתן היה לשלוח את הדיווח. אנא קצרו את ההערה ובחרו שוב.",
+};
+
 export type FeedbackT = TFunction<FeedbackKey>;
 
 const cache: Partial<Record<UiLang, FeedbackT>> = {};
 
 export function feedbackT(ui: UiLang): FeedbackT {
-  return (cache[ui] ??= createT<FeedbackKey>({ en: feedbackEn, yi: feedbackYi }, ui));
+  return (cache[ui] ??= createT<FeedbackKey>({ en: feedbackEn, yi: feedbackYi, he: feedbackHe }, ui));
 }

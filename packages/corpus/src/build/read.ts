@@ -10,7 +10,7 @@
  * the agents' working folders and the section search dump are denied before the allow-list is
  * consulted, so a later, wider allow pattern can never open them.
  */
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
 import { dirname, isAbsolute, relative, resolve, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -27,6 +27,8 @@ export function defaultPolicyDir(): string {
 }
 
 const SHIUR_ID = "[a-z0-9][a-z0-9-]*";
+/** A translation language folder / file stem (`he`). */
+const LANG = "[a-z]{2,3}";
 
 /**
  * Denied before the allow-list (corpus-wave-plan §3.1). Written with escaped slashes so the source
@@ -55,7 +57,13 @@ export const DATA_ALLOW_LIST: readonly RegExp[] = [
   /^derived\/corpus\/(index|topics|concepts|people|works|stories|teaching-clusters|redirects)\.json$/,
   new RegExp(`^derived/corpus/series/${SHIUR_ID}\\.json$`),
   new RegExp(`^derived/corpus/shiur-tags/${SHIUR_ID}\\.json$`),
+  // P4c translation overlays (src/types.ts ShiurTranslation / CorpusTranslation).
+  new RegExp(`^derived/shiurim/${SHIUR_ID}/i18n/${LANG}\\.json$`),
+  new RegExp(`^derived/corpus/i18n/${LANG}/[a-z0-9][a-z0-9-]*\\.json$`),
 ];
+
+/** Folders (relative to the data root) whose file names the build may list: the corpus translation parts. */
+export const DATA_LIST_ALLOW_LIST: readonly RegExp[] = [new RegExp(`^derived/corpus/i18n/${LANG}$`)];
 
 /** Files in `site-policy/` the build may read. */
 export const POLICY_ALLOW_LIST: readonly RegExp[] = [
@@ -105,6 +113,12 @@ export interface DataReader {
   exists(rel: string): boolean;
   /** Raw text; null when the file does not exist. Throws ForbiddenPathError for a path off the allow-list. */
   readText(rel: string): string | null;
+  /**
+   * Names of the readable files directly in a listable folder (`DATA_LIST_ALLOW_LIST`), sorted; []
+   * when the folder does not exist. Names whose path is off the file allow-list are left out.
+   * Throws ForbiddenPathError for a folder that is not listable.
+   */
+  list(relDir: string): string[];
 }
 
 export function createDataReader(dataDir: string): DataReader {
@@ -118,6 +132,13 @@ export function createDataReader(dataDir: string): DataReader {
       const abs = checkedPath(root, rel, DATA_ALLOW_LIST, DATA_DENY_LIST);
       if (!existsSync(abs)) return null;
       return readFileSync(abs, "utf8");
+    },
+    list(relDir) {
+      const abs = checkedPath(root, relDir, DATA_LIST_ALLOW_LIST, DATA_DENY_LIST);
+      if (!existsSync(abs) || !statSync(abs).isDirectory()) return [];
+      return readdirSync(abs)
+        .filter((f) => isAllowedDataPath(`${relDir}/${f}`))
+        .sort();
     },
   };
 }

@@ -13,8 +13,9 @@
  * nothing named concepts.json, people.json, stories.json, threads.json, teaching-clusters.json,
  * synonyms.json, nothing under /layer/ and nothing from the pipeline's raw folder.
  *
- * Sizes on the wire, brotli-compressed as Cloudflare serves them over HTTPS: `today.json` ≤ 30 KiB
- * and the shiur file ≤ 40 KiB (§4). The e2e server compresses with brotli when the browser asks for
+ * Today paints from the Today file of its reading language (`today.<lang>.json`, one per UI
+ * language) and requests no other language's. Sizes on the wire, brotli-compressed as Cloudflare
+ * serves them over HTTPS: each Today file ≤ 30 KiB and the shiur file ≤ 40 KiB (§4). The e2e server compresses with brotli when the browser asks for
  * it, but WebKit (like Safari) only offers `br` over HTTPS: on the plain-HTTP test server it asks for
  * `gzip, deflate` and gets the larger gzip body. So the size counts what the browser received when
  * it negotiated brotli, and otherwise the brotli response the server gives the same file (what Safari
@@ -23,6 +24,7 @@
  * `@data`: runs on the contract fixtures and on a real-data build (`LIVE_E2E_DATA=build`).
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
+import { UI_LANGS } from "@emunas/i18n";
 import { dataJson, NO_SERVICE_WORKER } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
@@ -143,19 +145,23 @@ function everForbidden(rows: readonly Timed[]): string[] {
 }
 
 test.describe("@data first-load gate", () => {
-  test("cold Today: no corpus-layer or catalog-wide file before first paint; today.json ≤ 30 KiB", async ({ page, request }) => {
-    const r = await coldLoad(page, "/en");
-    const data = r.before.filter((x) => x.path.startsWith("/data/")).map((x) => x.path);
-    expect(data, "Today paints from today.json").toContain("/data/today.json");
-    expect(forbiddenBeforePaint(r.before)).toEqual([]);
-    expect(everForbidden(r.all)).toEqual([]);
-    const today = r.sizes.get("today.json");
-    expect(today, "today.json transfer size").toBeDefined();
-    expect(await brotliBytes(request, today!)).toBeLessThanOrEqual(30 * KIB);
-  });
+  for (const lang of UI_LANGS) {
+    test(`cold Today (${lang}): no corpus-layer or catalog-wide file before first paint; today.${lang}.json ≤ 30 KiB`, async ({ page, request }) => {
+      const file = `today.${lang}.json`;
+      const r = await coldLoad(page, `/${lang}`);
+      const data = r.before.filter((x) => x.path.startsWith("/data/")).map((x) => x.path);
+      expect(data, `Today paints from ${file}`).toContain(`/data/${file}`);
+      expect(r.all.map((x) => x.path).filter((p) => p.startsWith("/data/today.")), "no other language's Today file").toEqual([`/data/${file}`]);
+      expect(forbiddenBeforePaint(r.before)).toEqual([]);
+      expect(everForbidden(r.all)).toEqual([]);
+      const today = r.sizes.get(file);
+      expect(today, `${file} transfer size`).toBeDefined();
+      expect(await brotliBytes(request, today!)).toBeLessThanOrEqual(30 * KIB);
+    });
+  }
 
   test("cold listening room: only the shiur file before first paint; shiur file ≤ 40 KiB", async ({ page, request }) => {
-    const today = await dataJson<Record<string, unknown>>(request, "today.json");
+    const today = await dataJson<Record<string, unknown>>(request, "today.en.json");
     // Any shiur id Today links to (read structurally: the file's shape is Today's business).
     const ids = [...JSON.stringify(today).matchAll(/"shiurId":"([^"]+)"/gu)].map((m) => m[1]!);
     const corpus = ids.length > 0 ? null : await dataJson<{ shiurim: { id: string; status: string }[] }>(request, "corpus.json");
@@ -189,7 +195,7 @@ test.describe("gate self-test", () => {
       "/data/explore/entities.json",
     ];
     expect(forbiddenBeforePaint(bad.map(at))).toHaveLength(bad.length);
-    const ok = ["/data/today.json", "/data/build.json", "/data/shiur/x.json", "/data/writeup/x.en.json", "/assets/app.js"];
+    const ok = [...UI_LANGS.map((l) => `/data/today.${l}.json`), "/data/build.json", "/data/shiur/x.json", "/data/writeup/x.en.json", "/assets/app.js"];
     expect(forbiddenBeforePaint(ok.map(at))).toEqual([]);
     // (The variant dump's name is built here: the literal may only appear in packages/corpus-guard.)
     const dump = `/data/${["asr", "variants"].join("-")}.json`;

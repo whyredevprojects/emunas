@@ -57,10 +57,37 @@ export const seriesYi: MessageTable<SeriesKey> = {
   "series.keyThemes": "די הויפט ענינים",
 };
 
+export const seriesHe: MessageTable<SeriesKey> = {
+  "series.heading": "סדרות",
+  "series.lead": "שיעורים שנאמרו כסדרה, על הסדר. סדרה באידיש וסדרה באנגלית הן שתי סדרות נפרדות.",
+  "series.loading": "טוען…",
+  "series.error": "לא ניתן היה לטעון דף זה. בדקו את החיבור וטענו מחדש.",
+  "series.notFound": "אין סדרה בכתובת זו.",
+  "series.all": "כל הסדרות",
+  "series.parts": { one: "{count} חלק", other: "{count} חלקים" },
+  "series.noParts": "עדיין אין חלקים זמינים מסדרה זו.",
+  "series.lang": "ב{lang}",
+  "series.view": "הצגה",
+  "series.view.order": "על הסדר",
+  "series.view.perek": "לפי פרק",
+  "series.perek": "פרק {n}",
+  "series.perek.intro": "הקדמה",
+  "series.perek.other": "חלקים אחרים",
+  "series.part": "חלק {n}",
+  "series.part.noOrder": "חלק",
+  "series.progress": "נשמעו {done} מתוך {total} חלקים",
+  "series.progress.none": "חלקים שתשמעו יסומנו כאן.",
+  "series.continue": "המשך בחלק {n}",
+  "series.heard": "נשמע",
+  "series.started": "התחיל",
+  "series.about": "על הסדרה",
+  "series.keyThemes": "העניינים העיקריים",
+};
+
 export type SeriesT = TFunction<SeriesKey>;
 
 const cache: Partial<Record<UiLang, SeriesT>> = {};
 
 export function seriesT(ui: UiLang): SeriesT {
-  return (cache[ui] ??= createT<SeriesKey>({ en: seriesEn, yi: seriesYi }, ui));
+  return (cache[ui] ??= createT<SeriesKey>({ en: seriesEn, yi: seriesYi, he: seriesHe }, ui));
 }

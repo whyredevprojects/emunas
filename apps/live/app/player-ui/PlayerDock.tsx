@@ -13,7 +13,7 @@
  * listening room carries the full sentence). A switch is announced in its own polite region, not
  * the throttled chapter one.
  */
-import { audioVersionLabel, formatClock, sectionKindLabel, type AudioVersion, type UiLang } from "@emunas/i18n";
+import { audioVersionLabel, formatClock, pickText, sectionKindLabel, type AudioVersion, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useRef, useState, type ChangeEvent, type JSX } from "react";
 import { Link } from "react-router";
@@ -129,7 +129,8 @@ export function PlayerDock(): JSX.Element {
   const chapters = info?.shiur.notes?.chapters ?? [];
   const chapter = chapters[state.chapterIndex] ?? null;
   const reading = state.readingLang;
-  const chapterTitle = chapter ? chapter.title[reading] || chapter.title[reading === "en" ? "yi" : "en"] : null;
+  const picked = chapter ? pickText(chapter.title, reading) : null;
+  const chapterTitle = picked ? picked.text : null;
   const playing = state.status === "playing" || state.status === "loading";
   const announcement = useChapterAnnouncement(chapterTitle, state.chapterIndex, playing);
   useEffect(() => {
@@ -231,7 +232,7 @@ export function PlayerDock(): JSX.Element {
         <div className={s.titleRow}>
           <Link className={s.title} to={paths.shiur(ui, shiur.id)} aria-label={`${rt("dock.open")}: ${chapterTitle ?? shiur.catalog.titleOriginal}`}>
             {chapterTitle !== null ? (
-              <Text value={chapterTitle} lang={reading} />
+              <Text value={chapterTitle} lang={picked?.lang ?? reading} />
             ) : (
               <Text value={shiur.catalog.titleOriginal} shiurLang={shiur.lang} />
             )}

@@ -1,6 +1,6 @@
 /**
  * W3.2 acceptance in a real browser (headless Chrome via playwright-core):
- * - the 7 sample shiurim build and render in both editions, axe-clean (light and dark), at phone
+ * - the 7 sample shiurim build and render in every edition, axe-clean (light and dark), at phone
  *   and desktop width without sideways scrolling;
  * - with JS off, every recording is a native `<audio>` and nothing docks;
  * - with JS on: playing docks the player (sticky) with Media Session metadata, `#t=<global>` on
@@ -28,6 +28,7 @@ import { brotliCompressSync } from "node:zlib";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import type { PublicShiur } from "@emunas/corpus/public";
+import { EDS, dirOf } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = join(app, "..", "..");
@@ -241,7 +242,7 @@ function walk(dir: string): string[] {
 describe("build output", () => {
   it("has a page per shiur and edition, within the size budget, with no transcript UI", () => {
     const index = JSON.parse(readFileSync(join(corpusDir, "index.json"), "utf8")) as { shiurim: { id: string }[] };
-    for (const ed of ["yi", "en"]) {
+    for (const ed of EDS) {
       for (const { id } of index.shiurim) {
         const file = join(outDir, ed, "shiur", id, "index.html");
         expect(existsSync(file), file).toBe(true);
@@ -265,11 +266,11 @@ describe("build output", () => {
   });
 });
 
-describe.each(["yi", "en"] as const)("the 7 sample shiurim, %s edition", (ed) => {
+describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
   it.each(SAMPLES)("%s renders and is axe-clean", async (id) => {
     for (const dark of [false, true]) {
       const page = await open(`/${ed}/shiur/${id}/`, { dark });
-      expect(await page.getAttribute("html", "dir")).toBe(ed === "yi" ? "rtl" : "ltr");
+      expect(await page.getAttribute("html", "dir")).toBe(dirOf(ed));
       expect(await page.locator("h1").count()).toBe(1);
       const violations = await axe(page);
       expect(violations, JSON.stringify(violations, null, 2)).toEqual([]);
@@ -286,8 +287,8 @@ describe.each(["yi", "en"] as const)("the 7 sample shiurim, %s edition", (ed) =>
 });
 
 describe("layout", () => {
-  it.each([360, 1100])("has no sideways scroll at %ipx, in both editions", async (width) => {
-    for (const ed of ["yi", "en"] as const) {
+  it.each([360, 1100])("has no sideways scroll at %ipx, in every edition", async (width) => {
+    for (const ed of EDS) {
       const page = await open(`/${ed}/shiur/${MULTI}/`, { width });
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
       await page.screenshot({ path: join(shotDir, `shiur-${MULTI}-${ed}-${width}.png`), fullPage: true });

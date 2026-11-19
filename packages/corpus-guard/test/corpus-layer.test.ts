@@ -7,7 +7,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { afterEach, describe, expect, it } from "vitest";
 import { main } from "../src/cli.ts";
+import { UI_LANGS } from "@emunas/i18n";
 import { AliasRules, aliasTerms, createLeakScanner, readAsrVariants } from "../src/index.ts";
+import { PAGEFIND_LABEL_KEYS, readTranslatedLabels } from "../src/aliases.ts";
 import { corpusItemId, layerFileOf, layerFileUnits, parseCorpusItemId, readLayerUnits } from "../src/layer.ts";
 import { createPagefindChecker } from "../src/pagefind.ts";
 import { readVerbatimAllow } from "../src/policy.ts";
@@ -165,6 +167,15 @@ describe("corpus-layer text units", () => {
     expect(topic.path).toEqual(["detail", 0, "description", "en"]);
     const concept = units.find((u) => u.id === `corpus:concept:${CONCEPT}#label.en`)!;
     expect(concept.members.sort()).toEqual([OTHER_SHIUR, SHIUR].sort());
+  });
+
+  it("every language key of a per-language object is a unit (he included)", () => {
+    const units = layerFileUnits("concepts.json", { concepts: [{ id: CONCEPT, label: { en: "Bitachon", yi: "ביטחון", he: "ביטחון" }, definition: { en: "d", yi: "ד", he: "הגדרה" }, shiurIds: [SHIUR] }] });
+    expect(units.map((u) => u.id)).toEqual([
+      `corpus:concept:${CONCEPT}#label.en`, `corpus:concept:${CONCEPT}#label.yi`, `corpus:concept:${CONCEPT}#label.he`,
+      `corpus:concept:${CONCEPT}#definition.en`, `corpus:concept:${CONCEPT}#definition.yi`, `corpus:concept:${CONCEPT}#definition.he`,
+    ]);
+    expect(parseCorpusItemId(`corpus:concept:${CONCEPT}#definition.he`)).toEqual({ kind: "concept", entityId: CONCEPT, field: "definition", lang: "he" });
   });
 
   it("reads defensively and maps layer paths", () => {
@@ -462,6 +473,54 @@ describe("post-pass: raw ban and alias-key assertion", () => {
     expect(s.result().findings.map((f) => (f.kind === "alias" ? `${f.rule} ${f.entity} ${f.field}` : f.kind))).toEqual([
       `not-display-field concept:${CONCEPT} entities[].labels`,
     ]);
+  });
+
+  it("Hebrew (any UI_LANGS) labels: data labels and translated overlay labels are display names; other text is not", () => {
+    fx = makeLayerFixture();
+    // A concept label in the data, and topic/concept labels from a translation overlay part.
+    const concepts = JSON.parse(readFileSync(join(fx.data, "concepts.json"), "utf8")) as { label: Record<string, string> }[];
+    concepts[0]!.label.he = "מידת הביטחון";
+    writeFile(join(fx.data, "concepts.json"), JSON.stringify(concepts));
+    writeFile(join(fx.data, "i18n", "he", "part-01.json"), JSON.stringify({
+      lang: "he", model: "opus", promptVersion: "1", sourceHashes: { [`topics:${TOPIC}`]: "0123456789abcdef" },
+      text: { [`topics:${TOPIC}.label`]: "אמונה וביטחון בה׳", [`topics:${TOPIC}.description`]: "תיאור ארוך", [`concepts:${CONCEPT}.definition`]: "הגדרה" },
+    }));
+    writeFile(join(fx.data, "i18n", "he", "notes.txt"), "not a part");
+    const rules = AliasRules.read(fx.data);
+    expect(rules.check({ kind: "concept", id: CONCEPT }, "מידת הביטחון")).toBeNull();
+    expect(rules.check({ kind: "topic", id: TOPIC }, "אמונה וביטחון בה'")).toBeNull();
+    // Only labels are names: a translated description or definition is not.
+    expect(rules.check({ kind: "topic", id: TOPIC }, "תיאור ארוך")).toEqual({ rule: "not-display-field" });
+    expect(rules.check({ kind: "concept", id: CONCEPT }, "הגדרה")).toEqual({ rule: "not-display-field" });
+    expect(readTranslatedLabels(fx.data)).toEqual([{ kind: "topic", id: TOPIC, label: "אמונה וביטחון בה׳" }]);
+
+    const check = createPagefindChecker({ aliases: AliasRules.read(fx.data) });
+    expect(PAGEFIND_LABEL_KEYS).toEqual(UI_LANGS.map((l) => `label${l[0]!.toUpperCase()}${l.slice(1)}`));
+    const rec = (labelHe: string) => ({ url: `/he/topics/${TOPIC}/`, content: "x", meta: { kind: "topic", labelEn: "Emunah and Bitachon", labelHe } });
+    expect(check(rec("אמונה וביטחון בה׳"), { kind: "topic", id: TOPIC })).toEqual([]);
+    expect(check(rec("תיאור ארוך"), { kind: "topic", id: TOPIC }).map((f) => (f.kind === "alias" ? `${f.rule} ${f.field}` : f.kind))).toEqual([
+      "not-display-field meta.labelHe",
+    ]);
+
+    const d = join(fx.root, "build", "client", "data");
+    writeFile(join(d, "quick-index.he.json"), JSON.stringify({
+      lang: "he",
+      entities: [
+        { kind: "topic", id: TOPIC, labels: { en: "Emunah and Bitachon", yi: "אמונה און בטחון", he: "אמונה וביטחון בה׳" }, synonyms: [], count: 2 },
+        { kind: "concept", id: CONCEPT, labels: { he: "בטחון שלא מן הרשימה" }, synonyms: [], count: 1 },
+      ],
+    }));
+    const s = scanner(fx, false);
+    s.scanPaths([d]);
+    expect(s.result().findings.map((f) => (f.kind === "alias" ? `${f.rule} ${f.entity} ${f.field}` : f.kind))).toEqual([
+      `not-display-field concept:${CONCEPT} entities[].labels`,
+    ]);
+  });
+
+  it("a broken translation overlay part is an error, not a silent drop", () => {
+    fx = makeLayerFixture();
+    writeFile(join(fx.data, "i18n", "he", "part-01.json"), "{ not json");
+    expect(() => AliasRules.read(fx!.data)).toThrow();
   });
 
   it("person names marked data-person on a built page (F.1): that person's display name, else a finding", () => {

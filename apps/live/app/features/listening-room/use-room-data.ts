@@ -6,9 +6,10 @@
  * `clientLoader` so the page renders its `h1` immediately (focus after navigation lands on it) and
  * keeps working inside the shell test router; W4.5 can add a prerender `loader` that seeds `initial`.
  */
-import type { L } from "@emunas/corpus/public";
+import type { LocalizedText } from "@emunas/corpus/public";
+import { CONTENT_FALLBACK, type UiLang } from "@emunas/i18n";
 import { useCallback, useEffect, useState } from "react";
-import { DataError, loadShiur, loadWriteup, type Ed, type ShiurFile, type WriteupFile } from "./data.ts";
+import { DataError, loadShiur, loadWriteup, type ShiurFile, type WriteupFile } from "./data.ts";
 
 export type RoomData =
   | { status: "loading" }
@@ -41,10 +42,10 @@ export function useRoomData(shiurId: string): RoomData {
   return data;
 }
 
-/** The series title (both languages) from the shiur file, or null. */
-export function seriesTitle(shiur: Pick<ShiurFile, "series" | "seriesTitle">): L | null {
+/** The series title (every language it has) from the shiur file, or null. */
+export function seriesTitle(shiur: Pick<ShiurFile, "series" | "seriesTitle">): LocalizedText | null {
   if (!shiur.series || !shiur.seriesTitle) return null;
-  return { en: shiur.seriesTitle.en, yi: shiur.seriesTitle.yi };
+  return shiur.seriesTitle;
 }
 
 /** Title, audio language and years of a shiur the file names (related, thread pointers). */
@@ -55,32 +56,45 @@ export function relatedTitles(shiur: Pick<ShiurFile, "related">): ReadonlyMap<st
   return new Map(Object.entries(shiur.related.titles));
 }
 
+/**
+ * The write-up states. `lang` is the language of the write-up shown (or about to be): the reading
+ * language when the shiur has a write-up in it, else the next language along `CONTENT_FALLBACK`
+ * that has one; `fallback` is true when that is not the reading language.
+ */
 export type WriteupState =
-  | { status: "loading"; lang: Ed }
-  | { status: "missing"; lang: Ed }
-  | { status: "ready"; lang: Ed; file: WriteupFile };
+  | { status: "loading"; lang: UiLang; fallback: boolean }
+  | { status: "missing"; lang: UiLang; fallback: boolean }
+  | { status: "ready"; lang: UiLang; fallback: boolean; file: WriteupFile };
 
-/** The write-up in `lang` (lazy, per language). */
-export function useWriteup(shiur: Pick<ShiurFile, "id" | "notes">, lang: Ed): WriteupState {
-  const available = shiur.notes?.writeupLangs.includes(lang) ?? false;
-  const [state, setState] = useState<WriteupState>({ status: available ? "loading" : "missing", lang });
+/** The language whose write-up a reader of `read` gets: the first along `CONTENT_FALLBACK` the shiur has. */
+export function writeupLangFor(shiur: Pick<ShiurFile, "notes">, read: UiLang): UiLang | null {
+  const have = shiur.notes?.writeupLangs ?? [];
+  return CONTENT_FALLBACK[read].find((l) => have.includes(l)) ?? null;
+}
+
+/** The write-up for a reader of `read` (lazy, per language), falling back along `CONTENT_FALLBACK`. */
+export function useWriteup(shiur: Pick<ShiurFile, "id" | "notes">, read: UiLang): WriteupState {
+  const chosen = writeupLangFor(shiur, read);
+  const lang = chosen ?? read;
+  const fallback = lang !== read;
+  const [state, setState] = useState<WriteupState>({ status: chosen ? "loading" : "missing", lang, fallback });
   useEffect(() => {
-    if (!available) {
-      setState({ status: "missing", lang });
+    if (chosen === null) {
+      setState({ status: "missing", lang, fallback });
       return;
     }
     let live = true;
-    setState({ status: "loading", lang });
-    loadWriteup(shiur.id, lang)
+    setState({ status: "loading", lang, fallback });
+    loadWriteup(shiur.id, chosen)
       .then((file) => {
-        if (live) setState({ status: "ready", lang, file });
+        if (live) setState({ status: "ready", lang, fallback, file });
       })
       .catch(() => {
-        if (live) setState({ status: "missing", lang });
+        if (live) setState({ status: "missing", lang, fallback });
       });
     return () => {
       live = false;
     };
-  }, [shiur.id, lang, available]);
+  }, [shiur.id, chosen, lang, fallback]);
   return state;
 }

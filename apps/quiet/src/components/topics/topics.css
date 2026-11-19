@@ -66,8 +66,8 @@
     font-style: italic;
   }
 
-  :lang(yi) .topic-definition,
-  .topic-definition:lang(yi) {
+  .topic-definition:lang(yi),
+  .topic-definition:lang(he) {
     font-style: normal;
   }
 

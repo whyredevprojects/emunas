@@ -7,14 +7,14 @@
  * The engine needs `quick-index.<ui>.json` and `facets.json` only. `corpus.json` is never loaded
  * here: the search page loads it itself, on the search route only (corpus-wave-plan §4).
  */
-import type { Ed } from "@emunas/corpus/public";
+import type { UiLang } from "@emunas/i18n";
 import { loadFacets, loadQuickIndex, loadSeries, type SeriesFile } from "./live-data.ts";
 import type { QuickSearch } from "./engine.ts";
 
-const cache = new Map<Ed, Promise<QuickSearch>>();
+const cache = new Map<UiLang, Promise<QuickSearch>>();
 const seriesCache = new Map<string, Promise<SeriesFile>>();
 
-export function loadQuickSearch(ui: Ed): Promise<QuickSearch> {
+export function loadQuickSearch(ui: UiLang): Promise<QuickSearch> {
   const hit = cache.get(ui);
   if (hit) return hit;
   const p = (async () => {

@@ -7,6 +7,7 @@
  * Nothing here reads raw data: the input is the allow-listed public contract, so there is no
  * field through which transcript text could arrive.
  */
+import type { AudioLang, PickedText } from "@emunas/i18n";
 import { quietPaths } from "@emunas/links";
 import type { IndexRow, PublicCatalog, PublicShiur } from "@emunas/corpus/public";
 import type { Neighbours } from "@emunas/corpus/aggregate";
@@ -32,15 +33,21 @@ export interface RowRef {
   readonly id: string;
   readonly href: string;
   readonly title: string;
-  readonly lang: Ed;
+  /** Spoken language of the shiur (its catalog title is in it). */
+  readonly lang: AudioLang;
 }
 
 /** One line under the page: the shiur before, the series or section it is in, the shiur after. */
 export interface PrevNextView {
   /** Which order the line follows: the series when the shiur is in one, else the section. */
   readonly of: "series" | "section";
-  /** The series or section name (catalog text; empty for a series without a title). */
+  /** The series or section name (empty for a series without a title). */
   readonly label: string;
+  /**
+   * `lang`/`dir` of `label` when its language is known (the series title is generated text, picked
+   * along `CONTENT_FALLBACK`); null for a catalog string (the section name), read by its script.
+   */
+  readonly labelAttrs: { readonly lang: Ed; readonly dir: "ltr" | "rtl" } | null;
   readonly href: string;
   readonly prev: RowRef | null;
   readonly next: RowRef | null;
@@ -78,15 +85,17 @@ export function prevNext(
   shiur: Pick<PublicShiur, "catalog" | "series">,
   neighbours: Neighbours | undefined,
   rows: RowLookup,
-  seriesTitle?: (id: string) => string | undefined,
+  seriesTitle?: (id: string) => PickedText | undefined,
 ): PrevNextView | null {
   if (!neighbours) return null;
   const ref = (id: string | null) => (id === null ? null : rowRef(ed, id, rows));
   const s = neighbours.series;
   if (s && shiur.series) {
+    const picked = seriesTitle?.(shiur.series.id);
     return {
       of: "series",
-      label: seriesTitle?.(shiur.series.id) ?? "",
+      label: picked?.text ?? "",
+      labelAttrs: picked ? { lang: picked.lang, dir: picked.dir } : null,
       href: quietPaths().series(ed, shiur.series.id),
       prev: ref(s.prev),
       next: ref(s.next),
@@ -95,6 +104,7 @@ export function prevNext(
   return {
     of: "section",
     label: sectionTitle(ed, shiur.catalog),
+    labelAttrs: null,
     href: sectionHref(ed, shiur.catalog),
     prev: ref(neighbours.section.prev),
     next: ref(neighbours.section.next),

@@ -16,8 +16,9 @@ client address; the address is the rate-limit key only and is never stored).
 
 ## Search parameters
 
-`q` (required, ≤200 chars) · `ui=en|yi` (snippet language preference) · `mode=hybrid|lexical|semantic`
-· `audio=en,yi` · `kind=section,insight,…` · `category=` · `occasion=` · `series=` · `work=` ·
+`q` (required, ≤200 chars) · `ui=en|yi|he` (any `UI_LANGS` language from `@emunas/i18n`; snippet
+language preference) · `mode=hybrid|lexical|semantic` · `audio=en,yi` (recording language,
+`AUDIO_LANGS`; never `he`) · `kind=section,insight,…` · `category=` · `occasion=` · `series=` · `work=` ·
 `person=` · `concept=` · `topic=` · `yearFrom=` · `yearTo=` · `limit` (1–50, default 20) · `cursor`.
 Lists are comma-separated (≤10 values) of slugs. Unknown parameters → 400.
 
@@ -34,19 +35,28 @@ Response (exact keys, see `src/contract.ts` `ALLOWED_KEYS`):
 ```ts
 { rev, tookMs, next: string | null,
   groups: [{ shiurId, count }],
-  results: [{ momentId, shiurId, kind, t, end, title: { en, yi }, matched: "title" | "text" | "semantic",
+  results: [{ momentId, shiurId, kind, t, end, title: { en, yi, he }, matched: "title" | "text" | "semantic",
               snippet: { text, lang, marks: [start, end][] } | null, score }] }
 ```
 
+`title` has one key per `UI_LANGS` language (null where a moment has no title in it). Languages
+are never listed in the Worker: titles, the `ui` parameter, moment ids (`….<lang>`), vector ids
+and feedback `ui` all follow `UI_LANGS`, so a language added there reaches the API unchanged.
+
 Snippets are plain text cut from `moment_text` (generated display text) with highlight offsets; the
-client renders `<mark>`. No HTML is ever returned. A cursor from another `corpus_rev` gets 409
+client renders `<mark>`. The snippet language is the first text, in the order reader's language →
+the language the words matched in → the reader's `CONTENT_FALLBACK` chain (he → yi → en), that holds
+the query words (else the first text in that order); `snippet.lang` names it, so the client sets
+`lang`/`dir` from it. No HTML is ever returned. A cursor from another `corpus_rev` gets 409
 `stale_cursor` (restart the search).
 
 ## What the index sync (W3.10, `sync/`, see `sync/README.md`) writes
 
-Schema: `migrations/search/0001_init.sql`.
+Schema: `migrations/search/0001_init.sql`, rebuilt by `0002_languages.sql` (schema version 2: no
+language list anywhere in the schema; the next sync rewrites the whole index).
 
-- `moments`: one row per moment, facets copied from the shiur, `hash` for diffing.
+- `moments`: one row per moment, facets copied from the shiur, `titles` (a JSON object of language →
+  generated display title, read key by key with `parseTitles`), `hash` for diffing.
 - `moment_entities`: `(moment_id, type ∈ work|person|concept|topic, entity_id)`, corpus ids. `type` is
   plain TEXT (no CHECK), so `topic` needed no migration.
 - `moment_text(id, lang, title, body)`: the generated title/body **as displayed** (after `normalizeHe`).

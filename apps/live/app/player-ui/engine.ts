@@ -9,7 +9,7 @@
  * - `usePlayerState()` reads engine state with `useSyncExternalStore`; during prerender (no `Audio`)
  *   it returns the idle state and never creates the engine.
  */
-import type { L } from "@emunas/corpus/public";
+import type { LocalizedText } from "@emunas/corpus/public";
 import { DEFAULT_AUDIO_VERSION, type AudioVersion } from "@emunas/i18n";
 import { useSyncExternalStore } from "react";
 import {
@@ -27,7 +27,7 @@ import { makeDescribe } from "./describe.ts";
 export interface PlayingInfo {
   shiur: PlayerShiur;
   /** Series title, used as the Media Session album and in the dock. */
-  seriesTitle: L | null;
+  seriesTitle: LocalizedText | null;
 }
 
 const registry = new Map<string, PlayingInfo>();

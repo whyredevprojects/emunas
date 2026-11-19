@@ -9,6 +9,9 @@
     "./package.json": "./package.json"
   },
   "sideEffects": false,
+  "dependencies": {
+    "@emunas/i18n": "0.0.0"
+  },
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "test": "vitest run"

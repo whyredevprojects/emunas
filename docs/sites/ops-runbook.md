@@ -31,9 +31,9 @@ Workers, so a preview can never reach production D1.
 
 Live Worker behaviour:
 
-- `GET|HEAD /` → `302` to `/yi/` or `/en/` (query kept). Order: cookie `emunas_ui=yi|en`
-  (written by the Live app when the reader picks a language), then `Accept-Language`
-  (highest q; `yi`/`ji`/`he`/`iw` → `yi`, `en` → `en`), else `en`. `Cache-Control: private, no-store`,
+- `GET|HEAD /` → `302` to `/<ui>/` for a `UI_LANGS` language (`/en/`, `/yi/`, `/he/`; query kept).
+  Order: cookie `emunas_ui=<ui>` (written by the Live app when the reader picks a language), then
+  `Accept-Language` (highest q; `ji` → `yi`, `iw` → `he`), else `en`. `Cache-Control: private, no-store`,
   `Vary: Cookie, Accept-Language`. Other methods → `405`.
 - `/api`, `/api/*`, `/admin`, `/admin/*` → forwarded unchanged to `env.API`.
 - On `*.workers.dev` hosts the Worker adds `X-Robots-Tag: noindex` to the responses it makes
@@ -260,8 +260,8 @@ keeping the domain off staging makes that explicit.
 
 What this means for search engines:
 
-- Quiet is the canonical copy. Its pages are self-canonical with `hreflang` yi/en/x-default and a
-  sitemap per edition; Live pages carry `<link rel="canonical">` to the Quiet equivalent and no
+- Quiet is the canonical copy. Its pages are self-canonical with an `hreflang` alternate per
+  edition (en, yi, he) plus x-default, and a sitemap per edition; Live pages carry `<link rel="canonical">` to the Quiet equivalent and no
   sitemap (integration-plan §2.3).
 - Every `*.workers.dev` host (production without a domain, all of staging, PR previews) answers
   with `X-Robots-Tag: noindex` (`_headers` and the Live Worker), so staging canonicals pointing at
@@ -478,11 +478,47 @@ debugging from scratch.
 - *Fix:* if they time out again (more pages, a slower runner), raise `AXE_PAGE_MS`. Don't drop
   pages from the scan.
 
-**Live first-load gate: `today.json ≤ 30 KiB`** (`first-load.spec`)
+**Live e2e: mirroring on mobile** (`shell.spec` "yi is the mirror image of en", mobile projects)
+- *Why it fails:* on a phone the header holds the site name, one link per other interface language,
+  the Language button and the dark-colours toggle. When they no longer fit one row in one language
+  (English is the widest: "Emunas", "Language") the tools wrap to a second row there but not in
+  Yiddish, and every header box is ~52 px lower in `en` than in `yi`. First seen 2026-11-18, when
+  Hebrew added a second language link: `en` needed 392 px of the 380 px row on Pixel 7.
+- *Fix used:* tighter spacing for the header tools and the language links below 36rem
+  (`apps/live/app/shell/Shell.module.css`): `en` now needs 344 of 358 px on iPhone 14 (390 px).
+  If a language or a longer label comes back over, measure the row (brand + gap + `.headerTools`)
+  against the viewport minus the header padding; don't drop the test or the tap minimum.
+
+**Live e2e: the real-data series spec times out** (`today-series.spec` "every series page lists its parts")
+- *Why it fails:* it loads every series page (and the perek view of perakim series) in one test. On real
+  data that is 18 page loads; in WebKit on the 4-vCPU runner they overran the 30 s default (first seen
+  2026-11-19, PR #15).
+- *Fix:* the test calls `navBudget(pages)` (`NAV_PAGE_MS` = 5 s per page). If it times out again with
+  more series, raise `NAV_PAGE_MS`. Don't drop series from the check.
+
+**Live first-load gate: each Today file ≤ 30 KiB** (`first-load.spec`)
+- *What it checks:* Today loads one file, the one for its reading language: `today.<lang>.json`, one
+  per UI language (`today.en.json`, `today.yi.json`, `today.he.json`). Each must be ≤ 30 KiB brotli.
 - *Why it fails:* the gate counts brotli bytes, which is what production serves. The plain-HTTP test
   server gives WebKit gzip only, which is ~6% larger, so a gzip-based measurement fails first.
-  If the gate fails on brotli bytes, Today's data has really outgrown its budget.
+  If the gate fails on brotli bytes, that Today file has really outgrown its budget.
 - *Fix:* that is a product or data-size question. Don't raise the budget silently.
+- *Also fails in* `data:budgets` ("today.<lang>.json: … bytes br > 30720 (today target)") and in the
+  Live data-build real-data test, which use the same 30 KiB target per file at brotli quality 5. The
+  real-data test logs the size of each Today file.
+- *Seen 2026-11-18, Hebrew:* once the Hebrew overlays were current, every generated text in the
+  single `today.json` carried `he` as well as `en`/`yi`, which took it from 29,278 to 32,068 bytes br.
+  *Fixed* by splitting it into one Today file per UI language (`LIVE_DATA_SCHEMA_VERSION` 8). In
+  each file, every generated text (one-liners, mix section titles) is a `{ lang, text }` holding only
+  the text that reader is shown: the first present language along `CONTENT_FALLBACK[lang]`, with
+  the language it is in, so the page gives it the right `lang`/`dir`. The Today page fetches the file
+  for the reading language and fetches again when the language changes. On the real data
+  (2026-11-18): en 26,161, yi 25,962, he 25,379 bytes br. A new UI language adds a file of about the
+  same size; it does not grow the others.
+- *If it comes back:* find out which file is over and what grew (`data:budgets` names the largest).
+  More occasions with a mix, longer titles or more cards grow every file alike. Look at
+  `EMIT_LIMITS` in `apps/live/data-build/emit.ts` (`todayMixFirst`, `todayPoolPerOccasion`,
+  `newlySummarized`) and `TODAY_ROW_PER_LANG` before you touch the budget.
 
 **Live data budgets: `writeup/<id>.<lang>.json` over its brotli target** (`real-data.test.ts`, `unit (live)`)
 - *Why it fails:* a write-up's length follows its shiur's length (800–1,000 words per hour,
@@ -634,7 +670,7 @@ In order; each step names where it is described. Staging first, then production.
 - [ ] Guard drill: dispatch `target: staging`, `plant_leak_fixture: true`; the run must stop at
       "Guard post-pass" and deploy nothing.
 - [ ] Smoke on `emunas-quiet-staging.<sub>.workers.dev` and `emunas-live-staging.<sub>.workers.dev`:
-      `/` (Live redirects to `/yi/` or `/en/`), a shiur page in both editions, audio plays and
+      `/` (Live redirects to `/<ui>/`), a shiur page in every edition, audio plays and
       seeks (Range), the response carries `X-Robots-Tag: noindex`, page `<link rel="canonical">`
       points at the staging Quiet host, Quiet → "Open in the listening app" and Live →
       "In the Library" stay on staging, search returns results, "report a problem" submits (or is

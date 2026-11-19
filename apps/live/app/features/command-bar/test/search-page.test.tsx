@@ -23,7 +23,7 @@ const page1 = apiResponse(
       kind: "insight",
       matched: "semantic",
       t: 61,
-      title: { en: null, yi: "די שמחה פון רבי שמעון" },
+      title: { en: null, yi: "די שמחה פון רבי שמעון", he: null },
       snippet: null,
     }),
     apiResult({ momentId: `${NOACH}~wen3.1`, shiurId: NOACH, kind: "writeup", matched: "title", t: 1200, snippet: null }),
@@ -37,7 +37,7 @@ const page2 = apiResponse([
     shiurId: LAG,
     kind: "story",
     t: 300,
-    title: { en: "A story of the lion", yi: null },
+    title: { en: "A story of the lion", yi: null, he: null },
     snippet: { text: "דער לייב", lang: "yi", marks: [[4, 8]] },
   }),
 ]);

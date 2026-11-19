@@ -24,12 +24,12 @@ import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
 import { chromium, firefox, webkit, type Browser, type BrowserType, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../astro-build.ts";
+import { EDS, dirOf, type Ed } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = resolve(app, "../..");
 const require = createRequire(import.meta.url);
 const axeSource = readFileSync(require.resolve("axe-core/axe.min.js"), "utf8");
-const EDS = ["yi", "en"] as const;
 
 let work = "";
 let dist = "";
@@ -172,7 +172,7 @@ async function open(path: string, opts: { js?: boolean; dark?: boolean; width?: 
 }
 
 /** One page of every route type in an edition; calendar and years get dark-mode axe too. */
-function routes(ed: (typeof EDS)[number]): { path: string; dark: boolean }[] {
+function routes(ed: Ed): { path: string; dark: boolean }[] {
   const light = (path: string) => ({ path, dark: false });
   const both = (path: string) => ({ path, dark: true });
   const yearsDir = join(dist, ed, "years");
@@ -219,7 +219,7 @@ describe.each(EDS)("%s edition: every route type", (ed) => {
     for (const { path } of routes(ed)) {
       const page = await open(path, { js: false });
       expect(await page.getAttribute("html", "lang"), path).toBe(ed);
-      expect(await page.getAttribute("html", "dir"), path).toBe(ed === "yi" ? "rtl" : "ltr");
+      expect(await page.getAttribute("html", "dir"), path).toBe(dirOf(ed));
       expect(await page.locator("h1").count(), path).toBe(1);
       expect(await page.locator("main").count(), path).toBe(1);
       await page.context().close();

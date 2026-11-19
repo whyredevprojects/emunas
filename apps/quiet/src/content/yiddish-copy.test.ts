@@ -15,7 +15,7 @@ import { corpusEn } from "../components/corpus/strings.ts";
 import { storiesEn } from "../components/stories/strings.ts";
 import { topicsEn } from "../components/topics/strings.ts";
 import { tables as ui } from "../i18n/index.ts";
-import { AI_LABEL, corpusLabelsEn } from "@emunas/i18n";
+import { AI_LABEL } from "@emunas/i18n";
 import { ABOUT_STRINGS } from "../pages/[ed]/about/_strings.ts";
 import { SEARCH_STRINGS } from "../pages/[ed]/search/_strings.ts";
 
@@ -101,7 +101,7 @@ describe("Yiddish UI copy (Quiet)", () => {
       ...strings(corpusEn, "corpus"),
       ...strings(storiesEn, "stories"),
       ...strings(topicsEn, "topics"),
-      ...strings(corpusLabelsEn, "corpusLabels"),
+      ...strings(CORPUS_LABELS.en, "corpusLabels"),
       ...strings(AI_LABEL.en, "aiLabel"),
     ];
     expect(en.length).toBeGreaterThan(200);

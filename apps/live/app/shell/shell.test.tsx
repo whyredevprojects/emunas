@@ -1,6 +1,6 @@
 // @vitest-environment jsdom
 /**
- * The app shell in a DOM: every stub route renders in both interface languages inside the shell,
+ * The app shell in a DOM: every stub route renders in every interface language inside the shell,
  * `<html lang dir>` follows `:ui`, client navigation through all stubs (and across the language
  * switch) never remounts what is mounted in the dock slot, focus moves to the page h1, settings sync
  * with the query string, and axe finds no violations (colour contrast and document title are checked
@@ -14,6 +14,7 @@ import { fileURLToPath } from "node:url";
 import { useEffect, type JSX } from "react";
 import { createMemoryRouter, RouterProvider } from "react-router";
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
+import { UI_DIR, UI_LANGS } from "@emunas/i18n";
 import { UI_CHILD_ROUTES } from "../routes.ts";
 import { registerDock } from "./dock.tsx";
 import { PageStub } from "./PageStub.tsx";
@@ -23,7 +24,7 @@ import { DEFAULT_SETTINGS, settingsStore } from "./settings.ts";
 import { SHELL_CLASSES } from "./styles.ts";
 import { createTestRouter } from "./test-router.tsx";
 
-/** One concrete URL per stub route (both languages are derived from these). */
+/** One concrete URL per stub route (every language is derived from these). */
 const STUB_PATHS = [
   "",
   "s/yi-tanya-1-01",
@@ -106,7 +107,7 @@ describe("route table", () => {
 });
 
 describe("shell rendering", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`renders every stub with one h1 inside the shell (${ui})`, async () => {
       const { router, container } = await renderAt(`/${ui}/`);
       for (const p of STUB_PATHS) {
@@ -117,7 +118,7 @@ describe("shell rendering", () => {
         expect(container.querySelector("[data-dock-slot]"), p).not.toBeNull();
         expect(container.querySelector(`nav[aria-label]`), p).not.toBeNull();
         expect(document.documentElement.lang).toBe(ui);
-        expect(document.documentElement.dir).toBe(ui === "yi" ? "rtl" : "ltr");
+        expect(document.documentElement.dir).toBe(UI_DIR[ui]);
       }
     });
   }
@@ -141,6 +142,23 @@ describe("shell rendering", () => {
     const current = nav.querySelector('[aria-current="page"]')!;
     expect(current.textContent).toBe("ספרים");
     expect(container.querySelector("h1")!.textContent).toBe("ספרים");
+  });
+
+  it("renders Hebrew strings in he, rtl, with a switch link to every other language", async () => {
+    const { container } = await renderAt("/he/seforim");
+    expect(document.documentElement.lang).toBe("he");
+    expect(document.documentElement.dir).toBe("rtl");
+    const current = container.querySelector('nav [aria-current="page"]')!;
+    expect(current.textContent).toBe("ספרים");
+    const switches = [...container.querySelectorAll<HTMLAnchorElement>("a[hreflang]")].map((a) => [
+      a.getAttribute("hreflang"),
+      a.getAttribute("href"),
+      a.textContent,
+    ]);
+    expect(switches).toEqual([
+      ["en", "/en/seforim", "English"],
+      ["yi", "/yi/seforim", "אידיש"],
+    ]);
   });
 
   it("marks Today active only on the home page", async () => {
@@ -181,7 +199,8 @@ describe("dock persistence", () => {
     const node = screen.getByTestId("probe");
     expect(mounts).toBe(1);
 
-    for (const ui of ["en", "yi", "en"] as const) {
+    const cycle = [...UI_LANGS, UI_LANGS[0]];
+    for (const [i, ui] of cycle.entries()) {
       for (const p of STUB_PATHS) await go(router, `/${ui}/${p}?t=12`);
       // Rail links (real clicks, client-side navigation)
       for (const item of railItems(ui)) {
@@ -193,8 +212,9 @@ describe("dock persistence", () => {
         });
         expect(router.state.location.pathname).toBe(item.to);
       }
-      // Language switch link
-      const sw = container.querySelector<HTMLAnchorElement>(`a[hreflang="${ui === "en" ? "yi" : "en"}"]`)!;
+      // Language switch link (one per other interface language)
+      const next = cycle[i + 1] ?? UI_LANGS[1];
+      const sw = container.querySelector<HTMLAnchorElement>(`a[hreflang="${next}"]`)!;
       await act(async () => {
         fireEvent.click(sw);
       });
@@ -259,6 +279,8 @@ describe("language settings", () => {
     expect(switchUiHref({ pathname: "/en/s/abc", search: "?t=5", hash: "#x" }, "yi")).toBe("/yi/s/abc?t=5#x");
     expect(switchUiHref({ pathname: "/yi/", search: "", hash: "" }, "en")).toBe("/en/");
     expect(switchUiHref({ pathname: "/yi", search: "", hash: "" }, "en")).toBe("/en/");
+    expect(switchUiHref({ pathname: "/he/s/abc", search: "?t=5", hash: "" }, "yi")).toBe("/yi/s/abc?t=5");
+    expect(switchUiHref({ pathname: "/en/explore", search: "", hash: "" }, "he")).toBe("/he/explore");
   });
 });
 
@@ -297,7 +319,7 @@ describe("dark colours toggle", () => {
 });
 
 describe("accessibility (axe, jsdom)", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`has no axe violations on any stub (${ui})`, async () => {
       const { router } = await renderAt(`/${ui}/`);
       for (const p of STUB_PATHS) {

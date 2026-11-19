@@ -7,6 +7,7 @@
  */
 import * as v from "valibot";
 import type { MediaUrl } from "@emunas/corpus/public";
+import { SOURCE_LANGS, TRANSLATED_LANGS, UI_LANGS, type SourceLang, type TranslatedLang } from "@emunas/i18n";
 import {
   LIVE_DATA_SCHEMA_VERSION,
   type BuildFile,
@@ -40,7 +41,27 @@ const int = v.pipe(v.number(), v.integer());
 const nnum = v.nullable(num);
 const nstr = v.nullable(str);
 const ed = v.picklist(["en", "yi"]);
-const L = v.strictObject({ en: str, yi: str });
+/** A reading / interface language (`UI_LANGS`). */
+const uiLang = v.picklist(UI_LANGS);
+/**
+ * A `Localized<string>` schema: every source language required, every translated language optional
+ * (present only when a current translation exists). Built from the language lists, so a new
+ * `UiLang` needs no change here.
+ */
+function localizedStr(): v.StrictObjectSchema<
+  { readonly [K in SourceLang]: typeof str } & { readonly [K in TranslatedLang]: v.ExactOptionalSchema<typeof str, undefined> },
+  undefined
+> {
+  const entries = {
+    ...Object.fromEntries(SOURCE_LANGS.map((l) => [l, str])),
+    ...Object.fromEntries(TRANSLATED_LANGS.map((l) => [l, v.exactOptional(str)])),
+  } as { readonly [K in SourceLang]: typeof str } & { readonly [K in TranslatedLang]: v.ExactOptionalSchema<typeof str, undefined> };
+  return v.strictObject(entries);
+}
+/** `LocalizedText`: the source languages always, a translated language only when present. */
+const L = localizedStr();
+/** `ReaderText`: one text as a reader is shown it, with the language it is in. */
+const readerText = v.strictObject({ lang: uiLang, text: str });
 const version = v.literal(LIVE_DATA_SCHEMA_VERSION);
 const soft = v.exactOptional(v.literal(true));
 const category = v.picklist(["parsha", "zman", "shonos", "set", "simcha", "misc", "current", "purim"]);
@@ -62,7 +83,7 @@ const momentKind = v.picklist(["kp", "s", "i", "tk", "q", "st"]);
 const entityKind = v.picklist(["p", "c", "o"]);
 const mediaUrl = v.custom<MediaUrl>((x) => typeof x === "string" && /^https?:\/\/[^/]+\/./.test(x), "media URL");
 const counts = v.strictObject({ total: int, full: int, catalogOnly: int, downgraded: int });
-const facetLabel = v.strictObject({ en: str, yi: str, he: v.exactOptional(str) });
+const facetLabel = localizedStr();
 const facetValue = v.strictObject({ label: facetLabel, count: int });
 const momentRefEntries = { id: str, shiurId: str, kind: momentKind, t: nnum, end: nnum };
 const momentRef = v.strictObject(momentRefEntries);
@@ -143,7 +164,7 @@ const notes = v.strictObject({
       soft,
     }),
   ),
-  writeupLangs: v.array(ed),
+  writeupLangs: v.array(uiLang),
 });
 
 export const BuildSchema = v.strictObject({
@@ -153,7 +174,7 @@ export const BuildSchema = v.strictObject({
   dataSha: nstr,
   generatedAt: v.pipe(str, v.isoTimestamp()),
   counts,
-  momentShards: v.strictObject({ en: int, yi: int }),
+  momentShards: v.strictObject({ en: int, yi: int, he: int }),
   glossaryShards: v.array(str),
 });
 
@@ -225,6 +246,7 @@ const mixItemEntries = { id: str, shiurId: str, t: num, end: num, lang: ed, titl
 
 export const TodaySchema = v.strictObject({
   schemaVersion: version,
+  lang: uiLang,
   counts,
   occasions: v.record(
     str,
@@ -239,7 +261,7 @@ export const TodaySchema = v.strictObject({
           label: facetLabel,
           sections: int,
           shiurim: int,
-          first: v.array(v.strictObject({ id: str, t: num, end: num, title: L })),
+          first: v.array(v.strictObject({ id: str, t: num, end: num, title: readerText })),
           skip: v.exactOptional(v.array(str)),
         }),
       ),
@@ -248,7 +270,7 @@ export const TodaySchema = v.strictObject({
   newlySummarized: v.array(v.strictObject({ shiurId: str, updatedAt: str })),
   cards: v.record(
     str,
-    v.strictObject({ lang: ed, title: str, duration: num, years: v.array(int), status, oneLiner: v.exactOptional(L) }),
+    v.strictObject({ lang: ed, title: str, duration: num, years: v.array(int), status, oneLiner: v.exactOptional(readerText) }),
   ),
 });
 
@@ -307,7 +329,7 @@ export const WriteupSchema = v.strictObject({
   schemaVersion: version,
   shiurId: str,
   rev: str,
-  lang: ed,
+  lang: uiLang,
   blocks: v.array(writeupBlock),
 });
 
@@ -414,14 +436,16 @@ export const EntitySchema = v.strictObject({
 
 export const MomentShardSchema = v.strictObject({
   schemaVersion: version,
-  lang: ed,
+  lang: uiLang,
   shard: int,
-  moments: v.array(v.strictObject({ ...momentRefEntries, title: str, sectionKind: v.exactOptional(sectionKind) })),
+  moments: v.array(
+    v.strictObject({ ...momentRefEntries, title: str, titleLang: v.exactOptional(uiLang), sectionKind: v.exactOptional(sectionKind) }),
+  ),
 });
 
 export const QuickIndexSchema = v.strictObject({
   schemaVersion: version,
-  lang: ed,
+  lang: uiLang,
   options: v.strictObject({ fields: v.array(str), storeFields: v.array(str), idField: str }),
   index: v.unknown(),
   entities: v.array(
@@ -660,12 +684,19 @@ export const _allKinds: _AllKinds = true;
 
 // ---------------------------------------------------------------- validation
 
+/** `en|yi|he`: the reading languages a per-language file path may name (`UI_LANGS`). */
+const LANGS_RE = UI_LANGS.join("|");
+const QUICK_INDEX_FILE = new RegExp(`^quick-index\\.(${LANGS_RE})\\.json$`);
+const TODAY_FILE = new RegExp(`^today\\.(${LANGS_RE})\\.json$`);
+const WRITEUP_FILE = new RegExp(`^writeup\\/[^/]+\\.(${LANGS_RE})\\.json$`);
+const MOMENTS_FILE = new RegExp(`^moments\\/(${LANGS_RE})-\\d+\\.json$`);
+
 /** The file kind of a data file path relative to `/data/` (`shiur/x.json` → `shiur`). */
 export function kindOfFile(file: string): DataKind | null {
   if (file === "build.json") return "build";
   if (file === "corpus.json") return "corpus";
   if (file === "facets.json") return "facets";
-  if (file === "today.json") return "today";
+  if (TODAY_FILE.test(file)) return "today";
   if (file === "works.json") return "works";
   if (file === "topics.json") return "topics";
   if (file === "stories-index.json") return "storiesIndex";
@@ -676,13 +707,13 @@ export function kindOfFile(file: string): DataKind | null {
   if (/^thread\/[^/]+\.json$/.test(file)) return "thread";
   if (/^story\/[^/]+\.json$/.test(file)) return "story";
   if (/^glossary\/[^/]+\.json$/.test(file)) return "glossary";
-  if (/^quick-index\.(en|yi)\.json$/.test(file)) return "quickIndex";
+  if (QUICK_INDEX_FILE.test(file)) return "quickIndex";
   if (/^shiur\/[^/]+\.json$/.test(file)) return "shiur";
-  if (/^writeup\/[^/]+\.(en|yi)\.json$/.test(file)) return "writeup";
+  if (WRITEUP_FILE.test(file)) return "writeup";
   if (/^series\/[^/]+\.json$/.test(file)) return "series";
   if (/^work\/[^/]+\.json$/.test(file)) return "work";
   if (/^entity\/[pco]\/[^/]+\.json$/.test(file)) return "entity";
-  if (/^moments\/(en|yi)-\d+\.json$/.test(file)) return "moments";
+  if (MOMENTS_FILE.test(file)) return "moments";
   return null;
 }
 

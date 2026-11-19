@@ -11,6 +11,7 @@ import { readFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { RouterProvider } from "react-router";
+import { UI_LANGS } from "@emunas/i18n";
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it } from "vitest";
 import { configureData, resetDataConfig } from "../../data/index.ts";
 import { fixtureFetch } from "../../data/fixtures/fetch.ts";
@@ -257,7 +258,7 @@ describe("export / import", () => {
 });
 
 describe("accessibility (axe, jsdom)", () => {
-  for (const ui of ["en", "yi"] as const) {
+  for (const ui of UI_LANGS) {
     it(`has no axe violations on the shelf pages (${ui})`, async () => {
       await seed(personal);
       const id = personal.store.getState().playlists[0]!.id;

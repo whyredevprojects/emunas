@@ -3,9 +3,9 @@
  * `facets.json` and are rendered direction-isolated with `<Text>`; fixed vocabularies come from
  * `@emunas/i18n` or this feature's strings.
  */
-import { categoryLabel, formatHebrewYear, languageName, type Category, type UiLang } from "@emunas/i18n";
+import { categoryLabel, formatHebrewYear, isUiLang, languageName, pickText, type Category, type UiLang } from "@emunas/i18n";
 import { occasionLabel } from "../today/format.ts";
-import type { FacetsFile, TopicNode } from "./live-data.ts";
+import type { FacetLabel, FacetsFile, TopicNode } from "./live-data.ts";
 import { UNDATED, type FacetKey } from "./model.ts";
 import { exploreT, type ExploreKey } from "./strings.ts";
 
@@ -13,6 +13,11 @@ export interface ValueLabel {
   text: string;
   /** True for a data string (render with `<Text shiurLang>`), false for UI copy in the interface language. */
   data: boolean;
+  /**
+   * Language of `text` when it is a generated label picked along `CONTENT_FALLBACK` (it may be a
+   * fallback language); render with `<Text lang>` then. Absent for catalog strings of unknown script.
+   */
+  lang?: UiLang;
 }
 
 export function yearText(year: number, ui: UiLang): string {
@@ -28,24 +33,28 @@ export function valueLabel(
 ): ValueLabel {
   const et = exploreT(ui);
   const ui_ = (text: string): ValueLabel => ({ text, data: false });
-  const data = (text: string | undefined): ValueLabel => ({ text: text ?? value, data: true });
+  const data = (label: FacetLabel | undefined): ValueLabel => {
+    if (!label) return { text: value, data: true };
+    const picked = pickText(label, ui);
+    return { text: picked.text, data: true, lang: picked.lang };
+  };
   switch (facet) {
     case "lang":
-      return ui_(value === "en" || value === "yi" ? languageName(value, ui) : value);
+      return ui_(isUiLang(value) ? languageName(value, ui) : value);
     case "category":
       return ui_(categoryLabel(value as Category, ui) || value);
     case "occasion":
-      return data(occasionLabel(value, facets, ui));
+      return { text: occasionLabel(value, facets, ui), data: true };
     case "series":
-      return data(facets?.series[value]?.label[ui]);
+      return data(facets?.series[value]?.label);
     case "topic":
-      return data(topics?.get(value)?.label[ui]);
+      return data(topics?.get(value)?.label);
     case "work":
-      return data(facets?.work[value]?.label[ui]);
+      return data(facets?.work[value]?.label);
     case "person":
-      return data(facets?.person[value]?.label[ui]);
+      return data(facets?.person[value]?.label);
     case "concept":
-      return data(facets?.concept[value]?.label[ui]);
+      return data(facets?.concept[value]?.label);
     case "year":
       return ui_(value === UNDATED ? et("explore.year.unknown") : yearText(Number(value), ui));
     case "duration":

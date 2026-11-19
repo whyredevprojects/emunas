@@ -1,13 +1,14 @@
 ---
 /**
  * Base layout for every edition page (concept-quiet §4, §8, §11; tech-quiet §4):
- * - `<html lang dir>` per edition (yi → rtl, en → ltr);
+ * - `<html lang dir>` per edition (`UI_DIR`: en → ltr, yi and he → rtl);
  * - skip link, the one-line nav (Contents · Calendar · Indexes · Search · About) and the edition
- *   switch, which goes to the same path in the other edition and keeps the hash;
+ *   switch, one link per other edition (`EDS`, each named in its own language), which goes to the
+ *   same path in that edition and keeps the hash;
  * - the light/dark switch, a sun and a moon (lib/theme.client.ts; hidden until script shows it). Light is the
  *   default; components/ThemeHead.astro applies a dark choice before paint;
  * - optional breadcrumb that mirrors the catalog;
- * - `main#main`, footer (About, the other edition, the home site; its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
+ * - `main#main`, footer (About, this page in each other edition, the home site; its last line is the dedication), and the print layer (styles/print.css: nav, switches and player hidden).
  *
  * Slots: default (page body), `head` (extra head tags). Canonical, hreflang, OG and robots come
  * from components/seo/Seo.astro (W4.6).
@@ -16,10 +17,11 @@ import "../styles/fonts.css";
 import "@emunas/tokens/tokens.css";
 import "../styles/quiet.css";
 import "../styles/print.css";
-import { scriptOf } from "@emunas/i18n";
+import { UI_ENDONYM, languageName, scriptOf } from "@emunas/i18n";
+import { LANG_SCRIPT } from "@emunas/tokens";
 import { formatQuiet } from "@emunas/links";
 import { isolateText } from "../lib/bidi.ts";
-import { dirOf, otherEdition, switchEdition, type Ed } from "../lib/edition.ts";
+import { dirOf, otherEditions, switchEdition, type Ed } from "../lib/edition.ts";
 import { fontPreloads } from "../lib/fonts.ts";
 import { navItems, navSectionOf, type Crumb } from "../lib/nav.ts";
 import { useT } from "../i18n/index.ts";
@@ -43,14 +45,12 @@ const { ed, title, crumbs, description, noindex = false } = Astro.props;
 const path = Astro.props.path ?? Astro.url.pathname;
 const t = useT(ed);
 const dir = dirOf(ed);
-const other = otherEdition(ed);
-const switchHref = switchEdition(path, other);
+const others = otherEditions(ed).map((o) => ({ ed: o, href: switchEdition(path, o), dir: dirOf(o) }));
 const current = navSectionOf(path);
 const home = formatQuiet({ kind: "home", ed });
-const editionScript = ed === "yi" ? "he" : "latin";
+const editionScript = LANG_SCRIPT[ed] === "hebrew" ? "he" : "latin";
 const titleText = scriptOf(title) === editionScript ? title : isolateText(title);
 const fullTitle = path === home ? t("site.name") : `${titleText} · ${t("site.name")}`;
-const otherDir = dirOf(other);
 const homeSite = `${currentSiteEnv().hosts.home}/`;
 ---
 <!doctype html>
@@ -90,7 +90,9 @@ const homeSite = `${currentSiteEnv().hosts.home}/`;
       </nav>
       <p class="edition-switch">
         <span class="visually-hidden">{t("edition.label")}: </span>
-        <a href={switchHref} hreflang={other} lang={other} dir={otherDir} data-edition-switch>{t("edition.other")}</a>
+        {others.map((o, i) => (
+          <>{i > 0 && <span aria-hidden="true"> · </span>}<a href={o.href} hreflang={o.ed} lang={o.ed} dir={o.dir} data-edition-switch>{UI_ENDONYM[o.ed]}</a></>
+        ))}
       </p>
       <div class="theme-switch" role="group" aria-label={t("theme.label")} hidden data-theme-switch>
         <button type="button" data-theme-value="light" aria-pressed="true" aria-label={t("theme.light")} title={t("theme.light")}>
@@ -129,8 +131,9 @@ const homeSite = `${currentSiteEnv().hosts.home}/`;
       <p class="footer-links">
         <a href={formatQuiet({ kind: "index", ed, index: "about" })}>{t("nav.about")}</a>
         <span aria-hidden="true"> · </span>
-        <a href={switchHref} hreflang={other} data-edition-switch>{t("footer.otherEdition")}</a>
-        <span aria-hidden="true"> · </span>
+        {others.map((o) => (
+          <><a href={o.href} hreflang={o.ed} data-edition-switch>{t("footer.inLanguage", { language: languageName(o.ed, ed) })}</a><span aria-hidden="true"> · </span></>
+        ))}
         <a href={homeSite}>{t("footer.home")}</a>
       </p>
       <p class="print-only print-source"><bdi dir="ltr">{path}</bdi></p>

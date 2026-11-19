@@ -46,10 +46,30 @@ export const mixYi: MessageTable<MixKey> = {
   "mix.items": "אין דער מיקס",
 };
 
+export const mixHe: MessageTable<MixKey> = {
+  "mix.title": "השמעת הנושא",
+  "mix.sections": { one: "{count} קטע", other: "{count} קטעים" },
+  "mix.shiurim": { one: "{count} שיעור", other: "{count} שיעורים" },
+  "mix.header": "{sections} מתוך {shiurim}.",
+  "mix.playing": { one: "משמיע {count}, כ־{minutes} דקות.", other: "משמיע {count}, כ־{minutes} דקות." },
+  "mix.auto": "הורכב אוטומטית לפי תגיות AI. כל פריט מתנגן עד סוף הקטע שלו.",
+  "mix.play": "השמעת המיקס",
+  "mix.preparing": "המיקס בהכנה…",
+  "mix.save": "שמירה כרשימת השמעה",
+  "mix.saved": "נשמר במדף שלכם.",
+  "mix.share": "שיתוף כקישור",
+  "mix.copied": "הקישור הועתק.",
+  "mix.linkLabel": "קישור לרשימה",
+  "mix.playlistName": "{label} (מיקס)",
+  "mix.empty": "עדיין אין קטעים בשפה זו.",
+  "mix.error": "לא ניתן היה לטעון את המיקס. בדקו את החיבור ונסו שוב.",
+  "mix.items": "במיקס זה",
+};
+
 export type MixT = TFunction<MixKey>;
 
 const cache: Partial<Record<UiLang, MixT>> = {};
 
 export function mixT(ui: UiLang): MixT {
-  return (cache[ui] ??= createT<MixKey>({ en: mixEn, yi: mixYi }, ui));
+  return (cache[ui] ??= createT<MixKey>({ en: mixEn, yi: mixYi, he: mixHe }, ui));
 }

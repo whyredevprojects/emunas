@@ -16,6 +16,14 @@ contents link `#uncatalogued` became `#more`; nothing was added to them.
 
 Parts, in page order: `mashgiach`, `arrangement`, `notes`, `report`, `excluded`.
 
+**Hebrew (`he/`).** Every part has a Hebrew draft, translated from the English and Yiddish texts
+(the four published ones and the `mashgiach` draft; `arrangement` and `notes` follow the revisions).
+Until a Hebrew part is approved and moved to
+`src/content/about/he/`, the Hebrew edition's About page shows the Yiddish text of that part
+(marked `lang="yi"`), following `CONTENT_FALLBACK` from `@emunas/i18n`; links in it that point
+into the Yiddish edition are moved to the Hebrew one. A Hebrew draft keeps the same
+`[[OWNER: …]]` marks as the English. A named Hebrew reviewer signs it off before it moves.
+
 `[[OWNER: …]]` marks text only the owner or the Mashgiach's family and talmidim can supply (his titles,
 his biography, who recorded the shiurim, what happens to a report). Nothing there is to be guessed.
 

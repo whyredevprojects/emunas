@@ -6,25 +6,30 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { PublicShiur } from "@emunas/corpus/public";
 import { describe, expect, it } from "vitest";
-import { shiurEn, shiurYi } from "../src/components/shiur/strings.ts";
+import { shiurTables } from "../src/components/shiur/strings.ts";
+import { EDS } from "../src/lib/edition.ts";
 import { prevNext, reportHref, type RowLookup } from "../src/components/shiur/view.ts";
 
 const golden = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "..", "packages", "corpus", "test", "fixtures", "golden");
 const load = (id: string) => JSON.parse(readFileSync(join(golden, `${id}.json`), "utf8")) as PublicShiur;
 
 describe("shiur page strings", () => {
-  it("have the same keys and placeholders in both editions", () => {
-    expect(Object.keys(shiurYi).sort()).toEqual(Object.keys(shiurEn).sort());
+  it("have the same keys and placeholders in every edition", () => {
+    const en = shiurTables.en;
     const ph = (s: string) => [...s.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).sort();
-    for (const [k, v] of Object.entries(shiurEn)) {
-      const y = shiurYi[k as keyof typeof shiurEn];
-      expect(ph(String(y)), k).toEqual(ph(v));
-      expect(/[א-ת]/.test(String(y)), k).toBe(true);
+    for (const ed of EDS) {
+      const table = shiurTables[ed];
+      expect(Object.keys(table).sort(), ed).toEqual(Object.keys(en).sort());
+      for (const [k, v] of Object.entries(en)) {
+        const y = table[k as keyof typeof en];
+        expect(ph(String(y)), `${ed} ${k}`).toEqual(ph(String(v)));
+        if (ed !== "en") expect(/[א-ת]/.test(String(y)), `${ed} ${k}`).toBe(true);
+      }
     }
   });
 
   it("never mention a transcript", () => {
-    for (const v of [...Object.values(shiurEn), ...Object.values(shiurYi)]) expect(String(v)).not.toMatch(/transcri|טראנסקריפּ/i);
+    for (const ed of EDS) for (const v of Object.values(shiurTables[ed])) expect(String(v)).not.toMatch(/transcri|טראנסקריפּ|תמלול|תמליל/i);
   });
 });
 
@@ -42,14 +47,14 @@ describe("prevNext", () => {
 
   it("follows the series order when the shiur is in a series", () => {
     expect(shiur.series).not.toBeNull();
-    const v = prevNext("en", shiur, neighbours, lookup, () => "Tanya")!;
-    expect(v).toMatchObject({ of: "series", label: "Tanya", href: `/en/series/${shiur.series!.id}/`, prev: null });
+    const v = prevNext("en", shiur, neighbours, lookup, () => ({ text: "Tanya", lang: "en", dir: "ltr", fallback: false }))!;
+    expect(v).toMatchObject({ of: "series", label: "Tanya", labelAttrs: { lang: "en", dir: "ltr" }, href: `/en/series/${shiur.series!.id}/`, prev: null });
     expect(v.next).toEqual({ id: "c", href: "/en/shiur/c/", title: "Title c", lang: "yi" });
   });
 
   it("follows the section order when the shiur is in no series", () => {
     const v = prevNext("en", { ...shiur, series: null }, { ...neighbours, series: null }, lookup)!;
-    expect(v).toMatchObject({ of: "section", href: "/en/section/tanya-1/", label: shiur.catalog.sectionTitle });
+    expect(v).toMatchObject({ of: "section", href: "/en/section/tanya-1/", label: shiur.catalog.sectionTitle, labelAttrs: null });
     expect(v.prev).toEqual({ id: "a", href: "/en/shiur/a/", title: "Title a", lang: "yi" });
     expect(v.next?.id).toBe("b");
   });
@@ -59,6 +64,12 @@ describe("prevNext", () => {
     expect(v.prev).toBeNull();
     expect(v.next).toBeNull();
     expect(prevNext("yi", shiur, undefined, lookup)).toBeNull();
+  });
+
+  it("keeps the edition in the links (Hebrew too)", () => {
+    const v = prevNext("he", { ...shiur, series: null }, { ...neighbours, series: null }, lookup)!;
+    expect(v.href).toBe("/he/section/tanya-1/");
+    expect(v.prev?.href).toBe("/he/shiur/a/");
   });
 
   it("has an empty label for a series without a title (the component prints a fallback)", () => {

@@ -2,14 +2,15 @@
  * Small display helpers shared by Today and the series pages.
  */
 import type { HebrewDate } from "@emunas/calendar";
-import type { L } from "@emunas/corpus/public";
-import { formatHebrewYear, hebrewNumeral, hebrewYearParts, type UiLang } from "@emunas/i18n";
+import type { LocalizedText } from "@emunas/corpus/public";
+import { formatHebrewYear, hebrewNumeral, hebrewYearParts, UI_LOCALE, type UiLang } from "@emunas/i18n";
 import { OCCASIONS, PARSHIYOS } from "@emunas/normalize";
+import { labelText, latinEdition } from "../../i18n/content.ts";
 import type { FacetLabel, FacetsFile, MomentKind, ShiurFile, TodayFile } from "./live-data.ts";
 
 /** "5 Kislev 5787" / "ה׳ כסלו תשפ״ז". */
 export function formatHebrewDate(d: HebrewDate, ui: UiLang): string {
-  if (ui === "en") return `${d.day} ${d.monthName} ${d.year}`;
+  if (latinEdition(ui)) return `${d.day} ${d.monthName} ${d.year}`;
   return `${hebrewNumeral(d.day, "hebrew")} ${d.monthNameHe} ${formatHebrewYear(d.year, ui, { civil: false, marks: "hebrew" })}`;
 }
 
@@ -18,7 +19,7 @@ export function formatCivilDate(iso: string, ui: UiLang): string {
   const d = new Date(`${iso}T12:00:00Z`);
   if (Number.isNaN(d.getTime())) return iso;
   try {
-    return new Intl.DateTimeFormat(ui === "yi" ? "yi" : "en", { day: "numeric", month: "long", timeZone: "UTC" }).format(d);
+    return new Intl.DateTimeFormat(UI_LOCALE[ui], { day: "numeric", month: "long", timeZone: "UTC" }).format(d);
   } catch {
     return iso;
   }
@@ -33,16 +34,16 @@ export function humanizeKey(key: string): string {
     .join(" ");
 }
 
-let labelIndex: Map<string, { en: string; yi: string }> | null = null;
+let labelIndex: Map<string, FacetLabel> | null = null;
 
 /** Parsha and occasion names from the shared tables, by key (the same keys the calendar uses). */
-function tableLabel(key: string): { en: string; yi: string } | undefined {
-  labelIndex ??= new Map([...PARSHIYOS, ...OCCASIONS].map((r) => [r.key, { en: r.en, yi: r.yi }]));
+function tableLabel(key: string): FacetLabel | undefined {
+  labelIndex ??= new Map([...PARSHIYOS, ...OCCASIONS].map((r) => [r.key, { en: r.en, yi: r.yi, he: r.he }]));
   return labelIndex.get(key);
 }
 
 /**
- * The label for an occasion key: from the data file at hand (`today.json` states it where it differs
+ * The label for an occasion key: from the data file at hand (the Today file states it where it differs
  * from the shared tables; Explore passes `facets.json`), else from the `@emunas/normalize` tables,
  * else the key made readable.
  */
@@ -53,8 +54,9 @@ export function occasionLabel(
 ): string {
   const f: FacetLabel | undefined =
     source === null ? undefined : "occasions" in source ? source.occasions[key]?.label : source.occasion[key]?.label;
-  if (f) return f[ui];
-  return tableLabel(key)?.[ui] ?? humanizeKey(key);
+  if (f) return labelText(f, ui);
+  const table = tableLabel(key);
+  return table ? labelText(table, ui) : humanizeKey(key);
 }
 
 /**
@@ -69,7 +71,7 @@ export function yearLabel(years: readonly number[]): { hebrew: string; civil: st
 
 export interface MomentContent {
   kind: MomentKind;
-  text: L;
+  text: LocalizedText;
 }
 
 /** The text of a moment (insight, question, story, …) from its shiur file; null when absent. */

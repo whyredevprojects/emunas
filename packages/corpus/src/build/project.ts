@@ -5,13 +5,12 @@
  * (`@emunas/audio`), which reads the bucket key and emits only the encoded media URL.
  */
 import { lookupAudio, type AudioTable } from "@emunas/audio";
-import type { Extraction, Localized, Recording, Shiur, Writeup } from "../../../../src/types.ts";
-import { momentId, type MomentKind } from "../public/moment-id.ts";
+import type { LocalizedText, UiLang } from "@emunas/i18n";
+import type { Extraction, Localized, Recording, Shiur, Writeup, WriteupBlock } from "../../../../src/types.ts";
+import { momentId, writeupMomentKind, type MomentKind } from "../public/moment-id.ts";
 import { offsetsFor, round3 } from "../public/timeline.ts";
 import type {
-  Ed,
   KeyedValue,
-  L,
   Moment,
   PublicCatalog,
   PublicChapter,
@@ -29,9 +28,10 @@ import type { PublishPolicy } from "./policy.ts";
 import type { ReportCollector } from "./report.ts";
 import type { Meta } from "./schemas.ts";
 import { TimeModel, mergeRanges, type RecTime, type SpanResult } from "./time.ts";
+import { TRANSLATED_LANGS, type ShiurOverlays } from "./translations.ts";
 
 /** Bump when the projection output changes for the same input (feeds every fingerprint). */
-export const PROJECTOR_VERSION = "3";
+export const PROJECTOR_VERSION = "4";
 
 export interface ProjectContext {
   keyer: Keyer;
@@ -46,9 +46,23 @@ export interface ProjectContext {
   audio: AudioTable;
 }
 
-export function L2(x: Localized): L {
-  return { en: x.en, yi: x.yi };
+type MutableText = { -readonly [K in keyof LocalizedText]: LocalizedText[K] };
+
+/**
+ * The published text of a raw `Localized` at overlay key `key` (`x.sections.2.title`, …): `en` and
+ * `yi` from the source, plus every translated language whose current overlay has a non-blank text
+ * for the key. A raw `he` field of the extraction is never published.
+ */
+export function localizedText(x: Pick<Localized, "en" | "yi">, key: string, overlays: ShiurOverlays = {}): LocalizedText {
+  const out: MutableText = { en: x.en, yi: x.yi };
+  for (const lang of TRANSLATED_LANGS) {
+    const t = overlays[lang]?.get(key);
+    if (t !== undefined && t.trim() !== "") out[lang] = t;
+  }
+  return out;
 }
+
+const BLANK: LocalizedText = { en: "", yi: "" };
 
 /** Catalog title split on ';' (same rule as the pipeline's catalogTopics). */
 export function splitCatalogTopics(title: string): string[] {
@@ -109,6 +123,8 @@ export interface ProjectInput {
   rev: string;
   /** Present only when the status gate passed. */
   full: { meta: Meta; extraction: Extraction; writeup: Writeup } | null;
+  /** Current translation overlays of this shiur (stale and invalid ones already left out). */
+  overlays?: ShiurOverlays;
 }
 
 export type ProjectResult = { shiur: PublicShiur; notesError: null } | { shiur: PublicShiur; notesError: string };
@@ -152,7 +168,7 @@ export function projectShiur(input: ProjectInput, ctx: ProjectContext): ProjectR
     return { id: r.id, order: r.order, offset: r.offset, duration: r.duration, starts: m.starts, ends: m.ends };
   });
   const tm = new TimeModel(recTimes);
-  const built = buildNotes(s.id, meta, extraction, writeup, tm, ctx);
+  const built = buildNotes(s.id, meta, extraction, writeup, tm, ctx, input.overlays ?? {});
   if (typeof built === "string") return { shiur: catalogOnly(), notesError: built };
   const out = base(meta.catalogTopics.length > 0 ? [...meta.catalogTopics] : splitCatalogTopics(s.catalog.titleOriginal), recordings);
   out.status = "full";
@@ -169,8 +185,10 @@ function buildNotes(
   wu: Writeup,
   tm: TimeModel,
   ctx: ProjectContext,
+  overlays: ShiurOverlays,
 ): PublicNotes | string {
   const { policy, report, suppress } = ctx;
+  const L = (x: Pick<Localized, "en" | "yi">, key: string): LocalizedText => localizedText(x, key, overlays);
   const id = (kind: MomentKind, i: number, sub?: number) => momentId(shiurId, kind, i, sub);
   const isSuppressed = (mid: string): boolean => {
     if (!suppress.has(mid)) return false;
@@ -222,15 +240,15 @@ function buildNotes(
       recordingId: rec.id,
       t,
       end,
-      title: L2(sec.title),
-      summary: blank ? { en: "", yi: "" } : L2(sec.summary),
+      title: L(sec.title, `x.sections.${idx}.title`),
+      summary: blank ? BLANK : L(sec.summary, `x.sections.${idx}.summary`),
       kind: sec.kind,
       catalogTopicIdx: sec.catalogTopicIdx.filter((i) => i >= 0 && i < meta.catalogTopics.length),
-      sub: sec.subsections.map((sub) => {
+      sub: sec.subsections.map((sub, j) => {
         const st = rec.starts[sub.startSeg];
         return {
-          title: L2(sub.title),
-          summary: blank ? { en: "", yi: "" } : L2(sub.summary),
+          title: L(sub.title, `x.sections.${idx}.subsections.${j}.title`),
+          summary: blank ? BLANK : L(sub.summary, `x.sections.${idx}.subsections.${j}.summary`),
           t: st === undefined ? t : Math.min(Math.max(t, tm.global(rec, st)), end),
         };
       }),
@@ -269,9 +287,10 @@ function buildNotes(
   // ---- summary ----
   const olId = id("ol", 0);
   const abId = id("ab", 0);
-  const oneLiner = isSuppressed(olId) ? { en: "", yi: "" } : L2(ex.summary.oneLiner);
-  const abstract = isSuppressed(abId) ? { en: "", yi: "" } : L2(ex.summary.abstract);
+  const oneLiner = isSuppressed(olId) ? BLANK : L(ex.summary.oneLiner, "x.summary.oneLiner");
+  const abstract = isSuppressed(abId) ? BLANK : L(ex.summary.abstract, "x.summary.abstract");
 
+  const momentPath = { kp: "summary.keyPoints", i: "insights", tk: "takeaways" } as const;
   const moments = (kind: "kp" | "i" | "tk", items: Extraction["insights"]): Moment[] => {
     const out: Moment[] = [];
     items.forEach((it, i) => {
@@ -279,7 +298,7 @@ function buildNotes(
       if (isSuppressed(mid)) return;
       const soft = confidence(it.evidence.confidence);
       if (soft === undefined) return;
-      const m: Moment = { id: mid, text: L2(it.text), ...time(mid, tm.span(it.evidence.recordingId, it.evidence.segs)) };
+      const m: Moment = { id: mid, text: L(it.text, `x.${momentPath[kind]}.${i}.text`), ...time(mid, tm.span(it.evidence.recordingId, it.evidence.segs)) };
       if (soft) m.soft = true;
       out.push(m);
     });
@@ -323,8 +342,8 @@ function buildNotes(
     if (soft === undefined) return;
     const out: PublicQuestion = {
       id: mid,
-      q: L2(q.question),
-      a: L2(q.answer),
+      q: L(q.question, `x.questions.${i}.question`),
+      a: L(q.answer, `x.questions.${i}.answer`),
       tq: time(mid, tm.span(q.recordingId, q.questionSegs)).t,
       ta: time(`${mid}:answer`, tm.span(q.recordingId, q.answerSegs)).t,
     };
@@ -341,8 +360,8 @@ function buildNotes(
     if (soft === undefined) return;
     const out: PublicStory = {
       id: mid,
-      title: L2(st.title),
-      retelling: L2(st.retelling),
+      title: L(st.title, `x.stories.${i}.title`),
+      retelling: L(st.retelling, `x.stories.${i}.retelling`),
       // st.people (raw extraction names) is never projected: the layer's merged story names them.
       ...time(mid, tm.span(st.evidence.recordingId, st.evidence.segs)),
     };
@@ -352,18 +371,22 @@ function buildNotes(
   });
 
   // ---- write-up (src remapped to the filtered source list; times default to the section's recording) ----
-  const writeupOf = (ed: Ed): PublicWriteupBlock[] =>
-    wu[ed].map((b, bi) => {
+  // `also`: the source paragraph's moment kind for a translated write-up, whose suppression covers the translation.
+  const writeupOf = (lang: UiLang, blocks: readonly WriteupBlock[], also?: MomentKind): PublicWriteupBlock[] =>
+    blocks.map((b, bi) => {
       const section = ex.sections[b.sectionIndex]!;
       const ch = chapterByIdx.get(b.sectionIndex)!;
       const paragraphs = b.paragraphs.flatMap((p, pi) => {
-        const mid = id(ed === "en" ? "wen" : "wyi", bi, pi);
+        const mid = id(writeupMomentKind(lang), bi, pi);
+        // A translation is dropped with its source paragraph (counted once, at the source).
+        if (also !== undefined && suppress.has(id(also, bi, pi))) return [];
         if (isSuppressed(mid)) return [];
         const src: number[] = [];
         for (const k of p.sourceIdx) {
           const n = sourceRemap.get(k);
-          if (n === undefined) report.dropped.writeupRefsToDroppedSources++;
-          else if (!src.includes(n)) src.push(n);
+          if (n === undefined) {
+            if (also === undefined) report.dropped.writeupRefsToDroppedSources++;
+          } else if (!src.includes(n)) src.push(n);
         }
         // A paragraph belongs to its section: prefer its evidence inside the section, and keep the
         // time inside the chapter (segments that straddle a boundary end slightly past it).
@@ -371,9 +394,10 @@ function buildNotes(
         const inSection =
           recId === section.recordingId ? p.evidence.segs.filter((g) => g >= section.startSeg && g <= section.endSeg) : [];
         const r = tm.span(recId, inSection.length > 0 ? inSection : p.evidence.segs);
-        let { t, end } = time(mid, r);
+        // Time warnings are reported for the source paragraphs only; a translation has the same times.
+        let { t, end } = also === undefined ? time(mid, r) : r.ok ? { t: r.span.t, end: r.span.end } : { t: null, end: null };
         if (t !== null && end !== null) {
-          if (t < ch.t || t > ch.end) report.time(mid, "paragraph evidence outside its section; time clamped to the section");
+          if ((t < ch.t || t > ch.end) && also === undefined) report.time(mid, "paragraph evidence outside its section; time clamped to the section");
           t = Math.min(Math.max(t, ch.t), ch.end);
           end = Math.min(Math.max(end, t), ch.end);
         }
@@ -381,6 +405,14 @@ function buildNotes(
       });
       return { sectionIndex: b.sectionIndex, heading: b.heading, paragraphs };
     });
+  const writeup: { -readonly [K in keyof PublicNotes["writeup"]]: PublicNotes["writeup"][K] } = {
+    en: writeupOf("en", wu.en),
+    yi: writeupOf("yi", wu.yi),
+  };
+  for (const lang of TRANSLATED_LANGS) {
+    const blocks = translatedWriteup(wu.yi, overlays[lang]);
+    if (blocks !== null) writeup[lang] = writeupOf(lang, blocks, writeupMomentKind("yi"));
+  }
 
   // The extraction's people list (raw names) is never projected (F.1).
   report.dropped.rawPersonNames += ex.people.length;
@@ -393,6 +425,38 @@ function buildNotes(
     takeaways: moments("tk", ex.takeaways),
     questions,
     stories,
-    writeup: { en: writeupOf("en"), yi: writeupOf("yi") },
+    writeup,
   };
+}
+
+/**
+ * The `yi` write-up with every heading and paragraph text replaced by its translation
+ * (`w.<block>.heading`, `w.<block>.paragraphs.<p>.text`); `sectionIndex`, `sourceIdx` and `evidence`
+ * are the `yi` paragraph's. Null when the overlay is missing or leaves any text untranslated: a
+ * write-up is shown whole in one language, never mixed.
+ */
+export function translatedWriteup(yi: readonly WriteupBlock[], text: ReadonlyMap<string, string> | undefined): WriteupBlock[] | null {
+  if (text === undefined || yi.length === 0) return null;
+  const tr = (k: string): string | null => {
+    const t = text.get(k);
+    return t !== undefined && t.trim() !== "" ? t : null;
+  };
+  const out: WriteupBlock[] = [];
+  for (let b = 0; b < yi.length; b++) {
+    const block = yi[b]!;
+    let heading: string | null = null;
+    if (block.heading) {
+      heading = tr(`w.${b}.heading`);
+      if (heading === null) return null;
+    }
+    const paragraphs: WriteupBlock["paragraphs"] = [];
+    for (let i = 0; i < block.paragraphs.length; i++) {
+      const p = block.paragraphs[i]!;
+      const t = tr(`w.${b}.paragraphs.${i}.text`);
+      if (t === null) return null;
+      paragraphs.push({ text: t, sourceIdx: p.sourceIdx, evidence: p.evidence });
+    }
+    out.push({ sectionIndex: block.sectionIndex, heading, paragraphs });
+  }
+  return out;
 }

@@ -21,14 +21,14 @@ import { tmpdir } from "node:os";
 import { dirname, extname, join, normalize, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { buildCorpusWithAggregates } from "@emunas/corpus/build/aggregate";
+import { CONTENT_FALLBACK } from "@emunas/i18n";
 import { chromium, type Browser, type Page } from "playwright-core";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import { astroBuild } from "../astro-build.ts";
+import { EDS, dirOf, type Ed } from "../../src/lib/edition.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..", "..");
 const repo = resolve(app, "../..");
-const EDS = ["yi", "en"] as const;
-type Ed = (typeof EDS)[number];
 
 let work = "";
 let dist = "";
@@ -239,7 +239,7 @@ async function openNoJs(path: string): Promise<Page> {
 
 async function basics(page: Page, ed: Ed, path: string): Promise<string> {
   expect(await page.getAttribute("html", "lang"), path).toBe(ed);
-  expect(await page.getAttribute("html", "dir"), path).toBe(ed === "yi" ? "rtl" : "ltr");
+  expect(await page.getAttribute("html", "dir"), path).toBe(dirOf(ed));
   expect(await page.locator("h1").count(), path).toBe(1);
   expect(await page.locator("main").count(), path).toBe(1);
   return clean(await page.locator("h1").textContent());
@@ -333,7 +333,7 @@ describe.each(EDS)("%s edition: corpus pages with JavaScript off", (ed) => {
 
   it("a story page", async () => {
     const { story } = sample();
-    await entityPage(ed, `/${ed}/stories/${story.id}/`, [story.title[ed], story.title.en, story.title.yi]);
+    await entityPage(ed, `/${ed}/stories/${story.id}/`, [story.title[ed] ?? story.title.yi, story.title.en, story.title.yi]);
   }, 120_000);
 
   it("a series page shows its generated overview when the layer has one", async () => {
@@ -347,8 +347,11 @@ describe.each(EDS)("%s edition: corpus pages with JavaScript off", (ed) => {
       const intro = page.locator("main [data-series-intro]");
       expect(await intro.count(), path).toBe(1);
       const text = clean(await intro.textContent());
-      const want = [series.overview.en, series.overview.yi].map((s) => clean(s).slice(0, 40)).filter((s) => s !== "");
-      expect(want.some((w) => text.includes(w)), `${path}: overview shown`).toBe(true);
+      // The first language along the edition's fallback chain that has an overview (a current
+      // translation, else a source language).
+      const shown = CONTENT_FALLBACK[ed].map((l) => clean(series.overview?.[l] ?? "").slice(0, 40)).find((s) => s !== "");
+      expect(shown, `${path}: an overview`).toBeDefined();
+      expect(text, `${path}: overview shown`).toContain(shown);
     }
     expect(await brokenLinks(page)).toEqual([]);
     await page.context().close();

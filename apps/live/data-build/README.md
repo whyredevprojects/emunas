@@ -35,9 +35,9 @@ page (never generic) and every topic with visible shiurim; the rules are `app/da
 shared with the prerender list. A page file exists exactly when its page flag is set. Everything
 there is AI-generated and unreviewed; `reviewed` is carried so pages can show the label once.
 
-**Loading (plan §4).** Today renders from `today.json` alone (compact cards for every shiur it
-names, occasion rows of `TODAY_ROW_PER_LANG` shiurim per language with the total, the occasion mix's
-first sections); the listening room from its shiur file alone (related titles, series title and the
+**Loading (plan §4).** Today renders from its Today file alone (`today.<lang>.json`, one per reading
+language; compact cards for every shiur it names, occasion rows of `TODAY_ROW_PER_LANG` shiurim per
+language with the total, the occasion mix's first sections); the listening room from its shiur file alone (related titles, series title and the
 corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any corpus-wide file;
 `corpus.json` is for Explore, search and the shelf. Pairing across languages is gone (F.1): no
 `sibling` on series or series facets, no counterpart in the room.
@@ -49,14 +49,14 @@ corpus refs with labels). Neither requests `corpus.json`, `facets.json` or any c
 | `build.json` | corpus `build.json` counts and data sha; `buildId` = hash(corpus buildId, emitter version, schema version); moment shard counts |
 | `corpus.json` | `index.json` rows, catalog fields only (the entity ids are in `explore/entities.json`) |
 | `facets.json` | labels and row counts for every category, language, occasion (tables, the "other" bucket and file-name guesses), year, series, and the Live-listed works, people and concepts (corpus ids, layer labels) |
-| `today.json` | the corpus counter; `occasions.json` (parshiyos, zmanim with their sub-headings, "other"): a row of up to 3 shiurim per language by year with the total, a pool of at most 4 timed insights/stories/questions from the row, the label where it differs from the shared tables, and the occasion mix (occasion-topics of the layer; D7 filters; `skip` lists the shiurim and sections of the topic's moment list that may not be featured, so Today can fill the rest of the mix from the topic file); `newlySummarized`: the 12 newest by manifest `updatedAt`; a compact card for every shiur named (one-liners only on the newly summarized) |
+| `today.<lang>.json` | one per reading language (`UI_LANGS`), alike except for the generated texts (mix titles, one-liners): each is a `ReaderText` `{lang, text}`, the first present language along `CONTENT_FALLBACK[lang]`, so a file carries only what its reader is shown. The corpus counter; `occasions.json` (parshiyos, zmanim with their sub-headings, "other"): a row of up to 3 shiurim per language by year with the total, a pool of at most 4 timed insights/stories/questions from the row, the label where it differs from the shared tables, and the occasion mix (occasion-topics of the layer; D7 filters; `skip` lists the shiurim and sections of the topic's moment list that may not be featured, so Today can fill the rest of the mix from the topic file); `newlySummarized`: the 12 newest by manifest `updatedAt`; a compact card for every shiur named (one-liners only on the newly summarized) |
 | `shiur/<id>.json` | the projected shiur without the write-up; `related` from `neighbours.json` (prev/next in series order, else catalog section order) with the `titles` of every shiur named; `neighbors` from `neighbors.ts` (W4.4, below); `seriesTitle`; `corpus`: topics with salience, section topic chips, labels, terms, sources' work ids, per story moment the number of other visible shiurim the merged story is told in (`otherShiurim`, distinct shiurim, F.1) and the merged story's people (a chip, or a corpus entity's display name), and thread marks with page flags (G.1). The notes carry no person or concept names: the extraction's raw names may be ASR mishearings and never ship (F.1) |
-| `writeup/<id>.<en\|yi>.json` | the write-up blocks, full shiurim only |
+| `writeup/<id>.<lang>.json` | the write-up blocks, full shiurim only: one file per language in `notes.writeupLangs` (en, yi, and he when the corpus carries a complete current translation) |
 | `series/<id>.json` | `series.json` parts and perek groups; `synthesis` (overview, key themes, arc one-liners for visible parts) when the layer has one |
 | `works.json`, `work/<id>.json` | Live-page works by corpus id, in the layer's shelf order; each cited source goes to the work its moment resolves to, locations in the work's order |
 | `entity/{p,c,o}/<key>.json` | people and concepts with a Live page (corpus ids), occasions with ≥2 shiurim: shiurim by year, year histogram, moments (the tellings of a person's stories, a concept's example sections, an occasion's insights/stories/questions), up to 12 entities sharing ≥5 shiurim |
-| `moments/<lang>-<n>.json` | every timed item of every full shiur, 1,000 per shard, catalog order |
-| `quick-index.<lang>.json` | serialized MiniSearch (`fields` title, occasion, oneLiner, sections, entities; stores `name`). `entities` holds the EntityDoc labels of the shiur's Live-listed works, people and concepts (no aliases). Values are folded with search-core's `foldForIndex`; the client searches `normalizeQuery(q).tokens` |
+| `moments/<lang>-<n>.json` | every timed item of every full shiur, 1,000 per shard, catalog order; one set per UI language (`UI_LANGS`). A title with no text in the shard's language falls back along `CONTENT_FALLBACK` and the row carries `titleLang` |
+| `quick-index.<lang>.json` | serialized MiniSearch (`fields` title, occasion, oneLiner, sections, entities; stores `name`). `entities` holds the EntityDoc labels of the shiur's Live-listed works, people and concepts (no aliases). Values are folded with search-core's `foldForIndex`; the client searches `normalizeQuery(q).tokens`. One index per UI language; generated text comes from `localizedTexts(text, lang)` (the reader's language, else along `CONTENT_FALLBACK`) |
 | `topics.json` | the topic tree as rows `[id, parentId, en, yi, he, count]`, parents first (`topicNodes()` expands them) |
 | `topic/<id>.json`, `topic/<id>.moments-<n>.json` | description, term, hubs as cards, children, co-topics, threads and stories (with page flags), the first 30 mix sections with titles; further sections 300 per page, ids and times only; mix totals per audio language; the first 40 rows of "all shiurim" (grade, salience, year; a `touched` row carries its first tagged section) |
 | `topic-shiurim/<id>.<n>.json` | further "all shiurim" rows of a topic, 200 per page |
@@ -140,7 +140,7 @@ The listening room shows them under "Same idea elsewhere", labelled as a suggest
   upper bound). On the real data
   that is 4,570 pages, the number the build writes;
 - at most 25 MiB per file; at most 1,000 work files;
-- brotli (quality 5) targets: corpus 150 KiB, facets 90 KiB, today 30 KiB, shiur 40 KiB, write-up
+- brotli (quality 5) targets: corpus 150 KiB, facets 90 KiB, each Today file 30 KiB, shiur 40 KiB, write-up
   8 KiB, quick index 600 KiB; corpus layer (plan §4): topic tree 8 KiB, topic file
   and moment page 24 KiB, thread and story 6 KiB, stories index 120 KiB, glossary shard 8 KiB. The
   shiur file's growth (≤ 2 KiB br at the median) is checked by `real-data.test.ts`.

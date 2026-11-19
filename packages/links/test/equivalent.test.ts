@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
-import { createLinks, EDS, formatQuiet, livePaths, quietPaths } from "../src/index.ts";
+import { UI_LANGS } from "@emunas/i18n";
+import { createLinks, EDS, formatQuiet, isEd, livePaths, parseLive, parseQuiet, quietPaths } from "../src/index.ts";
 import { DATA, HOSTS, links } from "./fixtures.ts";
 
 const Q = quietPaths(DATA);
@@ -144,9 +145,26 @@ describe("site detection", () => {
   });
 });
 
+describe("Hebrew edition", () => {
+  it("parses and formats /he/ like every other edition on both sites", () => {
+    expect(parseQuiet("/he/shiur/a/#t=12.5")).toEqual({ kind: "shiur", ed: "he", id: "a", t: 12.5 });
+    expect(parseLive("/he/s/a?t=3")).toEqual({ kind: "shiur", ed: "he", id: "a", t: 3 });
+    expect(quietPaths().home("he")).toBe("/he/");
+    expect(livePaths().search("he", "אמונה")).toBe(`/he/search?q=${encodeURIComponent("אמונה")}`);
+    expect(parseQuiet("/fr/")).toBeNull();
+  });
+
+  it("isEd follows UI_LANGS", () => {
+    for (const l of UI_LANGS) expect(isEd(l)).toBe(true);
+    expect(EDS).toEqual(UI_LANGS);
+    expect(isEd("de")).toBe(false);
+  });
+});
+
 describe("builders reject bad input", () => {
   it("throws on bad editions, ids and moments", () => {
     expect(() => quietPaths().home("de" as "en")).toThrow(TypeError);
+    expect(() => livePaths().home("de" as "en")).toThrow(/edition must be one of "en", "yi", "he"/);
     expect(() => quietPaths().shiur("en", "")).toThrow(TypeError);
     expect(() => quietPaths().shiur("en", "a/b")).toThrow(TypeError);
     expect(() => livePaths().shiur("en", "a", { m: "b~s1" })).toThrow(TypeError);

@@ -3,9 +3,9 @@ import { formatNumber, pad2 } from "./numbers.ts";
 import { selectPlural, type PluralMessage } from "./plural.ts";
 
 /**
- * - `short`: citation lines and lists, "1 hr 19 min" / "1 שעה 19 מינ׳"
- * - `long`: prose and screen-reader labels, "1 hour 19 minutes" / "1 שעה 19 מינוטן"
- * - `clock`: time links and the player, "1:19:05" / "19:05" (same in both languages)
+ * - `short`: citation lines and lists, "1 hr 19 min" / "1 שעה 19 מינ׳" / "1 שע׳ 19 דק׳"
+ * - `long`: prose and screen-reader labels, "1 hour 19 minutes" / "1 שעה 19 מינוטן" / "1 שעה 19 דקות"
+ * - `clock`: time links and the player, "1:19:05" / "19:05" (same in every language)
  */
 export type DurationStyle = "short" | "long" | "clock";
 
@@ -36,6 +36,19 @@ const UNITS: Readonly<Record<UiLang, Readonly<Record<"short" | "long", Readonly<
       second: { one: "{n} סעקונדע", other: "{n} סעקונדעס" },
     },
   },
+  he: {
+    short: {
+      hour: { other: "{n} שע׳" },
+      minute: { other: "{n} דק׳" },
+      second: { other: "{n} שנ׳" },
+    },
+    long: {
+      // Hebrew `two` for hours: "שעתיים", not "2 שעות".
+      hour: { one: "{n} שעה", two: "שעתיים", other: "{n} שעות" },
+      minute: { one: "{n} דקה", other: "{n} דקות" },
+      second: { one: "{n} שנייה", other: "{n} שניות" },
+    },
+  },
 };
 
 function unit(lang: UiLang, style: "short" | "long", u: Unit, n: number): string {
@@ -55,7 +68,7 @@ export function formatClock(seconds: number): string {
 /**
  * Formats a duration in seconds. `short`/`long` round to whole minutes from one
  * minute up and show seconds only below a minute. Digits are ordinary digits in
- * both languages (concept-quiet §8). Invalid input (negative, NaN) gives "" so a
+ * every language (concept-quiet §8). Invalid input (negative, NaN) gives "" so a
  * bad value in one shiur never breaks a page (integration-plan §0.4).
  */
 export function formatDuration(seconds: number, lang: UiLang, style: DurationStyle = "short"): string {

@@ -4,8 +4,7 @@
  * `corpus.json` (shiur title) or generated text returned by the API (`title`, `snippet.text`); a
  * result carries no other text (see `api.ts`).
  */
-import type { Ed } from "@emunas/corpus/public";
-import { audioLanguageLabel, formatClock, formatHebrewYears, type UiLang } from "@emunas/i18n";
+import { audioLanguageLabel, formatClock, formatHebrewYears, UI_DIR, type UiLang } from "@emunas/i18n";
 import type { JSX } from "react";
 import { Link } from "react-router";
 import { Text } from "../../components/Text.tsx";
@@ -17,11 +16,9 @@ import { hitHref, hitTitle, shiurHref, type ShiurGroup } from "./model.ts";
 import { searchT, type SearchKey } from "./strings.ts";
 import { searchStyles as s } from "./styles.ts";
 
-const DIR: Record<Ed, "ltr" | "rtl"> = { en: "ltr", yi: "rtl" };
-
 export function SnippetText({ snippet }: { snippet: ApiSnippet }): JSX.Element {
   return (
-    <p className={s.snippet} lang={snippet.lang} dir={DIR[snippet.lang]}>
+    <p className={s.snippet} lang={snippet.lang} dir={UI_DIR[snippet.lang]}>
       {splitMarks(snippet.text, snippet.marks).map((r, i) =>
         r.mark ? <mark key={i}>{r.text}</mark> : <span key={i}>{r.text}</span>,
       )}
@@ -57,7 +54,7 @@ function ShiurTitle({ shiurId, row, ui }: { shiurId: string; row: CorpusRow | un
   );
 }
 
-export function HitItem({ hit, ui, read }: { hit: ApiResult; ui: UiLang; read: Ed }): JSX.Element {
+export function HitItem({ hit, ui, read }: { hit: ApiResult; ui: UiLang; read: UiLang }): JSX.Element {
   const t = searchT(ui);
   const title = hitTitle(hit, read);
   const time = formatClock(hit.t);
@@ -80,7 +77,7 @@ export function ApiGroups(props: {
   groups: ShiurGroup[];
   rows: ReadonlyMap<string, CorpusRow>;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
 }): JSX.Element {
   const { groups, rows, ui, read } = props;
   const t = searchT(ui);
@@ -115,7 +112,7 @@ export function FallbackList(props: {
   hits: ShiurHit[];
   rows: ReadonlyMap<string, CorpusRow>;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
 }): JSX.Element {
   const { hits, rows, ui, read } = props;
   const t = searchT(ui);
@@ -123,12 +120,12 @@ export function FallbackList(props: {
     <ol className={s.results} data-testid="search-results" data-source="fallback">
       {hits.map((h) => {
         const row = rows.get(h.shiurId);
-        const oneLiner = row?.oneLiner?.[read] ?? null;
+        const oneLiner = row?.oneLiner ?? null;
         return (
           <li key={h.shiurId} className={s.group} data-shiur={h.shiurId}>
             <h2 className={s.groupTitle}>
               <Link to={shiurHref(ui, h.shiurId)}>
-                <Text value={h.title} shiurLang={h.lang ?? ui} />
+                <Text value={h.title} shiurLang={h.lang ?? null} />
               </Link>
             </h2>
             <ShiurMeta row={row} ui={ui} />

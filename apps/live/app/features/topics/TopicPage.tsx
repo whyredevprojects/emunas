@@ -17,13 +17,12 @@
  * Item 7 (over the years) is second cut. Language is shown on every shiur row and never groups rows
  * (F.1). Everything here is AI-generated and unreviewed unless the topic says `reviewed`.
  */
-import type { Ed } from "@emunas/corpus/public";
 import { corpusLabel, formatClock, formatHebrewYear, formatNumber, languageName, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
 import { useEffect, useState, type JSX } from "react";
 import { Link } from "react-router";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
-import { Text } from "../../components/Text.tsx";
+import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import {
   DataError,
   loadTopic,
@@ -78,14 +77,14 @@ export function TopicPage({ topicId, ui, loadShiurimPage = (id, n) => loadTopicS
               {f.breadcrumb.map((b) => (
                 <li key={b.id}>
                   <Link to={paths.topic(ui, b.id)}>
-                    <Text value={b.label[ui]} lang={ui} />
+                    <Text value={b.label} lang={ui} />
                   </Link>
                 </li>
               ))}
             </ol>
           </nav>
         ) : null}
-        <h1 className={s.title}>{f ? <Text value={f.label[ui]} lang={ui} /> : corpusLabel("kind.topic", ui)}</h1>
+        <h1 className={s.title}>{f ? <Text value={f.label} lang={ui} /> : corpusLabel("kind.topic", ui)}</h1>
         {he ? <Text as="p" className={s.hebrew} value={he} lang="he" /> : null}
         {f ? <CorpusLabel ui={ui} reviewed={f.reviewed} className={s.label} /> : null}
         {f ? (
@@ -114,7 +113,7 @@ function TopicBody({
 }: {
   file: TopicFile;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   loadShiurimPage: (topicId: string, page: number) => Promise<TopicShiurimFile>;
 }): JSX.Element {
   const t = topicsT(ui);
@@ -138,14 +137,14 @@ function TopicBody({
           {f.person?.page ? (
             <li>
               <Link className={s.chip} to={paths.person(ui, f.person.id)} data-person={f.person.id}>
-                {t("topic.person", { name: f.person.label[ui] })}
+                {aroundText(t("topic.person", { name: TEXT_SLOT }), <Text value={f.person.label} lang={ui} />)}
               </Link>
             </li>
           ) : null}
           {f.work?.page ? (
             <li>
               <Link className={s.chip} to={paths.work(ui, f.work.id)} data-work={f.work.id}>
-                {t("topic.work", { name: f.work.label[ui] })}
+                {aroundText(t("topic.work", { name: TEXT_SLOT }), <Text value={f.work.label} lang={ui} />)}
               </Link>
             </li>
           ) : null}
@@ -226,7 +225,7 @@ function TopicBody({
             {f.children.map((c) => (
               <li key={c.id}>
                 <Link className={s.chip} to={paths.topic(ui, c.id)} data-topic-link={c.id}>
-                  <Text value={c.label[ui]} lang={ui} />
+                  <Text value={c.label} lang={ui} />
                   <span className={s.meta}>{formatNumber(c.count, ui)}</span>
                 </Link>
               </li>
@@ -244,7 +243,7 @@ function TopicBody({
             {f.coTopics.map((c) => (
               <li key={c.id}>
                 <Link className={s.chip} to={paths.topic(ui, c.id)} data-topic-link={c.id}>
-                  <Text value={c.label[ui]} lang={ui} />
+                  <Text value={c.label} lang={ui} />
                   <span className={s.meta}>{t("topic.coTopics.sections", { count: c.sections })}</span>
                 </Link>
               </li>
@@ -271,7 +270,7 @@ function AllShiurim({
 }: {
   file: TopicFile;
   ui: UiLang;
-  read: Ed;
+  read: UiLang;
   loadPage: (topicId: string, page: number) => Promise<TopicShiurimFile>;
 }): JSX.Element | null {
   const t = topicsT(ui);
@@ -346,7 +345,7 @@ function AllShiurim({
   );
 }
 
-function ShiurRow({ row: r, ui, read }: { row: TopicShiurRow; ui: UiLang; read: Ed }): JSX.Element {
+function ShiurRow({ row: r, ui, read }: { row: TopicShiurRow; ui: UiLang; read: UiLang }): JSX.Element {
   const t = topicsT(ui);
   const year = r.year === null ? t("topic.undated") : formatHebrewYear(r.year, ui);
   const sec = r.grade === "touched" ? r.section : undefined;

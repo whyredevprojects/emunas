@@ -18,7 +18,7 @@ export function readStoredUi(): UiLang | null {
     // storage blocked
   }
   try {
-    const m = /(?:^|;\s*)emunas_ui=(en|yi)(?:;|$)/.exec(globalThis.document?.cookie ?? "");
+    const m = /(?:^|;\s*)emunas_ui=([a-z]+)(?:;|$)/.exec(globalThis.document?.cookie ?? "");
     if (m && isUiLang(m[1])) return m[1];
   } catch {
     // cookies blocked
