@@ -148,34 +148,34 @@ test("chapter next and previous", async ({ page }) => {
   await expect(dock(page)).toHaveAttribute("data-player-chapter", "1");
 });
 
-test("switching to the original and back keeps the position and playback, across recordings", async ({ page }) => {
+test("switching to the improved copy and back keeps the position and playback, across recordings", async ({ page }) => {
   // yi-zmanim-tv-bb-04 has two recordings (the second starts at 1855.544 s).
   await openRoom(page, "/en/s/yi-zmanim-tv-bb-04?t=1850");
   await waitStatus(page, "paused");
   const slot = page.locator("[data-dock-slot]");
   const notice = slot.locator("[data-dock-notice]");
   await expect(notice).toHaveAttribute("data-dock-notice", "version");
-  await expect(page.locator("[data-room-version]")).toContainText("Sound improved by AI");
+  await expect(page.locator("[data-room-version]")).toContainText("A version with the sound improved by AI is also available");
   await page.locator("[data-room-play]").click();
   await waitStatus(page, "playing");
   await page.waitForTimeout(1000);
   const before = await playerT(page);
-  await slot.getByRole("button", { name: "Switch to the original" }).click();
+  await slot.getByRole("button", { name: "Listen to it" }).click();
   // Focus stays on the button, which now carries the other label.
-  await expect(slot.getByRole("button", { name: "Listen to it" })).toBeFocused();
-  await expect(page.locator("[data-version-status]").first()).toHaveText("Now playing the original recording.");
+  await expect(slot.getByRole("button", { name: "Switch to the original" })).toBeFocused();
+  await expect(page.locator("[data-version-status]").first()).toHaveText("Now playing the version improved by AI.");
   await waitStatus(page, "playing");
   expect(Math.abs((await playerT(page)) - before)).toBeLessThanOrEqual(1.5);
-  expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("original");
+  expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("cleaned");
   // Crossing into the second recording keeps the chosen version.
   await page.waitForTimeout(6000);
   expect(await playerT(page)).toBeGreaterThan(1855.6);
-  await expect(page.locator("[data-room-version]")).toContainText("A version with the sound improved by AI is also available");
-  await page.locator("[data-room-version]").getByRole("button", { name: "Listen to it" }).click();
+  await expect(page.locator("[data-room-version]")).toContainText("Sound improved by AI");
+  await page.locator("[data-room-version]").getByRole("button", { name: "Switch to the original" }).click();
   await expect(notice).toHaveAttribute("data-dock-notice", "version");
-  await expect(slot.getByRole("button", { name: "Switch to the original" })).toBeVisible();
+  await expect(slot.getByRole("button", { name: "Listen to it" })).toBeVisible();
   await waitStatus(page, "playing");
-  expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("cleaned");
+  expect(await page.evaluate(() => localStorage.getItem("emunas.audioVersion"))).toBe("original");
 });
 
 test("a catalog-only shiur plays", async ({ page }) => {

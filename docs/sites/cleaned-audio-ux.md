@@ -31,13 +31,22 @@ reasoning; read them through these decisions.
    pre-merge check, not part of the build (ops-runbook §11).
 4. **Downloads follow the version being played**, on both sites (owner, 2026-11-19; this reverses
    the earlier "downloads always use the original"). Download is a plain link to the media URL of
-   the version that plays: the improved copy by default, the original when the listener chose it,
-   the recording has no improved copy or the improved file failed. Library's script rewrites the
+   the version that plays: the original by default, the improved copy when the listener chose it
+   and the recording has one that loads. Library's script rewrites the
    link's `href` on a switch or a fallback; Analyze has no service worker or offline copies.
 5. **Preference:** one global per-listener choice, `localStorage` key `emunas.audioVersion`
-   (`AUDIO_VERSION_KEY`), values `"cleaned" | "original"` (`AudioVersion`), default `"cleaned"`
-   (`parseAudioVersion`). Live also mirrors it into its personal store `prefs`, so export/transfer
+   (`AUDIO_VERSION_KEY`), values `"cleaned" | "original"` (`AudioVersion`), default `"original"`
+   (`parseAudioVersion`; see Decision 6). Live also mirrors it into its personal store `prefs`, so export/transfer
    carries it; the synchronous localStorage read stays the source for the first load.
+6. **The original plays by default** (owner, 2026-11-19; this reverses "the sites play the cleaned
+   copy by default" in §1 and wherever else this document assumes it). `DEFAULT_AUDIO_VERSION` is
+   `"original"`; a missing, blocked or unknown stored value means the original. The improved copy
+   plays only after the listener chooses it ("Listen to it"), and that choice is remembered as
+   before. With no choice, the line under the player is state B ("A version with the sound
+   improved by AI is also available · Listen to it"). In Library without script, `src`, time links
+   and downloads are the original, and the line's action is a plain link to the improved file of
+   the first part that has one. The About paragraph says the original plays by default and the
+   improved version is one switch away.
 
 ## 1. Summary
 

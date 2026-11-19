@@ -362,15 +362,17 @@ describe("the improved-audio line (cleaned-audio-ux)", () => {
     }
   });
 
-  it("plays the improved copy by default and says so in the dock and under the play button", async () => {
+  it("plays the original by default and offers the improved copy in the dock and under the play button", async () => {
     const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
-    expect(engine.audio.src).toBe(tvbb.recordings[0]!.cleanedUrl);
-    expect(roomLine(container)!.textContent).toBe("Sound improved by AI·Switch to the original");
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.audioUrl);
+    expect(roomLine(container)!.textContent).toBe("A version with the sound improved by AI is also available·Listen to it");
     const notice = container.querySelector("[data-dock-slot] [data-dock-notice]")!;
     expect(notice.getAttribute("data-dock-notice")).toBe("version");
-    const button = dockSlot(container).getByRole("button", { name: "Switch to the original" });
+    const button = dockSlot(container).getByRole("button", { name: "Listen to it" });
     expect(button.tagName).toBe("BUTTON");
-    expect(document.getElementById(button.getAttribute("aria-describedby")!)!.textContent).toBe("Sound improved by AI");
+    expect(document.getElementById(button.getAttribute("aria-describedby")!)!.textContent).toBe(
+      "A version with the sound improved by AI is also available",
+    );
   });
 
   it("switching keeps position, play state and speed, is announced, remembered and switchable back", async () => {
@@ -381,34 +383,34 @@ describe("the improved-audio line (cleaned-audio-ux)", () => {
     await settle();
     await act(async () => clock.tick(2000));
     const before = engine.getState().t;
-    fireEvent.click(dock.getByRole("button", { name: "Switch to the original" }));
+    fireEvent.click(dock.getByRole("button", { name: "Listen to it" }));
     await settle();
-    expect(engine.audio.src).toBe(tvbb.recordings[0]!.audioUrl);
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.cleanedUrl);
     expect(near(engine.getState().t, before, 0.2)).toBe(true);
-    expect(engine.getState()).toMatchObject({ status: "playing", rate: 1.5, audioVersion: "original", playingVersion: "original" });
+    expect(engine.getState()).toMatchObject({ status: "playing", rate: 1.5, audioVersion: "cleaned", playingVersion: "cleaned" });
     expect(engine.audio.playbackRate).toBe(1.5);
-    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("original");
-    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the original recording.");
-    // Both places now offer the improved copy.
-    expect(roomLine(container)!.textContent).toBe("A version with the sound improved by AI is also available·Listen to it");
-    const back = within(roomLine(container)!).getByRole("button", { name: "Listen to it" });
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("cleaned");
+    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the version improved by AI.");
+    // Both places now offer the original.
+    expect(roomLine(container)!.textContent).toBe("Sound improved by AI·Switch to the original");
+    const back = within(roomLine(container)!).getByRole("button", { name: "Switch to the original" });
     back.focus();
     fireEvent.click(back);
     await settle();
-    expect(engine.audio.src).toBe(tvbb.recordings[0]!.cleanedUrl);
+    expect(engine.audio.src).toBe(tvbb.recordings[0]!.audioUrl);
     expect(engine.getState().status).toBe("playing");
-    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("cleaned");
-    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the version improved by AI.");
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("original");
+    expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the original recording.");
   });
 
   it("the header's download links point at the file that plays and follow a switch", async () => {
     const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
     const links = () => [...container.querySelectorAll<HTMLAnchorElement>("a[data-room-download]")];
     expect(links().map((a) => a.textContent)).toEqual(["Download part 1", "Download part 2"]);
-    expect(links().map((a) => a.getAttribute("href"))).toEqual(tvbb.recordings.map((r) => r.cleanedUrl));
-    fireEvent.click(within(roomLine(container)!).getByRole("button", { name: "Switch to the original" }));
-    await settle();
     expect(links().map((a) => a.getAttribute("href"))).toEqual(tvbb.recordings.map((r) => r.audioUrl));
+    fireEvent.click(within(roomLine(container)!).getByRole("button", { name: "Listen to it" }));
+    await settle();
+    expect(links().map((a) => a.getAttribute("href"))).toEqual(tvbb.recordings.map((r) => r.cleanedUrl));
   });
 
   it("the dock's notice row gives a skip notice priority over the version line; the room keeps the line", async () => {
@@ -426,7 +428,7 @@ describe("the improved-audio line (cleaned-audio-ux)", () => {
   });
 
   for (const ui of ["en", "yi"] as const) {
-    it(`axe finds no violations with the line in the dock and the room, state B (${ui})`, async () => {
+    it(`axe finds no violations with the line in the dock and the room, state A (${ui})`, async () => {
       const { container } = await openAt(`/${ui}/s/yi-zmanim-tv-bb-04?t=300`);
       fireEvent.click(within(roomLine(container)!).getByRole("button"));
       await settle();

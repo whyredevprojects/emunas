@@ -3,11 +3,11 @@ import { createT, type MessageTable, type MessageTables, type Params, type TFunc
 
 /**
  * Shared wording for the AI-improved audio (docs/sites/cleaned-audio-ux.md §3, §5). Every playable
- * recording has a second copy with the sound improved by AI; the sites play it by default and keep
- * the original one click away. Both sites take the words from here, so they cannot drift apart.
+ * recording has a second copy with the sound improved by AI; the sites play the original by default
+ * and keep the improved copy one click away (owner, 2026-11-19). Both sites take the words from here, so they cannot drift apart.
  *
- * - `cleaned.*`: the line under the player while the improved copy plays (state A).
- * - `original.*`: the line while the listener chose the original (state B).
+ * - `cleaned.*`: the line under the player while the listener chose the improved copy (state A).
+ * - `original.*`: the line while the original plays, the default (state B).
  * - `announce.*`: the polite status message after a switch.
  * - `partOriginal`: Quiet, multi-part shiur, a part with no improved copy (`{part}` = 1-based).
  * - `about`: the paragraph for the About pages.
@@ -21,14 +21,14 @@ import { createT, type MessageTable, type MessageTables, type Params, type TFunc
  */
 export const AUDIO_VERSION_LABEL_STATUS = "proposed" as const;
 
-/** Which copy of a recording plays: the AI-improved one (the default) or the original. */
+/** Which copy of a recording plays: the original (the default) or the AI-improved one. */
 export type AudioVersion = "cleaned" | "original";
 
 /** Every value of `AudioVersion`; the first is the default. */
-export const AUDIO_VERSIONS: readonly AudioVersion[] = ["cleaned", "original"];
+export const AUDIO_VERSIONS: readonly AudioVersion[] = ["original", "cleaned"];
 
 /** The default version: a missing, blocked or unknown stored value means this. */
-export const DEFAULT_AUDIO_VERSION: AudioVersion = "cleaned";
+export const DEFAULT_AUDIO_VERSION: AudioVersion = "original";
 
 /**
  * `localStorage` key of the listener's one global choice, the same on both sites (each site has its
@@ -37,9 +37,9 @@ export const DEFAULT_AUDIO_VERSION: AudioVersion = "cleaned";
  */
 export const AUDIO_VERSION_KEY = "emunas.audioVersion";
 
-/** Narrows a stored value: `"original"` stays, anything else (missing, garbage) is the default. */
+/** Narrows a stored value: `"cleaned"` stays, anything else (missing, garbage) is the default. */
 export function parseAudioVersion(value: unknown): AudioVersion {
-  return value === "original" ? "original" : DEFAULT_AUDIO_VERSION;
+  return value === "cleaned" ? "cleaned" : DEFAULT_AUDIO_VERSION;
 }
 
 const en = {
@@ -51,7 +51,7 @@ const en = {
   "announce.original": "Now playing the original recording.",
   partOriginal: "Part {part}: original recording only",
   about:
-    "The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player.",
+    "By default the original recording plays. There is also a version with the sound improved by AI, which removes noise and hiss; switch to it from the line under the player. Now and then the improvement can change how a word sounds.",
 } as const;
 
 export type AudioVersionLabelKey = keyof typeof en;
@@ -65,7 +65,7 @@ const yi: MessageTable<AudioVersionLabelKey> = {
   "announce.original": "יעצט שפילט די מקורית.",
   partOriginal: "טייל {part}: נאר די מקורית",
   about:
-    "די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער.",
+    "ווען מען קלייבט נישט אנדערש, שפילט די מקורית. עס איז אויך דא א ווערסיע מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש; מען קען איבערגיין צו איר אונטער דעם שפילער. אמאל קען דאס אויסבעסערן טוישן ווי א ווארט הערט זיך.",
 };
 
 const he: MessageTable<AudioVersionLabelKey> = {
@@ -77,7 +77,7 @@ const he: MessageTable<AudioVersionLabelKey> = {
   "announce.original": "כעת מתנגנת ההקלטה המקורית.",
   partOriginal: "חלק {part}: ההקלטה המקורית בלבד",
   about:
-    "ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן.",
+    "כברירת מחדל מושמעת ההקלטה המקורית. יש גם גרסה שהקול בה שופר על ידי AI, המסיר רעשים ורחשים; אפשר לעבור אליה מהשורה שמתחת לנגן. לפעמים השיפור עלול לשנות את צליל המילה.",
 };
 
 /** Every language's table, over one key union; the one accessor for a table (`AUDIO_VERSION_LABELS[lang]`). */

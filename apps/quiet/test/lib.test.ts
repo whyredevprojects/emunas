@@ -1,6 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
-import { cleanedUrl, defaultUrl, playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
+import { cleanedUrl, playableUrl, timeTarget, type AudioRecording } from "../src/lib/audio.ts";
 import { clock, runAttrs } from "../src/lib/bidi.ts";
 import { CHOOSER_ORDER, EDS, NAME_ORDER, dirOf, editionOfPath, otherEditions, pathInEdition, switchEdition } from "../src/lib/edition.ts";
 import { withPlace } from "../src/lib/edition-switch.client.ts";
@@ -139,19 +139,17 @@ describe("audio (Amendment A1)", () => {
     expect(timeTarget(recs, 12)).toMatchObject({ recordingId: "w", href: null });
   });
 
-  it("plays the AI-improved copy by default and links times to it", () => {
+  it("links times to the original by default, with the AI-improved copy beside it", () => {
     const orig = `${media}/x/A%20one.mp3`;
     const fixed = `${media}/fixed/sidon/x/A%20one.mp3`;
     const rec = { audioUrl: orig, cleanedUrl: fixed };
     expect(cleanedUrl(rec)).toBe(fixed);
-    expect(defaultUrl(rec)).toBe(fixed);
     expect(playableUrl(rec)).toBe(orig);
-    expect(defaultUrl({ audioUrl: orig, cleanedUrl: null })).toBe(orig);
     // an improved copy never makes an unplayable recording playable, and it obeys the same URL rule
-    expect(defaultUrl({ audioUrl: null, cleanedUrl: fixed })).toBeNull();
+    expect(cleanedUrl({ audioUrl: null, cleanedUrl: fixed })).toBeNull();
     expect(cleanedUrl({ audioUrl: orig, cleanedUrl: "javascript:x//.mp3" })).toBeNull();
     const recs: AudioRecording[] = [{ id: "a", offset: 0, duration: 100, ...rec }];
-    expect(timeTarget(recs, 12.5)?.href).toBe(`${fixed}#t=12.5`);
+    expect(timeTarget(recs, 12.5)?.href).toBe(`${orig}#t=12.5`);
   });
 });
 

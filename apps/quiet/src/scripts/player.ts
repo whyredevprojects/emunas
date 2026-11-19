@@ -16,9 +16,9 @@
  * - multi-recording shiurim: when one recording ends the next playable one starts;
  * - keyboard (Space/K play-pause, ←/→ ±10 s) only while the dock itself has focus, never global;
  * - improved audio (docs/sites/cleaned-audio-ux.md §6): the line under the tracks
- *   (`p.listen-version`) gets a real button that switches every `<audio>` between the copy with the
- *   sound improved by AI (`data-cleaned`, the default) and the original (`data-original`), keeping
- *   position, play/pause and speed, and announces the switch politely. The choice is one global
+ *   (`p.listen-version`) gets a real button that switches every `<audio>` between the original
+ *   (`data-original`, the default) and the copy with the sound improved by AI (`data-cleaned`),
+ *   keeping position, play/pause and speed, and announces the switch politely. The choice is one global
  *   preference in localStorage (`AUDIO_VERSION_KEY`, written only on a click). An `error` on an
  *   improved file falls back once to the original for that recording. Each part's download link
  *   (`a.download`) follows the version that part plays.
