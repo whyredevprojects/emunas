@@ -40,8 +40,8 @@ Errors are `DataError` (`status` 404 for a missing file; `notFoundToNull()` maps
 **Audio (Amendment A1).** `ShiurFile.recordings[].audioUrl` is the media-host URL
 (`${EMUNAS_MEDIA_ORIGIN}/<encoded key>`) or `null` for a recording that cannot be played (non-mp3
 source): show it as unavailable. `cleanedUrl` is the AI-improved copy of the same recording, played
-by default (`docs/sites/cleaned-audio-ux.md`), or `null` when there is none; downloads always store
-`audioUrl`. There is no `audio`/`audioKey` field and no `/audio/*` path.
+by default (`docs/sites/cleaned-audio-ux.md`), or `null` when there is none; the download link
+points at the version being played. There is no `audio`/`audioKey` field and no `/audio/*` path.
 
 **Never present** (tested on the fixtures): `heardAs`, `asrNotes`, `segs`, `startSeg`, `endSeg`,
 `questionSegs`, `answerSegs`, `segments`, `transcriptKey`, `audioKey`, `asrModel`, `model`, `variant`.

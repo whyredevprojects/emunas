@@ -133,7 +133,7 @@ The listening room shows them under "Same idea elsewhere", labelled as a suggest
 
 - at most 18,000 files: `build/client` after the app build; before it, data files + other public
   files + the projected prerender + `APP_BUILD_FILES` (120: JS/CSS chunks, the SPA fallback,
-  `robots.txt`, `sw.js`). The prerender projection follows W4.5's `prerenderPaths` exactly: per UI
+  `robots.txt`). The prerender projection follows W4.5's `prerenderPaths` exactly: per UI
   language Today, every shiur and series with a file, occasions with ≥2 shiurim, and the works,
   people and concepts with a Live page flag in `.corpus/layer/` (`--corpus`, default
   `<repo>/.corpus`, read through `readSeoCorpus`; without it every work and entity file counts, an

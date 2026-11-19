@@ -56,7 +56,6 @@ describe("persistence", () => {
     await a.saveMoment({ shiurId: A, start: 754, momentId: `${A}~i3` });
     await a.addNote(A, 760, "ask about this");
     await a.setPref("skip.singing", true);
-    await a.putDownload({ shiurId: C, recordingIds: ["r1"], bytes: 1234, state: "complete" });
     a.dispose();
 
     const b = make();
@@ -70,7 +69,6 @@ describe("persistence", () => {
     expect(s.saved).toEqual([expect.objectContaining({ shiurId: A, t: 754, momentId: `${A}~i3` })]);
     expect(notesFor(s, A).map((n) => n.text)).toEqual(["ask about this"]);
     expect(s.prefs["skip.singing"]?.value).toBe(true);
-    expect(s.downloads[C]).toMatchObject({ bytes: 1234, state: "complete" });
   });
 
   it("every record carries updatedAt", async () => {
@@ -81,7 +79,6 @@ describe("persistence", () => {
     await a.saveMoment({ shiurId: A, start: 1 });
     await a.addNote(A, 1, "n");
     await a.setPref("k", 1);
-    await a.putDownload({ shiurId: A, recordingIds: [], bytes: 0, state: "partial" });
     const dump = dumpFromData(a.store.getState());
     for (const records of Object.values(dump)) {
       expect(records.length).toBeGreaterThan(0);

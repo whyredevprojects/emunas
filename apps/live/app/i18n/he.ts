@@ -70,7 +70,7 @@ export const he: MessageTable<UiKey> = {
   "page.search.lead": "חיפוש בשיעורים לפי הרשימות וכותרות הקטלוג.",
   "page.searchQuery": "תוצאות עבור {q}",
   "page.shelf": "המדף שלי",
-  "page.shelf.lead": "מה שאתם שומעים, התור שלכם, רשימות השמעה, נקודות שמורות ושיעורים שהורדו. נשמר במכשיר זה בלבד.",
+  "page.shelf.lead": "מה שאתם שומעים, התור שלכם, רשימות השמעה ונקודות שמורות. נשמר במכשיר זה בלבד.",
   "page.shelfSection": "המדף שלי",
   "page.shelfSection.lead": "חלק: {section}.",
   "page.playlist": "רשימה ששותפה",

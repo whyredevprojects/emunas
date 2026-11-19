@@ -292,11 +292,7 @@ removed.
 
 #### `apps/live/sw/client/strings.ts`
 
-| Key | Before | After | Why |
-|---|---|---|---|
-| `offline.resume` | ענדיקן דאס אראפלאדן | ענדיגן דאס אראפלאדן | orthography: -יג spelling |
-| `offline.error.network` | דאס אראפלאדן האט זיך אפגעשטעלט. קוקט אויף דער פארבינדונג און פרובירט נאכאמאל. | דאס אראפלאדן האט זיך אפגעשטעלט. קוקט איבער די פארבינדונג און פרובירט נאכאמאל. | terminology: same wording as the other connection errors |
-| `offline.error.unavailable` | דער בלעטערער קען נישט אפהיטן שיעורים צו הערן אן אינטערנעט. | דער בראוזער קען נישט אפהיטן שיעורים צו הערן אן אינטערנעט. | vocabulary (YIVO/Daytshmerish/coinage) |
+Removed on 2026-11-19 with Live's offline downloads; the reviewed strings no longer exist.
 
 #### `apps/live/app/features/series/strings.ts`
 

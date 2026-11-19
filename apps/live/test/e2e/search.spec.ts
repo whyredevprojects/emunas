@@ -13,9 +13,7 @@
  * `@data`: queries and expectations come from the served `/data/*`, so this also runs on real data.
  */
 import { expect, test, type Page, type Route } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, NO_SERVICE_WORKER, pageErrors, ready, UIS, type Row } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { axeViolations, corpusRows, dataJson, pageErrors, ready, UIS, type Row } from "./helpers.ts";
 
 interface FacetValue {
   label: { en: string; yi: string };

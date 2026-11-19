@@ -10,9 +10,7 @@
  * capped per language so the run stays within a few minutes.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeViolations, LinkResolver, NO_SERVICE_WORKER, pageErrors, REAL_DATA, settled, UIS } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { axeViolations, LinkResolver, pageErrors, REAL_DATA, settled, UIS } from "./helpers.ts";
 
 const MAX_PAGES = REAL_DATA ? 45 : 80;
 

@@ -70,7 +70,7 @@ export const en = {
   "page.searchQuery": "Results for {q}",
   "page.shelf": "My Shelf",
   "page.shelf.lead":
-    "What you are listening to, your queue, playlists, saved moments and downloads. Kept on this device only.",
+    "What you are listening to, your queue, playlists and saved moments. Kept on this device only.",
   "page.shelfSection": "My Shelf",
   "page.shelfSection.lead": "Section: {section}.",
   "page.playlist": "Shared playlist",

@@ -13,7 +13,6 @@ account, no server: everything lives in the browser's IndexedDB (`emunas-live-pe
 | `notes` | id | `shiurId`, `t`, `text` (the listener's own words) |
 | `history` | shiurId | `t`, `lastPlayedAt` |
 | `prefs` | key | JSON `value` (`queue.current` = current queue entry) |
-| `downloads` | shiurId | `recordingIds`, `bytes`, `state` (bytes live in Cache Storage) |
 
 Every record has `updatedAt` (for import merge now and sync later, decision D4).
 

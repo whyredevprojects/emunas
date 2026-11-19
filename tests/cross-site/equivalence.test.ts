@@ -304,7 +304,7 @@ describe.skipIf(missing !== null)("equivalent pages show the same thing (browser
     links ??= siteLinks(facts.data);
     s ??= pickSamples(facts);
     browser = await chromium.launch({ executablePath: chromePath(), args: ["--no-sandbox"] });
-    context = await browser.newContext({ viewport: { width: 1200, height: 900 }, serviceWorkers: "block" });
+    context = await browser.newContext({ viewport: { width: 1200, height: 900 } });
     await context.route(`${QUIET}/**`, (r) => fulfillFile(r, quietFile(paths.quietDist, new URL(r.request().url()).pathname)));
     await context.route(`${LIVE}/**`, (r) => {
       const u = new URL(r.request().url());

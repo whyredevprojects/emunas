@@ -8,7 +8,7 @@ Figures checked against the repo on 2026-11-15: 997 in-scope shiurim (730 yi, 26
 > **Amendment A1 (owner decision, 2026-11-15): audio is served directly from the existing `emunas` R2 bucket on a public custom domain `media.<domain>`, with CORS headers set on the bucket by the owner. No `emunas-audio` bucket, no copy/publish CLI, no audio Worker, no `/audio/*` routes, no `AUDIO_ENABLED` 503 switch.** The transcripts in the bucket being publicly reachable but unlinked is accepted by the owner (they will be removed from the bucket later). Consequences, overriding everything below that conflicts (C12–C15, §3.1 R2 rows, §3.2, §3.3 `/audio/*`, §2.2 audio row, W1.5, W2.7, W3.11, W4.8):
 > - Public audio URL = `${MEDIA_ORIGIN}/${encodeURIComponent-per-path-segment(audioKey)}`; `MEDIA_ORIGIN` is build config (env `EMUNAS_MEDIA_ORIGIN`, e.g. `https://media.<domain>`). The corpus build emits `recordings[].audioUrl`; the raw field name `audioKey` stays forbidden in public output, and no public string may contain `transcripts/`.
 > - Range requests and edge caching come from Cloudflare's CDN in front of the R2 custom domain (mp3 is cached by default). Cost: no egress; only cache-miss Class B reads.
-> - Both sites use plain `<audio src>` to the media host; CSP `media-src` allows the media origin. The Live service worker's offline downloads `fetch()` the media URL with CORS (both site origins must be in the bucket's CORS AllowedOrigins). The `download` attribute is ignored cross-origin, so "download" links save under the bucket filename unless the owner sets `Content-Disposition` on objects.
+> - Both sites use plain `<audio src>` to the media host; CSP `media-src` allows the media origin. Neither site fetches audio with `fetch()`, so no site needs CORS on the bucket (Live has no service worker, see W4.8). The `download` attribute is ignored cross-origin, so "download" links save under the bucket filename unless the owner sets `Content-Disposition` on objects.
 > - Recordings whose key is not `.mp3` (3 `.WMA` today) are shown as unavailable rather than linked.
 > - `@emunas/audio` shrinks to: `mediaUrl(key, origin)`, `buildAudioTable(corpusRecordings)` (id → url, duplicateOf → canonical), and the playability rule. W3.11 only attaches the custom domain and CORS rules.
 > - Done in W2.8 (packages/audio, corpus build). The sections listed above have been edited to match; where an old decision is kept for history it is marked "superseded by A1".
@@ -401,7 +401,7 @@ Quiet: W3.1 catalog pages, W3.2 shiur page + player, W3.3 calendar + years, W3.4
 
 ### Wave 4 — browse, search UI, SEO, cross-site
 
-W4.1 Live Explore + lenses, W4.2 Live seforim/maasios/entities, W4.3 Live command bar, W4.4 Live neighbours, W4.5 Live prerender + SEO, W4.6 Quiet SEO + cross-site links, W4.7 Live feedback UI, W4.8 Live PWA/offline.
+W4.1 Live Explore + lenses, W4.2 Live seforim/maasios/entities, W4.3 Live command bar, W4.4 Live neighbours, W4.5 Live prerender + SEO, W4.6 Quiet SEO + cross-site links, W4.7 Live feedback UI, W4.8 Live PWA/offline (removed).
 
 ### Wave 5 — hardening
 
@@ -589,7 +589,7 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `apps/live/app/store/**`, `apps/live/app/routes/shelf*.tsx`, `apps/live/app/routes/pl.tsx`, `apps/live/app/features/shelf/**`
 - **Depends on:** W2.4, W2.5
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.2. IndexedDB (idb) stores progress/queue/playlists/saved/notes/history/prefs/downloads with schema version, migrations and per-record updatedAt; My Shelf pages; queue of moments; shared playlist /pl#<base64url>; export/import JSON. All storage access wrapped so the app works when storage is unavailable.
+- **Brief (inputs, deliverables):** Inputs: tech-live §4.2. IndexedDB (idb) stores progress/queue/playlists/saved/notes/history/prefs with schema version, migrations and per-record updatedAt; My Shelf pages; queue of moments; shared playlist /pl#<base64url>; export/import JSON. All storage access wrapped so the app works when storage is unavailable.
 - **Acceptance:** Migration test; shared playlist round-trips; moment queue plays across shiurim (e2e); app works in a private window with storage blocked.
 
 #### W3.10 — Search index sync: D1 rows, embeddings, Vectorize, model eval
@@ -657,11 +657,13 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 - **Brief (inputs, deliverables):** Inputs: tech-live §7. Two-tap 'Something's wrong here' on every item (wrong source, wrong name, wrong time, misrepresents, other) with optional text, Turnstile, target {shiurId, momentId, field}, rev.
 - **Acceptance:** E2E against staging api stores a report; Turnstile failure handled; reachable by keyboard; works in both UI languages.
 
-#### W4.8 — Live PWA, service worker, offline downloads
+#### W4.8 — Live PWA, service worker, offline downloads (removed)
 
-- **Owns:** `apps/live/sw/**`, `apps/live/public/manifest.webmanifest`
+> **Removed (owner decision, 2026-11-19):** in-browser offline downloads do not belong in a website. Live has no service worker, no offline shell and no Cache Storage; Download is a plain link to the media URL of the version being played. `manifest.webmanifest` stays. The original brief is kept below for history.
+
+- **Owns:** `apps/live/public/manifest.webmanifest`
 - **Depends on:** W3.9, W2.5
-- **Brief (inputs, deliverables):** Inputs: tech-live §4.5. Precache shell, /data/* SWR with cap, audio (media.<domain> URLs, A1) network-only unless downloaded; downloads fetch() the audioUrl with CORS (mode: cors; the bucket's CORS allows the Live origin) into Cache Storage audio-v1 keyed by that URL, with navigator.storage.persist(); SW serves Range 206 from cached blobs; shiur + writeup JSON pinned with audio; playable:false recordings cannot be downloaded.
+- **Brief (inputs, deliverables, superseded):** Inputs: tech-live §4.5. Precache shell, /data/* SWR with cap, audio (media.<domain> URLs, A1) network-only unless downloaded; downloads fetch() the audioUrl with CORS (mode: cors; the bucket's CORS allows the Live origin) into Cache Storage audio-v1 keyed by that URL, with navigator.storage.persist(); SW serves Range 206 from cached blobs; shiur + writeup JSON pinned with audio; playable:false recordings cannot be downloaded.
 - **Acceptance:** Airplane-mode playback with seeking of a downloaded shiur on iOS Safari and Android Chrome (manual); shell loads offline (Playwright offline mode).
 
 ### Wave 5

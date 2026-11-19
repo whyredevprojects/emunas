@@ -161,7 +161,7 @@ One template: name in Hebrew and English, counts, a year sparkline, top co-occur
 
 ### 5.8 My Shelf
 
-Personal state: continue listening, queue, playlists, saved moments, notes, history, downloads. Described next.
+Personal state: continue listening, queue, playlists, saved moments, notes, history. Described next.
 
 ## 6. Listening
 
@@ -189,7 +189,7 @@ Every moment has a URL (`shiur + t`). Sharing from the player sends a link that 
 
 - Position per shiur, completed sections, completed shiurim, series progress, and a private count of hours. No streaks, badges or leaderboards; this is learning.
 - Save any moment; add a private note at the current time. Notes are the user's own words and may say anything.
-- Offline: download a shiur or a playlist for a commute or a flight. Summaries are cached with the audio.
+- Download: a plain link to the mp3 of the version being played. There is no in-app offline mode (owner decision, 2026-11-19).
 
 All of this is **local-first**: stored on the device, working with no account. Optional sync across devices (phone to car to desk) needs a backend: sign-in by emailed link, a D1 database or one Durable Object per user holding progress, queue, saves and notes. This is the only feature that requires user accounts, and it can ship later without changing anything else.
 
@@ -240,7 +240,7 @@ All of the text is unreviewed machine output about a revered teacher, so the des
 - **Dynamic:** audio Worker (R2 range requests); search Worker (D1 FTS5 + Vectorize); feedback endpoint (D1); optional sync (D1 or Durable Objects); optional Ask.
 - **Works with dynamic parts down:** browsing, calendar, timeline, shiur pages and playback of cached audio all run from static files. Search degrades to shiur-level client-side matching.
 
-The app shell is an installable PWA so it sits on a phone's home screen and keeps downloads. Shiur and entity pages should also be delivered as real pages with titles and summaries for sharing previews and search engines; an app that is invisible to a web search fails the recall use case for people who start at a search engine.
+The app has a web manifest so it can sit on a phone's home screen; it has no service worker and needs a connection. Shiur and entity pages should also be delivered as real pages with titles and summaries for sharing previews and search engines; an app that is invisible to a web search fails the recall use case for people who start at a search engine.
 
 ## 11. Decisions to flag
 
@@ -248,7 +248,7 @@ The app shell is an installable PWA so it sits on a phone's home screen and keep
 2. Who flips `transcript.eligible`, and on what evidence, when better transcripts exist.
 3. Sefaria integration: link out only, or in-app text panel via their API.
 4. Accounts and sync: ship local-only first?
-5. Audio downloads: allow freely, or streaming plus in-app offline only?
+5. Audio downloads: allow freely, or streaming plus in-app offline only? **Decided: a plain download link; no in-app offline (2026-11-19).**
 6. Whether the 79 `current` shiurim and uncatalogued simcha recordings (bar mitzvahs, sheva brachos) belong in general browse or behind their own section; some are private family occasions.
 7. Site-side alias and occasion tables are a stopgap. Should they be handed to the pipeline as seed data for its glossary pass?
 8. Progress-bar direction in Yiddish mode.
@@ -259,7 +259,7 @@ The app shell is an installable PWA so it sits on a phone's home screen and keep
 1. Shell, player with chapters, listening room, Today, catalog browse. Useful for all 997 shiurim on day one.
 2. Explore facets, Luach and Years lenses, Series, queue of moments, local progress.
 3. Search Worker (lexical, then semantic), Seforim, Maasios, entity pages, "same idea elsewhere".
-4. Feedback queue, offline, sync.
+4. Feedback queue, sync.
 5. Connections graph, Ask, transcript tab if and when eligibility exists.
 
 ## 13. Deliberately left out

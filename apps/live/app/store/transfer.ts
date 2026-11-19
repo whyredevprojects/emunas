@@ -63,7 +63,6 @@ const CAP: { [S in StoreName]: number } = {
   notes: LIMITS.notes,
   history: LIMITS.history,
   prefs: LIMITS.prefs,
-  downloads: 10_000,
 };
 
 function readStore<S extends StoreName>(store: S, raw: unknown, out: PersonalDump): { ok: number; bad: number } {

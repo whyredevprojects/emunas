@@ -2,13 +2,12 @@
 # Responses made by worker/index.ts ("/", /api/*, /admin/*) do not get these rules.
 # Template: the media-origin placeholder is filled in after the build by
 # apps/live/worker/render-headers.ts (build/client/_headers), from the EMUNAS_MEDIA_ORIGIN
-# build variable (Amendment A1). media-src: <audio src> on the media host; connect-src:
-# the service worker's offline downloads fetch() the same URLs with CORS.
+# build variable (Amendment A1). media-src: <audio src> on the media host.
 # script-src needs 'unsafe-inline': React Router's prerendered/SPA HTML carries inline
 # bootstrap scripts whose content differs per page. challenges.cloudflare.com = Turnstile.
 
 /*
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; connect-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; frame-src https://challenges.cloudflare.com; worker-src 'self'; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; media-src 'self' {{EMUNAS_MEDIA_ORIGIN}}; connect-src 'self'; frame-src https://challenges.cloudflare.com; manifest-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
   Referrer-Policy: strict-origin-when-cross-origin
   X-Content-Type-Options: nosniff
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), browsing-topics=()
@@ -21,10 +20,6 @@
 # Stable data paths (tabs left open across a deploy must not 404); clients compare `rev`.
 /data/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
-
-# The service worker script must revalidate on every navigation.
-/sw.js
-  Cache-Control: no-cache
 
 # Only listen.<domain> is a real host; workers.dev and preview hosts are noindex (§2.1).
 https://:worker.:subdomain.workers.dev/*

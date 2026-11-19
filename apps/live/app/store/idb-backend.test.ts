@@ -65,7 +65,7 @@ describe("schema", () => {
     expect(() => latestVersion([MIGRATIONS[0]!, { ...V2, version: 3 }])).toThrow(/expected 2/);
   });
 
-  it("a fresh database has all eight stores with their key paths and indexes", async () => {
+  it("a fresh database has all seven stores with their key paths and indexes", async () => {
     const b = await openIdbBackend();
     b.close();
     const db = await openDB(PERSONAL_DB_NAME);

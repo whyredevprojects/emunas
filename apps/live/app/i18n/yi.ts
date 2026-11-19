@@ -70,7 +70,7 @@ export const yi: MessageTable<UiKey> = {
   "page.searchQuery": "רעזולטאטן פאר {q}",
   "page.shelf": "מיין פאליצע",
   "page.shelf.lead":
-    "וואס איר הערט, אייער ריי, ליסטעס, אפגעהיטענע נקודות און אראפגעלאדענע שיעורים. נאר אויף דעם מכשיר.",
+    "וואס איר הערט, אייער ריי, ליסטעס און אפגעהיטענע נקודות. נאר אויף דעם מכשיר.",
   "page.shelfSection": "מיין פאליצע",
   "page.shelfSection.lead": "טייל: {section}.",
   "page.playlist": "א צוגעשיקטע ליסטע",

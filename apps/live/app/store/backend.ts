@@ -40,7 +40,6 @@ export class MemoryBackend implements Backend {
       notes: new Map(),
       history: new Map(),
       prefs: new Map(),
-      downloads: new Map(),
     };
     this.load(initial);
   }

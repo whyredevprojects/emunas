@@ -1,5 +1,5 @@
 // One part of My Shelf in full (W3.9): `/:ui/shelf/:section` (continue, queue, playlists[?id=],
-// saved, notes, history, downloads).
+// saved, notes, history).
 import { isUiLang } from "@emunas/i18n";
 import type { JSX } from "react";
 import { useParams, useSearchParams } from "react-router";

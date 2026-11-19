@@ -1,6 +1,6 @@
 /**
  * The parts of My Shelf (concept-live §5.8): continue listening, queue, playlists, saved moments,
- * notes, history, downloads. Each section renders in full on its own page (`/:ui/shelf/<section>`)
+ * notes, history. Each section renders in full on its own page (`/:ui/shelf/<section>`)
  * and as a short preview (`limit`) on the overview.
  */
 import { formatClock, type UiLang } from "@emunas/i18n";
@@ -23,7 +23,7 @@ import { Button, MomentRow, addToQueue, playAll, playNow, spanLabel } from "./co
 import type { ShelfT } from "./strings.ts";
 import { css } from "./styles.ts";
 
-export const SHELF_SECTIONS = ["continue", "queue", "playlists", "saved", "notes", "history", "downloads"] as const;
+export const SHELF_SECTIONS = ["continue", "queue", "playlists", "saved", "notes", "history"] as const;
 export type ShelfSection = (typeof SHELF_SECTIONS)[number];
 
 export function isShelfSection(v: string | undefined): v is ShelfSection {
@@ -494,38 +494,6 @@ export function HistorySection({ ui, t, rows, limit }: SectionProps): JSX.Elemen
   );
 }
 
-// ---- downloads ------------------------------------------------------------------------------------
-
-/**
- * Offline copies. The service worker (tech-live §4.5) owns the audio in Cache Storage and records
- * each download here with `putDownload`; this list only shows them.
- */
-export function DownloadsSection({ ui, t, rows, limit }: SectionProps): JSX.Element {
-  const all = usePersonal((s) => s.downloads);
-  const downloads = useMemo(() => Object.values(all).sort((a, b) => b.updatedAt - a.updatedAt), [all]);
-  const shown = limit === undefined ? downloads : downloads.slice(0, limit);
-  if (downloads.length === 0) return <Empty>{t("empty.downloads")}</Empty>;
-  return (
-    <ol className={css.list}>
-      {shown.map((d) => (
-        <MomentRow
-          key={d.shiurId}
-          ui={ui}
-          rows={rows}
-          shiurId={d.shiurId}
-          t={0}
-          meta={
-            <>
-              {t("item.size", { mb: (d.bytes / 1_048_576).toFixed(1) })}
-              {d.state === "partial" ? ` · ${t("item.partial")}` : null}
-            </>
-          }
-        />
-      ))}
-    </ol>
-  );
-}
-
 export const SECTION_COMPONENTS: Readonly<Record<ShelfSection, (p: SectionProps) => JSX.Element>> = {
   continue: ContinueSection,
   queue: QueueSection,
@@ -533,5 +501,4 @@ export const SECTION_COMPONENTS: Readonly<Record<ShelfSection, (p: SectionProps)
   saved: SavedSection,
   notes: NotesSection,
   history: HistorySection,
-  downloads: DownloadsSection,
 };

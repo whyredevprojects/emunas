@@ -57,9 +57,9 @@ the tool are identical apart from their header comment (a test enforces it).
 
 | | Quiet | Live |
 |---|---|---|
-| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…' (theme init script); style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus `connect-src 'self' <media>` (service-worker offline downloads), Turnstile in `script-src`/`frame-src`, `worker-src 'self'`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
+| CSP | `default-src 'self'; script-src 'self' 'wasm-unsafe-eval' 'sha256-…' (theme init script); style-src 'self'; media-src 'self' <media>; connect-src 'self'; frame-ancestors 'none'; …` | as Quiet, plus Turnstile in `script-src`/`frame-src`; `script-src`/`style-src` also allow `'unsafe-inline'` because React Router's prerendered HTML carries per-page inline bootstrap scripts |
 | immutable | `/_astro/*` | `/assets/*` |
-| other caching | `/fonts/*` one day + SWR (font names are not hashed), `/pagefind/*` 1 h | `/data/*` 5 min + SWR 1 day, `/sw.js` no-cache |
+| other caching | `/fonts/*` one day + SWR (font names are not hashed), `/pagefind/*` 1 h | `/data/*` 5 min + SWR 1 day |
 | noindex | `https://:worker.:subdomain.workers.dev/*` | same, plus the Worker (above) |
 
 ## 3. One-time provisioning
@@ -111,55 +111,10 @@ Audio (Amendment A1, W3.11; owner action):
 
 1. Attach the custom domain `media.<domain>` to the existing `emunas` bucket (dashboard → R2 →
    `emunas` → Settings → Custom Domains). Do not enable the `r2.dev` URL.
-2. Set CORS on the bucket. Plain `<audio src>` playback needs no CORS (the media element does not
-   send `Origin` without a `crossorigin` attribute, and neither site sets one); CORS is for Live's
-   `fetch()` of audio (offline downloads in the service worker, which also sends `Range` to
-   resume). The rule: **GET and HEAD only, the `Range` request header, the Quiet and Live origins**, plus
-   the staging Live/Quiet workers.dev origins if offline downloads should work on staging. Before
-   a domain is set the production origins are the workers.dev ones. Example `cors.json`
-   (replace `<domain>` and `<sub>`; origins are exact, scheme + host, no trailing slash):
-
-   ```json
-   {
-     "rules": [
-       {
-         "allowed": {
-           "origins": [
-             "https://library.<domain>",
-             "https://listen.<domain>",
-             "https://emunas-quiet-staging.<sub>.workers.dev",
-             "https://emunas-live-staging.<sub>.workers.dev"
-           ],
-           "methods": ["GET", "HEAD"],
-           "headers": ["Range"]
-         },
-         "exposeHeaders": ["Content-Length", "Content-Range", "Accept-Ranges", "ETag"],
-         "maxAgeSeconds": 86400
-       }
-     ]
-   }
-   ```
-
-   ```sh
-   npx --yes wrangler@4.156.0 r2 bucket cors set emunas --file cors.json
-   npx --yes wrangler@4.156.0 r2 bucket cors list emunas      # check
-   ```
-
-   The dashboard (R2 → `emunas` → Settings → CORS policy) takes the same rule in the S3 shape:
-   `[{"AllowedOrigins": [...], "AllowedMethods": ["GET","HEAD"], "AllowedHeaders": ["Range"],
-   "ExposeHeaders": ["Content-Length","Content-Range","Accept-Ranges","ETag"], "MaxAgeSeconds": 86400}]`.
-   Check from a shell (expect `206`, `access-control-allow-origin: https://listen.<domain>` and
-   `content-range`):
-
-   ```sh
-   curl -sI -H 'Origin: https://listen.<domain>' -H 'Range: bytes=0-1' 'https://media.<domain>/<some key>.mp3'
-   ```
-
-   PR preview hosts (`pr-<n>-emunas-live-staging.<sub>.workers.dev`) are not listed: audio plays
-   there, offline downloads do not. R2 allows one `*` per origin, so
-   `https://*-emunas-live-staging.<sub>.workers.dev` would cover them if wanted. CORS headers on
-   mp3s already in the CDN cache appear only after a purge of `media.<domain>` (dashboard →
-   Caching → Purge, hostname `media.<domain>`); propagation can take up to 30 s.
+2. No CORS rule is needed. Plain `<audio src>` playback and plain download links send no `Origin`
+   (neither site sets `crossorigin`), and no site `fetch()`es audio: Live has no service worker
+   (removed 2026-11-19, integration-plan W4.8). A CORS rule set earlier for Live's offline downloads
+   is harmless and can be removed in the dashboard (R2 → `emunas` → Settings → CORS policy).
 3. Set `EMUNAS_MEDIA_ORIGIN=https://media.<domain>` as a GitHub variable (below).
 
 ### Domains and cutover
@@ -189,13 +144,12 @@ Cutover to a new domain `<new>` (e.g. `emunas.com`), all config, no code:
    routes test must pass).
 3. Set the GitHub variable `EMUNAS_DOMAIN=<new>` on `production` and
    `EMUNAS_MEDIA_ORIGIN=https://media.<new>` (§4).
-4. R2 → `emunas` → Custom Domains: add `media.<new>`. Add `https://library.<new>` and
-   `https://listen.<new>` to the bucket CORS rule (§3 Audio).
+4. R2 → `emunas` → Custom Domains: add `media.<new>`.
 5. Turnstile widget: add `listen.<new>`. Access application: add `listen.<new>/admin/*`.
 6. Deploy production (§5). The deploy attaches the Custom Domains; check each host (§12
    production smoke).
 7. Keep the old hosts attached until the new ones are verified, then remove their routes. Once the
-   old routes are gone, remove `media.<old>` from `emunas` and the old origins from CORS.
+   old routes are gone, remove `media.<old>` from `emunas`.
 
 Old `emunas.com` addresses (the Weebly site's page and file paths) are not preserved and are not
 redirected.
@@ -640,9 +594,6 @@ In order; each step names where it is described. Staging first, then production.
 **Media (A1)**
 
 - [ ] Custom domain `media.<domain>` on bucket `emunas`, `r2.dev` URL off (§3 Audio).
-- [ ] CORS rule set: GET/HEAD, `Range`, the Quiet and Live origins (+ staging) (§3); purge the media
-      hostname if mp3s were already cached; the `curl -sI` check returns `206` with
-      `access-control-allow-origin`.
 - [ ] `.WMA` recordings transcoded (§10) and `site-policy/audio-transcoded.json` merged.
 
 **GitHub (§4)**
@@ -674,7 +625,7 @@ In order; each step names where it is described. Staging first, then production.
       seeks (Range), the response carries `X-Robots-Tag: noindex`, page `<link rel="canonical">`
       points at the staging Quiet host, Quiet → "Open in the listening app" and Live →
       "In the Library" stay on staging, search returns results, "report a problem" submits (or is
-      hidden when no site key is set), an offline download completes (CORS).
+      hidden when no site key is set), the Download link saves the mp3.
 
 **Production run**
 

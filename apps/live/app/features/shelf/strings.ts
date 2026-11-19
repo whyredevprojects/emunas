@@ -22,7 +22,6 @@ export const shelfEn = {
   "section.saved": "Saved moments",
   "section.notes": "Notes",
   "section.history": "History",
-  "section.downloads": "Downloads",
 
   "empty.continue": "Nothing in progress. Shiurim you start listening to appear here.",
   "empty.queue": "The queue is empty. Add a shiur or any moment of one with “Add to queue”.",
@@ -30,7 +29,6 @@ export const shelfEn = {
   "empty.saved": "No saved moments yet.",
   "empty.notes": "No notes yet. In the listening room you can add a private note at the current time.",
   "empty.history": "Nothing listened to yet.",
-  "empty.downloads": "Nothing downloaded for offline listening.",
 
   "item.from": "from {start}",
   "item.range": "{start}–{end}",
@@ -39,8 +37,6 @@ export const shelfEn = {
   "item.chapters": { one: "{count} chapter finished", other: "{count} chapters finished" },
   "item.count": { one: "{count} item", other: "{count} items" },
   "item.open": "Open in the listening room",
-  "item.size": "{mb} MB",
-  "item.partial": "partly downloaded",
 
   "action.play": "Play",
   "action.playAll": "Play all",
@@ -122,7 +118,6 @@ export const shelfYi: MessageTable<ShelfKey> = {
   "section.saved": "אפגעהיטענע נקודות",
   "section.notes": "הערות",
   "section.history": "היסטאריע",
-  "section.downloads": "אראפגעלאדענע",
 
   "empty.continue": "גארנישט אנגעהויבן. שיעורים וואס איר הייבט אן הערן ווייזן זיך דא.",
   "empty.queue": "די ריי איז ליידיג. לייגט צו א שיעור אדער א נקודה דערפון מיט „צולייגן צו דער ריי“.",
@@ -130,7 +125,6 @@ export const shelfYi: MessageTable<ShelfKey> = {
   "empty.saved": "נאך קיין אפגעהיטענע נקודות.",
   "empty.notes": "נאך קיין הערות. ביים הערן קען מען צולייגן א פריוואטע הערה ביי דער יעצטיגער צייט.",
   "empty.history": "נאך גארנישט געהערט.",
-  "empty.downloads": "גארנישט אראפגעלאדן צו הערן אן אינטערנעט.",
 
   "item.from": "פון {start}",
   "item.range": "{start}–{end}",
@@ -139,8 +133,6 @@ export const shelfYi: MessageTable<ShelfKey> = {
   "item.chapters": { one: "{count} חלק פארענדיגט", other: "{count} חלקים פארענדיגט" },
   "item.count": { one: "{count} זאך", other: "{count} זאכן" },
   "item.open": "עפנט צום הערן",
-  "item.size": "{mb} MB",
-  "item.partial": "א טייל אראפגעלאדן",
 
   "action.play": "שפילן",
   "action.playAll": "שפילן אלעס",
@@ -217,7 +209,6 @@ export const shelfHe: MessageTable<ShelfKey> = {
   "section.saved": "נקודות שמורות",
   "section.notes": "הערות",
   "section.history": "היסטוריה",
-  "section.downloads": "הורדות",
 
   "empty.continue": "אין דבר באמצע. שיעורים שתתחילו לשמוע יופיעו כאן.",
   "empty.queue": "התור ריק. הוסיפו שיעור או כל נקודה ממנו בעזרת „הוספה לתור”.",
@@ -225,7 +216,6 @@ export const shelfHe: MessageTable<ShelfKey> = {
   "empty.saved": "עדיין אין נקודות שמורות.",
   "empty.notes": "עדיין אין הערות. בחדר ההאזנה אפשר להוסיף הערה פרטית בזמן הנוכחי.",
   "empty.history": "עדיין לא נשמע דבר.",
-  "empty.downloads": "לא הורד דבר להאזנה ללא חיבור.",
 
   "item.from": "מ־{start}",
   "item.range": "{start}–{end}",
@@ -234,8 +224,6 @@ export const shelfHe: MessageTable<ShelfKey> = {
   "item.chapters": { one: "{count} פרק הסתיים", other: "{count} פרקים הסתיימו" },
   "item.count": { one: "{count} פריט", other: "{count} פריטים" },
   "item.open": "פתיחה בחדר ההאזנה",
-  "item.size": "{mb} MB",
-  "item.partial": "הורד בחלקו",
 
   "action.play": "השמעה",
   "action.playAll": "השמעת הכול",

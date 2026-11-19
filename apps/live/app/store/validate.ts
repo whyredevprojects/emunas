@@ -6,7 +6,6 @@
  */
 import {
   LIMITS,
-  type DownloadRecord,
   type HistoryRecord,
   type JsonValue,
   type MomentRef,
@@ -180,19 +179,6 @@ function pref(v: unknown): PrefRecord | null {
   return { key: o["key"], value, updatedAt };
 }
 
-function download(v: unknown): DownloadRecord | null {
-  const o = obj(v);
-  if (!o || !isShiurId(o["shiurId"])) return null;
-  const ids = o["recordingIds"];
-  const bytes = o["bytes"];
-  const state = o["state"];
-  const updatedAt = stamp(o["updatedAt"]);
-  if (!Array.isArray(ids) || ids.length > 20 || !ids.every(isId)) return null;
-  if (typeof bytes !== "number" || !Number.isInteger(bytes) || bytes < 0) return null;
-  if ((state !== "complete" && state !== "partial") || updatedAt === null) return null;
-  return { shiurId: o["shiurId"], recordingIds: [...ids], bytes, state, updatedAt };
-}
-
 export const VALIDATORS: { [S in StoreName]: (v: unknown) => StoreRecords[S] | null } = {
   progress,
   queue,
@@ -201,5 +187,4 @@ export const VALIDATORS: { [S in StoreName]: (v: unknown) => StoreRecords[S] | n
   notes: note,
   history,
   prefs: pref,
-  downloads: download,
 };
