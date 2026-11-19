@@ -1,7 +1,7 @@
 /**
  * Personal data schema (tech-live §4.2): what the Live app keeps on the listener's device.
  *
- * Eight IndexedDB object stores. Every record carries `updatedAt` (ms since epoch) so that a later
+ * Seven IndexedDB object stores. Every record carries `updatedAt` (ms since epoch) so that a later
  * sync (decision D4, last-writer-wins per key) and the JSON import's merge mode can compare records
  * without guessing. Optional values are `null`, never missing, so records survive a JSON round trip
  * unchanged.
@@ -21,7 +21,6 @@ export const STORE_NAMES = [
   "notes",
   "history",
   "prefs",
-  "downloads",
 ] as const;
 
 export type StoreName = (typeof STORE_NAMES)[number];
@@ -101,15 +100,6 @@ export interface PrefRecord {
   updatedAt: number;
 }
 
-/** Bookkeeping for an offline copy (the service worker owns the bytes in Cache Storage). */
-export interface DownloadRecord {
-  shiurId: string;
-  recordingIds: string[];
-  bytes: number;
-  state: "complete" | "partial";
-  updatedAt: number;
-}
-
 export interface StoreRecords {
   progress: ProgressRecord;
   queue: QueueRecord;
@@ -118,7 +108,6 @@ export interface StoreRecords {
   notes: NoteRecord;
   history: HistoryRecord;
   prefs: PrefRecord;
-  downloads: DownloadRecord;
 }
 
 /** The key field of each store (IndexedDB `keyPath`). */
@@ -130,7 +119,6 @@ export const KEY_PATH = {
   notes: "id",
   history: "shiurId",
   prefs: "key",
-  downloads: "shiurId",
 } as const satisfies { [S in StoreName]: keyof StoreRecords[S] & string };
 
 export function keyOf<S extends StoreName>(store: S, record: StoreRecords[S]): string {
@@ -149,7 +137,6 @@ export function emptyDump(): PersonalDump {
     notes: [],
     history: [],
     prefs: [],
-    downloads: [],
   };
 }
 

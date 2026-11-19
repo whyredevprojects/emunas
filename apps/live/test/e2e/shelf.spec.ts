@@ -193,7 +193,6 @@ test.describe("storage blocked (private window)", () => {
         ["shelf/notes", "section.notes"],
         ["shelf/history", "section.history"],
         ["shelf/continue", "section.continue"],
-        ["shelf/downloads", "section.downloads"],
       ];
       for (const [p, title] of pages) {
         // Client-side navigation keeps the in-memory shelf, as a private-window session would.

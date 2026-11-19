@@ -1,8 +1,8 @@
 /**
  * The room header (concept-live §5.3): catalog title as written, the generated one-liner, year,
  * parsha/zman, series position, duration, recording language, path notes, the catalog topics as a
- * clickable table of contents (`catalogTopicIdx`), the play control and the "In the Library" link
- * (the shiur page on the Quiet site).
+ * clickable table of contents (`catalogTopicIdx`), the play control, the "In the Library" link
+ * (the shiur page on the Quiet site) and plain download links for the file being heard.
  * Above them, the shiur's top three topics (salience 0.5 and above) as one line, each opening the topic
  * beside the shiur, with the corpus layer's AI label once for the page (concept-live-corpus D, E.3).
  * Under the play button, the version line (cleaned-audio-ux §4 Live): which copy plays, and the
@@ -11,7 +11,6 @@
  */
 import { audioLanguageLabel, formatDuration, formatHebrewYears, notice } from "@emunas/i18n";
 import type { JSX } from "react";
-import { DownloadButton } from "../../../sw/client/DownloadButton.tsx";
 import { CorpusLabel } from "../../components/CorpusLabel.tsx";
 import { Text, TEXT_SLOT, aroundText } from "../../components/Text.tsx";
 import type { AudioVersion } from "@emunas/i18n";
@@ -20,6 +19,7 @@ import { locate, type PlayerState } from "../../player-engine/index.ts";
 import type { RoomContext } from "./context.ts";
 import type { ShiurFile } from "./data.ts";
 import { mainTopics } from "./corpus.ts";
+import { DownloadLinks } from "./DownloadLink.tsx";
 import { topicTargets } from "./model.ts";
 import { AiLabel, Report, TopicChipButton } from "./parts.tsx";
 import { libraryUrl } from "./quiet-link.ts";
@@ -152,7 +152,7 @@ export function RoomHeaderDetails({ room, quietOrigin }: { room: RoomContext; qu
           </a>
         ) : null}
         <Report room={room} id={null} />
-        <DownloadButton shiur={shiur} ui={ui} className={s.headLink} />
+        <DownloadLinks room={room} className={s.headLink} />
       </div>
       <RoomVersionLine room={room} />
       {!room.playable ? <p className={s.note}>{rt("room.unavailable")}</p> : null}

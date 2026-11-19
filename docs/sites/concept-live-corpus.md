@@ -230,7 +230,7 @@ Live already misses its mobile budget (LCP 3.5 to 4.9 s against 2 s) because `co
 | First focus of the command bar | The quick index, now also holding entity names and clean aliases | lazy, as today |
 | Applying person, concept or sefer facets | Explore's entity bitsets | lazy |
 
-Prefetch happens on intent (pointer down, or focus on a link) and the service worker keeps what was fetched, so the second visit to a topic is instant and works offline. Prerendered pages for topics, threads of three or more shiurim, and stories told more than once add roughly 1,500 HTML files across both interface languages, inside the existing file budget.
+Prefetch happens on intent (pointer down, or focus on a link) and the browser's HTTP cache keeps what was fetched, so the second visit to a topic is instant. Prerendered pages for topics, threads of three or more shiurim, and stories told more than once add roughly 1,500 HTML files across both interface languages, inside the existing file budget.
 
 A view that cannot meet these rules is cut or moved to Quiet.
 

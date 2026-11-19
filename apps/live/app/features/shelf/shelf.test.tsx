@@ -101,7 +101,7 @@ describe("overview", () => {
     const m = main();
     expect(within(m).getByRole("heading", { level: 1 }).textContent).toBe("My Shelf");
     const sections = [...m.querySelectorAll("section[data-section]")].map((s) => s.getAttribute("data-section"));
-    expect(sections).toEqual(["continue", "queue", "playlists", "saved", "notes", "history", "downloads"]);
+    expect(sections).toEqual(["continue", "queue", "playlists", "saved", "notes", "history"]);
     const queue = m.querySelector('section[data-section="queue"]') as HTMLElement;
     expect(within(queue).getAllByRole("listitem")).toHaveLength(3);
     await waitFor(() => expect(queue.textContent).toContain(B_TITLE));
@@ -110,7 +110,6 @@ describe("overview", () => {
     expect(cont.textContent).toContain("10:00 of 50:00");
     expect(cont.textContent).toContain("2 chapters finished");
     expect(m.querySelector('section[data-section="notes"]')!.textContent).toContain("ask about the mashal");
-    expect(m.querySelector('section[data-section="downloads"]')!.textContent).toContain(shelfEn["empty.downloads"]);
     // Titles link to the listening room at the item's time.
     const link = within(queue).getByRole("link", { name: B_TITLE });
     expect(link.getAttribute("href")).toBe(`/en/s/${B}?t=30`);
@@ -272,7 +271,6 @@ describe("accessibility (axe, jsdom)", () => {
         "shelf/saved",
         "shelf/notes",
         "shelf/history",
-        "shelf/downloads",
         `pl#${encodePlaylist([{ shiurId: C, start: 1, end: null }])}`,
         "pl#broken",
       ];

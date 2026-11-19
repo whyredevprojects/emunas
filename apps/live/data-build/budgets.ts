@@ -116,7 +116,7 @@ export interface LiveBudgetOptions {
 
 /**
  * Files the app build adds besides the prerendered pages and `public/`: hashed JS/CSS chunks under
- * `assets/`, the SPA fallback `index.html`, `robots.txt`, `sw.js` and `__spa-fallback.html`
+ * `assets/`, the SPA fallback `index.html`, `robots.txt` and `__spa-fallback.html`
  * (87 on 2026-11-15; rounded up for growth).
  */
 export const APP_BUILD_FILES = 120;

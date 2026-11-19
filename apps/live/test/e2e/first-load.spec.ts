@@ -2,7 +2,7 @@
  * C3.8 first-load gate (corpus-wave-plan §4, concept-live-corpus G): the corpus layer adds nothing
  * to first load.
  *
- * Cold loads (fresh context, no service worker) of Today and of a listening room `/s/<id>` record
+ * Cold loads (fresh context) of Today and of a listening room `/s/<id>` record
  * every request with its start time on the page's clock. "First paint" is the later of the first
  * contentful paint and the moment the page's content is in place (`main h1` present and nothing in
  * `main` is `aria-busy`), so that idle prefetches after paint (Explore's topic tree) are allowed.
@@ -25,9 +25,7 @@
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
 import { UI_LANGS } from "@emunas/i18n";
-import { dataJson, NO_SERVICE_WORKER } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { dataJson } from "./helpers.ts";
 
 /** Data files that must not be requested before first paint (paths under `/data/`). */
 export const NOT_BEFORE_PAINT: readonly RegExp[] = [

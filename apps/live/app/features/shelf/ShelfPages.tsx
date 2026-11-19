@@ -20,7 +20,6 @@ const SECTION_TITLE: Readonly<Record<ShelfSection, ShelfKey>> = {
   saved: "section.saved",
   notes: "section.notes",
   history: "section.history",
-  downloads: "section.downloads",
 };
 
 export function sectionTitleKey(s: ShelfSection): ShelfKey {
@@ -41,8 +40,6 @@ function sectionCount(s: PersonalState, section: ShelfSection): number {
       return s.notes.length;
     case "history":
       return s.history.length;
-    case "downloads":
-      return Object.keys(s.downloads).length;
   }
 }
 

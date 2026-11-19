@@ -729,9 +729,9 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
     expect(audio.src).toBe(CB);
   });
 
-  it("an explicit switch that cannot load (offline) falls back to the stored original with a brief notice", () => {
+  it("an explicit switch that cannot load (offline) falls back to the original with a brief notice", () => {
     const { clock, audio, engine } = setup(withCleaned(), { canTryCleaned: () => false, skip: { enabled: false } });
-    // The improved copy is not reachable: only the downloaded originals load.
+    // The improved copy is not reachable: only the originals load.
     const offline = withCleaned({
       recordings: [
         { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: "https://media.example.org/fixed/sidon/offline-a.mp3" },

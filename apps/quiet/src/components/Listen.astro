@@ -10,7 +10,8 @@
  *
  * Improved audio (docs/sites/cleaned-audio-ux.md §3–§4): `src` is the copy with the sound improved
  * by AI when the recording has one (`defaultUrl`), with `data-cleaned` / `data-original` for the
- * script. Downloads always use the original. When any part has an improved copy, `p.listen-version`
+ * script. Each download link points at the version that plays (the improved copy by default; the
+ * script rewrites `href` on a switch or a fallback). When any part has an improved copy, `p.listen-version`
  * follows the tracks: "Sound improved by AI · Switch to the original", where the action is a plain
  * link to the original file without script and a button with it (it switches every part, and the
  * script rewrites the line to state B, whose strings ride on `data-*`). A part without an improved
@@ -74,10 +75,10 @@ const versionTextId = `${id}-version-text`;
                 data-offset={rec.offset}
                 aria-label={count > 1 ? t("listen.part", { part, count }) : t("listen.heading")}
               >
-                <p>{t("listen.noSupport")} <a href={url}>{t("listen.download")}</a></p>
+                <p>{t("listen.noSupport")} <a href={cleaned ?? url}>{t("listen.download")}</a></p>
               </audio>
               <p class="track-meta">
-                <a class="download" href={url} download>
+                <a class="download" href={cleaned ?? url} download>
                   {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
                 </a>
                 {switchTo && !cleaned && <> · <span>{v("partOriginal", { part })}</span></>}

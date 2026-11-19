@@ -4,7 +4,7 @@
  * imported lazily (on first focus of the bar or on the search page), so MiniSearch and the normalize
  * alias tables stay out of the shell's first-load JavaScript.
  *
- * Inputs (all static `/data/*`, cached by the service worker); `corpus.json` is not one of them:
+ * Inputs (all static `/data/*`); `corpus.json` is not one of them:
  * - `quick-index.<ui>.json`: a serialized MiniSearch over search-core fields, pre-folded at build time
  *   (`data-build/emit.ts`), storing each shiur's catalog title and audio language, plus `entities`:
  *   the search-core EntityDocs of the topics, concepts, people and works that have a Live page.

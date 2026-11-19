@@ -77,7 +77,7 @@ Exact versions: pin exact versions in the scaffold task (W0), taking the newest 
 | `/:ui/series`, `/:ui/series/:seriesId` | yes | `series/<id>.json` |
 | `/:ui/p/:personId`, `/:ui/c/:conceptId`, `/:ui/o/:occasionId` | if ≥3 shiurim | `entity/<type>/<id>.json` |
 | `/:ui/search?q=` | no | Search Worker |
-| `/:ui/shelf/*` (continue, queue, playlists, saved, notes, downloads) | no | IndexedDB |
+| `/:ui/shelf/*` (continue, queue, playlists, saved, notes, history) | no | IndexedDB |
 | `/:ui/pl#<encoded>` (shared playlist, no account) | no | decode client-side |
 
 `:ui ∈ {en, yi}` sets `<html lang dir>`. Shiur-language and reading-language preferences live in client state and in the query string (`?audio=yi,en&read=en`), never in the path, so the number of prerendered pages does not multiply.
@@ -111,7 +111,6 @@ apps/live/
     publish-policy.json           category visibility, confidence threshold, suppressions
   public/                      static files (icons, fonts, manifest.webmanifest)
   public/data/                 GENERATED, gitignored
-  sw/                          service worker source
   tests/                       e2e (Playwright), eval sets
   react-router.config.ts, vite.config.ts, wrangler.jsonc, package.json
 workers/
@@ -286,7 +285,7 @@ Recommend handing these to the pipeline as seed data for its glossary pass (conc
 
 ### 4.2 Personal data (local-first)
 
-IndexedDB stores: `progress` (shiurId → t, completed chapter idx[], completedAt), `queue`, `playlists`, `saved` (momentId + t + shiurId), `notes` (shiurId, t, text), `history`, `prefs`, `downloads`. There is a schema version and migrations. Export and import as JSON from My Shelf. That file is the user's own data and doubles as manual sync. Shared playlists: `/:ui/pl#<base64url(JSON [shiurId,t,end?][])>`, with no server.
+IndexedDB stores: `progress` (shiurId → t, completed chapter idx[], completedAt), `queue`, `playlists`, `saved` (momentId + t + shiurId), `notes` (shiurId, t, text), `history`, `prefs`. There is a schema version and migrations. Export and import as JSON from My Shelf. That file is the user's own data and doubles as manual sync. Shared playlists: `/:ui/pl#<base64url(JSON [shiurId,t,end?][])>`, with no server.
 
 Optional sync (later, decision D4): a `sync` Worker with a D1 table per user (`user_id, kind, key, value_json, updated_at`), last-writer-wins per key, and email magic link. Not in the first release, and the stores are designed with `updatedAt` per record so sync can be added later.
 
@@ -302,11 +301,11 @@ Optional sync (later, decision D4): a `sync` Worker with a D1 table per user (`u
 2. On Enter, or after 250 ms of idle with ≥3 characters, call `/api/search` (§5). If that fails or the browser is offline, the bar falls back to MiniSearch results and shows "showing shiur-level results".
 3. Query normalization uses `normalizeHe` plus the alias expansion from `packages/normalize`. The same code runs in the Worker.
 
-### 4.5 Offline / PWA
+### 4.5 Downloads, no service worker
 
-- Service worker (hand-written; Workbox is optional): precache the shell; `/data/*` stale-while-revalidate with a size cap; `/audio/*` is network-only unless downloaded.
-- Downloads: fetch the full mp3 (with `?dl=1`) into Cache Storage `audio-v1` and request `navigator.storage.persist()`. The SW answers `Range` requests for downloaded files by slicing the cached Blob into 206 responses, which iOS needs. The shiur and write-up JSON are pinned with the audio.
-- `manifest.webmanifest` with a name per interface language. The shell works offline. Search offline uses MiniSearch.
+- Analyze is a normal online web app: there is no service worker, no offline shell and no Cache Storage (owner decision, 2026-11-19: hidden in-browser downloads do not belong in a website).
+- Download is a plain `<a download>` link to the media URL of the version being played (`audioUrl` or `cleanedUrl`), as on Library.
+- `manifest.webmanifest` stays (name per interface language, icons). When the API cannot be reached, the command bar still falls back to MiniSearch (§4.4).
 
 ---
 
@@ -435,7 +434,7 @@ Table `feedback(id, created_at, shiur_id, moment_id, field, reason, text, ui, re
 | Calendar | "This week" for fixed dates (diaspora and Israel, combined parshiyos, leap years) | Vitest |
 | Player | Timeline math, skip scheduling at rates 1–2×, recording swap, moment end; a fake media element | Vitest + jsdom |
 | Workers | Audio: 404 for unknown ids and for keys with `/`; HEAD; Range → 206 bytes exact; download header. Search: filter combinations, no forbidden fields, rate limit. Feedback: Turnstile failure, length caps | `@cloudflare/vitest-pool-workers` |
-| E2E | Play → navigate across 5 routes → audio uninterrupted; deep link `?t=754` starts within 1 s of 754; chapter next/prev; question "hear the answer"; yi mode mirrors (screenshot diff); offline shell; catalog-only shiur plays | Playwright (Chromium, WebKit, mobile viewport) |
+| E2E | Play → navigate across 5 routes → audio uninterrupted; deep link `?t=754` starts within 1 s of 754; chapter next/prev; question "hear the answer"; yi mode mirrors (screenshot diff); catalog-only shiur plays | Playwright (Chromium, WebKit, mobile viewport) |
 | Accessibility | axe on every route type in en and yi, zero serious violations; keyboard-only script through the player and command bar | `@axe-core/playwright` |
 | Search quality | 60-query eval (20 en, 20 yi, 20 cross-language/transliteration) with expected shiur ids. Track recall@10 and MRR, and fail CI if they regress more than 5 points | script in `apps/live/tests/eval` |
 | Performance | Lighthouse CI on Today, a shiur page and Explore (mobile profile) | LHCI |
@@ -458,7 +457,7 @@ Table `feedback(id, created_at, shiur_id, moment_id, field, reason, text, ui, re
 | D2 | Derived items with long verbatim ASR runs (§3.4): fail at ≥20 tokens; suppress at ≥14? | Fail ≥20, report ≥14 |
 | D3 | Who edits `transcript-eligibility.json`, and on what evidence | Pipeline owner; flag stays `false` |
 | D4 | Accounts and sync | Local-only first, export/import |
-| D5 | Free downloads vs in-app offline only | In-app offline plus `?dl=1` download |
+| D5 | Free downloads vs in-app offline only | Plain download link only; no in-app offline (2026-11-19) |
 | D6 | `current` (79) and simcha (72) shiurim in general browse | Shown under their own section and excluded from Today/Explore defaults (`publish-policy.json`), pending the owner |
 | D7 | Embedding model | bge-m3, gated on the Yiddish eval |
 | D8 | Sefaria in-app panel vs link-out | Link-out |
@@ -519,7 +518,7 @@ Each task has one owner and lists its inputs and outputs. "Done when" is the acc
 | ID | Task | Inputs → outputs | Done when |
 |---|---|---|---|
 | W21 | Feedback Worker + UI + admin export | → `/api/feedback`, D1 | Two-tap report from any item; Turnstile; Access-protected export |
-| W22 | Service worker, PWA, downloads with SW range serving | W7, W10 | Airplane-mode playback of a downloaded shiur with seeking on iOS and Android; shell offline |
+| W22 | ~~Service worker, PWA, downloads with SW range serving~~ Dropped (2026-11-19): no service worker; downloads are a plain link (§4.5) | | |
 | W23 | Test infrastructure: Playwright matrix, axe, LHCI, search eval harness | all | CI runs on every PR; budgets enforced |
 | W24 | CI/CD: data-triggered builds, guard gate, D1/Vectorize sync, deploys, previews | W2, W4, W16–W18 | A pipeline commit to `data/derived` produces a deploy with the new shiur full and the counter updated, with no code change |
 | W25 | Transcript view scaffolding (OFF) | W1, W2 → flag, eligibility config, `emit-transcripts.ts` (never run while the flag is false), guard rule | With the flag off, the bundle contains no transcript component and no `/data/transcript` directory exists; a test build with the flag on and one fixture recording emits exactly one transcript file, and the guard accepts only that one |

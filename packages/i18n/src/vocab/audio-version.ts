@@ -51,7 +51,7 @@ const en = {
   "announce.original": "Now playing the original recording.",
   partOriginal: "Part {part}: original recording only",
   about:
-    "The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player. Downloads are always the original recording.",
+    "The recordings play with the sound improved by AI, which removes noise and hiss. Now and then this can change how a word sounds, so the original recording is always one click away, under the player.",
 } as const;
 
 export type AudioVersionLabelKey = keyof typeof en;
@@ -65,7 +65,7 @@ const yi: MessageTable<AudioVersionLabelKey> = {
   "announce.original": "יעצט שפילט די מקורית.",
   partOriginal: "טייל {part}: נאר די מקורית",
   about:
-    "די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער. אראפלאדן גיט שטענדיג די מקורית.",
+    "די רעקארדירונגען שפילן מיט קלאנג אויסגעבעסערט דורך AI, וואס נעמט אראפ דעם רעש. אמאל קען דאס טוישן ווי א ווארט הערט זיך, דעריבער איז די מקורית שטענדיג איין קליק אוועק, אונטער דעם שפילער.",
 };
 
 const he: MessageTable<AudioVersionLabelKey> = {
@@ -77,7 +77,7 @@ const he: MessageTable<AudioVersionLabelKey> = {
   "announce.original": "כעת מתנגנת ההקלטה המקורית.",
   partOriginal: "חלק {part}: ההקלטה המקורית בלבד",
   about:
-    "ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן. ההורדות הן תמיד של ההקלטה המקורית.",
+    "ההקלטות מושמעות בקול ששופר על ידי AI, המסיר רעשים ורחשים. לפעמים הדבר עלול לשנות את צליל המילה, ולכן ההקלטה המקורית תמיד במרחק לחיצה אחת, מתחת לנגן.",
 };
 
 /** Every language's table, over one key union; the one accessor for a table (`AUDIO_VERSION_LABELS[lang]`). */

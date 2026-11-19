@@ -9,7 +9,6 @@ import { defineConfig, devices } from "@playwright/test";
  *   LIVE_E2E_DATA=build npx playwright test -c … --grep @data              (real-data build)
  *
  * WebKit runs every spec except (each a known gap, see the W5.1 report):
- * - offline.spec.ts: drives the service worker and Cache Storage through Chromium-only hooks;
  * - listening-room.spec.ts, shelf.spec.ts: need real playback, and Playwright's WebKit build on
  *   Linux leaves the stand-in media "loading" (browse.spec.ts checks the queue there, playback in
  *   Chromium);
@@ -20,7 +19,7 @@ import { defineConfig, devices } from "@playwright/test";
 const PORT = Number(process.env["LIVE_E2E_PORT"] ?? 4173);
 const chromeChannel = process.env["PW_CHANNEL"] ?? "chromium";
 const chromium = chromeChannel === "chromium" ? {} : { channel: chromeChannel };
-const WEBKIT_SKIP = [/offline\.spec\.ts/u, /listening-room\.spec\.ts/u, /shelf\.spec\.ts/u, /feedback\.spec\.ts/u];
+const WEBKIT_SKIP = [/listening-room\.spec\.ts/u, /shelf\.spec\.ts/u, /feedback\.spec\.ts/u];
 const WEBKIT_GREP_INVERT = /screenshot diff|settings from the query string/u;
 
 export default defineConfig({

@@ -63,7 +63,7 @@ describe("apps/live/public/_headers", () => {
     expect(parseHeaders(template).length).toBeGreaterThan(0);
   });
 
-  it("puts the media origin into media-src and connect-src", () => {
+  it("puts the media origin into media-src only", () => {
     const out = renderHeaders(template, { mediaOrigin: "https://media.example.org/" });
     const csp = parseHeaders(out)
       .find((r) => r.pattern === "/*")
@@ -76,7 +76,8 @@ describe("apps/live/public/_headers", () => {
       }),
     );
     expect(directives.get("media-src")).toEqual(["'self'", "https://media.example.org"]);
-    expect(directives.get("connect-src")).toEqual(["'self'", "https://media.example.org"]);
+    expect(directives.get("connect-src")).toEqual(["'self'"]);
+    expect(directives.has("worker-src")).toBe(false);
     expect(directives.get("default-src")).toEqual(["'self'"]);
     expect(directives.get("frame-ancestors")).toEqual(["'none'"]);
     expect(directives.get("object-src")).toEqual(["'none'"]);

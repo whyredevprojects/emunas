@@ -36,7 +36,7 @@ export interface Migration {
 export const MIGRATIONS: readonly Migration[] = [
   {
     version: 1,
-    description: "create the eight personal stores",
+    description: "create the seven personal stores",
     upgrade(db) {
       for (const name of STORE_NAMES) {
         const store = db.createObjectStore(name, { keyPath: KEY_PATH[name] });

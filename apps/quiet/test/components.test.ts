@@ -85,7 +85,7 @@ describe("Listen", () => {
     expect(html).not.toContain("/audio/");
   });
 
-  it("plays the improved copy, downloads the original and marks the part that has only the original", async () => {
+  it("plays and downloads the improved copy and marks the part that has only the original", async () => {
     const html = await render(Listen, { ed: "en", recordings: sampleRecordings });
     const [one, two] = attrs(html, "audio");
     const p1 = sampleRecordings[0]!;
@@ -94,7 +94,7 @@ describe("Listen", () => {
     expect(two).toMatchObject({ src: p2.audioUrl, "data-original": p2.audioUrl });
     expect(two).not.toHaveProperty("data-cleaned");
     const downloads = attrs(html, "a").filter((a) => a["class"] === "download");
-    expect(downloads.map((a) => a["href"])).toEqual([p1.audioUrl, p2.audioUrl]);
+    expect(downloads.map((a) => a["href"])).toEqual([p1.cleanedUrl, p2.audioUrl]);
     expect(html).toContain("Part 2: original recording only");
     const [link] = attrs(html, "a").filter((a) => a["class"] === "listen-version-switch");
     expect(link).toMatchObject({ href: p1.audioUrl, "aria-describedby": "listen-version-text" });

@@ -50,7 +50,7 @@ describe("command bar", () => {
     const api = apiMock(() => jsonResponse(apiResponse([lionHit])));
     setup(api);
     await renderAt("/en/");
-    setOnline(false); // the /data files still come from the service-worker cache (here: the data mock)
+    setOnline(false); // the /data files the bar already loaded stay in memory (here: the data mock)
     await act(async () => bar().focus());
     await type("lag baomer");
     await waitFor(() => expect(optionTexts("suggestion").join(" ")).toContain("Lag BaOmer"));

@@ -1,8 +1,7 @@
 /**
  * The client engine: suggestions (corpus entities by id, occasions, series, years), "Tanya 12" from a
  * series file, and shiur-level matching with the shipped MiniSearch dump and the clean synonym table.
- * No network is involved: the engine works from files the service worker has cached, and never from
- * corpus.json.
+ * No network is involved beyond the static `/data` files it is given, and never corpus.json.
  */
 import { describe, expect, it } from "vitest";
 import { LIVE_DATA_SCHEMA_VERSION } from "../../../data/index.ts";

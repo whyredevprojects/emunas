@@ -12,13 +12,6 @@ import { expect, test, type APIRequestContext, type Page, type Route } from "@pl
 export const UIS = UI_LANGS;
 export type Ui = (typeof UIS)[number];
 
-/**
- * `test.use(NO_SERVICE_WORKER)`: the service worker is offline.spec.ts's subject. Elsewhere it would
- * answer `/data` and `/api` requests before `page.route()` sees them (Playwright does not route
- * requests a service worker handles), so stand-in APIs and planted files would be bypassed.
- */
-export const NO_SERVICE_WORKER = { serviceWorkers: "block" } as const;
-
 /** True when the e2e server answers `/data/*` from the real build (see serve.js). */
 export const REAL_DATA = process.env["LIVE_E2E_DATA"] === "build";
 
@@ -131,7 +124,7 @@ export async function entityRows(request: APIRequestContext): Promise<EntityRow[
 
 /** App pages that need no data file to exist (the rail, indexes, personal pages). */
 const STATIC_PAGES = new Set(["", "explore", "seforim", "maasios", "series", "search", "shelf", "pl"]);
-const SHELF_SECTIONS = new Set(["continue", "queue", "playlists", "saved", "notes", "history", "downloads"]);
+const SHELF_SECTIONS = new Set(["continue", "queue", "playlists", "saved", "notes", "history"]);
 
 /**
  * Whether an in-app href lands on real content: a shiur in `corpus.json`, an entity/work/series whose

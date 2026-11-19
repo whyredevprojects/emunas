@@ -8,7 +8,6 @@
 import { describe, expect, it } from "vitest";
 import { findMetaComments } from "@emunas/corpus-guard";
 import { AI_LABEL, CORPUS_LABELS, NOTICES, SECTION_KIND_LABELS, UI_LANGS, type UiLang } from "@emunas/i18n";
-import { offlineEn, offlineHe } from "../../sw/client/strings.ts";
 import { searchEn, searchHe } from "../features/command-bar/strings.ts";
 import { browseEn, browseHe } from "../features/entities/strings.ts";
 import { exploreEn, exploreHe } from "../features/explore/strings.ts";
@@ -58,7 +57,6 @@ const PAIRS: Record<string, { en: object; he: object }> = {
   today: { en: todayEn, he: todayHe },
   topics: { en: topicsEn, he: topicsHe },
   transcript: { en: transcriptEn, he: transcriptHe },
-  offline: { en: offlineEn, he: offlineHe },
 };
 
 /** Every string of a table, plural forms and nested records included. */

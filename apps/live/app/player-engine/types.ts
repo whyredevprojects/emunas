@@ -130,7 +130,7 @@ export interface PlayerState {
   cleanedAvailable: boolean;
   /**
    * The listener asked for the improved copy and it could not load (offline, or the file failed), so
-   * the original (e.g. the downloaded copy) plays instead. Cleared by the next switch, load or after
+   * the original plays instead. Cleared by the next switch, load or after
    * a few seconds; the dock shows a brief notice while it is set.
    */
   versionFallback: boolean;
@@ -219,8 +219,8 @@ export interface PlayerEngineOptions {
   audioVersion?: AudioVersion;
   /**
    * Whether the improved copy may be tried for this recording without the listener asking (default:
-   * always). The app answers false while offline, so a downloaded shiur plays its stored original at
-   * once; an explicit switch still tries the improved copy and falls back if it cannot load.
+   * always). The app answers false while offline, so the original is used at once; an explicit
+   * switch still tries the improved copy and falls back if it cannot load.
    */
   canTryCleaned?: (rec: PlayerRecording, shiur: PlayerShiur) => boolean;
   /** Media Session metadata. Default: chapter title / Rav / catalog title (tech-live §4.1). */

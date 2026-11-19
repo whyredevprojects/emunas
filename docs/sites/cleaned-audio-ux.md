@@ -29,9 +29,11 @@ reasoning; read them through these decisions.
    --workspace=@emunas/audio [-- --verify-duration]` (`packages/audio/scripts/verify-cleaned.ts`)
    lists `fixed/sidon/` in R2 and fails if any in-scope, non-rejected recording has no copy. It is a
    pre-merge check, not part of the build (ops-runbook §11).
-4. **Downloads always use the original file**, on both sites, whatever version plays. `cleanedUrl`
-   is for playback only. (This replaces the "Downloads" rows of §6 and resolves open question 6.)
-   Live offline copies are downloads too, so they store the original.
+4. **Downloads follow the version being played**, on both sites (owner, 2026-11-19; this reverses
+   the earlier "downloads always use the original"). Download is a plain link to the media URL of
+   the version that plays: the improved copy by default, the original when the listener chose it,
+   the recording has no improved copy or the improved file failed. Library's script rewrites the
+   link's `href` on a switch or a fallback; Analyze has no service worker or offline copies.
 5. **Preference:** one global per-listener choice, `localStorage` key `emunas.audioVersion`
    (`AUDIO_VERSION_KEY`), values `"cleaned" | "original"` (`AudioVersion`), default `"cleaned"`
    (`parseAudioVersion`). Live also mirrors it into its personal store `prefs`, so export/transfer
@@ -58,7 +60,7 @@ Recommendation in one paragraph:
 - **Behaviour:** switching keeps the position, the play/pause state and the speed. The choice is
   **one global preference per listener** (localStorage, guarded), applied to every shiur that has
   both copies.
-- **Everything else follows the selected version:** downloads, Live offline copies and time links
+- **Everything else follows the selected version:** downloads and time links
   under JS. Media Session metadata, share links and URLs stay the same in both versions.
 
 ## 2. How audio works today
@@ -125,10 +127,8 @@ Recommendation in one paragraph:
 - Every list or inline "play" (Today, mixes, search results, chapters, topics) goes through
   `player-ui/engine.ts:77-123` (`playShiur` / `playAt`) into the same engine, so it follows the
   resolver automatically.
-- Offline downloads: `apps/live/sw/client/downloads.ts:62-72` `planDownload()` fetches every
-  `audioUrl` into Cache Storage `audio-v1`, keyed by the exact URL (`sw/src/protocol.ts:8`). The SW
-  serves those URLs with Range support (`sw/src/handler.ts:88-110`). Bookkeeping uses
-  `DownloadRecord` (`app/store/schema.ts:105-111`).
+- Downloads: a plain link to the media URL of the version being played (Decision 4). Live has no
+  service worker, offline copies or download bookkeeping.
 - The data contract is a strict schema: `apps/live/data-build/schemas.ts:80-81`, plus the comment
   type at `app/data/types.ts:261`.
 - Media Session: `player-engine/media-session.ts:11-19` sets the title to the chapter, the artist to
@@ -345,7 +345,7 @@ Copy rules:
 |---|---|
 | Quiet `Download` / `Download part N` links | The selected version. Without JS that is the cleaned copy; the script rewrites `href` on a switch. The label does not change. |
 | Quiet time links (`a.time`, `TimeLink`) `href` | Built with the default (cleaned) URL. With JS, clicks seek the element, which already plays the selected version. Rewriting hrefs is not needed. |
-| Live offline download | The version selected when the listener presses Download. Only one copy is stored (no doubled storage). `DownloadRecord` records which version it holds. A switch while offline is refused with the existing "cannot be played here" handling, or, better, the button is disabled offline when the other version is not cached (open question 4). |
+| Live Download link | The version being played (a plain link to its media URL; no offline copy since 2026-11-19). |
 | Live lists, search, Today, chapters, topics ("listen" anywhere) | Automatically the selected version, through the engine resolver. No per-list work. |
 | Media Session metadata | Unchanged in both versions. Do not add "(AI)" to lock-screen titles. |
 | Share links, feedback "Report" | Version-neutral links. Reports record the version that was playing, so a report of a wrong-sounding word can be checked. Live sends `audio: "cleaned" \| "original"` to `POST /api/feedback` (left out when the reported shiur is not the one loaded); the Worker stores it in the nullable `feedback.audio` column (migration `feedback/0002_audio.sql`) and the admin export shows it. Quiet's Report is a mail link, so its player appends the "Now playing …" sentence to the mail body. |
@@ -477,8 +477,7 @@ Live:
 - `apps/live/app/features/listening-room/Header.tsx`, `strings.ts` (or reference the shared vocab)
   and `styles.ts`
 - `apps/live/data-build/schemas.ts:80-81`, `apps/live/app/data/types.ts`
-- `apps/live/sw/client/downloads.ts` (`planDownload(shiur, version)`),
-  `apps/live/app/store/schema.ts` (`DownloadRecord.version`) and the Download button
+- The listening room's Download link (the version being played)
 - Feedback/Report payload: add the version that was playing
 - Tests: engine swap keeps t, rate and play state; dock notice priority; axe on the dock with the
   line present; e2e switch on a multi-part shiur
@@ -493,8 +492,7 @@ All resolved by the owner decisions at the top of this document:
    still needs a named reviewer's sign-off (`docs/sites/copy-review.md` §7).
 2. Global preference: yes; the About paragraph: yes (Decisions 1 and 5).
 3. Live storage: localStorage, mirrored into the personal store's `prefs` (Decision 5).
-4. Offline switching in Live: moot, since offline copies are always the original (Decision 4).
-   Offline, the engine plays the stored original and the line shows state B.
+4. Offline switching in Live: moot, since Live keeps no offline copies (Decision 4).
 5. Narrow Live dock height: left to the Live implementation (fit check on 320 px in Yiddish).
 6. Downloads: always the original (Decision 4).
 7. Rejections: per recording only, recorded in `site-policy/audio-cleaned.json` `rejected`

@@ -18,9 +18,7 @@
  * real data only (as the other data-dependent specs do, the skip names the reason).
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
-import { dataJson, dock, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { dataJson, dock, pageErrors, serveSilentMedia, settled } from "./helpers.ts";
 
 interface L {
   en: string;

@@ -12,9 +12,7 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type APIRequestContext, type Page } from "@playwright/test";
-import { axeBudget, axeViolations, dataJson, dock, LinkResolver, NO_SERVICE_WORKER, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { axeBudget, axeViolations, dataJson, dock, LinkResolver, pageErrors, serveSilentMedia, settled, UIS } from "./helpers.ts";
 
 interface WorkFile {
   key: string;

@@ -1,6 +1,6 @@
 /**
- * The personal store: listening progress, queue, playlists, saved moments, notes, history, prefs and
- * download bookkeeping (tech-live §4.2, concept-live §5.8, §6.2, §6.4).
+ * The personal store: listening progress, queue, playlists, saved moments, notes, history and prefs
+ * (tech-live §4.2, concept-live §5.8, §6.2, §6.4).
  *
  * A Zustand store holds the whole personal state in memory (it is small); React reads it with
  * `usePersonal(selector)` and code outside React (the player, the queue player) with `getState()`.
@@ -21,7 +21,6 @@ import {
   PREF_QUEUE_CURRENT,
   STORE_NAMES,
   emptyDump,
-  type DownloadRecord,
   type HistoryRecord,
   type JsonValue,
   type MomentRef,
@@ -51,7 +50,6 @@ export interface PersonalData {
   /** Most recently played first. */
   history: readonly HistoryRecord[];
   prefs: Readonly<Record<string, PrefRecord>>;
-  downloads: Readonly<Record<string, DownloadRecord>>;
 }
 
 export type PersonalStatus = "idle" | "loading" | "ready";
@@ -137,7 +135,6 @@ export function dataFromDump(d: PersonalDump): PersonalData {
     notes: [...d.notes].sort(byNote),
     history: [...d.history].sort(byPlayedDesc),
     prefs: index(d.prefs, (r) => r.key),
-    downloads: index(d.downloads, (r) => r.shiurId),
   };
 }
 
@@ -150,7 +147,6 @@ export function dumpFromData(s: PersonalData): PersonalDump {
     notes: [...s.notes],
     history: [...s.history],
     prefs: Object.values(s.prefs),
-    downloads: Object.values(s.downloads),
   };
 }
 
@@ -194,9 +190,6 @@ export interface Personal {
   deleteNote(id: string): Promise<void>;
 
   setPref(key: string, value: JsonValue): Promise<void>;
-
-  putDownload(d: Omit<DownloadRecord, "updatedAt">): Promise<void>;
-  removeDownload(shiurId: string): Promise<void>;
 
   exportFile(): Promise<ExportFile>;
   importText(text: string, mode: ImportMode): Promise<ParsedImport>;
@@ -543,27 +536,13 @@ export function createPersonal(deps: PersonalDeps = {}): Personal {
     await write((b) => b.delete("notes", id));
   }
 
-  // ---- prefs and downloads --------------------------------------------------------------------
+  // ---- prefs ----------------------------------------------------------------------------------
 
   async function setPref(key: string, value: JsonValue): Promise<void> {
     await ready();
     const rec = prefRecord(key, value);
     store.setState({ prefs: { ...get().prefs, [key]: rec } });
     await put("prefs", rec);
-  }
-
-  async function putDownload(d: Omit<DownloadRecord, "updatedAt">): Promise<void> {
-    await ready();
-    const rec: DownloadRecord = { ...d, recordingIds: [...d.recordingIds], updatedAt: now() };
-    store.setState({ downloads: { ...get().downloads, [d.shiurId]: rec } });
-    await put("downloads", rec);
-  }
-
-  async function removeDownload(shiurId: string): Promise<void> {
-    await ready();
-    const { [shiurId]: _gone, ...rest } = get().downloads;
-    store.setState({ downloads: rest });
-    await write((b) => b.delete("downloads", shiurId));
   }
 
   // ---- export / import ------------------------------------------------------------------------
@@ -622,8 +601,6 @@ export function createPersonal(deps: PersonalDeps = {}): Personal {
     editNote,
     deleteNote,
     setPref,
-    putDownload,
-    removeDownload,
     exportFile,
     importText,
     clearAll,

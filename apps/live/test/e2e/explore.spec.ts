@@ -12,9 +12,7 @@
  * `@data`: every expectation comes from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeBudget, axeViolations, corpusRows, dataJson, entityRows, NO_SERVICE_WORKER, pageErrors, ready, UIS, type EntityRow } from "./helpers.ts";
-
-test.use(NO_SERVICE_WORKER);
+import { axeBudget, axeViolations, corpusRows, dataJson, entityRows, pageErrors, ready, UIS, type EntityRow } from "./helpers.ts";
 
 const UNDATED = "unknown";
 
