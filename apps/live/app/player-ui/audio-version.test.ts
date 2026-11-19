@@ -52,12 +52,12 @@ afterEach(() => {
 });
 
 describe("stored preference", () => {
-  it("defaults to the improved copy and survives a blocked store", () => {
-    expect(readStoredAudioVersion()).toBe("cleaned");
-    localStorage.setItem(AUDIO_VERSION_KEY, "garbage");
-    expect(readStoredAudioVersion()).toBe("cleaned");
-    writeStoredAudioVersion("original");
+  it("defaults to the original and survives a blocked store", () => {
     expect(readStoredAudioVersion()).toBe("original");
+    localStorage.setItem(AUDIO_VERSION_KEY, "garbage");
+    expect(readStoredAudioVersion()).toBe("original");
+    writeStoredAudioVersion("cleaned");
+    expect(readStoredAudioVersion()).toBe("cleaned");
 
     vi.stubGlobal("localStorage", {
       getItem: () => {
@@ -67,8 +67,8 @@ describe("stored preference", () => {
         throw new Error("SecurityError");
       },
     });
-    expect(readStoredAudioVersion()).toBe("cleaned");
-    expect(() => writeStoredAudioVersion("original")).not.toThrow();
+    expect(readStoredAudioVersion()).toBe("original");
+    expect(() => writeStoredAudioVersion("cleaned")).not.toThrow();
   });
 });
 
@@ -115,18 +115,18 @@ describe("mirror into the personal store", () => {
   it("applies a value from prefs when there is no local choice, and an imported one later", async () => {
     const p = personal();
     await p.ready();
-    await p.setPref(PREF_AUDIO_VERSION, "original");
+    await p.setPref(PREF_AUDIO_VERSION, "cleaned");
     const applied: AudioVersion[] = [];
     const stop = attachAudioVersionMirror(p, (v) => applied.push(v));
     await tick();
-    expect(applied).toEqual(["original"]);
-    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("original");
+    expect(applied).toEqual(["cleaned"]);
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("cleaned");
 
     // An import (or another tab) changes the stored pref: the engine follows.
-    await p.setPref(PREF_AUDIO_VERSION, "cleaned");
+    await p.setPref(PREF_AUDIO_VERSION, "original");
     await tick();
-    expect(applied).toEqual(["original", "cleaned"]);
-    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("cleaned");
+    expect(applied).toEqual(["cleaned", "original"]);
+    expect(localStorage.getItem(AUDIO_VERSION_KEY)).toBe("original");
     stop();
   });
 });

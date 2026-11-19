@@ -215,7 +215,7 @@ export interface PlayerEngineOptions {
   lifecycle?: LifecycleTarget | null;
   /** Recording + version → playable URL, or null when unavailable. Default: `recordingAudioUrl`. */
   resolveAudioUrl?: (rec: PlayerRecording, shiur: PlayerShiur, version: AudioVersion) => string | null;
-  /** The listener's stored choice, read synchronously before the first load (default "cleaned"). */
+  /** The listener's stored choice, read synchronously before the first load (default "original"). */
   audioVersion?: AudioVersion;
   /**
    * Whether the improved copy may be tried for this recording without the listener asking (default:

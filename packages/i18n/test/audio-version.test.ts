@@ -67,12 +67,12 @@ describe("audio version vocabulary", () => {
 });
 
 describe("audio version preference", () => {
-  it("one key, two values, cleaned by default", () => {
+  it("one key, two values, original by default", () => {
     expect(AUDIO_VERSION_KEY).toBe("emunas.audioVersion");
-    expect(AUDIO_VERSIONS).toEqual(["cleaned", "original"]);
-    expect(DEFAULT_AUDIO_VERSION).toBe("cleaned");
+    expect(AUDIO_VERSIONS).toEqual(["original", "cleaned"]);
+    expect(DEFAULT_AUDIO_VERSION).toBe("original");
     expect(parseAudioVersion("original")).toBe("original");
     expect(parseAudioVersion("cleaned")).toBe("cleaned");
-    for (const v of [null, undefined, "", "ORIGINAL", 1, {}]) expect(parseAudioVersion(v)).toBe("cleaned");
+    for (const v of [null, undefined, "", "CLEANED", 1, {}]) expect(parseAudioVersion(v)).toBe("original");
   });
 });

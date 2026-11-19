@@ -8,14 +8,14 @@
  * Works without script; the player script (W3.2) docks the first `audio.listen-audio` and
  * drives the others through `data-rec`.
  *
- * Improved audio (docs/sites/cleaned-audio-ux.md §3–§4): `src` is the copy with the sound improved
- * by AI when the recording has one (`defaultUrl`), with `data-cleaned` / `data-original` for the
- * script. Each download link points at the version that plays (the improved copy by default; the
- * script rewrites `href` on a switch or a fallback). When any part has an improved copy, `p.listen-version`
- * follows the tracks: "Sound improved by AI · Switch to the original", where the action is a plain
- * link to the original file without script and a button with it (it switches every part, and the
- * script rewrites the line to state B, whose strings ride on `data-*`). A part without an improved
- * copy says so in its meta line.
+ * Improved audio (docs/sites/cleaned-audio-ux.md §3–§4): `src` is the original recording (the
+ * default), with `data-cleaned` / `data-original` for the script. Each download link points at the
+ * version that plays (the original by default; the script rewrites `href` on a switch or a
+ * fallback). When any part has an improved copy, `p.listen-version` follows the tracks: "A version
+ * with the sound improved by AI is also available · Listen to it" (state B), where the action is a
+ * plain link to the first improved file without script and a button with it (it switches every
+ * part, and the script rewrites the line to state A, whose strings ride on `data-*`). A part
+ * without an improved copy says so in its meta line.
  */
 import { audioVersionLabel, formatDuration, type AudioVersionLabelKey } from "@emunas/i18n";
 import { cleanedUrl, playableUrl, type AudioRecording } from "../lib/audio.ts";
@@ -44,8 +44,8 @@ const tracks = recordings.map((rec, i) => ({
 const Heading = `h${level}` as "h2" | "h3";
 const headingId = `${id}-heading`;
 const v = (key: AudioVersionLabelKey, params?: { part: number }) => audioVersionLabel(key, ed, params);
-// The no-JS link opens the original of the first part that has an improved copy.
-const switchTo = tracks.find((x) => x.url && x.cleaned)?.url;
+// The no-JS link opens the improved copy of the first part that has one.
+const switchTo = tracks.find((x) => x.url && x.cleaned)?.cleaned;
 const versionTextId = `${id}-version-text`;
 ---
 <section class="listen" id={id} aria-labelledby={headingId} data-recordings={count}>
@@ -68,17 +68,17 @@ const versionTextId = `${id}-version-text`;
                 class="listen-audio"
                 controls
                 preload="none"
-                src={cleaned ?? url}
+                src={url}
                 data-rec={rec.id}
                 data-original={url}
                 data-cleaned={cleaned ?? undefined}
                 data-offset={rec.offset}
                 aria-label={count > 1 ? t("listen.part", { part, count }) : t("listen.heading")}
               >
-                <p>{t("listen.noSupport")} <a href={cleaned ?? url}>{t("listen.download")}</a></p>
+                <p>{t("listen.noSupport")} <a href={url}>{t("listen.download")}</a></p>
               </audio>
               <p class="track-meta">
-                <a class="download" href={cleaned ?? url} download>
+                <a class="download" href={url} download>
                   {count > 1 ? t("listen.downloadPart", { part }) : t("listen.download")}
                 </a>
                 {switchTo && !cleaned && <> · <span>{v("partOriginal", { part })}</span></>}
@@ -103,7 +103,7 @@ const versionTextId = `${id}-version-text`;
       data-announce-cleaned={v("announce.cleaned")}
       data-announce-original={v("announce.original")}
     >
-      <span id={versionTextId}>{v("cleaned.text")}</span> · <a class="listen-version-switch" href={switchTo} aria-describedby={versionTextId}>{v("cleaned.action")}</a>
+      <span id={versionTextId}>{v("original.text")}</span> · <a class="listen-version-switch" href={switchTo} aria-describedby={versionTextId}>{v("original.action")}</a>
       <span class="visually-hidden" role="status"></span>
     </p>
   )}

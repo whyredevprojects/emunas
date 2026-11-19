@@ -4,7 +4,7 @@
  *
  * - One global choice per listener, in `localStorage` (`AUDIO_VERSION_KEY`), read synchronously when
  *   the engine is created so the very first `load()` uses the right file. Every access is guarded: a
- *   blocked or missing store means the default ("cleaned").
+ *   blocked or missing store means the default ("original").
  * - Only an explicit click writes it (`chooseAudioVersion`). The personal store mirrors it into its
  *   `prefs` (`PREF_AUDIO_VERSION`, wired in `store/connect.ts`) so export/transfer carries it.
  * - `useVersionAnnouncement()` feeds the dock's polite status region after a switch.

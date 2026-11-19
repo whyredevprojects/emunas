@@ -634,18 +634,18 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
       ...over,
     });
 
-  it("plays the improved copy by default and the original when chosen", () => {
+  it("plays the original by default and the improved copy when chosen", () => {
     const { clock, audio, engine } = setup(withCleaned());
     engine.load(withCleaned(), { start: 10 });
     clock.flush();
-    expect(audio.src).toBe(CA);
-    expect(engine.getState()).toMatchObject({ audioVersion: "cleaned", playingVersion: "cleaned", cleanedAvailable: true });
+    expect(audio.src).toBe(A);
+    expect(engine.getState()).toMatchObject({ audioVersion: "original", playingVersion: "original", cleanedAvailable: true });
 
-    const b = setup(withCleaned(), { audioVersion: "original" });
+    const b = setup(withCleaned(), { audioVersion: "cleaned" });
     b.engine.load(withCleaned(), { start: 10 });
     b.clock.flush();
-    expect(b.audio.src).toBe(A);
-    expect(b.engine.getState()).toMatchObject({ audioVersion: "original", playingVersion: "original", cleanedAvailable: true });
+    expect(b.audio.src).toBe(CA);
+    expect(b.engine.getState()).toMatchObject({ audioVersion: "cleaned", playingVersion: "cleaned", cleanedAvailable: true });
   });
 
   it("has no line (state C) when the recording has no improved copy", () => {
@@ -682,7 +682,7 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
   });
 
   it("switching while paused stays paused", () => {
-    const { clock, audio, engine } = setup(withCleaned());
+    const { clock, audio, engine } = setup(withCleaned(), { audioVersion: "cleaned" });
     engine.load(withCleaned(), { start: 110 });
     clock.flush();
     expect(audio.src).toBe(CB);
@@ -704,7 +704,7 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
   });
 
   it("falls back once to the original when the improved file fails, keeping the preference", () => {
-    const { clock, audio, engine, events } = setup(withCleaned({ id: "yi-test-02" }), { skip: { enabled: false } });
+    const { clock, audio, engine, events } = setup(withCleaned({ id: "yi-test-02" }), { skip: { enabled: false }, audioVersion: "cleaned" });
     const shiur = withCleaned({
       recordings: [
         { id: "a", offset: 0, duration: 100, audioUrl: A, cleanedUrl: "https://media.example.org/fixed/sidon/gone.mp3" },
@@ -730,7 +730,7 @@ describe("audio versions (cleaned-audio-ux §6)", () => {
   });
 
   it("an explicit switch that cannot load (offline) falls back to the original with a brief notice", () => {
-    const { clock, audio, engine } = setup(withCleaned(), { canTryCleaned: () => false, skip: { enabled: false } });
+    const { clock, audio, engine } = setup(withCleaned(), { canTryCleaned: () => false, skip: { enabled: false }, audioVersion: "cleaned" });
     // The improved copy is not reachable: only the originals load.
     const offline = withCleaned({
       recordings: [

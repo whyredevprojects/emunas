@@ -10,8 +10,8 @@
  * `@emunas/corpus/public`.
  *
  * Every playable recording may also carry `cleanedUrl`, its copy with the sound improved by AI
- * (docs/sites/cleaned-audio-ux.md). That copy is what plays by default (`defaultUrl`): the `<audio
- * src>`, the no-JS time links and the download links use it.
+ * (docs/sites/cleaned-audio-ux.md). The original plays by default: the `<audio src>`, the no-JS
+ * time links and the download links use `playableUrl`; the improved copy is one click away.
  */
 import { toLocal } from "@emunas/corpus/public";
 
@@ -42,11 +42,6 @@ export function playableUrl(rec: Pick<AudioRecording, "audioUrl">): string | nul
  */
 export function cleanedUrl(rec: Pick<AudioRecording, "audioUrl" | "cleanedUrl">): string | null {
   return playableUrl(rec) === null ? null : checkUrl(rec.cleanedUrl);
-}
-
-/** What plays by default: the improved copy when there is one, else the original; null if neither. */
-export function defaultUrl(rec: Pick<AudioRecording, "audioUrl" | "cleanedUrl">): string | null {
-  return cleanedUrl(rec) ?? playableUrl(rec);
 }
 
 function checkUrl(raw: string | null): string | null {
@@ -88,12 +83,12 @@ export interface TimeTarget {
   readonly local: number;
   /** Global seconds (what the page shows and what `#t=` page URLs carry). */
   readonly global: number;
-  /** `${defaultUrl}#t=${local}`; null when the recording is not playable. */
+  /** `${playableUrl}#t=${local}`; null when the recording is not playable. */
   readonly href: string | null;
 }
 
 /**
- * Resolves a global time to its recording and the no-JS link (`defaultUrl#t=local`, fractional).
+ * Resolves a global time to its recording and the no-JS link (`playableUrl#t=local`, fractional).
  * Null for a shiur without recordings or a time that is not a finite number.
  */
 export function timeTarget(recordings: readonly AudioRecording[], t: number): TimeTarget | null {
@@ -103,7 +98,7 @@ export function timeTarget(recordings: readonly AudioRecording[], t: number): Ti
   const index = recordings.findIndex((r) => r.id === local.recordingId);
   const rec = recordings[index];
   if (!rec) return null;
-  const url = defaultUrl(rec);
+  const url = playableUrl(rec);
   const seconds = fragmentSeconds(local.t);
   const fragment = formatFragment(seconds);
   return {

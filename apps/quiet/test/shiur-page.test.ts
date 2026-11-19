@@ -9,7 +9,7 @@
  * - the last crumb is the shiur title; the meta line has no catalog number or guide page;
  * - unplayable recordings are shown as unavailable;
  * - no transcript UI or field in the output;
- * - each recording plays the AI-improved copy where there is one; downloads follow the version that plays;
+ * - each recording plays the original by default; downloads follow the version that plays;
  * - page ≤ 120 KB raw / ≤ 30 KB brotli.
  *
  * The corpus is built here from a copy of `packages/corpus/test/fixtures/mini` with the real
@@ -188,10 +188,10 @@ describe.each(EDS)("the 7 sample shiurim, %s edition", (ed) => {
     expect(last?.[3]).toBe(escape(shiur.catalog.titleOriginal));
     // the same lang/dir as the title in the header (its dominant script)
     expect(last?.slice(1, 3)).toEqual(Object.values(runAttrs(shiur.catalog.titleOriginal, shiur.lang, ed)));
-    // Each recording plays and downloads the AI-improved copy where there is one.
+    // Each recording plays and downloads the original by default.
     const playable = shiur.recordings.filter((r) => r.audioUrl);
-    expect([...html.matchAll(/<audio\b[^>]*\ssrc="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.cleanedUrl ?? r.audioUrl));
-    expect([...html.matchAll(/<a class="download" href="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.cleanedUrl ?? r.audioUrl));
+    expect([...html.matchAll(/<audio\b[^>]*\ssrc="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.audioUrl));
+    expect([...html.matchAll(/<a class="download" href="([^"]+)"/g)].map((x) => x[1])).toEqual(playable.map((r) => r.audioUrl));
 
     // Size budget (tech-quiet §3.5): ≤ 120 KB raw, ≤ 30 KB brotli.
     const bytes = Buffer.byteLength(html);
@@ -258,31 +258,31 @@ describe("full page details", () => {
     expect(html).not.toContain(`href="${base.recordings[1]!.cleanedUrl}`);
   });
 
-  it("plays and downloads the AI-improved copy and offers the original under the player", async () => {
+  it("plays and downloads the original and offers the AI-improved copy under the player", async () => {
     const shiur = corpus.shiur("yi-zmanim-tv-bb-04");
     const [one, two] = shiur.recordings;
     const html = await renderPage("en", shiur);
     for (const r of [one!, two!]) {
       expect(r.cleanedUrl).toContain("/fixed/sidon/");
-      expect(html).toContain(`src="${r.cleanedUrl}"`);
+      expect(html).toContain(`src="${r.audioUrl}"`);
       expect(html).toContain(`data-original="${r.audioUrl}"`);
       expect(html).toContain(`data-cleaned="${r.cleanedUrl}"`);
-      expect(html).toMatch(new RegExp(`<a class="download" href="${escapeRe(r.cleanedUrl!)}" download>`));
-      expect(html).not.toMatch(new RegExp(`class="download" href="${escapeRe(r.audioUrl!)}"`));
+      expect(html).toMatch(new RegExp(`<a class="download" href="${escapeRe(r.audioUrl!)}" download>`));
+      expect(html).not.toMatch(new RegExp(`class="download" href="${escapeRe(r.cleanedUrl!)}"`));
     }
-    // The line, its no-JS link to the original file, and an empty polite status region.
+    // The line, its no-JS link to the improved file, and an empty polite status region.
     expect(html).toContain('<p class="listen-version"');
-    expect(html).toMatch(new RegExp(`<a class="listen-version-switch" href="${escapeRe(one!.audioUrl!)}" aria-describedby="listen-version-text">Switch to the original</a>`));
-    expect(html).toContain('<span id="listen-version-text">Sound improved by AI</span>');
-    expect(html).toContain('data-action-original="Listen to it"');
+    expect(html).toMatch(new RegExp(`<a class="listen-version-switch" href="${escapeRe(one!.cleanedUrl!)}" aria-describedby="listen-version-text">Listen to it</a>`));
+    expect(html).toContain('<span id="listen-version-text">A version with the sound improved by AI is also available</span>');
+    expect(html).toContain('data-action-cleaned="Switch to the original"');
     expect(html).toMatch(/<span class="visually-hidden" role="status"><\/span>/);
     expect(html).not.toContain("original recording only");
     const yi = await renderPage("yi", shiur);
-    expect(yi).toContain("הערט די מקורית");
+    expect(yi).toContain("הערט זי");
     expect(yi).toContain("קלאנג אויסגעבעסערט דורך AI");
     const he = await renderPage("he", shiur);
-    expect(he).toContain("מעבר להקלטה המקורית");
-    expect(he).toContain("הקול שופר על ידי AI");
+    expect(he).toContain("שמעו אותה");
+    expect(he).toContain("הקול בה שופר על ידי AI");
   });
 
   it("marks a part without an improved copy and drops the line when no part has one", async () => {
