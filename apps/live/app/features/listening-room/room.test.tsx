@@ -401,6 +401,16 @@ describe("the improved-audio line (cleaned-audio-ux)", () => {
     expect(container.querySelector("[data-version-status]")!.textContent).toBe("Now playing the version improved by AI.");
   });
 
+  it("the header's download links point at the file that plays and follow a switch", async () => {
+    const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
+    const links = () => [...container.querySelectorAll<HTMLAnchorElement>("a[data-room-download]")];
+    expect(links().map((a) => a.textContent)).toEqual(["Download part 1", "Download part 2"]);
+    expect(links().map((a) => a.getAttribute("href"))).toEqual(tvbb.recordings.map((r) => r.cleanedUrl));
+    fireEvent.click(within(roomLine(container)!).getByRole("button", { name: "Switch to the original" }));
+    await settle();
+    expect(links().map((a) => a.getAttribute("href"))).toEqual(tvbb.recordings.map((r) => r.audioUrl));
+  });
+
   it("the dock's notice row gives a skip notice priority over the version line; the room keeps the line", async () => {
     const { container } = await openAt("/en/s/yi-zmanim-tv-bb-04?t=300");
     const ch = tvbb.notes!.chapters;
