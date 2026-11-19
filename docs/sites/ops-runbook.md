@@ -489,6 +489,13 @@ debugging from scratch.
   If a language or a longer label comes back over, measure the row (brand + gap + `.headerTools`)
   against the viewport minus the header padding; don't drop the test or the tap minimum.
 
+**Live e2e: the real-data series spec times out** (`today-series.spec` "every series page lists its parts")
+- *Why it fails:* it loads every series page (and the perek view of perakim series) in one test. On real
+  data that is 18 page loads; in WebKit on the 4-vCPU runner they overran the 30 s default (first seen
+  2026-11-19, PR #15).
+- *Fix:* the test calls `navBudget(pages)` (`NAV_PAGE_MS` = 5 s per page). If it times out again with
+  more series, raise `NAV_PAGE_MS`. Don't drop series from the check.
+
 **Live first-load gate: each Today file ≤ 30 KiB** (`first-load.spec`)
 - *What it checks:* Today loads one file, the one for its reading language: `today.<lang>.json`, one
   per UI language (`today.en.json`, `today.yi.json`, `today.he.json`). Each must be ≤ 30 KiB brotli.

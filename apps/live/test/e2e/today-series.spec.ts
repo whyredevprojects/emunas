@@ -11,7 +11,7 @@
  * `@data`: expectations come from the served `/data/*`, so this also runs on a real-data build.
  */
 import { expect, test, type Page } from "@playwright/test";
-import { axeViolations, corpusRows, dataJson, NO_SERVICE_WORKER, pageErrors, settled, UIS } from "./helpers.ts";
+import { axeViolations, corpusRows, dataJson, navBudget, NO_SERVICE_WORKER, pageErrors, settled, UIS } from "./helpers.ts";
 
 test.use(NO_SERVICE_WORKER);
 
@@ -110,6 +110,8 @@ test.describe("@data series", () => {
 
   test("every series page lists its parts in order; perakim group Tanya; no other-language link", async ({ page, request }) => {
     const facets = await dataJson<{ series: Record<string, unknown> }>(request, "facets.json");
+    // Up to two page loads per series (order view, and the perek view for perakim).
+    navBudget(Object.keys(facets.series).length * 2);
     let checked = 0;
     for (const id of Object.keys(facets.series)) {
       const res = await request.get(`/data/series/${encodeURIComponent(id)}.json`);

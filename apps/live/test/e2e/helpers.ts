@@ -47,6 +47,18 @@ export function axeBudget(pages: number): void {
   test.setTimeout(Math.max(30_000, pages * AXE_PAGE_MS));
 }
 
+/**
+ * Time allowed per page in a test that only loads and settles several pages (no axe pass). The
+ * same contention applies: on real data, the series spec visits every series page (18 loads),
+ * which overran the 30 s default in WebKit on the CI runner.
+ */
+export const NAV_PAGE_MS = 5_000;
+
+/** Gives the running test `NAV_PAGE_MS` per page it visits (never less than the 30 s default). */
+export function navBudget(pages: number): void {
+  test.setTimeout(Math.max(30_000, pages * NAV_PAGE_MS));
+}
+
 /** axe (WCAG 2.0–2.2 A/AA + best practices): one line per violation, `[]` when clean. */
 export async function axeViolations(page: Page): Promise<string[]> {
   const result = await new AxeBuilder({ page })
