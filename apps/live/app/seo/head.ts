@@ -1,6 +1,6 @@
 /**
  * The SEO `<head>` tags of a Live page (integration-plan §2.3, W4.5): `robots` noindex on app-only
- * pages, `<link rel="canonical">` to the Quiet equivalent (never a `listen.*` URL), `hreflang`
+ * pages, `<link rel="canonical">` to the Quiet equivalent (never a `analyze.*` URL), `hreflang`
  * alternates for every UI language (`UI_LANGS`) and `x-default`, description and OpenGraph/Twitter tags for share previews.
  *
  * Pure and browser-safe. At build time the root loader computes `SeoPage` (with the `.corpus`

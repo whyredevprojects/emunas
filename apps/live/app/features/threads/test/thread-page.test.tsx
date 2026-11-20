@@ -343,7 +343,7 @@ describe("addresses", () => {
   });
 
   it("the route is noindex with no canonical, with or without build-time page data", async () => {
-    const hosts = { quiet: "https://example.org", live: "https://listen.example.org" };
+    const hosts = { quiet: "https://example.org", live: "https://analyze.example.org" };
     for (const path of [`/en/th/${TIMELINE_ID}`, `/yi/th/${TWO_MEMBER_ID}`]) {
       const info = classifyLivePath(path);
       expect(info.kind).toBe("thread");

@@ -1,5 +1,5 @@
 /**
- * Live (`listen.<domain>`) paths: parse into and format from a site-neutral Route.
+ * Live (`analyze.<domain>`) paths: parse into and format from a site-neutral Route.
  * Live paths have no trailing slash except the UI home `/{ui}/`.
  * Only `t` and `m` (shiur) and `q` (search) survive parsing; Live-only state such as
  * `audio`, `read`, `lens` and Explore facets is dropped (integration-plan §2.2).

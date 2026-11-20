@@ -135,11 +135,11 @@ describe("outcomes", () => {
 
 describe("Turnstile configuration", () => {
   it("uses the configured key, the test key locally, and none elsewhere", () => {
-    expect(resolveSiteKey({ VITE_TURNSTILE_SITE_KEY: "0x4AAA" }, "listen.example.org")).toBe("0x4AAA");
-    expect(resolveSiteKey({ DEV: true }, "listen.example.org")).toBe(TEST_SITE_KEY_PASS);
+    expect(resolveSiteKey({ VITE_TURNSTILE_SITE_KEY: "0x4AAA" }, "analyze.example.org")).toBe("0x4AAA");
+    expect(resolveSiteKey({ DEV: true }, "analyze.example.org")).toBe(TEST_SITE_KEY_PASS);
     expect(resolveSiteKey({}, "127.0.0.1")).toBe(TEST_SITE_KEY_PASS);
     expect(resolveSiteKey({}, "localhost")).toBe(TEST_SITE_KEY_PASS);
-    expect(resolveSiteKey({ VITE_TURNSTILE_SITE_KEY: "  " }, "listen.example.org")).toBeNull();
+    expect(resolveSiteKey({ VITE_TURNSTILE_SITE_KEY: "  " }, "analyze.example.org")).toBeNull();
     expect(resolveSiteKey({}, null)).toBeNull();
   });
 

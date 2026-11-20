@@ -4,7 +4,7 @@
  * C18). Read from the build environment:
  *
  * - hosts, as `@emunas/links` `hostsFromEnv` reads them: `EMUNAS_DOMAIN` (the apex: home on it,
- *   Quiet on `library.`, Live on `listen.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`)
+ *   Quiet on `library.`, Live on `analyze.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`)
  *   for the workers.dev hosts, or explicit `EMUNAS_HOME_ORIGIN` + `EMUNAS_QUIET_ORIGIN` +
  *   `EMUNAS_LIVE_ORIGIN`;
  * - `EMUNAS_FEEDBACK_EMAIL`: the address error reports go to (plain `mailto:`, C18).

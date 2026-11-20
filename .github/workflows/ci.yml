@@ -355,7 +355,7 @@ jobs:
           plant="$(mktemp -d)"
           cp -r apps/quiet/dist "$plant/quiet"
           page="$plant/quiet/en/index.html"
-          sed -i 's|</main>|<a href="https://listen.emunas.example/en/s/planted-no-such-shiur">x</a></main>|' "$page"
+          sed -i 's|</main>|<a href="https://analyze.emunas.example/en/s/planted-no-such-shiur">x</a></main>|' "$page"
           grep -q planted-no-such-shiur "$page"
           if npx tsx tests/cross-site/check-links.ts --quiet "$plant/quiet"; then
             echo "::error::the cross-site link check passed a planted broken link"

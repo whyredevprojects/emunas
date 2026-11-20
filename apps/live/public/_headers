@@ -21,6 +21,6 @@
 /data/*
   Cache-Control: public, max-age=300, stale-while-revalidate=86400
 
-# Only listen.<domain> is a real host; workers.dev and preview hosts are noindex (§2.1).
+# Only analyze.<domain> is a real host; workers.dev and preview hosts are noindex (§2.1).
 https://:worker.:subdomain.workers.dev/*
   X-Robots-Tag: noindex

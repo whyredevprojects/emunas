@@ -2,7 +2,7 @@
  * Host config (integration-plan §2.1, §3.4).
  *
  * Production, for a domain `<d>`: the landing site ("home") on the apex `https://<d>`, Quiet
- * (the library) on `https://library.<d>`, Live on `https://listen.<d>`. Media (R2) is on
+ * (the library) on `https://library.<d>`, Live on `https://analyze.<d>`. Media (R2) is on
  * `media.<d>` and is configured separately (`EMUNAS_MEDIA_ORIGIN`). Changing the domain is a
  * config change only: every host is derived from `EMUNAS_DOMAIN`.
  * Before the domain is set, and on staging: the workers.dev hosts
@@ -31,7 +31,7 @@ export interface HostEnv {
   readonly EMUNAS_HOME_ORIGIN?: string | undefined;
   readonly EMUNAS_QUIET_ORIGIN?: string | undefined;
   readonly EMUNAS_LIVE_ORIGIN?: string | undefined;
-  /** Registrable production domain, e.g. `example.org` (home = apex, Quiet = `library.`, Live = `listen.`). */
+  /** Registrable production domain, e.g. `example.org` (home = apex, Quiet = `library.`, Live = `analyze.`). */
   readonly EMUNAS_DOMAIN?: string | undefined;
   /** Cloudflare account workers.dev subdomain (the `<account>` in `<worker>.<account>.workers.dev`). */
   readonly EMUNAS_WORKERS_SUBDOMAIN?: string | undefined;
@@ -40,7 +40,7 @@ export interface HostEnv {
 }
 
 export const QUIET_SUBDOMAIN = "library";
-export const LIVE_SUBDOMAIN = "listen";
+export const LIVE_SUBDOMAIN = "analyze";
 export const MEDIA_SUBDOMAIN = "media";
 export const HOME_WORKER = "emunas-home";
 export const QUIET_WORKER = "emunas-quiet";
@@ -134,7 +134,7 @@ export function siteHostsFromEnv(env: HostEnv): SiteHosts {
 /**
  * Normalizes the origins and rejects configurations that would let a canonical URL point
  * anywhere but Quiet: every origin given must be distinct, and Quiet must not be a
- * `listen.*` host. `home` is checked when present (cross-site links need only Quiet and Live).
+ * `analyze.*` host. `home` is checked when present (cross-site links need only Quiet and Live).
  */
 export function validateHosts<H extends SiteHosts & { readonly home?: string }>(hosts: H): H {
   const quiet = normalizeOrigin(hosts.quiet);

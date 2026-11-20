@@ -95,15 +95,15 @@ describe("site env and SEO", () => {
   it("derives home, library and listen from EMUNAS_DOMAIN", () => {
     const e = siteEnv({ EMUNAS_DOMAIN: "example.org" });
     expect(e.placeholder).toBe(false);
-    expect(e.hosts).toEqual({ home: "https://example.org", quiet: "https://library.example.org", live: "https://listen.example.org" });
+    expect(e.hosts).toEqual({ home: "https://example.org", quiet: "https://library.example.org", live: "https://analyze.example.org" });
     const l = siteLinks(e.hosts);
     expect(l.library).toBe("https://library.example.org/en/");
-    expect(l.listen).toBe("https://listen.example.org/en/");
+    expect(l.listen).toBe("https://analyze.example.org/en/");
     expect(l.libraryEditions).toEqual([
       { lang: "yi", dir: "rtl", name: "אידיש", href: "https://library.example.org/yi/" },
       { lang: "he", dir: "rtl", name: "עברית", href: "https://library.example.org/he/" },
     ]);
-    expect(l.listenEditions.map((x) => x.href)).toEqual(["https://listen.example.org/yi/", "https://listen.example.org/he/"]);
+    expect(l.listenEditions.map((x) => x.href)).toEqual(["https://analyze.example.org/yi/", "https://analyze.example.org/he/"]);
   });
   it("uses noindex placeholders outside a deploy build and fails in one", () => {
     expect(siteEnv({}).placeholder).toBe(true);

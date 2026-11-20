@@ -202,14 +202,14 @@ describe("canonicalFor and noindexFor on corpus entries", () => {
     "/en/th/lechem-matzah-45",
   ];
 
-  it("points at the Quiet page when Quiet has one, else null and noindex; never listen.*", () => {
+  it("points at the Quiet page when Quiet has one, else null and noindex; never analyze.*", () => {
     for (const p of ENTRIES) {
       const c = links.canonicalFor(HOSTS.live + p);
       if (c === null) {
         expect(links.noindexFor(HOSTS.live + p), p).toBe(true);
       } else {
         expect(c.startsWith(`${HOSTS.quiet}/`), p).toBe(true);
-        expect(c, p).not.toMatch(/listen\.|#/);
+        expect(c, p).not.toMatch(/analyze\.|#/);
         expect(links.noindexFor(HOSTS.live + p), p).toBe(false);
       }
     }

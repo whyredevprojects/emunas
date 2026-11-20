@@ -1,6 +1,6 @@
 import { createLinks, type CorpusKind, type LinkData, type OccasionKind } from "../src/index.ts";
 
-export const HOSTS = { quiet: "https://emunas.example", live: "https://listen.emunas.example" } as const;
+export const HOSTS = { quiet: "https://emunas.example", live: "https://analyze.emunas.example" } as const;
 
 export const SECTION_STARTS: Record<string, number[]> = {
   "yi-parshas-hashavua-brshys-01": [0, 312, 845, 1290],

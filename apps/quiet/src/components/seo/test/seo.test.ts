@@ -45,7 +45,7 @@ describe("site env", () => {
     expect(env.hosts).toEqual(PLACEHOLDER_HOSTS);
     expect(env.feedbackEmail).toBe(PLACEHOLDER_FEEDBACK_EMAIL);
     expect(env.placeholder).toEqual({ hosts: true, feedbackEmail: true });
-    expect(env.links.live.shiur("en", "x")).toBe("https://listen.example.invalid/en/s/x");
+    expect(env.links.live.shiur("en", "x")).toBe("https://analyze.example.invalid/en/s/x");
     expect(env.hosts.quiet).toBe("https://library.example.invalid");
   });
 
@@ -54,7 +54,7 @@ describe("site env", () => {
     expect(prod.hosts).toEqual({
       home: "https://emunas.example",
       quiet: "https://library.emunas.example",
-      live: "https://listen.emunas.example",
+      live: "https://analyze.emunas.example",
     });
     expect(prod.feedbackEmail).toBe("errors@emunas.example");
     expect(prod.placeholder).toEqual({ hosts: false, feedbackEmail: false });
@@ -76,7 +76,7 @@ describe("site env", () => {
 
   it("fails on malformed or half-set values, deploy or not", () => {
     expect(() => siteEnv({ EMUNAS_LIVE_ORIGIN: "http://localhost:5173" })).toThrow(/no hosts configured/);
-    expect(() => siteEnv({ EMUNAS_DOMAIN: "listen.emunas.example" })).toThrow();
+    expect(() => siteEnv({ EMUNAS_DOMAIN: "analyze.emunas.example" })).toThrow();
     expect(() => siteEnv({ EMUNAS_DOMAIN: "library.emunas.example" })).toThrow();
     expect(() => siteEnv({ EMUNAS_DOMAIN: "not a domain" })).toThrow();
     expect(() => siteEnv({ EMUNAS_FEEDBACK_EMAIL: "nobody" })).toThrow(/EMUNAS_FEEDBACK_EMAIL/);
@@ -239,9 +239,9 @@ describe("About", () => {
   });
 
   it("resolves the About texts' live: and guide: links into new-tab links and leaves site links alone", () => {
-    const t = { ed: "yi", live: "https://listen.example.invalid/yi/", guide: "https://media.example.invalid/g.pdf", newTab: "(new tab)" } as const;
+    const t = { ed: "yi", live: "https://analyze.example.invalid/yi/", guide: "https://media.example.invalid/g.pdf", newTab: "(new tab)" } as const;
     const out = resolveAboutLinks('<p><a href="live:">app</a>, <a href="guide:">guide</a>, <a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a></p>', t);
-    expect(out).toContain('<a href="https://listen.example.invalid/yi/" hreflang="yi" target="_blank" rel="noopener">app<svg class="new-tab-icon"');
+    expect(out).toContain('<a href="https://analyze.example.invalid/yi/" hreflang="yi" target="_blank" rel="noopener">app<svg class="new-tab-icon"');
     expect(out).toContain('<a href="https://media.example.invalid/g.pdf" target="_blank" rel="noopener">guide<svg');
     expect(out).toContain('<span class="visually-hidden"> (new tab)</span></a>');
     expect(out).toContain('<a href="/yi/calendar/">lu\'ach</a>, <a href="#notes">n</a>');

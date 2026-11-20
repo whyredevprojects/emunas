@@ -13,7 +13,7 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 - `apps/quiet` is branded **Library**. `apps/live` is branded **Analyze**, with the Hebrew name **עיון**. Analyze is the advanced app with more data.
 - The rename is branding only: UI copy, titles and meta. Folder names, package names, internal code names (`formatQuiet` and so on), docs file names, CI and Worker names stay `quiet`/`live`.
-- Analyze keeps the `listen.` subdomain for now. It may still be renamed.
+- Domains: home is on the apex `emunas.com`, Library on `library.emunas.com`, Analyze on `analyze.emunas.com`.
 
 ## Transcripts are never published
 

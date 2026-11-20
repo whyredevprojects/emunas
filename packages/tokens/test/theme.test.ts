@@ -31,15 +31,15 @@ function fakeDoc(cookie = ""): ThemeDocument & { writes: string[] } {
 
 describe("themeCookie", () => {
   it("shares the cookie across the apex and the listen subdomain", () => {
-    for (const host of ["emunas.torahlearningtools.com", "listen.emunas.torahlearningtools.com"]) {
+    for (const host of ["emunas.com", "analyze.emunas.com"]) {
       expect(themeCookie("dark", https(host))).toBe(
-        "emunas_theme=dark; Path=/; Max-Age=31536000; SameSite=Lax; Domain=emunas.torahlearningtools.com; Secure",
+        "emunas_theme=dark; Path=/; Max-Age=31536000; SameSite=Lax; Domain=emunas.com; Secure",
       );
     }
   });
 
   it("is host-only on localhost, IPs, workers.dev and look-alike hosts", () => {
-    for (const host of ["localhost", "127.0.0.1", "x.y.workers.dev", "notemunas.torahlearningtools.com"]) {
+    for (const host of ["localhost", "127.0.0.1", "x.y.workers.dev", "notemunas.com"]) {
       expect(themeCookie("light", https(host))).not.toContain("Domain=");
     }
   });
@@ -76,7 +76,7 @@ describe("applyTheme / saveTheme", () => {
 
   it("writes light rather than deleting the cookie", () => {
     const doc = fakeDoc("emunas_theme=dark");
-    saveTheme(doc, https("emunas.torahlearningtools.com"), "light");
+    saveTheme(doc, https("emunas.com"), "light");
     expect(doc.writes[0]).toMatch(/^emunas_theme=light; /);
     expect(readThemeCookie(doc.cookie)).toBe("light");
   });

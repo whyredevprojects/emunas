@@ -32,7 +32,7 @@ function env() {
   return { ASSETS, API } satisfies Env;
 }
 
-const HOST = "https://listen.example.org";
+const HOST = "https://analyze.example.org";
 const DEV = "https://emunas-live.acct.workers.dev";
 
 describe("uiFromCookie", () => {
@@ -87,7 +87,7 @@ describe("isWorkersDevHost", () => {
   it("matches workers.dev hosts only", () => {
     expect(isWorkersDevHost("emunas-live.acct.workers.dev")).toBe(true);
     expect(isWorkersDevHost("pr-12-emunas-live-staging.acct.workers.dev")).toBe(true);
-    expect(isWorkersDevHost("listen.example.org")).toBe(false);
+    expect(isWorkersDevHost("analyze.example.org")).toBe(false);
     expect(isWorkersDevHost("workers.dev.example.org")).toBe(false);
   });
 });

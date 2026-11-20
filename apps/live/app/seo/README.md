@@ -2,7 +2,7 @@
 
 Integration-plan §2.3: Live pages are never the indexable copy of a shiur. Every page carries
 `<link rel="canonical">` to its Quiet equivalent (`@emunas/links` `canonicalFor`, never a
-`listen.*` URL); content pages (shiur, series, occasion, work, person, concept) add `hreflang`
+`analyze.*` URL); content pages (shiur, series, occasion, work, person, concept) add `hreflang`
 alternates and OpenGraph/Twitter tags; app-only pages (Today, Explore, search, shelf, playlists,
 listings, unknown paths and the SPA fallback) are `noindex`. `robots.txt` allows all and disallows
 `/api/` and `/admin/`. No sitemap.

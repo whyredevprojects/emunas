@@ -2,7 +2,7 @@
  * Hosts for the home site's absolute URLs (canonical, Open Graph, sitemap, robots.txt) and its
  * links into Library (Quiet) and Listen (Live) (`siteLinks` in lib/langs.ts). Read from the
  * build environment the way `@emunas/links` `hostsFromEnv` reads it: `EMUNAS_DOMAIN` (home on the apex, Library on
- * `library.`, Listen on `listen.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`), or
+ * `library.`, Listen on `analyze.`), or `EMUNAS_WORKERS_SUBDOMAIN` (+ `EMUNAS_STAGE=staging`), or
  * explicit `EMUNAS_HOME_ORIGIN` + `EMUNAS_QUIET_ORIGIN` + `EMUNAS_LIVE_ORIGIN`.
  *
  * Outside a deploy build, unset hosts fall back to `example.invalid` placeholders and every page
