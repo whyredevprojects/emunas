@@ -52,6 +52,9 @@ export function firstStrongDir(text: string): Dir | null {
   return null;
 }
 
+/** Base direction of each spoken language, for mixed-script strings that belong to a shiur. */
+const AUDIO_DIR: Readonly<Record<AudioLang, Dir>> = { en: "ltr", yi: "rtl" };
+
 /** `lang`/`dir` of a data string. `lang` is one of the interface languages (`en`, `yi`, `he`, …). */
 export interface LangAttrs {
   readonly lang: UiLang;
@@ -84,8 +87,12 @@ export function hebrewScriptLang(shiurLang: AudioLang | null, edition: UiLang): 
  * belongs to (`null` when it belongs to no one shiur):
  * - Latin-only text → `en`, `ltr`.
  * - Hebrew-script text → `hebrewScriptLang(shiurLang, edition)`, `rtl`.
- * - Mixed text → direction of the first strong character; the language follows that direction by
- *   the same rule. Render it isolated (`<bdi>` or `dir` on its own element) so the embedded run does
+ * - Mixed text → the direction of the shiur's language: an English shiur's title is an English
+ *   phrase with Hebrew-script terms ("יעקב's Tremendous Accomplishment …" is LTR even though it starts
+ *   with a Hebrew word), a Yiddish shiur's title is a Yiddish phrase with English words ("המקוה …
+ *   embassy …", "DIGITAL ELECTRONICS הנסיון …" are RTL). With no shiur (`null`), the direction of
+ *   the first strong character (the `dir="auto"` rule). The language follows the direction by the
+ *   rules above. Render it isolated (`<bdi>` or `dir` on its own element) so the embedded run does
  *   not reorder its neighbours.
  *
  * Generated text whose language is known (`writeup.en`, `oneLiner.yi`, a translation overlay) does
@@ -96,7 +103,7 @@ export function langFor(text: string, shiurLang: AudioLang | null, edition: UiLa
   const hebrewLang = hebrewScriptLang(shiurLang, edition);
   if (script === "latin") return { lang: "en", dir: "ltr", script };
   if (script === "he") return { lang: hebrewLang, dir: "rtl", script };
-  const dir = firstStrongDir(text) ?? "ltr";
+  const dir = shiurLang === null ? (firstStrongDir(text) ?? "ltr") : AUDIO_DIR[shiurLang];
   return { lang: dir === "rtl" ? hebrewLang : "en", dir, script };
 }
 
