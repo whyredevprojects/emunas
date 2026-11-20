@@ -49,7 +49,7 @@ describe("canonicalFor", () => {
         continue;
       }
       expect(c.startsWith(`${HOSTS.quiet}/`), url).toBe(true);
-      expect(c, url).not.toMatch(/^https?:\/\/listen\./);
+      expect(c, url).not.toMatch(/^https?:\/\/analyze\./);
       expect(c, url).not.toContain("#");
     }
   });

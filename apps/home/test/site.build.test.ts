@@ -124,7 +124,7 @@ describe("the built home site", () => {
   it("puts the Library first and emphasized, Analyze second", () => {
     const html = read("index.html");
     expect(html).toMatch(/<a class="pill pill--ink" href="https:\/\/library\.[^"]+">Library /);
-    expect(html).toMatch(/<a class="pill" href="https:\/\/listen\.[^"]+">Analyze /);
+    expect(html).toMatch(/<a class="pill" href="https:\/\/analyze\.[^"]+">Analyze /);
     expect(html).toMatch(/class="door door--library door--primary"[\s\S]*class="door door--listen"/);
   });
 
