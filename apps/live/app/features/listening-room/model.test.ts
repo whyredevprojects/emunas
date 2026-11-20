@@ -121,7 +121,7 @@ describe("In the Library link (Quiet)", () => {
   });
 
   it("derives Quiet from the Live host", () => {
-    expect(quietOrigin({}, { protocol: "https:", host: "listen.example.org" })).toBe("https://library.example.org");
+    expect(quietOrigin({}, { protocol: "https:", host: "analyze.example.org" })).toBe("https://library.example.org");
     expect(quietOrigin({}, { protocol: "https:", host: "emunas-live.acct.workers.dev" })).toBe(
       "https://emunas-quiet.acct.workers.dev",
     );

@@ -29,13 +29,13 @@ export interface Env {
   AI: EmbeddingModel;
   /** Rate limiting binding, 30 requests / 10 s per key. */
   RATE: RateLimiter;
-  /** Secret: Turnstile secret key for the listen.<domain> widget. */
+  /** Secret: Turnstile secret key for the analyze.<domain> widget. */
   TURNSTILE_SECRET: string;
   /** Secret: salt for the user-agent hash stored with feedback. */
   FEEDBACK_HASH_SALT: string;
   /** Cloudflare Access team origin, e.g. https://<team>.cloudflareaccess.com */
   ACCESS_TEAM_DOMAIN?: string;
-  /** Cloudflare Access application audience tag for listen.<domain>/admin/*. */
+  /** Cloudflare Access application audience tag for analyze.<domain>/admin/*. */
   ACCESS_AUD?: string;
   /** Workers AI embedding model; must match the model the vectors were built with. */
   EMBED_MODEL?: string;

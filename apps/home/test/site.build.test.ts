@@ -105,14 +105,14 @@ describe("the built home site", () => {
   it("links Library and Analyze on their own subdomains", () => {
     const html = read("index.html");
     expect(html).toContain(`href="https://library.${DOMAIN}/en/"`);
-    expect(html).toContain(`href="https://listen.${DOMAIN}/en/"`);
+    expect(html).toContain(`href="https://analyze.${DOMAIN}/en/"`);
   });
 
   it("links every other edition of Library and Analyze, and shows each aside in every language", () => {
     const html = read("index.html");
     for (const lang of ASIDE_LANGS) {
       expect(html).toContain(`href="https://library.${DOMAIN}/${lang}/"`);
-      expect(html).toContain(`href="https://listen.${DOMAIN}/${lang}/"`);
+      expect(html).toContain(`href="https://analyze.${DOMAIN}/${lang}/"`);
     }
     for (const a of [ASIDES.mashgiach, ASIDES.startHere, ASIDES.libraryName, ASIDES.analyzeName, ASIDES.archive]) {
       for (const x of asideTexts(a)) expect(html).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);

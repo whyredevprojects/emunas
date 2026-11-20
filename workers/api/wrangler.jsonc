@@ -32,7 +32,7 @@
   "ratelimits": [{ "name": "RATE", "namespace_id": "1001", "simple": { "limit": 30, "period": 10 } }],
   "vars": {
     "EMBED_MODEL": "@cf/baai/bge-m3",
-    // Cloudflare Access application on listen.<domain>/admin/* (set once Access is configured).
+    // Cloudflare Access application on analyze.<domain>/admin/* (set once Access is configured).
     "ACCESS_TEAM_DOMAIN": "",
     "ACCESS_AUD": ""
   },

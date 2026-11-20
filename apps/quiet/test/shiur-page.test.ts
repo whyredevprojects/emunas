@@ -305,10 +305,10 @@ describe("full page details", () => {
     expect(bare).not.toContain("open-live");
     expect(bare).not.toContain("mailto:");
     const html = await renderPage("en", shiur, {
-      liveHref: "https://listen.example.org/en/s/en-parsha-en-nch-01",
+      liveHref: "https://analyze.example.org/en/s/en-parsha-en-nch-01",
       reportHref: "mailto:e@example.org?subject=x",
     });
-    expect(html).toContain(`<a href="https://listen.example.org/en/s/en-parsha-en-nch-01" hreflang="en">${shiurEn["live.open"]}</a>`);
+    expect(html).toContain(`<a href="https://analyze.example.org/en/s/en-parsha-en-nch-01" hreflang="en">${shiurEn["live.open"]}</a>`);
     expect(html).toContain('href="mailto:e@example.org?subject=x"');
   });
 

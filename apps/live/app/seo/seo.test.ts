@@ -8,7 +8,7 @@ import { ROBOTS_TXT } from "./robots.ts";
 import { corpusFixture, layerCorpusFixture, SHIUR_CATALOG, SHIUR_FULL } from "./test-fixtures.ts";
 import { seoHosts } from "./env.ts";
 
-const HOSTS: SiteHosts = { quiet: "https://library.example.org", live: "https://listen.example.org" };
+const HOSTS: SiteHosts = { quiet: "https://library.example.org", live: "https://analyze.example.org" };
 const links = createLinks({ hosts: HOSTS, data: linkDataFor(corpusFixture) });
 const text = createPageText(corpusFixture);
 
@@ -183,7 +183,7 @@ describe("page text", () => {
 describe("head tags", () => {
   const allPaths = prerenderPaths(corpusFixture).paths;
 
-  it("every prerendered page: canonical on the Quiet origin, never listen.*, OG title and description", () => {
+  it("every prerendered page: canonical on the Quiet origin, never analyze.*, OG title and description", () => {
     for (const path of allPaths) {
       const tags = headTags(path, seoFor(path));
       const c = canonicals(tags);
@@ -223,17 +223,17 @@ describe("head tags", () => {
     const tags = headTags(`/en/s/${SHIUR_FULL}`, seoFor(`/en/s/${SHIUR_FULL}`));
     const alts = tags.filter((t) => t.tag === "link" && t.rel === "alternate");
     expect(alts).toEqual([
-      { tag: "link", rel: "alternate", hrefLang: "en", href: `https://listen.example.org/en/s/${SHIUR_FULL}` },
-      { tag: "link", rel: "alternate", hrefLang: "yi", href: `https://listen.example.org/yi/s/${SHIUR_FULL}` },
-      { tag: "link", rel: "alternate", hrefLang: "he", href: `https://listen.example.org/he/s/${SHIUR_FULL}` },
-      { tag: "link", rel: "alternate", hrefLang: "x-default", href: "https://listen.example.org/" },
+      { tag: "link", rel: "alternate", hrefLang: "en", href: `https://analyze.example.org/en/s/${SHIUR_FULL}` },
+      { tag: "link", rel: "alternate", hrefLang: "yi", href: `https://analyze.example.org/yi/s/${SHIUR_FULL}` },
+      { tag: "link", rel: "alternate", hrefLang: "he", href: `https://analyze.example.org/he/s/${SHIUR_FULL}` },
+      { tag: "link", rel: "alternate", hrefLang: "x-default", href: "https://analyze.example.org/" },
     ]);
     expect(headTags("/en/search", seoFor("/en/search")).some((t) => t.tag === "link" && t.rel === "alternate")).toBe(false);
   });
 
   it("OG url is the Live page; locale follows the UI", () => {
     const tags = headTags(`/yi/s/${SHIUR_FULL}`, seoFor(`/yi/s/${SHIUR_FULL}`));
-    expect(meta(tags, "og:url")?.content).toBe(`https://listen.example.org/yi/s/${SHIUR_FULL}`);
+    expect(meta(tags, "og:url")?.content).toBe(`https://analyze.example.org/yi/s/${SHIUR_FULL}`);
     expect(meta(tags, "og:locale")?.content).toBe("yi");
     expect(meta(tags, "og:type")?.content).toBe("article");
     const he = headTags(`/he/s/${SHIUR_FULL}`, seoFor(`/he/s/${SHIUR_FULL}`));
@@ -286,7 +286,7 @@ describe("env and robots.txt", () => {
       live: "https://emunas-live.acct.workers.dev",
     });
     expect(seoHosts({ EMUNAS_QUIET_ORIGIN: "http://localhost:4321" })).toBeNull();
-    expect(() => seoHosts({ EMUNAS_DOMAIN: "listen.example.org" })).toThrow();
+    expect(() => seoHosts({ EMUNAS_DOMAIN: "analyze.example.org" })).toThrow();
   });
 
   it("robots.txt allows all and disallows /api/ and /admin/, no sitemap", () => {
@@ -352,10 +352,10 @@ describe("corpus layer (C1.7)", () => {
   });
 
   it("links: a merged concept goes to its topic; pages below the line have no Live link", () => {
-    expect(lLinks.live.concept("en", "hester-panim")).toBe("https://listen.example.org/en/t/hester-panim");
+    expect(lLinks.live.concept("en", "hester-panim")).toBe("https://analyze.example.org/en/t/hester-panim");
     expect(lLinks.hrefFor("live", { kind: "entry", ed: "en", entry: "story", id: "told-once" })).toBeNull();
     expect(lLinks.hrefFor("live", { kind: "entry", ed: "en", entry: "thread", id: "akeidah-last-generation" })).toBe(
-      "https://listen.example.org/en/th/akeidah-last-generation",
+      "https://analyze.example.org/en/th/akeidah-last-generation",
     );
   });
 });

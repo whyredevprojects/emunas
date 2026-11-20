@@ -1,14 +1,14 @@
 /**
  * Colour theme shared by both sites. Light (paper) is the default whatever the OS prefers; a toggle
  * opts into dark. The choice lives in one cookie that both subdomains read
- * (emunas.torahlearningtools.com and listen.emunas.torahlearningtools.com), and an inline <head>
+ * (emunas.com and analyze.emunas.com), and an inline <head>
  * script (`THEME_INIT_SCRIPT`) sets `<html data-theme="dark">` before first paint.
  *
  * Typed structurally (no DOM lib here) so the module works in both apps and in Node tests.
  */
 
 export const THEME_COOKIE = "emunas_theme";
-export const SHARED_COOKIE_DOMAIN = "emunas.torahlearningtools.com";
+export const SHARED_COOKIE_DOMAIN = "emunas.com";
 const MAX_AGE_SECONDS = 31_536_000;
 
 export type Theme = "light" | "dark";

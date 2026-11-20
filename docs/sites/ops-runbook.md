@@ -1,14 +1,14 @@
 # Ops runbook: the sites on Cloudflare
 
 How the landing site ("home", on the apex `<domain>`), the Quiet site (the library,
-`library.<domain>`), the Live site (`listen.<domain>`) and the `emunas-api` Worker are provisioned, configured, deployed and rolled back. Source of truth for the design:
+`library.<domain>`), the Live site (`analyze.<domain>`) and the `emunas-api` Worker are provisioned, configured, deployed and rolled back. Source of truth for the design:
 `integration-plan.md` §3 and §4, as changed by **Amendment A1** (audio is served straight from
 R2 on `media.<domain>`; there is no audio Worker route, no `AUDIO_ENABLED` switch and no
 `audio-publish` workflow). The custom domain is on the `emunas` bucket itself. That bucket also
 holds `transcripts/` and `site/files/`; they are reachable by key on the media host, which is
 accepted (owner decision): nothing the sites publish ever links to them.
 
-`<domain>` is `EMUNAS_DOMAIN`: today `emunas.torahlearningtools.com`, later `emunas.com`. Every
+`<domain>` is `EMUNAS_DOMAIN`: `emunas.com`. Every
 host is derived from it (`@emunas/links` `productionHosts`), so the move is a config change only
 (§3 "Domains and cutover").
 
@@ -123,7 +123,7 @@ Audio (Amendment A1, W3.11; owner action):
 |---|---|---|
 | `<domain>` | `emunas-home` | `[{ "pattern": "<domain>", "custom_domain": true }]` |
 | `library.<domain>` | `emunas-quiet` | `[{ "pattern": "library.<domain>", "custom_domain": true }]` |
-| `listen.<domain>` | `emunas-live` | `[{ "pattern": "listen.<domain>", "custom_domain": true }]` |
+| `analyze.<domain>` | `emunas-live` | `[{ "pattern": "analyze.<domain>", "custom_domain": true }]` |
 | `media.<domain>` | R2 bucket `emunas` (custom domain, not a Worker) | none |
 
 The routes must match `productionHosts(<domain>)` of `@emunas/links`;
@@ -140,12 +140,12 @@ Cutover to a new domain `<new>` (e.g. `emunas.com`), all config, no code:
 1. Zone `<new>` on the Cloudflare account (nameservers moved). Lower the TTLs of the old records
    beforehand if the old site is still live.
 2. Change the `routes` in `apps/home/wrangler.jsonc`, `apps/quiet/wrangler.jsonc` and
-   `apps/live/wrangler.jsonc` to `<new>`, `library.<new>`, `listen.<new>` (PR; the
+   `apps/live/wrangler.jsonc` to `<new>`, `library.<new>`, `analyze.<new>` (PR; the
    routes test must pass).
 3. Set the GitHub variable `EMUNAS_DOMAIN=<new>` on `production` and
    `EMUNAS_MEDIA_ORIGIN=https://media.<new>` (§4).
 4. R2 → `emunas` → Custom Domains: add `media.<new>`.
-5. Turnstile widget: add `listen.<new>`. Access application: add `listen.<new>/admin/*`.
+5. Turnstile widget: add `analyze.<new>`. Access application: add `analyze.<new>/admin/*`.
 6. Deploy production (§5). The deploy attaches the Custom Domains; check each host (§12
    production smoke).
 7. Keep the old hosts attached until the new ones are verified, then remove their routes. Once the
@@ -154,15 +154,15 @@ Cutover to a new domain `<new>` (e.g. `emunas.com`), all config, no code:
 Old `emunas.com` addresses (the Weebly site's page and file paths) are not preserved and are not
 redirected.
 
-Turnstile: one widget for `listen.<domain>` (dashboard → Turnstile → Add widget, hostname
-`listen.<domain>`, mode Managed). Its **site key** is public and goes to the GitHub variable
+Turnstile: one widget for `analyze.<domain>` (dashboard → Turnstile → Add widget, hostname
+`analyze.<domain>`, mode Managed). Its **site key** is public and goes to the GitHub variable
 `VITE_TURNSTILE_SITE_KEY` on the `production` environment (Vite bakes it into the Live build); its
 **secret** goes to `TURNSTILE_SECRET` on `emunas-api`. For staging either add the staging Live
 host (`emunas-live-staging.<sub>.workers.dev`) to the same widget and use the same pair, or use
 Cloudflare's always-pass test pair (site key `1x00000000000000000000AA`, secret
 `1x0000000000000000000000000000000AA`) on the `staging` environment and `emunas-api-staging`.
 Without a site key a deployed Live build hides the "report a problem" control (deploy.yml warns).
-Access: a self-hosted application on `listen.<domain>/admin/*` for the owner; put its team domain
+Access: a self-hosted application on `analyze.<domain>/admin/*` for the owner; put its team domain
 and AUD tag into `ACCESS_TEAM_DOMAIN`/`ACCESS_AUD` in `workers/api/wrangler.jsonc` (both envs).
 
 ## 4. GitHub configuration
@@ -178,7 +178,7 @@ without it.
 | secret | `CLOUDFLARE_ACCOUNT_ID` | same | yes | same; also the R2 S3 endpoint `https://<id>.r2.cloudflarestorage.com` | account id |
 | secret | `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY` | environments (optional) | no | deploy.yml embedding mirror (and the W3.10 sync) | an R2 API token pair, read on `emunas-site-build`. Unset: derived from `CLOUDFLARE_API_TOKEN` (key id = token id, secret = sha256(token)) |
 | variable | `EMUNAS_MEDIA_ORIGIN` | repository (also serves PR builds) or each environment | yes | corpus build (audio URLs), `_headers` CSP `media-src`/`connect-src` | `https://media.<domain>` (no path, no trailing slash) |
-| variable | `EMUNAS_DOMAIN` | environment `production` **only** (see "Staging vs production hosts") | one of these two | home build (links to the library and the listening app); Quiet build (canonical, hreflang, sitemaps, robots.txt, OG, cross-site links); Live build (canonical to Quiet, hreflang) | the apex, e.g. `emunas.torahlearningtools.com` (home = apex, Quiet = `library.` + it, Live = `listen.` + it). Must match the `wrangler.jsonc` routes (§3) |
+| variable | `EMUNAS_DOMAIN` | environment `production` **only** (see "Staging vs production hosts") | one of these two | home build (links to the library and the listening app); Quiet build (canonical, hreflang, sitemaps, robots.txt, OG, cross-site links); Live build (canonical to Quiet, hreflang) | the apex, e.g. `emunas.com` (home = apex, Quiet = `library.` + it, Live = `analyze.` + it). Must match the `wrangler.jsonc` routes (§3) |
 | variable | `EMUNAS_WORKERS_SUBDOMAIN` | repository | one of these two | same, for the workers.dev hosts | the `<sub>` in `emunas-quiet.<sub>.workers.dev` (dashboard → Workers → Subdomain) |
 | variable | `EMUNAS_HOME_ORIGIN`, `EMUNAS_QUIET_ORIGIN`, `EMUNAS_LIVE_ORIGIN` | not set in GitHub | no | local builds only: explicit origins override the derived ones | e.g. `http://localhost:4321`. Without a domain or subdomain, code that needs all three hosts (`hostsFromEnv`) needs all three set; Live SEO (`siteHostsFromEnv`) needs only Quiet and Live |
 | variable | `EMUNAS_FEEDBACK_EMAIL` | repository or each environment | yes | Quiet "report an error" `mailto:` (C18) | one plain address |
@@ -204,7 +204,7 @@ The builds compute every absolute URL with `@emunas/links` `hostsFromEnv` (Live 
 | Target | `EMUNAS_DOMAIN` | `EMUNAS_WORKERS_SUBDOMAIN` | home / Quiet / Live origins in the build |
 |---|---|---|---|
 | production, no domain | unset | set | `https://emunas-{home,quiet,live}.<sub>.workers.dev` |
-| production | set | any | `https://<domain>` / `https://library.<domain>` / `https://listen.<domain>` |
+| production | set | any | `https://<domain>` / `https://library.<domain>` / `https://analyze.<domain>` |
 | staging | unset **for staging** | set | `https://emunas-{home,quiet,live}-staging.<sub>.workers.dev` |
 | staging (misconfigured) | set, no subdomain | unset | production origins: staging pages would link and canonicalize to production |
 
@@ -631,12 +631,12 @@ In order; each step names where it is described. Staging first, then production.
 
 - [ ] Merge to `main` (or dispatch `target: production`) and approve the environment.
 - [ ] Custom Domains attached (§3 "Domains and cutover"): `<domain>` on
-      `emunas-home`, `library.<domain>` on `emunas-quiet`, `listen.<domain>` on `emunas-live`,
+      `emunas-home`, `library.<domain>` on `emunas-quiet`, `analyze.<domain>` on `emunas-live`,
       `media.<domain>` on `emunas`; each answers over https.
       `https://media.<domain>/transcripts/<any key>.json` returns 404.
 - [ ] Same smoke as staging on the production hosts: `https://library.<domain>/robots.txt` names
       the sitemaps, Quiet pages are self-canonical without `noindex`, and Live pages canonicalize
       to `https://library.<domain>/…`. `https://<domain>/files/essays/<slug>.pdf` serves a PDF.
-- [ ] Access application on `listen.<domain>/admin/*` and `ACCESS_TEAM_DOMAIN`/`ACCESS_AUD` set;
+- [ ] Access application on `analyze.<domain>/admin/*` and `ACCESS_TEAM_DOMAIN`/`ACCESS_AUD` set;
       `/admin/feedback` asks for login.
 - [ ] Note the deployed version ids (`wrangler deployments list`) for rollback (§7).

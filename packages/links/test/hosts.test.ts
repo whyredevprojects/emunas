@@ -13,19 +13,19 @@ import {
 } from "../src/index.ts";
 
 describe("host config", () => {
-  it("production: apex for home, library. for Quiet, listen. for Live", () => {
+  it("production: apex for home, library. for Quiet, analyze. for Live", () => {
     expect(productionHosts("Example.org")).toEqual({
       home: "https://example.org",
       quiet: "https://library.example.org",
-      live: "https://listen.example.org",
+      live: "https://analyze.example.org",
     });
     expect(productionHosts("www.example.org").home).toBe("https://example.org");
-    expect(productionHosts("emunas.torahlearningtools.com")).toEqual({
-      home: "https://emunas.torahlearningtools.com",
-      quiet: "https://library.emunas.torahlearningtools.com",
-      live: "https://listen.emunas.torahlearningtools.com",
+    expect(productionHosts("emunas.com")).toEqual({
+      home: "https://emunas.com",
+      quiet: "https://library.emunas.com",
+      live: "https://analyze.emunas.com",
     });
-    for (const sub of ["listen", "library", "media"]) expect(() => productionHosts(`${sub}.example.org`)).toThrow(/apex/);
+    for (const sub of ["analyze", "library", "media"]) expect(() => productionHosts(`${sub}.example.org`)).toThrow(/apex/);
     expect(() => productionHosts("not a domain")).toThrow();
   });
 
@@ -72,7 +72,7 @@ describe("host config", () => {
   it("siteHostsFromEnv needs only Quiet and Live", () => {
     expect(siteHostsFromEnv({ EMUNAS_DOMAIN: "example.org" })).toEqual({
       quiet: "https://library.example.org",
-      live: "https://listen.example.org",
+      live: "https://analyze.example.org",
     });
     expect(
       siteHostsFromEnv({ EMUNAS_QUIET_ORIGIN: "http://localhost:4321/", EMUNAS_LIVE_ORIGIN: "http://localhost:5173" }),
@@ -80,22 +80,22 @@ describe("host config", () => {
     expect(() => siteHostsFromEnv({ EMUNAS_LIVE_ORIGIN: "http://localhost:5173" })).toThrow(/no hosts configured/);
   });
 
-  it("rejects a Quiet origin on listen.* and any two identical origins", () => {
-    expect(() => validateHosts({ quiet: "https://listen.example.org", live: "https://example.org" })).toThrow();
+  it("rejects a Quiet origin on analyze.* and any two identical origins", () => {
+    expect(() => validateHosts({ quiet: "https://analyze.example.org", live: "https://example.org" })).toThrow();
     expect(() => validateHosts({ quiet: "https://a.example", live: "https://A.example/" })).toThrow();
     expect(() =>
-      validateHosts({ home: "https://library.example.org", quiet: "https://library.example.org/", live: "https://listen.example.org" }),
+      validateHosts({ home: "https://library.example.org", quiet: "https://library.example.org/", live: "https://analyze.example.org" }),
     ).toThrow(/different origins/);
     expect(() =>
-      validateHosts({ home: "https://listen.example.org", quiet: "https://library.example.org", live: "https://listen.example.org" }),
+      validateHosts({ home: "https://analyze.example.org", quiet: "https://library.example.org", live: "https://analyze.example.org" }),
     ).toThrow(/different origins/);
-    expect(validateHosts({ home: "https://Example.org/", quiet: "https://library.example.org", live: "https://listen.example.org" })).toEqual(
+    expect(validateHosts({ home: "https://Example.org/", quiet: "https://library.example.org", live: "https://analyze.example.org" })).toEqual(
       productionHosts("example.org"),
     );
-    expect(() => createLinks({ hosts: { quiet: "https://listen.x.org", live: "https://x.org" } })).toThrow();
+    expect(() => createLinks({ hosts: { quiet: "https://analyze.x.org", live: "https://x.org" } })).toThrow();
     expect(createLinks({ hosts: productionHosts("example.org") }).hosts).toEqual({
       quiet: "https://library.example.org",
-      live: "https://listen.example.org",
+      live: "https://analyze.example.org",
     });
     expect(() => normalizeOrigin("ftp://x.org")).toThrow();
     expect(() => normalizeOrigin("https://x.org/path")).toThrow();
@@ -103,7 +103,7 @@ describe("host config", () => {
 
   it("noindex for workers.dev, localhost and IPs", () => {
     expect(isIndexableOrigin("https://example.org")).toBe(true);
-    expect(isIndexableOrigin("https://listen.example.org")).toBe(true);
+    expect(isIndexableOrigin("https://analyze.example.org")).toBe(true);
     expect(isIndexableOrigin("https://library.example.org")).toBe(true);
     expect(isIndexableOrigin("https://emunas-home.acct.workers.dev")).toBe(false);
     expect(isIndexableOrigin("https://emunas-quiet.acct.workers.dev")).toBe(false);

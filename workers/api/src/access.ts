@@ -1,5 +1,5 @@
 /**
- * Cloudflare Access check for /admin/*. Access sits in front of listen.<domain>/admin/* and
+ * Cloudflare Access check for /admin/*. Access sits in front of analyze.<domain>/admin/* and
  * adds a signed `Cf-Access-Jwt-Assertion` header; the Live site Worker forwards the request
  * through the service binding unchanged. This Worker verifies that JWT itself (RS256 against
  * the team's published certs, audience, issuer, expiry), so a request that did not pass

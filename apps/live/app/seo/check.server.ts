@@ -6,7 +6,7 @@
  * - removes the `.data` files React Router writes next to each prerendered page because the root
  *   route has a `loader` (it never revalidates under `ssr: false`, so nothing requests them); refused
  *   when any other route module exports a server `loader`;
- * - checks every prerendered page: canonical on the Quiet origin (never `listen.*`), OG title and
+ * - checks every prerendered page: canonical on the Quiet origin (never `analyze.*`), OG title and
  *   description on content pages, a `<title>` carrying the page's own name on content pages (W5.4),
  *   `noindex` on app-only pages and on the SPA fallback;
  * - checks that every HTML file, the SPA fallback included, ends its footer with the dedication line,

@@ -98,7 +98,7 @@ Three sites, one domain `<d>` (`EMUNAS_DOMAIN`):
 |---|---|---|
 | home (landing site, essays, files) | `https://<d>` | `emunas-home[-staging].<subdomain>.workers.dev` |
 | Quiet (library, canonical) | `https://library.<d>` | `emunas-quiet[-staging].<subdomain>.workers.dev` |
-| Live (listening app) | `https://listen.<d>` | `emunas-live[-staging].<subdomain>.workers.dev` |
+| Live (listening app) | `https://analyze.<d>` | `emunas-live[-staging].<subdomain>.workers.dev` |
 
 Media (R2) is `media.<d>`, set separately as `EMUNAS_MEDIA_ORIGIN`. Every host derives from
 `EMUNAS_DOMAIN`, so moving to another domain is a config change only.
@@ -111,8 +111,8 @@ Media (R2) is `media.<d>`, set separately as `EMUNAS_MEDIA_ORIGIN`. Every host d
 - `createLinks` takes `SiteHosts` (a full `Hosts` works too): cross-site links, canonical and
   hreflang are between Quiet and Live only.
 - `validateHosts` requires every origin it is given to be distinct and rejects a Quiet origin on
-  `listen.*`, so a canonical can never point at Live. `productionHosts` rejects a domain that
-  starts with `library.`, `listen.` or `media.` (it must be the apex).
+  `analyze.*`, so a canonical can never point at Live. `productionHosts` rejects a domain that
+  starts with `library.`, `analyze.` or `media.` (it must be the apex).
 - `isIndexableOrigin()` is false for workers.dev, localhost and IPs (send `X-Robots-Tag: noindex`).
 
 Pages that exist on one site only map to the closest page on the other (Live Explore → the

@@ -29,17 +29,17 @@ const LIVE_URLS = [
   "/audio/r1.mp3",
   "/en/nonsense",
   "/garbage%",
-  "listen.emunas.example/en/",
+  "analyze.emunas.example/en/",
   "",
 ];
 
 describe("canonicalFor", () => {
-  it("never returns a listen.* URL, for any input", () => {
+  it("never returns a analyze.* URL, for any input", () => {
     const inputs = [
       ...LIVE_URLS,
       ...LIVE_URLS.map((p) => HOSTS.live + p),
       ...LIVE_URLS.map((p) => HOSTS.quiet + p),
-      `https://listen.other.example/en/s/${ID}`,
+      `https://analyze.other.example/en/s/${ID}`,
     ];
     for (const url of inputs) {
       const c = links.canonicalFor(url);

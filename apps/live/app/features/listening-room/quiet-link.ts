@@ -2,7 +2,7 @@
  * The "In the Library" link: the same shiur on the Quiet site (integration-plan §2.2), built with
  * `@emunas/links`. The Quiet origin comes from build config (`VITE_EMUNAS_QUIET_ORIGIN`, or
  * `VITE_EMUNAS_DOMAIN` → `library.<domain>`) and otherwise from the Live host itself, using the host scheme
- * of `@emunas/links` (`listen.<domain>` ↔ `library.<domain>`, `emunas-live[-staging].<sub>.workers.dev` ↔
+ * of `@emunas/links` (`analyze.<domain>` ↔ `library.<domain>`, `emunas-live[-staging].<sub>.workers.dev` ↔
  * `emunas-quiet[-staging].<sub>.workers.dev`). Null when it cannot be told (local dev): no link.
  */
 import {

@@ -45,7 +45,7 @@ export interface Links {
    */
   equivalent(url: string, from?: Site): string | null;
   /**
-   * The canonical URL: always on the Quiet origin, never a fragment, never `listen.*`. A Quiet
+   * The canonical URL: always on the Quiet origin, never a fragment, never `analyze.*`. A Quiet
    * URL is self-canonical. For a Live URL it is the Quiet equivalent, except for corpus entries
    * (topic, concept, person, work, story) without a Quiet page and for threads: null, no
    * canonical, and the page is noindex (`noindexFor`). Relative paths are read as Live.

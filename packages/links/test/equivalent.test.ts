@@ -141,7 +141,7 @@ describe("site detection", () => {
   });
 
   it("matches origins case-insensitively", () => {
-    expect(links.siteOf("HTTPS://Listen.Emunas.Example/en/")).toBe("live");
+    expect(links.siteOf("HTTPS://Analyze.Emunas.Example/en/")).toBe("live");
   });
 });
 

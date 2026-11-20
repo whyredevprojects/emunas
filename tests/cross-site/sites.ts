@@ -21,7 +21,7 @@ import { createLinks, isEd, pageLookupFromLayer, type LayerPagesInput, type Link
 export const REPO = resolve(dirname(fileURLToPath(import.meta.url)), "../..");
 export const DOMAIN = "emunas.example";
 export const QUIET = `https://library.${DOMAIN}`;
-export const LIVE = `https://listen.${DOMAIN}`;
+export const LIVE = `https://analyze.${DOMAIN}`;
 
 export interface SitePaths {
   corpus: string;

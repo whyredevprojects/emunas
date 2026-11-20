@@ -115,7 +115,7 @@ describe("root loader", () => {
   it("returns page SEO for a prerendered path, with the canonical computed from .corpus lookups", () => {
     const ctx = createSeoContext(env, "/");
     const d = seoDataFor(ctx, "/en/o/chanukah/");
-    expect(d.seo.hosts).toEqual({ quiet: QUIET, live: "https://listen.example.org" });
+    expect(d.seo.hosts).toEqual({ quiet: QUIET, live: "https://analyze.example.org" });
     expect(d.seo.page).toMatchObject({
       path: "/en/o/chanukah",
       kind: "occasion",
@@ -135,7 +135,7 @@ describe("root loader", () => {
     try {
       resetSeoContext();
       const fb = seoLoader({ request: new Request("http://localhost/", { headers: { [SPA_MODE_HEADER]: "yes" } }) });
-      expect(fb.seo).toEqual({ hosts: { quiet: QUIET, live: "https://listen.example.org" }, page: null, fallback: true });
+      expect(fb.seo).toEqual({ hosts: { quiet: QUIET, live: "https://analyze.example.org" }, page: null, fallback: true });
       const page = seoLoader({ request: new Request(`http://localhost/yi/s/${SHIUR_FULL}/`) });
       expect(page.seo.page?.canonical).toBe(`${QUIET}/yi/shiur/${SHIUR_FULL}/`);
     } finally {
@@ -181,10 +181,10 @@ describe("SeoHead", () => {
 describe("post-build checks", () => {
   const goodShiur = (canonical: string) =>
     `<html><head><title>t · Emunas</title><link rel="canonical" href="${canonical}"/>` +
-    `<link rel="alternate" hrefLang="en" href="https://listen.example.org/en/s/a"/>` +
+    `<link rel="alternate" hrefLang="en" href="https://analyze.example.org/en/s/a"/>` +
     `<meta name="description" content="d"/><meta property="og:title" content="t"/>` +
     `<meta property="og:description" content="d"/></head><body></body></html>`;
-  const hosts = { quiet: QUIET, live: "https://listen.example.org" };
+  const hosts = { quiet: QUIET, live: "https://analyze.example.org" };
 
   it("parses head tags, decoding entities", () => {
     const h = parseHead(`<head><meta property="og:title" content="a &quot;b&quot; &amp; c"/><meta name="robots" content="noindex"/></head><meta name="x" content="body"/>`);
@@ -199,10 +199,10 @@ describe("post-build checks", () => {
     expect(pagePathOf("en/s/x.html")).toBe("/en/s/x");
   });
 
-  it("flags a canonical on listen.*, off the Quiet origin, missing, doubled or with a fragment", () => {
+  it("flags a canonical on analyze.*, off the Quiet origin, missing, doubled or with a fragment", () => {
     expect(checkPage("en/s/a.html", goodShiur(`${QUIET}/en/shiur/a/`), hosts)).toEqual([]);
     const problems = (html: string) => checkPage("en/s/a.html", html, hosts).map((f) => f.problem);
-    expect(problems(goodShiur("https://listen.example.org/en/s/a")).join()).toMatch(/listen\.\* host/u);
+    expect(problems(goodShiur("https://analyze.example.org/en/s/a")).join()).toMatch(/analyze\.\* host/u);
     expect(problems(goodShiur("https://other.org/en/shiur/a/")).join()).toMatch(/not on the Quiet origin/u);
     expect(problems(goodShiur(`${QUIET}/en/shiur/a/#s1`)).join()).toMatch(/fragment/u);
     expect(problems(goodShiur(`${QUIET}/a/`).replace("</head>", `<link rel="canonical" href="${QUIET}/b/"/></head>`)).join()).toMatch(
@@ -230,7 +230,7 @@ describe("post-build checks", () => {
     const problems = (file: string, html: string) => checkPage(file, html, hosts).map((f) => f.problem);
     const entry = (canonical: string | null, noindex: boolean) =>
       `<html><head><title>t · Emunas</title>${noindex ? '<meta name="robots" content="noindex"/>' : ""}` +
-      (canonical ? `<link rel="canonical" href="${canonical}"/><link rel="alternate" hrefLang="en" href="https://listen.example.org/en/t/a"/>` : "") +
+      (canonical ? `<link rel="canonical" href="${canonical}"/><link rel="alternate" hrefLang="en" href="https://analyze.example.org/en/t/a"/>` : "") +
       `<meta name="description" content="d"/><meta property="og:title" content="t"/><meta property="og:description" content="d"/></head></html>`;
     expect(problems("en/t/a.html", entry(`${QUIET}/en/inyanim/a/`, false))).toEqual([]);
     expect(problems("en/t/a.html", entry(null, true))).toEqual([]);
