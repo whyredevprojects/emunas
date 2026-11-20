@@ -14,7 +14,8 @@
  * - `<Text value="..." shiurLang="yi" />`: a catalog/original string of unknown script. `lang` and
  *   `dir` come from `langFor` with the page's edition (Hebrew script → he in the Hebrew edition; yi in
  *   a Yiddish shiur, or with `shiurLang={null}` (no one shiur) in the Yiddish edition; he otherwise.
- *   Latin → en; mixed → by the first strong character, the same rule as `dir="auto"`). The edition
+ *   Latin → en; mixed → the direction of the shiur's language, or of the first strong character
+ *   with `shiurLang={null}`). The edition
  *   is the `:ui` path segment unless `edition` is passed.
  *
  * The default element is `<bdi>`; pass `as` for block content (`p`, `h1`, …). Non-`bdi` elements

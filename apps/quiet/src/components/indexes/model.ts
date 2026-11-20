@@ -32,7 +32,8 @@ export function run(text: string, ed: Ed, shiurLang: AudioLang | null = null): R
  * `he` in every edition, Latin is `en`.
  */
 export function termRun(text: string): Run {
-  const { lang, dir } = langFor(text, "en", "en");
+  // No shiur context: Hebrew script is `he` in the English edition, mixed text follows its first strong character.
+  const { lang, dir } = langFor(text, null, "en");
   return { text, lang, dir };
 }
 

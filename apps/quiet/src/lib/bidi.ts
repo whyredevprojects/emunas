@@ -15,8 +15,8 @@ export interface RunAttrs {
  * `lang`/`dir` for a catalog or data string shown in edition `ed`, of a shiur in language
  * `shiurLang` (`null` for a string that belongs to no one shiur: corpus names, index entries).
  * Hebrew-script text follows `hebrewScriptLang` from `@emunas/i18n` (`he` in the Hebrew edition;
- * otherwise `yi` in a Yiddish context and `he` in an English one); Latin is `en`; mixed text follows
- * its first strong character (the same rule as `dir="auto"`, decided at build time).
+ * otherwise `yi` in a Yiddish context and `he` in an English one); Latin is `en`; mixed text takes
+ * the direction of the shiur's language, or of its first strong character when `shiurLang` is null.
  */
 export function runAttrs(text: string, shiurLang: AudioLang | null, ed: Ed): RunAttrs {
   const { lang, dir } = langFor(text, shiurLang, ed);

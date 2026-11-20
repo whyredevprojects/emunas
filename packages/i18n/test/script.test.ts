@@ -36,8 +36,19 @@ describe("firstStrongDir", () => {
 
 describe("langFor", () => {
   it("gives lang/dir for mixed titles", () => {
+    expect(langFor("יעקב's Tremendous Accomplishment in Taking the Sheep of לבן", "en", "he")).toEqual({
+      lang: "en",
+      dir: "ltr",
+      script: "mixed",
+    });
+    expect(langFor("יעקב's Tremendous Accomplishment", null, "en")).toEqual({ lang: "he", dir: "rtl", script: "mixed" });
     expect(langFor("The קדושה of צדיקים", "en", "en")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
-    expect(langFor("The קדושה of צדיקים", "yi", "yi")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
+    expect(langFor("The קדושה of צדיקים", null, "yi")).toEqual({ lang: "en", dir: "ltr", script: "mixed" });
+    expect(langFor("DIGITAL ELECTRONICS הנסיון המיוחד שלנו", "yi", "en")).toEqual({
+      lang: "yi",
+      dir: "rtl",
+      script: "mixed",
+    });
     expect(langFor("המקוה והתיבה הם כמו embassy של שמים על הארץ", "yi", "yi")).toEqual({
       lang: "yi",
       dir: "rtl",
