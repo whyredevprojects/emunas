@@ -268,6 +268,9 @@ open pull requests.
   on `main`. It then uploads a `ci-passed-<git tree id>` marker, which deploy.yml reads.
 - `preview` (same-repo PRs): `wrangler versions upload --env=staging --preview-alias pr-<n>` for
   the sites; the URLs land in the job summary. Without Cloudflare secrets it logs a notice and passes.
+  It checks out the full workspace and installs `node_modules` (`.github/actions/setup`), because
+  wrangler bundles the Live and Home Workers from source and they import workspace packages
+  (`@emunas/i18n`). A failed upload fails the job (`pipefail`), after the other apps were tried.
 
 `node_modules` and Playwright browsers come from the Actions cache (`.github/actions/setup`,
 `.github/actions/playwright`), saved from `main` only. The browsers' system libraries are apt
