@@ -12,6 +12,8 @@
  * original", cleaned-audio-ux §4). On a narrow dock the version line shows only its button (the
  * listening room carries the full sentence). A switch is announced in its own polite region, not
  * the throttled chapter one.
+ *
+ * On a narrow dock the sleep timer hides but the speed toggle stays.
  */
 import { audioVersionLabel, formatClock, pickText, sectionKindLabel, type AudioVersion, type UiLang } from "@emunas/i18n";
 import { livePaths } from "@emunas/links";
