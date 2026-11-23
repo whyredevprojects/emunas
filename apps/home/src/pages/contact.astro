@@ -2,7 +2,7 @@
 /** Contact: email, postal address, the phone line and recordings by mail. */
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
-import { CONTACT, EXTERNAL } from "../lib/content.ts";
+import { CONTACT } from "../lib/content.ts";
 ---
 <Base
   title="Contact"
@@ -17,8 +17,7 @@ import { CONTACT, EXTERNAL } from "../lib/content.ts";
         <h2 id="recordings">Recordings by mail</h2>
         <p>Those who wish can have audio shiurim sent by mail. Email us or write to the address on this page.</p>
         <h2>The shiurim by phone</h2>
-        <p>Call <a href={CONTACT.phoneHref}>{CONTACT.phone}</a> to hear the shiurim. Audio shiurim in English and
-        Yiddish are also on <a href={EXTERNAL.torahAnytime}>TorahAnytime</a>.</p>
+        <p>Call <a href={CONTACT.phoneHref}>{CONTACT.phone}</a> to hear the shiurim.</p>
       </div>
       <aside>
         <div class="card">
