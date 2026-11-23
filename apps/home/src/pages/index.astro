@@ -4,11 +4,10 @@
  * to hear the shiurim, a few covers from the archive, About + Sefarim, and supporting the sefarim.
  */
 import Base from "../layouts/Base.astro";
-import Aside from "../components/Aside.astro";
 import DocCard from "../components/DocCard.astro";
 import Shelf from "../components/Shelf.astro";
 import { ARTICLES, ESSAYS, fileAt } from "../lib/legacy-files.ts";
-import { ASIDES, CONTACT, EXTERNAL, FEATURED_ESSAYS, QUOTE } from "../lib/content.ts";
+import { CONTACT, EXTERNAL, FEATURED_ESSAYS, QUOTE } from "../lib/content.ts";
 import { siteLinks } from "../lib/langs.ts";
 import { bareHost, currentSiteEnv } from "../lib/site-env.ts";
 
@@ -24,7 +23,7 @@ const bars = Array.from({ length: 19 });
     <div class="wrap">
       <div class="titlepage">
         <span class="label">Our souls yearn to be lifted higher</span>
-        <h1 id="h1"><Aside text={ASIDES.mashgiach} layout="block" class="tp-aside" /><span class="tp-en">The Mashgiach</span></h1>
+        <h1 id="h1">The Mashgiach</h1>
         <p class="tp-name">Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath</p>
         <hr class="ornament" />
         <blockquote class="tp-quote">
@@ -36,7 +35,7 @@ const bars = Array.from({ length: 19 });
         <p class="lede">The Mashgiach connected us to a deeper level of Torah, giving us new perceptions of a pulsating
         Judaism. Here are his shiurim, to read and to hear, with essays and sefarim drawn from his teaching.</p>
         <nav class="start" aria-labelledby="start-h">
-          <h2 id="start-h">Start here <Aside text={ASIDES.startHere} class="sec-aside" /></h2>
+          <h2 id="start-h">Start here</h2>
           <ol>
             <li><a href="/about/"><span class="t">Who was the Mashgiach</span><span class="d">A short introduction, and two magazine features to read next.</span></a></li>
             <li><a href={firstEssay.path}><span class="t">Read one essay</span><span class="d">{firstEssay.title} (PDF)</span></a></li>
@@ -54,9 +53,8 @@ const bars = Array.from({ length: 19 });
         <article class="door door--library door--primary">
           <div class="door-head">
             <div>
-              <span class="label">Read &amp; listen &middot; <Aside text={ASIDES.readListen} /></span>
+              <span class="label">Read &amp; listen</span>
               <h2><a href={links.library}>Library</a></h2>
-              <Aside text={ASIDES.libraryName} layout="block" as="p" class="door-aside" />
             </div>
             <div class="door-art" aria-hidden="true">{spines.map(() => <i />)}</div>
           </div>
@@ -69,9 +67,8 @@ const bars = Array.from({ length: 19 });
         <article class="door door--listen">
           <div class="door-head">
             <div>
-              <span class="label">Study in depth &middot; <Aside text={ASIDES.studyDeep} /></span>
+              <span class="label">Study in depth</span>
               <h2><a href={links.listen}>Analyze</a></h2>
-              <Aside text={ASIDES.analyzeName} layout="block" as="p" class="door-aside" />
             </div>
             <div class="door-art" aria-hidden="true">{bars.map(() => <i />)}</div>
           </div>
@@ -90,7 +87,7 @@ const bars = Array.from({ length: 19 });
   <section class="section section--ruled" aria-labelledby="docs-h">
     <div class="wrap">
       <div class="sec-head">
-        <h2 id="docs-h">From the archive <Aside text={ASIDES.archive} class="sec-aside" /></h2>
+        <h2 id="docs-h">From the archive</h2>
         <a class="more" href="/essays/">All {ESSAYS.length} essays &rarr;</a>
       </div>
       <ul class="docs-grid">
@@ -102,7 +99,7 @@ const bars = Array.from({ length: 19 });
   <section class="section section--ruled" aria-labelledby="about-h">
     <div class="wrap two-col">
       <div class="about-block">
-        <span class="num">About &middot; <Aside text={ASIDES.about} /></span>
+        <span class="num">About</span>
         <h2 id="about-h">The Mashgiach</h2>
         <p class="dropcap">Harav Moshe Wolfson zt"l, Mashgiach Ruchani of Mesivta Torah Vodaath, led Beis Medrash
         Emunas Yisrael in Brooklyn and was one of the most revered rabbinic figures of our time.</p>

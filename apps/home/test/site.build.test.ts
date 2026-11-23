@@ -8,11 +8,12 @@ import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
+import { otherUiLangs } from "@emunas/i18n";
 import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { DEDICATION } from "../src/components/dedication.ts";
 import { checkFiles } from "../src/lib/check-files.ts";
-import { ASIDES } from "../src/lib/content.ts";
-import { ASIDE_LANGS, asideTexts } from "../src/lib/langs.ts";
+import { TRANSLATIONS } from "../src/lib/content.ts";
+import { HOME_LANG } from "../src/lib/langs.ts";
 import { SITEMAP_PATHS } from "../src/lib/seo.ts";
 import { astroBuild } from "./astro-build.ts";
 
@@ -108,17 +109,21 @@ describe("the built home site", () => {
     expect(html).toContain(`href="https://analyze.${DOMAIN}/en/"`);
   });
 
-  it("links every other edition of Library and Analyze, and shows each aside in every language", () => {
+  it("links every other edition of Library and Analyze, and shows its labels in English only", () => {
     const html = read("index.html");
-    for (const lang of ASIDE_LANGS) {
+    for (const lang of otherUiLangs(HOME_LANG)) {
       expect(html).toContain(`href="https://library.${DOMAIN}/${lang}/"`);
       expect(html).toContain(`href="https://analyze.${DOMAIN}/${lang}/"`);
     }
-    for (const a of [ASIDES.mashgiach, ASIDES.startHere, ASIDES.libraryName, ASIDES.analyzeName, ASIDES.archive]) {
-      for (const x of asideTexts(a)) expect(html).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
+    expect(html).toMatch(/<h2 id="start-h">Start here<\/h2>/);
+    const shown: string[] = [];
+    for (const f of htmlFiles()) {
+      const page = read(f);
+      for (const [place, t] of Object.entries(TRANSLATIONS)) {
+        for (const text of Object.values(t)) if (page.includes(`>${text}<`)) shown.push(`${f}: ${place} ${text}`);
+      }
     }
-    const about = read("about/index.html");
-    for (const x of asideTexts(ASIDES.about)) expect(about).toContain(`lang="${x.lang}" dir="${x.dir}">${x.text}<`);
+    expect(shown).toEqual([]);
   });
 
   it("puts the Library first and emphasized, Analyze second", () => {

@@ -416,14 +416,6 @@ a:hover {
   letter-spacing: -0.01em;
 }
 
-.sec-aside {
-  display: inline-block;
-  margin-inline-start: 0.5em;
-  font-size: 0.72em;
-  color: var(--ink-muted);
-  font-weight: 500;
-}
-
 .sec-head .more {
   font-family: var(--sans);
   font-size: 0.9rem;
@@ -470,30 +462,7 @@ a:hover {
 .titlepage h1 {
   margin: 0;
   line-height: 1;
-  font-weight: 400;
-}
-
-.tp-aside {
-  display: block;
-  font-family: var(--hebrew);
-  font-weight: 700;
   font-size: var(--d5);
-  color: var(--accent);
-  line-height: 1.05;
-}
-
-/* The second and later languages: a smaller line under the first. */
-.tp-aside + .tp-aside {
-  margin-top: 6px;
-  font-size: var(--d3);
-  font-weight: 500;
-  color: var(--ink-muted);
-}
-
-.tp-en {
-  display: block;
-  margin-top: 10px;
-  font-size: var(--d4);
   font-weight: 400;
   letter-spacing: -0.015em;
 }
@@ -696,18 +665,6 @@ a:hover {
   outline-offset: 3px;
 }
 
-.door .door-aside {
-  margin: 8px 0 0;
-  font-size: 1.35rem;
-  color: var(--ink-muted);
-  text-align: end;
-}
-
-.door .door-aside + .door-aside {
-  margin-top: 2px;
-  font-size: 1.1rem;
-}
-
 /* The other editions: links above the doorway's stretched link. */
 .door .door-eds {
   position: relative;
@@ -814,7 +771,6 @@ a:hover {
 }
 
 .door--primary .label,
-.door--primary .door-aside,
 .door--primary .host {
   color: var(--on-panel-muted);
 }
@@ -900,10 +856,6 @@ a:hover {
     flex-basis: 26%;
     height: 72px;
     gap: 2px;
-  }
-
-  .door .door-aside {
-    font-size: 1.1rem;
   }
 }
 
@@ -1393,22 +1345,6 @@ a:hover {
   font-weight: 400;
   line-height: 1.05;
   letter-spacing: -0.02em;
-}
-
-.page-head .title-aside {
-  /* rtl text, aligned with the English title on the left */
-  text-align: end;
-  margin: 10px 0 0;
-  font-size: var(--d2);
-  color: var(--accent);
-  font-weight: 700;
-}
-
-.page-head .title-aside + .title-aside {
-  margin-top: 4px;
-  font-size: var(--d1);
-  font-weight: 500;
-  color: var(--ink-muted);
 }
 
 .page-head .intro {

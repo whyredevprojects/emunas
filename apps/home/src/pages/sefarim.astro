@@ -3,7 +3,7 @@
 import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
 import Shelf from "../components/Shelf.astro";
-import { ASIDES, EXTERNAL, SEFARIM } from "../lib/content.ts";
+import { EXTERNAL, SEFARIM } from "../lib/content.ts";
 ---
 <Base
   title="Sefarim in English"
@@ -13,7 +13,6 @@ import { ASIDES, EXTERNAL, SEFARIM } from "../lib/content.ts";
     <PageHead
       title="Sefarim in English"
       label="Sefarim"
-      labelAside={ASIDES.sefarim}
       intro="Books based on the Mashgiach’s teachings. Each is available from its publisher."
     />
     <div class="page-body page-grid">
