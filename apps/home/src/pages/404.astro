@@ -1,14 +1,29 @@
 ---
-/** Not found (`dist/404.html`, served for unknown addresses by `not_found_handling: "404-page"`). Never indexed. */
+/**
+ * Not found (`dist/404.html`, served for unknown addresses by `not_found_handling: "404-page"`).
+ * One page for every language: the layout is in the default language, and the message follows in
+ * each other interface language, each with links to that language's essays and home page. Never
+ * indexed.
+ */
+import { UI_DIR, otherUiLangs } from "@emunas/i18n";
 import Base from "../layouts/Base.astro";
+import Rich from "../components/Rich.astro";
+import { useT } from "../i18n/index.ts";
+import { HOME_DEFAULT_LANG, homePath } from "../lib/lang-path.ts";
+
+const lang = HOME_DEFAULT_LANG;
+const t = useT(lang);
+const others = otherUiLangs(lang).map((l) => ({ lang: l, dir: UI_DIR[l], t: useT(l) }));
 ---
-<Base title="Page not found" description="There is no page at this address." path="/404.html" noindex>
+<Base lang={lang} page="/404.html" title={t("notFound.title")} description={t("notFound.description")} noindex localized={false}>
   <div class="wrap">
     <div class="page-head">
-      <span class="label">Not found</span>
-      <h1>Page not found</h1>
-      <p class="intro">There is no page at this address. The essays are on the <a href="/essays/">essays page</a>, and
-      everything else starts on the <a href="/">home page</a>.</p>
+      <span class="label">{t("notFound.label")}</span>
+      <h1>{t("notFound.title")}</h1>
+      <p class="intro"><Rich text={t("notFound.body")}><a slot="essays" href={homePath(lang, "/essays/")}>{t("notFound.essays")}</a><a slot="home" href={homePath(lang, "/")}>{t("notFound.home")}</a></Rich></p>
+      {others.map((o) => (
+        <p class="intro" lang={o.lang} dir={o.dir}><Rich text={o.t("notFound.body")}><a slot="essays" href={homePath(o.lang, "/essays/")}>{o.t("notFound.essays")}</a><a slot="home" href={homePath(o.lang, "/")}>{o.t("notFound.home")}</a></Rich></p>
+      ))}
     </div>
     <div class="page-body"></div>
   </div>

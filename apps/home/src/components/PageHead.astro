@@ -1,15 +1,21 @@
 ---
 /** Breadcrumb and title block of an interior page. */
+import type { UiLang } from "@emunas/i18n";
+import { useT } from "../i18n/index.ts";
+import { homePath } from "../lib/lang-path.ts";
+
 interface Props {
+  lang: UiLang;
   title: string;
   label: string;
   intro?: string;
 }
 
-const { title, label, intro } = Astro.props;
+const { lang, title, label, intro } = Astro.props;
+const t = useT(lang);
 ---
-<nav class="crumbs" aria-label="Breadcrumb">
-  <ol><li><a href="/">Home</a></li><li aria-current="page">{title}</li></ol>
+<nav class="crumbs" aria-label={t("crumbs.label")}>
+  <ol><li><a href={homePath(lang, "/")}>{t("crumbs.home")}</a></li><li aria-current="page">{title}</li></ol>
 </nav>
 <div class="page-head">
   <span class="label">{label}</span>

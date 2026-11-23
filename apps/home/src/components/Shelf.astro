@@ -1,10 +1,21 @@
 ---
-/** The English sefarim, each linking to its publisher's page. */
+/**
+ * The English sefarim, each linking to its publisher's page. On a page in another language the
+ * titles and credits are marked English (`lang="en" dir="ltr"`); the heading above says so.
+ */
+import type { UiLang } from "@emunas/i18n";
 import { SEFARIM } from "../lib/content.ts";
+import { englishAttrs } from "../lib/lang-path.ts";
+
+interface Props {
+  lang: UiLang;
+}
+
+const en = englishAttrs(Astro.props.lang);
 ---
 <ul class="shelf">
   {SEFARIM.map((s) => (
-    <li>
+    <li {...en}>
       <span class="bt"><a href={s.href}>{s.title}</a></span>
       {s.subtitle && <span class="bs">{s.subtitle}</span>}
       <span class="by">{s.author} &middot; {s.publisher}, {s.year}</span>

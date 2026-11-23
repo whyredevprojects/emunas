@@ -105,6 +105,36 @@ a:hover {
   font-family: var(--hebrew);
 }
 
+/* A page in Yiddish or Hebrew: the Hebrew faces lead every stack (Latin falls through to the
+   Latin faces), and English text inside it (essay and sefer titles, `lang="en"`) gets the Latin
+   stacks back. */
+:root:is([lang="yi"], [lang="he"]) {
+  --serif: var(--font-serif-hebrew);
+  --sans: var(--font-sans-hebrew);
+}
+
+:root:is([lang="yi"], [lang="he"]) [lang="en"] {
+  --serif: var(--font-serif-latin);
+  --sans: var(--font-sans-latin);
+}
+
+/* Hebrew letters have no capitals and are not letter-spaced: the spaced small-caps labels of the
+   English pages are plain, slightly larger text on a Yiddish or Hebrew page. */
+:root:is([lang="yi"], [lang="he"]) :is(.label, .num, .cover .c-series, .cover .c-foot, .support h3, .site-foot h2, .card h2, .facet h2) {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+:root:is([lang="yi"], [lang="he"]) .label {
+  font-size: 0.85rem;
+}
+
+/* Hebrew letters have no italic: the italic lines of the English pages stand upright. English
+   text inside (`lang="en"`, the sefer subtitles) keeps its italic. */
+:root:is([lang="yi"], [lang="he"]) :is(.tp-name, .notice p.q):not([lang="en"]) {
+  font-style: normal;
+}
+
 .wrap {
   max-width: var(--wrap);
   margin-inline: auto;
@@ -291,14 +321,58 @@ a:hover {
   font-weight: 400;
 }
 
-/* Light and dark: a sun and a moon, as on the Library. Each button is named (aria-label) and has
-   a 44px tap target; the chosen one is in ink with an icon-wide hairline under it. Beside the
-   pills on wide screens, at the end of the nav row on narrow ones. */
-.theme-switch:not([hidden]) {
+/* The language switch and the theme switch, together: beside the pills on wide screens, at the
+   end of the nav row on narrow ones. */
+.tools {
   display: flex;
+  align-items: center;
+  gap: 4px;
   grid-column: 4;
   grid-row: 1;
-  margin-inline-start: -20px;
+  margin-inline-start: -16px;
+}
+
+/* One plain link per other language, each in its own language and script, as on the Library. */
+.lang-switch {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  font-family: var(--sans);
+  font-size: 0.92rem;
+}
+
+.lang-switch a {
+  display: inline-flex;
+  align-items: center;
+  min-block-size: 2.75rem;
+  padding-inline: 6px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.lang-switch a[lang="yi"],
+.lang-switch a[lang="he"] {
+  font-family: var(--sans-hebrew);
+}
+
+.lang-switch a[lang="en"] {
+  font-family: var(--font-sans-latin);
+}
+
+.lang-switch a:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.lang-switch .sep {
+  color: var(--ink-faint);
+}
+
+/* Light and dark: a sun and a moon, as on the Library. Each button is named (aria-label) and has
+   a 44px tap target; the chosen one is in ink with an icon-wide hairline under it. */
+.theme-switch:not([hidden]) {
+  display: flex;
 }
 
 .theme-switch button {
@@ -332,17 +406,13 @@ a:hover {
     grid-template-columns: 1fr auto;
   }
 
+  /* The nav takes the second row; the language and theme switches its end. */
   .primary {
-    grid-column: 1 / -1;
+    grid-column: 1;
     grid-row: 2;
   }
 
-  /* The theme switch, once script shows it, takes the end of the nav row. */
-  .bar .wrap:has(> .theme-switch:not([hidden])) .primary {
-    grid-column: 1;
-  }
-
-  .theme-switch:not([hidden]) {
+  .tools {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
@@ -354,6 +424,19 @@ a:hover {
   .primary ul {
     justify-content: flex-start;
     gap: 2px 18px;
+  }
+}
+
+/* Too narrow to share a row: the nav takes the whole second row, the switches a third. */
+@media (max-width: 600px) {
+  .primary {
+    grid-column: 1 / -1;
+  }
+
+  .tools {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    margin-block-start: -12px;
   }
 }
 
@@ -526,6 +609,16 @@ a:hover {
   content: "\201D";
 }
 
+/* Yiddish „…“ and Hebrew „…” quotation marks. */
+:root[lang="yi"] .tp-quote p::before,
+:root[lang="he"] .tp-quote p::before {
+  content: "\201E";
+}
+
+:root[lang="yi"] .tp-quote p::after {
+  content: "\201C";
+}
+
 .tp-quote footer {
   margin-top: 10px;
   font-family: var(--sans);
@@ -590,6 +683,15 @@ a:hover {
 .start a:hover::after {
   transform: translateX(3px);
   color: var(--accent);
+}
+
+/* Right to left: the arrow points left and moves left. */
+:root[dir="rtl"] .start a::after {
+  content: "\2190";
+}
+
+:root[dir="rtl"] .start a:hover::after {
+  transform: translateX(-3px);
 }
 
 .start .t {
@@ -1020,6 +1122,13 @@ a:hover {
   font-family: var(--sans);
   font-size: 0.78rem;
   color: var(--ink-muted);
+}
+
+/* Each item is isolated (a Latin "PDF" or "146 KB" in a right-to-left line keeps its place) and
+   never broken across lines. */
+.meta span {
+  unicode-bidi: isolate;
+  white-space: nowrap;
 }
 
 .meta span + span::before {

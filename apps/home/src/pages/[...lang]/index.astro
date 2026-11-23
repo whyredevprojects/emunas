@@ -1,0 +1,129 @@
+---
+/**
+ * Home: a framed title page, "Start here", the Library and Analyze doorways with the offline ways
+ * to hear the shiurim, a few covers from the archive, About + Sefarim, and supporting the sefarim.
+ * Built once per interface language (lib/lang-path.ts).
+ */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import DocCard from "../../components/DocCard.astro";
+import Shelf from "../../components/Shelf.astro";
+import Rich from "../../components/Rich.astro";
+import { useT } from "../../i18n/index.ts";
+import { ARTICLES, ESSAYS, fileAt } from "../../lib/legacy-files.ts";
+import { CONTACT, EXTERNAL, FEATURED_ESSAYS } from "../../lib/content.ts";
+import { englishAttrs, homePath, langStaticPaths } from "../../lib/lang-path.ts";
+import { siteLinks } from "../../lib/langs.ts";
+import { bareHost, currentSiteEnv } from "../../lib/site-env.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const en = englishAttrs(lang);
+const env = currentSiteEnv();
+const links = siteLinks(env.hosts, lang);
+const featured = [...FEATURED_ESSAYS.map(fileAt), ...ARTICLES];
+const firstEssay = fileAt("/files/essays/bereishis.pdf");
+const spines = Array.from({ length: 10 });
+const bars = Array.from({ length: 19 });
+---
+<Base lang={lang} page="/">
+  <section class="hero" aria-labelledby="h1">
+    <div class="wrap">
+      <div class="titlepage">
+        <span class="label">{t("home.label")}</span>
+        <h1 id="h1">{t("home.h1")}</h1>
+        <p class="tp-name">{t("home.name")}</p>
+        <hr class="ornament" />
+        <blockquote class="tp-quote">
+          <p>{t("home.quote")}</p>
+          <footer>{t("home.quoteBy")}</footer>
+        </blockquote>
+      </div>
+      <div class="hero-side">
+        <p class="lede">{t("home.lede")}</p>
+        <nav class="start" aria-labelledby="start-h">
+          <h2 id="start-h">{t("start.heading")}</h2>
+          <ol>
+            <li><a href={homePath(lang, "/about/")}><span class="t">{t("start.who")}</span><span class="d">{t("start.whoNote")}</span></a></li>
+            <li><a href={firstEssay.path}><span class="t">{t("start.essay")}</span><span class="d"><Rich text={t("start.essayNote")}><bdi slot="title" {...en}>{firstEssay.title}</bdi></Rich></span></a></li>
+            <li><a href={links.library}><span class="t">{t("start.library")}</span><span class="d">{t("start.libraryNote")}</span></a></li>
+            <li><a href={links.listen}><span class="t">{t("start.analyze")}</span><span class="d">{t("start.analyzeNote")}</span></a></li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </section>
+
+  <section class="doors" aria-label={t("doors.label")}>
+    <div class="wrap">
+      <div class="grid">
+        <article class="door door--library door--primary">
+          <div class="door-head">
+            <div>
+              <span class="label">{t("door.libraryLabel")}</span>
+              <h2><a href={links.library}>{t("site.library")}</a></h2>
+            </div>
+            <div class="door-art" aria-hidden="true">{spines.map(() => <i />)}</div>
+          </div>
+          <p class="blurb">{t("door.libraryBlurb")}</p>
+          <p class="door-eds"><Rich text={t("door.also")}><Fragment slot="editions">{links.libraryEditions.map((e, i) => <>{i > 0 && <> &middot; </>}<a href={e.href} lang={e.lang} dir={e.dir} hreflang={e.lang}>{e.name}</a></>)}</Fragment></Rich></p>
+          <div class="foot"><span class="cta">{t("door.libraryCta")}</span><span class="host" dir="ltr">{bareHost(env.hosts.quiet)}</span></div>
+        </article>
+        <article class="door door--listen">
+          <div class="door-head">
+            <div>
+              <span class="label">{t("door.analyzeLabel")}</span>
+              <h2><a href={links.listen}>{t("site.analyze")}</a></h2>
+            </div>
+            <div class="door-art" aria-hidden="true">{bars.map(() => <i />)}</div>
+          </div>
+          <p class="blurb">{t("door.analyzeBlurb")}</p>
+          <p class="door-eds"><Rich text={t("door.also")}><Fragment slot="editions">{links.listenEditions.map((e, i) => <>{i > 0 && <> &middot; </>}<a href={e.href} lang={e.lang} dir={e.dir} hreflang={e.lang}>{e.name}</a></>)}</Fragment></Rich></p>
+          <div class="foot"><span class="cta">{t("door.analyzeCta")}</span><span class="host" dir="ltr">{bareHost(env.hosts.live)}</span></div>
+        </article>
+      </div>
+      <p class="door-note"><Rich text={t("door.note")}><strong slot="phone"><a href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a></strong><a slot="mail" href={homePath(lang, "/contact/")}>{t("door.noteMail")}</a></Rich></p>
+    </div>
+  </section>
+
+  <section class="section section--ruled" aria-labelledby="docs-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2 id="docs-h">{t("archive.heading")}</h2>
+        <a class="more" href={homePath(lang, "/essays/")}>{t("archive.all", { count: ESSAYS.length })}</a>
+      </div>
+      <ul class="docs-grid">
+        {featured.map((f) => <DocCard lang={lang} file={f} />)}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--ruled" aria-labelledby="about-h">
+    <div class="wrap two-col">
+      <div class="about-block">
+        <span class="num">{t("about.label")}</span>
+        <h2 id="about-h">{t("about.heading")}</h2>
+        <p class="dropcap">{t("about.intro")}</p>
+        <p><Rich text={t("about.name")}><em slot="emunas">{t("about.nameWord")}</em></Rich></p>
+        <p><a href={homePath(lang, "/about/")}>{t("about.more")}</a></p>
+        <div class="support" id="support">
+          <h3>{t("support.heading")}</h3>
+          <p><Rich text={t("support.body")}><a slot="link" href={EXTERNAL.support}>{t("support.link")}</a></Rich></p>
+        </div>
+      </div>
+      <div>
+        <div class="shelf-head">
+          <h3>{t("shelf.heading")}</h3>
+          <p>{t("shelf.intro")}</p>
+        </div>
+        <Shelf lang={lang} />
+      </div>
+    </div>
+  </section>
+</Base>

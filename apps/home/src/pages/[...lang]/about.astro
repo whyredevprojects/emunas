@@ -1,0 +1,57 @@
+---
+/** About the Mashgiach: a short introduction, the name "Emunas", and the two magazine features (PDF). */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import DocCard from "../../components/DocCard.astro";
+import Rich from "../../components/Rich.astro";
+import { useT } from "../../i18n/index.ts";
+import { ARTICLES, fileAt } from "../../lib/legacy-files.ts";
+import { CONTACT } from "../../lib/content.ts";
+import { homePath, langStaticPaths } from "../../lib/lang-path.ts";
+import { siteLinks } from "../../lib/langs.ts";
+import { currentSiteEnv } from "../../lib/site-env.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const portrait = fileAt("/files/images/portrait.jpg");
+const links = siteLinks(currentSiteEnv().hosts, lang);
+---
+<Base lang={lang} page="/about/" title={t("aboutPage.title")} description={t("aboutPage.description")}>
+  <div class="wrap">
+    <PageHead lang={lang} title={t("aboutPage.title")} label={t("aboutPage.label")} />
+    <div class="page-body page-grid">
+      <div class="prose">
+        <p class="dropcap">{t("about.intro")}</p>
+        <p><Rich text={t("aboutPage.body")}><em slot="emunas">{t("about.nameWord")}</em></Rich></p>
+        <h2 id="articles">{t("aboutPage.articles")}</h2>
+        <p>{t("aboutPage.articlesIntro")}</p>
+        <ul class="articles">
+          {ARTICLES.map((a) => <DocCard lang={lang} file={a} />)}
+        </ul>
+        <h2>{t("aboutPage.learn")}</h2>
+        <p><Rich text={t("aboutPage.learnBody")}>
+          <a slot="library" href={links.library}>{t("site.library")}</a>
+          <a slot="analyze" href={links.listen}>{t("site.analyze")}</a>
+          <a slot="essays" href={homePath(lang, "/essays/")}>{t("aboutPage.learnEssays")}</a>
+          <a slot="sefarim" href={homePath(lang, "/sefarim/")}>{t("aboutPage.learnSefarim")}</a>
+        </Rich></p>
+      </div>
+      <aside>
+        <img class="portrait" src={portrait.path} alt={t("aboutPage.portrait")} width="225" height="224" />
+        <div class="card">
+          <h2>{t("aboutPage.hear")}</h2>
+          <p><Rich text={t("aboutPage.hearPhone")}><a slot="phone" href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a></Rich></p>
+          <p><Rich text={t("aboutPage.hearOnline")}><a slot="library" href={links.library}>{t("site.library")}</a><a slot="analyze" href={links.listen}>{t("site.analyze")}</a></Rich></p>
+          <p><Rich text={t("aboutPage.hearMail")}><a slot="link" href={homePath(lang, "/contact/")}>{t("aboutPage.hearMailLink")}</a></Rich></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

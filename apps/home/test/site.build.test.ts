@@ -1,20 +1,22 @@
 /**
  * The home site on a real build (`astro build` into a temporary directory, hosts from
- * EMUNAS_DOMAIN): every page ends with the dedication alone in its footer, is self-canonical on
- * the apex, follows the naming and CSP rules, and links only /files/ paths in the manifest.
+ * EMUNAS_DOMAIN): every page exists in every interface language (`UI_LANGS`) at its path, with
+ * `<html lang dir>`, the language switch and a complete hreflang set; every page ends with the
+ * dedication alone in its footer, is self-canonical on the apex, follows the naming and CSP rules,
+ * and links only /files/ paths in the manifest.
  */
-import { mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, mkdtempSync, readFileSync, readdirSync, rmSync, statSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { dirname, join, relative, sep } from "node:path";
 import { fileURLToPath } from "node:url";
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
-import { otherUiLangs } from "@emunas/i18n";
+import { UI_DIR, UI_ENDONYM, UI_LANGS, languageName, otherUiLangs } from "@emunas/i18n";
 import { THEME_INIT_SCRIPT } from "@emunas/tokens";
 import { DEDICATION } from "../src/components/dedication.ts";
+import { useT } from "../src/i18n/index.ts";
 import { checkFiles } from "../src/lib/check-files.ts";
-import { TRANSLATIONS } from "../src/lib/content.ts";
-import { HOME_LANG } from "../src/lib/langs.ts";
-import { SITEMAP_PATHS } from "../src/lib/seo.ts";
+import { HOME_DEFAULT_LANG, homePath } from "../src/lib/lang-path.ts";
+import { OG_LOCALE, PAGES, SITEMAP_PATHS } from "../src/lib/seo.ts";
 import { astroBuild } from "./astro-build.ts";
 
 const app = join(dirname(fileURLToPath(import.meta.url)), "..");
@@ -51,18 +53,62 @@ function htmlFiles(): string[] {
 
 const read = (f: string) => readFileSync(join(dist, f), "utf8");
 const pathOf = (f: string) => (f === "index.html" ? "/" : `/${f.replace(/index\.html$/, "")}`);
+const fileOf = (p: string) => `${p.slice(1)}index.html`;
 
 describe("the built home site", () => {
-  it("builds the expected pages", () => {
-    expect(htmlFiles()).toEqual([
-      "404.html",
-      "about/index.html",
-      "contact/index.html",
-      "essays/index.html",
-      "index.html",
-      "sefarim/index.html",
-      "weekly-devar-torah/index.html",
-    ]);
+  it("builds every page in every language at its path, and one 404", () => {
+    const want = ["404.html", ...UI_LANGS.flatMap((l) => PAGES.map((p) => fileOf(homePath(l, p))))].sort();
+    expect(htmlFiles()).toEqual(want);
+    expect(htmlFiles()).toContain("index.html");
+    expect(htmlFiles()).toContain("he/about/index.html");
+    expect(htmlFiles()).toContain("yi/index.html");
+  });
+
+  it("has no /en/ prefix and no redirect pages", () => {
+    expect(existsSync(join(dist, HOME_DEFAULT_LANG))).toBe(false);
+    for (const f of htmlFiles()) expect(read(f), f).not.toMatch(/http-equiv="refresh"/i);
+  });
+
+  it("sets <html lang dir> from the page language", () => {
+    for (const lang of UI_LANGS) {
+      for (const p of PAGES) {
+        const f = fileOf(homePath(lang, p));
+        expect(read(f), f).toMatch(new RegExp(`<html lang="${lang}" dir="${UI_DIR[lang]}"`));
+      }
+    }
+    expect(read("he/index.html")).toMatch(/<html lang="he" dir="rtl"/);
+    expect(read("yi/index.html")).toMatch(/<html lang="yi" dir="rtl"/);
+    expect(read("index.html")).toMatch(/<html lang="en" dir="ltr"/);
+  });
+
+  it("links the same page in every other language from the switch, as plain links", () => {
+    for (const lang of UI_LANGS) {
+      for (const p of PAGES) {
+        const f = fileOf(homePath(lang, p));
+        const html = read(f);
+        const sw = /<p class="lang-switch">([\s\S]*?)<\/p>/.exec(html)?.[1] ?? "";
+        const links = [...sw.matchAll(/<a href="([^"]+)" hreflang="([^"]+)" lang="([^"]+)" dir="([^"]+)"[^>]*>([^<]+)<\/a>/g)].map((m) => m.slice(1));
+        expect(links, f).toEqual(otherUiLangs(lang).map((o) => [homePath(o, p), o, o, UI_DIR[o], UI_ENDONYM[o]]));
+        for (const o of otherUiLangs(lang)) {
+          expect(html, f).toContain(`<a href="${homePath(o, p)}" hreflang="${o}" data-lang-switch>${useT(lang)("footer.inLanguage", { language: languageName(o, lang) })}</a>`);
+        }
+      }
+    }
+  });
+
+  it("has a complete hreflang set and og:locale on every page", () => {
+    for (const lang of UI_LANGS) {
+      for (const p of PAGES) {
+        const f = fileOf(homePath(lang, p));
+        const html = read(f);
+        const alts = [...html.matchAll(/<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">/g)].map((m) => [m[1], m[2]]);
+        expect(alts, f).toEqual([
+          ...UI_LANGS.map((l) => [l, `https://${DOMAIN}${homePath(l, p)}`]),
+          ["x-default", `https://${DOMAIN}${homePath(HOME_DEFAULT_LANG, p)}`],
+        ]);
+        expect(html, f).toContain(`<meta property="og:locale" content="${OG_LOCALE[lang]}">`);
+      }
+    }
   });
 
   it("ends every page's footer with the dedication, alone, in Hebrew", () => {
@@ -103,27 +149,37 @@ describe("the built home site", () => {
     expect(read("robots.txt")).toContain(`Sitemap: https://${DOMAIN}/sitemap.xml`);
   });
 
-  it("links Library and Analyze on their own subdomains", () => {
-    const html = read("index.html");
-    expect(html).toContain(`href="https://library.${DOMAIN}/en/"`);
-    expect(html).toContain(`href="https://analyze.${DOMAIN}/en/"`);
-  });
-
-  it("links every other edition of Library and Analyze, and shows its labels in English only", () => {
-    const html = read("index.html");
-    for (const lang of otherUiLangs(HOME_LANG)) {
-      expect(html).toContain(`href="https://library.${DOMAIN}/${lang}/"`);
-      expect(html).toContain(`href="https://analyze.${DOMAIN}/${lang}/"`);
-    }
-    expect(html).toMatch(/<h2 id="start-h">Start here<\/h2>/);
-    const shown: string[] = [];
-    for (const f of htmlFiles()) {
-      const page = read(f);
-      for (const [place, t] of Object.entries(TRANSLATIONS)) {
-        for (const text of Object.values(t)) if (page.includes(`>${text}<`)) shown.push(`${f}: ${place} ${text}`);
+  it("links Library and Analyze in the page's language, and their other editions beside", () => {
+    for (const lang of UI_LANGS) {
+      const html = read(fileOf(homePath(lang, "/")));
+      expect(html).toContain(`<a class="pill pill--ink" href="https://library.${DOMAIN}/${lang}/">`);
+      expect(html).toContain(`<a class="pill" href="https://analyze.${DOMAIN}/${lang}/">`);
+      for (const o of otherUiLangs(lang)) {
+        expect(html).toContain(`<a href="https://library.${DOMAIN}/${o}/" lang="${o}" dir="${UI_DIR[o]}" hreflang="${o}">${UI_ENDONYM[o]}</a>`);
+        expect(html).toContain(`<a href="https://analyze.${DOMAIN}/${o}/" lang="${o}" dir="${UI_DIR[o]}" hreflang="${o}">${UI_ENDONYM[o]}</a>`);
       }
     }
-    expect(shown).toEqual([]);
+  });
+
+  it("shows each page's copy in its own language", () => {
+    for (const lang of UI_LANGS) {
+      const t = useT(lang);
+      const html = read(fileOf(homePath(lang, "/")));
+      expect(html).toContain(`<h2 id="start-h">${t("start.heading")}</h2>`);
+      expect(html).toContain(`<title>${t("site.homeTitle").replace(/"/g, "&quot;")}</title>`);
+    }
+    // No placeholder left unfilled anywhere.
+    for (const f of htmlFiles()) expect(read(f).replace(/<script[\s\S]*?<\/script>/g, ""), f).not.toMatch(/\{[A-Za-z_]+\}/);
+  });
+
+  it("marks the English essay and sefer titles English on a page in another language", () => {
+    for (const lang of otherUiLangs(HOME_DEFAULT_LANG)) {
+      const essays = read(fileOf(homePath(lang, "/essays/")));
+      expect(essays).toMatch(/<a href="\/files\/essays\/noach\.pdf" lang="en" dir="ltr">/);
+      expect(essays).toContain(useT(lang)("note.inEnglish"));
+      expect(read(fileOf(homePath(lang, "/sefarim/")))).toMatch(/<li lang="en" dir="ltr"> ?<span class="bt">/);
+    }
+    expect(read("essays/index.html")).toMatch(/<a href="\/files\/essays\/noach\.pdf">/);
   });
 
   it("puts the Library first and emphasized, Analyze second", () => {
@@ -136,7 +192,7 @@ describe("the built home site", () => {
   it("follows the naming rules and never mentions transcripts", () => {
     for (const f of htmlFiles()) {
       const text = read(f).replace(/<[^>]+>/g, " ");
-      expect(text, f).not.toMatch(/\bthe Ro?v\b|\bthe Rav\b|דער רב|shlit|שליט|transcri|\bASR\b|תמלול|תמליל/i);
+      expect(text, f).not.toMatch(/\bthe Ro?v\b|\bthe Rav\b|דער רב|(?<![א-ת])הרב(?![א-ת])|shlit|שליט|transcri|\bASR\b|תמלול|תמליל/i);
     }
   });
 
@@ -144,7 +200,7 @@ describe("the built home site", () => {
     const init = `<script>${THEME_INIT_SCRIPT}</script>`;
     for (const f of htmlFiles()) {
       const html = read(f);
-      expect(html, f).not.toMatch(/<link(?![^>]*rel="canonical")[^>]+href="https?:/);
+      expect(html, f).not.toMatch(/<link(?![^>]*rel="(?:canonical|alternate)")[^>]+href="https?:/);
       // Exactly one inline script, the colour-theme init, byte for byte (the CSP allows its hash),
       // in <head> before any stylesheet.
       expect(html.split(init).length - 1, f).toBe(1);

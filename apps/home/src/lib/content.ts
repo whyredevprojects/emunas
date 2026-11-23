@@ -1,38 +1,13 @@
 /**
- * Fixed content of the home site, taken from the old www.emunas.com (crawled 2026-11-16) with
- * the naming rules applied: he is "the Mashgiach" (or Harav Moshe Wolfson zt"l), never
- * "the Rav" and never "shlit"a".
+ * Fixed data of the home site, taken from the old www.emunas.com (crawled 2026-11-16): contact
+ * details, external links, the English sefarim, and what the essay and article covers say. The
+ * UI copy and prose, in every interface language, are in src/i18n/.
  */
-import type { Translations } from "./langs.ts";
 import type { EssayGroup } from "./legacy-schema.ts";
 
+/** The wordmark: "Emunas" and the same word in Hebrew letters, shown together on every page. */
 export const SITE_NAME = "Emunas";
-/** The brand in Hebrew letters: the same word in Yiddish and Hebrew, shown beside "Emunas". */
 export const SITE_NAME_HEBREW_SCRIPT = "אמונת";
-export const SITE_DESCRIPTION =
-  "The shiurim, essays and sefarim of Harav Moshe Wolfson zt\"l, the Mashgiach: links to the shiurim, free essays to download, and English sefarim drawn from his teaching.";
-
-/**
- * The home site's labels in the other interface languages (Yiddish, Hebrew), by place, for the
- * language switch to come. Home shows only English for now, so none of these is rendered. Hebrew
- * has no nikud, and the Mashgiach is "המשגיח".
- */
-export const TRANSLATIONS = {
-  mashgiach: { yi: "דער משגיח", he: "המשגיח" },
-  startHere: { yi: "אנהייבן דא", he: "התחילו כאן" },
-  readListen: { yi: "לייענען און הערן", he: "קריאה והאזנה" },
-  libraryName: { yi: "ספריה", he: "ספריה" },
-  studyDeep: { yi: "לערנען בעיון", he: "לימוד בעיון" },
-  analyzeName: { yi: "עיון", he: "עיון" },
-  archive: { yi: "פונעם ארכיוו", he: "מן הארכיון" },
-  about: { yi: "וועגן", he: "אודות" },
-  contact: { yi: "קאנטאקט", he: "צור קשר" },
-  devarTorah: { yi: "דבר תורה", he: "דבר תורה" },
-  essays: { yi: "מאמרים", he: "מאמרים" },
-  sefarim: { yi: "ספרים", he: "ספרים" },
-} as const satisfies Readonly<Record<string, Translations>>;
-
-export const INSTITUTION = "Congregation Emunas Yisrael";
 
 export const CONTACT = {
   email: "info@emunas.com",
@@ -47,17 +22,6 @@ export const EXTERNAL = {
   /** Weekly Devar Torah sign-up (Brevo). */
   devarTorah:
     "https://8bf9f8ed.sibforms.com/serve/MUIFABPPPSiXcrFKY5lvWawQPnY32-wOIo-NqQ2zxc8l4rouJn6lr-cpeCIKwQC9N07qjl6TLp2xIlusvW82Y2YG74nfCPtQyoMf7LIDfKCKrGDLOO01QofBZiTsNUXM03pwQOubXP-bR4WhmDvKqZho8wMPjz_R7n-PWWaV490LD31cPCdAPI9bAKmEbdtnnEjwTg145PHEpqKi",
-} as const;
-
-export const QUOTE = {
-  text: "I cannot define what chassidus is. It is a light the Baal Shem Tov kindled, by which we can find our way until Mashiach.",
-  by: "Harav Moshe Wolfson zt\"l",
-} as const;
-
-export const INTERNET_NOTICE = {
-  body: "The existence of this website should not be misunderstood as an endorsement of Internet use by the Mashgiach. To the contrary, the Mashgiach strongly discouraged use of the Internet because of the great spiritual dangers that it poses. This site is being made available for those who use the Internet in any case and can benefit from the shiurim. Those who wish can have audio shiurim sent by mail.",
-  asked: "Regarding Internet use, the Mashgiach asked that we state the following:",
-  quote: "To protect the purity of one’s neshamah by carefully shielding one’s eyes from viewing the forbidden is a very precious form of service to G-d.",
 } as const;
 
 export interface Sefer {
@@ -84,22 +48,25 @@ export const SEFARIM: readonly Sefer[] = [
   { title: "Wellsprings of Faith", subtitle: "Discourses designed as an experience of faith rather than instruction in it", author: "Rabbi Yehoshua Fieldsteel", publisher: "Feldheim", year: 2002, href: "https://www.feldheim.com/wellsprings-of-faith-1" },
 ];
 
+/** Anchor and filter id of an essay group; its label is `group.<id>` in src/i18n/. */
+export type GroupId = "bereishis" | "shemos" | "vayikra" | "bamidbar" | "devarim" | "yomim-tovim";
+
 export interface GroupInfo {
   /** Anchor and filter id on the essays page. */
-  readonly id: string;
-  readonly label: string;
+  readonly id: GroupId;
+  /** The group's Hebrew name, shown beside its label on an English page. */
   readonly he: string;
   /** Cover cloth (CSS modifier). */
   readonly cloth: "oxblood" | "green" | "navy" | "ochre" | "slate" | "paper";
 }
 
 export const GROUP_INFO: Readonly<Record<EssayGroup, GroupInfo>> = {
-  Bereishis: { id: "bereishis", label: "Sefer Bereishis", he: "ספר בראשית", cloth: "oxblood" },
-  Shemos: { id: "shemos", label: "Sefer Shemos", he: "ספר שמות", cloth: "green" },
-  Vayikra: { id: "vayikra", label: "Sefer Vayikra", he: "ספר ויקרא", cloth: "navy" },
-  Bamidbar: { id: "bamidbar", label: "Sefer Bamidbar", he: "ספר במדבר", cloth: "ochre" },
-  Devarim: { id: "devarim", label: "Sefer Devarim", he: "ספר דברים", cloth: "slate" },
-  "Yomim Tovim": { id: "yomim-tovim", label: "Yomim Tovim", he: "ימים טובים", cloth: "paper" },
+  Bereishis: { id: "bereishis", he: "ספר בראשית", cloth: "oxblood" },
+  Shemos: { id: "shemos", he: "ספר שמות", cloth: "green" },
+  Vayikra: { id: "vayikra", he: "ספר ויקרא", cloth: "navy" },
+  Bamidbar: { id: "bamidbar", he: "ספר במדבר", cloth: "ochre" },
+  Devarim: { id: "devarim", he: "ספר דברים", cloth: "slate" },
+  "Yomim Tovim": { id: "yomim-tovim", he: "ימים טובים", cloth: "paper" },
 };
 
 /** The Hebrew name on each essay's cover, by file slug. Every essay needs one (test/content.test.ts). */

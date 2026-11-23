@@ -1,0 +1,44 @@
+---
+/** Contact: email, postal address, the phone line and recordings by mail. */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import Rich from "../../components/Rich.astro";
+import { useT } from "../../i18n/index.ts";
+import { CONTACT } from "../../lib/content.ts";
+import { englishAttrs, langStaticPaths } from "../../lib/lang-path.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const mailto = `mailto:${CONTACT.email}`;
+---
+<Base lang={lang} page="/contact/" title={t("contact.title")} description={t("contact.description")}>
+  <div class="wrap">
+    <PageHead lang={lang} title={t("contact.title")} label={t("contact.label")} />
+    <div class="page-body page-grid">
+      <div class="prose">
+        <p><Rich text={t("contact.body")}><a slot="email" href={mailto} dir="ltr">{CONTACT.email}</a></Rich></p>
+        <h2 id="recordings">{t("contact.recordings")}</h2>
+        <p>{t("contact.recordingsBody")}</p>
+        <h2>{t("contact.phone")}</h2>
+        <p><Rich text={t("contact.phoneBody")}><a slot="phone" href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a></Rich></p>
+      </div>
+      <aside>
+        <div class="card">
+          <h2>{t("contact.byMail")}</h2>
+          <address {...englishAttrs(lang)}>{CONTACT.address.map((line, i) => <>{line}{i < CONTACT.address.length - 1 && <br />}</>)}</address>
+        </div>
+        <div class="card">
+          <h2>{t("contact.byEmail")}</h2>
+          <p><a href={mailto} dir="ltr">{CONTACT.email}</a></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

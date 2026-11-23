@@ -1,0 +1,85 @@
+---
+/**
+ * Every essay, grouped by sefer and Yomim Tovim, each a PDF. The section filter works without
+ * JavaScript: each filter link targets an empty marker before the rail and the list, and CSS
+ * (styles/home.css) hides the other groups. "All" clears the target. The essays are English:
+ * on a page in another language their titles are marked English and the intro says so.
+ */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import Cover from "../../components/Cover.astro";
+import Rich from "../../components/Rich.astro";
+import { useT } from "../../i18n/index.ts";
+import { ESSAYS, ESSAY_GROUP_LISTS } from "../../lib/legacy-files.ts";
+import { formatSize, splitTitle } from "../../lib/legacy-schema.ts";
+import { GROUP_INFO } from "../../lib/content.ts";
+import { englishAttrs, homePath, langStaticPaths } from "../../lib/lang-path.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+const en = englishAttrs(lang);
+const groups = ESSAY_GROUP_LISTS.map((g) => {
+  const info = GROUP_INFO[g.group];
+  return { ...g, info, label: t(`group.${info.id}` as const) };
+});
+---
+<Base lang={lang} page="/essays/" title={t("essays.title")} description={t("essays.description", { count: ESSAYS.length })}>
+  <div class="wrap">
+    <PageHead lang={lang} title={t("essays.title")} label={t("essays.label")} intro={t("essays.intro")} />
+    <div class="dl-layout">
+      {groups.map((g) => <span class="tgt" id={g.info.id} />)}
+      <aside class="facets" aria-label={t("essays.filter")}>
+        <div class="facet">
+          <h2>{t("essays.section")}</h2>
+          <ul>
+            <li><a class="is-all" href="#all"><span>{t("essays.all")}</span><span class="n">{ESSAYS.length}</span></a></li>
+            {groups.map((g) => (
+              <li><a href={`#${g.info.id}`}><span>{g.label}</span><span class="n">{g.essays.length}</span></a></li>
+            ))}
+          </ul>
+          <p class="note">{t("essays.note")}</p>
+        </div>
+        <div class="facet also">
+          <h2>{t("essays.also")}</h2>
+          <ul>
+            <li><a href={homePath(lang, "/weekly-devar-torah/")}><span>{t("essays.devarTorah")}</span></a></li>
+          </ul>
+        </div>
+      </aside>
+      <div class="dl-main" id="all">
+        {groups.map((g) => (
+          <p class="status" role="status" data-status={g.info.id}>
+            <Rich text={t("essays.showing")}><Fragment slot="group">{g.label}</Fragment><a slot="link" href="#all">{t("essays.showAll")}</a></Rich>
+          </p>
+        ))}
+        {groups.map((g) => (
+          <details class="grp" data-group={g.info.id} open>
+            <summary>
+              <h2 id={`g-${g.info.id}`}>{g.label}{g.label !== g.info.he && <> <span class="yi" lang="he" dir="rtl">{g.info.he}</span></>}</h2>
+              <span class="cnt">{t("essays.count", { count: g.essays.length })}</span>
+            </summary>
+            <ul class="rows">
+              {g.essays.map((e) => (
+                <li class="doc">
+                  <Cover lang={lang} file={e} mini />
+                  <div>
+                    <div class="t"><a href={e.path} {...en}>{e.title}</a></div>
+                    <div class="m"><bdi>{t("doc.pdf")}</bdi>{en.lang && <> &middot; {t("note.inEnglish")}</>} &middot; <bdi>{formatSize(e.sizeBytes)}</bdi></div>
+                  </div>
+                  <a class="dlbtn" href={e.path}>{t("doc.pdf")}<span class="vh">: <bdi {...en}>{splitTitle(e.title).head}</bdi> ({formatSize(e.sizeBytes)})</span></a>
+                </li>
+              ))}
+            </ul>
+          </details>
+        ))}
+      </div>
+    </div>
+  </div>
+</Base>

@@ -2,16 +2,23 @@
 /**
  * A CSS-only cover for an essay or a magazine article (decorative, `aria-hidden`; the real title
  * is always repeated as text next to it). `mini` is the 52px version used in the essays list.
+ * The English text printed on a cover keeps `lang="en" dir="ltr"` on a page in another language.
  */
+import type { UiLang } from "@emunas/i18n";
+import { useT } from "../i18n/index.ts";
 import { slugOf, splitTitle, type LegacyFile } from "../lib/legacy-schema.ts";
 import { ARTICLE_INFO, ESSAY_HEBREW, GROUP_INFO } from "../lib/content.ts";
+import { englishAttrs } from "../lib/lang-path.ts";
 
 interface Props {
+  lang: UiLang;
   file: LegacyFile;
   mini?: boolean;
 }
 
-const { file, mini = false } = Astro.props;
+const { lang, file, mini = false } = Astro.props;
+const t = useT(lang);
+const en = englishAttrs(lang);
 const essay = file.kind === "essay" && file.group !== null ? GROUP_INFO[file.group] : null;
 const he = ESSAY_HEBREW[slugOf(file)];
 const article = ARTICLE_INFO[file.path];
@@ -22,17 +29,17 @@ const cloth = essay ? (essay.cloth === "oxblood" ? "" : `cover--${essay.cloth}`)
 )}
 {essay && !mini && (
   <div class:list={["cover", cloth]} aria-hidden="true">
-    <span class="c-series">{essay.label}</span>
+    <span class="c-series">{t(`group.${essay.id}` as const)}</span>
     <span class="c-mid">
       <span class="c-he" lang="he" dir="rtl">{he}</span>
-      <span class="c-en">{splitTitle(file.title).sub ?? file.title}</span>
+      <span class="c-en" {...en}>{splitTitle(file.title).sub ?? file.title}</span>
     </span>
-    <span class="c-foot">Essay</span>
+    <span class="c-foot">{t("doc.essay")}</span>
   </div>
 )}
 {!essay && (
-  <div class="cover cover--mag" aria-hidden="true">
-    <span class="c-series">{article?.source ?? "Article"}</span>
+  <div class="cover cover--mag" aria-hidden="true" {...en}>
+    <span class="c-series">{article?.source ?? t("doc.article")}</span>
     <span class="c-mid"><span class="c-en">{article?.headline ?? file.title}</span></span>
     <span class="c-foot">{article?.date ?? ""}</span>
   </div>
