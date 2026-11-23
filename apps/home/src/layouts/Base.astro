@@ -1,46 +1,62 @@
 ---
 /**
- * Layout of every home page: masthead (brand, primary nav, the light/dark switch, Library and
- * Analyze pills), `main`, the internet notice, and the footer whose last line is the dedication,
- * alone. Light is the default; components/ThemeHead.astro applies a dark choice before paint, and
- * the sun and moon switch (lib/theme.client.ts) is hidden until script shows it.
- * Canonical and Open Graph tags point at the home origin from the build environment
+ * Layout of every home page: masthead (brand, primary nav, the Library and Analyze pills, the
+ * language switch and the light/dark switch), `main`, the internet notice, and the footer whose
+ * last line is the dedication, alone. `<html lang dir>` is the page language (`UI_DIR`).
+ * The language switch is one plain link per other language (`otherUiLangs`, each named in its own
+ * language) to the same page in that language; the footer repeats it as "This page in …".
+ * Light is the default; components/ThemeHead.astro applies a dark choice before paint, and the sun
+ * and moon switch (lib/theme.client.ts) is hidden until script shows it.
+ * Canonical, hreflang and Open Graph tags point at the home origin from the build environment
  * (lib/site-env.ts); with placeholder hosts the page is `noindex`.
  */
 import "../styles/fonts.css";
 import "@emunas/tokens/tokens.css";
 import "../styles/home.css";
+import { UI_DIR, UI_ENDONYM, languageName, otherUiLangs, type UiLang } from "@emunas/i18n";
 import Dedication from "../components/Dedication.astro";
 import ThemeHead from "../components/ThemeHead.astro";
-import { CONTACT, EXTERNAL, INSTITUTION, INTERNET_NOTICE, SITE_DESCRIPTION, SITE_NAME, SITE_NAME_HEBREW_SCRIPT } from "../lib/content.ts";
+import Rich from "../components/Rich.astro";
+import { useT } from "../i18n/index.ts";
+import { CONTACT, EXTERNAL, SITE_NAME, SITE_NAME_HEBREW_SCRIPT } from "../lib/content.ts";
 import { fontPreloads } from "../lib/fonts.ts";
+import { englishAttrs, homePath } from "../lib/lang-path.ts";
+import { siteLinks } from "../lib/langs.ts";
 import { NAV } from "../lib/nav.ts";
 import { headTags } from "../lib/seo.ts";
-import { siteLinks } from "../lib/langs.ts";
 import { currentSiteEnv } from "../lib/site-env.ts";
 
 interface Props {
+  lang: UiLang;
+  /** Language-neutral root-relative path of the page (`/about/`; `/` on the home page). */
+  page: string;
   /** Page title without the site name; omitted on the home page. */
   title?: string;
   description?: string;
-  /** Root-relative path (default: `Astro.url.pathname`). */
-  path?: string;
   noindex?: boolean;
+  /**
+   * False on a page that exists in one language only (404): the language switch then goes to the
+   * home page of each other language, and the footer has no "This page in …" line.
+   */
+  localized?: boolean;
 }
 
-const { title, description = SITE_DESCRIPTION, noindex = false } = Astro.props;
-const path = Astro.props.path ?? Astro.url.pathname;
+const { lang, page, title, noindex = false, localized = true } = Astro.props;
+const t = useT(lang);
+const description = Astro.props.description ?? t("site.description");
 const env = currentSiteEnv();
-const links = siteLinks(env.hosts);
-const fullTitle = title === undefined ? `${SITE_NAME} · The Mashgiach, Harav Moshe Wolfson zt"l` : `${title} · ${SITE_NAME}`;
+const links = siteLinks(env.hosts, lang);
+const home = homePath(lang, "/");
+const fullTitle = title === undefined ? t("site.homeTitle") : `${title} · ${t("site.name")}`;
 const tags = headTags(
-  { path, title: title ?? SITE_NAME, description, siteName: SITE_NAME, noindex },
+  { lang, page, title: title ?? t("site.name"), description, siteName: t("site.name"), noindex },
   env.hosts.home,
   { placeholder: env.placeholder },
 );
+const others = otherUiLangs(lang).map((l) => ({ lang: l, dir: UI_DIR[l], href: homePath(l, localized ? page : "/") }));
 ---
 <!doctype html>
-<html lang="en" dir="ltr">
+<html lang={lang} dir={UI_DIR[lang]}>
   <head>
     <meta charset="utf-8" />
     <ThemeHead />
@@ -51,6 +67,7 @@ const tags = headTags(
     {fontPreloads().map((href) => <link rel="preload" href={href} as="font" type="font/woff2" crossorigin />)}
     {tags.robots && <meta name="robots" content={tags.robots} />}
     {tags.canonical && <link rel="canonical" href={tags.canonical} />}
+    {tags.alternates.map((a) => <link rel="alternate" hreflang={a.hreflang} href={a.href} />)}
     {tags.og.map((m) => <meta property={m.property} content={m.content} />)}
     <meta name="twitter:card" content="summary" />
     {/* A module script runs once the document is parsed; in <head> so nothing follows the footer. */}
@@ -60,43 +77,51 @@ const tags = headTags(
     </script>
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t("skip.toMain")}</a>
     <header>
       <div class="topbar">
         <div class="wrap">
-          <p class="inst">{INSTITUTION} &middot; Brooklyn</p>
-          <p>Shiurim by phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
+          <p class="inst">{t("site.institution")} &middot; {t("site.city")}</p>
+          <p><Rich text={t("top.phone")}><a slot="phone" href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a></Rich></p>
         </div>
       </div>
       <div class="bar">
         <div class="wrap">
-          <a class="brand" href="/" aria-label={`${SITE_NAME}, home`} aria-current={path === "/" ? "page" : undefined}>
-            <span class="brand-en">{SITE_NAME}</span>
+          <a class="brand" href={home} aria-label={t("brand.label")} aria-current={page === "/" && localized ? "page" : undefined} dir="ltr">
+            <span class="brand-en" lang="en">{SITE_NAME}</span>
             <span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span>
           </a>
-          <nav class="primary" aria-label="Main">
+          <nav class="primary" aria-label={t("nav.label")}>
             <ul>
               {NAV.map((item) => (
-                <li><a href={item.href} aria-current={item.href === path ? "page" : undefined}>{item.label}</a></li>
+                <li><a href={homePath(lang, item.path)} aria-current={item.path === page ? "page" : undefined}>{t(item.label)}</a></li>
               ))}
             </ul>
           </nav>
           <div class="sitelinks">
-            <a class="pill pill--ink" href={links.library}>Library <span class="arr" aria-hidden="true">&#8599;</span></a>
-            <a class="pill" href={links.listen}>Analyze <span class="arr" aria-hidden="true">&#8599;</span></a>
+            <a class="pill pill--ink" href={links.library}>{t("site.library")} <span class="arr" aria-hidden="true">&#8599;</span></a>
+            <a class="pill" href={links.listen}>{t("site.analyze")} <span class="arr" aria-hidden="true">&#8599;</span></a>
           </div>
-          <div class="theme-switch" role="group" aria-label="Colours" hidden data-theme-switch>
-            <button type="button" data-theme-value="light" aria-pressed="true" aria-label="Light" title="Light">
-              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                <circle cx="12" cy="12" r="4.5" fill="currentColor" />
-                <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.58 4.58l2.12 2.12M17.3 17.3l2.12 2.12M4.58 19.42l2.12-2.12M17.3 6.7l2.12-2.12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </button>
-            <button type="button" data-theme-value="dark" aria-pressed="false" aria-label="Dark" title="Dark">
-              <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
-                <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor" />
-              </svg>
-            </button>
+          <div class="tools">
+            <p class="lang-switch">
+              <span class="vh">{t("lang.label")}: </span>
+              {others.map((o, i) => (
+                <>{i > 0 && <span class="sep" aria-hidden="true">&middot;</span>}<a href={o.href} hreflang={o.lang} lang={o.lang} dir={o.dir} data-lang-switch>{UI_ENDONYM[o.lang]}</a></>
+              ))}
+            </p>
+            <div class="theme-switch" role="group" aria-label={t("theme.label")} hidden data-theme-switch>
+              <button type="button" data-theme-value="light" aria-pressed="true" aria-label={t("theme.light")} title={t("theme.light")}>
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                  <circle cx="12" cy="12" r="4.5" fill="currentColor" />
+                  <path d="M12 1.5v3M12 19.5v3M1.5 12h3M19.5 12h3M4.58 4.58l2.12 2.12M17.3 17.3l2.12 2.12M4.58 19.42l2.12-2.12M17.3 6.7l2.12-2.12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </button>
+              <button type="button" data-theme-value="dark" aria-pressed="false" aria-label={t("theme.dark")} title={t("theme.dark")}>
+                <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" focusable="false">
+                  <path d="M12 3a9 9 0 1 0 9 9c0-.46-.04-.92-.1-1.36a5.39 5.39 0 0 1-4.4 2.26 5.4 5.4 0 0 1-3.14-9.8c-.44-.06-.9-.1-1.36-.1z" fill="currentColor" />
+                </svg>
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -106,38 +131,45 @@ const tags = headTags(
     </main>
     <aside class="notice" aria-labelledby="notice-h">
       <div class="wrap">
-        <h2 id="notice-h">A word about the internet</h2>
+        <h2 id="notice-h">{t("notice.heading")}</h2>
         <div>
-          <p>{INTERNET_NOTICE.body}</p>
-          <p>{INTERNET_NOTICE.asked}</p>
-          <p class="q">{INTERNET_NOTICE.quote}</p>
+          <p>{t("notice.body")}</p>
+          <p>{t("notice.asked")}</p>
+          <p class="q">{t("notice.quote")}</p>
         </div>
       </div>
     </aside>
     <footer class="site-foot">
       <div class="wrap cols">
         <div class="f-about">
-          <a class="brand" href="/"><span class="brand-en">{SITE_NAME}</span><span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span></a>
-          <p>The shiurim, essays and sefarim of Harav Moshe Wolfson zt"l, the Mashgiach. The shiurim are free.</p>
-          <p><a href={EXTERNAL.support}>Support the printing of the Mashgiach&rsquo;s sefarim</a></p>
+          <a class="brand" href={home} dir="ltr"><span class="brand-en" lang="en">{SITE_NAME}</span><span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span></a>
+          <p>{t("footer.about")}</p>
+          <p><a href={EXTERNAL.support}>{t("footer.support")}</a></p>
+          {localized && (
+            <p class="f-langs">
+              {others.map((o, i) => (
+                <>{i > 0 && <><br /></>}<a href={o.href} hreflang={o.lang} data-lang-switch>{t("footer.inLanguage", { language: languageName(o.lang, lang) })}</a></>
+              ))}
+            </p>
+          )}
         </div>
         <nav aria-labelledby="f-site">
-          <h2 id="f-site">This site</h2>
+          <h2 id="f-site">{t("footer.site")}</h2>
           <ul>
-            {NAV.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+            {NAV.map((item) => <li><a href={homePath(lang, item.path)}>{t(item.label)}</a></li>)}
           </ul>
         </nav>
         <nav aria-labelledby="f-shiur">
-          <h2 id="f-shiur">The shiurim</h2>
+          <h2 id="f-shiur">{t("footer.shiurim")}</h2>
           <ul>
-            <li><a href={links.library}>Library</a></li>
-            <li><a href={links.listen}>Analyze</a></li>
-            <li>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
+            <li><a href={links.library}>{t("site.library")}</a></li>
+            <li><a href={links.listen}>{t("site.analyze")}</a></li>
+            <li><Rich text={t("footer.byPhone")}><a slot="phone" href={CONTACT.phoneHref} dir="ltr">{CONTACT.phone}</a></Rich></li>
           </ul>
         </nav>
         <div>
-          <h2>Contact</h2>
-          <address>
+          <h2>{t("footer.contact")}</h2>
+          <address {...englishAttrs(lang)}>
             {CONTACT.address.map((line) => <>{line}<br /></>)}
             <a href={`mailto:${CONTACT.email}`}>{CONTACT.email}</a>
           </address>

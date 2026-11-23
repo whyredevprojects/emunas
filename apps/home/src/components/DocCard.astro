@@ -1,18 +1,27 @@
 ---
-/** A cover with its title (a link to the PDF) and the file's real size. */
+/**
+ * A cover with its title (a link to the PDF) and the file's real size. The essays and articles
+ * are English: on a page in another language the title is marked English and the meta line says so.
+ */
+import type { UiLang } from "@emunas/i18n";
 import Cover from "./Cover.astro";
+import { useT } from "../i18n/index.ts";
 import { formatSize, type LegacyFile } from "../lib/legacy-schema.ts";
 import { ARTICLE_INFO } from "../lib/content.ts";
+import { englishAttrs } from "../lib/lang-path.ts";
 
 interface Props {
+  lang: UiLang;
   file: LegacyFile;
 }
 
-const { file } = Astro.props;
+const { lang, file } = Astro.props;
+const t = useT(lang);
+const en = englishAttrs(lang);
 const title = file.kind === "article" ? (ARTICLE_INFO[file.path]?.headline ?? file.title) : file.title;
 ---
 <li class="doc-card">
-  <Cover file={file} />
-  <a class="title" href={file.path}>{title}</a>
-  <p class="meta"><span>{file.kind === "article" ? "Article" : "Essay"}</span><span>PDF</span><span>{formatSize(file.sizeBytes)}</span></p>
+  <Cover lang={lang} file={file} />
+  <a class="title" href={file.path} {...en}>{title}</a>
+  <p class="meta"><span>{t(file.kind === "article" ? "doc.article" : "doc.essay")}</span>{en.lang && <span>{t("note.inEnglish")}</span>}<span>{t("doc.pdf")}</span><span>{formatSize(file.sizeBytes)}</span></p>
 </li>

@@ -1,0 +1,28 @@
+---
+/** Sign-up for the weekly Devar Torah by email (an external Brevo form). */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import { useT } from "../../i18n/index.ts";
+import { EXTERNAL } from "../../lib/content.ts";
+import { langStaticPaths } from "../../lib/lang-path.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+---
+<Base lang={lang} page="/weekly-devar-torah/" title={t("devarTorah.title")} description={t("devarTorah.description")}>
+  <div class="wrap">
+    <PageHead lang={lang} title={t("devarTorah.title")} label={t("devarTorah.label")} />
+    <div class="page-body prose">
+      <p>{t("devarTorah.body")}</p>
+      <p><a class="button" href={EXTERNAL.devarTorah}>{t("devarTorah.button")}</a></p>
+      <p class="meta">{t("devarTorah.meta")}</p>
+    </div>
+  </div>
+</Base>

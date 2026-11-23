@@ -1,0 +1,38 @@
+---
+/** The English sefarim based on the Mashgiach's teachings, with links to their publishers. */
+import type { UiLang } from "@emunas/i18n";
+import Base from "../../layouts/Base.astro";
+import PageHead from "../../components/PageHead.astro";
+import Shelf from "../../components/Shelf.astro";
+import Rich from "../../components/Rich.astro";
+import { useT } from "../../i18n/index.ts";
+import { EXTERNAL, SEFARIM } from "../../lib/content.ts";
+import { homePath, langStaticPaths } from "../../lib/lang-path.ts";
+
+export const getStaticPaths = langStaticPaths;
+
+interface Props {
+  lang: UiLang;
+}
+
+const { lang } = Astro.props;
+const t = useT(lang);
+---
+<Base lang={lang} page="/sefarim/" title={t("sefarim.title")} description={t("sefarim.description", { count: SEFARIM.length })}>
+  <div class="wrap">
+    <PageHead lang={lang} title={t("sefarim.title")} label={t("sefarim.label")} intro={t("sefarim.intro")} />
+    <div class="page-body page-grid">
+      <div><Shelf lang={lang} /></div>
+      <aside>
+        <div class="card">
+          <h2>{t("support.heading")}</h2>
+          <p><Rich text={t("support.body")}><a slot="link" href={EXTERNAL.support}>{t("support.link")}</a></Rich></p>
+        </div>
+        <div class="card">
+          <h2>{t("sefarim.new")}</h2>
+          <p><Rich text={t("sefarim.newBody")}><a slot="link" href={homePath(lang, "/weekly-devar-torah/")}>{t("sefarim.newLink")}</a></Rich></p>
+        </div>
+      </aside>
+    </div>
+  </div>
+</Base>

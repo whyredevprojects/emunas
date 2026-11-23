@@ -8,7 +8,8 @@ needed before launch (integration-plan §8 W5.3 acceptance, W6.1):
 | Standing AI label (en + yi) | owner | proposed, unsigned |
 | About texts, all five parts (en + yi) | owner; Yiddish by a named reviewer | drafts only, not published |
 | Yiddish UI strings, both sites | a named Yiddish reader | reviewed by the W5.3 copy pass (AI); human sign-off pending |
-| Hebrew UI strings, both sites and the home translations (`apps/home/src/lib/content.ts` `TRANSLATIONS`, not shown until home has a language switch) | a named Hebrew reader | written by AI, unreviewed |
+| Hebrew UI strings, both sites | a named Hebrew reader | written by AI, unreviewed |
+| Home site copy in Yiddish and Hebrew (`apps/home/src/i18n/yi.ts`, `he.ts`: UI and prose of every page) | owner; a named Yiddish reader and a named Hebrew reader | written by AI, unreviewed |
 | Hebrew translations of the notes (overlays, `docs/translation-runbook.md`) | a named Hebrew reader, by sample | generated, unreviewed |
 | Improved-audio line and About paragraph (§7) | English: owner; Yiddish: a named reviewer; Hebrew: a named Hebrew reader | English approved by the owner 2026-11-18; Yiddish proposed, unsigned; Hebrew written by AI, unreviewed |
 

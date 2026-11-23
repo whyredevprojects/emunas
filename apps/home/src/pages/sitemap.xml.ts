@@ -1,4 +1,7 @@
-/** `/sitemap.xml`: every page of the home site (test/site.build.test.ts checks it matches the build). */
+/**
+ * `/sitemap.xml`: every page of the home site in every language (test/site.build.test.ts checks it
+ * matches the build).
+ */
 import type { APIRoute } from "astro";
 import { currentSiteEnv } from "../lib/site-env.ts";
 import { SITEMAP_PATHS, sitemapXml } from "../lib/seo.ts";

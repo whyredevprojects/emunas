@@ -1,0 +1,29 @@
+---
+/**
+ * A message whose `{name}` placeholders are markup: each is filled by the slot of the same name.
+ *
+ * ```astro
+ * <Rich text={t("support.body")}><a slot="link" href={…}>{t("support.link")}</a></Rich>
+ * ```
+ *
+ * A placeholder with no slot fails the build, so a translation can never leave literal braces on a
+ * page. The text between placeholders is escaped as usual.
+ */
+import { segments } from "../i18n/index.ts";
+
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+const parts: (string | { html: string })[] = [];
+for (const s of segments(text)) {
+  if (typeof s === "string") {
+    parts.push(s);
+    continue;
+  }
+  if (!Astro.slots.has(s.name)) throw new Error(`Rich: no slot "${s.name}" for ${JSON.stringify(text)}`);
+  parts.push({ html: await Astro.slots.render(s.name) });
+}
+---
+{parts.map((p) => (typeof p === "string" ? p : <Fragment set:html={p.html} />))}
