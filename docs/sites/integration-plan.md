@@ -164,7 +164,7 @@ Moving between sites: Quiet shiur page has "Open in the listening app" (`links.l
 ### 2.3 SEO
 
 - Quiet: self-canonical; one `hreflang` alternate per edition (`links.hreflangAlternates`: en, yi, he) + `x-default` → `/`; `sitemap-index.xml` (per edition) built from `.corpus`; OG tags from catalog title + `oneLiner` in the edition's language (with the §2.4 fallback).
-- Home (`apps/home`): English only, self-canonical, no alternates. It shows its Yiddish and Hebrew labels as asides and links every edition of Library and Listen.
+- Home (`apps/home`): English only, self-canonical, no alternates. It shows only English until it has a language switch (its Yiddish and Hebrew labels wait in `TRANSLATIONS`), and links every edition of Library and Listen.
 - Live: prerendered shiur/series/occasion/work/entity pages carry OG tags (share previews) and `<link rel="canonical">` **to the Quiet equivalent**. Today, Explore, search, shelf, playlists: `noindex`. No sitemap. One indexable copy of each shiur, so the two sites do not compete.
 - Catalog-only shiurim are indexable (catalog title, section, year); they gain description text when notes land.
 - `robots.txt` on both: allow all, disallow `/api/`, `/admin/`. (Audio lives on `media.<domain>`, A1; whether that host gets its own `robots.txt` is the owner's call.)

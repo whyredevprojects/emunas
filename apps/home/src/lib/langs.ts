@@ -1,44 +1,21 @@
 /**
- * Languages on the home site. Home is written in English; every other interface language of the
- * shiur sites (`UI_LANGS` of `@emunas/i18n`: Yiddish, Hebrew, …) appears as a short aside beside
- * the English label, and the doorways link each edition of Library and Analyze. A new interface
- * language is a new `UI_LANGS` entry: tsc then asks for its text in every `Asides` table.
+ * Languages on the home site. Home has no language switch yet, so it shows only English, the
+ * current language; the doorways link each edition of Library and Analyze. The other interface
+ * languages (`UI_LANGS` of `@emunas/i18n`: Yiddish, Hebrew, …) have their labels ready in
+ * `Translations` tables (lib/content.ts) for a future switch; a new `UI_LANGS` entry makes tsc
+ * ask for its text in each of them.
  */
-import { UI_DIR, UI_ENDONYM, UI_LANGS, otherUiLangs, type UiLang } from "@emunas/i18n";
+import { UI_DIR, UI_ENDONYM, otherUiLangs, type UiLang } from "@emunas/i18n";
 import { livePaths, quietPaths, type Hosts } from "@emunas/links";
 
 /** The language the home site is written in. */
 export const HOME_LANG = "en" as const satisfies UiLang;
 
-/** Every interface language but English: the languages of the asides. */
-export type AsideLang = Exclude<UiLang, typeof HOME_LANG>;
+/** Every interface language but English: the languages home has translations for. */
+export type TranslationLang = Exclude<UiLang, typeof HOME_LANG>;
 
-export const ASIDE_LANGS: readonly AsideLang[] = UI_LANGS.filter((l): l is AsideLang => l !== HOME_LANG);
-
-/** One phrase in every aside language. */
-export type Asides = { readonly [L in AsideLang]: string };
-
-export interface AsideText {
-  readonly text: string;
-  readonly lang: AsideLang;
-  readonly dir: "ltr" | "rtl";
-}
-
-/**
- * The asides to show, in `UI_LANGS` order. A phrase identical to an earlier one (ספרים is the
- * same word in Yiddish and Hebrew) is shown once, under the first language that has it.
- */
-export function asideTexts(asides: Asides): AsideText[] {
-  const seen = new Set<string>();
-  const out: AsideText[] = [];
-  for (const lang of ASIDE_LANGS) {
-    const text = asides[lang].trim();
-    if (text === "" || seen.has(text)) continue;
-    seen.add(text);
-    out.push({ text, lang, dir: UI_DIR[lang] });
-  }
-  return out;
-}
+/** One English label in every other interface language. */
+export type Translations = { readonly [L in TranslationLang]: string };
 
 export interface EditionLink {
   readonly lang: UiLang;

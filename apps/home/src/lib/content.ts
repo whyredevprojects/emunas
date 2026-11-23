@@ -3,7 +3,7 @@
  * the naming rules applied: he is "the Mashgiach" (or Harav Moshe Wolfson zt"l), never
  * "the Rav" and never "shlit"a".
  */
-import type { Asides } from "./langs.ts";
+import type { Translations } from "./langs.ts";
 import type { EssayGroup } from "./legacy-schema.ts";
 
 export const SITE_NAME = "Emunas";
@@ -13,11 +13,11 @@ export const SITE_DESCRIPTION =
   "The shiurim, essays and sefarim of Harav Moshe Wolfson zt\"l, the Mashgiach: links to the shiurim, free essays to download, and English sefarim drawn from his teaching.";
 
 /**
- * Every phrase the home site shows beside its English in the other interface languages
- * (Yiddish, Hebrew), by place. Hebrew has no nikud, and the Mashgiach is "המשגיח". Where the
- * Yiddish and Hebrew are the same word it is written in both, and shown once (lib/langs.ts).
+ * The home site's labels in the other interface languages (Yiddish, Hebrew), by place, for the
+ * language switch to come. Home shows only English for now, so none of these is rendered. Hebrew
+ * has no nikud, and the Mashgiach is "המשגיח".
  */
-export const ASIDES = {
+export const TRANSLATIONS = {
   mashgiach: { yi: "דער משגיח", he: "המשגיח" },
   startHere: { yi: "אנהייבן דא", he: "התחילו כאן" },
   readListen: { yi: "לייענען און הערן", he: "קריאה והאזנה" },
@@ -30,7 +30,7 @@ export const ASIDES = {
   devarTorah: { yi: "דבר תורה", he: "דבר תורה" },
   essays: { yi: "מאמרים", he: "מאמרים" },
   sefarim: { yi: "ספרים", he: "ספרים" },
-} as const satisfies Readonly<Record<string, Asides>>;
+} as const satisfies Readonly<Record<string, Translations>>;
 
 export const INSTITUTION = "Congregation Emunas Yisrael";
 

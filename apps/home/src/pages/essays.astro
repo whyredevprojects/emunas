@@ -9,7 +9,7 @@ import PageHead from "../components/PageHead.astro";
 import Cover from "../components/Cover.astro";
 import { ESSAYS, ESSAY_GROUP_LISTS } from "../lib/legacy-files.ts";
 import { formatSize, splitTitle } from "../lib/legacy-schema.ts";
-import { ASIDES, GROUP_INFO } from "../lib/content.ts";
+import { GROUP_INFO } from "../lib/content.ts";
 
 const groups = ESSAY_GROUP_LISTS.map((g) => ({ ...g, info: GROUP_INFO[g.group] }));
 ---
@@ -21,7 +21,6 @@ const groups = ESSAY_GROUP_LISTS.map((g) => ({ ...g, info: GROUP_INFO[g.group] }
     <PageHead
       title="Essays"
       label="The archive"
-      labelAside={ASIDES.essays}
       intro="Free essays on the parsha, the zmanim and the Yomim Tovim. Every essay is a PDF to download, print and share."
     />
     <div class="dl-layout">
