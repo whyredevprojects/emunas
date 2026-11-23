@@ -78,7 +78,7 @@ Four persistent elements; everything else swaps inside them.
 
 1. **The player dock.** Always present once anything has been played. Shows the current section title, a chapter-segmented progress bar, and transport. Expands into the listening room. Navigation never interrupts audio.
 2. **The command bar.** One field, reachable from anywhere by keyboard or a thumb. Typing searches; results are moments. It also accepts jumps: a parsha name, "Tanya 12", a year, a sefer.
-3. **The rail.** Six destinations: Today, Explore, Seforim, Maasios, Series, My Shelf.
+3. **The rail.** Six destinations: Today, Explore, Sources, Maasios, Series, My Shelf.
 4. **The language control.** Two independent settings, explained in section 7: the interface language and the languages of shiurim you want to hear.
 
 On a phone the rail becomes a bottom bar above the dock and the listening room is a full-height sheet. On a desktop the listening room can sit as a right-hand pane beside whatever is being browsed, so exploring and listening happen side by side.

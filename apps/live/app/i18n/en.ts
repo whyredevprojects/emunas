@@ -17,7 +17,7 @@ export const en = {
 
   "nav.today": "Today",
   "nav.explore": "Explore",
-  "nav.seforim": "Seforim",
+  "nav.seforim": "Sources",
   "nav.maasios": "Maasios",
   "nav.series": "Series",
   "nav.shelf": "My Shelf",
@@ -47,7 +47,7 @@ export const en = {
   "page.shiur.lead": "The listening room for shiur {id}.",
   "page.explore": "Explore",
   "page.explore.lead": "Browse all shiurim and moments by occasion, year, sefer, person and idea.",
-  "page.seforim": "Seforim",
+  "page.seforim": "Sources",
   "page.seforim.lead": "The seforim the shiurim cite, in their own order.",
   "page.work": "Sefer",
   "page.work.lead": "Where {work} is cited in the shiurim.",

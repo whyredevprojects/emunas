@@ -140,8 +140,8 @@ describe("shell rendering", () => {
     const { container } = await renderAt("/yi/seforim");
     const nav = container.querySelector("nav")!;
     const current = nav.querySelector('[aria-current="page"]')!;
-    expect(current.textContent).toBe("ספרים");
-    expect(container.querySelector("h1")!.textContent).toBe("ספרים");
+    expect(current.textContent).toBe("מקורות");
+    expect(container.querySelector("h1")!.textContent).toBe("מקורות");
   });
 
   it("renders Hebrew strings in he, rtl, with a switch link to every other language", async () => {
@@ -149,7 +149,7 @@ describe("shell rendering", () => {
     expect(document.documentElement.lang).toBe("he");
     expect(document.documentElement.dir).toBe("rtl");
     const current = container.querySelector('nav [aria-current="page"]')!;
-    expect(current.textContent).toBe("ספרים");
+    expect(current.textContent).toBe("מקורות");
     const switches = [...container.querySelectorAll<HTMLAnchorElement>("a[hreflang]")].map((a) => [
       a.getAttribute("hreflang"),
       a.getAttribute("href"),

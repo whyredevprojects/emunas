@@ -17,7 +17,7 @@ export const yi: MessageTable<UiKey> = {
 
   "nav.today": "היינט",
   "nav.explore": "דורכזוכן",
-  "nav.seforim": "ספרים",
+  "nav.seforim": "מקורות",
   "nav.maasios": "מעשיות",
   "nav.series": "סדרות",
   "nav.shelf": "מיין פאליצע",
@@ -47,7 +47,7 @@ export const yi: MessageTable<UiKey> = {
   "page.shiur.lead": "שיעור {id}, צום הערן.",
   "page.explore": "דורכזוכן",
   "page.explore.lead": "אלע שיעורים און נקודות לויט זמן, יאר, ספר, פערזאן און ענין.",
-  "page.seforim": "ספרים",
+  "page.seforim": "מקורות",
   "page.seforim.lead": "די ספרים וואס ווערן געברענגט אין די שיעורים, לויט זייער סדר.",
   "page.work": "ספר",
   "page.work.lead": "וואו {work} ווערט געברענגט אין די שיעורים.",
