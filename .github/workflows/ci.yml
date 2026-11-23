@@ -464,16 +464,11 @@ jobs:
       PR_NUMBER: ${{ github.event.pull_request.number }}
       HEAD_SHA: ${{ github.event.pull_request.head.sha }}
     steps:
+      # The full workspace and node_modules, as in deploy.yml: wrangler bundles the Live and Home
+      # Workers from source (worker/index.ts imports workspace packages such as @emunas/i18n, and
+      # worker/tsconfig.json extends @emunas/config), so a sparse checkout cannot build them.
       - uses: actions/checkout@v5
-        with:
-          sparse-checkout: |
-            apps/quiet/wrangler.jsonc
-            apps/live/wrangler.jsonc
-            apps/live/worker
-            apps/home/wrangler.jsonc
-            apps/home/worker
-          sparse-checkout-cone-mode: false
-      - uses: actions/setup-node@v5
+      - uses: ./.github/actions/setup
         with:
           node-version: ${{ env.NODE_VERSION }}
       - uses: actions/download-artifact@v4
@@ -481,16 +476,24 @@ jobs:
           name: build-outputs
       - name: Upload preview versions (staging Workers)
         run: |
+          set -o pipefail
           if [ -z "${CLOUDFLARE_API_TOKEN}" ] || [ -z "${CLOUDFLARE_ACCOUNT_ID}" ]; then
             echo "::notice::Cloudflare secrets are not configured; skipping preview upload."
             exit 0
           fi
+          # pipefail: the step fails when wrangler fails, not only when tee does. Every app is
+          # still tried so the summary lists the previews that did upload.
+          failed=()
           for app in quiet live home; do
             (cd "apps/${app}" && npx --yes "wrangler@${WRANGLER_VERSION}" versions upload --env=staging \
               --preview-alias "pr-${PR_NUMBER}" --message "PR #${PR_NUMBER} ${HEAD_SHA:0:12}" \
-              | tee "../../preview-${app}.log")
+              | tee "../../preview-${app}.log") || failed+=("${app}")
           done
           {
             echo "## Preview"
             grep -h -o 'https://[^ ]*workers\.dev[^ ]*' preview-*.log | sort -u | sed 's/^/- /' || true
           } >> "$GITHUB_STEP_SUMMARY"
+          if [ "${#failed[@]}" -gt 0 ]; then
+            echo "::error::preview upload failed for: ${failed[*]}"
+            exit 1
+          fi
