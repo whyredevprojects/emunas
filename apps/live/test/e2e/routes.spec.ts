@@ -1,6 +1,6 @@
 /**
  * W5.1 gates over the whole Live route table, in a real browser:
- * - internal link crawler: breadth-first from Today, Explore, Seforim, Maasios and Series in both UI
+ * - internal link crawler: breadth-first from Today, Explore, Sources, Maasios and Series in both UI
  *   languages; every in-app link on every visited page must resolve (shiur in corpus.json; entity,
  *   work and series data file present), and every visited page must render its own content, not the
  *   "page not found" view, without an uncaught error;

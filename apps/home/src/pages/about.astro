@@ -4,7 +4,7 @@ import Base from "../layouts/Base.astro";
 import PageHead from "../components/PageHead.astro";
 import DocCard from "../components/DocCard.astro";
 import { ARTICLES, fileAt } from "../lib/legacy-files.ts";
-import { CONTACT, EXTERNAL } from "../lib/content.ts";
+import { CONTACT } from "../lib/content.ts";
 import { siteLinks } from "../lib/langs.ts";
 import { currentSiteEnv } from "../lib/site-env.ts";
 
@@ -39,7 +39,7 @@ const links = siteLinks(currentSiteEnv().hosts);
         <div class="card">
           <h2>Hear the shiurim</h2>
           <p>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></p>
-          <p>On <a href={EXTERNAL.torahAnytime}>TorahAnytime</a>, in English and Yiddish</p>
+          <p>Online: <a href={links.library}>Library</a> and <a href={links.listen}>Analyze</a></p>
           <p>Recordings by mail: <a href="/contact/">contact us</a></p>
         </div>
       </aside>

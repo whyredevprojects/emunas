@@ -115,7 +115,7 @@ test("audio continues across 5 route changes", async ({ page }) => {
     (el as HTMLElement & { __probe?: number }).__probe = 42;
   });
   let last = await playerT(page);
-  for (const name of ["Explore", "Seforim", "Maasios", "Series", "My Shelf"]) {
+  for (const name of ["Explore", "Sources", "Maasios", "Series", "My Shelf"]) {
     await page.getByRole("navigation").getByRole("link", { name, exact: true }).click();
     await page.locator("main h1").first().waitFor();
     await page.waitForTimeout(400);

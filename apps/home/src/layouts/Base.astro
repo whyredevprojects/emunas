@@ -71,8 +71,8 @@ const tags = headTags(
       <div class="bar">
         <div class="wrap">
           <a class="brand" href="/" aria-label={`${SITE_NAME}, home`} aria-current={path === "/" ? "page" : undefined}>
-            <span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span>
             <span class="brand-en">{SITE_NAME}</span>
+            <span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span>
           </a>
           <nav class="primary" aria-label="Main">
             <ul>
@@ -117,7 +117,7 @@ const tags = headTags(
     <footer class="site-foot">
       <div class="wrap cols">
         <div class="f-about">
-          <a class="brand" href="/"><span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span><span class="brand-en">{SITE_NAME}</span></a>
+          <a class="brand" href="/"><span class="brand-en">{SITE_NAME}</span><span class="brand-he" lang="he" dir="rtl" aria-hidden="true">{SITE_NAME_HEBREW_SCRIPT}</span></a>
           <p>The shiurim, essays and sefarim of Harav Moshe Wolfson zt"l, the Mashgiach. The shiurim are free.</p>
           <p><a href={EXTERNAL.support}>Support the printing of the Mashgiach&rsquo;s sefarim</a></p>
         </div>
@@ -132,7 +132,6 @@ const tags = headTags(
           <ul>
             <li><a href={links.library}>Library</a></li>
             <li><a href={links.listen}>Analyze</a></li>
-            <li><a href={EXTERNAL.torahAnytime}>TorahAnytime</a></li>
             <li>By phone: <a href={CONTACT.phoneHref}>{CONTACT.phone}</a></li>
           </ul>
         </nav>

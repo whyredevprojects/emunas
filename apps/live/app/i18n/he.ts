@@ -18,7 +18,7 @@ export const he: MessageTable<UiKey> = {
 
   "nav.today": "היום",
   "nav.explore": "עיון",
-  "nav.seforim": "ספרים",
+  "nav.seforim": "מקורות",
   "nav.maasios": "מעשיות",
   "nav.series": "סדרות",
   "nav.shelf": "המדף שלי",
@@ -48,7 +48,7 @@ export const he: MessageTable<UiKey> = {
   "page.shiur.lead": "חדר ההאזנה של שיעור {id}.",
   "page.explore": "עיון",
   "page.explore.lead": "כל השיעורים והנקודות לפי זמן, שנה, ספר, אישיות ועניין.",
-  "page.seforim": "ספרים",
+  "page.seforim": "מקורות",
   "page.seforim.lead": "הספרים המובאים בשיעורים, לפי סדרם.",
   "page.work": "ספר",
   "page.work.lead": "היכן ש{work} מובא בשיעורים.",

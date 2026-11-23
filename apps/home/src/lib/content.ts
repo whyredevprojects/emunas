@@ -42,7 +42,6 @@ export const CONTACT = {
 } as const;
 
 export const EXTERNAL = {
-  torahAnytime: "https://www.torahanytime.com/#/speaker?l=266",
   /** Support the printing of the Mashgiach's sefarim (card payments, third party). */
   support: "https://secure.merchpay.com/cong-emunas-yisroel/",
   /** Weekly Devar Torah sign-up (Brevo). */
