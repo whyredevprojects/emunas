@@ -445,6 +445,22 @@ debugging from scratch.
 - *Fix:* the test calls `navBudget(pages)` (`NAV_PAGE_MS` = 5 s per page). If it times out again with
   more series, raise `NAV_PAGE_MS`. Don't drop series from the check.
 
+**Live data budgets: a lazy file outgrows its brotli target** (`data:budgets` in `build`; `real-data.test.ts` in `unit (live)`)
+- *Why it fails:* files that list the whole corpus grow with every batch, linearly. First seen
+  2026-11-27 (PR #30, 15 new shiurim): `quick-index.he.json: 615685 bytes br > 614400 (quickIndex
+  target)`. The quick index grows by about 340 B br per summarized shiur; Hebrew is the largest,
+  then Yiddish. `stories.json` (`storiesIndex`) was at 99.8% of its target the same day.
+- *How to tell it's the data:* compare the size with `main`'s `data:budgets` log (the job log names
+  every file over or near budget). Growth in proportion to the added shiurim is data, not a bug.
+- *Fix used:* raise that kind's target in `apps/live/data-build/budgets.ts` to the new largest file
+  plus about 20%, with a comment giving the size, the shiur count and the date (as for `facets`,
+  `writeup`, `quickIndex`, `storiesIndex`), and update the row in `docs/sites/tech-live.md` §3.3.
+  Only for files loaded on demand; first-load files (Today, corpus.json) are a product question.
+- *Next to fail:* the Live `build/client` file count (17,401 of `MAX_FILES` 18,000 on 2026-11-27;
+  about 15 files per added shiur, mostly thread pages). That limit stands below the Workers static
+  assets cap of 20,000 files per version, so it cannot simply be raised; it needs fewer files
+  (e.g. bundling thread pages) before about 40 more shiurim.
+
 **Live first-load gate: each Today file ≤ 30 KiB** (`first-load.spec`)
 - *What it checks:* Today loads one file, the one for its reading language: `today.<lang>.json`, one
   per UI language (`today.en.json`, `today.yi.json`, `today.he.json`). Each must be ≤ 30 KiB brotli.

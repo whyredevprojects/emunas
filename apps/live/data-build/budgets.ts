@@ -41,7 +41,11 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   // (up to 4.2 h, in scope since 2026-11-18) reach 11,162 B br (yi-purim-seudos-5769.yi). The file is
   // loaded on demand. 13 KiB leaves ~19% headroom.
   writeup: 13 * KB,
-  quickIndex: 600 * KB,
+  // tech-live §3.3 says 600 KiB. The quick index (titles, one-liners, section titles, entity names)
+  // grows by about 340 B br per summarized shiur: he 615,685 B br at 1045 of 1050 full on 2026-11-27
+  // (main at 1030: 596.3 KiB), yi 608,738, en 591,349. Loaded on command-bar focus, not on first load.
+  // 720 KiB leaves ~20% headroom.
+  quickIndex: 720 * KB,
   build: 4 * KB,
   // Corpus layer (plan §4).
   topics: 8 * KB,
@@ -50,7 +54,10 @@ export const BR_TARGETS: Partial<Record<DataKind, number>> = {
   topicShiurim: 24 * KB,
   thread: 6 * KB,
   story: 6 * KB,
-  storiesIndex: 120 * KB,
+  // tech-live §3.3 says 120 KiB. stories.json lists every story that has a visible telling, so it
+  // grows with the corpus: 122,581 B br (99.8%) at 1045 full on 2026-11-27, 118.3 KiB at 1030.
+  // 144 KiB leaves ~20% headroom.
+  storiesIndex: 144 * KB,
   glossary: 8 * KB,
 };
 

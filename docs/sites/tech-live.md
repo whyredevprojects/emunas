@@ -212,9 +212,9 @@ Write-up per language, lazily loaded (`/data/writeup/<id>.<lang>.json` for each 
 | `/data/series/<id>.json` ×17 | ordered parts, perek groups, one-liners | small |
 | `/data/works.json`, `/data/work/<id>.json` | shelf; per work: locations sorted in the work's order (parsed `sefariaRef`), moments per location, unlocated list | ≤ 1,000 files |
 | `/data/entity/{p,c,o}/<id>.json` | counts, year histogram, moments, top co-occurring entities (≥5 shared shiurim) | only entities with ≥2 shiurim get a file; the rest are inlined in `facets.json` |
-| `/data/stories.json` | all stories (title, people ids, shiur, t, year) without retelling | ≤ 120 KB br |
+| `/data/stories.json` | all stories (title, people ids, shiur, t, year) without retelling | ≤ 144 KB br (was 120; grows with the corpus, see `data-build/budgets.ts`) |
 | `/data/moments/<lang>-<n>.json` | Explore "moments" unit: id, kind, shiurId, t, title in one language, sharded by 1,000 | lazy |
-| `/data/quick-index.<lang>.json` | serialized MiniSearch over titles, one-liners, section titles, entity names | ≤ 600 KB br, lazy on command-bar focus |
+| `/data/quick-index.<lang>.json` | serialized MiniSearch over titles, one-liners, section titles, entity names | ≤ 720 KB br (was 600; about 340 B per shiur, see `data-build/budgets.ts`), lazy on command-bar focus |
 | `/data/build.json` | buildId, data commit sha, counts ("518 of 997 summarized"), schema version | tiny |
 | `workers/audio/generated/audio-table.json` | recordingId → `{ key, size, etag? }` for in-scope recordings | ~150 KB, bundled into the audio Worker |
 | `apps/live/.out/search/*.ndjson` | D1 rows (not deployed as assets) | |

@@ -65,7 +65,7 @@ describe("checkLiveBudgets", () => {
       "today.yi.json": "today",
       "today.he.json": "today",
     } as const;
-    const expected = { topics: 8, topic: 24, topicMoments: 24, topicShiurim: 24, thread: 6, story: 6, storiesIndex: 120, glossary: 8, today: 30 };
+    const expected = { topics: 8, topic: 24, topicMoments: 24, topicShiurim: 24, thread: 6, story: 6, storiesIndex: 144, glossary: 8, today: 30 };
     for (const [kind, kib] of Object.entries(expected)) expect(BR_TARGETS[kind as keyof typeof BR_TARGETS], kind).toBe(kib * 1024);
     const over = tree(Object.fromEntries(Object.entries(targets).map(([f, k]) => [f, noise(BR_TARGETS[k]! + 2048)])));
     const r = checkLiveBudgets({ dataDir: over.data, clientDir: null });
