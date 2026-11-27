@@ -9,6 +9,9 @@ export const TODAY_CLASSES = [
   "badge",
   "card",
   "cardMeta",
+  "chip",
+  "chipWhen",
+  "chips",
   "cardTitle",
   "counter",
   "date",
@@ -25,11 +28,13 @@ export const TODAY_CLASSES = [
   "pending",
   "play",
   "row",
+  "seasons",
   "section",
   "sectionLead",
   "sectionTitle",
   "title",
   "toggle",
+  "visuallyHidden",
 ] as const;
 
 export type TodayClass = (typeof TODAY_CLASSES)[number];

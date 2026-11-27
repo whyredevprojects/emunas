@@ -87,6 +87,35 @@ describe("Today page", () => {
     await waitFor(() => expect(second.container.querySelector("[data-moment]")?.getAttribute("data-moment")).toBe(id));
   });
 
+  it("in a gap between occasions shows the next one, and long windows as links", async () => {
+    // Noach week: nothing until Chanukah (5 Dec 2026), 52 days off
+    const gap = await renderAt(`/en/?date=${NOACH_WEEK}`);
+    const next = gap.container.querySelector('[data-occasion="chanukah"]')!;
+    expect(next.querySelector("h3")!.textContent).toContain("Next: in 52 days");
+    expect(next.querySelectorAll("[data-shiur]").length).toBeGreaterThan(0);
+    // one shiur in the fixtures: no entity/o page, so the title is not a link
+    expect(next.querySelector("h3 a")).toBeNull();
+    expect(gap.container.querySelector("[data-seasons]")).toBeNull();
+    cleanup();
+    // 2nd day of Pesach 5787: Pesach is a row; Nisan and Sefirah (long) are compact links
+    const pesach = await renderAt(`/en/?date=2027-04-23`);
+    expect(pesach.container.querySelector('[data-occasion="pesach"] h3')!.textContent).toContain("Now");
+    expect(pesach.container.querySelector('[data-occasion="nisan"]')).toBeNull();
+    const links = [...pesach.container.querySelectorAll("[data-seasons] [data-season]")];
+    expect(links.map((l) => l.getAttribute("data-season"))).toEqual(["nisan", "sefirah"]);
+    // Nisan has one shiur in the fixtures, so no page: a plain chip, not a link
+    expect(links[0]!.querySelector("a")).toBeNull();
+    // the list is named by its label, and each link reads "<name>, Now"
+    const list = pesach.container.querySelector("[data-seasons] ul")!;
+    expect(pesach.container.querySelector(`#${list.getAttribute("aria-labelledby")}`)!.textContent).toBe("Also now and coming:");
+    expect(links[0]!.textContent).toMatch(/Nisan.*, Now$/);
+    cleanup();
+    // 2027-08-19: Elul (two shiurim, so it has a page) is 14 days off, nearer than Rosh Hashanah: a linked chip
+    const av = await renderAt(`/en/?date=2027-08-19`);
+    const elul = av.container.querySelector('[data-seasons] [data-season="elul"] a');
+    expect(elul!.getAttribute("href")).toMatch(/\/en\/.*elul/);
+  });
+
   it("lists newly summarized shiurim and an empty Continue with the stub store", async () => {
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     const newly = container.querySelector("#today-newly")!.parentElement!;

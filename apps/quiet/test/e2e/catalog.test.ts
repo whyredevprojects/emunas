@@ -134,6 +134,8 @@ interface OpenOpts {
   /** The browser clock and time zone. */
   time?: Date;
   timezoneId?: string;
+  /** Rewrite the HTML of the page as served (to stage a case the build day does not have). */
+  rewrite?: (html: string) => string;
 }
 
 async function open(path: string, opts: OpenOpts = {}): Promise<Page> {
@@ -147,6 +149,13 @@ async function open(path: string, opts: OpenOpts = {}): Promise<Page> {
   if (opts.dark) await context.addCookies([{ name: "emunas_theme", value: "dark", url: origin }]);
   const page = await context.newPage();
   if (opts.time) await page.clock.install({ time: opts.time });
+  const rewrite = opts.rewrite;
+  if (rewrite) {
+    await page.route(origin + path, async (route) => {
+      const res = await route.fetch();
+      await route.fulfill({ response: res, body: rewrite(await res.text()) });
+    });
+  }
   const res = await page.goto(origin + path, { waitUntil: "load" });
   expect(res?.status(), path).toBe(200);
   return page;
@@ -206,11 +215,16 @@ describe.each(EDS)("%s edition", (ed) => {
     const built = await page.locator("[data-this-week]").evaluate((root) => {
       const days = (root.querySelector("template[data-week-days]") as HTMLTemplateElement).content.querySelectorAll<HTMLElement>("[data-day]");
       const blocks = Array.from(root.querySelectorAll<HTMLTemplateElement>("template[data-week-block]"), (t) => t.dataset["weekBlock"]);
-      return { date: (root as HTMLElement).dataset["weekDate"], days: Array.from(days, (d) => [d.dataset["day"], d.dataset["blocks"]]), blocks };
+      return {
+        date: (root as HTMLElement).dataset["weekDate"],
+        days: Array.from(days, (d) => [d.dataset["day"], d.dataset["blocks"], d.dataset["seasons"]] as const),
+        blocks,
+      };
     });
     expect(built.date).toBe("2026-11-15");
     expect(built.days.map(([d]) => d)).toEqual(["2026-11-14", "2026-11-15", "2026-11-16", "2026-11-17", "2026-11-18"]);
-    const referenced = new Set(built.days.flatMap(([, b]) => (b ?? "").split(" ").filter(Boolean)));
+    // zman and parsha blocks and season links are all carried as data-week-block templates
+    const referenced = new Set(built.days.flatMap(([, b, z]) => `${b ?? ""} ${z ?? ""}`.split(" ").filter(Boolean)));
     expect(new Set(built.blocks)).toEqual(referenced);
     expect(built.blocks).toHaveLength(referenced.size);
     await page.context().close();
@@ -254,6 +268,32 @@ describe.each(EDS)("%s edition", (ed) => {
     expect(later).toMatchObject({ date: "2026-11-15", occasions: ["vayeitzei", "yud-tes-kislev"], errors: [] });
     expect(later.lead).toContain(kislev(5));
   }, 60_000);
+
+  it("this week: the season line follows the visitor's day, and hides on a day without one", async () => {
+    const line = async (page: Page) => ({
+      date: await page.locator("[data-this-week]").getAttribute("data-week-date"),
+      hidden: await page.locator("[data-week-seasons-line]").evaluate((e) => (e as HTMLElement).hidden),
+      seasons: await page.locator("[data-week-seasons] > li").evaluateAll((els) => els.map((e) => (e as HTMLElement).dataset["season"])),
+    });
+    // as built: no long window with shiurim around 5 Kislev, so the line is hidden
+    const built = await open(`/${ed}/`, { js: false });
+    expect(await line(built)).toEqual({ date: "2026-11-15", hidden: true, seasons: [] });
+    await built.context().close();
+    // stage a season link on Tuesday (a carried template and the day's list naming it): the swap
+    // shows the line with it; the next day, without one, hides it again
+    const KEY = "season:staged:2026-11-11:now";
+    const stage = (html: string) =>
+      html
+        .replace('data-day="2026-11-17"', `data-day="2026-11-17" data-seasons="${KEY}"`) // the first of two attributes wins
+        .replace("<template data-week-days", `<template data-week-block="${KEY}"><li data-season="staged"><a href="/${ed}/">Staged</a></li></template><template data-week-days`);
+    const at = (time: string) => ({ time: new Date(time), timezoneId: "America/New_York", rewrite: stage });
+    const tue = await open(`/${ed}/`, at("2026-11-17T09:00:00-05:00"));
+    expect(await line(tue)).toEqual({ date: "2026-11-17", hidden: false, seasons: ["staged"] });
+    await tue.context().close();
+    const wed = await open(`/${ed}/`, at("2026-11-18T09:00:00-05:00"));
+    expect(await line(wed)).toEqual({ date: "2026-11-18", hidden: true, seasons: [] });
+    await wed.context().close();
+  });
 
   it("this week: axe finds no violations after the swap", async () => {
     const page = await open(`/${ed}/`, { time: new Date("2026-11-17T09:00:00-05:00"), timezoneId: "America/New_York" });

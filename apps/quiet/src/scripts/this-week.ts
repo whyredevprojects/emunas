@@ -9,6 +9,8 @@ export interface WeekDay {
   /** The rendered "as of {date}" lead, or "" past the calendar table. */
   readonly lead: string;
   readonly blocks: readonly string[];
+  /** The long windows shown as links under the blocks. */
+  readonly seasons: readonly string[];
 }
 
 /** The local civil day of `now` as `YYYY-MM-DD`. */
@@ -24,7 +26,7 @@ export function parseBlocks(attr: string | undefined): string[] {
 
 /**
  * The day to swap in, or null to leave the page as built: the visitor's day is the shown day, is
- * outside the window, has nothing to show, or names a block the page does not carry.
+ * outside the window, has nothing to show, or names a block (or season link) the page does not carry.
  */
 export function dayToShow(
   days: ReadonlyMap<string, WeekDay>,
@@ -35,7 +37,7 @@ export function dayToShow(
   if (today === shown) return null;
   const day = days.get(today);
   if (day === undefined || day.blocks.length === 0) return null;
-  return day.blocks.every((k) => carried.has(k)) ? day : null;
+  return [...day.blocks, ...day.seasons].every((k) => carried.has(k)) ? day : null;
 }
 
 export function showVisitorDay(doc: Document, now: Date): void {
@@ -43,12 +45,16 @@ export function showVisitorDay(doc: Document, now: Date): void {
   const grid = root?.querySelector<HTMLElement>("[data-week-grid]");
   const lead = root?.querySelector<HTMLElement>("[data-week-lead]");
   const daysTemplate = root?.querySelector<HTMLTemplateElement>("template[data-week-days]");
-  if (!root || !grid || !lead || !daysTemplate) return;
+  const seasonsLine = root?.querySelector<HTMLElement>("[data-week-seasons-line]");
+  const seasons = seasonsLine?.querySelector<HTMLElement>("[data-week-seasons]");
+  if (!root || !grid || !lead || !daysTemplate || !seasonsLine || !seasons) return;
 
   const days = new Map<string, WeekDay>();
   for (const el of daysTemplate.content.querySelectorAll<HTMLElement>("[data-day]")) {
     const date = el.dataset["day"];
-    if (date !== undefined) days.set(date, { lead: el.textContent ?? "", blocks: parseBlocks(el.dataset["blocks"]) });
+    if (date !== undefined) {
+      days.set(date, { lead: el.textContent ?? "", blocks: parseBlocks(el.dataset["blocks"]), seasons: parseBlocks(el.dataset["seasons"]) });
+    }
   }
   const templates = new Map<string, HTMLTemplateElement>();
   for (const t of root.querySelectorAll<HTMLTemplateElement>("template[data-week-block]")) {
@@ -59,7 +65,10 @@ export function showVisitorDay(doc: Document, now: Date): void {
   const today = localIsoDay(now);
   const day = dayToShow(days, root.dataset["weekDate"], today, new Set(templates.keys()));
   if (day === null) return;
-  grid.replaceChildren(...day.blocks.flatMap((k) => templates.get(k)?.content.cloneNode(true) ?? []));
+  const clone = (k: string) => templates.get(k)?.content.cloneNode(true) ?? [];
+  grid.replaceChildren(...day.blocks.flatMap(clone));
+  seasons.replaceChildren(...day.seasons.flatMap(clone));
+  seasonsLine.hidden = day.seasons.length === 0;
   lead.textContent = day.lead;
   lead.hidden = day.lead === "";
   root.dataset["weekDate"] = today;

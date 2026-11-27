@@ -31,15 +31,18 @@ import {
   localIsoDay,
   rowsById,
   type DayMoment,
+  type OccasionBlock,
+  type SeasonLink,
   type TodayRow,
   type TodayView,
   type WeekMix,
 } from "./model.ts";
 import { readProgress, useProgressSourceVersion } from "./personal.ts";
 import { ShiurCard, type CardData } from "./ShiurCard.tsx";
-import { todayT, type TodayKey } from "./strings.ts";
+import { todayT, type TodayKey, type TodayT } from "./strings.ts";
 import { todayStyles as s } from "./styles.ts";
 import { useLoad } from "./use-data.ts";
+import { ENTITY_FILE_MIN } from "../entities/resolve.ts";
 import { hebrewFormLang } from "../../i18n/content.ts";
 
 interface TodayData {
@@ -177,17 +180,60 @@ function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile
       {view.occasions.map((o) => (
         <div key={o.key} className={s.section} data-occasion={o.key}>
           <h3 className={s.occasionTitle}>
-            <Link to={paths.occasion(ui, o.key)}>
+            {o.total >= ENTITY_FILE_MIN ? (
+              <Link to={paths.occasion(ui, o.key)}>
+                <Text value={occasionLabel(o.key, today, ui)} shiurLang={null} />
+              </Link>
+            ) : (
               <Text value={occasionLabel(o.key, today, ui)} shiurLang={null} />
-            </Link>
-            <span className={s.badge}>{o.active ? tt("today.occasion.active") : tt("today.occasion.soon", { count: o.daysUntil })}</span>
+            )}
+            <span className={s.badge}>{whenLabel(o, tt)}</span>
           </h3>
           <CardRow rows={o.shiurim} ui={ui} read={read} />
         </div>
       ))}
+      {view.seasons.length > 0 ? (
+        <div className={s.seasons} data-seasons>
+          <span id="today-seasons" className={s.muted}>
+            {tt("today.seasons")}
+          </span>
+          <ul className={s.chips} aria-labelledby="today-seasons">
+            {view.seasons.map((z) => (
+              <li key={z.key} data-season={z.key}>
+                {z.total >= ENTITY_FILE_MIN ? (
+                  <Link to={paths.occasion(ui, z.key)} className={s.chip}>
+                    <SeasonChip z={z} today={today} ui={ui} tt={tt} />
+                  </Link>
+                ) : (
+                  <span className={s.chip}>
+                    <SeasonChip z={z} today={today} ui={ui} tt={tt} />
+                  </span>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
       {anyNotes ? <p className={s.aiNote}>{notice("aiNotesShort", ui)}</p> : null}
     </section>
   );
+}
+
+/** "Now", "In 3 days", or for the next occasion after a gap "Next: in 51 days". */
+/** A long window's chip content: its name, then (after a separator for screen readers) now / from when. */
+function SeasonChip({ z, today, ui, tt }: { z: SeasonLink; today: TodayFile; ui: UiLang; tt: TodayT }): JSX.Element {
+  return (
+    <>
+      <Text value={occasionLabel(z.key, today, ui)} shiurLang={null} />
+      <span className={s.visuallyHidden}>, </span>
+      <span className={s.chipWhen}>{whenLabel(z, tt)}</span>
+    </>
+  );
+}
+
+function whenLabel(o: { active: boolean; daysUntil: number; when?: OccasionBlock["when"] }, tt: TodayT): string {
+  if (o.active) return tt("today.occasion.active");
+  return o.when === "next" ? tt("today.occasion.next", { count: o.daysUntil }) : tt("today.occasion.soon", { count: o.daysUntil });
 }
 
 type MixStatus = "idle" | "loading" | "playing" | "error";

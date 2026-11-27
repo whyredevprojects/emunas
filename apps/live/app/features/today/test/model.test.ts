@@ -12,7 +12,6 @@ import {
   continueItems,
   dateFromQuery,
   localIsoDay,
-  MAX_OCCASIONS,
   momentOfTheDay,
   rowsById,
   type TodayView,
@@ -47,7 +46,7 @@ interface Case {
   parsha: string;
   parshaShiurim: string[];
   deferred: boolean;
-  /** Occasion rows, in display order (active shortest first, then by start). */
+  /** Occasion rows, in display order (active shortest first, then by start; the next one after a gap). */
   occasions: string[];
   /** Key whose pool the moment of the day comes from. */
   momentFrom: string;
@@ -64,12 +63,12 @@ const CASES: Case[] = [
     momentFrom: "rosh-hashanah",
   },
   {
-    name: "2. ordinary Kislev week: Vayeitzei; Yud-Tes Kislev is beyond the lookahead",
+    name: "2. ordinary Kislev week: Vayeitzei; Yud-Tes Kislev, 14 days off, is the next occasion",
     date: "2026-11-15",
     parsha: "vayeitzei",
     parshaShiurim: ["en-vayeitzei", "yi-vayeitzei"],
     deferred: false,
-    occasions: [],
+    occasions: ["yud-tes-kislev"],
     momentFrom: "vayeitzei",
   },
   {
@@ -91,12 +90,12 @@ const CASES: Case[] = [
     momentFrom: "vayakhel",
   },
   {
-    name: "5. combined Vayakhel-Pekudei lists shiurim of both parts, by year",
+    name: "5. combined Vayakhel-Pekudei lists shiurim of both parts, by year; Pesach is next",
     date: "2028-03-20",
     parsha: "vayakhel-pekudei",
     parshaShiurim: ["en-vayakhel", "en-pekudei", "yi-vayakhel", "yi-pekudei"],
     deferred: false,
-    occasions: [],
+    occasions: ["pesach"],
     momentFrom: "vayakhel-pekudei",
   },
   {
@@ -137,13 +136,13 @@ const CASES: Case[] = [
     momentFrom: "nasso",
   },
   {
-    name: "8c. the Monday after, Israel is a parsha ahead (Behaaloscha)",
+    name: "8c. the Monday after, Israel is a parsha ahead (Behaaloscha); Rosh Hashanah is next",
     date: "2027-06-14",
     israel: true,
     parsha: "behaaloscha",
     parshaShiurim: ["en-behaaloscha", "yi-behaaloscha"],
     deferred: false,
-    occasions: [],
+    occasions: ["rosh-hashanah"],
     momentFrom: "behaaloscha",
   },
   {
@@ -152,7 +151,7 @@ const CASES: Case[] = [
     parsha: "chukas-balak",
     parshaShiurim: ["en-chukas", "en-balak", "yi-chukas", "yi-balak"],
     deferred: false,
-    occasions: [],
+    occasions: ["rosh-hashanah"],
     momentFrom: "chukas-balak",
   },
   {
@@ -162,7 +161,7 @@ const CASES: Case[] = [
     parsha: "balak",
     parshaShiurim: ["en-balak", "yi-balak"],
     deferred: false,
-    occasions: [],
+    occasions: ["rosh-hashanah"],
     momentFrom: "balak",
   },
   {
@@ -175,13 +174,13 @@ const CASES: Case[] = [
     momentFrom: "shevii-shel-pesach",
   },
   {
-    name: "10b. same Shabbos in Israel: Shemini read, Pesach over",
+    name: "10b. same Shabbos in Israel: Shemini read, Pesach over, Lag BaOmer next",
     date: "2029-04-07",
     israel: true,
     parsha: "shemini",
     parshaShiurim: ["en-shemini", "yi-shemini"],
     deferred: false,
-    occasions: [],
+    occasions: ["lag-baomer"],
     momentFrom: "shemini",
   },
 ];
@@ -212,11 +211,6 @@ describe("Today on fixed dates", () => {
     expect(out.moment?.occasionKey).toBeNull();
   });
 
-  it("caps occasion rows", () => {
-    expect(MAX_OCCASIONS).toBeGreaterThan(0);
-    for (const c of CASES) expect(view(c.date).occasions.length).toBeLessThanOrEqual(MAX_OCCASIONS);
-  });
-
   it("filters rows and the moment by the audio language", () => {
     const en = view("2026-12-08", false, "en");
     expect(ids(en.parsha!.shiurim)).toEqual(["en-mikeitz"]);
@@ -231,6 +225,106 @@ describe("Today on fixed dates", () => {
     const v = view("2026-12-08");
     expect(v.week?.upcomingOccasions.map((o) => o.key)).toEqual(expect.arrayContaining(["shabbos-chanukah"]));
     expect(occ(v)).not.toContain("shabbos-chanukah");
+  });
+});
+
+describe("current and upcoming occasions (the shared rule)", () => {
+  const SEASONAL = [
+    "chanukah", "kislev", "yud-tes-kislev", "adar", "parshas-zachor", "purim", "shushan-purim", "parshas-parah",
+    "nisan", "sefirah", "pesach", "chol-hamoed-pesach", "shevii-shel-pesach", "lag-baomer",
+  ];
+  const at = (date: string, keys: readonly string[], israel = false) =>
+    buildToday({ date, israel, audio: "both", today: todayData(keys).today });
+  const seasons = (v: TodayView) => v.seasons.map((z) => z.key);
+
+  it("a gap of weeks shows the next occasion (2026-10-15: Chanukah, 51 days off)", () => {
+    const v = at("2026-10-15", ["chanukah", "kislev"]);
+    expect(v.occasions).toEqual([expect.objectContaining({ key: "chanukah", when: "next", active: false, daysUntil: 51 })]);
+    // Kislev (a month) starts nearer, 27 days off: a compact link, not a row
+    expect(v.seasons).toEqual([expect.objectContaining({ key: "kislev", active: false, daysUntil: 27 })]);
+    // no parsha pool in this data: the moment and the mix come from the next occasion, not all pools
+    expect(v.moment?.occasionKey).toBe("chanukah");
+  });
+
+  it("no cap: on 2027-03-17 Zachor, Purim, Shushan Purim and Parah are all rows; Adar is a link", () => {
+    const v = at("2027-03-17", SEASONAL);
+    expect(occ(v)).toEqual(["parshas-zachor", "purim", "shushan-purim", "parshas-parah"]);
+    expect(v.occasions.every((o) => o.when === "soon")).toBe(true);
+    expect(seasons(v)).toEqual(["adar"]);
+  });
+
+  it("a day of Pesach includes Shevi'i shel Pesach; Nisan and Sefirah are links", () => {
+    const v = at("2027-04-23", SEASONAL);
+    expect(occ(v)).toEqual(["pesach", "chol-hamoed-pesach", "shevii-shel-pesach"]);
+    expect(v.occasions[0]).toMatchObject({ when: "now", active: true });
+    expect(seasons(v)).toEqual(["nisan", "sefirah"]);
+    expect(v.seasons.every((z) => z.active)).toBe(true);
+  });
+
+  it("9 to 19 Kislev include Yud-Tes Kislev", () => {
+    for (let d = 19; d <= 29; d++) {
+      const v = at(`2026-11-${d}`, SEASONAL);
+      expect(occ(v), `2026-11-${d}`).toContain("yud-tes-kislev");
+      expect(seasons(v)).toEqual(["kislev"]);
+    }
+  });
+
+  it("a month window alone never takes the only slot, unless nothing else is ahead", () => {
+    const v = at("2026-11-15", ["kislev", "chanukah"]);
+    expect(occ(v)).toEqual(["chanukah"]);
+    expect(v.occasions[0]).toMatchObject({ when: "next", daysUntil: 20 });
+    expect(seasons(v)).toEqual(["kislev"]);
+    const alone = at("2026-11-15", ["kislev"]);
+    expect(occ(alone)).toEqual(["kislev"]);
+    expect(alone.occasions[0]).toMatchObject({ when: "now", active: true });
+    expect(alone.seasons).toEqual([]);
+  });
+
+  it("Israel: Pesach is over on the eighth day; the next occasion takes its place", () => {
+    expect(occ(at("2027-04-29", SEASONAL))).toEqual(["shevii-shel-pesach", "pesach"]);
+    const il = at("2027-04-29", SEASONAL, true);
+    expect(occ(il)).toEqual(["lag-baomer"]);
+    expect(il.occasions[0]).toMatchObject({ when: "next", daysUntil: 26 });
+    expect(seasons(il)).toEqual(["nisan", "sefirah"]);
+  });
+
+  it("moment and mix priority: active long windows before the parsha, then what starts soon", () => {
+    /** The moment's and the mix's source key, then again with each pool emptied in turn. */
+    const sources = (date: string, keys: readonly string[]) => {
+      const out: [string | null | undefined, string | undefined][] = [];
+      const { today: t } = todayData(keys);
+      for (const k of keys) t.occasions[k]!.mix = { topicId: `${k}-topic`, label: { en: k, yi: k }, sections: 1, shiurim: 1, first: [] } as never;
+      for (const k of keys) {
+        const v = buildToday({ date, israel: false, audio: "both", today: t });
+        out.push([v.moment?.occasionKey, v.mix?.key]);
+        t.occasions[k]!.moments = [];
+        t.occasions[k]!.mix = null;
+      }
+      return out;
+    };
+    // an Elul day (27 Sep 2027, Haazinu week, Rosh Hashanah in 5 days): Elul stays a compact link
+    const elul = ["elul", "haazinu", "rosh-hashanah"];
+    const e = at("2027-09-27", elul);
+    expect(occ(e)).toEqual(["rosh-hashanah"]);
+    expect(seasons(e)).toEqual(["elul"]);
+    expect(sources("2027-09-27", elul)).toEqual([["elul", "elul"], ["haazinu", "haazinu"], ["rosh-hashanah", "rosh-hashanah"]]);
+    // a Sefirah day (18 May 2027, Behar week, Lag BaOmer in 7 days)
+    const sefirah = ["sefirah", "behar", "lag-baomer"];
+    const s = at("2027-05-18", sefirah);
+    expect(occ(s)).toEqual(["lag-baomer"]);
+    expect(seasons(s)).toEqual(["sefirah"]);
+    expect(sources("2027-05-18", sefirah)).toEqual([["sefirah", "sefirah"], ["behar", "behar"], ["lag-baomer", "lag-baomer"]]);
+    // a short occasion in progress comes before an active long window (Pesach, Nisan)
+    expect(at("2027-04-23", ["nisan", "pesach"]).moment?.occasionKey).toBe("pesach");
+  });
+
+  it("an occasion with no shiurim in the audio language is not shown", () => {
+    const { today: t } = todayData(SEASONAL);
+    t.occasions["parshas-parah"]!.shiurIds = ["en-parshas-parah"];
+    const yi = buildToday({ date: "2027-03-17", israel: false, audio: "yi", today: t });
+    expect(occ(yi)).not.toContain("parshas-parah");
+    const en = buildToday({ date: "2027-03-17", israel: false, audio: "en", today: t });
+    expect(occ(en)).toContain("parshas-parah");
   });
 });
 
