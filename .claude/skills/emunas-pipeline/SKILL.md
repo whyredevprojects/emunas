@@ -38,6 +38,15 @@ npm run -s ingest && npm run -s batch:init
 ```
 `batch:init` keeps every status; new shiurim come in as pending.
 
+### Add new recordings (e.g. from an outside site)
+Done once for the Chabad 19 Kislev melave malka talks (commits "Catalog the Mashgiach's 19 Kislev..." through "Corpus: add the 15 new 19 Kislev shiurim incrementally").
+1. **Check for duplicates first, by audio.** File names and lengths are not enough: 3 of 18 such files were recordings already in the collection under other names (a Chanukah file, a parsha file), with an announcement added at the start. Compare text similarity of the extractions (catches candidates after processing) and, before upload, cross-correlate a minute of audio against likely candidates (same zman/parsha, length within a minute). A copy goes in the catalog with `duplicate_of`, not as a new shiur.
+2. **Catalog before R2.** Add rows to `data/catalog/uncatalogued-guide.json` (and the file to `uncatalogued-audio.json`) first: ingest fails on bucket audio that no catalog lists, but only warns on catalog rows without audio. Rows from an outside source carry `"source"` and its ids in the note.
+3. **Transcribe on Kaggle** (the user's account; `KAGGLE_API_TOKEN`): Yiddish with `ivrit-ai/yi-whisper-large-v3-ct2`, faster-whisper, float16, sequential `beam_size=5`, `vad_filter=True`, `condition_on_previous_text=False`, `language="yi"`; mark `"mode": "careful"` so `config/asr-policy.json` accepts it. Stock Whisper language detection calls Yiddish "de" (and sometimes "en"): check any file it routes to English. R2 objects per audio key: `transcripts/<key stem>.{txt,vtt,json}`, `.json` last (key, duration, model, mode, transcribed_at, language, segments, text).
+4. **Sidon copy** for every playable recording at `fixed/sidon/<audio key>` (sarulab-speech/sidon-v0.1, 96 s chunks, fp16; MP3 48 kHz mono 64 kbps, loudnorm -16 LUFS, the original's tags copied). `npm run cleaned:verify --workspace=@emunas/audio -- --verify-duration` must pass (within 0.5 s).
+5. Upload, then `ingest`, `transcripts:sync`, `batch:init`; run the batch (`docs/batch-runbook.md`) and P4c for the new shiurim.
+6. **Corpus layer, incrementally:** `corpus:aggregate`; agents write a new `topic-tags/chunk-NN-<name>.json` (closed list), aliases/new entities, story tellings and teaching-cluster members (each agent its own files); `corpus:link`; `corpus:assemble` (integrity must show no issues, existing shiur-tags unchanged except where new aliases add a link); then P4c for the corpus parts `translate -- status he` reports.
+
 ### Redo everything with a new, better transcription (e.g. a sponsor pays for one)
 1. Find what marks the new transcripts in R2 (a new `model`, a `mode`, a `transcribed_at`). Last time the model name stayed the same and only `"mode": "careful"` changed, so check a few files before assuming.
 2. Edit `config/asr-policy.json` so each language requires the new marker, e.g. `"yi": { "model": "new-model-name" }`. `batch:next` then skips any shiur whose transcript doesn't match yet, so batches can run while the transcription job is still going.
