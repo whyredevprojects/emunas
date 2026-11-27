@@ -1,12 +1,15 @@
 ---
 /**
- * "This week" on the title page (concept-quiet §5.1): the parsha of the week and the nearest zman,
- * each as a short list of shiur titles with a link into the calendar index. Built for the build day
- * and shown as such without script. The days around it (model.ts `thisWeekWindow`) are carried in
- * inert templates, and scripts/this-week.ts swaps in the visitor's own day on load.
+ * "This week" on the title page (concept-quiet §5.1): the parsha of the week and the zmanim now and
+ * coming (model.ts `thisWeekModel`: every zman on now or starting within ten days, else the next
+ * one), each as a short list of shiur titles with a link into the calendar index. Past the first
+ * two blocks the grid shows a block compact, without its titles. Long windows (a month, Sefirah)
+ * are one line of links under the grid. Built for the build day and shown as such without script.
+ * The days around it (model.ts `thisWeekWindow`) are carried in inert templates, and
+ * scripts/this-week.ts swaps in the visitor's own day on load.
  */
 import type { Ed } from "../../lib/edition.ts";
-import type { OccasionPick, ThisWeekDay, ThisWeekWindow } from "./model.ts";
+import type { OccasionPick, SeasonPick, ThisWeekDay, ThisWeekWindow } from "./model.ts";
 import { useCatalogT } from "./strings.ts";
 import WeekOccasion from "./WeekOccasion.astro";
 
@@ -18,8 +21,10 @@ interface Props {
 const { ed, week } = Astro.props;
 const c = useCatalogT(ed);
 const picksOf = (d: ThisWeekDay) => d.blocks.map((k) => week.blocks.get(k)).filter((p): p is OccasionPick => p !== undefined);
+const seasonsOf = (d: ThisWeekDay) => d.seasons.map((k) => week.seasons.get(k)).filter((p): p is SeasonPick => p !== undefined);
 const lead = (d: ThisWeekDay) => (d.hebrewDate ? c("home.thisWeekLead", { date: d.hebrewDate }) : "");
 const todayLead = lead(week.today);
+const todaySeasons = seasonsOf(week.today);
 ---
 {week.days.some((d) => d.blocks.length > 0) && (
   <section class="this-week" aria-labelledby="this-week" data-this-week data-week-date={week.today.date}>
@@ -28,11 +33,20 @@ const todayLead = lead(week.today);
     <div class="this-week-grid" data-week-grid>
       {picksOf(week.today).map((p) => <WeekOccasion ed={ed} pick={p} />)}
     </div>
+    <p class="this-week-seasons" data-week-seasons-line hidden={todaySeasons.length === 0}>
+      <span>{c("home.seasons")}</span>
+      <span class="this-week-season-links" data-week-seasons>
+        {todaySeasons.map((p) => <a href={p.href} data-season={p.key}>{p.label}</a>)}
+      </span>
+    </p>
     <template data-week-days>
-      {week.days.map((d) => <p data-day={d.date} data-blocks={d.blocks.join(" ")}>{lead(d)}</p>)}
+      {week.days.map((d) => <p data-day={d.date} data-blocks={d.blocks.join(" ")} data-seasons={d.seasons.join(" ")}>{lead(d)}</p>)}
     </template>
     {[...week.blocks].map(([key, p]) => (
       <template data-week-block={key}><WeekOccasion ed={ed} pick={p} /></template>
+    ))}
+    {[...week.seasons].map(([key, p]) => (
+      <template data-week-block={key}><a href={p.href} data-season={p.key}>{p.label}</a></template>
     ))}
   </section>
 )}
@@ -47,14 +61,28 @@ const todayLead = lead(week.today);
     margin-block-start: var(--space-s);
   }
 
-  .this-week-lead {
+  .this-week-lead,
+  .this-week-seasons {
     font-size: var(--step-0);
     color: var(--color-ink-muted);
+  }
+
+  .this-week-seasons[hidden] {
+    display: none;
+  }
+
+  .this-week-season-links :global(a + a) {
+    margin-inline-start: var(--space-s);
   }
 
   .this-week-grid {
     display: grid;
     gap: var(--space-l);
+  }
+
+  /* past the first two blocks of the day: heading, day and link only */
+  .this-week-grid > :global(.occasion:nth-child(n + 3) ul) {
+    display: none;
   }
 
   @media (min-width: 40rem) {

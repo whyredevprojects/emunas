@@ -12,20 +12,20 @@ describe("localIsoDay", () => {
 
 describe("parseBlocks", () => {
   it("splits on spaces and drops empties", () => {
-    expect(parseBlocks("parsha:vayeitzei zman:chanukah:soon")).toEqual(["parsha:vayeitzei", "zman:chanukah:soon"]);
+    expect(parseBlocks("parsha:vayeitzei zman:chanukah:2026-12-05:next")).toEqual(["parsha:vayeitzei", "zman:chanukah:2026-12-05:next"]);
     expect(parseBlocks("")).toEqual([]);
     expect(parseBlocks(undefined)).toEqual([]);
   });
 });
 
 describe("dayToShow", () => {
-  const sun: WeekDay = { lead: "… as of 13 Kislev 5787.", blocks: ["parsha:vayishlach", "zman:chanukah:soon"] };
+  const sun: WeekDay = { lead: "… as of 13 Kislev 5787.", blocks: ["parsha:vayishlach", "zman:chanukah:2026-12-05:next"], seasons: ["season:kislev:2026-11-11"] };
   const days = new Map<string, WeekDay>([
-    ["2026-11-21", { lead: "… as of 12 Kislev 5787.", blocks: ["parsha:vayeitzei", "zman:chanukah:soon"] }],
+    ["2026-11-21", { lead: "… as of 12 Kislev 5787.", blocks: ["parsha:vayeitzei", "zman:chanukah:2026-12-05:next"], seasons: ["season:kislev:2026-11-11"] }],
     ["2026-11-22", sun],
-    ["2026-11-23", { lead: "", blocks: [] }],
+    ["2026-11-23", { lead: "", blocks: [], seasons: [] }],
   ]);
-  const carried = new Set(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:soon"]);
+  const carried = new Set(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:2026-12-05:next", "season:kislev:2026-11-11"]);
 
   it("swaps to the visitor's day when the page shows another", () => {
     expect(dayToShow(days, "2026-11-21", "2026-11-22", carried)).toBe(sun);
@@ -39,5 +39,7 @@ describe("dayToShow", () => {
 
   it("leaves the page as built when a block is not carried", () => {
     expect(dayToShow(days, "2026-11-21", "2026-11-22", new Set(["parsha:vayishlach"]))).toBeNull();
+    // a season link counts like a block
+    expect(dayToShow(days, "2026-11-21", "2026-11-22", new Set(["parsha:vayishlach", "zman:chanukah:2026-12-05:next"]))).toBeNull();
   });
 });
