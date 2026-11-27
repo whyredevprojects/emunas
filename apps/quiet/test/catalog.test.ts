@@ -245,22 +245,22 @@ describe("this week", () => {
 
   it("names the parsha of the week and, after a gap, the next zman that has shiurim", () => {
     // Sunday 5 Kislev 5787: Vayeitzei is read on the coming Shabbos; nothing with shiurim starts
-    // within ten days (Yud-Tes Kislev has none), so Chanukah, 20 days off, is shown as next.
+    // within ten days, so Yud-Tes Kislev, 14 days off, is shown as next (Chanukah, 20 days off, is not).
     const w = thisWeekModel(corpus, "en", "2026-11-15");
     expect(w.hebrewDate).toBe("5 Kislev 5787");
     expect(w.parsha).toMatchObject({ kind: "parsha", key: "vayeitzei", label: "Vayeitzei", href: "/en/calendar/parsha/vayeitzei/" });
     expect(w.parsha!.rows.length).toBe(Math.min(THIS_WEEK_LIMIT, w.parsha!.count));
     expect(w.zmanim).toEqual([
-      expect.objectContaining({ kind: "zman", key: "chanukah", active: false, when: "next", start: "2026-12-05", startLabel: "25 Kislev", href: "/en/calendar/zman/chanukah/" }),
+      expect.objectContaining({ kind: "zman", key: "yud-tes-kislev", active: false, when: "next", start: "2026-11-29", startLabel: "19 Kislev", href: "/en/calendar/zman/yud-tes-kislev/" }),
     ]);
     const yi = thisWeekModel(corpus, "yi", "2026-11-15");
     expect(yi.hebrewDate).toBe("ה' כסלו תשפ\"ז");
     expect(yi.parsha!.label).toMatch(/[א-ת]/);
-    expect(yi.zmanim[0]!.startLabel).toBe("כ\"ה כסלו");
+    expect(yi.zmanim[0]!.startLabel).toBe("י\"ט כסלו");
   });
 
-  it("a gap of weeks still shows the next zman (2026-10-15: Chanukah)", () => {
-    expect(thisWeekModel(corpus, "en", "2026-10-15").zmanim).toEqual([expect.objectContaining({ key: "chanukah", when: "next" })]);
+  it("a gap of weeks still shows the next zman (2026-10-15: Yud-Tes Kislev, 45 days off)", () => {
+    expect(thisWeekModel(corpus, "en", "2026-10-15").zmanim).toEqual([expect.objectContaining({ key: "yud-tes-kislev", when: "next" })]);
   });
 
   it("shows every zman starting within ten days, with no cap", () => {
@@ -309,9 +309,16 @@ describe("this week", () => {
     expect(w.days.map((d) => d.date)).toEqual(["2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"]);
     expect(w.days).toHaveLength(WEEK_DAYS_BEFORE + 1 + WEEK_DAYS_AFTER);
     expect(w.today.date).toBe("2026-11-19");
-    expect(w.today.blocks).toEqual(["parsha:vayeitzei", "zman:chanukah:2026-12-05:next"]);
-    expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:chanukah:2026-12-05:next"]);
-    expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:2026-12-05:next"]);
+    // 8 Kislev: Yud-Tes Kislev is 11 days off, so it is "next"; from 9 Kislev it is within ten days.
+    expect(w.days[0]!.blocks).toEqual(["parsha:vayeitzei", "zman:yud-tes-kislev:2026-11-29:next"]);
+    expect(w.today.blocks).toEqual(["parsha:vayeitzei", "zman:yud-tes-kislev:2026-11-29:soon"]);
+    expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:yud-tes-kislev:2026-11-29:soon"]);
+    expect([...w.blocks.keys()].sort()).toEqual([
+      "parsha:vayeitzei",
+      "parsha:vayishlach",
+      "zman:yud-tes-kislev:2026-11-29:next",
+      "zman:yud-tes-kislev:2026-11-29:soon",
+    ]);
     for (const d of w.days) for (const k of d.blocks) expect(w.blocks.has(k), `${d.date} ${k}`).toBe(true);
     for (const ed of EDS) {
       const labels = thisWeekWindow(corpus, ed, "2026-11-19").days.map((d) => d.hebrewDate);
