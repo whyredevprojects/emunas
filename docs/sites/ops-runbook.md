@@ -185,7 +185,6 @@ without it.
 | variable | `VITE_TURNSTILE_SITE_KEY` | environment `production`; `staging` (own widget or test key) | no (warning) | Live build: feedback dialog's Turnstile widget (W4.7) | the widget's public site key. Unset: the report control is hidden on deployed hosts |
 | variable | `EMUNAS_NEIGHBORS` | repository (optional) | no | deploy.yml "same idea elsewhere" | `auto` (default: real embeddings when the R2 cache can be mirrored, else lexical) or `lexical` (skip the mirror) |
 | variable | `EMUNAS_EMBED_BUCKET` | repository (optional) | no | deploy.yml embedding mirror | default `emunas-site-build` |
-| variable | `DATA_BRANCH` | repository (optional) | no | data-sync.yml | default `claude/dual-website-concepts-sm99sh` |
 | env (in the workflow) | `EMUNAS_DEPLOY: "1"`, `EMUNAS_STAGE`, `WRANGLER_ENV`, `TARGET` | set by deploy.yml itself, not configured | — | deploy builds (placeholders are fatal); staging host selection; wrangler env | derived from the dispatch `target` |
 
 Worker secrets (not GitHub): `TURNSTILE_SECRET` and `FEEDBACK_HASH_SALT` on `emunas-api` and
@@ -241,9 +240,6 @@ Workers AI read, Account settings read, and R2 limited to `emunas-site-build`. N
 credentials for the `emunas` bucket; the build never reads R2.
 
 Environments: put required reviewers (or a branch rule "main only") on `production`.
-Settings → Actions → General: allow GitHub Actions to create pull requests (data-sync's
-fallback). If `main` is protected, allow `github-actions[bot]` to push, or data-sync can only
-open pull requests.
 
 ## 5. Workflows
 
@@ -339,11 +335,7 @@ it once on the real vectors (data-build README step 4) before relying on the lis
 Guard drill: dispatch deploy with `plant_leak_fixture: true` (target staging). The run must
 stop at "Guard post-pass" and deploy nothing.
 
-**data-sync.yml** (hourly at :41; dispatch defaults to dry run): if `DATA_BRANCH` has commits
-`main` lacks and every path changed since the merge base is under `data/`, merge (fast-forward
-when possible), push `main` and dispatch deploy.yml (a push made with the workflow token does not
-trigger workflows by itself). Otherwise it refuses and opens a pull request listing the paths
-outside `data/` (or leaves the existing one open).
+Pipeline data reaches `main` the same way code does: a pull request from the working branch.
 
 ## 6. Local checks
 
@@ -382,8 +374,8 @@ what it tests; `LIVE_E2E_DATA=build` serves the built data instead for a manual 
 - Static assets keep only the current version; a rollback brings back that version's assets.
 - Search D1 and Vectorize are rebuildable from `.corpus` (rerun deploy.yml for the old commit).
 - Feedback D1 is never touched by deploys; if needed, `wrangler d1 time-travel restore emunas-feedback --timestamp=<iso>`.
-- Data: revert the data commit on `main` (or the merge data-sync made); the next deploy rebuilds.
-- Stop everything: disable deploy.yml and data-sync.yml in the Actions tab.
+- Data: revert the data commit on `main`; the next deploy rebuilds.
+- Stop everything: disable deploy.yml in the Actions tab.
 
 ## 8. When a run fails
 
@@ -607,7 +599,6 @@ In order; each step names where it is described. Staging first, then production.
       repository level; `VITE_TURNSTILE_SITE_KEY` per environment; `EMUNAS_DOMAIN` on
       `production` only, equal to the domain in the `wrangler.jsonc` routes.
 - [ ] Optional: `EMUNAS_NEIGHBORS=lexical` until the embeddings threshold is calibrated.
-- [ ] Actions settings for data-sync (§4, last paragraph).
 
 **Search data**
 

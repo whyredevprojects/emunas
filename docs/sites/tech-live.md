@@ -265,7 +265,7 @@ Recommend handing these to the pipeline as seed data for its glossary pass (conc
 - The static JSON is a **full rebuild every time**. It is pure JSON transformation over at most about 150 MB of input and takes well under a minute, so there is no cache to go stale. A shiur moves from catalog-only to full on the next build with no code change.
 - **Remote indexes are incremental.** Every search row and vector carries `hash = sha256(schemaVersion + normalized text + metadata)`. The loaders diff against the remote state (§5.3) and write only what changed.
 - Embeddings cache: `r2://emunas-site-build/emb/<model>/<hash>.f16` (a separate private bucket, **not** `emunas`), so a rebuild re-embeds only new or changed text. Completion is about 30k moments × 2 languages × 1,024 dims × 2 B ≈ 120 MB.
-- Trigger: CI on push to the data branch with `paths: ["data/derived/**", "apps/live/**", "packages/**", "workers/**"]`, and a concurrency group with cancel-in-progress (the pipeline commits several batches a day).
+- Trigger: CI on push to `main` with `paths: ["data/derived/**", "apps/live/**", "packages/**", "workers/**"]`, and a concurrency group with cancel-in-progress.
 
 ---
 
