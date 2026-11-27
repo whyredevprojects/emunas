@@ -4,17 +4,21 @@
  *
  * - **This week**: the parsha from `@emunas/calendar` `thisWeek()` (table-driven, no hebcal in the
  *   bundle, C16) joined by key to the Today file's occasions; a combined parsha also lists shiurim
- *   catalogued under either part. Occasions active or starting within the lookahead are joined the
- *   same way; only those with shiurim are shown.
+ *   catalogued under either part. The occasions follow the rule both sites share,
+ *   `currentAndUpcoming()`: a row for every short occasion in progress and every one starting within
+ *   {@link OCCASION_LOOKAHEAD_DAYS} days, no cap; when there is none, a row for the next occasion
+ *   however far ahead. Long windows (months, Sefirah, the Three Weeks) are compact links
+ *   (`seasons`), and take rows only when nothing else would. Only occasions with shiurim in the
+ *   listener's audio language are shown.
  * - **A moment for today**: one insight, question or story, chosen deterministically per date
  *   (`pickForDay`) from the pool of the most specific occasion of the week that has one: the active
- *   occasion with the shortest window, else the parsha, else the next occasion; with no pool this
- *   week, from all pools.
+ *   occasion with the shortest window, else the parsha, else the upcoming occasions, else the long
+ *   windows, else the next occasion after a gap; with no pool among them, from all pools.
  * - **Continue**: unfinished shiurim, then the next part of each series in progress (rows from the
  *   heard shiurim's own files, `continue.ts`).
  * - **The occasion mix** (concept-live-corpus C.3, C3.4): one per week, for the most specific occasion
- *   whose Today file entry has a mix, in the same priority as the moment of the day. Its head (the
- *   first sections, inline) plays without another request; `mix/occasion.ts` holds the rules.
+ *   whose Today file entry has a mix, in the same priority as the moment of the day (the next
+ *   occasion after a gap only when nothing nearer has a mix). Its head (the first sections, inline) plays without another request; `mix/occasion.ts` holds the rules.
  * - **Newly summarized** and the corpus counter come from the Today file.
  *
  * Today renders from its Today file (`today.<reading lang>.json`) alone (corpus-wave-plan §4, C1.7):
@@ -22,7 +26,15 @@
  *
  * Everything respects the audio-language filter (settings store), except the counter.
  */
-import { calendar as defaultCalendar, type Calendar, type HebrewDate, type ThisWeek } from "@emunas/calendar";
+import {
+  calendar as defaultCalendar,
+  LONG_WINDOW_DAYS,
+  OCCASION_LOOKAHEAD_DAYS,
+  type Calendar,
+  type HebrewDate,
+  type OccasionHit,
+  type ThisWeek,
+} from "@emunas/calendar";
 import type { BuildCounts, Ed, LocalizedText, ShiurStatus } from "@emunas/corpus/public";
 import type { FacetLabel, ReaderText, TodayFile } from "./live-data.ts";
 import { MIX_SIZE, type MixSource } from "../mix/model.ts";
@@ -31,10 +43,7 @@ import { audioAllows, type AudioFilter } from "../../shell/settings.ts";
 import type { ProgressRecord } from "./personal.ts";
 import { pickForDay } from "./pick.ts";
 
-/** How far ahead "this week" looks for occasions, in days. */
-export const LOOKAHEAD_DAYS = 10;
-/** Most occasion rows shown. */
-export const MAX_OCCASIONS = 4;
+export { LONG_WINDOW_DAYS, OCCASION_LOOKAHEAD_DAYS };
 /** Most cards in the newly-summarized strip. */
 export const MAX_NEWLY = 8;
 /** Most cards in "Continue". */
@@ -84,12 +93,24 @@ export interface PoolMoment {
 
 export interface OccasionBlock {
   key: string;
+  /** In progress, starting within the lookahead, or the next one after a gap. */
+  when: "now" | "soon" | "next";
   active: boolean;
   daysUntil: number;
   start: string;
   end: string;
   shiurim: TodayRow[];
   /** All of the occasion's shiurim (the row shows a few per language). */
+  total: number;
+}
+
+/** A long window (a month, Sefirah, the Three Weeks) as a compact link. */
+export interface SeasonLink {
+  key: string;
+  active: boolean;
+  daysUntil: number;
+  start: string;
+  end: string;
   total: number;
 }
 
@@ -135,7 +156,10 @@ export interface TodayView {
   week: ThisWeek | null;
   hebrewDate: HebrewDate | null;
   parsha: ParshaBlock | null;
+  /** Rows: occasions in progress, then those starting soon (or the next one). */
   occasions: OccasionBlock[];
+  /** Long windows in progress or starting soon, shown compactly; empty when they took the rows. */
+  seasons: SeasonLink[];
   moment: DayMoment | null;
   /** The occasion mix button's data, or null when no occasion of the week has a mix. */
   mix: WeekMix | null;
@@ -250,11 +274,14 @@ export function buildToday(input: TodayInputs): TodayView {
   const cal = input.calendar ?? defaultCalendar;
   const { date, today, audio } = input;
   const byId = rowsById(today);
-  const week = cal.thisWeek(date, { israel: input.israel, lookaheadDays: LOOKAHEAD_DAYS });
+  const week = cal.thisWeek(date, { israel: input.israel, lookaheadDays: OCCASION_LOOKAHEAD_DAYS });
 
   let parsha: ParshaBlock | null = null;
   const occasions: OccasionBlock[] = [];
+  let seasons: SeasonLink[] = [];
   const priority: string[][] = [];
+  /** The next occasion after a gap: last for the moment, and for the mix only when nothing nearer has one. */
+  let nextKeys: string[] | null = null;
 
   if (week) {
     if (week.parshaKey !== null) {
@@ -271,19 +298,46 @@ export function buildToday(input: TodayInputs): TodayView {
         ),
       };
     }
-    const hits = [...week.upcomingOccasions].sort(
-      (a, b) => Number(b.active) - Number(a.active) || (a.active ? a.length - b.length : a.daysUntil - b.daysUntil) || (a.key < b.key ? -1 : 1),
-    );
-    for (const h of hits) {
-      const o = today.occasions[h.key];
-      const shiurim = rowsFor([o?.shiurIds ?? []], byId, audio);
-      if (shiurim.length > 0 && occasions.length < MAX_OCCASIONS) {
-        occasions.push({ key: h.key, active: h.active, daysUntil: h.daysUntil, start: h.start, end: h.end, shiurim, total: o?.total ?? shiurim.length });
+    const shiurimOf = new Map<string, TodayRow[]>();
+    const rowsOf = (key: string): TodayRow[] => {
+      let rows = shiurimOf.get(key);
+      if (!rows) shiurimOf.set(key, (rows = rowsFor([today.occasions[key]?.shiurIds ?? []], byId, audio)));
+      return rows;
+    };
+    const cu = cal.currentAndUpcoming(date, {
+      israel: input.israel,
+      lookaheadDays: OCCASION_LOOKAHEAD_DAYS,
+      longWindowDays: LONG_WINDOW_DAYS,
+      has: (k) => rowsOf(k).length > 0,
+    });
+    const totalOf = (key: string) => today.occasions[key]?.total ?? rowsOf(key).length;
+    const block = (h: OccasionHit, when: OccasionBlock["when"]): OccasionBlock => ({
+      key: h.key,
+      when,
+      active: h.active,
+      daysUntil: h.daysUntil,
+      start: h.start,
+      end: h.end,
+      shiurim: rowsOf(h.key),
+      total: totalOf(h.key),
+    });
+    if (cu) {
+      for (const h of cu.current) occasions.push(block(h, "now"));
+      for (const h of cu.upcoming) occasions.push(block(h, "soon"));
+      if (cu.next) occasions.push(block(cu.next, "next"));
+      if (occasions.length === 0) {
+        // nothing short in progress, soon or ahead: the long windows take the rows
+        for (const h of cu.long) occasions.push(block(h, h.active ? "now" : "soon"));
+      } else {
+        seasons = cu.long.map((h) => ({ key: h.key, active: h.active, daysUntil: h.daysUntil, start: h.start, end: h.end, total: totalOf(h.key) }));
       }
+      for (const h of cu.current) priority.push([h.key]);
+      if (parsha) priority.push(parsha.keys);
+      for (const h of [...cu.upcoming, ...cu.long]) priority.push([h.key]);
+      if (cu.next) nextKeys = [cu.next.key];
+    } else if (parsha) {
+      priority.push(parsha.keys);
     }
-    for (const h of hits.filter((x) => x.active)) priority.push([h.key]);
-    if (parsha) priority.push(parsha.keys);
-    for (const h of hits.filter((x) => !x.active)) priority.push([h.key]);
   }
 
   const newly = today.newlySummarized
@@ -297,8 +351,9 @@ export function buildToday(input: TodayInputs): TodayView {
     hebrewDate: week?.hebrewDate ?? cal.hebrewDate(date),
     parsha,
     occasions,
-    moment: momentOfTheDay(date, priority, today, byId, audio),
-    mix: weekMix(priority, today, audio),
+    seasons,
+    moment: momentOfTheDay(date, nextKeys ? [...priority, nextKeys] : priority, today, byId, audio),
+    mix: weekMix(priority, today, audio) ?? (nextKeys ? weekMix([nextKeys], today, audio) : null),
     newly,
     counts: today.counts,
     stillArriving: today.counts.full < today.counts.total,

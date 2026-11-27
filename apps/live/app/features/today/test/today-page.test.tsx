@@ -87,6 +87,23 @@ describe("Today page", () => {
     await waitFor(() => expect(second.container.querySelector("[data-moment]")?.getAttribute("data-moment")).toBe(id));
   });
 
+  it("in a gap between occasions shows the next one, and long windows as links", async () => {
+    // Noach week: nothing until Chanukah (5 Dec 2026), 52 days off
+    const gap = await renderAt(`/en/?date=${NOACH_WEEK}`);
+    const next = gap.container.querySelector('[data-occasion="chanukah"]')!;
+    expect(next.querySelector("h3")!.textContent).toContain("Next: in 52 days");
+    expect(next.querySelectorAll("[data-shiur]").length).toBeGreaterThan(0);
+    expect(gap.container.querySelector("[data-seasons]")).toBeNull();
+    cleanup();
+    // 2nd day of Pesach 5787: Pesach is a row; Nisan and Sefirah (long) are compact links
+    const pesach = await renderAt(`/en/?date=2027-04-23`);
+    expect(pesach.container.querySelector('[data-occasion="pesach"] h3')!.textContent).toContain("Now");
+    expect(pesach.container.querySelector('[data-occasion="nisan"]')).toBeNull();
+    const links = [...pesach.container.querySelectorAll("[data-seasons] [data-season]")];
+    expect(links.map((l) => l.getAttribute("data-season"))).toEqual(["nisan", "sefirah"]);
+    expect(links[0]!.querySelector("a")!.getAttribute("href")).toMatch(/\/en\/.*nisan/);
+  });
+
   it("lists newly summarized shiurim and an empty Continue with the stub store", async () => {
     const { container } = await renderAt(`/en/?date=${NOACH_WEEK}`);
     const newly = container.querySelector("#today-newly")!.parentElement!;
