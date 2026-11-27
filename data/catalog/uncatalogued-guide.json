@@ -4,7 +4,7 @@
   "uncatalogued-audio.json",
   "pocket-guide-2012.json"
  ],
- "note": "Companion to pocket-guide-2012.json, covering the audio files that guide does not list. Nothing here comes from listening to a recording or from any outside source (except the rows marked \"source\": \"chassidus-content.com\", which are audio added from that site, with their year and part numbers copied from its listing): every value is either read off the file path, or copied from a pocket-guide row when the file turned out to be a copy or a part of a file that guide already catalogues. Each row carries `derived` saying which: \"pocket-guide\" (inherited from a catalogued row), \"dir-prefix\" (parsha/zman read off the leading \"NN-\" of the file name, using the mapping that the catalogued files in that same folder establish), or \"filename\" (read off the file-name text). `raw_name` is the untouched file name so every guess can be checked, and `note` records any reasoning that was not a straight lookup. Hebrew parsha/zman/year spellings reuse the 2012 guide's own forms wherever it has one.",
+ "note": "Companion to pocket-guide-2012.json, covering the audio files that guide does not list. Nothing here comes from listening to a recording or from any outside source (except the rows marked \"source\": \"chassidus-content.com\": audio added from that site, or files here that its listing also covers, with year, occasion and part numbers copied from that listing; those rows carry `derived` \"source\", so their occasion counts as given, not guessed): every value is either read off the file path, or copied from a pocket-guide row when the file turned out to be a copy or a part of a file that guide already catalogues. Each row carries `derived` saying which: \"pocket-guide\" (inherited from a catalogued row), \"dir-prefix\" (parsha/zman read off the leading \"NN-\" of the file name, using the mapping that the catalogued files in that same folder establish), or \"filename\" (read off the file-name text). `raw_name` is the untouched file name so every guess can be checked, and `note` records any reasoning that was not a straight lookup. Hebrew parsha/zman/year spellings reuse the 2012 guide's own forms wherever it has one.",
  "generated": "2026-09-04",
  "sections": [
   {
@@ -132,10 +132,14 @@
      "zman": "י\"ט כסלו",
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 11 - R Moshe Wolfson",
-     "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept",
-     "derived": "dir-prefix",
+     "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept; chassidus-content.com lists the same talk (item 12967) as the Mashgiach's talk at the Chabad 19 Kislev melave malka of 5774, part 11",
+     "derived": "source",
      "raw_name": "01-17 19 Kislev 5774 - 11 - R Moshe Wolfson",
-     "file": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5774 - 11 - R Moshe Wolfson.mp3"
+     "file": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5774 - 11 - R Moshe Wolfson.mp3",
+     "source": "chassidus-content.com",
+     "source_ids": [
+      12967
+     ]
     },
     {
      "n": "17",
@@ -144,10 +148,14 @@
      "zman": "י\"ט כסלו",
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 12 - R Moshe Wolfson",
-     "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept",
-     "derived": "dir-prefix",
+     "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept; chassidus-content.com lists the same talk (item 12999) as the Mashgiach's talk at the Chabad 19 Kislev melave malka of 5775, part 12",
+     "derived": "source",
      "raw_name": "01-17 19 Kislev 5775 - 12 - R Moshe Wolfson",
-     "file": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5775 - 12 - R Moshe Wolfson.mp3"
+     "file": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5775 - 12 - R Moshe Wolfson.mp3",
+     "source": "chassidus-content.com",
+     "source_ids": [
+      12999
+     ]
     },
     {
      "n": "17",
@@ -157,7 +165,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 08 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12653 (part #8)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12653
@@ -173,7 +181,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 08 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12681 (part #8)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12681
@@ -189,7 +197,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 04 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12704 (part #4)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12704
@@ -205,7 +213,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 15 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12725 (part #15)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12725
@@ -221,7 +229,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 04 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12737 (part #4)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12737
@@ -237,7 +245,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 03 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12767 (part #3)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12767
@@ -253,7 +261,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 13-14 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12785 (part #13), item 12786 (part #14)); file name made to match the two 19 Kislev files already in this folder; the two parts were joined into one file",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12785,
@@ -270,7 +278,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 09 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12805 (part #9)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12805
@@ -286,7 +294,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 12 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12839 (part #12)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12839
@@ -302,7 +310,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 05 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12857 (part #5)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12857
@@ -352,7 +360,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 09 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12934 (part #9)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       12934
@@ -368,7 +376,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 19 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13033 (part #19)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       13033
@@ -384,7 +392,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 13 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13055 (part #13)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       13055
@@ -417,7 +425,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 17 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13109 (part #17)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       13109
@@ -433,7 +441,7 @@
      "zman_bucket": "חנוכה",
      "title": "19 Kislev - 17 - R Moshe Wolfson",
      "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13147 (part #17)); file name made to match the two 19 Kislev files already in this folder",
-     "derived": "filename",
+     "derived": "source",
      "source": "chassidus-content.com",
      "source_ids": [
       13147
