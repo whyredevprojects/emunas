@@ -102,6 +102,10 @@ describe("Today page", () => {
     const links = [...pesach.container.querySelectorAll("[data-seasons] [data-season]")];
     expect(links.map((l) => l.getAttribute("data-season"))).toEqual(["nisan", "sefirah"]);
     expect(links[0]!.querySelector("a")!.getAttribute("href")).toMatch(/\/en\/.*nisan/);
+    // the list is named by its label, and each link reads "<name>, Now"
+    const list = pesach.container.querySelector("[data-seasons] ul")!;
+    expect(pesach.container.querySelector(`#${list.getAttribute("aria-labelledby")}`)!.textContent).toBe("Also now and coming:");
+    expect(links[0]!.querySelector("a")!.textContent).toMatch(/Nisan.*, Now$/);
   });
 
   it("lists newly summarized shiurim and an empty Continue with the stub store", async () => {

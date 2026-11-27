@@ -11,9 +11,11 @@
  *   (`seasons`), and take rows only when nothing else would. Only occasions with shiurim in the
  *   listener's audio language are shown.
  * - **A moment for today**: one insight, question or story, chosen deterministically per date
- *   (`pickForDay`) from the pool of the most specific occasion of the week that has one: the active
- *   occasion with the shortest window, else the parsha, else the upcoming occasions, else the long
- *   windows, else the next occasion after a gap; with no pool among them, from all pools.
+ *   (`pickForDay`) from the pool of the most specific occasion of the week that has one: the short
+ *   occasions in progress (shortest first), then the long windows in progress (Elul, Sefirah, a
+ *   month), then the parsha, then the occasions starting soon (short, then long), else the next
+ *   occasion after a gap and a long window further ahead; with no pool among them, from all pools. Only the display keeps long
+ *   windows compact.
  * - **Continue**: unfinished shiurim, then the next part of each series in progress (rows from the
  *   heard shiurim's own files, `continue.ts`).
  * - **The occasion mix** (concept-live-corpus C.3, C3.4): one per week, for the most specific occasion
@@ -280,8 +282,8 @@ export function buildToday(input: TodayInputs): TodayView {
   const occasions: OccasionBlock[] = [];
   let seasons: SeasonLink[] = [];
   const priority: string[][] = [];
-  /** The next occasion after a gap: last for the moment, and for the mix only when nothing nearer has one. */
-  let nextKeys: string[] | null = null;
+  /** The next occasion after a gap (and a long window further ahead): last for the moment, and for the mix only when nothing nearer has one. */
+  let nextKeys: string[][] | null = null;
 
   if (week) {
     if (week.parshaKey !== null) {
@@ -331,10 +333,15 @@ export function buildToday(input: TodayInputs): TodayView {
       } else {
         seasons = cu.long.map((h) => ({ key: h.key, active: h.active, daysUntil: h.daysUntil, start: h.start, end: h.end, total: totalOf(h.key) }));
       }
-      for (const h of cu.current) priority.push([h.key]);
+      // moment and mix: everything in progress (short first, then the long windows) before the
+      // parsha, then what starts soon (short, then long), then the next occasion and a long window
+      // further ahead
+      const soonLong = cu.long.filter((h) => !h.active && h.daysUntil <= OCCASION_LOOKAHEAD_DAYS);
+      for (const h of [...cu.current, ...cu.long.filter((x) => x.active)]) priority.push([h.key]);
       if (parsha) priority.push(parsha.keys);
-      for (const h of [...cu.upcoming, ...cu.long]) priority.push([h.key]);
-      if (cu.next) nextKeys = [cu.next.key];
+      for (const h of [...cu.upcoming, ...soonLong]) priority.push([h.key]);
+      const later = cu.long.filter((h) => !h.active && h.daysUntil > OCCASION_LOOKAHEAD_DAYS).map((h) => [h.key]);
+      if (cu.next || later.length > 0) nextKeys = [...(cu.next ? [[cu.next.key]] : []), ...later];
     } else if (parsha) {
       priority.push(parsha.keys);
     }
@@ -352,8 +359,8 @@ export function buildToday(input: TodayInputs): TodayView {
     parsha,
     occasions,
     seasons,
-    moment: momentOfTheDay(date, nextKeys ? [...priority, nextKeys] : priority, today, byId, audio),
-    mix: weekMix(priority, today, audio) ?? (nextKeys ? weekMix([nextKeys], today, audio) : null),
+    moment: momentOfTheDay(date, nextKeys ? [...priority, ...nextKeys] : priority, today, byId, audio),
+    mix: weekMix(priority, today, audio) ?? (nextKeys ? weekMix(nextKeys, today, audio) : null),
     newly,
     counts: today.counts,
     stillArriving: today.counts.full < today.counts.total,

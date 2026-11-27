@@ -188,12 +188,15 @@ function ThisWeek({ view, today, ui, read }: { view: TodayView; today: TodayFile
       ))}
       {view.seasons.length > 0 ? (
         <div className={s.seasons} data-seasons>
-          <span className={s.muted}>{tt("today.seasons")}</span>
-          <ul className={s.chips}>
+          <span id="today-seasons" className={s.muted}>
+            {tt("today.seasons")}
+          </span>
+          <ul className={s.chips} aria-labelledby="today-seasons">
             {view.seasons.map((z) => (
               <li key={z.key} data-season={z.key}>
                 <Link to={paths.occasion(ui, z.key)} className={s.chip}>
                   <Text value={occasionLabel(z.key, today, ui)} shiurLang={null} />
+                  <span className={s.visuallyHidden}>, </span>
                   <span className={s.chipWhen}>{whenLabel(z, tt)}</span>
                 </Link>
               </li>

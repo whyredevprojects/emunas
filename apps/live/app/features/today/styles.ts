@@ -34,6 +34,7 @@ export const TODAY_CLASSES = [
   "sectionTitle",
   "title",
   "toggle",
+  "visuallyHidden",
 ] as const;
 
 export type TodayClass = (typeof TODAY_CLASSES)[number];
