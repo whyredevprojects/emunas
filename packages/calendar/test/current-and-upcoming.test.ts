@@ -25,11 +25,12 @@ const only = (...ks: string[]) => (k: string) => ks.includes(k);
 
 describe("currentAndUpcoming on fixed dates", () => {
   it("a gap of weeks still names the next occasion (2026-10-15: Chanukah, 51 days off)", () => {
-    // Kislev (a month, long) starts 11 Nov and has shiurim, yet it never takes the only slot.
+    // Kislev (a month, long) starts 11 Nov and has shiurim, yet it never takes the only slot;
+    // being nearer than Chanukah it is listed as long.
     const r = cu("2026-10-15", { has: only("chanukah", "kislev", "purim") });
     expect(r.current).toEqual([]);
     expect(r.upcoming).toEqual([]);
-    expect(r.long).toEqual([]);
+    expect(r.long).toMatchObject([{ key: "kislev", start: "2026-11-11", active: false }]);
     expect(r.next).toMatchObject({ key: "chanukah", start: "2026-12-05", daysUntil: 51, active: false });
     // with every key, the first short occasion after Sukkos is Yud-Tes Kislev (29 Nov)
     expect(cu("2026-10-15").next).toMatchObject({ key: "yud-tes-kislev", daysUntil: 45 });
@@ -71,6 +72,15 @@ describe("currentAndUpcoming on fixed dates", () => {
     // with nothing short ahead at all, the next long window is the fallback
     const months = cu("2026-10-15", { has: only("kislev", "teves") });
     expect(months.next).toMatchObject({ key: "kislev", start: "2026-11-11" });
+  });
+
+  it("2027-08-19: Elul, nearer than Rosh Hashanah, is listed as long beside next", () => {
+    const r = cu("2027-08-19", { has: only("elul", "rosh-hashanah") });
+    expect(r.current).toEqual([]);
+    expect(r.upcoming).toEqual([]);
+    expect(r.next).toMatchObject({ key: "rosh-hashanah" });
+    expect(r.long).toMatchObject([{ key: "elul", active: false }]);
+    expect(r.long[0]!.daysUntil).toBeLessThan(r.next!.daysUntil);
   });
 
   it("each key once: two Shabbosos of Chanukah give one row, the nearer", () => {
@@ -150,6 +160,14 @@ describe("currentAndUpcoming over two whole years", () => {
           if (rows.size === 0) {
             const firstShort = ahead.filter((w) => w.length <= LONG_WINDOW_DAYS).sort((a, b) => (a.start < b.start ? -1 : 1))[0];
             if (firstShort) expect(r.next, `${d} next`).toMatchObject({ start: firstShort.start, daysUntil: diff(firstShort.start, d) });
+            // the nearest window ahead with shiurim, short or long, is visible as next or as long
+            const nearest = ahead.sort((a, b) => (a.start < b.start ? -1 : a.start > b.start ? 1 : 0))[0];
+            if (nearest) {
+              const visible = [...(r.next ? [r.next] : []), ...r.long];
+              const nearestDays = Math.min(...visible.map((h) => h.daysUntil).filter((x) => x > 0));
+              expect(visible.length, `${d} nearest`).toBeGreaterThan(0);
+              expect(nearestDays, `${d} nearest ${nearest.key}`).toBe(diff(nearest.start, d));
+            }
           } else {
             expect(r.next).toBeNull();
           }

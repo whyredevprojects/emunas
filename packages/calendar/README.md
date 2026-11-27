@@ -45,7 +45,8 @@ nearestOccasion("2027-05-21", { maxLength: 8 });      // Lag BaOmer, 4 days ahea
   progress, shortest first. `upcoming`: every short window starting within `lookaheadDays`,
   soonest first. `next`: only when both are empty, the next window however far ahead (a short
   one if any, so a month never takes the only slot). `long`: months, Sefirah, the Three Weeks in
-  progress or starting soon, for a compact display. `has(key)` (shiurim exist) filters every list;
+  progress or starting soon, plus, with `next`, a nearer long window ahead (Elul before Rosh
+  Hashanah), for a compact display. `has(key)` (shiurim exist) filters every list;
   each key appears once. The defaults are exported as `OCCASION_LOOKAHEAD_DAYS`,
   `LONG_WINDOW_DAYS` and `NEXT_SEARCH_DAYS`.
 - `hebrewDate(date)`, `occasionWindows(key, { israel? })`, `toIsoDay(date)`.

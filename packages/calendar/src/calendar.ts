@@ -102,8 +102,10 @@ export interface CurrentAndUpcomingOptions {
  * 2. `upcoming`: every short window starting within `lookaheadDays`, soonest first;
  * 3. `next`: only when 1 and 2 are empty, the next window starting after the date, however far
  *    (a short one when there is one within `maxSearchDays`, else a long one);
- * 4. `long`: long windows in progress or starting within `lookaheadDays`, in progress first. They
- *    are secondary: a site shows them compactly, or in full only when nothing else is shown.
+ * 4. `long`: long windows in progress or starting within `lookaheadDays`, in progress first, and,
+ *    when `next` is set, the nearest window ahead if it is long and nearer than `next` (so the
+ *    nearest occasion with shiurim is always visible). They are secondary: a site shows them
+ *    compactly, or in full only when nothing else is shown.
  *
  * Only keys passing `has` appear, each key once (its earliest window: in progress wins).
  */
@@ -348,6 +350,12 @@ export function createCalendar(table: CalendarTable): Calendar {
     if (current.length === 0 && upcoming.length === 0) {
       const ahead = hits.filter((h) => !h.active).sort((a, b) => a.daysUntil - b.daysUntil || a.length - b.length || byKey(a, b));
       next = ahead.find((h) => !isLong(h)) ?? ahead.find((h) => !long.includes(h)) ?? null;
+      // a long window ahead that is nearer than `next` (Elul two weeks before Rosh Hashanah) is
+      // still shown, compactly, so the nearest occasion with shiurim is never hidden
+      const nearest = ahead[0];
+      if (nearest && next && nearest !== next && isLong(nearest) && nearest.daysUntil < next.daysUntil && !long.includes(nearest)) {
+        long.push(nearest);
+      }
     }
     return { current, upcoming, next, long };
   }
