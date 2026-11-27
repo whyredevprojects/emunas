@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-27T03:52:03.948Z",
+  "generatedAt": "2026-11-27T04:33:45.948Z",
   "stats": {
     "bucket.audio": 1147,
     "bucket.objects": 5835,
     "bucket.transcripts": 1147,
     "recordings": 1147,
-    "recordings.duplicateOf": 2,
+    "recordings.duplicateOf": 5,
     "recordings.partOf": 0,
     "recordings.transcribed": 1147,
     "series": 17,
-    "shiurim": 1066,
-    "shiurim.inScope": 1053,
+    "shiurim": 1063,
+    "shiurim.inScope": 1050,
     "shiurim.inScope.category.current": 79,
     "shiurim.inScope.category.misc": 23,
     "shiurim.inScope.category.parsha": 199,
@@ -18,10 +18,10 @@
     "shiurim.inScope.category.set": 268,
     "shiurim.inScope.category.shonos": 49,
     "shiurim.inScope.category.simcha": 72,
-    "shiurim.inScope.category.zman": 325,
-    "shiurim.inScope.hours": 888.02,
+    "shiurim.inScope.category.zman": 322,
+    "shiurim.inScope.hours": 886.34,
     "shiurim.inScope.lang.en": 267,
-    "shiurim.inScope.lang.yi": 786,
+    "shiurim.inScope.lang.yi": 783,
     "shiurim.inScope.series.current-bachurim-5771": 9,
     "shiurim.inScope.series.current-bachurim-5773": 19,
     "shiurim.inScope.series.current-ey-bachurim-5769": 21,
@@ -39,7 +39,7 @@
     "shiurim.inScope.series.tefila-en": 17,
     "shiurim.inScope.series.tefila-yi": 41,
     "shiurim.inScope.source.pocket-guide-2012": 786,
-    "shiurim.inScope.source.uncatalogued-guide": 267,
+    "shiurim.inScope.source.uncatalogued-guide": 264,
     "shiurim.outOfScope.category.purim": 2,
     "shiurim.outOfScope.category.set": 9,
     "shiurim.outOfScope.category.zman": 2,
@@ -52,10 +52,10 @@
     "shiurim.outOfScope.series.tanya-en": 1,
     "shiurim.outOfScope.source.pocket-guide-2012": 5,
     "shiurim.outOfScope.source.uncatalogued-guide": 8,
-    "transcripts.attachedInScope": 1145,
-    "transcripts.redundant": 2,
+    "transcripts.attachedInScope": 1142,
+    "transcripts.redundant": 5,
     "warnings.derived-audio": 1,
-    "warnings.duplicate": 2,
+    "warnings.duplicate": 5,
     "warnings.grouped-tracks": 2,
     "warnings.junk-row": 3,
     "warnings.merged-row-split": 4,
@@ -24083,66 +24083,6 @@
       "pathNotes": []
     },
     {
-      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5771-07-r-moshe-wolfson",
-      "lang": "yi",
-      "category": "zman",
-      "seriesId": null,
-      "seriesOrder": null,
-      "catalog": {
-        "source": "uncatalogued-guide",
-        "sectionId": "zmanim",
-        "sectionTitle": "זמנים",
-        "n": "17",
-        "page": null,
-        "titleOriginal": "19 Kislev - 07 - R Moshe Wolfson",
-        "subTitle": null,
-        "derived": "filename",
-        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12892 (part #7)); file name made to match the two 19 Kislev files already in this folder"
-      },
-      "parsha": null,
-      "zman": "י\"ט כסלו",
-      "perek": null,
-      "hebrewYears": [
-        5771
-      ],
-      "recordingIds": [
-        "y-zemanim-kislev-and-choref-01-17-19-kislev-5771-07-r-moshe-wolfson"
-      ],
-      "inScope": true,
-      "outOfScopeReason": null,
-      "pathNotes": []
-    },
-    {
-      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5772-11-r-moshe-wolfson",
-      "lang": "yi",
-      "category": "zman",
-      "seriesId": null,
-      "seriesOrder": null,
-      "catalog": {
-        "source": "uncatalogued-guide",
-        "sectionId": "zmanim",
-        "sectionTitle": "זמנים",
-        "n": "17",
-        "page": null,
-        "titleOriginal": "19 Kislev - 11 - R Moshe Wolfson",
-        "subTitle": null,
-        "derived": "filename",
-        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12914 (part #11)); file name made to match the two 19 Kislev files already in this folder"
-      },
-      "parsha": null,
-      "zman": "י\"ט כסלו",
-      "perek": null,
-      "hebrewYears": [
-        5772
-      ],
-      "recordingIds": [
-        "y-zemanim-kislev-and-choref-01-17-19-kislev-5772-11-r-moshe-wolfson"
-      ],
-      "inScope": true,
-      "outOfScopeReason": null,
-      "pathNotes": []
-    },
-    {
       "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5773-09-r-moshe-wolfson",
       "lang": "yi",
       "category": "zman",
@@ -24227,36 +24167,6 @@
       ],
       "recordingIds": [
         "y-zemanim-kislev-and-choref-01-17-19-kislev-5777-13-r-moshe-wolfson"
-      ],
-      "inScope": true,
-      "outOfScopeReason": null,
-      "pathNotes": []
-    },
-    {
-      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5778-17-r-moshe-wolfson",
-      "lang": "yi",
-      "category": "zman",
-      "seriesId": null,
-      "seriesOrder": null,
-      "catalog": {
-        "source": "uncatalogued-guide",
-        "sectionId": "zmanim",
-        "sectionTitle": "זמנים",
-        "n": "17",
-        "page": null,
-        "titleOriginal": "19 Kislev - 17 - R Moshe Wolfson",
-        "subTitle": null,
-        "derived": "filename",
-        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13081 (part #17)); file name made to match the two 19 Kislev files already in this folder"
-      },
-      "parsha": null,
-      "zman": "י\"ט כסלו",
-      "perek": null,
-      "hebrewYears": [
-        5778
-      ],
-      "recordingIds": [
-        "y-zemanim-kislev-and-choref-01-17-19-kislev-5778-17-r-moshe-wolfson"
       ],
       "inScope": true,
       "outOfScopeReason": null,
@@ -34272,7 +34182,7 @@
       "durationSec": 2056.93,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 16457040,
-      "duplicateOf": null,
+      "duplicateOf": "y-zemanim-kislev-and-choref-01-14-chanukah",
       "partOf": null
     },
     {
@@ -34282,7 +34192,7 @@
       "durationSec": 1785.57,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 14286162,
-      "duplicateOf": null,
+      "duplicateOf": "y-zemanim-kislev-and-choref-01-15-1-chanukah",
       "partOf": null
     },
     {
@@ -34342,7 +34252,7 @@
       "durationSec": 2233.5,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 17869535,
-      "duplicateOf": null,
+      "duplicateOf": "y-parsha-sefer-bereishes-09-09-vayeshev",
       "partOf": null
     },
     {
@@ -43815,6 +43725,9 @@
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5767-2 Purim Seudah (1).mp3",
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5775-3 Purim Seudah(1).mp3",
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5775-3 Purim Seudah.mp3",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5771-07-r-moshe-wolfson marked duplicateOf y-zemanim-kislev-and-choref-01-14-chanukah (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12892 (part #7)); file name made to match the two 19 Kislev files already in this folder; the same recording as the 2012 guide's 01-14 Chanukah (תשע\"א, p. 19), found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5772-11-r-moshe-wolfson marked duplicateOf y-zemanim-kislev-and-choref-01-15-1-chanukah (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12914 (part #11)); file name made to match the two 19 Kislev files already in this folder; the same recording as part 1 of the 2012 guide's 01-15 Chanukah (תשע\"ב, p. 19), found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5778-17-r-moshe-wolfson marked duplicateOf y-parsha-sefer-bereishes-09-09-vayeshev (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13081 (part #17)); file name made to match the two 19 Kislev files already in this folder; the same recording as the uncatalogued 09-09 Vayeshev, found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan-1 marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[partly-missing] yi-purim-seudos-5775: 1 of 4 files not in R2",
