@@ -241,12 +241,12 @@ describe("this week", () => {
   });
 
   it("names the parsha of the week and the nearest zman that has shiurim", () => {
-    // Sunday 5 Kislev 5787: Vayeitzei is read on the coming Shabbos; Chanukah is the next zman with shiurim.
+    // Sunday 5 Kislev 5787: Vayeitzei is read on the coming Shabbos; Yud-Tes Kislev is the next zman with shiurim.
     const w = thisWeekModel(corpus, "en", "2026-11-15");
     expect(w.hebrewDate).toBe("5 Kislev 5787");
     expect(w.parsha).toMatchObject({ kind: "parsha", key: "vayeitzei", label: "Vayeitzei", href: "/en/calendar/parsha/vayeitzei/" });
     expect(w.parsha!.rows.length).toBe(Math.min(THIS_WEEK_LIMIT, w.parsha!.count));
-    expect(w.zman).toMatchObject({ kind: "zman", key: "chanukah", active: false, href: "/en/calendar/zman/chanukah/" });
+    expect(w.zman).toMatchObject({ kind: "zman", key: "yud-tes-kislev", active: false, href: "/en/calendar/zman/yud-tes-kislev/" });
     const yi = thisWeekModel(corpus, "yi", "2026-11-15");
     expect(yi.hebrewDate).toBe("ה' כסלו תשפ\"ז");
     expect(yi.parsha!.label).toMatch(/[א-ת]/);
@@ -274,9 +274,9 @@ describe("this week", () => {
     expect(w.days.map((d) => d.date)).toEqual(["2026-11-18", "2026-11-19", "2026-11-20", "2026-11-21", "2026-11-22"]);
     expect(w.days).toHaveLength(WEEK_DAYS_BEFORE + 1 + WEEK_DAYS_AFTER);
     expect(w.today.date).toBe("2026-11-19");
-    expect(w.today.blocks).toEqual(["parsha:vayeitzei", "zman:chanukah:soon"]);
-    expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:chanukah:soon"]);
-    expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:chanukah:soon"]);
+    expect(w.today.blocks).toEqual(["parsha:vayeitzei", "zman:yud-tes-kislev:soon"]);
+    expect(w.days.at(-1)!.blocks).toEqual(["parsha:vayishlach", "zman:yud-tes-kislev:soon"]);
+    expect([...w.blocks.keys()].sort()).toEqual(["parsha:vayeitzei", "parsha:vayishlach", "zman:yud-tes-kislev:soon"]);
     for (const d of w.days) for (const k of d.blocks) expect(w.blocks.has(k), `${d.date} ${k}`).toBe(true);
     for (const ed of EDS) {
       const labels = thisWeekWindow(corpus, ed, "2026-11-19").days.map((d) => d.hebrewDate);

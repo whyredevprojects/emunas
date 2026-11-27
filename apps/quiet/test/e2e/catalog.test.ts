@@ -191,7 +191,7 @@ describe.each(EDS)("%s edition", (ed) => {
     expect(await page.locator("#indexes h2").count()).toBe(1);
     expect(await page.locator(`.site-nav a[href="/${ed}/#indexes"]`).count()).toBe(1);
     expect(await page.locator('[data-occasion="vayeitzei"] a[href*="/calendar/parsha/vayeitzei/"]').count()).toBeGreaterThan(0);
-    expect(await page.locator('[data-occasion="chanukah"] li').count()).toBe(5);
+    expect(await page.locator('[data-occasion="yud-tes-kislev"] li').count()).toBe(5);
     expect(await page.locator("[data-section]").count()).toBeGreaterThan(10);
     // The total follows the data (build.json), so it is read from the corpus this suite built.
     const { counts } = JSON.parse(readFileSync(join(corpusDir, "build.json"), "utf8")) as { counts: { total: number } };
@@ -237,11 +237,11 @@ describe.each(EDS)("%s edition", (ed) => {
 
     // Motzei Shabbos 4 Kislev (the day before the build day): Toldos is still the parsha of the week.
     const sat = await shown(new Date("2026-11-14T22:00:00-05:00"));
-    expect(sat).toMatchObject({ date: "2026-11-14", occasions: ["toldos", "chanukah"], errors: [] });
+    expect(sat).toMatchObject({ date: "2026-11-14", occasions: ["toldos", "yud-tes-kislev"], errors: [] });
     expect(sat.lead).toContain(kislev(4));
 
     const tue = await shown(new Date("2026-11-17T09:00:00-05:00"));
-    expect(tue).toMatchObject({ date: "2026-11-17", occasions: ["vayeitzei", "chanukah"], errors: [] });
+    expect(tue).toMatchObject({ date: "2026-11-17", occasions: ["vayeitzei", "yud-tes-kislev"], errors: [] });
     expect(tue.lead).toContain(kislev(7));
 
     // Already the 16th in Jerusalem while it is still the 15th in New York.
@@ -251,7 +251,7 @@ describe.each(EDS)("%s edition", (ed) => {
 
     // Outside the window: the build day stays.
     const later = await shown(new Date("2026-12-01T09:00:00-05:00"));
-    expect(later).toMatchObject({ date: "2026-11-15", occasions: ["vayeitzei", "chanukah"], errors: [] });
+    expect(later).toMatchObject({ date: "2026-11-15", occasions: ["vayeitzei", "yud-tes-kislev"], errors: [] });
     expect(later.lead).toContain(kislev(5));
   }, 60_000);
 
