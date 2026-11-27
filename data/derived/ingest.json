@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-18T18:17:34.372Z",
+  "generatedAt": "2026-11-27T05:36:19.429Z",
   "stats": {
-    "bucket.audio": 1129,
-    "bucket.objects": 5745,
-    "bucket.transcripts": 1129,
-    "recordings": 1129,
-    "recordings.duplicateOf": 2,
+    "bucket.audio": 1147,
+    "bucket.objects": 5835,
+    "bucket.transcripts": 1147,
+    "recordings": 1147,
+    "recordings.duplicateOf": 5,
     "recordings.partOf": 0,
-    "recordings.transcribed": 1129,
+    "recordings.transcribed": 1147,
     "series": 17,
-    "shiurim": 1048,
-    "shiurim.inScope": 1035,
+    "shiurim": 1063,
+    "shiurim.inScope": 1050,
     "shiurim.inScope.category.current": 79,
     "shiurim.inScope.category.misc": 23,
     "shiurim.inScope.category.parsha": 199,
@@ -18,10 +18,10 @@
     "shiurim.inScope.category.set": 268,
     "shiurim.inScope.category.shonos": 49,
     "shiurim.inScope.category.simcha": 72,
-    "shiurim.inScope.category.zman": 307,
-    "shiurim.inScope.hours": 880.16,
+    "shiurim.inScope.category.zman": 322,
+    "shiurim.inScope.hours": 886.34,
     "shiurim.inScope.lang.en": 267,
-    "shiurim.inScope.lang.yi": 768,
+    "shiurim.inScope.lang.yi": 783,
     "shiurim.inScope.series.current-bachurim-5771": 9,
     "shiurim.inScope.series.current-bachurim-5773": 19,
     "shiurim.inScope.series.current-ey-bachurim-5769": 21,
@@ -39,7 +39,7 @@
     "shiurim.inScope.series.tefila-en": 17,
     "shiurim.inScope.series.tefila-yi": 41,
     "shiurim.inScope.source.pocket-guide-2012": 786,
-    "shiurim.inScope.source.uncatalogued-guide": 249,
+    "shiurim.inScope.source.uncatalogued-guide": 264,
     "shiurim.outOfScope.category.purim": 2,
     "shiurim.outOfScope.category.set": 9,
     "shiurim.outOfScope.category.zman": 2,
@@ -52,10 +52,10 @@
     "shiurim.outOfScope.series.tanya-en": 1,
     "shiurim.outOfScope.source.pocket-guide-2012": 5,
     "shiurim.outOfScope.source.uncatalogued-guide": 8,
-    "transcripts.attachedInScope": 1127,
-    "transcripts.redundant": 2,
+    "transcripts.attachedInScope": 1142,
+    "transcripts.redundant": 5,
     "warnings.derived-audio": 1,
-    "warnings.duplicate": 2,
+    "warnings.duplicate": 5,
     "warnings.grouped-tracks": 2,
     "warnings.junk-row": 3,
     "warnings.merged-row-split": 4,
@@ -23736,8 +23736,8 @@
         "page": null,
         "titleOriginal": "19 Kislev - 11 - R Moshe Wolfson",
         "subTitle": null,
-        "derived": "dir-prefix",
-        "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept"
+        "derived": "source",
+        "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept; chassidus-content.com lists the same talk (item 12967) as the Mashgiach's talk at the Chabad 19 Kislev melave malka of 5774, part 11"
       },
       "parsha": null,
       "zman": "י\"ט כסלו",
@@ -23766,8 +23766,8 @@
         "page": null,
         "titleOriginal": "19 Kislev - 12 - R Moshe Wolfson",
         "subTitle": null,
-        "derived": "dir-prefix",
-        "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept"
+        "derived": "source",
+        "note": "zman \"י\"ט כסלו\" comes from the file-name text, but the \"01-\" prefix files this recording under \"חנוכה\" in this folder; both are kept; chassidus-content.com lists the same talk (item 12999) as the Mashgiach's talk at the Chabad 19 Kislev melave malka of 5775, part 12"
       },
       "parsha": null,
       "zman": "י\"ט כסלו",
@@ -23777,6 +23777,456 @@
       ],
       "recordingIds": [
         "y-zemanim-kislev-and-choref-01-17-19-kislev-5775-12-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5757-08-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 08 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12653 (part #8)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5757
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5757-08-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5758-08-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 08 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12681 (part #8)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5758
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5758-08-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5760-04-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 04 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12704 (part #4)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5760
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5760-04-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5761-15-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 15 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12725 (part #15)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5761
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5761-15-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5762-04-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 04 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12737 (part #4)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5762
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5762-04-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5764-03-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 03 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12767 (part #3)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5764
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5764-03-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5765-13-14-r-moshe-wolfs",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 13-14 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12785 (part #13), item 12786 (part #14)); file name made to match the two 19 Kislev files already in this folder; the two parts were joined into one file"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5765
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5765-13-14-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5766-09-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 09 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12805 (part #9)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5766
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5766-09-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5768-12-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 12 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12839 (part #12)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5768
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5768-12-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5769-05-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 05 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12857 (part #5)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5769
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5769-05-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5773-09-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 09 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12934 (part #9)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5773
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5773-09-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5776-19-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 19 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13033 (part #19)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5776
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5776-19-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5777-13-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 13 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13055 (part #13)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5777
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5777-13-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5779-17-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 17 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13109 (part #17)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5779
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5779-17-r-moshe-wolfson"
+      ],
+      "inScope": true,
+      "outOfScopeReason": null,
+      "pathNotes": []
+    },
+    {
+      "id": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5780-17-r-moshe-wolfson",
+      "lang": "yi",
+      "category": "zman",
+      "seriesId": null,
+      "seriesOrder": null,
+      "catalog": {
+        "source": "uncatalogued-guide",
+        "sectionId": "zmanim",
+        "sectionTitle": "זמנים",
+        "n": "17",
+        "page": null,
+        "titleOriginal": "19 Kislev - 17 - R Moshe Wolfson",
+        "subTitle": null,
+        "derived": "source",
+        "note": "from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13147 (part #17)); file name made to match the two 19 Kislev files already in this folder"
+      },
+      "parsha": null,
+      "zman": "י\"ט כסלו",
+      "perek": null,
+      "hebrewYears": [
+        5780
+      ],
+      "recordingIds": [
+        "y-zemanim-kislev-and-choref-01-17-19-kislev-5780-17-r-moshe-wolfson"
       ],
       "inScope": true,
       "outOfScopeReason": null,
@@ -33626,6 +34076,136 @@
       "partOf": null
     },
     {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5757-08-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5757 - 08 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5757 - 08 - R Moshe Wolfson",
+      "durationSec": 1067.44,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 8541102,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5758-08-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5758 - 08 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5758 - 08 - R Moshe Wolfson",
+      "durationSec": 1017.5,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 8141533,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5760-04-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5760 - 04 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5760 - 04 - R Moshe Wolfson",
+      "durationSec": 2338.64,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 18710673,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5761-15-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5761 - 15 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5761 - 15 - R Moshe Wolfson",
+      "durationSec": 1507.24,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12059484,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5762-04-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5762 - 04 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5762 - 04 - R Moshe Wolfson",
+      "durationSec": 1506.98,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12057392,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5764-03-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5764 - 03 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5764 - 03 - R Moshe Wolfson",
+      "durationSec": 1525.11,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12202424,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5765-13-14-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5765 - 13-14 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5765 - 13-14 - R Moshe Wolfson",
+      "durationSec": 1841.53,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 14732477,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5766-09-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5766 - 09 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5766 - 09 - R Moshe Wolfson",
+      "durationSec": 1764.47,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 14117304,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5768-12-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5768 - 12 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5768 - 12 - R Moshe Wolfson",
+      "durationSec": 1542.71,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12343278,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5769-05-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5769 - 05 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5769 - 05 - R Moshe Wolfson",
+      "durationSec": 1454.89,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 11640687,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5771-07-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5771 - 07 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5771 - 07 - R Moshe Wolfson",
+      "durationSec": 2056.93,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 16457040,
+      "duplicateOf": "y-zemanim-kislev-and-choref-01-14-chanukah",
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5772-11-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5772 - 11 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5772 - 11 - R Moshe Wolfson",
+      "durationSec": 1785.57,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 14286162,
+      "duplicateOf": "y-zemanim-kislev-and-choref-01-15-1-chanukah",
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5773-09-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5773 - 09 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5773 - 09 - R Moshe Wolfson",
+      "durationSec": 1551.44,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12413075,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
       "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5774-11-r-moshe-wolfson",
       "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5774 - 11 - R Moshe Wolfson.mp3",
       "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5774 - 11 - R Moshe Wolfson",
@@ -33642,6 +34222,56 @@
       "durationSec": 1117.1,
       "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
       "sizeBytes": 5560024,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5776-19-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5776 - 19 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5776 - 19 - R Moshe Wolfson",
+      "durationSec": 1527.56,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12222070,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5777-13-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5777 - 13 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5777 - 13 - R Moshe Wolfson",
+      "durationSec": 1500.06,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 12002015,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5778-17-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5778 - 17 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5778 - 17 - R Moshe Wolfson",
+      "durationSec": 2233.5,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 17869535,
+      "duplicateOf": "y-parsha-sefer-bereishes-09-09-vayeshev",
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5779-17-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5779 - 17 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5779 - 17 - R Moshe Wolfson",
+      "durationSec": 949.94,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 7601113,
+      "duplicateOf": null,
+      "partOf": null
+    },
+    {
+      "id": "y-zemanim-kislev-and-choref-01-17-19-kislev-5780-17-r-moshe-wolfson",
+      "audioKey": "01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5780 - 17 - R Moshe Wolfson.mp3",
+      "transcriptKey": "transcripts/01 Harav Moshe Wolfson - Yiddish Shiurim/Y 02 Zemanim/Y Zemanim 02 Kislev and Choref/01-17 19 Kislev 5780 - 17 - R Moshe Wolfson",
+      "durationSec": 1136.07,
+      "asrModel": "ivrit-ai/yi-whisper-large-v3-ct2",
+      "sizeBytes": 9090091,
       "duplicateOf": null,
       "partOf": null
     },
@@ -42872,7 +43502,7 @@
     }
   ],
   "warnings": [
-    "[derived-audio] ignored 1132 derived audio objects (fixed/ copies and .WMA playback transcodes)",
+    "[derived-audio] ignored 1150 derived audio objects (fixed/ copies and .WMA playback transcodes)",
     "[non-audio-object] ignored 97 non-audio objects in the bucket (.mrk, .pdf, .jpg, .wav, .json sidecar files)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד א: -> 5736 (year assigned by order of the shana field)",
     "[split-year-by-order] pocket-guide parshas-hashavua p.5 n=3: side צד ב: -> 5749 (year assigned by order of the shana field)",
@@ -43095,6 +43725,9 @@
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5767-2 Purim Seudah (1).mp3",
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5775-3 Purim Seudah(1).mp3",
     "[not-in-bucket] catalog file not in R2: PURIM SEUDOS/06-5775-3 Purim Seudah.mp3",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5771-07-r-moshe-wolfson marked duplicateOf y-zemanim-kislev-and-choref-01-14-chanukah (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12892 (part #7)); file name made to match the two 19 Kislev files already in this folder; the same recording as the 2012 guide's 01-14 Chanukah (תשע\"א, p. 19), found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5772-11-r-moshe-wolfson marked duplicateOf y-zemanim-kislev-and-choref-01-15-1-chanukah (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 12914 (part #11)); file name made to match the two 19 Kislev files already in this folder; the same recording as part 1 of the 2012 guide's 01-15 Chanukah (תשע\"ב, p. 19), found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
+    "[duplicate] y-zemanim-kislev-and-choref-01-17-19-kislev-5778-17-r-moshe-wolfson marked duplicateOf y-parsha-sefer-bereishes-09-09-vayeshev (uncatalogued-guide zmanim: from chassidus-content.com, not the family collection: the Mashgiach's talk at the Chabad 19 Kislev melave malka, cut by them out of a multi-speaker recording (item 13081 (part #17)); file name made to match the two 19 Kislev files already in this folder; the same recording as the uncatalogued 09-09 Vayeshev, found by matching the audio (a constant offset of a few seconds), so it is kept only as a copy)",
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan-1 marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[duplicate] y-zemanim-adar-purim-copy-of-02-10-purim-katan marked duplicateOf y-zemanim-adar-purim-02-10-purim-katan (uncatalogued-guide zmanim: file-manager copy of \"02-10 Purim Katan\" in the same folder; zman \"פורים קטן\" comes from the file-name text, but the \"02-\" prefix files this recording under \"סעודת פורים קטן\" in this folder; both are kept)",
     "[partly-missing] yi-purim-seudos-5775: 1 of 4 files not in R2",

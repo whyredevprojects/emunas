@@ -47,7 +47,7 @@ export const ShiurSchema = v.object({
     titleOriginal: str,
     subTitle: nstr,
     heading: v.exactOptional(str),
-    derived: v.picklist(["catalog", "pocket-guide", "dir-prefix", "filename"]),
+    derived: v.picklist(["catalog", "pocket-guide", "dir-prefix", "filename", "source"]),
     note: nstr,
   }),
   parsha: nstr,

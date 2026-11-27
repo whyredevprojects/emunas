@@ -39,8 +39,8 @@ Shiurim of Harav Moshe Wolfson zt"l: a data pipeline (`data/`, `scripts/`, `src/
 
 ## Ownership and branches
 
-- **Pipeline:** `data/`, `scripts/`, `src/`, `config/` and `prompts/` belong to the pipeline session (branch `claude/vibrant-curie-ioreux`). Site work does not modify them.
-- **Site work:** goes on its own branch and reaches `main` through a pull request. Never push to `main` directly.
+- Pipeline work (`data/`, `scripts/`, `src/`, `config/`, `prompts/`) and site work alike go on the session's own branch and reach `main` through a pull request. Never push to `main` directly.
+- Batches run in the session doing the work (Opus subagents via the Agent tool, `docs/batch-runbook.md`). There is no separate runner session, scheduled task or dedicated pipeline branch.
 
 ## Dedication
 

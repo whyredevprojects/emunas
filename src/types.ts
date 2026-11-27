@@ -13,7 +13,7 @@ export interface Localized {
 // ---------- P0: ingest ----------
 
 export type CatalogSource = "pocket-guide-2012" | "uncatalogued-guide";
-export type DerivedFrom = "catalog" | "pocket-guide" | "dir-prefix" | "filename";
+export type DerivedFrom = "catalog" | "pocket-guide" | "dir-prefix" | "filename" | "source";
 
 /** One audio file + its transcript in R2. */
 export interface Recording {

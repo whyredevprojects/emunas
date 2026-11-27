@@ -105,7 +105,7 @@ jobs:
       # tree. When this commit's tree has one (from this repository, not a fork, not expired), those
       # checks already ran on exactly these files, so typecheck, lint and unit tests are skipped
       # here. Everything from the corpus build on, guard post-pass included, always runs on the
-      # bytes that ship. No marker (a direct push, a data-sync merge, an expired marker) = full checks.
+      # bytes that ship. No marker (a direct push, an expired marker) = full checks.
       - name: Already passed CI?
         id: ci
         env:

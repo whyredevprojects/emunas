@@ -212,9 +212,9 @@ Write-up per language, lazily loaded (`/data/writeup/<id>.<lang>.json` for each 
 | `/data/series/<id>.json` ×17 | ordered parts, perek groups, one-liners | small |
 | `/data/works.json`, `/data/work/<id>.json` | shelf; per work: locations sorted in the work's order (parsed `sefariaRef`), moments per location, unlocated list | ≤ 1,000 files |
 | `/data/entity/{p,c,o}/<id>.json` | counts, year histogram, moments, top co-occurring entities (≥5 shared shiurim) | only entities with ≥2 shiurim get a file; the rest are inlined in `facets.json` |
-| `/data/stories.json` | all stories (title, people ids, shiur, t, year) without retelling | ≤ 120 KB br |
+| `/data/stories.json` | all stories (title, people ids, shiur, t, year) without retelling | ≤ 144 KB br (was 120; grows with the corpus, see `data-build/budgets.ts`) |
 | `/data/moments/<lang>-<n>.json` | Explore "moments" unit: id, kind, shiurId, t, title in one language, sharded by 1,000 | lazy |
-| `/data/quick-index.<lang>.json` | serialized MiniSearch over titles, one-liners, section titles, entity names | ≤ 600 KB br, lazy on command-bar focus |
+| `/data/quick-index.<lang>.json` | serialized MiniSearch over titles, one-liners, section titles, entity names | ≤ 720 KB br (was 600; about 340 B per shiur, see `data-build/budgets.ts`), lazy on command-bar focus |
 | `/data/build.json` | buildId, data commit sha, counts ("518 of 997 summarized"), schema version | tiny |
 | `workers/audio/generated/audio-table.json` | recordingId → `{ key, size, etag? }` for in-scope recordings | ~150 KB, bundled into the audio Worker |
 | `apps/live/.out/search/*.ndjson` | D1 rows (not deployed as assets) | |
@@ -265,7 +265,7 @@ Recommend handing these to the pipeline as seed data for its glossary pass (conc
 - The static JSON is a **full rebuild every time**. It is pure JSON transformation over at most about 150 MB of input and takes well under a minute, so there is no cache to go stale. A shiur moves from catalog-only to full on the next build with no code change.
 - **Remote indexes are incremental.** Every search row and vector carries `hash = sha256(schemaVersion + normalized text + metadata)`. The loaders diff against the remote state (§5.3) and write only what changed.
 - Embeddings cache: `r2://emunas-site-build/emb/<model>/<hash>.f16` (a separate private bucket, **not** `emunas`), so a rebuild re-embeds only new or changed text. Completion is about 30k moments × 2 languages × 1,024 dims × 2 B ≈ 120 MB.
-- Trigger: CI on push to the data branch with `paths: ["data/derived/**", "apps/live/**", "packages/**", "workers/**"]`, and a concurrency group with cancel-in-progress (the pipeline commits several batches a day).
+- Trigger: CI on push to `main` with `paths: ["data/derived/**", "apps/live/**", "packages/**", "workers/**"]`, and a concurrency group with cancel-in-progress.
 
 ---
 

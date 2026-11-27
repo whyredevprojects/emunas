@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-zmanim-unc-yt-kslv-17-01-17-19-kislev-5765-13-14-r-moshe-wolfs",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-27T12:00:00Z",
+  "counts": {
+    "claimsChecked": 24, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 15, "sourceErrors": 0, "sourcesMissed": 1,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 3, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "All sampled claims supported, incl. Midrash 'all were busy' (segs 72-79), Tamar waiting for Yehudah's mesirus nefesh (253-286), Osnas/Shechem (325-343) and Pinchas avenging Yosef (397-407); sourcesMissed: Zohar cited at seg 3 ('זיירה הקודש') not in sources[]; Shabbos 21b (Tarmoda'i, segs 123-131), Onkelos 49:8, Targum Yonasan 41:45, Rashi Bamidbar 31:6 verified correct; Yiddish: summary.oneLiner.yi uses YIVO-style 'געטון' for 'געטאן'; insights[0].yi 'איין פלאן וואו' is an English-style relative 'where'; summary.keyPoints[3].yi 'זאל זיך צושליסן צו אירע' calques 'join'; section 4 (Osnas) ends at seg 369 though the Chabad passage starts at 368, within tolerance; rule search: garbl/ASR hits only in asrNotes, no violations"
+}

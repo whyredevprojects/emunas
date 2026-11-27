@@ -1,29 +1,29 @@
 # Batch runbook: production P4 + P4b run
 
-Instructions for a Claude session that wakes up on a schedule to process the next batch of shiurim. Follow the steps in order. Don't improvise around a failure: when a step says stop, stop and report.
+Instructions for the Claude session that processes the next batch of shiurim. Follow the steps in order. Don't improvise around a failure: when a step says stop, stop and report.
 
 **What a batch is.** Each in-scope shiur (959) has an entry in `data/derived/manifest.json` with a status: `pending`, `in_progress`, `done`, `failed` (2 failed attempts) or `needs_review` (flagged by an audit or by hand). One Opus agent per **group** reads the shiur's transcript once and writes both outputs, extraction (P4) and write-up (P4b), into `data/derived/shiurim/<shiurId>/`, following `prompts/run-shiur.md`. Shiurim under 15 minutes are grouped up to 3 per agent. Code prepares the inputs (with ASR noise marked `[NOISE?]`), validates the outputs and keeps the manifest. There is no cleanup pass.
 
-**Batch size.** Default **N = 135** shiurim per run (Max 10x plan from 2026-11-15: ~90% of the doubled session window; ~175k subagent tokens per shiur, so ~24M per run, waves of up to 18 concurrent agents). Use a different N only if the person who scheduled the session said so.
+**Batch size.** Default **N = 135** shiurim per run (Max 10x plan from 2026-11-15: ~90% of the doubled session window; ~175k subagent tokens per shiur, so ~24M per run, waves of up to 18 concurrent agents). Use a different N if the user says so.
 
-**Yiddish re-transcription (2026-11-13):** the hold is lifted. `batch:next` itself skips any Yiddish shiur whose transcript is not yet re-transcribed (`mode: careful`); a separate refresh task pulls newly finished transcripts into the repo between runs. Run `batch:next` without `--lang`.
+**Yiddish re-transcription (2026-11-13):** the hold is lifted. `batch:next` itself skips any Yiddish shiur whose transcript is not yet re-transcribed (`mode: careful`). When new transcripts are in R2, run `transcripts:sync`, `ingest` and `batch:init` before the batch (needs `.env`). Run `batch:next` without `--lang`.
 
 ## Steps
 
 ### 1. Branch and pull
-All work happens on branch `claude/vibrant-curie-ioreux`:
+Work on the session's own branch, up to date with `main`:
 ```
-git fetch origin claude/vibrant-curie-ioreux
-git checkout -B claude/vibrant-curie-ioreux origin/claude/vibrant-curie-ioreux
+git fetch origin main
+git merge --no-edit origin/main
 npm ci --silent
 ```
-If it fails (conflict, diverged branch), **stop** and report the error. Don't resolve it yourself.
+If it fails (conflict), **stop** and report the error. Don't resolve it yourself.
 
 ### 2. Reset stale work
 ```
 npm run -s batch:reset-stale
 ```
-Shiurim left `in_progress` for more than 12 hours (a crashed session) go back to `pending`. If `npm run -s batch:status` still shows `in_progress` shiurim after this, another session may be running: **stop** and report (don't start a second batch on top).
+Shiurim left `in_progress` for more than 12 hours (a crashed session) go back to `pending`. If `npm run -s batch:status` still shows `in_progress` shiurim after this, another session or an unfinished batch may be running: **stop** and report (don't start a second batch on top).
 
 ### 3. Pick the batch
 ```
@@ -105,9 +105,9 @@ This appends to `data/derived/usage.tsv` (date, batch, pass, group, shiurIds, mo
 npm run -s batch:status
 git add data/derived/manifest.json data/derived/usage.tsv data/derived/shiurim data/derived/audits
 git commit -m "Batch <batchId>: <done> done, <pending> retry, <failed> failed"
-git push -u origin claude/vibrant-curie-ioreux
+git push -u origin HEAD
 ```
-Push to `claude/vibrant-curie-ioreux` only. If the push is rejected because the remote moved, run `git pull --rebase` once and push again. If the rebase stops on a conflict in `data/derived/manifest.json` only (a transcript refresh landed meanwhile), resolve it by taking this batch's version (`git checkout --theirs data/derived/manifest.json` during the rebase), then run `npm run -s batch:init` to re-apply the refreshed transcript info, `git add data/derived/manifest.json`, `git rebase --continue`, and push. Any other conflict: `git rebase --abort`, push to a new branch `claude/batch-<batchId>`, and report. Never force-push.
+Push to the session's own branch only; it reaches `main` through a pull request. If the push is rejected because the remote moved, run `git pull --rebase` once and push again. On a conflict, `git rebase --abort` and report. Never force-push.
 
 ### 8. Report
 One paragraph: batch id; shiurim done / back to pending / failed this run; overall status counts (done of 959, hours done); total tokens this run (sum of the usage rows) and tokens per audio hour; the audit result (shiur, severity, the worst note); anything that stopped the run.

@@ -64,7 +64,7 @@ packages/
   i18n/           shared formatting (Hebrew year, durations, plurals, numbers), data-vocabulary labels, bidi/script helpers, t() factory
   tokens/         design primitives as CSS custom properties + subset self-hosted fonts (Hebrew + Latin)
 site-policy/      transcript-eligibility.json, publish-policy.json, verbatim-allow.json (human-edited, reviewed)
-.github/workflows/ ci.yml, deploy.yml, data-sync.yml
+.github/workflows/ ci.yml, deploy.yml
 data/ scripts/ src/ config/ prompts/   pipeline (unchanged, read-only for site code)
 ```
 
@@ -248,7 +248,6 @@ Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `co
 - `ci.yml` (PRs): `npm ci` → typecheck (pipeline `npm run typecheck` too) → lint → unit tests → `corpus:build` on the real `data/` → guard pre-pass → the three app builds (Quiet, Live, Home) → guard post-pass → budgets → Playwright smoke (`wrangler dev`) → preview uploads.
 - `deploy.yml` (push to `main` touching `data/derived/**`, `data/catalog/**`, `apps/**`, `packages/**`, `workers/**`, `site-policy/**`; dispatch): same build (with `EMUNAS_MEDIA_ORIGIN` set) → D1 migrations → D1 incremental sync → Vectorize incremental sync → deploy `emunas-api` → deploy `emunas-quiet` → deploy `emunas-live`. `concurrency: deploy-production, cancel-in-progress: true` (syncs are hash-diffed and idempotent, so cancelling is safe). Caches: `actions/cache` for `.corpus/` fingerprints, `.astro`, embedding cache is in R2.
 - `refresh-quiet.yml` (every second day at 05:17 UTC; dispatch): Quiet only, from `main`: corpus build → guard pre → rebuild with suppress → search build → Quiet build → `_headers` → guard post over `.corpus` and `apps/quiet/dist` → budgets → deploy `emunas-quiet`. It keeps the title page's "this week" window current. It shares the `deploy-production` concurrency group without cancelling, so a full deploy cancels a refresh and never the other way round.
-- `data-sync.yml`: see §4.
 - The checkout includes `data/transcripts` (it is in git) only because the guard reads it; no other step does.
 - Rollback: `wrangler rollback` per Worker; D1 search is rebuildable; feedback D1 is never touched by deploys.
 
@@ -257,8 +256,8 @@ Each `wrangler.jsonc` has a top-level (production) config and `env.staging`. `co
 ## 4. Data publish flow
 
 ```
-pipeline session → commits data/derived/** (batches, several a day)
-      │  (pipeline branch → main: data-sync.yml, or the pipeline commits to main directly)
+pipeline work → commits data/derived/** on a working branch
+      │  (pull request → main)
       ▼
 deploy.yml on main
   1. corpus:build     ingest + manifest + catalog + shiurim/*/{meta,extraction,writeup}  → .corpus/
@@ -281,7 +280,7 @@ deploy.yml on main
 - **Translations** arrive the same way (translation sessions commit `data/derived/**/i18n/**`). A reprocessed shiur's overlay goes stale and drops out until it is translated again; its readers see the Yiddish meanwhile.
 - **Reprocessing** (new `promptVersion`) changes content at the same URLs; moment ids may shift, so every link also carries `t` and Live falls back to `t` on a dangling `m`.
 - **What fails a deploy**: invalid `ingest.json`/`manifest.json`, guard post-pass findings, budget overrun, code errors. **What never fails it**: a malformed shiur file, an unmapped string, a verbatim hit (auto-suppressed and reported).
-- **Branch**: production builds from `main`. The pipeline currently commits to `claude/dual-website-concepts-sm99sh`. Default: `data-sync.yml` (hourly) merges new commits from a configured `DATA_BRANCH` into `main` **only if they touch nothing outside `data/`**; otherwise it opens a PR. Simpler alternative for the owner (O9): the pipeline commits to `main` once the sites exist.
+- **Branch**: production builds from `main`. Pipeline data reaches `main` through a pull request from the working branch, like any other change (O9).
 - **Future better transcripts**: the pipeline re-runs P4/P4b (`reset-changed.ts`); the site rebuilds as above. Turning on a transcript view for a recording is a human edit to `site-policy/transcript-eligibility.json` + `EMUNAS_TRANSCRIPT_VIEW=on`, reviewed in a PR. Only then does `transcript-gate.ts` emit `transcript/<recordingId>.json` and the guard allow exactly those files. `allowSearch` stays a separate later decision.
 
 ---
@@ -369,7 +368,7 @@ Never present (type test + guard): `heardAs`, `asrNotes`, `segs`, `startSeg`, `e
 | O6 | `@hebcal/core` GPL-2.0 at build time only | **Accept** (generates a data table; no code shipped); fallback hand-made table |
 | O7 | `current` (79) and `simcha` (72) in general browse | Own sections; excluded from Today/Explore defaults (`publish-policy.json`) |
 | O8 | Domain name | `<domain>` apex = home, `library.<domain>` = Quiet, `analyze.<domain>` = Live, `media.<domain>` = R2 |
-| O9 | Pipeline branch vs `main` | **`data-sync.yml`** merging data-only commits |
+| O9 | Pipeline branch vs `main` | **Pull request** from the working branch to `main` |
 | O10 | Embedding model | bge-m3 unless the Yiddish eval says otherwise |
 
 ---
@@ -522,10 +521,10 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 #### W2.7 — Site Workers, wrangler configs, deploy and preview workflows
 
-- **Owns:** `apps/quiet/worker/**`, `apps/quiet/wrangler.jsonc`, `apps/quiet/public/_headers`, `apps/live/worker/**`, `apps/live/wrangler.jsonc`, `apps/live/public/_headers`, `.github/workflows/deploy.yml`, `.github/workflows/data-sync.yml`, `docs/sites/ops-runbook.md`, `.github/workflows/ci.yml (preview-upload job only)`
+- **Owns:** `apps/quiet/worker/**`, `apps/quiet/wrangler.jsonc`, `apps/quiet/public/_headers`, `apps/live/worker/**`, `apps/live/wrangler.jsonc`, `apps/live/public/_headers`, `.github/workflows/deploy.yml`, `docs/sites/ops-runbook.md`, `.github/workflows/ci.yml (preview-upload job only)`
 - **Depends on:** W1.1, W1.5, W1.6
-- **Brief (inputs, deliverables):** Inputs: integration-plan §3, §4. Quiet Worker: assets dist/, auto-trailing-slash, 404-page, X-Robots-Tag noindex on workers.dev hosts; no audio route and no R2 binding (A1). Live Worker: assets build/client, single-page-application, run_worker_first [/, /api/*, /admin/*], service binding API → emunas-api, / redirect by cookie then Accept-Language. _headers per §3.3 incl. CSP (Quiet: default-src 'self', script-src 'self' 'wasm-unsafe-eval', media-src 'self' <media origin>; Live also connect-src <media origin> for the service worker). env.staging in each. deploy.yml exactly as §3.5/§4 (corpus build with EMUNAS_MEDIA_ORIGIN → guard pre → rebuild with suppress → app builds → guard post → budgets → D1/Vectorize sync → deploy api, quiet, live; concurrency cancel-in-progress; daily 05:17 UTC; job summary). ci.yml extension for PR previews via wrangler versions upload --preview-alias pr-<n> bound to staging resources. data-sync.yml (hourly: merge data-only commits from DATA_BRANCH into main, else open PR). Runbook: provisioning commands for the emunas-site-build bucket, the media.<domain> custom domain + CORS on emunas (A1), D1/Vectorize/Turnstile/Access, secrets list, rollback.
-- **Acceptance:** wrangler deploy --dry-run passes for all three Workers; actionlint clean; a test run on a fork/branch deploys hello apps to workers.dev; data-sync dry-run refuses a commit touching non-data paths; the deploy job fails when the guard post-pass is given a planted fixture; no workflow step references R2 S3 credentials or binds the emunas bucket.
+- **Brief (inputs, deliverables):** Inputs: integration-plan §3, §4. Quiet Worker: assets dist/, auto-trailing-slash, 404-page, X-Robots-Tag noindex on workers.dev hosts; no audio route and no R2 binding (A1). Live Worker: assets build/client, single-page-application, run_worker_first [/, /api/*, /admin/*], service binding API → emunas-api, / redirect by cookie then Accept-Language. _headers per §3.3 incl. CSP (Quiet: default-src 'self', script-src 'self' 'wasm-unsafe-eval', media-src 'self' <media origin>; Live also connect-src <media origin> for the service worker). env.staging in each. deploy.yml exactly as §3.5/§4 (corpus build with EMUNAS_MEDIA_ORIGIN → guard pre → rebuild with suppress → app builds → guard post → budgets → D1/Vectorize sync → deploy api, quiet, live; concurrency cancel-in-progress; daily 05:17 UTC; job summary). ci.yml extension for PR previews via wrangler versions upload --preview-alias pr-<n> bound to staging resources. Runbook: provisioning commands for the emunas-site-build bucket, the media.<domain> custom domain + CORS on emunas (A1), D1/Vectorize/Turnstile/Access, secrets list, rollback.
+- **Acceptance:** wrangler deploy --dry-run passes for all three Workers; actionlint clean; a test run on a fork/branch deploys hello apps to workers.dev; the deploy job fails when the guard post-pass is given a planted fixture; no workflow step references R2 S3 credentials or binds the emunas bucket.
 
 ### Wave 3
 
@@ -695,6 +694,6 @@ Same ids as the wave lists in §7 and the structured plan. Paths are the only fi
 
 - **Owns:** `docs/sites/launch-checklist.md`
 - **Depends on:** W5.1, W5.2, W5.3, W3.11
-- **Brief (inputs, deliverables):** Walk the checklist: owner decisions O1–O10 recorded, first verbatim report reviewed by a person, guard report clean, media.<domain> + CORS verified (A1), domains attached, Access/Turnstile live, data-sync behaviour confirmed with the pipeline session, rollback rehearsed.
+- **Brief (inputs, deliverables):** Walk the checklist: owner decisions O1–O10 recorded, first verbatim report reviewed by a person, guard report clean, media.<domain> + CORS verified (A1), domains attached, Access/Turnstile live, rollback rehearsed.
 - **Acceptance:** Checklist signed; production deploy from main serves both hosts with current data; a fresh pipeline data commit reaches production with no code change.
 
