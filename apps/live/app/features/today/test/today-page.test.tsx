@@ -93,6 +93,8 @@ describe("Today page", () => {
     const next = gap.container.querySelector('[data-occasion="chanukah"]')!;
     expect(next.querySelector("h3")!.textContent).toContain("Next: in 52 days");
     expect(next.querySelectorAll("[data-shiur]").length).toBeGreaterThan(0);
+    // one shiur in the fixtures: no entity/o page, so the title is not a link
+    expect(next.querySelector("h3 a")).toBeNull();
     expect(gap.container.querySelector("[data-seasons]")).toBeNull();
     cleanup();
     // 2nd day of Pesach 5787: Pesach is a row; Nisan and Sefirah (long) are compact links
@@ -101,11 +103,17 @@ describe("Today page", () => {
     expect(pesach.container.querySelector('[data-occasion="nisan"]')).toBeNull();
     const links = [...pesach.container.querySelectorAll("[data-seasons] [data-season]")];
     expect(links.map((l) => l.getAttribute("data-season"))).toEqual(["nisan", "sefirah"]);
-    expect(links[0]!.querySelector("a")!.getAttribute("href")).toMatch(/\/en\/.*nisan/);
+    // Nisan has one shiur in the fixtures, so no page: a plain chip, not a link
+    expect(links[0]!.querySelector("a")).toBeNull();
     // the list is named by its label, and each link reads "<name>, Now"
     const list = pesach.container.querySelector("[data-seasons] ul")!;
     expect(pesach.container.querySelector(`#${list.getAttribute("aria-labelledby")}`)!.textContent).toBe("Also now and coming:");
-    expect(links[0]!.querySelector("a")!.textContent).toMatch(/Nisan.*, Now$/);
+    expect(links[0]!.textContent).toMatch(/Nisan.*, Now$/);
+    cleanup();
+    // 2027-08-19: Elul (two shiurim, so it has a page) is 14 days off, nearer than Rosh Hashanah: a linked chip
+    const av = await renderAt(`/en/?date=2027-08-19`);
+    const elul = av.container.querySelector('[data-seasons] [data-season="elul"] a');
+    expect(elul!.getAttribute("href")).toMatch(/\/en\/.*elul/);
   });
 
   it("lists newly summarized shiurim and an empty Continue with the stub store", async () => {
