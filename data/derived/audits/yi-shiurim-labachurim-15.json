@@ -1,0 +1,17 @@
+{
+  "shiurId": "yi-shiurim-labachurim-15",
+  "promptVersion": "audit-v1",
+  "auditedAt": "2026-11-27T12:00:00Z",
+  "counts": {
+    "claimsChecked": 20, "unsupported": 0, "hallucinated": 0,
+    "sourcesChecked": 12, "sourceErrors": 0, "sourcesMissed": 2,
+    "boundariesChecked": 4, "boundariesBad": 0, "noiseMishandled": 0,
+    "termsChecked": 12, "termErrors": 0, "termsCopiedGarbled": 0,
+    "yiddishSentencesChecked": 16, "yiddishBadSentences": 3, "yiddishTranslationese": 1,
+    "flowBreaks": 0, "paddingSentences": 0, "contradictsExtraction": 0,
+    "ruleViolations": 0
+  },
+  "severity": "minor",
+  "needsReview": false,
+  "notes": "sourcesMissed: 'ואהבת לרעך כמוך, אמר רבי עקיבא זה כלל גדול בתורה' cited at seg 405 not in sources[]; 'עלה מות בחלונינו' (Yirmiyahu 9:20) alluded at seg 180 not in sources[]; English words in Yiddish: insights[3].yi 'טעסטן ... קאלקולוס' (could be נסיונות), sections[5].summary.yi and writeup.yi[5].paragraphs[1] 'קאזינס'; writeup.yi[6].paragraphs[1] 'האט יעדער א רעכט אויף זיין הנהגה, אבער קיינמאל נישט צו שנאה' reads as a rendering of the English; rule-term search hits ('קלאר' in insights[0] and writeup.yi[1].paragraphs[0], 'asr' in 'Bava Basra') are content, not violations; claims, sources (Taanis 25a, Bava Basra 16a, Berachos 24b/58a, Yevamos 14b, Sanhedrin 37a/103b) and term recoveries (Satan from 'סאטמאר', R' Zeira, R' Shraga Feivel Mendlowitz) all check out"
+}
