@@ -2,9 +2,9 @@
 /**
  * "This week" on the title page (concept-quiet §5.1): the parsha of the week and the zmanim now and
  * coming (model.ts `thisWeekModel`: every zman on now or starting within ten days, else the next
- * one), each as a short list of shiur titles with a link into the calendar index. Past the first
- * two blocks the grid shows a block compact, without its titles. Long windows (a month, Sefirah)
- * are one line of links under the grid. Built for the build day and shown as such without script.
+ * one), each as a short list of shiur titles with a link into the calendar index. From the third
+ * zman of a day on (the parsha does not count), the grid shows a block compact, without its titles.
+ * Long windows (a month, Sefirah) are one line of links under the grid. Built for the build day and shown as such without script.
  * The days around it (model.ts `thisWeekWindow`) are carried in inert templates, and
  * scripts/this-week.ts swaps in the visitor's own day on load.
  */
@@ -12,6 +12,7 @@ import type { Ed } from "../../lib/edition.ts";
 import type { OccasionPick, SeasonPick, ThisWeekDay, ThisWeekWindow } from "./model.ts";
 import { useCatalogT } from "./strings.ts";
 import WeekOccasion from "./WeekOccasion.astro";
+import WeekSeason from "./WeekSeason.astro";
 
 interface Props {
   ed: Ed;
@@ -33,12 +34,12 @@ const todaySeasons = seasonsOf(week.today);
     <div class="this-week-grid" data-week-grid>
       {picksOf(week.today).map((p) => <WeekOccasion ed={ed} pick={p} />)}
     </div>
-    <p class="this-week-seasons" data-week-seasons-line hidden={todaySeasons.length === 0}>
-      <span>{c("home.seasons")}</span>
-      <span class="this-week-season-links" data-week-seasons>
-        {todaySeasons.map((p) => <a href={p.href} data-season={p.key}>{p.label}</a>)}
-      </span>
-    </p>
+    <div class="this-week-seasons" data-week-seasons-line hidden={todaySeasons.length === 0}>
+      <span id="this-week-seasons">{c("home.seasons")}</span>
+      <ul class="this-week-season-links" role="list" aria-labelledby="this-week-seasons" data-week-seasons>
+        {todaySeasons.map((p) => <WeekSeason ed={ed} pick={p} />)}
+      </ul>
+    </div>
     <template data-week-days>
       {week.days.map((d) => <p data-day={d.date} data-blocks={d.blocks.join(" ")} data-seasons={d.seasons.join(" ")}>{lead(d)}</p>)}
     </template>
@@ -46,7 +47,7 @@ const todaySeasons = seasonsOf(week.today);
       <template data-week-block={key}><WeekOccasion ed={ed} pick={p} /></template>
     ))}
     {[...week.seasons].map(([key, p]) => (
-      <template data-week-block={key}><a href={p.href} data-season={p.key}>{p.label}</a></template>
+      <template data-week-block={key}><WeekSeason ed={ed} pick={p} /></template>
     ))}
   </section>
 )}
@@ -67,12 +68,24 @@ const todaySeasons = seasonsOf(week.today);
     color: var(--color-ink-muted);
   }
 
+  .this-week-seasons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    column-gap: var(--space-s);
+  }
+
   .this-week-seasons[hidden] {
     display: none;
   }
 
-  .this-week-season-links :global(a + a) {
-    margin-inline-start: var(--space-s);
+  .this-week-season-links {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--space-s);
+    margin: 0;
+    padding: 0;
+    list-style: none;
   }
 
   .this-week-grid {
@@ -80,8 +93,8 @@ const todaySeasons = seasonsOf(week.today);
     gap: var(--space-l);
   }
 
-  /* past the first two blocks of the day: heading, day and link only */
-  .this-week-grid > :global(.occasion:nth-child(n + 3) ul) {
+  /* from the third zman of the day on (the parsha, always first, does not count): heading, day and link only */
+  .this-week-grid > :global(.occasion[data-kind="zman"] ~ .occasion[data-kind="zman"] ~ .occasion[data-kind="zman"] ul) {
     display: none;
   }
 

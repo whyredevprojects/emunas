@@ -251,12 +251,12 @@ describe("this week", () => {
     expect(w.parsha).toMatchObject({ kind: "parsha", key: "vayeitzei", label: "Vayeitzei", href: "/en/calendar/parsha/vayeitzei/" });
     expect(w.parsha!.rows.length).toBe(Math.min(THIS_WEEK_LIMIT, w.parsha!.count));
     expect(w.zmanim).toEqual([
-      expect.objectContaining({ kind: "zman", key: "yud-tes-kislev", active: false, when: "next", start: "2026-11-29", startLabel: "19 Kislev", href: "/en/calendar/zman/yud-tes-kislev/" }),
+      expect.objectContaining({ kind: "zman", key: "yud-tes-kislev", active: false, when: "next", start: "2026-11-29", startDay: { day: "19", month: "Kislev" }, href: "/en/calendar/zman/yud-tes-kislev/" }),
     ]);
     const yi = thisWeekModel(corpus, "yi", "2026-11-15");
     expect(yi.hebrewDate).toBe("ה' כסלו תשפ\"ז");
     expect(yi.parsha!.label).toMatch(/[א-ת]/);
-    expect(yi.zmanim[0]!.startLabel).toBe("י\"ט כסלו");
+    expect(yi.zmanim[0]!.startDay).toEqual({ day: "י\"ט", month: "כסלו" });
   });
 
   it("a gap of weeks still shows the next zman (2026-10-15: Yud-Tes Kislev, 45 days off)", () => {
@@ -276,7 +276,7 @@ describe("this week", () => {
   it("keeps a zman while it is on, with the short ones before the long", () => {
     const date = calendar.occasionWindows("chanukah")[0]!.start;
     const w = thisWeekModel(corpus, "en", date);
-    expect(w.zmanim[0]).toMatchObject({ key: "chanukah", active: true, when: "now", startLabel: "25 Kislev" });
+    expect(w.zmanim[0]).toMatchObject({ key: "chanukah", active: true, when: "now", startDay: { day: "25", month: "Kislev" } });
     // a day of Pesach: Pesach on, Shevi'i shel Pesach coming; Nisan and Sefirah as links
     const pesach = thisWeekModel(corpus, "en", "2027-04-23");
     expect(zkeys(pesach)).toEqual(["pesach", "chol-hamoed-pesach", "shevii-shel-pesach"]);
@@ -331,7 +331,7 @@ describe("this week", () => {
     expect(lists[1]).toContain("parshas-parah");
     expect(purim.days.at(-1)!.blocks).toContain("zman:parshas-zachor:2027-03-20:now");
     for (const d of purim.days) for (const k of d.seasons) expect(purim.seasons.has(k), `${d.date} ${k}`).toBe(true);
-    expect(purim.today.seasons).toEqual(["season:adar:2027-03-10"]);
+    expect(purim.today.seasons).toEqual(["season:adar:2027-03-10:now"]);
   });
 
   it("renders several zmanim, the long windows as links, and each day's lists in its template", async () => {
@@ -339,15 +339,61 @@ describe("this week", () => {
     const week = thisWeekWindow(corpus, "en", "2027-03-17");
     const html = await container.renderToString(ThisWeek, { props: { ed: "en", week } });
     const grid = html.slice(html.indexOf("data-week-grid"), html.indexOf("data-week-seasons-line"));
-    for (const k of ["vayikra", "parshas-zachor", "purim", "shushan-purim", "parshas-parah"]) expect(grid).toContain(`data-occasion="${k}"`);
+    for (const k of ["parshas-zachor", "purim", "shushan-purim", "parshas-parah"]) expect(grid).toContain(`data-occasion="${k}"`);
     expect(grid).toContain("Coming: Parshas Parah");
     expect(grid).toContain("On 11 Adar II");
     const line = html.slice(html.indexOf("data-week-seasons-line"), html.indexOf("data-week-days"));
     expect(line).toContain("Also now and coming:");
     expect(line).toContain('href="/en/calendar/zman/adar/"');
+    expect(line).toMatch(/<ul[^>]*aria-labelledby="this-week-seasons"/);
+    expect(line).toMatch(/<li data-season="adar"[^>]*>.*Now/);
     expect(line).not.toMatch(/\shidden/);
     for (const d of week.days) expect(html).toContain(`data-day="${d.date}" data-blocks="${d.blocks.join(" ")}" data-seasons="${d.seasons.join(" ")}"`);
     for (const k of [...week.blocks.keys(), ...week.seasons.keys()]) expect(html).toContain(`data-week-block="${k}"`);
+  });
+
+  it("builds no parsha block for a parsha without shiurim (Vayikra, Purim week 5787)", async () => {
+    const vayikra = corpus.occasions.parshiyos.find((p) => p.key === "vayikra")!;
+    expect(vayikra.shiurim).toEqual([]);
+    const w = thisWeekModel(corpus, "en", "2027-03-17");
+    expect(w.parsha).toBeNull();
+    const win = thisWeekWindow(corpus, "en", "2027-03-17");
+    expect(win.today.blocks.some((k) => k.startsWith("parsha:"))).toBe(false);
+    // the first two zmanim keep their titles: the compact rule counts zmanim, not grid cells
+    const html = await (await AstroContainer.create()).renderToString(ThisWeek, { props: { ed: "en", week: win } });
+    const grid = html.slice(html.indexOf("data-week-grid"), html.indexOf("data-week-seasons-line"));
+    expect(grid).not.toContain("All 0");
+    expect(grid.match(/data-kind="zman"/g)).toHaveLength(4);
+    expect(grid).not.toContain('data-kind="parsha"');
+    const css = readFileSync(join(app, "src/components/catalog/ThisWeek.astro"), "utf8");
+    expect(css).toContain('.occasion[data-kind="zman"] ~ .occasion[data-kind="zman"] ~ .occasion[data-kind="zman"] ul');
+    expect(css).not.toContain("nth-child");
+    // a parsha with shiurim still leads (Vayeitzei)
+    expect(thisWeekWindow(corpus, "en", "2026-11-15").today.blocks[0]).toBe("parsha:vayeitzei");
+  });
+
+  it("says when a zman or a long window begins, the Hebrew day and month built from parts", async () => {
+    const container = await AstroContainer.create();
+    const text = (html: string) => html.replace(/<[^>]+>/g, " ").replace(/&#39;/g, "'").replace(/&quot;/g, '"').replace(/\s+/g, " ");
+    // 2027-08-19: Rosh Hashanah next, Elul (14 days off) a coming long window
+    const texts: Record<string, string> = {};
+    for (const ed of EDS) {
+      const week = thisWeekWindow(corpus, ed, "2027-08-19");
+      expect(week.today.seasons, ed).toEqual(["season:elul:2027-09-03:soon"]);
+      texts[ed] = text(await container.renderToString(ThisWeek, { props: { ed, week } }));
+    }
+    expect(texts["en"]).toContain("From 1 Elul");
+    expect(texts["yi"]).toContain("פון א' אלול");
+    expect(texts["he"]).toContain("מא' באלול");
+    // a one-day zman in Hebrew: "בכ"ה בכסלו" style
+    const he = thisWeekWindow(corpus, "he", "2026-11-15");
+    const html = text(await container.renderToString(ThisWeek, { props: { ed: "he", week: he } }));
+    expect(html).toContain("בי\"ט בכסלו");
+    // an active long window says Now
+    const adar = thisWeekWindow(corpus, "he", "2027-03-17");
+    expect(adar.today.seasons).toEqual(["season:adar:2027-03-10:now"]);
+    const adarText = text(await container.renderToString(ThisWeek, { props: { ed: "he", week: adar } }));
+    expect(adarText).toContain("גם עכשיו ובקרוב: אדר עכשיו");
   });
 
   it("keys a zman that is on apart from one that is coming", () => {

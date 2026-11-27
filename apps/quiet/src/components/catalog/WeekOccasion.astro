@@ -1,9 +1,10 @@
 ---
 /**
- * One occasion block of "this week" on the title page (concept-quiet §5.1): a heading linking into
- * the calendar index, for a zman not yet on the day it starts, a few shiur titles, and a link to all
- * of them. Rendered in the visible grid and inside the per-day templates of ThisWeek.astro; past
- * the first two blocks of a day the grid shows it compact (heading, day and link only).
+ * One occasion block of "this week" on the title page (concept-quiet §5.1). It has a heading that
+ * links into the calendar index; for a zman that has not begun yet, the day it begins ("On 11 Adar
+ * II", "From 25 Kislev"); a few shiur titles; and a link to all of them. Rendered in the visible
+ * grid and inside the per-day templates of ThisWeek.astro; from the third zman of a day on, the
+ * grid shows it compact (heading, day and link only).
  */
 import { runAttrs } from "../../lib/bidi.ts";
 import type { Ed } from "../../lib/edition.ts";
@@ -25,10 +26,10 @@ const heading =
       : p.when === "next"
         ? c("home.zmanNext", { name: p.label })
         : c("home.zmanSoon", { name: p.label });
-const day = p.kind === "zman" && !p.active && p.startLabel ? c(p.oneDay ? "home.zmanOn" : "home.zmanFrom", { date: p.startLabel }) : null;
+const day = p.kind === "zman" && !p.active && p.startDay ? c(p.oneDay ? "home.zmanOn" : "home.zmanFrom", { ...p.startDay }) : null;
 const id = `week-${p.kind}-${p.key}`;
 ---
-<section class="occasion" aria-labelledby={id} data-occasion={p.key} data-when={p.when}>
+<section class="occasion" aria-labelledby={id} data-occasion={p.key} data-kind={p.kind} data-when={p.when}>
   <h3 id={id}><a href={p.href}>{heading}</a></h3>
   {day && <p class="occasion-day">{day}</p>}
   <ul role="list">

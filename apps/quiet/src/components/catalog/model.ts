@@ -544,7 +544,7 @@ export interface OccasionPick {
   readonly when: "now" | "soon" | "next";
   /** First civil day of the zman window (null for the parsha), and its Hebrew day and month in the edition. */
   readonly start: string | null;
-  readonly startLabel: string | null;
+  readonly startDay: HebrewDayParts | null;
   /** The window is one day long. */
   readonly oneDay: boolean;
 }
@@ -556,6 +556,8 @@ export interface SeasonPick {
   readonly href: string;
   readonly active: boolean;
   readonly start: string;
+  /** The Hebrew day and month `start` falls on, in the edition. */
+  readonly startDay: HebrewDayParts | null;
 }
 
 export interface ThisWeekModel {
@@ -584,7 +586,7 @@ function pick(
   kind: "parsha" | "zman",
   o: { readonly key: string } & Readonly<Record<Ed, string>>,
   refs: readonly OccasionShiurRef[],
-  at: { active: boolean; when: OccasionPick["when"]; start: string | null; startLabel: string | null; oneDay: boolean },
+  at: { active: boolean; when: OccasionPick["when"]; start: string | null; startDay: HebrewDayParts | null; oneDay: boolean },
 ): OccasionPick {
   return {
     kind,
@@ -640,7 +642,8 @@ export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: 
     const refs = main?.shiurim.length
       ? main.shiurim
       : week.parshaKeys.slice(1).flatMap((k) => byKey.get(k)?.shiurim ?? []);
-    if (main) parsha = pick(corpus, ed, "parsha", main, refs, { active: true, when: "now", start: null, startLabel: null, oneDay: true });
+    // only a parsha with shiurim is shown, as with the zmanim
+    if (main && refs.length > 0) parsha = pick(corpus, ed, "parsha", main, refs, { active: true, when: "now", start: null, startDay: null, oneDay: true });
   }
   const zmanim: OccasionPick[] = [];
   let seasons: SeasonPick[] = [];
@@ -657,7 +660,7 @@ export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: 
         active: h.active,
         when,
         start: h.start,
-        startLabel: hebrewDateLabel(cal, h.start, ed, { year: false }),
+        startDay: hebrewDayParts(cal, h.start, ed),
         oneDay: h.length === 1,
       });
     };
@@ -670,7 +673,14 @@ export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: 
     } else {
       seasons = cu.long.map((h) => {
         const z = byKey.get(h.key)!;
-        return { key: z.key, label: occasionLabel(z, ed), href: formatQuiet({ kind: "occasion", ed, key: z.key, occasion: "zman" }), active: h.active, start: h.start };
+        return {
+          key: z.key,
+          label: occasionLabel(z, ed),
+          href: formatQuiet({ kind: "occasion", ed, key: z.key, occasion: "zman" }),
+          active: h.active,
+          start: h.start,
+          startDay: hebrewDayParts(cal, h.start, ed),
+        };
       });
     }
   }
@@ -680,16 +690,16 @@ export function thisWeekModel(corpus: CatalogCorpus, ed: Ed, date: string, cal: 
 /**
  * One block on the title page. A zman is keyed by its window and how it is shown (on now, coming,
  * next after a gap), so a block's text never depends on the day it is shown on; a long window shown
- * as a link is a `season`.
+ * as a link is a `season`, keyed the same way (on now, or coming from its first day).
  */
-export type WeekBlockKey = `parsha:${string}` | `zman:${string}:${string}:${OccasionPick["when"]}` | `season:${string}:${string}`;
+export type WeekBlockKey = `parsha:${string}` | `zman:${string}:${string}:${OccasionPick["when"]}` | `season:${string}:${string}:${"now" | "soon"}`;
 
 export function weekBlockKey(p: OccasionPick): WeekBlockKey {
   return p.kind === "parsha" ? `parsha:${p.key}` : `zman:${p.key}:${p.start ?? ""}:${p.when}`;
 }
 
 export function seasonBlockKey(p: SeasonPick): WeekBlockKey {
-  return `season:${p.key}:${p.start}`;
+  return `season:${p.key}:${p.start}:${p.active ? "now" : "soon"}`;
 }
 
 export interface ThisWeekDay {
@@ -747,15 +757,28 @@ export function thisWeekWindow(corpus: CatalogCorpus, ed: Ed, date: string, cal:
   return { today, days, blocks, seasons };
 }
 
-/** The Hebrew date of `date` in the edition; `{ year: false }` for day and month only. */
-export function hebrewDateLabel(cal: Calendar, date: string, ed: Ed, options: { year?: boolean } = {}): string | null {
+/** A Hebrew day and month in the edition's script, apart, so a message can join them (`בכ"ה בכסלו`). */
+export interface HebrewDayParts {
+  /** `25` / `כ"ה` */
+  readonly day: string;
+  /** `Kislev` / `כסלו` */
+  readonly month: string;
+}
+
+/** The Hebrew day and month of `date` in the edition, or null past the table. */
+export function hebrewDayParts(cal: Calendar, date: string, ed: Ed): HebrewDayParts | null {
   const h = cal.hebrewDate(date);
   if (!h) return null;
-  const withYear = options.year !== false;
-  if (LANG_SCRIPT[ed] === "latin") return withYear ? `${h.day} ${h.monthName} ${h.year}` : `${h.day} ${h.monthName}`;
-  if (!withYear) return `${hebrewNumeral(h.day)} ${h.monthNameHe}`;
-  const year = hebrewYearParts(h.year)?.hebrew ?? String(h.year);
-  return `${hebrewNumeral(h.day)} ${h.monthNameHe} ${year}`;
+  return LANG_SCRIPT[ed] === "latin" ? { day: String(h.day), month: h.monthName } : { day: hebrewNumeral(h.day), month: h.monthNameHe };
+}
+
+/** The Hebrew date of `date` in the edition (`5 Kislev 5787` / `ה' כסלו תשפ"ז`). */
+export function hebrewDateLabel(cal: Calendar, date: string, ed: Ed): string | null {
+  const h = cal.hebrewDate(date);
+  const parts = hebrewDayParts(cal, date, ed);
+  if (!h || !parts) return null;
+  const year = LANG_SCRIPT[ed] === "latin" ? String(h.year) : (hebrewYearParts(h.year)?.hebrew ?? String(h.year));
+  return `${parts.day} ${parts.month} ${year}`;
 }
 
 export interface CorpusTotals {
