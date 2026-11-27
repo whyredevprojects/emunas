@@ -75,6 +75,45 @@ export interface NearestOccasionOptions {
   maxLength?: number;
 }
 
+/** Both sites: an occasion starting within this many days is shown as upcoming. */
+export const OCCASION_LOOKAHEAD_DAYS = 10;
+/** Both sites: a window longer than this many days (a month, Sefirah, the Three Weeks) is long. */
+export const LONG_WINDOW_DAYS = 10;
+/** Both sites: how far ahead the next occasion is searched when nothing is current or upcoming. */
+export const NEXT_SEARCH_DAYS = 400;
+
+export interface CurrentAndUpcomingOptions {
+  /** Israel schedule. Default false (diaspora). */
+  israel?: boolean;
+  /** an occasion starting within this many days of the date is "upcoming". Default 10. */
+  lookaheadDays?: number;
+  /** windows longer than this many days (months, Sefirah, the Three Weeks) are "long". Default 10. */
+  longWindowDays?: number;
+  /** whether an occasion key has anything to show (shiurim); keys without are never returned. Default: all. */
+  has?: (key: string) => boolean;
+  /** how far ahead `next` is searched, in days. Default 400 (over a leap year). */
+  maxSearchDays?: number;
+}
+
+/**
+ * The occasions to show for a day, the rule both sites share:
+ *
+ * 1. `current`: every short window (≤ `longWindowDays`) in progress, shortest first;
+ * 2. `upcoming`: every short window starting within `lookaheadDays`, soonest first;
+ * 3. `next`: only when 1 and 2 are empty, the next window starting after the date, however far
+ *    (a short one when there is one within `maxSearchDays`, else a long one);
+ * 4. `long`: long windows in progress or starting within `lookaheadDays`, in progress first. They
+ *    are secondary: a site shows them compactly, or in full only when nothing else is shown.
+ *
+ * Only keys passing `has` appear, each key once (its earliest window: in progress wins).
+ */
+export interface CurrentAndUpcoming {
+  current: OccasionHit[];
+  upcoming: OccasionHit[];
+  next: OccasionHit | null;
+  long: OccasionHit[];
+}
+
 export interface Calendar {
   readonly table: CalendarTable;
   /** first and last civil day the table covers */
@@ -82,6 +121,8 @@ export interface Calendar {
   hebrewDate(date: Date | string): HebrewDate | null;
   thisWeek(date: Date | string, options?: ThisWeekOptions): ThisWeek | null;
   nearestOccasion(date: Date | string, options?: NearestOccasionOptions): OccasionHit | null;
+  /** The shared "what to show now" rule; null outside the table. */
+  currentAndUpcoming(date: Date | string, options?: CurrentAndUpcomingOptions): CurrentAndUpcoming | null;
   /** all windows of one occasion key, in order (for "next Chanukah" style links) */
   occasionWindows(key: string, options?: { israel?: boolean }): { start: string; end: string }[];
 }
@@ -275,6 +316,42 @@ export function createCalendar(table: CalendarTable): Calendar {
     return candidates[0] ?? null;
   }
 
+  function currentAndUpcoming(date: Date | string, options: CurrentAndUpcomingOptions = {}): CurrentAndUpcoming | null {
+    const iso = toIsoDay(date);
+    const n = dayNumber(iso);
+    if (!inRange(n)) return null;
+    const israel = options.israel === true;
+    const lookahead = Math.max(0, Math.floor(options.lookaheadDays ?? OCCASION_LOOKAHEAD_DAYS));
+    const longDays = Math.max(1, Math.floor(options.longWindowDays ?? LONG_WINDOW_DAYS));
+    const search = Math.max(lookahead, Math.floor(options.maxSearchDays ?? NEXT_SEARCH_DAYS));
+    const has = options.has ?? (() => true);
+    // one window per key: the earliest overlapping one (overlapping() is ordered by start, so an
+    // active window comes before a later one of the same key)
+    const seen = new Set<string>();
+    const hits: OccasionHit[] = [];
+    for (const h of overlapping(n, search, israel)) {
+      if (seen.has(h.key) || !has(h.key)) continue;
+      seen.add(h.key);
+      hits.push(h);
+    }
+    const isLong = (h: OccasionHit) => h.length > longDays;
+    const byKey = (a: OccasionHit, b: OccasionHit) => (a.key < b.key ? -1 : a.key > b.key ? 1 : 0);
+    const current = hits
+      .filter((h) => h.active && !isLong(h))
+      .sort((a, b) => a.length - b.length || (a.start > b.start ? -1 : a.start < b.start ? 1 : 0) || byKey(a, b));
+    const soon = (h: OccasionHit) => !h.active && h.daysUntil <= lookahead;
+    const upcoming = hits.filter((h) => soon(h) && !isLong(h)).sort((a, b) => a.daysUntil - b.daysUntil || a.length - b.length || byKey(a, b));
+    const long = hits
+      .filter((h) => isLong(h) && (h.active || soon(h)))
+      .sort((a, b) => Number(b.active) - Number(a.active) || a.daysUntil - b.daysUntil || a.length - b.length || byKey(a, b));
+    let next: OccasionHit | null = null;
+    if (current.length === 0 && upcoming.length === 0) {
+      const ahead = hits.filter((h) => !h.active).sort((a, b) => a.daysUntil - b.daysUntil || a.length - b.length || byKey(a, b));
+      next = ahead.find((h) => !isLong(h)) ?? ahead.find((h) => !long.includes(h)) ?? null;
+    }
+    return { current, upcoming, next, long };
+  }
+
   function occasionWindows(key: string, options: { israel?: boolean } = {}): { start: string; end: string }[] {
     const israel = options.israel === true;
     return table.occasions.filter((r) => r[0] === key).map((r) => windowOf(r, israel));
@@ -286,6 +363,7 @@ export function createCalendar(table: CalendarTable): Calendar {
     hebrewDate: (date) => hebrewDateOf(toIsoDay(date)),
     thisWeek,
     nearestOccasion,
+    currentAndUpcoming,
     occasionWindows,
   };
 }
